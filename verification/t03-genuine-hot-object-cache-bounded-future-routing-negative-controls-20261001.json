@@ -1,0 +1,36 @@
+{
+  "status": "FINITE_PROMOTED_CACHE_ROUTING_NEGATIVE_CONTROLS_PASSED",
+  "utc": "2026-10-01T22:18:23.828147+00:00",
+  "application_sha256": "a4751c1eb001c40f87cb5e71fd267ecdac76382a6dd41ac8703e0b2d2fb36813",
+  "router_sha256": "7b75232866b3eb18d47d290a198835bb7b6f1cec50a1374cbfc74dace9826b89",
+  "accepted_trial_checkpoint_sha256": "1263824ae3ea641e8c04077fada58d3aab9aad13cff68247d044e4fbedac1b78",
+  "controls": [
+    {
+      "control": "changed_frozen_dependency",
+      "guard_returned_none": true,
+      "configuration_unchanged": true,
+      "compiler_processes_started": 0
+    },
+    {
+      "control": "missing_frozen_dependency",
+      "guard_returned_none": true,
+      "configuration_unchanged": true,
+      "compiler_processes_started": 0
+    },
+    {
+      "control": "unlisted_previous_uncached_component",
+      "guard_returned_none": true,
+      "configuration_unchanged": true,
+      "compiler_processes_started": 0
+    },
+    {
+      "control": "unlisted_supplied_import",
+      "guard_returned_none": true,
+      "configuration_unchanged": true,
+      "compiler_processes_started": 0
+    }
+  ],
+  "source_files_changed": 0,
+  "compiler_processes_started": 0,
+  "proof_receipts_created": 0
+}

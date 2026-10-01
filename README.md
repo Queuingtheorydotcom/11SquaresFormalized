@@ -1,5 +1,29 @@
 # Eleven-square packing in Lean
 
+Upstream supplies **172 case-proof source archives**; **only case 1465 is absent**.
+The [fresh inventory](verification/t03-wand125-upstream-source-inventory-refresh-20261001.json) matches every archive
+asset ID, size and digest to the upstream release and all 173 required cases.
+We are reusing these supplied proofs. **169/173** is the separate count of
+completed full-certificate integrations into the original project's contracts.
+Cases **1373, 1393, 1464 and 1465** remain in that integration log.
+
+Case 1465 currently has **175/253** accepted component groups;
+its full certificate is pending. The byte-identical object-cache trial for
+component 173 passed the unchanged original checker: **113.27 seconds** compiling
+and **31.01 seconds** auditing, with only `propext` and `Quot.sound`.
+The [compact checkpoint](verification/t03-inventory-and-bounded-cache-checkpoint-20261001.json) includes exact actual logs/CHECKs,
+recorded pre/post identities for 11,850 original and cached objects, and four
+routing negative controls. Adoption is bounded to components 175–252 and the
+case 1465 full task, within the existing four single-thread worker limit.
+No same-claim uncached comparison was obtained, so no speedup is claimed.
+
+The public family theorem, merged replay, global optimality and final return
+remain unfinished. See [MISSING.md](MISSING.md) and [T03_PROGRESS.md](T03_PROGRESS.md).
+
+## Earlier source and audit checkpoint
+
+The following preserves the earlier accepted case 1499 source publication.
+
 Upstream supplies **172 case-proof archives**; **case1465 is the sole missing case
 there**. The supplied proofs are being reused. The original-project full
 certificate integration audit log is a separate metric and now records **169/173**.

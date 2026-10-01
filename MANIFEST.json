@@ -42828,18 +42828,18 @@
     },
     {
       "path": "MISSING.md",
-      "bytes": 7323,
-      "sha256": "bebc302f7bb25737bbaf62d90360f9b851576f4ae303ab0abd30f71c91972541"
+      "bytes": 7809,
+      "sha256": "bfcc6aad45166c54d08fb93af294c7b9c3152af55955f1f24d51986b0b3efcac"
     },
     {
       "path": "README.md",
-      "bytes": 30733,
-      "sha256": "f9e65335de170eb4a55514d87f3ef9ef638fc3209ba86946e68cc7181aaa0d17"
+      "bytes": 32245,
+      "sha256": "1c60128e4e96b044163774f1bab62fd0bb971adc071109a0ef23aace4a9ca7c3"
     },
     {
       "path": "T03_PROGRESS.md",
-      "bytes": 107500,
-      "sha256": "43a1e9279245e676aa3453f6b2bdce7928f36988b7932c8a385ec57830b34997"
+      "bytes": 109014,
+      "sha256": "0ffc56f4ba084460907e3d64b1825a1153cdcadaadbb42ae97b6e384f37c7b4f"
     },
     {
       "path": "lake-manifest.json",
@@ -43098,8 +43098,8 @@
     },
     {
       "path": "verification/privacy-review.json",
-      "bytes": 23201,
-      "sha256": "1f6073742f1a995eec1871c7530f7116bbf2b04e9ed35fe4defd247a3ac7639c"
+      "bytes": 23557,
+      "sha256": "a3322e382f7bd9b6041a9e576ff1827232e0b4ad7efa47572ab947aab6f32fe7"
     },
     {
       "path": "verification/source-check.json",
@@ -47512,9 +47512,54 @@
       "sha256": "509a650e34764aad2f1021e0428e3bc7d7c3e2769e9fd2b2ca2ce8e73791b475"
     },
     {
+      "path": "verification/t03-genuine-hot-object-cache-1465-173-actual-checkpoint-20261001.json",
+      "bytes": 5614,
+      "sha256": "ff2de7f77b06144f4934697baf15d08dd5d4413c9d5099b17202cd8d88bea073"
+    },
+    {
+      "path": "verification/t03-genuine-hot-object-cache-1465-173-audit-CHECK.json",
+      "bytes": 446,
+      "sha256": "0dc22a855c340fa5c0450f98cef6d4ceb5dbb3d69b9eeecece25fe4400faa511"
+    },
+    {
+      "path": "verification/t03-genuine-hot-object-cache-1465-173-audit.log",
+      "bytes": 136,
+      "sha256": "9c38caa055e4169dd11b6a1a58129ea0d5759169c3d6047b885112e6f29ecec7"
+    },
+    {
+      "path": "verification/t03-genuine-hot-object-cache-1465-173-compile-CHECK.json",
+      "bytes": 572,
+      "sha256": "26835e2ea159bd43df93cd269ccf7ae4addad82602ce96946ab1fb61c5e667d0"
+    },
+    {
+      "path": "verification/t03-genuine-hot-object-cache-1465-173-compile.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "verification/t03-genuine-hot-object-cache-1465-173-task.json",
+      "bytes": 253,
+      "sha256": "bd89e4beac056784d7ab49594b52b689ffa2705391c0f39c11cbd7ec31e6d59f"
+    },
+    {
+      "path": "verification/t03-genuine-hot-object-cache-bounded-future-promotion-20261001.json",
+      "bytes": 4344,
+      "sha256": "17a411a1d483a6917b7b21e826566c00e14d5db8a3d8b32f1deed60abdb351ad"
+    },
+    {
+      "path": "verification/t03-genuine-hot-object-cache-bounded-future-routing-negative-controls-20261001.json",
+      "bytes": 1212,
+      "sha256": "b8889f8b2504b99b8649d612eb8dfe74b9dbcbae0ccf7ff24438e56e6a9a3280"
+    },
+    {
       "path": "verification/t03-homogeneous-fan-helper.json",
       "bytes": 26049,
       "sha256": "c25d931732cb38f99665db554d5bf56e526d6877d3d5e96ef62470b69d698a0c"
+    },
+    {
+      "path": "verification/t03-inventory-and-bounded-cache-checkpoint-20261001.json",
+      "bytes": 7096,
+      "sha256": "dbe684c1bc013bc717be3946fc75be947ecb8ede2a0b4f84a0aed96cf78fee63"
     },
     {
       "path": "verification/t03-local-queues-checkpoint-20261001.json",
@@ -47628,8 +47673,8 @@
     },
     {
       "path": "verification/t03-progress.json",
-      "bytes": 125753,
-      "sha256": "50e06bc97855ca41ee03ee771289ccb9d904bfc79668f0ed40ad4a005940c2f4"
+      "bytes": 133646,
+      "sha256": "e3cc30515152a0a95b03d538147206b0fc58c6c2eb17973fdc2f125829822211"
     },
     {
       "path": "verification/t03-ready-archive-prefilter-checkpoint-20261001.json",
@@ -48225,6 +48270,11 @@
       "path": "verification/t03-wand125-unused-half-turn-enumeration-proof-pruning-20261001.json",
       "bytes": 3782,
       "sha256": "9823b3a819b7da3f87d77f75605d8336080ffb97cc1efe2122beaf72fe9df2fe"
+    },
+    {
+      "path": "verification/t03-wand125-upstream-source-inventory-refresh-20261001.json",
+      "bytes": 57404,
+      "sha256": "17cab265d7fede53be039f2c540d845e07db847062142c84268e223be95007e1"
     },
     {
       "path": "verification/t03-wand12513-prepared-source-checkpoint-20261001.json",

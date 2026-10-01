@@ -485,5 +485,14 @@
     "canonical_source_or_worker_changes": 0,
     "personal_information_findings": [],
     "server_digests_and_sizes_match_all5_assets": true
+  },
+  "inventory_bounded_cache_review": {
+    "metadata_only": true,
+    "actual_task_CHECK_logs_byte_identical_and_verified": true,
+    "private_runtime_paths_removed": true,
+    "caches_objects_large_sources_transports_included": false,
+    "no_new_assets": true,
+    "publication_Lean_jobs_process_controls": 0,
+    "personal_information_findings": []
   }
 }

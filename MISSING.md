@@ -50,6 +50,13 @@ useful components, not a complete case exclusion.
 
 ## 3. Complete the returned-exclusion family
 
+The refreshed [upstream inventory](verification/t03-wand125-upstream-source-inventory-refresh-20261001.json) supplies
+172 source archives; only case 1465 is absent upstream. This is distinct from
+the original-project integration log, currently 169/173, with cases 1373, 1393,
+1464 and 1465 still pending. The [bounded cache checkpoint](verification/t03-inventory-and-bounded-cache-checkpoint-20261001.json)
+is an actual component audit and contributes no additional full certificate.
+
+
 `ElevenSquare/Pending/S06_Returned.lean:returned_certificate_exists` remains
 admitted for the 173 returned indices. The generic terminal-trace wrapper and
 checked common geometry/checker tools are present. Case2135's complete certificate

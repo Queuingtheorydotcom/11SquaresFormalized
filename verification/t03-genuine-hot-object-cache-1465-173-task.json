@@ -1,0 +1,9 @@
+{
+  "id": "T03_compact_full_trace",
+  "modules": [
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.PackedNamespaced.Chunk173"
+  ],
+  "axiom_targets": [
+    "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.Step009State.PackedCase1465.state_binding"
+  ]
+}
