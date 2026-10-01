@@ -412,5 +412,20 @@
     "canonical_source_or_worker_changes": 0,
     "personal_information_findings": [],
     "server_digests_and_sizes_match_all5_assets": true
+  },
+  "accepted1823_source_review": {
+    "accepted_case": 1823,
+    "accepted_source_modules": 680,
+    "accepted_source_bytes": 29428861,
+    "actually_accepted_DirectTrees_members": 11,
+    "pending_unaccepted_conversions_included": false,
+    "all_source_and_finished_member_hashes_checked": true,
+    "all_actual_source_keys_genuine_receipts_and_object_hashes_verified": true,
+    "actual_audit_CHECK_bytes_verified": true,
+    "neutral_serial_profile": true,
+    "private_metadata_paths_archives_objects_receipts_credentials_caches_included": false,
+    "canonical_source_or_worker_changes": 0,
+    "personal_information_findings": [],
+    "server_digests_and_sizes_match_all5_assets": true
   }
 }
