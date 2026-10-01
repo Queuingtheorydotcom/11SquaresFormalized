@@ -5,7 +5,7 @@
 Reads the near rows and field boxes from the packet's Lean sources, and writes
 <out dir>/NearConn.lean: for every owner a list of `NRow` (the index of a near
 row whose angle interval contains the state row, and Farkas multipliers for the
-four box half-planes) with the theorem `NearRowsSubsumed Near.final`.
+four box half-planes) with the theorem that its rows lie in the rows of the near outer state.
 """
 import os, pickle, re, sys
 from fractions import Fraction as F
@@ -57,8 +57,9 @@ def main(root, state, out):
         L.append(f"def c{i} : List NRow := {lst(cs)}\n")
         L.append(f"theorem ok{i} : nearRowsB {i} ({NS}.Near.final.rows {i}) c{i} = true := by decide +kernel\n")
     L.append("def cs : Owner → List NRow := ![" + ", ".join(f"c{i}" for i in range(11)) + "]\n")
-    L.append("theorem subsumed : NearRowsSubsumed {NS}.Near.final := by\n"
-             "  refine nearFiniteRowEnclosure_subsumed _ (nearRowsB_sound (cs := cs) ?_)\n"
+    L.append("theorem subsumed : ∀ i : Owner, ∀ q : UnitSquare,\n"
+             f"    RowsContain ({NS}.Near.final.rows i) q → RowsContain (extNearOuterState.rows i) q := by\n"
+             "  refine nearRowsB_sound (cs := cs) ?_\n"
              "  intro i\n  fin_cases i\n" + "\n".join(f"  · exact ok{i}" for i in range(11)) + "\n")
     L.append(f"end {NS}.NearConn\n")
     open(os.path.join(out, "NearConn.lean"), "w").write("\n".join(L))
