@@ -1,7 +1,15 @@
 import ElevenSquare.Tasks.T07.Ext.Compose
+import ElevenSquare.Tasks.T07.Ext.Gen.P2
+import ElevenSquare.Tasks.T07.Ext.Gen.Root240
 import ElevenSquare.Tasks.T07.Ext.Gen.Far15
+import ElevenSquare.Tasks.T07.Ext.Gen.R1
+import ElevenSquare.Tasks.T07.Ext.Gen.R10
 import ElevenSquare.Tasks.T07.Ext.Gen.Far13
+import ElevenSquare.Tasks.T07.Ext.Gen.Near13
+import ElevenSquare.Tasks.T07.Ext.Gen.R11
 import ElevenSquare.Tasks.T07.Ext.Gen.R110
+import ElevenSquare.Tasks.T07.Ext.Gen.R111
+import ElevenSquare.Tasks.T07.Ext.Gen.Near
 import ElevenSquare.Tasks.T07.Ext.Gen.NearConn
 
 /-! The case-438 near state from the generated extended traces.
