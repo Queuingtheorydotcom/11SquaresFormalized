@@ -1,0 +1,2 @@
+'SquarePacking.mem_sq_scale_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SquarePacking.mem_sqInt_scale_iff' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,84 @@
+{
+  "status": "ACTUAL_PINNED_CORE_TARGET_AUDITS_PASSED_SOURCE_AND_OBJECT_BOUND",
+  "utc": "2026-10-01T13:23:37.734436+00:00",
+  "task": {
+    "id": "T03_compact_full_trace",
+    "modules": [
+      "ElevenSquare.Tasks.T03.Wand125.Upstream.ZeroMargin"
+    ],
+    "axiom_targets": [
+      "SquarePacking.sq_subset_box_iff",
+      "SquarePacking.lemmaG_box"
+    ]
+  },
+  "axiom_targets": [
+    "SquarePacking.sq_subset_box_iff",
+    "SquarePacking.lemmaG_box"
+  ],
+  "actual_axioms": {
+    "SquarePacking.sq_subset_box_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "SquarePacking.lemmaG_box": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "source_bindings": [
+    {
+      "module": "ElevenSquare.Tasks.T03.Wand125.Upstream.Basic",
+      "source_sha256": "be7fd52c9a48cb26692c7d2de2c1fd825255661f05008637ce229d2fb510a268",
+      "source_bytes": 29484,
+      "source_closure_sha256": "f7d0773538338af50868852ddf5d82c289d2b6af8ecee92ebc40cd6617af1cfe",
+      "genuine_receipt_sha256": "912fc275d0678b65364a224956c52b0e3cee6074b3344144e6b8756d4fe59f07",
+      "object_sha256": "faa24d667d03cd827415e617104aa7681a5eba1c93057eacd3aff3d747a6bca8"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Wand125.Upstream.Chord",
+      "source_sha256": "05c6541ed26be6e78d9b8fef40c6f3d51e0cb8b18e05e8ab2616d5d7edeb63e0",
+      "source_bytes": 15640,
+      "source_closure_sha256": "6837f234feb649ed5a91bc7ab6f4500c9b726a8757f6d1c5d404439bd7c2207c",
+      "genuine_receipt_sha256": "fa75ba63fb2bf2fbe63a71c0e3b68a5f5a5d82deaa3aa99ed4e5caae43473adb",
+      "object_sha256": "d1f168ba158d15ff4ae003c7fe27e3f50d0f43f210f75b90a8e647de034d134c"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Wand125.Upstream.ZeroMargin",
+      "source_sha256": "00ac49186e97f21d10099c2355b039466b83acfe577624d79fe63a0bd2a77e75",
+      "source_bytes": 55131,
+      "source_closure_sha256": "dad5980b7d669d758dd642d84506f137fc611aba8aab9b773f2f38b58f6a3b7f",
+      "genuine_receipt_sha256": "5ba2a6e31c950ab489901bb9cc5d15c243eb12b1836af5de09ecfc0ce02090c2",
+      "object_sha256": "67a81aa0951008a25014ceea3e68095a7a7614628fad05592b94981e713b0319"
+    }
+  ],
+  "actual_audit_log_sha256": "5b48a47efa82dea2b8f9254bddab487cda48f54fc9bb0c3be2014195ec282b18",
+  "actual_check_sha256": "fba0fbbf3fe707a96d17e245a20a9bed459cf1de4cf1475c6a2b8274a5352650",
+  "actual_audit_seconds": 37.51,
+  "actual_wrapper_log_sha256": "ebe904e332547da2e44563168b35ea32bb7fef53e5148bedcaa08c2b9e0b00bf",
+  "actual_execution_sha256": "bee5a9cb1ae6f9f52d426aad0fb84b5a92777edc0f91c751e57d3df21716883c",
+  "transport_sha256": "cdb877ca0795e136ebe1fcb6967794146601d1282f39b2c936bef17a94cd2bf8",
+  "source_preserving_imports_and_compatible_proof_tactic_adaptations": true,
+  "original_compiler_and_supplied_checker_unchanged": true,
+  "full_case_increment": 0,
+  "local_full_case_count": 159,
+  "original_public_targets_and_case_certificates_still_pending": true,
+  "format": "T03-wand125-pinned-shared-core-audit-v1",
+  "original_record_sha256": "c03eae332b2940a6e865ea294ffbfe7b3e948c1ea3bf768f19442c7534389438",
+  "actual_audit_log": "verification/t03-wand125-pinned-core-audit.txt",
+  "actual_CHECK": "verification/t03-wand125-pinned-core-audit-CHECK.json",
+  "exact_audit_log_bytes": 179,
+  "exact_CHECK_bytes": 446,
+  "actual_task_source_name": "library-case1849-node993-wand125-zero-margin-compatibility-task.json",
+  "compiler_version": "4.10.0-rc2",
+  "compiler_sha256": "c2059c8da4034467e5f391cfd07b81c4a7b32a7e04ff7e50c7c385993cd77010",
+  "all_transport_member_hashes_independently_reverified": true,
+  "actual_audited_source_closure_keys_recomputed": true,
+  "receipt_and_object_binding_validation_scope": "Root independently verified the recorded genuine receipt and object hashes. Publication independently checked immutable actual audit/wrapper/execution bytes and the accepted transport source bytes/closure keys; it did not use mutable source files or rebuild/reinspect live compiler objects.",
+  "source_audit_scope": "Only the exact later accepted source hashes in source_bindings; not the earlier relocated preparation hashes.",
+  "imported_case_certificates_accepted": 0,
+  "case1849_exclusion_checker_and_original_contract_transport_pending": true,
+  "new_source_archives_or_release_assets": 0,
+  "Lean_jobs_or_worker_controls_for_publication": 0
+}

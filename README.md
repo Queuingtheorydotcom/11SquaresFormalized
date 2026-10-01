@@ -8,6 +8,16 @@ the final optimality theorem. See [MISSING.md](MISSING.md).
 
 At the latest checkpoint, **159/173** full case certificates have independently
 accepted exact target audits and published complete source closures; **14 remain**.
+Shared-core compatibility now has actual **Lean 4.10.0-rc2** audits: the
+original checker accepted `SquarePacking.sq_subset_box_iff`, `lemmaG_box`,
+`mem_sq_scale_iff` and `mem_sqInt_scale_iff`, each using only `propext`,
+`Classical.choice` and `Quot.sound`. The [core audit](verification/t03-wand125-pinned-core-audit-checkpoint-20261001.json)
+and [packing audit](verification/t03-wand125-pinned-packing-audit-checkpoint-20261001.json)
+bind their exact adapted source versions, genuine receipt/object hashes and
+unaltered CHECK/log bytes. This checks shared core only: no imported case has
+been accepted. The exclusion checker and exact original-contract transport
+remain pending; the full-case count stays **159/173**.
+
 New upstream sources are now available in [wand125's `n11-certs-v1` release](https://github.com/wand125/n11-optimality-lean/releases/tag/n11-certs-v1):
 172 U2R case archives include **13 of our 14 remaining cases**; case1465 is absent.
 Case1849's [source archive](https://github.com/wand125/n11-optimality-lean/releases/download/n11-certs-v1/n11-u2r-C1849.tar.xz)

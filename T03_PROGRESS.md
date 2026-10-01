@@ -6,6 +6,47 @@ repository, and global optimality remains unfinished. This branch supplies
 checked common tools and the complete source closure of one audited certificate,
 case2135. It does not discharge the full-family obligation.
 
+## Shared core passes the original pinned compiler
+
+The original supplied checker on **Lean 4.10.0-rc2** actually audited:
+
+| Shared-core targets | Actual audit seconds | Genuine source/object bindings |
+| --- | ---: | ---: |
+| `SquarePacking.sq_subset_box_iff`, `SquarePacking.lemmaG_box` | 37.51 | 3 modules |
+| `SquarePacking.mem_sq_scale_iff`, `SquarePacking.mem_sqInt_scale_iff` | 42.64 | 4 modules |
+
+Every target reports only `propext`, `Classical.choice` and `Quot.sound`. These
+are **shared-core compatibility audits**, not imported case certificates.
+The local full-case count remains **159/173**, with 14 cases remaining. The
+case1849 exclusion checker, original-contract transport, full case/public target
+audits and final return are still pending.
+
+The [core record](verification/t03-wand125-pinned-core-audit-checkpoint-20261001.json)
+and [packing record](verification/t03-wand125-pinned-packing-audit-checkpoint-20261001.json)
+include the exact accepted source hashes, source-closure keys and genuine
+receipt/object hashes independently checked by the root coordinator. Publication
+independently reverified the immutable actual audit/wrapper/execution bindings,
+every saved transport member, the pinned compiler/toolchain and all recorded
+source-closure keys. It did not rely on mutable current source files, reinspect
+live compiler objects or run another compiler. The exact core log is **179
+bytes** and its CHECK **446 bytes**; both retain their recorded SHA-256. The
+packing log and CHECK are likewise copied byte-for-byte after hash verification.
+Only these small records and evidence files are published; no new source archive
+or duplicate release asset is added.
+
+The earlier [case1849 closure preparation](verification/t03-wand125-case1849-closure-preparation-history-20261001.json)
+relocated 72 modules / 18,202,746 source bytes, including 54 release members and
+18 Git-bound support modules. This is a **historical preparation snapshot**.
+Its initial relocated hashes differ from the later proof/options adapters in
+the accepted audits. The audit applies only to the exact later source bindings
+in the audit records; it does not certify the original relocated hashes or the
+remaining 72-module case closure. Further proof/options adapters continue.
+
+Case1465 was last observed at **134/253 dependency groups**, a partial producer
+observation, not a full certificate audit. Thirteen duplicate local queues remain
+preserved for upstream reuse. Publication changes no workers, queues, sources,
+`main` or existing release assets.
+
 ## New upstream source availability
 
 The upstream release now supplies U2R source archives for 13 of the 14 remaining

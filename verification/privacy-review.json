@@ -268,5 +268,16 @@
     "upstream_source_import_or_kernel_acceptance_claimed": false,
     "duplicate_source_uploads": 0,
     "publication_queue_process_or_compiler_controls": 0
+  },
+  "pinned_shared_core_review": {
+    "actual_core_log179_CHECK446_hashes_and_bytes_verified": true,
+    "actual_packing_log_CHECK_hashes_and_bytes_verified": true,
+    "actual_wrapper_execution_transport_source_and_closure_bindings_reverified": true,
+    "private_runtime_paths_omitted": true,
+    "source_versions_distinguished_from_prior_preparation": true,
+    "personal_information_findings": [],
+    "no_imported_case_completion_claim": true,
+    "new_source_archives_or_duplicate_uploads": 0,
+    "publication_Lean_workers_queues_or_process_controls": 0
   }
 }

@@ -1,0 +1,51 @@
+{
+  "status": "EXACT_UPSTREAM_CASE1849_SOURCE_CLOSURE_RELOCATED_PINNED_KERNEL_COMPATIBILITY_PENDING",
+  "utc": "2026-10-01T12:54:18.456042+00:00",
+  "case": 1849,
+  "modules": 72,
+  "source_bytes": 18202746,
+  "owned_helper_prefix": "ElevenSquare/Tasks/T03/Wand125/",
+  "original_numeric_data_and_theorem_statements_preserved": true,
+  "generators_or_build_scripts_executed": [],
+  "proof_receipts_created": 0,
+  "full_case_acceptances": 0,
+  "original_public_targets_and_full_case_kernel_audits_still_required": true,
+  "format": "T03-wand125-closure-preparation-history-v1",
+  "original_preparation_record_sha256": "4b18b25fbb0cc6d311b6b5e78619cc7f8e77fd8bb4c8c8bd4b83ba94245cfb9f",
+  "preparation_origin_counts": {
+    "verified_git_blob": 18,
+    "verified_release_archive": 54
+  },
+  "original_repository_pins": [
+    [
+      "Queuingtheorydotcom/11SquaresFormalized",
+      "91701bfaf249d2af086d5d8c1d785a799e3c09e4"
+    ],
+    [
+      "wand125/n11-optimality-lean",
+      "a8b51d3e0682beb1bf911048bdc8e7fa62329124"
+    ]
+  ],
+  "later_proof_option_adaptations_ongoing": true,
+  "prepared_relocated_hashes_are_not_the_later_audited_hashes": true,
+  "prepared_relocated_sources_claimed_kernel_checked": false,
+  "imported_case_certificates_accepted": 0,
+  "initial_shared_core_preparation_bindings": [
+    {
+      "module": "ElevenSquare.Tasks.T03.Wand125.Upstream.Basic",
+      "preparation_source_sha256": "a2fd590131fd3b2f15cab26ce58275fc26e5f3b611a1cc151d16abab18693b7a"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Wand125.Upstream.Chord",
+      "preparation_source_sha256": "534c613a881dc61754e3923793654a47797da33ad6faf634a728293457310b21"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Wand125.Upstream.ZeroMargin",
+      "preparation_source_sha256": "f7307f2223bc0bd6411309eb499b2d3ccd8cfb84c25e014075172a1f4bfa9f08"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Wand125.Upstream.Packing",
+      "preparation_source_sha256": "cf91e3d8defffd798b92502a29a9637be4af93f4b523f9c671c9356857a14277"
+    }
+  ]
+}

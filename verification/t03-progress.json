@@ -1840,7 +1840,15 @@
     "proof_processes_signalled_for_hold": 0,
     "per_case_adapter": "ElevenSquare.Interop.Wand125.certificate_of_maskAt",
     "per_case_adapter_requires_full_family_theorem": false,
-    "merged_replay_original_public_target_audits_and_final_ZIP_complete": false
+    "merged_replay_original_public_target_audits_and_final_ZIP_complete": false,
+    "shared_core_pinned_compiler_audits": {
+      "compiler": "4.10.0-rc2",
+      "actual_shared_targets_accepted": 4,
+      "core_manifest": "verification/t03-wand125-pinned-core-audit-checkpoint-20261001.json",
+      "packing_manifest": "verification/t03-wand125-pinned-packing-audit-checkpoint-20261001.json",
+      "exclusion_checker_and_original_contract_transport_pending": true,
+      "imported_case_acceptances_added": 0
+    }
   },
   "operational_case1464_checkpoint": {
     "manifest": "verification/t03-case1464-parallel-retry.json",
@@ -2094,5 +2102,19 @@
       1848,
       2047
     ]
+  },
+  "latest_pinned_shared_core_checkpoint": {
+    "accepted_local_full_case_count_unchanged": 159,
+    "remaining": 14,
+    "actual_shared_targets_accepted": 4,
+    "core_audit_seconds": 37.51,
+    "packing_audit_seconds": 42.64,
+    "case1849_preparation_history": "verification/t03-wand125-case1849-closure-preparation-history-20261001.json",
+    "earlier_preparation_hashes_claimed_audited": false,
+    "case1465_last_observed_groups": 134,
+    "case1465_total_groups": 253,
+    "case1465_full_case_audit_pending": true,
+    "new_release_assets": 0,
+    "Lean_jobs_or_worker_controls_for_publication": 0
   }
 }

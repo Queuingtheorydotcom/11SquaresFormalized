@@ -1,0 +1,92 @@
+{
+  "status": "ACTUAL_PINNED_CORE_TARGET_AUDITS_PASSED_SOURCE_AND_OBJECT_BOUND",
+  "utc": "2026-10-01T13:29:24.212698+00:00",
+  "task": {
+    "id": "T03_compact_full_trace",
+    "modules": [
+      "ElevenSquare.Tasks.T03.Wand125.Upstream.Packing"
+    ],
+    "axiom_targets": [
+      "SquarePacking.mem_sq_scale_iff",
+      "SquarePacking.mem_sqInt_scale_iff"
+    ]
+  },
+  "axiom_targets": [
+    "SquarePacking.mem_sq_scale_iff",
+    "SquarePacking.mem_sqInt_scale_iff"
+  ],
+  "actual_axioms": {
+    "SquarePacking.mem_sq_scale_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "SquarePacking.mem_sqInt_scale_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "source_bindings": [
+    {
+      "module": "ElevenSquare.Tasks.T03.Wand125.Upstream.Basic",
+      "source_sha256": "be7fd52c9a48cb26692c7d2de2c1fd825255661f05008637ce229d2fb510a268",
+      "source_bytes": 29484,
+      "source_closure_sha256": "f7d0773538338af50868852ddf5d82c289d2b6af8ecee92ebc40cd6617af1cfe",
+      "genuine_receipt_sha256": "912fc275d0678b65364a224956c52b0e3cee6074b3344144e6b8756d4fe59f07",
+      "object_sha256": "faa24d667d03cd827415e617104aa7681a5eba1c93057eacd3aff3d747a6bca8"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Wand125.Upstream.Chord",
+      "source_sha256": "05c6541ed26be6e78d9b8fef40c6f3d51e0cb8b18e05e8ab2616d5d7edeb63e0",
+      "source_bytes": 15640,
+      "source_closure_sha256": "6837f234feb649ed5a91bc7ab6f4500c9b726a8757f6d1c5d404439bd7c2207c",
+      "genuine_receipt_sha256": "fa75ba63fb2bf2fbe63a71c0e3b68a5f5a5d82deaa3aa99ed4e5caae43473adb",
+      "object_sha256": "d1f168ba158d15ff4ae003c7fe27e3f50d0f43f210f75b90a8e647de034d134c"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Wand125.Upstream.ZeroMargin",
+      "source_sha256": "00ac49186e97f21d10099c2355b039466b83acfe577624d79fe63a0bd2a77e75",
+      "source_bytes": 55131,
+      "source_closure_sha256": "dad5980b7d669d758dd642d84506f137fc611aba8aab9b773f2f38b58f6a3b7f",
+      "genuine_receipt_sha256": "5ba2a6e31c950ab489901bb9cc5d15c243eb12b1836af5de09ecfc0ce02090c2",
+      "object_sha256": "67a81aa0951008a25014ceea3e68095a7a7614628fad05592b94981e713b0319"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Wand125.Upstream.Packing",
+      "source_sha256": "236404e223ba728de2808bbaef290f343639e8b3d5ea0c5347e45737dc2c8b8a",
+      "source_bytes": 7058,
+      "source_closure_sha256": "a3daa2034da53ba0004fbe01f89a5c3fdd7f1dd1c72f43c75ec0c76e2c12233b",
+      "genuine_receipt_sha256": "7b0a1eab3d9ebccb28d1abbc40f39d61867171f5d6730440547417200a08d01d",
+      "object_sha256": "f39dfaf0111a78a1d811cdd87a739d44fb9db096333d807918d13fa99a81bab5"
+    }
+  ],
+  "actual_audit_log_sha256": "3526cb2660af8c52532b75cdec6b7270eb93e3857022e90682c19b2dd69b51d2",
+  "actual_check_sha256": "936645195dcb3115a69bd199451bdf30a3f19fb3917c4e7c5ed4e41e4927fc55",
+  "actual_audit_seconds": 42.64,
+  "actual_wrapper_log_sha256": "d528ef5c15bb5f5ca158ae4398218c81ad780270dc4c5c1a2a71e4db4656802b",
+  "actual_execution_sha256": "c2bd8a3aab68e945ba14c37187a5173b06f90d9ebc09844cfaaee85ca56a012f",
+  "transport_sha256": "2786a7b24d5cfde5877087b1d0c2ac3bcd0057cf28f5817f3cbb52ab225efb9f",
+  "source_preserving_imports_and_compatible_proof_tactic_adaptations": true,
+  "original_compiler_and_supplied_checker_unchanged": true,
+  "full_case_increment": 0,
+  "local_full_case_count": 159,
+  "original_public_targets_and_case_certificates_still_pending": true,
+  "format": "T03-wand125-pinned-shared-core-audit-v1",
+  "original_record_sha256": "88d696778a79afbc9d949545af1d0a4b53cea6ea7abaa735df950886fe6b0813",
+  "actual_audit_log": "verification/t03-wand125-pinned-packing-audit.txt",
+  "actual_CHECK": "verification/t03-wand125-pinned-packing-audit-CHECK.json",
+  "exact_audit_log_bytes": 187,
+  "exact_CHECK_bytes": 446,
+  "actual_task_source_name": "library-case1849-node993-wand125-packing-compatibility-task.json",
+  "compiler_version": "4.10.0-rc2",
+  "compiler_sha256": "c2059c8da4034467e5f391cfd07b81c4a7b32a7e04ff7e50c7c385993cd77010",
+  "all_transport_member_hashes_independently_reverified": true,
+  "actual_audited_source_closure_keys_recomputed": true,
+  "receipt_and_object_binding_validation_scope": "Root independently verified the recorded genuine receipt and object hashes. Publication independently checked immutable actual audit/wrapper/execution bytes and the accepted transport source bytes/closure keys; it did not use mutable source files or rebuild/reinspect live compiler objects.",
+  "source_audit_scope": "Only the exact later accepted source hashes in source_bindings; not the earlier relocated preparation hashes.",
+  "imported_case_certificates_accepted": 0,
+  "case1849_exclusion_checker_and_original_contract_transport_pending": true,
+  "new_source_archives_or_release_assets": 0,
+  "Lean_jobs_or_worker_controls_for_publication": 0
+}
