@@ -181,9 +181,16 @@ class Chain:
             pts = [N.phys(p) for p in pts]
             vs = hull(owned[i] + pts)
             H0 = hull(owned[i] + kern)
+
+            def in_every_square(v):
+                return all(ea * v[0] + eb * v[1] + max(-ea * c[0] - eb * c[1] for c in pr['cv']) <= ec
+                           for pr in prs for (ea, eb, ec) in halfplanes(pr['core']))
+            # new points that pass the row checks themselves are promoted directly
+            # (small rationals); the others are combinations of kernel points
+            direct = [v for v in vs if v not in owned[i] and in_every_square(v)]
             combs = []
             for v in vs:
-                if v in owned[i] or v in kern:
+                if v in owned[i] or v in direct:
                     combs.append((v, [(v, F(1)), (v, F(0)), (v, F(0))]))
                     continue
                 for t in range(1, len(H0) - 1):
@@ -197,8 +204,8 @@ class Chain:
                 else:
                     raise AssertionError('promoted point outside the hull')
             # only the kernel points the combinations use need checking in Lean
-            used = {p for _, ws in combs for p, _ in ws}
-            kern = [p for p in kern if p in used]
+            used = {p for v, ws in combs if v not in direct for p, _ in ws}
+            kern = direct + [p for p in kern if p in used and p not in direct]
             promo = dict(kern=kern, prs=prs, combs=combs, vs=vs)
         print(f"{self.name} step {k}: owner {i} rows {len(self.rows[i])} -> {len(rs_new)}, "
               f"partners { {j: len(t) for j, t in pcov.items()} }, leaves {stats}", file=sys.stderr)
@@ -246,12 +253,19 @@ class Chain:
                 for pieces in tab) + "\n")
         body = " else ".join(f"if j = {j} then pc{j}" for j in pcov)
         D.append(f"def pcov (j : ℕ) : List (List PartnerPiece) := {body + ' else []' if pcov else '[]'}\n")
-        for m, subs in enumerate(certs):
-            D.append(f"def cert{m} : List Sub := " + lst(
-                f"⟨{q(u['a'])}, {q(u['b'])}, {cuts_lean(u['cuts'])}, {q(u['h'])}, {lst(qp(v) for v in u['core'])}, "
-                f"{lst(zp(v) for v in u['ccore'])}, {regs_lean(u['regs'])},\n  {tree_lean(u['tree'])}⟩"
-                for u in subs) + "\n")
-        D.append(f"def certs : List (List Sub) := {lst(f'cert{m}' for m in range(len(certs)))}\n")
+        # the row certificates go to S<k>C<g>, one file per group of row checks
+        n_rows = len(certs)
+        groups = [list(range(a, min(n_rows, a + self.per))) for a in range(0, n_rows, self.per)] or [[]]
+        CG = []
+        for grp in groups:
+            G = ["import ElevenSquare.Tasks.T07.Ext.Promote\n", f"namespace {sn}", HDR]
+            for m in grp:
+                G.append(f"def cert{m} : List Sub := " + lst(
+                    f"⟨{q(u['a'])}, {q(u['b'])}, {cuts_lean(u['cuts'])}, {q(u['h'])}, {lst(qp(v) for v in u['core'])}, "
+                    f"{lst(zp(v) for v in u['ccore'])}, {regs_lean(u['regs'])},\n  {tree_lean(u['tree'])}⟩"
+                    for u in certs[m]) + "\n")
+            G.append(f"end {sn}\n")
+            CG.append(G)
         M = [f"import {mod}.S{k}C\nimport {prev_mod.replace(NS, 'ElevenSquare.Tasks.T07.Ext')}\n",
              f"namespace {sn}", HDR, f"abbrev prev : PoseState := {prev}\n",
              f"def mid : PoseState := replaceRows prev {i} rs\n"]
@@ -270,6 +284,8 @@ class Chain:
         d = os.path.join(out, self.name)
         os.makedirs(d, exist_ok=True)
         open(os.path.join(d, f"S{k}C.lean"), "w").write("\n".join(D))
+        for gi, G in enumerate(CG):
+            open(os.path.join(d, f"S{k}C{gi}.lean"), "w").write("\n".join(G))
         open(os.path.join(d, f"S{k}D.lean"), "w").write("\n".join(M))
         # partner covers
         P = [f"import {mod}.S{k}D\n", f"namespace {sn}", HDR]
@@ -282,19 +298,18 @@ class Chain:
         P.append(f"end {sn}\n")
         open(os.path.join(d, f"S{k}P.lean"), "w").write("\n".join(P))
         # rows in groups
-        n_rows = len(certs)
-        groups = [list(range(a, min(n_rows, a + self.per))) for a in range(0, n_rows, self.per)] or [[]]
         for gi, grp in enumerate(groups):
-            R = [f"import {mod}.S{k}D\n", f"namespace {sn}", HDR]
+            R = [f"import {mod}.S{k}D\nimport {mod}.S{k}C{gi}\n", f"namespace {sn}", HDR]
             for n in grp:
                 R.append(f"theorem row{n}_ok : rowB prev {i} rs pcov ((prev.rows {i}).getD {n} ⟨0, 0, []⟩) "
-                         f"(certs.getD {n} []) = true := by decide +kernel\n")
+                         f"cert{n} = true := by decide +kernel\n")
             R.append(f"end {sn}\n")
             open(os.path.join(d, f"S{k}R{gi}.lean"), "w").write("\n".join(R))
         # the step
         S = ["import Mathlib.Tactic.IntervalCases", f"import {mod}.S{k}P"] + \
             [f"import {mod}.S{k}R{gi}" for gi in range(len(groups))] + ["",
              f"namespace {sn}", HDR,
+             f"def certs : List (List Sub) := {lst(f'cert{m}' for m in range(n_rows))}\n",
              f"theorem nrows : (prev.rows {i}).length = {n_rows} := by decide +kernel\n",
              f"theorem step_ok : stepB prev {i} rs pcov certs = true := by",
              f"  refine stepB_of_rows (by rw [nrows]; rfl) (fun n hn => ?_)",
