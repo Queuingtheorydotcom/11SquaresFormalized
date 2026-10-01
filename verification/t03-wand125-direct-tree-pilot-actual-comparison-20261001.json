@@ -1,0 +1,99 @@
+{
+  "status": "BOTH_EQUAL_COVERAGE_CLAIMS_ACTUALLY_ACCEPTED_BY_UNCHANGED_PINNED_LEAN_CHECKER",
+  "utc": "2026-10-01T17:31:56.243068+00:00",
+  "results": {
+    "encoded": {
+      "actual_source_and_object_audit_record": "verification/t03-wand125-case1891-encoded-tree-pilot-actual-audit-checkpoint-20261001.json",
+      "actual_source_and_object_audit_record_sha256": "f16429b8bf4f9e1e121b065d41ad931d3d2de85a1cbb80c5654593f746ca97ce",
+      "compile_seconds": 80.56,
+      "audit_seconds": 34.27,
+      "checks": [
+        {
+          "status": "accepted",
+          "source": "ElevenSquare/Tasks/T03/Wand125/Pilots/C1891EncodedCov6_4.lean",
+          "exit_code": 0,
+          "elapsed_seconds": 80.56,
+          "lean_memory_limit_mb": 8192,
+          "lean_threads": 1,
+          "lean_thread_stack_kb": 32768,
+          "lean_main_stack_kb": 65536,
+          "cpu_seconds_limit": 1800,
+          "wall_seconds_limit": 2100,
+          "nice_increment": 0,
+          "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/Wand125/Pilots/C1891EncodedCov6_4.olean",
+          "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+        },
+        {
+          "status": "accepted",
+          "source": "verification/HandoffAudit.lean",
+          "exit_code": 0,
+          "elapsed_seconds": 34.27,
+          "lean_memory_limit_mb": 8192,
+          "lean_threads": 1,
+          "lean_thread_stack_kb": 32768,
+          "lean_main_stack_kb": 65536,
+          "cpu_seconds_limit": 1800,
+          "wall_seconds_limit": 2100,
+          "nice_increment": 0,
+          "emitted_olean": null,
+          "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+        }
+      ],
+      "published_record_sha256": "e19958abdc0af64930de376abfca74a60bb8c221a1697d8efad5b97365c800f9"
+    },
+    "decoded": {
+      "actual_source_and_object_audit_record": "verification/t03-wand125-case1891-decoded-tree-pilot-actual-audit-checkpoint-20261001.json",
+      "actual_source_and_object_audit_record_sha256": "c4646f147153af62459edf599ed4a9b3ea65132cdef7cb5952b1d5423c6c4530",
+      "compile_seconds": 58.94,
+      "audit_seconds": 31.79,
+      "checks": [
+        {
+          "status": "accepted",
+          "source": "ElevenSquare/Tasks/T03/Wand125/Pilots/C1891DecodedCov6_4.lean",
+          "exit_code": 0,
+          "elapsed_seconds": 58.94,
+          "lean_memory_limit_mb": 8192,
+          "lean_threads": 1,
+          "lean_thread_stack_kb": 32768,
+          "lean_main_stack_kb": 65536,
+          "cpu_seconds_limit": 1800,
+          "wall_seconds_limit": 2100,
+          "nice_increment": 0,
+          "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/Wand125/Pilots/C1891DecodedCov6_4.olean",
+          "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+        },
+        {
+          "status": "accepted",
+          "source": "verification/HandoffAudit.lean",
+          "exit_code": 0,
+          "elapsed_seconds": 31.79,
+          "lean_memory_limit_mb": 8192,
+          "lean_threads": 1,
+          "lean_thread_stack_kb": 32768,
+          "lean_main_stack_kb": 65536,
+          "cpu_seconds_limit": 1800,
+          "wall_seconds_limit": 2100,
+          "nice_increment": 0,
+          "emitted_olean": null,
+          "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+        }
+      ],
+      "published_record_sha256": "d32a37ab1131191ed0d963c079e9179939ff614e23fc01766e2977587ecd6869"
+    }
+  },
+  "measured_compile_time_reduction_fraction": 0.26837140019860983,
+  "scope": "One 2947-node coverage subtree; no whole-project speedup or additional full-case acceptance inferred.",
+  "python_decode_is_candidate_only": true,
+  "maximum_global_lean_workers": 4,
+  "full_case_increment": 0,
+  "original_public_targets_complete": false,
+  "original_comparison_record_sha256": "ed0c6574d1bc83c2cbf8f551deefed2dbfd3115aa6f5ad76da5b7aa5d82270ff",
+  "source_checkpoint": "verification/source-checkpoints/wand125-direct-tree-comparison-20261001",
+  "source_modules": 20,
+  "source_bytes": 827370,
+  "both_actual_compile_CHECK_and_target_audit_CHECK_bytes_verified": true,
+  "complete_source_keys_genuine_object_receipt_bindings_independently_checked": true,
+  "finite_scope_only": true,
+  "pending191_conversion_sources_included": false,
+  "publication_Lean_jobs_or_process_controls": 0
+}

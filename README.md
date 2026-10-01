@@ -2,6 +2,34 @@
 
 Upstream supplies **172 case-proof archives**; **case1465 is the sole missing case
 there**. The supplied proofs are being reused. The original-project full
+certificate integration audit log is a separate metric and now records **164/173**.
+
+**Case1891's exact original full certificate now passes** the pinned Lean
+4.10.0-rc2 checker and actual target audit in **38.10 seconds**, reporting only
+`propext`, `Classical.choice` and `Quot.sound`. Its [accepted audit/source bindings](verification/t03-wand125-case1891-full-original-audit-checkpoint-20261001.json)
+and [complete exact source release](https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/tag/t03-audited164-imported1891-20261001) include **672 modules /25,385,953
+source bytes**, with four actually accepted `DirectTrees` modules. Every source
+member, genuine source-closure key, receipt and compiler-object hash was verified.
+
+The [two audited tree-comparison probes](verification/t03-wand125-direct-tree-pilot-actual-comparison-20261001.json)
+also publish their exact sources and actual compile CHECK/audit outputs. For one
+**2,947-node coverage subtree**, compilation took **80.56 seconds encoded versus
+58.94 seconds direct**, about **27% less compilation time**. Both exact coverage
+claims passed standard-three axiom audits; no whole-project speedup or acceptance
+of the 191 pending conversion sources is inferred.
+
+Eight other supplied original-target integrations and local case1465 remain
+unfinished. Global optimality, original public family obligations and final
+return are pending. Publication preserves merged proofs, `main`, earlier assets
+and live proof work. See [MISSING.md](MISSING.md) and [T03_PROGRESS.md](T03_PROGRESS.md).
+
+## Previous source and audit checkpoint
+
+The following preserves its earlier163-count snapshot; accepted1891 above
+supersedes its earlier pending1891 integration status.
+
+Upstream supplies **172 case-proof archives**; **case1465 is the sole missing case
+there**. The supplied proofs are being reused. The original-project full
 certificate integration audit log is a separate metric and now records **163/173**.
 
 The exact original full certificates for **cases2068,2069 and2070** now pass the

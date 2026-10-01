@@ -1,4 +1,61 @@
-# Supplied proofs and newly accepted original imported certificates
+# Supplied proofs and accepted original case1891
+
+Upstream supplies **172 case-proof archives**, with **only case1465 absent**.
+The original-project integration log now has **164/173** full certificate audits;
+these are separate metrics. Newly accepted case1891 reuses the supplied proof
+through the original geometry, mask and initialization contracts.
+
+The exact original target
+`ElevenSquare.Pending.T03.Batch09.Case1891.Forward.Certificate.certificate_exists`
+passed the supplied original Lean 4.10.0-rc2 checker and actual full axiom audit
+in **38.10 seconds**, reporting only `propext`, `Classical.choice` and `Quot.sound`.
+Its actual root is `ElevenSquare.Tasks.T03.Wand125.DirectTrees.C1891.Certificate`.
+The [accepted checkpoint](verification/t03-wand125-case1891-full-original-audit-checkpoint-20261001.json)
+records actual exit0, immutable transport SHA, byte-identical CHECK/log hashes
+and **all 672 exact source dependencies**, genuine source-closure keys, receipts
+and independently read compiler-object hashes. No Lean was started for publication.
+
+The [standalone source release](https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/tag/t03-audited164-imported1891-20261001) contains **25,385,953 exact source
+bytes**, including **four actually accepted DirectTrees modules**. It excludes
+the 191 other pending conversion sources. Every finished member is hash-verified;
+there are no source-version conflicts or changed shared versions relative to the
+earlier prepared13 ZIP. The **7,795,081-byte ZIP** has SHA-256
+`d6f81c5544abe9e10cf55c9f91ee9239f153dfccdcc8e1fbcd25d65cbd1b1768`.
+[Server-verified asset bindings](verification/t03-wand125-case1891-accepted-source-release-20261001.json)
+record all five new asset sizes/digests. Earlier snapshots and assets are frozen.
+
+## Actual explicit-tree comparison
+
+Both versions of **one 2,947-node coverage subtree** passed their exact coverage
+claims under the original checker, with only the three standard axioms:
+
+| Version | Compilation seconds | Target axiom audit seconds |
+| --- | ---: | ---: |
+| Encoded | 80.56 | 34.27 |
+| Direct | 58.94 | 31.79 |
+
+The measured reduction is about **27% of compilation time for this one subtree**.
+It does not establish a whole-project speedup or accept other conversion sources.
+The [actual comparison record](verification/t03-wand125-direct-tree-pilot-actual-comparison-20261001.json),
+two original source/object-bound audit checkpoints and byte-identical actual
+compile CHECK/audit CHECK/log sidecars are published. Their [frozen source snapshot](verification/source-checkpoints/wand125-direct-tree-comparison-20261001)
+contains **20 modules /827,370 source bytes** and both complete exact dependency
+closures. Publication independently checked immutable transports, source keys,
+genuine receipts/objects, target axioms and actual compilation timings.
+
+Exact source, task, environment and supplied checker bytes are preserved. Only
+private metadata is omitted and resource profiles are neutral serial. No private
+archives, objects, receipts, caches, credentials or machine paths are distributed.
+No workers, queues, canonical sources, `main` or earlier assets changed.
+
+Eight other supplied original-target integrations plus local case1465 remain
+unfinished. Fresh merged replay, original public family audits, global optimality
+and final return are pending.
+
+## Previous source and audit checkpoint
+
+The following preserves the earlier163-count snapshot. Accepted1891 above
+supersedes its earlier pending1891 integration status.
 
 Upstream supplies **172 case-proof archives**, with **only case1465 absent**.
 The original-project integration log now has **163/173** full certificate audits;
