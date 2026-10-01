@@ -13,6 +13,9 @@ _CODE_DELIMITER = re.compile(r'/-|--|"')
 _COMMENT_DELIMITER = re.compile(r'/-|-/')
 _STRING_DELIMITER = re.compile(r'\\[\s\S]?|"')
 _NON_NEWLINES = re.compile(r'[^\n]+')
+_HEADER_PREFIX = re.compile(r'\s*(?:module\s+)?(?:prelude\s+)?')
+_IMPORT_DECL = re.compile(
+    r'\s*(?:public\s+)?(?:meta\s+)?import\s+(?:all\s+)?((?:[^\s«»]|«[^»]*»)+)')
 
 
 def _blank(text):
@@ -61,9 +64,21 @@ def code_only(text):
     return ''.join(out)
 
 
+def import_names(code):
+    """Read the Lean 4.34 header from comment/string-masked source code."""
+    # Header whitespace is not restricted to newlines or column zero. Each
+    # declaration imports one name; subsequent imports can share the same line.
+    i = _HEADER_PREFIX.match(code).end()
+    names = []
+    while match := _IMPORT_DECL.match(code, i):
+        names.append(match[1].replace('«', '').replace('»', ''))
+        i = match.end()
+    return names
+
+
 def imports(path):
     if path not in _IMPORT_CACHE:
-        _IMPORT_CACHE[path] = re.findall(r'^import\s+(\S+)', code_only(path.read_text()), re.M)
+        _IMPORT_CACHE[path] = import_names(code_only(path.read_text()))
     return _IMPORT_CACHE[path]
 
 
@@ -95,7 +110,7 @@ def check(use_cache=False):
                 if word in code and re.search(r'\b' + word + r'\b', code):
                     raise ValueError('Forbidden local proof form in ' + rel + ': ' + word)
             info = {'sha256': digest,
-                    'imports': re.findall(r'^import\s+(\S+)', code, re.M),
+                    'imports': import_names(code),
                     'admissions': [code.count('\n', 0, m.start()) + 1
                                    for m in re.finditer(r'\bsorry\b', code)] if 'sorry' in code else []}
         _IMPORT_CACHE[p] = info['imports']
