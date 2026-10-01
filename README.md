@@ -2,7 +2,7 @@
 
 This repository assembles the completed foundations and the available partial
 formalizations of the optimal eleven-square packing. **Global optimality is
-still unfinished.** Two explicit `sorry` sites remain in source. The newly wired
+still unfinished.** One explicit `sorry` site remains in source. The newly wired
 baseline and prior families still require full compiler and axiom validation;
 the smaller source admission count is not a claim of verified proof completion.
 See [MISSING.md](MISSING.md).
@@ -89,9 +89,9 @@ the branch. Local verification remains available through the commands above.
 
 The verifier distinguishes clean milestones, which may use only `propext`,
 `Classical.choice`, and `Quot.sound`, from the explicit unfinished targets.
-Success with the two remaining source admissions is **partial assembly success**,
+Success with the one remaining source admission is **partial assembly success**,
 not a proof of optimality. The newly wired baseline and prior paths must also pass
-fresh compiler and axiom checks. Closing the remaining admissions requires a
+fresh compiler and axiom checks. Closing the remaining admission requires a
 fresh final audit.
 
 ## Upstream proof integration

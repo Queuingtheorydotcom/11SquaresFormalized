@@ -1,9 +1,9 @@
 # Remaining proof obligations
 
-Two explicit `sorry` sites remain in source. Their exact files and line numbers
+One explicit `sorry` site remains in source. Its exact file and line number
 are recorded in `verification/admissions.json` and checked by
-`scripts/check_sources.py`. They are intentional placeholders, not certified
-conclusions. The newly wired baseline and prior families are **compiler-unverified
+`scripts/check_sources.py`. It is an intentional placeholder, not a certified
+conclusion. The newly wired baseline and prior families are **compiler-unverified
 pending full dependency replay and axiom audits**. A smaller source admission
 count does not establish verified proof completion.
 
@@ -57,30 +57,35 @@ preserved on its own branch; this integration does not modify its sources or
 replace that work. The active public theorem still needs accepted certificates
 for all 173 indices.
 
-## 4. Complete case438 capture into the local rectangle
+## 4. Case438 capture into the local rectangle
 
-`ElevenSquare/Tasks/T07/UnfinishedCapture.lean:case438_near_certificate` remains
-admitted. Its type is the existing `Case438NearCertificate` interface: every
-centered case438 packing of side at most `T` must admit a representation in the
-focused local rectangle at the same physical side length.
+`ElevenSquare/Tasks/T07/UnfinishedCapture.lean:case438_near_certificate` is no
+longer admitted. It is `Ext.case438_near_certificate'`, obtained from
+`Ext.role_near_box_state` by the existing `role_near_box_to_case438_certificate`.
 
-This named obligation replaces the old opaque `sorry` body of the public
-`global_lower_bound`. The public theorem now uses the returned, checked
-`global_lower_bound_of_case438_certificate` composition. The returned-family
-admission remains an upstream dependency; the newly wired baseline and prior
-families still require full compiler and axiom acceptance.
+`role_near_box_state` (in `ElevenSquare/Tasks/T07/Ext/Case438.lean`) states that
+every charted packing in the `coverCap` container whose centres lie in the closed
+cells `roleCell` satisfies the near outer state. Its proof is a chain of extended
+trace steps (`ExtStep`: the `VerifiedStep` rules plus a posewise prune by the
+square's own hull, the container, forbidden centres, and collisions with every
+admissible pose of a partner) from `siteSeedFor roleCell` through the archived
+phase 2 (`mask438-adaptive`, 14 rounds, after a round that promotes the seed's
+wall points) and the archived capture tree (`root-self-240` with the closed cuts
+`y₁₅ ≤ 5/4`, `t₁₃ < 147/512` and `t₂ < 183/512`, whose far branches end in
+terminal states), followed by a row-by-row inclusion of the final state in the
+frozen near packet (`Ext/Near.lean`). It was compiled with Lean 4.34.1 and depends
+on `propext`, `Classical.choice` and `Quot.sound` only.
 
-The T07 return supplies occupied-cell seed geometry, role and chart transport,
-physical field conversion, far-row collisions, terminal polygon/triangle checks,
-strict core fits, and conditional near-box/rigidity interfaces. It does not
-supply the complete trace from the genuine occupied seed to the stronger
-archived root and branch states.
+The generated node modules `ElevenSquare/Tasks/T07/Ext/Gen/` are the release unit
+U5 (one `n11-u5-<node>.tar.xz` per node), materialized and checked against
+`integrations/wand125/release/MANIFEST_U5.sha256`. The generator
+`scripts/wand125_u5/` regenerates them byte for byte from the archived capture data.
 
-Remaining work includes the phase 2/root ancestry, both promoted terminal partner
-hulls' actual ownership, all required far-branch eliminations, and final near-row
-inclusion. The returned counterexamples rule out direct promotion from mere
-closed-cell occupancy and a simple rowwise near inclusion. They are obstructions
-to proposed shortcuts, not counterexamples to the optimality theorem.
+The near outer state is checked against a verbatim copy in `Ext/Near.lean`
+(`extNearOuterState`). `Ext/Case438Global.lean` identifies the copy with
+`nearOuterState` by `rfl` and derives `case438_near_certificate'`; that file and
+`role_near_box_to_case438_certificate` inherit the compiler status of the
+`NearStateBridge` and `ConditionalGlobal` import closures.
 
 ## Completed stages to preserve
 
@@ -97,7 +102,7 @@ to proposed shortcuts, not counterexamples to the optimality theorem.
 
 ## Closing the proof
 
-Discharge the two remaining source sites while preserving their semantics, and
+Discharge the remaining source site while preserving its semantics, and
 validate the newly wired baseline and prior paths. Then run the full fresh source
 build and axiom audit. The final `global_lower_bound`,
 `optimal_side_lower_bound`, and `optimality` must have no `sorryAx` or custom

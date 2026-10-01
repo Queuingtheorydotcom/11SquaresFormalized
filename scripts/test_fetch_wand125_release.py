@@ -174,7 +174,7 @@ class ReleaseTests(unittest.TestCase):
 
     def test_all_pinned_unit_plans(self):
         expected = {"F": (59, 2167), "FCOMMON": (1, 139), "U2G": (27, 600),
-                    "U2P": (76, 3380), "U2R": (172, 5078)}
+                    "U2P": (76, 3380), "U2R": (172, 5078), "U5": (11, 3553)}
         for unit, (archives, files) in expected.items():
             with self.subTest(unit=unit):
                 plan = fetch.release_plan(unit)

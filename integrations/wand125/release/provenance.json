@@ -158,5 +158,18 @@
     "scripts/u4/certs.py": "c9ee8b2d1b9ea44ed619f5c4bb2abe98b9aedb079a9ffc566640a4f689decbe4",
     "scripts/u4/core.py": "701a6f4e7f5ff3418d8ce4007eb7f6033f2256be38644d8c9a971314eaf02b44",
     "scripts/u4/gen_lean.py": "2262d21b716050173dc149494e2ed61ef5441b14a50edfeb4d5e7f38b10fea12"
+  },
+  "u5": {
+    "generator": "scripts/wand125_u5/ (gen_all.py states, step, near) of this repository",
+    "source_data": "Queuingtheorydotcom/11SquaresOptimal f9e0de7: evidence/research/candidate-capture/ and evidence/research/phase3/work/phase2/conditional/mask438-{adaptive,seed}.json",
+    "compiler": "leanprover/lean4:v4.34.1",
+    "files": {
+      "MANIFEST_U5.sha256": {
+        "sha256": "d847f85960c826204adb6d7d9fa3962d1471960712c6449108e59bbf0dd25642"
+      },
+      "SHA256SUMS_U5": {
+        "sha256": "6e7134ac089a1f12948be5144e506192f53eef7c1253ab8acfe91434eda5a6eb"
+      }
+    }
   }
 }
