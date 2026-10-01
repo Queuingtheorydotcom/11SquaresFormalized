@@ -25,6 +25,33 @@ audits. Downloading or matching hashes does not establish a Lean proof.
 
 ## Fetching
 
+Restore the generated sources required by a fresh checkout from the repository
+root:
+
+```sh
+python3 scripts/materialize_wand125.py
+```
+
+This command restores F, FCOMMON, U2G, and U2P into the active `Sqpack/` tree.
+U2R belongs to the separate returned-family workstream and is not fetched.
+Rerun the same command to resume an interrupted restoration. Every run validates
+the pinned metadata and checks all existing destination sources before fetching.
+An asset whose Lean sources already match needs neither its archive nor network
+access. Missing assets are verified and installed one at a time, avoiding a
+temporary extraction of an entire multi-gigabyte unit. A differing source or a
+symlink is rejected; local changes are never overwritten.
+
+For an existing local archive collection or a separate destination:
+
+```sh
+python3 scripts/materialize_wand125.py --from-dir /path/to/assets
+python3 scripts/materialize_wand125.py --destination /path/to/checkout --cache-dir /path/to/cache
+```
+
+The destination is the directory containing `Sqpack/`. The default archive cache
+is `.verification/wand125/releases`. F00's `Roots.txt` is checked when its archive
+is needed, but is not required or installed in the active source tree.
+
 From the native repository root, inspect a selection without downloading:
 
 ```sh
@@ -80,6 +107,7 @@ Loader regressions run without Lean or network access:
 
 ```sh
 python3 scripts/test_fetch_wand125_release.py
+python3 scripts/test_materialize_wand125.py
 ```
 
 Only actual completed native compiler results may be published as acceptance

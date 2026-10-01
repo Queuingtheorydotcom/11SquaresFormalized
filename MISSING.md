@@ -1,62 +1,61 @@
 # Remaining proof obligations
 
-Six explicit `sorry` sites remain. The exact files and line numbers are recorded
-in `verification/admissions.json` and checked by `scripts/check_sources.py`.
-They are intentional placeholders, not certified conclusions.
+Two explicit `sorry` sites remain in source. Their exact files and line numbers
+are recorded in `verification/admissions.json` and checked by
+`scripts/check_sources.py`. They are intentional placeholders, not certified
+conclusions. The newly wired baseline and prior families are **compiler-unverified
+pending full dependency replay and axiom audits**. A smaller source admission
+count does not establish verified proof completion.
 
-## 1. Complete the baseline case family
+## 1. Baseline source wiring; replay pending
 
-Three sites under `ElevenSquare/Tasks/T01/Handoff/` remain:
+The baseline dispatcher now uses the published 1,904 field and 27 generic
+exclusions for all 1,931 native baseline indices. Its previously completed
+imported-field branch and native G003/G004/G007 branches remain intact. The
+public `baseline_certificate_exists` and `baseline_excluded` statements are
+unchanged, as are the packing, closed cells, masks, and trace semantics.
 
-- `PlanData.lean:planData`: provide the full finite ancestry and branch plans.
-- `ProgramCalculations.lean:program_calculations`: check cores, walls, coverage,
-  ownership, interval coverage, and exact predecessor links for those plans.
-- `LeafCalculations.lean:leaf_calculations`: prove every terminal leaf closes.
+The three old private plan obligations in `PlanData.lean`,
+`ProgramCalculations.lean`, and `LeafCalculations.lean` were retired as an unused
+alternative construction route. Their files now express the corresponding
+requirements as types and predicates, with no supplied inhabitants. Those
+obligations were **not proved**; the source instead delegates exclusion to the
+independent published family. No completed native proof was deleted.
 
-The reduced inventory covers all 1,931 baseline indices with 71 selected groups.
-Groups G003, G004, and G007 are already integrated into the dispatcher; their
-completed certificates cover 1,132 distinct required cases. The wand125
-integration proves 247 additional baseline exclusions in the original packing
-model, disjoint from those groups. Their combined union covers 1,379 cases,
-leaving 552 outside it. The new coverage theorem passed Lean 4.34.1; validation
-of the full native toolchain upgrade remains pending. Case counts are not an
-estimate of remaining computational effort.
+The native source retains all 188 shared owned-point proofs, uniform wall and
+core lemmas, shared Bernstein sign certificates, finished parts of G005, and
+partial G070 transitions. Its G003/G004/G007 certificates cover 1,132 cases; the
+earlier four-field integration checked 247 additional disjoint cases. These
+historical milestones do not validate the expanded complete-family sources.
+The optional native G005/G070 route still has unfinished links, preserved as
+source progress rather than claimed complete group exclusions.
 
-The return also includes all 188 shared owned-point proofs, uniform wall and core
-lemmas, shared Bernstein sign certificates, finished parts of G005, and partial
-G070 transitions. Conditional transitions do not complete an initialized program.
-In particular, G005's completed cells and G070's terminal certificates cannot be
-used to assert a whole group exclusion before their remaining links are proved.
+## 2. Prior-support source wiring; replay pending
 
-The public `baseline_certificate_exists` and `baseline_excluded` preserve their
-original statements and inherit the three private admissions. Their definitions
-of the packing, closed cells, masks, and trace semantics are unchanged.
+`ElevenSquare/Pending/S06_PriorSupport.lean:prior_certificate_exists` now uses
+all 76 published owned-hull exclusion sources through
+`ElevenSquare/Interop/Wand125/Families/Prior.lean`. Its initialized `VerifiedTrace`
+and `Terminal` contract, including the original baseline-exclusion premise, is
+unchanged. The imported proof does not use that premise, the final symmetry
+bridge, or optimality. Full native compiler and axiom acceptance remains pending.
 
-## 2. Complete the prior-support family
-
-`ElevenSquare/Pending/S06_PriorSupport.lean:prior_certificate_exists` remains
-admitted. It requires an initialized `VerifiedTrace` ending in `Terminal` for
-all 76 prior indices. Its original baseline-exclusion premise is deliberate.
-Early D4 cuts must use that premise, without appealing circularly to the final
-symmetry or optimality result.
-
-Case1000 is proved through archived steps0 and1. The checked continuation
-establishes genuine predecessor/self-cut implications, all 64 closed rows in
-step1, normalized integer coverage, strict ownership promotion, preservation of
-the owner permutation, and transport to the exact archived outer state.
-
-For the straightforward full case1000 chain, nonterminal steps2–11, linkage of
-terminal step12, and the final contradiction still remain. The other cases also
-need their full ancestry, refined intervals, branch coverage, and special
-collision/support mechanisms. Existing conditional terminal-row results are
-useful components, not a complete case exclusion.
+The native case1000 progress through archived steps0 and1 remains preserved.
+That continuation establishes predecessor/self-cut implications, all 64 closed
+rows in step1, normalized integer coverage, strict ownership promotion,
+preservation of the owner permutation, and transport to the archived outer state.
+Its optional archived route still lacks nonterminal steps2–11, linkage of terminal
+step12, and the final contradiction. Those missing native steps were not proved;
+the new source path uses the independent imported owned-hull construction.
 
 ## 3. Complete the returned-exclusion family
 
 `ElevenSquare/Pending/S06_Returned.lean:returned_certificate_exists` remains
-admitted for the 173 returned indices. No completed T03 case-family return was
-among the supplied files. The generic terminal-trace wrapper is present, but it
-still needs actual initialized certificates for every assigned index.
+admitted for the 173 returned indices. The published wand125 release supplies
+individual proof sources for 172 of these indices and lacks case1465. Their
+partial-family integration is a separate collaborator task. T03 progress remains
+preserved on its own branch; this integration does not modify its sources or
+replace that work. The active public theorem still needs accepted certificates
+for all 173 indices.
 
 ## 4. Complete case438 capture into the local rectangle
 
@@ -67,8 +66,9 @@ focused local rectangle at the same physical side length.
 
 This named obligation replaces the old opaque `sorry` body of the public
 `global_lower_bound`. The public theorem now uses the returned, checked
-`global_lower_bound_of_case438_certificate` composition. The three unfinished
-exclusion families remain upstream dependencies of that composition.
+`global_lower_bound_of_case438_certificate` composition. The returned-family
+admission remains an upstream dependency; the newly wired baseline and prior
+families still require full compiler and axiom acceptance.
 
 The T07 return supplies occupied-cell seed geometry, role and chart transport,
 physical field conversion, far-row collisions, terminal polygon/triangle checks,
@@ -97,8 +97,9 @@ to proposed shortcuts, not counterexamples to the optimality theorem.
 
 ## Closing the proof
 
-Discharge the six sites while preserving their semantics, then run the full
-fresh source build and axiom audit. The final `global_lower_bound`,
+Discharge the two remaining source sites while preserving their semantics, and
+validate the newly wired baseline and prior paths. Then run the full fresh source
+build and axiom audit. The final `global_lower_bound`,
 `optimal_side_lower_bound`, and `optimality` must have no `sorryAx` or custom
 computational axiom in their transitive dependency sets. A successful build of
 this admitted snapshot alone does not satisfy that requirement.

@@ -2,12 +2,12 @@ import ElevenSquare.Tasks.T01.Handoff.PlanData
 namespace ElevenSquare.Tasks.T01.Handoff
 open ElevenSquare.Pending
 noncomputable section
-/-- CALCULATION / FINITE-STRUCTURE HOLE. Empty-row/collision witnesses,
-or majority cardinality and distinct owners. Every leaf must close. -/
-theorem leaf_calculations (g : Group) (hselected : ReducedCoverage.Selected g)
-    (k : Fin 2184) (hk : k.val ∈ groupCases g) :
-    (planData g k).LeafChecks (rootData g k) := by
-  sorry
+/-- The terminal-leaf requirement for an optional native plan family: empty rows,
+collisions, or majority witnesses. No inhabitant is asserted. -/
+def LeafCalculations (plans : PlanData) : Prop :=
+  ∀ (g : Group), ReducedCoverage.Selected g →
+    ∀ (k : Fin 2184), k.val ∈ groupCases g →
+      (plans g k).LeafChecks (rootData g k)
 
 end
 end ElevenSquare.Tasks.T01.Handoff

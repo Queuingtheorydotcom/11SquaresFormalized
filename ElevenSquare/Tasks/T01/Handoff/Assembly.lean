@@ -1,15 +1,15 @@
 import ElevenSquare.Tasks.T01.Handoff.RootInitialization
-import ElevenSquare.Tasks.T01.Handoff.ProgramCalculations
-import ElevenSquare.Tasks.T01.Handoff.LeafCalculations
 import ElevenSquare.Tasks.T01.Handoff.ReducedCoverage.Complete
 import ElevenSquare.Tasks.T01.Handoff.Groups.G003.CachedComplete
 import ElevenSquare.Tasks.T01.Handoff.Groups.G007.Complete
 import ElevenSquare.Tasks.T01.Handoff.Groups.G004.Complete
 import ElevenSquare.Interop.Wand125.Certificates
+import ElevenSquare.Interop.Wand125.Families.Baseline
 namespace ElevenSquare.Tasks.T01.Handoff
 open ElevenSquare.Pending
 noncomputable section
-/-- Use completed group certificates, then the remaining private plan obligations. -/
+/-- Preserve completed native groups and use the published baseline family for the rest.
+The new family dependency path still requires full compiler and axiom replay. -/
 theorem all_certificates
     (k : Fin 2184) (hk : k.val ∈ baselineIndices) :
     ∃ a b : PoseState,
@@ -24,10 +24,7 @@ theorem all_certificates
   · exact Groups.G004.certificate k h4
   by_cases h7 : k.val ∈ groupCases (7 : Group)
   · exact Groups.G007.certificate k h7
-  obtain ⟨g, hselected, hg⟩ := ReducedCoverage.inventory_covered k hk
-  exact certificate_of_plan (caseMask k) (rootData g k) (planData g k)
-    (root_initialized g k hg) (program_calculations g hselected k hg)
-    (leaf_calculations g hselected k hg)
+  exact ElevenSquare.Interop.Wand125.baseline_certificate k hk
 
 end
 end ElevenSquare.Tasks.T01.Handoff

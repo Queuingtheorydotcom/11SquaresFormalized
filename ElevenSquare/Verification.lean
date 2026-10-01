@@ -14,9 +14,16 @@ import ElevenSquare
 #print axioms ElevenSquare.Pending.exact_local_packet_exists
 #print axioms ElevenSquare.Pending.construction_locally_isolated
 
--- These targets still depend on the explicit remaining admissions.
+-- Newly wired families: these queries must be clean; full replay is still pending.
 #print axioms ElevenSquare.Pending.baseline_certificate_exists
+#print axioms ElevenSquare.Pending.baseline_excluded
 #print axioms ElevenSquare.Pending.prior_certificate_exists
+#print axioms ElevenSquare.Pending.prior_excluded
+#print axioms SquarePacking.S11Opt.Split.field_excluded
+#print axioms SquarePacking.S11Opt.Split.generic_excluded
+#print axioms SquarePacking.S11Opt.Split.prior_excluded
+
+-- These targets still depend on the explicit remaining admissions.
 #print axioms ElevenSquare.Pending.returned_certificate_exists
 #print axioms ElevenSquare.Pending.global_lower_bound
 #print axioms ElevenSquare.optimal_side_lower_bound

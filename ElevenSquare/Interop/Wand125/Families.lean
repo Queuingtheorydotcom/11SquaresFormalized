@@ -1,4 +1,6 @@
-import ElevenSquare.Interop.Wand125.Certificates
+import ElevenSquare.Interop.Wand125.Cells
+import ElevenSquare.Pending.S06_TupleBounds
+import ElevenSquare.Pending.S05_Trace
 import ElevenSquare.Interop.Wand125.Families.CaseOrder
 import ElevenSquare.Pending.S06_ExclusionPartition
 

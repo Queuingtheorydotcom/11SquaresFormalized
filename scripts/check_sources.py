@@ -9,40 +9,55 @@ import re
 
 ROOT = Path(__file__).resolve().parents[1]
 _IMPORT_CACHE = {}
+_CODE_DELIMITER = re.compile(r'/-|--|"')
+_COMMENT_DELIMITER = re.compile(r'/-|-/')
+_STRING_DELIMITER = re.compile(r'\\[\s\S]?|"')
+_NON_NEWLINES = re.compile(r'[^\n]+')
+
+
+def _blank(text):
+    return _NON_NEWLINES.sub(lambda match: ' ' * (match.end() - match.start()), text)
 
 
 def code_only(text):
     """Blank nested Lean comments and strings while preserving line numbers."""
+    # Search whole code spans in C instead of storing one Python list entry per
+    # character: generated numeric certificate files contain very few delimiters.
     out = []
-    i = depth = 0
-    string = False
-    while i < len(text):
-        if depth:
-            if text.startswith('/-', i):
-                depth += 1; out.extend('  '); i += 2
-            elif text.startswith('-/', i):
-                depth -= 1; out.extend('  '); i += 2
-            else:
-                out.append('\n' if text[i] == '\n' else ' '); i += 1
-        elif string:
-            out.append('\n' if text[i] == '\n' else ' ')
-            if text[i] == '\\' and i + 1 < len(text):
-                out.append(' '); i += 2
-            else:
-                if text[i] == '"': string = False
-                i += 1
-        elif text.startswith('/-', i):
-            depth = 1; out.extend('  '); i += 2
-        elif text.startswith('--', i):
+    i = 0
+    while match := _CODE_DELIMITER.search(text, i):
+        start = match.start()
+        out.append(text[i:start])
+        delimiter = match.group()
+        i = match.end()
+        if delimiter == '--':
             end = text.find('\n', i)
             end = len(text) if end < 0 else end
-            out.extend(' ' * (end - i)); i = end
-        elif text[i] == '"':
-            string = True; out.append(' '); i += 1
+            out.append(' ' * (end - start))
+            i = end
+        elif delimiter == '/-':
+            depth = 1
+            while depth:
+                match = _COMMENT_DELIMITER.search(text, i)
+                if match is None:
+                    raise ValueError('Unterminated comment or string')
+                depth += 1 if match.group() == '/-' else -1
+                i = match.end()
+            out.append(_blank(text[start:i]))
         else:
-            out.append(text[i]); i += 1
-    if depth or string:
-        raise ValueError('Unterminated comment or string')
+            out.append(' ')
+            while True:
+                match = _STRING_DELIMITER.search(text, i)
+                if match is None:
+                    raise ValueError('Unterminated comment or string')
+                out.append(_blank(text[i:match.start()]))
+                # Preserve the old scanner's escape handling, including its
+                # replacement of an escaped newline with a space.
+                out.append(' ' * (match.end() - match.start()))
+                i = match.end()
+                if match.group() == '"':
+                    break
+    out.append(text[i:])
     return ''.join(out)
 
 
@@ -77,12 +92,12 @@ def check(use_cache=False):
         if info.get('sha256') != digest:
             code = code_only(data.decode())
             for word in ['axiom', 'admit', 'native_decide', 'sorryAx']:
-                if re.search(r'\b' + word + r'\b', code):
+                if word in code and re.search(r'\b' + word + r'\b', code):
                     raise ValueError('Forbidden local proof form in ' + rel + ': ' + word)
             info = {'sha256': digest,
                     'imports': re.findall(r'^import\s+(\S+)', code, re.M),
                     'admissions': [code.count('\n', 0, m.start()) + 1
-                                   for m in re.finditer(r'\bsorry\b', code)]}
+                                   for m in re.finditer(r'\bsorry\b', code)] if 'sorry' in code else []}
         _IMPORT_CACHE[p] = info['imports']
         next_cache[rel] = info
         found.extend({'path': rel, 'line': line} for line in info['admissions'])

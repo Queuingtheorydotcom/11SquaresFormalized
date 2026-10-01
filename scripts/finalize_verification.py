@@ -17,13 +17,9 @@ import sys
 
 sys.dont_write_bytecode = True
 from check_sources import ROOT, check, code_only, imports
-from verify_support import audit_axioms, input_digest, priority_order
+from verify_support import (STANDARD_AXIOMS, admitted_targets, public_audit_status,
+                            audit_axioms, input_digest, priority_order)
 
-ALLOWED = {'propext', 'Classical.choice', 'Quot.sound'}
-UNFINISHED = {'ElevenSquare.Pending.' + n for n in [
-    'baseline_certificate_exists', 'prior_certificate_exists',
-    'returned_certificate_exists', 'global_lower_bound']} | {
-    'ElevenSquare.optimality', 'ElevenSquare.optimal_side_lower_bound'}
 OUTPUTS = {'verification/wand125-upgrade.json', 'verification/source-check.json', 'MANIFEST.json'}
 
 
@@ -52,16 +48,17 @@ def collect_audit(root, source_check):
              sorted((root / 'Sqpack').rglob('*.lean')) +
              [root / 'ElevenSquare.lean', root / 'Sqpack.lean'])
     modules = {'.'.join(p.relative_to(root).with_suffix('').parts): p for p in paths}
-    require(result.get('status') == 'PARTIAL_ASSEMBLY_COMPILES',
+    require(result.get('status') in {'PARTIAL_ASSEMBLY_COMPILES', 'OPTIMALITY_PROVED'},
             'No successful full-project verifier result; run scripts/verify.py --all.')
     require(result.get('checked_modules') == len(modules),
             'The verifier result does not cover every current local module.')
+    admissions = json.loads((root / 'verification/admissions.json').read_text())['sites']
+    unfinished = admitted_targets(admissions)
+    admission_count = len(admissions)
     require(source_check.get('status') == 'SOURCE_ASSEMBLY_PASS'
             and source_check.get('local_modules') == len(modules)
-            and source_check.get('explicit_admissions') == 6,
-            'The source check must accept the full tree and exactly six inventoried admissions.')
-    require(result.get('global_optimality_proved') is False,
-            'Unexpected optimality status for this six-admission integration.')
+            and source_check.get('explicit_admissions') == admission_count,
+            'The source check must accept the full tree and exactly the inventoried admissions.')
 
     context = {p: sha(root / p) for p in ['lean-toolchain', 'lakefile.lean', 'lake-manifest.json']}
     toolchain = (root / 'lean-toolchain').read_text().strip()
@@ -99,16 +96,18 @@ def collect_audit(root, source_check):
         log = state / (m + '.log')
         require(log.is_file(), 'Missing compiler log: ' + m)
         if b'#print' in source:
-            axioms.update(audit_axioms(code_only(source.decode()), log.read_text(), ALLOWED, UNFINISHED))
-    require(UNFINISHED <= axioms.keys(), 'Missing final public target axiom queries.')
+            axioms.update(audit_axioms(code_only(source.decode()), log.read_text(), STANDARD_AXIOMS, unfinished))
+    status = public_audit_status(axioms, admission_count)
     require(axioms == result.get('axioms'), 'Verifier result does not match the current axiom logs.')
-    require(any('sorryAx' in axioms[n] for n in UNFINISHED), 'Unexpected admission-free final audit.')
+    require(result.get('status') == status['status']
+            and result.get('global_optimality_proved') is status['global_optimality_proved'],
+            'Verifier proof status does not match the current admission inventory and axiom logs.')
     return {
-        'status': 'PARTIAL_ASSEMBLY_COMPILES',
-        'scope': 'All local ElevenSquare and Sqpack modules; the six original admissions remain.',
+        **status,
+        'scope': f'All local ElevenSquare and Sqpack modules; {admission_count} inventoried admissions remain.',
         'checked_modules': len(modules), 'lean_toolchain': toolchain, 'mathlib_revision': mathlib,
-        'full_upgrade_verified': True, 'global_optimality_proved': False,
-        'explicit_native_admissions': 6, 'new_baseline_cases': 247,
+        'full_upgrade_verified': True,
+        'explicit_native_admissions': admission_count,
         'build_context_sha256': context, 'source_sha256': dict(sorted(source_hashes.items())),
         'axioms': dict(sorted(axioms.items())),
     }
@@ -158,7 +157,9 @@ def main():
             finally:
                 temporary.unlink(missing_ok=True)
         print('Saved ' + ', '.join(payloads) + '.')
-    print(f"Validated {audit['checked_modules']} modules; six admissions remain; global optimality is unfinished.")
+    proof = 'verified' if audit['global_optimality_proved'] else 'unfinished'
+    print(f"Validated {audit['checked_modules']} modules; {audit['explicit_native_admissions']} "
+          f"admissions remain; global optimality is {proof}.")
     if not args.write:
         print('No portable evidence changed. Use --write to publish the audit and source manifest.')
 

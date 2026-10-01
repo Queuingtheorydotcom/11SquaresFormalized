@@ -5,8 +5,15 @@ import json
 import tempfile
 import unittest
 
-from finalize_verification import UNFINISHED, collect_audit, json_bytes, sha
-from verify_support import input_digest
+from finalize_verification import collect_audit, json_bytes, sha
+from verify_support import PUBLIC_TARGETS, admitted_targets, input_digest
+
+
+BASELINE_PATHS = ['ElevenSquare/Tasks/T01/Handoff/' + name + '.lean'
+                  for name in ('LeafCalculations', 'PlanData', 'ProgramCalculations')]
+PRIOR_PATH = 'ElevenSquare/Pending/S06_PriorSupport.lean'
+RETURNED_PATH = 'ElevenSquare/Pending/S06_Returned.lean'
+CAPTURE_PATH = 'ElevenSquare/Tasks/T07/UnfinishedCapture.lean'
 
 
 class FinalizationTests(unittest.TestCase):
@@ -20,16 +27,26 @@ class FinalizationTests(unittest.TestCase):
             'lake-manifest.json': json.dumps({'packages': [{'name': 'mathlib', 'rev': 'pin'}]}),
         }.items():
             (self.root / name).write_text(text)
+        self.make_fixture(BASELINE_PATHS + [PRIOR_PATH, RETURNED_PATH, CAPTURE_PATH])
+
+    def make_fixture(self, admission_paths, *, missing_queries=(), axiom_overrides=None):
+        sites = [{'path': path, 'line': 1} for path in admission_paths]
+        inventory = self.root / 'verification/admissions.json'
+        inventory.parent.mkdir(exist_ok=True)
+        inventory.write_bytes(json_bytes({'sites': sites}))
+        unfinished = admitted_targets(sites)
+        targets = PUBLIC_TARGETS - set(missing_queries)
         self.sources = {
             'ElevenSquare': '-- fixture\n',
             'Sqpack': '-- fixture\n',
             'ElevenSquare.Verification': 'import ElevenSquare\nimport Sqpack\n' +
-                ''.join('#print axioms ' + n + '\n' for n in sorted(UNFINISHED)),
+                ''.join('#print axioms ' + n + '\n' for n in sorted(targets)),
         }
-        self.axioms = {n: ['sorryAx'] for n in sorted(UNFINISHED)}
+        self.axioms = {n: ['sorryAx'] if n in unfinished else ['propext'] for n in sorted(targets)}
+        self.axioms.update(axiom_overrides or {})
         context = {p: sha(self.root / p) for p in ['lean-toolchain', 'lakefile.lean', 'lake-manifest.json']}
         object_hashes = {}; inputs = {}
-        state = self.root / '.verification'; state.mkdir()
+        state = self.root / '.verification'; state.mkdir(exist_ok=True)
         for module, text in self.sources.items():
             source = self.root / (module.replace('.', '/') + '.lean')
             source.parent.mkdir(parents=True, exist_ok=True); source.write_text(text)
@@ -50,12 +67,14 @@ class FinalizationTests(unittest.TestCase):
             (state / (module + '.json')).write_bytes(json_bytes({
                 'status': 'accepted', 'module': module, 'inputs': fingerprint,
                 'object_sha256': object_hashes[module]}))
-            output = ''.join("'" + n + "' depends on axioms: [sorryAx]\n" for n in sorted(UNFINISHED))
+            output = ''.join("'" + n + "' depends on axioms: [" + ', '.join(self.axioms[n]) + "]\n"
+                             for n in sorted(targets))
             (state / (module + '.log')).write_text(output if deps else '')
-        self.result = {'status': 'PARTIAL_ASSEMBLY_COMPILES', 'checked_modules': 3,
-                       'global_optimality_proved': False, 'axioms': self.axioms}
+        self.result = {'status': 'PARTIAL_ASSEMBLY_COMPILES' if sites else 'OPTIMALITY_PROVED',
+                       'checked_modules': 3, 'global_optimality_proved': not sites, 'axioms': self.axioms}
         self.save_result()
-        self.source_check = {'status': 'SOURCE_ASSEMBLY_PASS', 'local_modules': 3, 'explicit_admissions': 6}
+        self.source_check = {'status': 'SOURCE_ASSEMBLY_PASS', 'local_modules': 3,
+                             'explicit_admissions': len(sites)}
 
     def save_result(self):
         (self.root / '.verification/result.json').write_bytes(json_bytes(self.result))
@@ -65,6 +84,74 @@ class FinalizationTests(unittest.TestCase):
         self.assertTrue(audit['full_upgrade_verified'])
         self.assertEqual(audit['checked_modules'], 3)
         self.assertFalse((self.root / 'verification/wand125-upgrade.json').exists())
+
+    def test_five_two_and_zero_admission_states_are_accepted(self):
+        for paths in (BASELINE_PATHS + [RETURNED_PATH, CAPTURE_PATH],
+                      [RETURNED_PATH, CAPTURE_PATH], []):
+            with self.subTest(admissions=len(paths)):
+                self.make_fixture(paths)
+                audit = collect_audit(self.root, self.source_check)
+                self.assertEqual(audit['explicit_native_admissions'], len(paths))
+                self.assertEqual(audit['global_optimality_proved'], not paths)
+                self.assertEqual(audit['status'],
+                                 'PARTIAL_ASSEMBLY_COMPILES' if paths else 'OPTIMALITY_PROVED')
+                self.assertTrue(audit['full_upgrade_verified'])
+
+    def test_selected_only_result_is_rejected_even_with_full_module_count(self):
+        self.result['status'] = 'SELECTED_MODULES_COMPILE'; self.save_result()
+        with self.assertRaisesRegex(ValueError, 'No successful full-project'):
+            collect_audit(self.root, self.source_check)
+
+    def test_inventory_and_source_check_counts_must_match(self):
+        self.make_fixture([RETURNED_PATH, CAPTURE_PATH])
+        self.source_check['explicit_admissions'] = 6
+        with self.assertRaisesRegex(ValueError, 'exactly the inventoried admissions'):
+            collect_audit(self.root, self.source_check)
+
+    def test_unknown_inventoried_path_is_rejected(self):
+        inventory = self.root / 'verification/admissions.json'
+        inventory.write_bytes(json_bytes({'sites': [{'path': 'ElevenSquare/Unexpected.lean', 'line': 1}]}))
+        self.source_check['explicit_admissions'] = 1
+        with self.assertRaisesRegex(ValueError, 'Unknown admission paths'):
+            collect_audit(self.root, self.source_check)
+
+    def test_missing_completed_public_queries_are_rejected(self):
+        for name in ('baseline_certificate_exists', 'prior_certificate_exists'):
+            with self.subTest(query=name):
+                self.make_fixture([RETURNED_PATH, CAPTURE_PATH],
+                                  missing_queries=['ElevenSquare.Pending.' + name])
+                with self.assertRaisesRegex(ValueError, 'Missing final public target axiom queries'):
+                    collect_audit(self.root, self.source_check)
+
+    def test_closed_prior_and_baseline_reject_inherited_admissions(self):
+        cases = [(BASELINE_PATHS + [RETURNED_PATH, CAPTURE_PATH], 'prior_certificate_exists'),
+                 ([RETURNED_PATH, CAPTURE_PATH], 'baseline_certificate_exists')]
+        for paths, name in cases:
+            with self.subTest(query=name):
+                self.make_fixture(paths, axiom_overrides={'ElevenSquare.Pending.' + name: ['sorryAx']})
+                with self.assertRaisesRegex(ValueError, 'Unapproved axioms'):
+                    collect_audit(self.root, self.source_check)
+
+    def test_zero_admissions_cannot_accept_sorry_ax_or_custom_axioms(self):
+        for axiom in ('sorryAx', 'customOracle'):
+            with self.subTest(axiom=axiom):
+                self.make_fixture([], axiom_overrides={'ElevenSquare.optimality': [axiom]})
+                with self.assertRaisesRegex(ValueError, 'Unapproved axioms'):
+                    collect_audit(self.root, self.source_check)
+
+    def test_result_cannot_claim_completion_before_inventory_is_empty(self):
+        self.make_fixture([RETURNED_PATH, CAPTURE_PATH])
+        self.result.update(status='OPTIMALITY_PROVED', global_optimality_proved=True)
+        self.save_result()
+        with self.assertRaisesRegex(ValueError, 'Verifier proof status does not match'):
+            collect_audit(self.root, self.source_check)
+
+    def test_stale_partial_status_is_rejected_after_all_obligations_close(self):
+        self.make_fixture([])
+        self.result.update(status='PARTIAL_ASSEMBLY_COMPILES', global_optimality_proved=False)
+        self.save_result()
+        with self.assertRaisesRegex(ValueError, 'Verifier proof status does not match'):
+            collect_audit(self.root, self.source_check)
 
     def test_partial_result_is_rejected(self):
         self.result['checked_modules'] = 2; self.save_result()

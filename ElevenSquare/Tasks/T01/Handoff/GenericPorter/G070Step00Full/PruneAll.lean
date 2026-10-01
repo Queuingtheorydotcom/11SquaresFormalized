@@ -31,7 +31,7 @@ theorem output_rows_eq_kept_rows
     induction ks with
     | nil => rfl
     | cons k tail ih =>
-      simp only [List.bind_cons, List.map_cons, hkept k,
+      simp only [List.flatMap_cons, List.map_cons, hkept k,
         List.singleton_append, ih]
   exact hbind (List.finRange 32)
 

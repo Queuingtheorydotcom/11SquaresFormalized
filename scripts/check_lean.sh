@@ -10,7 +10,7 @@ for option in "$@"; do
     --setup|--fresh) ;;
     -h|--help)
       printf 'Usage: bash scripts/check_lean.sh [--setup] [--fresh]\n'
-      printf '  --setup  Install pinned Lean and download dependency caches. Requires elan.\n'
+      printf '  --setup  Restore pinned proof sources, Lean, and dependency caches. Requires elan.\n'
       printf '  --fresh  Recheck everything instead of reusing matching successful checks.\n'
       exit 0
       ;;
@@ -37,5 +37,5 @@ if (( statuses[1] != 0 )); then
   exit "${statuses[1]}"
 fi
 printf '\nPASS: all included modules compile and the configured axiom audit passed.\n'
-printf 'The six existing admitted proof obligations remain; this does not prove global optimality.\n'
+printf 'See the axiom result above and MISSING.md for the remaining proof obligations.\n'
 printf 'Log: %s\n' "$log_file"

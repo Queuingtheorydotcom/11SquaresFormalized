@@ -5,6 +5,48 @@ import json
 import re
 
 
+STANDARD_AXIOMS = {'propext', 'Classical.choice', 'Quot.sound'}
+PUBLIC_TARGETS = {'ElevenSquare.Pending.' + name for name in (
+    'baseline_certificate_exists', 'prior_certificate_exists',
+    'returned_certificate_exists', 'global_lower_bound')} | {
+    'ElevenSquare.optimality', 'ElevenSquare.optimal_side_lower_bound'}
+_GLOBAL_TARGETS = {'ElevenSquare.Pending.global_lower_bound',
+                   'ElevenSquare.optimality', 'ElevenSquare.optimal_side_lower_bound'}
+_ADMISSION_TARGETS = {
+    'ElevenSquare/Tasks/T01/Handoff/LeafCalculations.lean':
+        'ElevenSquare.Pending.baseline_certificate_exists',
+    'ElevenSquare/Tasks/T01/Handoff/PlanData.lean':
+        'ElevenSquare.Pending.baseline_certificate_exists',
+    'ElevenSquare/Tasks/T01/Handoff/ProgramCalculations.lean':
+        'ElevenSquare.Pending.baseline_certificate_exists',
+    'ElevenSquare/Pending/S06_PriorSupport.lean':
+        'ElevenSquare.Pending.prior_certificate_exists',
+    'ElevenSquare/Pending/S06_Returned.lean':
+        'ElevenSquare.Pending.returned_certificate_exists',
+    'ElevenSquare/Tasks/T07/UnfinishedCapture.lean': None,
+}
+
+
+def admitted_targets(sites):
+    """Allow inherited sorryAx only for the explicitly inventoried obligations."""
+    paths = {site['path'] for site in sites}
+    unknown = paths - _ADMISSION_TARGETS.keys()
+    if unknown:
+        raise ValueError('Unknown admission paths: ' + ', '.join(sorted(unknown)))
+    targets = {_ADMISSION_TARGETS[path] for path in paths} - {None}
+    return targets | (_GLOBAL_TARGETS if paths else set())
+
+
+def public_audit_status(axioms, admission_count):
+    """Require every public query even after its permission for sorryAx closes."""
+    missing = PUBLIC_TARGETS - axioms.keys()
+    if missing:
+        raise ValueError('Missing final public target axiom queries: ' + ', '.join(sorted(missing)))
+    proved = admission_count == 0 and not any('sorryAx' in values for values in axioms.values())
+    return {'status': 'OPTIMALITY_PROVED' if proved else 'PARTIAL_ASSEMBLY_COMPILES',
+            'global_optimality_proved': proved}
+
+
 def priority_order(dependencies, sizes, final='ElevenSquare.Verification'):
     """Check shared interfaces before independent certificate leaves, serially."""
     users = {m: set() for m in dependencies}

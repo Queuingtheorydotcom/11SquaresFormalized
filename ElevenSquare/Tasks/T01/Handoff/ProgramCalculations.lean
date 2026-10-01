@@ -2,12 +2,12 @@ import ElevenSquare.Tasks.T01.Handoff.PlanData
 namespace ElevenSquare.Tasks.T01.Handoff
 open ElevenSquare.Pending
 noncomputable section
-/-- CALCULATION / FINITE-STRUCTURE HOLE. Exact rational core, wall, Farkas,
-cover and ownership checks; also exact row identities and predecessor links. -/
-theorem program_calculations (g : Group) (hselected : ReducedCoverage.Selected g)
-    (k : Fin 2184) (hk : k.val ∈ groupCases g) :
-    (planData g k).ProgramChecks (rootData g k) := by
-  sorry
+/-- The program-check requirement for an optional native plan family: exact core,
+wall, cover, ownership, row-identity, and predecessor checks. No inhabitant is asserted. -/
+def ProgramCalculations (plans : PlanData) : Prop :=
+  ∀ (g : Group), ReducedCoverage.Selected g →
+    ∀ (k : Fin 2184), k.val ∈ groupCases g →
+      (plans g k).ProgramChecks (rootData g k)
 
 end
 end ElevenSquare.Tasks.T01.Handoff

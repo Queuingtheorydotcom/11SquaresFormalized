@@ -2,29 +2,13 @@
   "status": "PARTIAL_FORMALIZATION",
   "sites": [
     {
-      "path": "ElevenSquare/Pending/S06_PriorSupport.lean",
-      "line": 20
-    },
-    {
       "path": "ElevenSquare/Pending/S06_Returned.lean",
       "line": 16
-    },
-    {
-      "path": "ElevenSquare/Tasks/T01/Handoff/LeafCalculations.lean",
-      "line": 10
-    },
-    {
-      "path": "ElevenSquare/Tasks/T01/Handoff/PlanData.lean",
-      "line": 11
-    },
-    {
-      "path": "ElevenSquare/Tasks/T01/Handoff/ProgramCalculations.lean",
-      "line": 10
     },
     {
       "path": "ElevenSquare/Tasks/T07/UnfinishedCapture.lean",
       "line": 11
     }
   ],
-  "scope": "Six explicit admissions; any theorem depending on them is unfinished."
+  "scope": "Two explicit source admissions remain. Baseline and prior source wiring is compiler-unverified pending full family replay; retired private T01 plan requirements were not proved."
 }

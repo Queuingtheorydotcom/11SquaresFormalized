@@ -2,9 +2,10 @@
 
 This repository assembles the completed foundations and the available partial
 formalizations of the optimal eleven-square packing. **Global optimality is
-still unfinished.** Six explicit `sorry` sites record the remaining obligations.
-A build that accepts those sites checks the surrounding code but does not prove
-the final optimality theorem. See [MISSING.md](MISSING.md).
+still unfinished.** Two explicit `sorry` sites remain in source. The newly wired
+baseline and prior families still require full compiler and axiom validation;
+the smaller source admission count is not a claim of verified proof completion.
+See [MISSING.md](MISSING.md).
 
 The target side length is the exact real number
 
@@ -39,12 +40,16 @@ mathlib revision `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 Keep `lake-manifest.json`; do not update dependencies while reproducing this
 snapshot.
 
-Set up the public dependencies, compile the main dependency chain serially,
-and inspect its target axioms with one command:
+Restore the pinned generated certificate sources, set up the public dependencies,
+then compile the main dependency chain serially and inspect its target axioms:
 
 ```sh
 python3 scripts/verify.py --setup
 ```
+
+`--setup` restores the pinned generated sources before checking imports. To
+restore only those sources, use `python3 scripts/materialize_wand125.py`;
+matching existing files require no download.
 
 For every included source module, including progress outside the main chain:
 
@@ -77,19 +82,36 @@ The normal Lake entry point is also available via `lake build`.
 
 The verifier distinguishes clean milestones, which may use only `propext`,
 `Classical.choice`, and `Quot.sound`, from the explicit unfinished targets.
-Success with the current six admissions is **partial assembly success**, not a
-proof of optimality. Closing those admissions requires a fresh final audit.
+Success with the two remaining source admissions is **partial assembly success**,
+not a proof of optimality. The newly wired baseline and prior paths must also pass
+fresh compiler and axiom checks. Closing the remaining admissions requires a
+fresh final audit.
 
 ## Upstream proof integration
 
-The branch imports wand125's box-tree checker, field certificates 0, 3, 6, and
-19, and owned-hull induction/branching rules. The original packing model is
-connected to the imported model in `ElevenSquare/Interop/Wand125/`. See
-[integration details and validation requirements](integrations/wand125/README.md).
-Lean has checked 247 additional baseline case exclusions and their disjointness
-from the previously completed groups, with only the standard axioms. The focused
-180-module replay passed. **Full-project validation of the Lean upgrade is still
-pending**; see `verification/wand125-integration.json` for the checked scope.
+The source now wires wand125's 1,904 field and 27 generic exclusions into all
+1,931 native baseline indices, and all 76 published prior exclusions into the
+native prior interface. The public packing definitions and theorem statements
+are preserved. **These complete-family dependency paths are compiler-unverified
+until full replay and axiom auditing finish.** See the
+[integration details](integrations/wand125/README.md) and
+[pinned release restoration instructions](integrations/wand125/release/README.md).
+
+The earlier four-field integration checked 247 additional baseline exclusions
+and their disjointness from the completed native groups, with only the standard
+axioms. Its focused 180-module replay is recorded in
+`verification/wand125-integration.json`; that historical result does not certify
+the expanded generated sources or full-project toolchain migration.
+
+The expanded release's representative generic case220 and prior case221 passed
+a 47-module replay, and the conditional family adapters passed a 62-module replay.
+Their clean axiom audits are recorded in `verification/wand125-release-pilots.json`
+and `verification/wand125-family-core.json`. These focused checks do not certify
+the complete families.
+
+Three admitted private T01 plan-construction claims were retired as an unused
+alternative route. Their requirement types and all completed native group proofs
+remain; the abandoned plan obligations were not proved.
 
 ## Assembly provenance
 

@@ -1,10 +1,68 @@
 """Small verifier regressions; uses no Lean process or real build cache."""
 import unittest
 
-from verify_support import audit_axioms, input_digest, priority_order, reusable_inputs
+from verify_support import (PUBLIC_TARGETS, STANDARD_AXIOMS, admitted_targets,
+                            public_audit_status, audit_axioms, input_digest,
+                            priority_order, reusable_inputs)
 
 
 class VerificationSupportTests(unittest.TestCase):
+    def test_admission_permissions_follow_the_remaining_sites(self):
+        baseline = 'ElevenSquare.Pending.baseline_certificate_exists'
+        prior = 'ElevenSquare.Pending.prior_certificate_exists'
+        returned = 'ElevenSquare.Pending.returned_certificate_exists'
+        global_targets = {'ElevenSquare.Pending.global_lower_bound',
+                          'ElevenSquare.optimality', 'ElevenSquare.optimal_side_lower_bound'}
+        baseline_paths = ['ElevenSquare/Tasks/T01/Handoff/' + name + '.lean'
+                          for name in ('LeafCalculations', 'PlanData', 'ProgramCalculations')]
+        prior_path = 'ElevenSquare/Pending/S06_PriorSupport.lean'
+        returned_path = 'ElevenSquare/Pending/S06_Returned.lean'
+        capture_path = 'ElevenSquare/Tasks/T07/UnfinishedCapture.lean'
+        cases = [
+            (baseline_paths + [prior_path, returned_path, capture_path], PUBLIC_TARGETS),
+            (baseline_paths + [returned_path, capture_path], {baseline, returned} | global_targets),
+            ([returned_path, capture_path], {returned} | global_targets),
+            ([prior_path], {prior} | global_targets),
+            ([capture_path], global_targets),
+            ([], set()),
+        ]
+        cases.extend(([path], {baseline} | global_targets) for path in baseline_paths)
+        for paths, expected in cases:
+            with self.subTest(paths=paths):
+                self.assertEqual(admitted_targets([{'path': path, 'line': 1} for path in paths]), expected)
+
+    def test_unknown_admission_does_not_expand_permissions(self):
+        with self.assertRaisesRegex(ValueError, 'Unknown admission paths'):
+            admitted_targets([{'path': 'ElevenSquare/Unexpected.lean', 'line': 1}])
+
+    def test_closed_prior_and_baseline_cannot_inherit_sorry_ax(self):
+        remaining = [{'path': 'ElevenSquare/Pending/S06_Returned.lean', 'line': 1},
+                     {'path': 'ElevenSquare/Tasks/T07/UnfinishedCapture.lean', 'line': 1}]
+        for name in ('baseline_certificate_exists', 'prior_certificate_exists'):
+            target = 'ElevenSquare.Pending.' + name
+            with self.subTest(target=target):
+                with self.assertRaisesRegex(ValueError, 'Unapproved axioms'):
+                    audit_axioms('#print axioms ' + target,
+                                 "'" + target + "' depends on axioms: [sorryAx]\n",
+                                 STANDARD_AXIOMS, admitted_targets(remaining))
+
+    def test_public_queries_stay_required_with_zero_admissions(self):
+        clean = {name: ['propext'] for name in PUBLIC_TARGETS}
+        self.assertEqual(public_audit_status(clean, 0),
+                         {'status': 'OPTIMALITY_PROVED', 'global_optimality_proved': True})
+        self.assertEqual(public_audit_status(clean, 2),
+                         {'status': 'PARTIAL_ASSEMBLY_COMPILES', 'global_optimality_proved': False})
+        for target in PUBLIC_TARGETS:
+            with self.subTest(target=target):
+                with self.assertRaisesRegex(ValueError, 'Missing final public target'):
+                    public_audit_status({name: axioms for name, axioms in clean.items()
+                                         if name != target}, 0)
+
+    def test_inherited_admission_prevents_complete_status(self):
+        axioms = {name: [] for name in PUBLIC_TARGETS}
+        axioms['ElevenSquare.optimality'] = ['sorryAx']
+        self.assertFalse(public_audit_status(axioms, 0)['global_optimality_proved'])
+
     def test_shared_interfaces_first_and_audit_last(self):
         deps = {'Data': [], 'Shared': [], 'A': ['Shared'], 'B': ['Shared'],
                 'Leaf': ['Data'], 'ElevenSquare.Verification': ['A', 'Leaf']}

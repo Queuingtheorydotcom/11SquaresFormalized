@@ -12,17 +12,26 @@ import sys
 sys.dont_write_bytecode = True
 import time
 from check_sources import ROOT, check, code_only, imports
-from verify_support import priority_order, input_digest, reusable_inputs, audit_axioms
+from verify_support import (STANDARD_AXIOMS, admitted_targets, public_audit_status,
+                            priority_order, input_digest, reusable_inputs, audit_axioms)
 
 ap = argparse.ArgumentParser(description=__doc__)
-ap.add_argument('--setup', action='store_true', help='Install the pinned public toolchain and dependency cache.')
+ap.add_argument('--setup', action='store_true', help='Restore pinned generated sources, toolchain, and dependency cache.')
 ap.add_argument('--all', action='store_true', help='Check every included local source module.')
 ap.add_argument('--keep-going', action='store_true', help='Continue independent modules after a failure; never accepts an incomplete build.')
 ap.add_argument('--fresh', action='store_true', help='Ignore this checkout\'s matching accepted receipts.')
 ap.add_argument('--plan', action='store_true', help='Print dependency order without installing or compiling.')
 ap.add_argument('--module', action='append', default=[], help='Check only this module and its dependencies (repeatable).')
 args = ap.parse_args()
+if args.setup and not args.plan:
+    from materialize_wand125 import materialize
+    materialize()
 print(json.dumps(check(use_cache=not args.fresh)), flush=True)
+admissions = json.loads((ROOT / 'verification/admissions.json').read_text())['sites']
+try:
+    unfinished = admitted_targets(admissions)
+except ValueError as error:
+    raise SystemExit(str(error)) from error
 files = sorted((ROOT / 'ElevenSquare').rglob('*.lean')) + sorted((ROOT / 'Sqpack').rglob('*.lean')) + [ROOT / 'ElevenSquare.lean', ROOT / 'Sqpack.lean']
 modules = {'.'.join(p.relative_to(ROOT).with_suffix('').parts): p for p in files}
 order = []; done = set()
@@ -172,18 +181,13 @@ if failed or blocked:
     print(f'Incomplete build: {len(failed)} failed, {len(blocked)} blocked, {accepted} accepted.', flush=True)
     raise SystemExit(1)
 
-unfinished = {'ElevenSquare.Pending.'+n for n in ['baseline_certificate_exists','prior_certificate_exists',
-              'returned_certificate_exists','global_lower_bound']} | {'ElevenSquare.optimality',
-              'ElevenSquare.optimal_side_lower_bound'}
-allowed = {'propext','Classical.choice','Quot.sound'}
-
 def audit(module):
     source = modules[module].read_text()
     if '#print' not in source:
         return {}
     try:
         return audit_axioms(code_only(source),
-                            (state / (module + '.log')).read_text(), allowed, unfinished)
+                            (state / (module + '.log')).read_text(), STANDARD_AXIOMS, unfinished)
     except ValueError as error:
         raise SystemExit(module + ': ' + str(error)) from error
 
@@ -198,11 +202,15 @@ if args.module:
     print(json.dumps(result, indent=2))
     raise SystemExit(0)
 
-seen = axioms
-queries = list(seen)
-result = {'status':'PARTIAL_ASSEMBLY_COMPILES', 'checked_modules':accepted,
-          'axioms':{n:sorted(seen[n]) for n in queries},
-          'global_optimality_proved':not any('sorryAx' in seen[n] for n in unfinished)}
+try:
+    status = public_audit_status(axioms, len(admissions))
+except ValueError as error:
+    raise SystemExit(str(error)) from error
+result = dict(status, checked_modules=accepted,
+              axioms={n: sorted(values) for n, values in axioms.items()})
 (state / 'result.json').write_text(json.dumps(result,indent=2)+'\n')
 print(json.dumps(result,indent=2))
-print('Partial assembly accepted. See MISSING.md for the remaining proof obligations.')
+if result['global_optimality_proved']:
+    print('Global optimality verified with no inventoried admissions and clean public axiom audits.')
+else:
+    print('Partial assembly accepted. See MISSING.md for the remaining proof obligations.')

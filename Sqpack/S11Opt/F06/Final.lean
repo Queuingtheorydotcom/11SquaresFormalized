@@ -96,7 +96,7 @@ lemma pos_nodup : pos.Nodup := by decide
 
 /-- The certificate applies to the case `J`: `J` contains the owners, and the positive cells
 of `J` exceed the total weight. -/
-def applicable (J : List ℕ) : Bool :=
+noncomputable def applicable (J : List ℕ) : Bool :=
   supp.all (· ∈ J) &&
     decide ((∑ a ∈ Finset.range atoms.length, wts.getD a 0) <
       ((pos.filter (· ∈ J)).map (gam.getD · 0)).sum)

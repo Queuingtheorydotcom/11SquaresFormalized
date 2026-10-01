@@ -3,12 +3,10 @@ import ElevenSquare.Tasks.T01.Handoff.ReducedCoverage.Data
 namespace ElevenSquare.Tasks.T01.Handoff
 open ElevenSquare.Pending
 noncomputable section
-/-- DATA PORTING HOLE. Export the full finite ancestry/branch program.
-Every terminal, interval, predecessor, and closed branch must be present for
-the 71 selected groups. ReducedCoverage.inventory_covered proves that these
-groups still cover all 1,931 original baseline cases. -/
-def planData (g : Group) (k : Fin 2184) : Plan := by
-  sorry
+/-- Optional native ancestry/branch-program data for the selected groups.
+The baseline dispatcher now uses the published exclusion family instead.
+This type retains the retired route's data requirement; no data is asserted. -/
+abbrev PlanData := Group → Fin 2184 → Plan
 
 end
 end ElevenSquare.Tasks.T01.Handoff
