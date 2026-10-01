@@ -1,0 +1,10 @@
+{
+  "id": "T03_compact_full_trace",
+  "modules": [
+    "ElevenSquare.Tasks.T03.Wand125.Upstream.S11Opt.Basic"
+  ],
+  "axiom_targets": [
+    "SquarePacking.S11Opt.peQ_pos_of_hIv",
+    "SquarePacking.S11Opt.disjoint_of_dir"
+  ]
+}

@@ -8,6 +8,16 @@ the final optimality theorem. See [MISSING.md](MISSING.md).
 
 At the latest checkpoint, **159/173** full case certificates have independently
 accepted exact target audits and published complete source closures; **14 remain**.
+The reused S11 basic lemmas and the original packing bridge now also pass
+the original pinned checker: `SquarePacking.S11Opt.peQ_pos_of_hIv`,
+`SquarePacking.S11Opt.disjoint_of_dir` and
+`ElevenSquare.Pending.T03.Wand125.packing_to_packs` report only the three
+standard axioms. The [S11 audit](verification/t03-wand125-pinned-s11-basic-audit-checkpoint-20261001.json),
+[geometry audit](verification/t03-wand125-pinned-original-geometry-audit-checkpoint-20261001.json)
+and [small standalone source snapshot](verification/source-checkpoints/wand125-pinned-shared-core-20261001)
+publish their exact accepted versions and checker evidence. No imported case
+is accepted; the full-case count remains **159/173**.
+
 Shared-core compatibility now has actual **Lean 4.10.0-rc2** audits: the
 original checker accepted `SquarePacking.sq_subset_box_iff`, `lemmaG_box`,
 `mem_sq_scale_iff` and `mem_sqInt_scale_iff`, each using only `propext`,

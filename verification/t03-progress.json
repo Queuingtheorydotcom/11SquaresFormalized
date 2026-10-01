@@ -1848,6 +1848,23 @@
       "packing_manifest": "verification/t03-wand125-pinned-packing-audit-checkpoint-20261001.json",
       "exclusion_checker_and_original_contract_transport_pending": true,
       "imported_case_acceptances_added": 0
+    },
+    "s11_and_original_geometry_pinned_audits": {
+      "accepted_local_full_case_count_unchanged": 159,
+      "remaining": 14,
+      "actual_new_shared_targets_accepted": 3,
+      "s11_audit_seconds": 29.85,
+      "original_geometry_audit_seconds": 29.69,
+      "s11_manifest": "verification/t03-wand125-pinned-s11-basic-audit-checkpoint-20261001.json",
+      "original_geometry_manifest": "verification/t03-wand125-pinned-original-geometry-audit-checkpoint-20261001.json",
+      "source_checkpoint": "verification/source-checkpoints/wand125-pinned-shared-core-20261001",
+      "exact_source_modules": 8,
+      "exact_source_bytes": 123431,
+      "imported_case_acceptances_added": 0,
+      "exclusion_checker_and_original_contract_case_transport_pending": true,
+      "full_merged_Lean_replay": false,
+      "new_release_assets": 0,
+      "Lean_jobs_or_worker_controls_for_publication": 0
     }
   },
   "operational_case1464_checkpoint": {
@@ -2114,6 +2131,23 @@
     "case1465_last_observed_groups": 134,
     "case1465_total_groups": 253,
     "case1465_full_case_audit_pending": true,
+    "new_release_assets": 0,
+    "Lean_jobs_or_worker_controls_for_publication": 0
+  },
+  "latest_pinned_original_geometry_checkpoint": {
+    "accepted_local_full_case_count_unchanged": 159,
+    "remaining": 14,
+    "actual_new_shared_targets_accepted": 3,
+    "s11_audit_seconds": 29.85,
+    "original_geometry_audit_seconds": 29.69,
+    "s11_manifest": "verification/t03-wand125-pinned-s11-basic-audit-checkpoint-20261001.json",
+    "original_geometry_manifest": "verification/t03-wand125-pinned-original-geometry-audit-checkpoint-20261001.json",
+    "source_checkpoint": "verification/source-checkpoints/wand125-pinned-shared-core-20261001",
+    "exact_source_modules": 8,
+    "exact_source_bytes": 123431,
+    "imported_case_acceptances_added": 0,
+    "exclusion_checker_and_original_contract_case_transport_pending": true,
+    "full_merged_Lean_replay": false,
     "new_release_assets": 0,
     "Lean_jobs_or_worker_controls_for_publication": 0
   }

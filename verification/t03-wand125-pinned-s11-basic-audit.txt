@@ -1,0 +1,2 @@
+'SquarePacking.S11Opt.peQ_pos_of_hIv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SquarePacking.S11Opt.disjoint_of_dir' depends on axioms: [propext, Classical.choice, Quot.sound]

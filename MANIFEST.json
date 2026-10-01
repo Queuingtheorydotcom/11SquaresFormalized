@@ -42828,18 +42828,18 @@
     },
     {
       "path": "MISSING.md",
-      "bytes": 6729,
-      "sha256": "a554fa1929301f1eb00564860a96b9ab5177025465bb4f0ca41667eac81934b8"
+      "bytes": 6925,
+      "sha256": "13ba4975bc80da2e2b74a44ddad6ffeb7e5f40f48ec2539bba76b06357bacba7"
     },
     {
       "path": "README.md",
-      "bytes": 12736,
-      "sha256": "0e0e49f11036a9fc5a517a46507adf22b1a2f2970f2131993ee95751a094ef02"
+      "bytes": 13442,
+      "sha256": "9da17529359388667ac2e57a5abc22fef0a777b5981968d4b9b7a054ec86a178"
     },
     {
       "path": "T03_PROGRESS.md",
-      "bytes": 72459,
-      "sha256": "1d193c97d1307d4da52b9faafdf9bb737b1c8866e814d7532a6fdb8b64591dab"
+      "bytes": 74365,
+      "sha256": "9fe81ba2a1f68b65fb8ccc94e2bf5f091ab93222072669401b83d64f376561cf"
     },
     {
       "path": "lake-manifest.json",
@@ -43098,13 +43098,108 @@
     },
     {
       "path": "verification/privacy-review.json",
-      "bytes": 13239,
-      "sha256": "1f157e50d4da93146c9d7e2d92c9ce1ed89b7dd231dac7517c29ab9aa3e424cc"
+      "bytes": 13923,
+      "sha256": "03448bf7ceee5a65cbb460aa96fd2e1a35428b848ab6b773f003d28c96b180b1"
     },
     {
       "path": "verification/source-check.json",
       "bytes": 129,
       "sha256": "c8896e5b634fe0f8955953e2ad17250083dd93749c5be417332f975f2dd8dd98"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-shared-core-20261001/README.md",
+      "bytes": 2383,
+      "sha256": "da39cc0d299cb794781eef4a227acaeca71ed1d60c036e3c36e309dd7f556026"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-shared-core-20261001/SOURCE_BINDINGS.json",
+      "bytes": 10619,
+      "sha256": "b0acfcb041b96966e14a70a1a753ddb4d1e02f175c2c60d7cdbac2a60e1d6cb3"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-shared-core-20261001/library-case1849-node993-wand125-original-geometry-compatibility-retry02-task.json",
+      "bytes": 185,
+      "sha256": "f17425176da7f84a7aaeeca38b7fbaf544ad111b4f302014d84f8a369e8d185e"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-shared-core-20261001/library-case1849-node993-wand125-s11-basic-compatibility-retry01-task.json",
+      "bytes": 228,
+      "sha256": "0393a82fbfe5a136142b316de3018fab7a029e1bdd8689a061ccbc1e7690b8ea"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-shared-core-20261001/project/ElevenSquare/Geometry.lean",
+      "bytes": 1591,
+      "sha256": "fa8ff2c666453b56f04b22c164ef063cbd46dc85fb4afd7ed6fbb01b7c4f641a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-shared-core-20261001/project/ElevenSquare/Tasks/T03/KernelBoolRefl.lean",
+      "bytes": 429,
+      "sha256": "90111f1782484d93843ab7e8ec6789744ebf90afdd8deb6fa2d3ddf3880513ce"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-shared-core-20261001/project/ElevenSquare/Tasks/T03/Wand125/Geometry.lean",
+      "bytes": 4156,
+      "sha256": "b5c27bb04dbdca12eae03a0219c46cbf43252c45edb5f90d46cb7d7405dbf331"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-shared-core-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/Basic.lean",
+      "bytes": 29484,
+      "sha256": "be7fd52c9a48cb26692c7d2de2c1fd825255661f05008637ce229d2fb510a268"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-shared-core-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/Chord.lean",
+      "bytes": 15640,
+      "sha256": "05c6541ed26be6e78d9b8fef40c6f3d51e0cb8b18e05e8ab2616d5d7edeb63e0"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-shared-core-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/Packing.lean",
+      "bytes": 7058,
+      "sha256": "236404e223ba728de2808bbaef290f343639e8b3d5ea0c5347e45737dc2c8b8a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-shared-core-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Basic.lean",
+      "bytes": 9942,
+      "sha256": "e1a2363ca978e32b7264e8b42489d244f804314c652beea36c8db72b280a052b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-shared-core-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/ZeroMargin.lean",
+      "bytes": 55131,
+      "sha256": "00ac49186e97f21d10099c2355b039466b83acfe577624d79fe63a0bd2a77e75"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-shared-core-20261001/project/lake-manifest.json",
+      "bytes": 2763,
+      "sha256": "383259bb05fd384346e806086f1e041383dbf3898db2a6bc9bd0b91966f149ae"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-shared-core-20261001/project/lakefile.lean",
+      "bytes": 267,
+      "sha256": "dce4d550c15bb4cd272b68a1b5bbd7fbf947a2f02ddde5593b50d674891cc88c"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-shared-core-20261001/project/lean-toolchain",
+      "bytes": 29,
+      "sha256": "35100b5b8f5426dfa942d43e8f4995c6ffeccef24ac467df1fd477ce96a66747"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-shared-core-20261001/project/scripts/check_handoff.py",
+      "bytes": 3818,
+      "sha256": "989c66964d906ddd77a058f6812c7078709bee838b625906e7ce652656ae35b1"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-shared-core-20261001/project/scripts/lake.sh",
+      "bytes": 570,
+      "sha256": "b886afc9290fd60e95aa544ae63194865a5dca6566c17fe1059a2c8acd014080"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-shared-core-20261001/project/scripts/lean_small_check.py",
+      "bytes": 3895,
+      "sha256": "a9face3b56662d5f9fae52935d94916d3d01b2d530b849dffa87ad3aebc1ce1d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-shared-core-20261001/project/verification/LOW_RESOURCE_MODE.json",
+      "bytes": 423,
+      "sha256": "03efc98c1295f15349e88577428916212ffe91eb238e02c75f51a5c405a655f4"
     },
     {
       "path": "verification/source-inventory.json",
@@ -43413,8 +43508,8 @@
     },
     {
       "path": "verification/t03-progress.json",
-      "bytes": 71759,
-      "sha256": "bedbbb46cb0c91df2705aa40c6f66e06f50bfe855a4dabd197053729320f23f1"
+      "bytes": 73522,
+      "sha256": "6a20b62389d2162b10b40355d55e43b97a38df384b8264bde1d0a84fe683851c"
     },
     {
       "path": "verification/t03-ready-archive-prefilter-checkpoint-20261001.json",
@@ -43462,6 +43557,21 @@
       "sha256": "5b48a47efa82dea2b8f9254bddab487cda48f54fc9bb0c3be2014195ec282b18"
     },
     {
+      "path": "verification/t03-wand125-pinned-original-geometry-audit-CHECK.json",
+      "bytes": 446,
+      "sha256": "e0135f969d2eb3b7289959f619cac33047c4e42c173ca42ac624188a9ea4cef9"
+    },
+    {
+      "path": "verification/t03-wand125-pinned-original-geometry-audit-checkpoint-20261001.json",
+      "bytes": 5798,
+      "sha256": "e21d6c3c169523dc14c707fd47f5a9e01574cb36caf63eeef82598fb3f8266c2"
+    },
+    {
+      "path": "verification/t03-wand125-pinned-original-geometry-audit.txt",
+      "bytes": 111,
+      "sha256": "81c888d0a344fae9973f18fba95aee54fcc9e4d1e8926a4d9df894e819819e2d"
+    },
+    {
       "path": "verification/t03-wand125-pinned-packing-audit-CHECK.json",
       "bytes": 446,
       "sha256": "936645195dcb3115a69bd199451bdf30a3f19fb3917c4e7c5ed4e41e4927fc55"
@@ -43475,6 +43585,21 @@
       "path": "verification/t03-wand125-pinned-packing-audit.txt",
       "bytes": 187,
       "sha256": "3526cb2660af8c52532b75cdec6b7270eb93e3857022e90682c19b2dd69b51d2"
+    },
+    {
+      "path": "verification/t03-wand125-pinned-s11-basic-audit-CHECK.json",
+      "bytes": 446,
+      "sha256": "4c2e5771cc7b34453afdc74ec38481ff1ededf01a1727fe9bdae299d798d586b"
+    },
+    {
+      "path": "verification/t03-wand125-pinned-s11-basic-audit-checkpoint-20261001.json",
+      "bytes": 5978,
+      "sha256": "d08974f88f6006cf2c7c703c4aac1f642a5371373d398a425f398cc6aa0093d0"
+    },
+    {
+      "path": "verification/t03-wand125-pinned-s11-basic-audit.txt",
+      "bytes": 195,
+      "sha256": "62923f933a8256e35155df8481527056840c088b19e98f8cb43b0887e76e87c1"
     },
     {
       "path": "verification/t03-wand125-source-release-availability-20261001.json",

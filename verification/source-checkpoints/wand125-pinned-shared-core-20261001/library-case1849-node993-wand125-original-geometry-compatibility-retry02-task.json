@@ -1,0 +1,9 @@
+{
+  "id": "T03_compact_full_trace",
+  "modules": [
+    "ElevenSquare.Tasks.T03.Wand125.Geometry"
+  ],
+  "axiom_targets": [
+    "ElevenSquare.Pending.T03.Wand125.packing_to_packs"
+  ]
+}

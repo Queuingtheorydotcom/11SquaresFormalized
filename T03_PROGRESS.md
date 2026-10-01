@@ -6,6 +6,38 @@ repository, and global optimality remains unfinished. This branch supplies
 checked common tools and the complete source closure of one audited certificate,
 case2135. It does not discharge the full-family obligation.
 
+## S11 reusable core and original packing bridge are audited
+
+The original Lean 4.10.0-rc2 checker accepted two more shared-core checkpoints:
+
+| Actual target audits | Audit seconds |
+| --- | ---: |
+| `SquarePacking.S11Opt.peQ_pos_of_hIv`, `SquarePacking.S11Opt.disjoint_of_dir` | 29.85 |
+| `ElevenSquare.Pending.T03.Wand125.packing_to_packs` | 29.69 |
+
+All three targets use only `propext`, `Classical.choice` and `Quot.sound`.
+The [S11 record](verification/t03-wand125-pinned-s11-basic-audit-checkpoint-20261001.json)
+and [geometry record](verification/t03-wand125-pinned-original-geometry-audit-checkpoint-20261001.json)
+contain the exact accepted source, closure, object and receipt bindings, with
+byte-identical actual audit/CHECK sidecars. Publication checked every immutable
+transport member, recomputed each recorded source closure and verified the real
+wrapper/execution/audit bytes. The root coordinator independently checked the
+genuine compiled objects and receipts; publication did not rebuild them.
+
+The [standalone source snapshot](verification/source-checkpoints/wand125-pinned-shared-core-20261001)
+contains all eight reachable Lean modules, the exact proof adapter, pinned Lake
+environment, supplied checker scripts and both unchanged task files. Its source
+hashes match the accepted transports. This preserves the original geometry and
+adapted core separately from the repository's stronger merged sources. Only
+private handoff metadata is omitted and the resource profile is neutralized.
+There are no new source archive or release assets and no fresh merged replay.
+
+These are reusable-core and packing-bridge audits, **not imported case
+certificates**. The exclusion checker, original-contract case transport, public
+family targets and final return remain pending. Count stays **159/173**, with
+14 remaining; no workers, queues or canonical sources were changed for this
+publication.
+
 ## Shared core passes the original pinned compiler
 
 The original supplied checker on **Lean 4.10.0-rc2** actually audited:
