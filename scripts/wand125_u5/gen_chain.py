@@ -196,6 +196,9 @@ class Chain:
                         break
                 else:
                     raise AssertionError('promoted point outside the hull')
+            # only the kernel points the combinations use need checking in Lean
+            used = {p for _, ws in combs for p, _ in ws}
+            kern = [p for p in kern if p in used]
             promo = dict(kern=kern, prs=prs, combs=combs, vs=vs)
         print(f"{self.name} step {k}: owner {i} rows {len(self.rows[i])} -> {len(rs_new)}, "
               f"partners { {j: len(t) for j, t in pcov.items()} }, leaves {stats}", file=sys.stderr)
