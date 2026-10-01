@@ -49,8 +49,10 @@ async function inventory(github, context) {
   const params = {owner: context.repo.owner, repo: context.repo.repo};
   const repository = await github.request('GET /repos/{owner}/{repo}', params);
   if (repository.data.private !== false) throw new Error('Public repositories only');
+  // Octokit normalizes each collection page to response.data as an array;
+  // paginate already flattens those arrays, including empty collections.
   const caches = await github.paginate('GET /repos/{owner}/{repo}/actions/caches',
-    {...params, per_page: 100}, response => response.data.actions_caches);
+    {...params, per_page: 100});
   const response = await github.request('GET /repos/{owner}/{repo}/actions/cache/usage', params);
   return policy(caches, response.data.active_caches_size_in_bytes, context.ref);
 }

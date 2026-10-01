@@ -28,13 +28,18 @@ const {main, generation} = require('./ci_cache.cjs');
     const entry = item(0, 100);
     entry.key = entry.key.replace('1'.repeat(64), generation());
     const events = [];
+    let cachePages = [[]], reportedUsage = 0;
     const api = {
       context: {repo: {owner:'test',repo:'public'}, ref, runId:456},
       core: {info() {}, warning() {}},
       github: {
-        async paginate() { return [entry]; },
+        // Match Octokit's normalized page shape, including its optional mapper.
+        // The old actions_caches mapper produces undefined for these pages.
+        async paginate(route, params, mapper) {
+          return cachePages.flatMap(data => mapper ? mapper({data}) : data);
+        },
         async request(route) {
-          if (route.endsWith('/actions/cache/usage')) return {data:{active_caches_size_in_bytes:100}};
+          if (route.endsWith('/actions/cache/usage')) return {data:{active_caches_size_in_bytes:reportedUsage}};
           if (route.startsWith('DELETE ')) { events.push('delete'); return {}; }
           return {data:{private:false}};
         }
@@ -44,6 +49,10 @@ const {main, generation} = require('./ci_cache.cjs');
         async saveCache() { events.push('save'); return 99; }
       }
     };
+    await main(api, 'guard'); // Empty normalized collection, as in the first CI run.
+    cachePages = [[], [entry]]; reportedUsage = 100;
+    await main(api, 'guard'); // Flatten all normalized pages, including empty ones.
+    console.log('2 normalized pagination regressions passed');
     fs.writeFileSync('.verification/ci-cache/shard-00.tar.gz','checkpoint');
     await assert.rejects(() => main(api, 'save', 0), /unrestored/);
     assert.deepEqual(events, []);
