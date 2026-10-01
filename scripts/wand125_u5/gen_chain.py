@@ -228,11 +228,12 @@ class Chain:
     def emit(self, k, i, rs_new, pcov, certs, promo, out):
         base = f"{NS}.{self.name}"
         prev = f"{base}.S{k - 1}.next" if k else f"{base}.st0"
-        prev_mod = f"{NS}.Gen.{self.name}.S{k - 1}" if k else f"{NS}.Gen.{self.name}.Init"
+        prev_mod = f"{NS}.Gen.{self.name}.S{k - 1}D" if k else f"{NS}.Gen.{self.name}.Init"
         sn = f"{base}.S{k}"
-        D = [f"import ElevenSquare.Tasks.T07.Ext.Promote\nimport {prev_mod.replace(NS, 'ElevenSquare.Tasks.T07.Ext')}\n",
-             f"namespace {sn}", HDR,
-             f"abbrev prev : PoseState := {prev}\n",
+        mod = f"ElevenSquare.Tasks.T07.Ext.Gen.{self.name}"
+        # S<k>C holds the certificate data and does not depend on the earlier steps;
+        # S<k>D defines the states (prev, mid, next) and imports only S<k-1>D.
+        D = ["import ElevenSquare.Tasks.T07.Ext.Promote\n", f"namespace {sn}", HDR,
              f"def rs : List PoseRow := {lst(row_lean(r) for r in rs_new)}\n"]
         for j, tab in pcov.items():
             D.append(f"def pc{j} : List (List PartnerPiece) := " + lst(
@@ -248,7 +249,9 @@ class Chain:
                 f"{lst(zp(v) for v in u['ccore'])}, {regs_lean(u['regs'])},\n  {tree_lean(u['tree'])}⟩"
                 for u in subs) + "\n")
         D.append(f"def certs : List (List Sub) := {lst(f'cert{m}' for m in range(len(certs)))}\n")
-        D.append(f"def mid : PoseState := replaceRows prev {i} rs\n")
+        M = [f"import {mod}.S{k}C\nimport {prev_mod.replace(NS, 'ElevenSquare.Tasks.T07.Ext')}\n",
+             f"namespace {sn}", HDR, f"abbrev prev : PoseState := {prev}\n",
+             f"def mid : PoseState := replaceRows prev {i} rs\n"]
         if promo:
             D.append(f"def kern : List QPoint := {lst(qp(p) for p in promo['kern'])}\n")
             D.append("def prs : List PRow := " + lst(
@@ -256,14 +259,15 @@ class Chain:
                 f"{lst(lst(q(x) for x in mu) for mu in pr['mus'])}⟩" for pr in promo['prs']) + "\n")
             D.append("def combs : List Comb := " + lst(
                 f"⟨{qp(v)}, {lst(f'({qp(p)}, {q(w)})' for p, w in ws)}⟩" for v, ws in promo['combs']) + "\n")
-            D.append(f"def next : PoseState := replaceHull mid {i} (combs.map Comb.v)\n")
+            M.append(f"def next : PoseState := replaceHull mid {i} (combs.map Comb.v)\n")
         else:
-            D.append("def next : PoseState := mid\n")
+            M.append("def next : PoseState := mid\n")
         D.append(f"end {sn}\n")
+        M.append(f"end {sn}\n")
         d = os.path.join(out, self.name)
         os.makedirs(d, exist_ok=True)
-        open(os.path.join(d, f"S{k}D.lean"), "w").write("\n".join(D))
-        mod = f"ElevenSquare.Tasks.T07.Ext.Gen.{self.name}"
+        open(os.path.join(d, f"S{k}C.lean"), "w").write("\n".join(D))
+        open(os.path.join(d, f"S{k}D.lean"), "w").write("\n".join(M))
         # partner covers
         P = [f"import {mod}.S{k}D\n", f"namespace {sn}", HDR]
         for j in pcov:
@@ -311,13 +315,15 @@ class Chain:
     def emit_skip(self, k, out):
         base = f"{NS}.{self.name}"
         prev = f"{base}.S{k - 1}.next" if k else f"{base}.st0"
-        prev_mod = f"{NS}.Gen.{self.name}.S{k - 1}" if k else f"{NS}.Gen.{self.name}.Init"
-        S = [f"import ElevenSquare.Tasks.T07.Ext.Promote\nimport {prev_mod.replace(NS, 'ElevenSquare.Tasks.T07.Ext')}\n",
+        prev_mod = f"{NS}.Gen.{self.name}.S{k - 1}D" if k else f"{NS}.Gen.{self.name}.Init"
+        M = [f"import ElevenSquare.Tasks.T07.Ext.Promote\nimport {prev_mod.replace(NS, 'ElevenSquare.Tasks.T07.Ext')}\n",
              f"namespace {base}.S{k}", HDR, f"abbrev prev : PoseState := {prev}\n",
-             "def next : PoseState := prev\n", "theorem trace : ExtTrace prev next := ExtTrace.refl _\n",
-             f"end {base}.S{k}\n"]
+             "def next : PoseState := prev\n", f"end {base}.S{k}\n"]
+        S = [f"import ElevenSquare.Tasks.T07.Ext.Gen.{self.name}.S{k}D\n", f"namespace {base}.S{k}", HDR,
+             "theorem trace : ExtTrace prev next := ExtTrace.refl _\n", f"end {base}.S{k}\n"]
         d = os.path.join(out, self.name)
         os.makedirs(d, exist_ok=True)
+        open(os.path.join(d, f"S{k}D.lean"), "w").write("\n".join(M))
         open(os.path.join(d, f"S{k}.lean"), "w").write("\n".join(S))
 
     def emit_init(self, out):

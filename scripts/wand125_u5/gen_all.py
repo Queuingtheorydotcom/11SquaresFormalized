@@ -108,6 +108,7 @@ def states(jdir, work, out):
     n, _ = replay(ch, node, "P2", work, jobs)
     final_file(out, "P2", n, None)
     finals = {"P2": (ch.rows, ch.refs, ch.owned)}
+    steps_of = {"P2": n}
     # the capture tree
     for name, fn, parent, cut in TREE:
         node = json.load(open(os.path.join(jdir, fn)))
@@ -118,26 +119,30 @@ def states(jdir, work, out):
             assert all(prefs[o] == refs[o] for o in range(11)), 'phase-2 references differ'
             assert all(set(powned[o]) == set(owned[o]) for o in range(11)), 'phase-2 hulls differ'
             st = (rows, refs, powned)
-            init = ["import ElevenSquare.Tasks.T07.Ext.Gen.P2\n", f"namespace {NS}.{name}", HDR,
-                    f"def st0 : PoseState := {NS}.P2.final\n", f"end {NS}.{name}\n"]
+            np_ = steps_of["P2"]
+            init = [f"import ElevenSquare.Tasks.T07.Ext.Gen.P2.S{np_ - 1}D\n", f"namespace {NS}.{name}", HDR,
+                    f"def st0 : PoseState := {NS}.P2.S{np_ - 1}.next\n", f"end {NS}.{name}\n"]
         else:
             prows, prefs, powned = finals[parent]
             rows = {o: list(v) for o, v in prows.items()}
             refs = {o: list(v) for o, v in prefs.items()}
             owned = {o: list(v) for o, v in powned.items()}
-            expr = f"{NS}.{parent}.final"
+            # the parent's last state module, not its proofs
+            np_ = steps_of[parent]
+            expr = f"{NS}.{parent}.S{np_ - 1}.next"
             if cut:
                 apply_cut(rows, refs, cut)
                 kind, o, v = cut
                 expr = f"{LEAN_CUT[kind]} {expr} {o} {lean_value(v)}"
             st = (rows, refs, owned)
-            init = [f"import ElevenSquare.Tasks.T07.Ext.Gen.{parent}\nimport ElevenSquare.Tasks.T07.Ext.Compose\n",
+            init = [f"import ElevenSquare.Tasks.T07.Ext.Gen.{parent}.S{np_ - 1}D\nimport ElevenSquare.Tasks.T07.Ext.Compose\n",
                     f"namespace {NS}.{name}", HDR, f"def st0 : PoseState := {expr}\n", f"end {NS}.{name}\n"]
         write(os.path.join(out, name, "Init.lean"), init)
         ch = chain(node, name, st)
         n, last = replay(ch, node, name, work, jobs)
         final_file(out, name, n, last[0] if node.get('contradiction') else None)
         finals[name] = (ch.rows, ch.refs, ch.owned)
+        steps_of[name] = n
         save(os.path.join(work, f"{name}_final.pkl"), finals[name])
     open(os.path.join(work, "jobs.txt"), "w").write("\n".join(jobs) + "\n")
     print(f"{len(jobs)} jobs", file=sys.stderr)
