@@ -8,6 +8,17 @@ the final optimality theorem. See [MISSING.md](MISSING.md).
 
 At the latest checkpoint, **159/173** full case certificates have independently
 accepted exact target audits and published complete source closures; **14 remain**.
+A measured multi-target experiment retained the same 278-member source/environment
+fixture (270 Lean modules) and exact target union: one combined actual audit
+took **27.16 seconds**, versus **26.12 + 20.90 = 47.02 seconds** for fresh separate
+audits. This is one background-pool fixture observation. The first case1463
+production pair also passed both original target audits and genuine source/object
+receipt checks; it verifies two dependency groups, with no production timing
+speedup claim or new full certificate. See [experiment evidence](verification/t03-multi-target-audit-experiment-20261001.json)
+and [the first production pair](verification/t03-case1463-production-pair-checkpoint-20261001.json).
+Pairing remains optional; every full case and both public targets still need
+their original audits. The count remains **159/173**.
+
 Case1731's exact full certificate now passes too: its actual audit took 90.39
 seconds and uses only `propext`, `Classical.choice` and `Quot.sound`. Publication
 independently checked every one of its 2,831 original and portable Lean members,

@@ -1,0 +1,16 @@
+{
+  "task": "library-case1463-node994-pair-021-036-task.json",
+  "exit_code": 0,
+  "transport_sha256": "5c1b5520d6d99532cc8afd3f87f2599a3bed1c228d1fdd62ba806db8124c9d84",
+  "supplied_handoff_checker_unchanged": true,
+  "original_execution_sha256": "d1e0f3ec59bd4d8845df0174c9f877e7deb770fcba966675fbf82657f9a229e0",
+  "configuration": {
+    "lean_threads": 1,
+    "lean_memory_mb": 8192,
+    "lean_thread_stack_kb": 32768,
+    "lean_main_stack_kb": 65536,
+    "global_concurrent_lean_checks": 6,
+    "runtime_compiler_sha256": "c2059c8da4034467e5f391cfd07b81c4a7b32a7e04ff7e50c7c385993cd77010"
+  },
+  "machine_path_and_private_resource_prose_omitted": true
+}

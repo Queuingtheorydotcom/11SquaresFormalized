@@ -11,11 +11,12 @@ ap.add_argument('--transport-dir')
 ap.add_argument('--scratch-root',required=True)
 ap.add_argument('--producer-script',type=Path,required=True)
 ap.add_argument('--revision', type=int, default=1)
+ap.add_argument('--reason',default='Preserve issued source closures at a complete producer publication boundary.')
 a = ap.parse_args()
 K,E,transport_root=kit_paths(a.kit,a.transport_dir)
 scratch=Path(a.scratch_root).resolve();assert scratch.is_dir()
 assert a.producer_script.name=='parallel_packed_case_producer.py'
-assert a.case in (1464, 1465) and a.pid > 0
+assert a.case in {r['case'] for r in json.loads((E/'forward-workload-inventory.json').read_text())['records']} and a.pid>0
 assert 1 <= a.revision <= 99
 revision_tag = '' if a.revision == 1 else f'-retry{a.revision:02d}'
 record = E / f'case{a.case}-equality-repair-producer-checkpoint{revision_tag}.json'
@@ -26,7 +27,12 @@ assert identity['ProcessId'] == a.pid
 assert str(a.producer_script.resolve()).replace(chr(92),'/').lower() in identity['CommandLine'].replace(chr(92),'/').lower()
 assert Path(identity['ExecutablePath']).name.lower() in ['python.exe','python3.exe']
 assert f'--case {a.case}' in identity['CommandLine']
-assert f'case{a.case}-packed-parallel-publication.json' in identity['CommandLine']
+if '--publication' in identity['CommandLine']:
+    assert f'case{a.case}-packed-parallel-publication.json' in identity['CommandLine']
+    publication_name=f'case{a.case}-packed-parallel-publication.json'
+else:publication_name=f'case{a.case}-packed-canonical-publication.json'
+publication=json.loads((E/publication_name).read_text());prior_status=json.loads((E/f'case{a.case}-parallel-packed-status.json').read_text())
+assert publication['case']==prior_status['case']==a.case and prior_status['source_archive_sha256']==publication['grouped_archive_sha256']
 kernel = ctypes.WinDLL('kernel32', use_last_error=True)
 kernel.OpenProcess.argtypes = (ctypes.c_ulong, ctypes.c_int, ctypes.c_ulong)
 kernel.OpenProcess.restype = ctypes.c_void_p
@@ -56,6 +62,10 @@ try:
         assert nt.NtSuspendProcess(handle) == 0
         suspended = True
         busy = list(destination.glob('.preparing-*'))
+        busy += list(destination.glob('*.preserving.zip'))
+        busy += list(E.glob(f'.paired-group-publication-case{a.case}.json'))
+        busy += list(E.glob(f'case{a.case}-paired-group-audit-bindings.writing.json'))
+        busy += list(E.glob(f'library-case{a.case}-node994-queue.writing.json'))
         busy += list(transport_root.glob(f'.t03-runtime-sync-library-case{a.case}-*.preparing.zip'))
         busy += list(E.glob(f'case{a.case}-parallel-packed-status.writing.json'))
         for live in transport_root.glob(f'.t03-runtime-sync-library-case{a.case}-node998-*-task.zip'):
@@ -82,7 +92,7 @@ try:
         stopped_at_complete_file_boundary=True, partial_transport_files=[],
         preserved_status=prior.name, preserved_status_sha256=hashlib.sha256(snapshot).hexdigest(),
         proof_processes_signalled=[], other_producers_untouched=True,
-        reason='Prepare repairs for two failed dependency groups; preserve live and accepted source closures.')
+        reason=a.reason)
     record.write_text(json.dumps(p, indent=2) + '\n')
     print(json.dumps(p), flush=True)
 finally:

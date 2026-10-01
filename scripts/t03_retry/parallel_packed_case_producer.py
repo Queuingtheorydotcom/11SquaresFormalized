@@ -2,27 +2,23 @@
 
 Actual supplied-checker PASS and genuine source/object receipts are both required
 before releasing the full exact case task. Completed transports are preserved in the selected scratch directory,
-keeping the live transport footprint bounded.
+keeping the live source transport footprint bounded.
 """
 from pathlib import Path
 import argparse,collections,ctypes,datetime,functools,hashlib,json,os,re,shutil,time,zipfile
-from retry_paths import kit_paths, low_priority_single_core
 ap=argparse.ArgumentParser();ap.add_argument('--resume',action='store_true')
-ap.add_argument('--case',type=int,required=True);ap.add_argument('--publication');ap.add_argument('--preparation')
-ap.add_argument('--kit',required=True);ap.add_argument('--transport-dir')
-ap.add_argument('--scratch-root',required=True);ap.add_argument('--receipt-root',required=True)
-ap.add_argument('--object-root',required=True);ap.add_argument('--max-workers',type=int,default=1)
-ap.add_argument('--max-live-archives', '--max-live',type=int)
+ap.add_argument('--case',type=int,required=True);ap.add_argument('--publication');ap.add_argument('--preparation');ap.add_argument('--max-live','--max-live-archives',type=int)
+ap.add_argument('--pair-ready-audits',action='store_true')
+ap.add_argument('--kit',required=True);ap.add_argument('--transport-dir');ap.add_argument('--scratch-root',type=Path,required=True);ap.add_argument('--receipt-root',type=Path,required=True);ap.add_argument('--object-root',type=Path,required=True);ap.add_argument('--max-workers',type=int,default=1)
 args=ap.parse_args();case=args.case
-K,E,transport_root=kit_paths(args.kit,args.transport_dir)
-assert 1<=args.max_workers<=6
-assert case in {r['case'] for r in json.loads((E/'forward-workload-inventory.json').read_text())['records']}
+from retry_paths import kit_paths,low_priority_single_core,metadata_path
+K,E,transport_root=kit_paths(args.kit,args.transport_dir);scratch=args.scratch_root.resolve();assert scratch.is_dir() and 1<=args.max_workers<=6
 low_priority_single_core()
+assert case in {r['case'] for r in json.loads((E/'forward-workload-inventory.json').read_text())['records']}
 record=E/f'case{case}-parallel-packed-status.json'
 previous=json.loads(record.read_text()) if args.resume else None
-if args.max_live_archives is None:
- args.max_live_archives=previous.get('maximum_live_chunk_archives',8) if previous else 8
-assert 1<=args.max_live_archives<=8
+max_live=args.max_live if args.max_live is not None else (previous.get('maximum_live_chunk_archives',8) if previous else 8)
+assert 1<=max_live<=8
 assert args.resume or not record.exists()
 if previous:assert previous['case']==case
 preparation_name=args.preparation or f'case{case}-packed-namespaced-publication.json'
@@ -34,12 +30,10 @@ publication=json.loads((E/publication_name).read_text())
 assert publication['full_case_guard_retained_for_parallel_dependency_audits']
 guard=E/f'.collision-bool-preparing-case{case}.json';assert guard.exists()
 master=transport_root/('.t03-runtime-sync-'+Path(prep['task']).stem+'.zip')
-scratch=Path(args.scratch_root).resolve();assert scratch.is_dir()
 destination=scratch/f'case{case}-parallel-packed-transports'
 assert destination.is_dir() if args.resume else not destination.exists()
 if not args.resume:destination.mkdir()
-receipt_root=Path(args.receipt_root).resolve();assert receipt_root.is_dir()
-object_root=Path(args.object_root).resolve();assert object_root.is_dir()
+receipt_root=args.receipt_root.resolve();object_root=args.object_root.resolve();assert receipt_root.is_dir() and object_root.is_dir()
 prefixes=['primary','independent','helper','auxiliary','extra-a','extra-b','extra-c','extra-d','extra-e','extra-f','library-a','library-b','library-c','library-d','library-e','library-f']
 def sha(path):
  h=hashlib.sha256()
@@ -48,19 +42,19 @@ def sha(path):
  return h.hexdigest()
 assert sha(master)==publication['grouped_archive_sha256']
 if previous and previous['source_archive_sha256']!=publication['grouped_archive_sha256']:
- transition=json.loads((E/publication.get('kernel_equality_refl_transition',f'case{case}-equality-refl-publication.json')).read_text())
- assert transition['status'] in ['UNPUBLISHED_GROUP_EQUALITY_PROOFS_CANONICALLY_PUBLISHED','FAILED_AND_UNPUBLISHED_GROUP_EQUALITY_PROOFS_CANONICALLY_PUBLISHED']
+ transition=json.loads((E/publication.get('source_repair_transition',publication.get('kernel_equality_refl_transition',f'case{case}-equality-refl-publication.json'))).read_text())
+ assert transition['status'] in ['UNPUBLISHED_GROUP_EQUALITY_PROOFS_CANONICALLY_PUBLISHED','FAILED_AND_UNPUBLISHED_GROUP_EQUALITY_PROOFS_CANONICALLY_PUBLISHED','FAILED_GROUPS_SPLIT_UNCHANGED_BLOCKS_CANONICALLY_PUBLISHED']
  assert previous['source_archive_sha256']==transition['previous_grouped_archive_sha256']
  assert publication['grouped_archive_sha256']==transition['new_grouped_archive_sha256']
  assert transition.get('published_and_running_group_source_closures_unchanged',False) or transition.get('all_unaffected_published_and_running_group_source_closures_unchanged',False)
 task_aliases={}
-transition_path=E/publication.get('kernel_equality_refl_transition',f'case{case}-equality-refl-publication.json')
+transition_path=E/publication.get('source_repair_transition',publication.get('kernel_equality_refl_transition',f'case{case}-equality-refl-publication.json'))
 if transition_path.exists():
  task_aliases=json.loads(transition_path.read_text()).get('group_task_aliases',{})
 events=previous['events'] if previous else []
 def event(**row):
  row['utc']=datetime.datetime.now(datetime.timezone.utc).isoformat();events.append(row)
- payload=dict(case=case,events=events[-1000:],maximum_live_chunk_archives=args.max_live_archives,maximum_parallel_lean_checks=args.max_workers,
+ payload=dict(case=case,events=events[-1000:],maximum_live_chunk_archives=max_live,maximum_parallel_lean_checks=args.max_workers,
               source_archive_sha256=publication['grouped_archive_sha256'],source_archive=str(master),
               destination=str(destination),full_case_guard=str(guard),full_case_and_final_audits_pending=True,
               scheduling='READY_GROUPS_WITH_LONGEST_REMAINING_DEPENDENCY_PATH_FIRST')
@@ -148,6 +142,13 @@ with zipfile.ZipFile(master) as z:
        groups=len(rows),independent_frontier=sum(not r['dependencies'] for r in rows),longest_remaining_path_groups=max(remaining.values()))
  extras=['TASK.json']+['project/'+n for n in ['lakefile.lean','lake-manifest.json','lean-toolchain','scripts/lake.sh','scripts/check_handoff.py','scripts/lean_small_check.py','verification/LOW_RESOURCE_MODE.json']]
  published=set();complete=set();preserved=set()
+ pair_manager=None
+ if args.pair_ready_audits or (E/f'case{case}-paired-group-audit-bindings.json').exists():
+  from paired_group_audits import PairedGroupAudits
+  pair_manager=PairedGroupAudits(evidence=E,kit=K,case=case,destination=destination,
+      rows=rows,graph=graph,keys=keys,manifest=manifest,read_module=raw,read_member=z.read,
+      full_task=full_task,extras=extras,publication_sha256=publication['grouped_archive_sha256'],
+      valid=valid,event=event,enabled=args.pair_ready_audits,transport_root=transport_root,max_workers=args.max_workers)
  if args.resume:
   for row in rows:
    module,task_name=row['module'],row['task']
@@ -172,8 +173,10 @@ with zipfile.ZipFile(master) as z:
     published.add(module)
     if module in preserved:
      assert path.resolve().parent==transport_root.resolve() and sha(path)==sha(backup);path.unlink()
+  if pair_manager:pair_manager.poll(complete,published,preserved)
   event(status='EXACT_ARCHIVES_AND_GENUINE_RECEIPTS_RECOVERED',completed=len(complete),live_archives=len(published-complete),total=len(rows))
  while True:
+  if pair_manager:pair_manager.poll(complete,published,preserved)
   for row in rows:
    module,task_name=row['module'],row['task']
    if module in complete:continue
@@ -192,8 +195,14 @@ with zipfile.ZipFile(master) as z:
   live=len(published-complete)
   for row in rows:
    module,task_name=row['module'],row['task']
-   if live>=args.max_live_archives:break
+   if live>=max_live:break
    if module in published or not set(row['dependencies'])<=complete:continue
+   if pair_manager and pair_manager.enabled and module not in pair_manager.failed_modules:
+    ready=[r for r in rows if r['module'] not in published and set(r['dependencies'])<=complete]
+    second=next((r for r in ready if r['module']!=module and pair_manager.eligible(row,r)),None)
+    if second is not None:
+     if live+2>max_live:continue
+     pair_manager.publish(row,second,complete,published);live+=2;continue
    selected=set()
    def closure(m):
     if m in selected:return
@@ -215,7 +224,7 @@ with zipfile.ZipFile(master) as z:
     assert len(check.namelist())==len(set(check.namelist()))
     for name,expected in new_manifest.items():assert hashlib.sha256(check.read(name)).hexdigest()==expected,name
    staged=target.with_suffix('.preparing.zip');assert not staged.exists();shutil.copyfile(temp,staged);assert sha(staged)==sha(temp);staged.replace(target)
-   # Keep only the published archive and its later audited scratch copy.
+   # Keep only the published archive and its later audited D: preservation.
    assert temp.resolve().parent==destination.resolve();temp.unlink()
    published.add(module);live+=1;event(status='READY_CHUNK_TRANSPORT_PUBLISHED',module=module,source_members=len(names),bytes=target.stat().st_size,live_archives=live)
   time.sleep(20)

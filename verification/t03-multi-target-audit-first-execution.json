@@ -1,0 +1,24 @@
+{
+  "task": "library-case2069-node995-one-target-first-audit-probe-task.json",
+  "exit_code": 0,
+  "transport_sha256": "d84dec01be9f61ef7d6b7e043b46cc9896130f38ac2a9b57cdf343053cabc8c4",
+  "configuration": {
+    "lean_threads": 1,
+    "lean_memory_mb": 8192,
+    "cpu_seconds": 1800,
+    "wall_seconds": 2100,
+    "lean_thread_stack_kb": 32768,
+    "lean_main_stack_kb": 65536,
+    "global_concurrent_lean_checks": 6,
+    "runtime_compiler_sha256": "c2059c8da4034467e5f391cfd07b81c4a7b32a7e04ff7e50c7c385993cd77010",
+    "runtime_lean_environment_sha256": "e0005f2169f0bc64f2d31c991ae4a2d9d0a070b41294af02c348166408f90584"
+  },
+  "original_execution_sha256": "636e016606ab149ba4283daa29839b1446d5d2c12bad4ec73a58fe5bb6cf7255",
+  "metadata_omissions": [
+    "project path",
+    "wrapper path",
+    "compiler executable path",
+    "runtime environment path values",
+    "resource authorization prose"
+  ]
+}

@@ -2035,5 +2035,25 @@
     "merged_replay_family_targets_and_final_ZIP_complete": false,
     "release_metadata": "verification/t03-case1731-accepted-release.json",
     "all_two_new_asset_server_digests_sizes_verified": true
+  },
+  "latest_multi_target_experiment_checkpoint": {
+    "manifest": "verification/t03-multi-target-audit-experiment-20261001.json",
+    "actual_original_checker_audits": 3,
+    "unchanged_fixture_members": 278,
+    "unchanged_fixture_Lean_modules": 270,
+    "combined_audit_seconds": 27.16,
+    "fresh_separate_audit_seconds": [
+      26.12,
+      20.9
+    ],
+    "fixture_gain_observed": true,
+    "production_pair_checkpoint": "verification/t03-case1463-production-pair-checkpoint-20261001.json",
+    "actual_production_paired_jobs": 1,
+    "actual_production_dependency_groups": 2,
+    "production_timing_speedup_claimed": false,
+    "accepted_full_cases_unchanged": 159,
+    "remaining_cases": 14,
+    "new_release_assets": 0,
+    "Lean_jobs_or_worker_controls_for_publication": 0
   }
 }

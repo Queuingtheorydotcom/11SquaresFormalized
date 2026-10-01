@@ -6,6 +6,51 @@ repository, and global optimality remains unfinished. This branch supplies
 checked common tools and the complete source closure of one audited certificate,
 case2135. It does not discharge the full-family obligation.
 
+## Actual multi-target experiment and first production pair
+
+The supplied original checker audited two already accepted group targets with
+unchanged source bodies. A combined audit took **27.16 seconds**; fresh separate
+audits took **26.12 and 20.90 seconds**, a total of **47.02 seconds**. All three
+sequential checks used the same pinned compiler/environment and 278-member
+fixture, including 270 Lean modules. The combined target union is exactly the
+two separate targets, each reporting only `propext`. This single observation
+under the existing six-slot background pool does not establish a general
+compiler or production speedup.
+
+Publication independently read all three immutable CHECK/logs and wrapper/
+execution bindings, hashed all three transports and every member, and matched
+every fixture Lean source to the existing published pending case2069 ZIP. No
+fixture source, number, task target or original checker was changed. Actual
+CHECK/log/task fixtures, sanitized execution/wrapper records and complete member
+bindings are in the [experiment record](verification/t03-multi-target-audit-experiment-20261001.json).
+Private runtime paths and resource-request prose are omitted; their original
+record hashes remain. The source ZIP is already published, so no new archive or
+release asset is needed for this checkpoint.
+
+The first actual production pair is case1463's `Chunk021` and `Chunk036`.
+Its real original checker passed both original transitive targets. Publication
+independently checked its actual CHECK/log/execution and task, the exact master
+and paired transport bytes, each source-closure key and both genuine receipt/
+object hashes. One target uses the standard three axioms; the other uses only
+`propext`. See the [frozen production checkpoint](verification/t03-case1463-production-pair-checkpoint-20261001.json).
+This accepts **two dependency groups**, not a full case. Later paired jobs and
+all remaining full-case audits are pending; no production timing gain is claimed.
+
+`paired_group_audits.py` passes the unchanged ready modules and union of their
+original targets to the supplied checker, records the actual batch CHECK/log,
+and still requires each genuine source/object receipt. It creates no synthetic
+receipt or individual success record. Failed batches permit ordinary individual
+fallbacks. Pairing is an explicit producer option, disabled by default. The
+producer checkpoint helper now waits for paired publication/preservation files
+as well as ordinary source transport boundaries. Portable preparation/recording
+tools use explicit workspace paths and conservative worker defaults. They passed
+syntax/help/privacy checks; their live actions were not replayed for publication.
+
+**Full accepted count: 159/173, 14 remaining.** Main, prior release assets,
+original family targets and final-return requirements are preserved. No compiler,
+proof worker, live queue or service was started, changed or controlled for this
+publication. Memory-repair scripts are outside this compact checkpoint.
+
 ## Current checkpoint: 159 accepted full cases
 
 Case1731's exact original `certificate_exists` has passed the actual full target

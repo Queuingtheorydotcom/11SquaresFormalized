@@ -1,11 +1,11 @@
 """Run one explicitly allocated worker's supplied serial Lean checker.
 
-Uses the unchanged supplied checkers in a separate runtime workspace. Shared
+Uses the unchanged supplied checkers in a separate runtime workspace. Paired library tasks retain every original module and axiom target. Shared
 dependency objects are reused only through the supplied source/object hash
 receipts. The pool dispatcher must exclude duplicate jobs and enforce its limit.
 """
 from pathlib import Path,PurePosixPath
-import os,zipfile,json,hashlib,sys,shutil,subprocess,fcntl,argparse
+import os,zipfile,json,hashlib,sys,shutil,subprocess,argparse
 from retry_paths import kit_paths, low_priority_single_core
 
 ap=argparse.ArgumentParser()
@@ -14,7 +14,10 @@ ap.add_argument('--kit',required=True);ap.add_argument('--runtime-root',required
 ap.add_argument('--transport-dir');ap.add_argument('--scratch-root',required=True)
 ap.add_argument('--source-workspace',choices=['scratch','runtime'],default='scratch')
 ap.add_argument('--min-free-gib',type=int,default=20);ap.add_argument('--max-workers',type=int,default=1)
-args=ap.parse_args();K,_,transport_root=kit_paths(args.kit,args.transport_dir)
+args=ap.parse_args()
+assert sys.platform=='linux','Worker locks and checker launch require Linux'
+import fcntl
+K,_,transport_root=kit_paths(args.kit,args.transport_dir)
 base=Path(args.runtime_root).resolve();assert base.is_dir()
 worker=args.worker;archive_name,task_name=args.archive,args.task
 assert worker in ['independent-probe','helper-probe','auxiliary-probe','primary','library-a','library-b','library-c','library-d','library-e','library-f','coarse-pilot','extra-a','extra-b','extra-c','extra-d','extra-e','extra-f']

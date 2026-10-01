@@ -1,0 +1,15 @@
+{
+  "status": "accepted",
+  "source": "verification/HandoffAudit.lean",
+  "exit_code": 0,
+  "elapsed_seconds": 20.9,
+  "lean_memory_limit_mb": 8192,
+  "lean_threads": 1,
+  "lean_thread_stack_kb": 32768,
+  "lean_main_stack_kb": 65536,
+  "cpu_seconds_limit": 1800,
+  "wall_seconds_limit": 2100,
+  "nice_increment": 0,
+  "emitted_olean": null,
+  "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+}

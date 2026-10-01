@@ -1,0 +1,75 @@
+{
+  "status": "ORIGINAL_CHECKER_MULTI_TARGET_AUDITS_AND_GENUINE_OBJECTS_REVERIFIED",
+  "case": 1463,
+  "utc": "2026-10-01T11:57:04.741423+00:00",
+  "accepted_paired_jobs": 1,
+  "accepted_dependency_groups": 2,
+  "source_bytes_and_numeric_data_unchanged": true,
+  "synthetic_receipts_created": 0,
+  "source_master_sha256": "2f27827201e1ff5534862ee838bb07dd462c951fabfe01bd532d33958eb30579",
+  "maximum_global_compiler_checks": 6,
+  "full_case_acceptances": 0,
+  "full_case_and_original_public_target_audits_still_required": true,
+  "format": "T03-production-pair-actual-checkpoint-v1",
+  "observations": [
+    {
+      "task": "library-case1463-node994-pair-021-036-task.json",
+      "task_sha256": "298279cd822be57f3534dbf2b68a7dc8a693a02dbea0c214d9442a237e9987bf",
+      "transport_sha256": "5c1b5520d6d99532cc8afd3f87f2599a3bed1c228d1fdd62ba806db8124c9d84",
+      "actual_audit_sha256": "1ce3d0273ead286c617700712977283242dd0675762b240134721fbe6903420e",
+      "actual_CHECK_sha256": "81705f4dcefef777348e043ccda6f114abb635f505ad646f3dbae256ac60bdc0",
+      "actual_execution": "extra-a-library-case1463-node994-pair-021-036-task.json",
+      "actual_execution_sha256": "d1e0f3ec59bd4d8845df0174c9f877e7deb770fcba966675fbf82657f9a229e0",
+      "actual_target_axioms": {
+        "ElevenSquare.Pending.T03.Certificates.PartnerCovere0cad2d66512d33c855e1585.PackedCase1463.Band023.impossible": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "ElevenSquare.Pending.T03.Certificates.UniversalCollision1b4a3f975f546fb2ad3356c4.PackedCase1463.hi": [
+          "propext"
+        ]
+      },
+      "genuine_receipts": [
+        {
+          "module": "ElevenSquare.Tasks.T03.Batch04.Case1463.PackedNamespaced.Chunk036",
+          "source_closure_sha256": "224b37bb46299f81375c6d38c493773f90d0198f7df64ba47b262bf8db753d27",
+          "actual_receipt_sha256": "0812c91cafc74e74baf64a170d02bbb08058e3de6fd3099da303898e207131ab",
+          "actual_object_sha256": "0e57532f3ac604a0ae1bdab47c9a14eb292a6d2b50bf7cfafae56a88056a2050",
+          "genuine_receipt_and_object_independently_rehashed": true
+        },
+        {
+          "module": "ElevenSquare.Tasks.T03.Batch04.Case1463.PackedNamespaced.Chunk021",
+          "source_closure_sha256": "f9d532b609c233f0e6aa848050f52be91892e3c43334013fbf332a6fa8fc4d35",
+          "actual_receipt_sha256": "2b099009f11c5c17637cf8482c6fc275c6645fd56349c5922064d466796a2eb1",
+          "actual_object_sha256": "90874cdc203737da6cb2daa723c5ee245bdafec03367a12ed5136c5783f6a760",
+          "genuine_receipt_and_object_independently_rehashed": true
+        }
+      ],
+      "exact_task": {
+        "id": "T03_compact_full_trace",
+        "modules": [
+          "ElevenSquare.Tasks.T03.Batch04.Case1463.PackedNamespaced.Chunk036",
+          "ElevenSquare.Tasks.T03.Batch04.Case1463.PackedNamespaced.Chunk021"
+        ],
+        "axiom_targets": [
+          "ElevenSquare.Pending.T03.Certificates.PartnerCovere0cad2d66512d33c855e1585.PackedCase1463.Band023.impossible",
+          "ElevenSquare.Pending.T03.Certificates.UniversalCollision1b4a3f975f546fb2ad3356c4.PackedCase1463.hi"
+        ]
+      },
+      "actual_CHECK": "verification/t03-case1463-production-pair-CHECK.json",
+      "actual_audit": "verification/t03-case1463-production-pair.txt",
+      "actual_execution_fixture": "verification/t03-case1463-production-pair-execution.json",
+      "original_wrapper_sha256": "9147ba603aff94f05ae28509c0bf45f33cca89794f0e7f648d4b6b6e6bfa952a",
+      "all_transport_member_bytes_match_exact_master": true,
+      "source_closure_keys_independently_recomputed": true,
+      "audit_elapsed_seconds": 23.25
+    }
+  ],
+  "root_checkpoint_sha256": "4d107f39465b9f3427ba4d30fd2ec6837a5a2e4c5502681b55f839faf3cf9f61",
+  "accepted_full_case_count_unchanged": 159,
+  "other_registry_jobs_not_claimed_accepted": true,
+  "production_timing_speedup_claimed": false,
+  "source_master_independently_rehashed": true,
+  "Lean_jobs_or_worker_controls_for_publication": 0
+}

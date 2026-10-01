@@ -1,0 +1,10 @@
+{
+  "original_wrapper_sha256": "e7965f5669928a73c29db4b0c210a6312edb2e7069eec8e1c1be28dbcd4eb8de",
+  "task": "library-case2069-node995-one-target-second-audit-probe-task.json",
+  "transport_sha256": "8b2c4f166b54019b180143212aa305ab0310c6694658d1d741083ffac7193afd",
+  "actual_audit_log_sha256": "56c578de3f732a159b278c208a968e8efa27b3fc18afc195365b0d004927e5d9",
+  "actual_CHECK_sha256": "cccca68213bad6aefa2be98fcc79a09d38e96827fc290bf22acf57c84c881a52",
+  "terminal_message": "PASS: target declarations have clean transitive axiom audits.",
+  "exact_original_wrapper_preserved_locally": true,
+  "machine_paths_and_build_output_omitted": true
+}

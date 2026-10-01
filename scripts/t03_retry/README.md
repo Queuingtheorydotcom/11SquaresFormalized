@@ -293,3 +293,36 @@ event timings without starting a checker. Reversed timestamp pairs are retained
 and flagged; they cannot establish a refill duration. `stage_verified_return.py`
 and `write_verified_report.py` retain the full-173/both-target/frozen-protocol
 guards and refuse partial completion. They were not executed for this snapshot.
+
+
+## Multi-target audit experiment
+
+The original checker already accepts multiple module roots and exact axiom
+targets. `prepare_multi_target_audit_probe.py` queues the combined/first/second
+versions of the same fixture, requiring each prior actual audit to finish before
+the next comparison. It copies source/environment/checker bytes unchanged.
+`record_multi_target_audit_probe.py` verifies actual CHECK/logs, identical compiler
+settings, fixture hashes and exact target union before reporting the observation.
+These tools require the original compatible kit and explicit `--kit`,
+`--transport-dir` and (for preparation) `--scratch-root`; they do not themselves
+start a compiler. Output records are refused if already present.
+
+The producer's `--pair-ready-audits` option is **disabled by default**. It pairs
+only two already-ready groups at similar dependency-path lengths, within the
+existing archive and compiler limits. `paired_group_audits.py` preserves both
+original module/target arrays, accepts only a real original-checker batch audit
+plus each genuine source/object receipt, and permits ordinary individual fallback
+after failures. It creates no synthetic proof receipt or individual execution.
+`record_paired_group_checkpoint.py` independently checks exact sources, target
+audits, closure hashes and genuine objects using explicit receipt/object roots.
+Its record is a timestamped group checkpoint, not full-case acceptance.
+
+The first actual case1463 pair has passed both group audits and genuine receipt
+checks. Later pairs remain pending. The 27.16 versus 47.02 second result belongs
+to the distinct, unchanged case2069 experiment fixture; it demonstrates no
+production or general compiler timing gain. Full cases and both original public
+targets still require their own exact original audits. `run_independent_probe.py`
+already forwards multi-module tasks unchanged in its explicit scratch workspace.
+The producer checkpoint helper waits for paired `.preserving.zip` and publication
+markers before stopping only its explicitly owned producer. None of these live
+actions was replayed for publication.

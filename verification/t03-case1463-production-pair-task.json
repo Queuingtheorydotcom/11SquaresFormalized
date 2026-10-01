@@ -1,0 +1,11 @@
+{
+  "id": "T03_compact_full_trace",
+  "modules": [
+    "ElevenSquare.Tasks.T03.Batch04.Case1463.PackedNamespaced.Chunk036",
+    "ElevenSquare.Tasks.T03.Batch04.Case1463.PackedNamespaced.Chunk021"
+  ],
+  "axiom_targets": [
+    "ElevenSquare.Pending.T03.Certificates.PartnerCovere0cad2d66512d33c855e1585.PackedCase1463.Band023.impossible",
+    "ElevenSquare.Pending.T03.Certificates.UniversalCollision1b4a3f975f546fb2ad3356c4.PackedCase1463.hi"
+  ]
+}

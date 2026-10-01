@@ -1,0 +1,1807 @@
+{
+  "status": "ALL_REAL_TARGET_AUDITS_ACCEPTED_IDENTICAL_SOURCE_FIXTURE",
+  "utc": "2026-10-01T11:30:54.556160+00:00",
+  "separate_audit_seconds_sum": 47.019999999999996,
+  "combined_audit_seconds": 27.16,
+  "observed_audit_seconds_saved": 19.859999999999996,
+  "measured_fixture_gain": true,
+  "timing_scope": "Three sequential actual checks under the background six-slot pool; this observation does not establish a general compiler speedup.",
+  "source_manifest_sha256": "977fffc79f17be079702cb1afb5607fc3246873b9cd6e6c4e3b88e1ec0cd6067",
+  "source_members": 278,
+  "source_bytes_and_numeric_data_unchanged": true,
+  "target_union_exactly_preserved": true,
+  "all_actual_axiom_targets_audited": true,
+  "maximum_global_compiler_checks": 6,
+  "full_case_acceptances": 0,
+  "complete_case_and_original_public_target_audits_still_required": true,
+  "format": "T03-multi-target-audit-experiment-v1",
+  "original_result_record_sha256": "ee4318c20702e7ca9362a57b6820ff809371f858a5fd4b8a2129c120329c337c",
+  "observations": {
+    "combined": {
+      "task": "library-case2069-node995-two-target-audit-probe-task.json",
+      "worker": "library-b",
+      "audit_seconds": 27.16,
+      "audit_log_sha256": "4368c6b17ee3a20ea31ee29c4b4247d800e2034c9b3bf79cf4bc5605223df3d1",
+      "actual_CHECK_sha256": "1ae65c5a2a0af6756891e06c2d8fbd36c0370eb43e65ed7eea46234b95513f7a",
+      "targets": {
+        "ElevenSquare.Pending.T03.Certificates.UniversalCollisionbac541e271770686696c3ce5.PackedCase2069.hi": [
+          "propext"
+        ],
+        "ElevenSquare.Pending.T03.Batch10.Case2069.Node001.Step034Data.PackedCase2069.chosen": [
+          "propext"
+        ]
+      },
+      "transport_sha256": "fd51e67e901812fc3ea1d1557caed7b8de24f2f9ea6395d156588673c6ae0a7b",
+      "execution_sha256": "a1a83aa411a864c5ea1d7e88a0aa7ad93c91c813a54b4d6f72111cc96670abfd",
+      "actual_audit_log": "verification/t03-multi-target-audit-combined.txt",
+      "actual_CHECK": "verification/t03-multi-target-audit-combined-CHECK.json",
+      "exact_task": "verification/t03-multi-target-audit-combined-task.json",
+      "exact_task_sha256": "3c8061bf5842de6aa629cb01bb8330ad47a707ec9b433881fac69973e22a4824",
+      "original_wrapper_sha256": "fab116434426c2a4e995724d49ed882f4f1c611f3d85965d5bca607e57e5f2a2",
+      "execution_exit_code": 0,
+      "actual_audit_log_contained_in_wrapper": true,
+      "all_transport_member_hashes_verified": true,
+      "all_source_environment_fixture_bytes_identical": true,
+      "raw_execution_machine_paths_omitted": true,
+      "raw_wrapper_machine_paths_omitted": true
+    },
+    "first": {
+      "task": "library-case2069-node995-one-target-first-audit-probe-task.json",
+      "worker": "independent",
+      "audit_seconds": 26.12,
+      "audit_log_sha256": "b3eac995bb89bafe30e0708d8fb6d5b455f03a489ccdf21529a81ca119c1bf90",
+      "actual_CHECK_sha256": "64bdef5bde3e2c637670b266246d08669116188b8e13443dfec0845abbea67fa",
+      "targets": {
+        "ElevenSquare.Pending.T03.Certificates.UniversalCollisionbac541e271770686696c3ce5.PackedCase2069.hi": [
+          "propext"
+        ]
+      },
+      "transport_sha256": "d84dec01be9f61ef7d6b7e043b46cc9896130f38ac2a9b57cdf343053cabc8c4",
+      "execution_sha256": "636e016606ab149ba4283daa29839b1446d5d2c12bad4ec73a58fe5bb6cf7255",
+      "actual_audit_log": "verification/t03-multi-target-audit-first.txt",
+      "actual_CHECK": "verification/t03-multi-target-audit-first-CHECK.json",
+      "exact_task": "verification/t03-multi-target-audit-first-task.json",
+      "exact_task_sha256": "5201dc6e6a05c8d42a9d5151d6dd36401b07324df1b498bafa6f787092eb59f8",
+      "original_wrapper_sha256": "a49a6c9fee138d2e1cb56227e13853c8d8bdcfda0152caaab9337f4c9bab66da",
+      "execution_exit_code": 0,
+      "actual_audit_log_contained_in_wrapper": true,
+      "all_transport_member_hashes_verified": true,
+      "all_source_environment_fixture_bytes_identical": true,
+      "raw_execution_machine_paths_omitted": true,
+      "raw_wrapper_machine_paths_omitted": true
+    },
+    "second": {
+      "task": "library-case2069-node995-one-target-second-audit-probe-task.json",
+      "worker": "library-b",
+      "audit_seconds": 20.9,
+      "audit_log_sha256": "56c578de3f732a159b278c208a968e8efa27b3fc18afc195365b0d004927e5d9",
+      "actual_CHECK_sha256": "cccca68213bad6aefa2be98fcc79a09d38e96827fc290bf22acf57c84c881a52",
+      "targets": {
+        "ElevenSquare.Pending.T03.Batch10.Case2069.Node001.Step034Data.PackedCase2069.chosen": [
+          "propext"
+        ]
+      },
+      "transport_sha256": "8b2c4f166b54019b180143212aa305ab0310c6694658d1d741083ffac7193afd",
+      "execution_sha256": "c0b8a80c0a8501ba8728849eb1fe3322948289ae30a19737891a2ca32fb12931",
+      "actual_audit_log": "verification/t03-multi-target-audit-second.txt",
+      "actual_CHECK": "verification/t03-multi-target-audit-second-CHECK.json",
+      "exact_task": "verification/t03-multi-target-audit-second-task.json",
+      "exact_task_sha256": "01584315219859d68e83cf897971b47cc3a0ee4dc44cca02b245eff4f91487c1",
+      "original_wrapper_sha256": "e7965f5669928a73c29db4b0c210a6312edb2e7069eec8e1c1be28dbcd4eb8de",
+      "execution_exit_code": 0,
+      "actual_audit_log_contained_in_wrapper": true,
+      "all_transport_member_hashes_verified": true,
+      "all_source_environment_fixture_bytes_identical": true,
+      "raw_execution_machine_paths_omitted": true,
+      "raw_wrapper_machine_paths_omitted": true
+    }
+  },
+  "accepted_full_case_count_unchanged": 159,
+  "production_pair_target_audit_validation_pending": false,
+  "production_speedup_claimed": false,
+  "source_Lean_members": 270,
+  "source_member_binding_manifest": {
+    "project/ElevenSquare/BasicGeometry.lean": {
+      "sha256": "0e291c05b9fa7670ed3bac5c605e5cdb3666994715c9f7e4a16786881d020c72",
+      "bytes": 11070,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Cover.lean": {
+      "sha256": "fe57460a07b6acd1561be1d63a9e93c27560716fd1af8df94f65fb7321f7cd1e",
+      "bytes": 5665,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/CoverChecks.lean": {
+      "sha256": "cfb1ac4a0bbd79e078519e7d9df2e04892458a87cc309a6aa520a0cff2e4e68d",
+      "bytes": 1564,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/CoverData.lean": {
+      "sha256": "d3ed474b9f3b8c88ffffcfa1c1005b98be709dd5443198088e94e659a299906d",
+      "bytes": 1267,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/GeneratedCover0.lean": {
+      "sha256": "4936cc6f454137d9509976002e3c719de0dd28441e99ae8fbd0343ab7c2fba99",
+      "bytes": 51515,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/GeneratedCover1.lean": {
+      "sha256": "e72e09742bd6a4d17a8152f6b69c9cdb94933d15829193e88ec52ba85c6c6d27",
+      "bytes": 41862,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/GeneratedCover2.lean": {
+      "sha256": "f9d6ccc5aa2ae6c16140dcf8d474f869448c83d965a7644f16fb59b3d2c020b5",
+      "bytes": 41894,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/GeneratedCover3.lean": {
+      "sha256": "973ed8e31b101004f93e72347411e153c6283022219cfcc5d5846ee1f65a9f0f",
+      "bytes": 52238,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Geometry.lean": {
+      "sha256": "fa8ff2c666453b56f04b22c164ef063cbd46dc85fb4afd7ed6fbb01b7c4f641a",
+      "bytes": 1591,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Orientation.lean": {
+      "sha256": "2bf5f26832afb8859c2463d5bf813a36fc0d701b598698f59a267db417915601",
+      "bytes": 5807,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Pending/GeometryTypes.lean": {
+      "sha256": "a7bf5e2a537e0b81a7d874c35c769f605b61da9e3fef28feb07390736690502a",
+      "bytes": 337,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Pending/S05_Minkowski.lean": {
+      "sha256": "e39dcfc51ad822fffbd76414e140f476baf3d5f0e55f7790e273362ce5484e71",
+      "bytes": 3477,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Pending/S05_OwnedHull.lean": {
+      "sha256": "237234a0a57234a0fe6ca3d421758550b50266b6b1411b04ad07c49339a7db42",
+      "bytes": 1837,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Pending/S05_Trace.lean": {
+      "sha256": "c28d11831b4130263f31e046d4165e942ce15d6662b1902875e1de2b7c2f7a92",
+      "bytes": 5612,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Pending/Types.lean": {
+      "sha256": "a08828e4674559871cfa7ee6e5321d008b43ff66baf2fa6906b3225e59e6dd7a",
+      "bytes": 3142,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/AngleBands.lean": {
+      "sha256": "4a079e796f4757b1326b87288c2e70750ad33fad817bdd9bf91c969fe5332da5",
+      "bytes": 3066,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/InitialStateData.lean": {
+      "sha256": "632ad5e6c70d325519eb4f696926793efa8895697a92720260dbb2d16eb97927",
+      "bytes": 3324,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/RowData.lean": {
+      "sha256": "f0a029bf8f110b370e9bbfbfce3bb6fc36f6986c4423edef576ff68448293dd3",
+      "bytes": 1886482,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step000State.lean": {
+      "sha256": "33dd1698bea69eecd1d1515c7cbd978126caf42463eb84c526d996923f944e2c",
+      "bytes": 5539,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step001State.lean": {
+      "sha256": "8f93b8eb8f3681a006ac5951f49c52f81bc62cb87daf63ec2a9f1869e1f507f1",
+      "bytes": 5539,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step002State.lean": {
+      "sha256": "88dc753a868cd77975d042a955e634f2c4b05f81c161e8816377b84125cf31a4",
+      "bytes": 5547,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step003State.lean": {
+      "sha256": "505941b96e0c9de689ba85fdc804597ed7dc7a8f8cce54477b5546d834233213",
+      "bytes": 5555,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step004State.lean": {
+      "sha256": "16a50f2989119be13073157d33fe253e41a09e3042d8b9c21ba355da7cac9726",
+      "bytes": 5563,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step005State.lean": {
+      "sha256": "625706df0a9a1c481348fd476a5c18bfb7f4a42a4f745e6df29da78cf0970dc1",
+      "bytes": 5571,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step006State.lean": {
+      "sha256": "91ee73322dc25f9bc976a4558922615e8e98e2863b09121dd96c07c8a0dbed48",
+      "bytes": 5579,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step007State.lean": {
+      "sha256": "114d0cd8c147b1bcb487cea4a5c33c368c5f0ef74a3add6ae00e4535aae93232",
+      "bytes": 5587,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step008State.lean": {
+      "sha256": "44265f0f271251611ee3d2ca82b66b228f7c35628083d4bac441682565807f0c",
+      "bytes": 5595,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step009State.lean": {
+      "sha256": "95bae6a6aaf40f5d65f908d97db53f321a52dcbe8cbce04d2dbd5103ad6ce305",
+      "bytes": 5603,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step010State.lean": {
+      "sha256": "26ad2f8c8971e3fdcab4c259254fd31b3c2b414c9133dbe0fef8327eec685f92",
+      "bytes": 5611,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step011State.lean": {
+      "sha256": "bab6cfe662372b2285745f6219f4cb60a6373855780b4abff229d6f5275ee7f2",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step012State.lean": {
+      "sha256": "4f31975ce6186c7b6dcb710d3b190cf4ec6d69844a67439a095b41ab394a22b2",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step013State.lean": {
+      "sha256": "2d43c4860e8801f632a4a599b5c1785c788c125d88eaf03f19ef13bd33196651",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step014State.lean": {
+      "sha256": "44282ce457ed908fbeba80c4a38d50747dcdfb547892ad456b803379400b85eb",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step015State.lean": {
+      "sha256": "ca0d66840c025b6879c86ba8ed83b0c7c4cf431804385e682efffa5635aa4e3c",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step016State.lean": {
+      "sha256": "b193bce355a09524b447dd906f21319f876afaf1955a3811f98e51974f48ffcf",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step017State.lean": {
+      "sha256": "f2967e83894a1d1911095c59f798c3acad86f4f5ecfd184f431f5815b96dd319",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step018State.lean": {
+      "sha256": "016982efd56431e3755a9252fe1533cc6176d08872f73353925a2fc81609e7a9",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step019State.lean": {
+      "sha256": "514b01d541b5f500a968a77d0418f94d22a043acaf95816ab97c20471847fa75",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step020State.lean": {
+      "sha256": "d729c83e31346c592eb13f78b704944b60781293709f15f50795035d6bad3b15",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step021State.lean": {
+      "sha256": "57feaa124fc9e6ba2e07757c63743f9e95b7c9cdb14ce84917cb3bb0834aeb6f",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step022State.lean": {
+      "sha256": "6656916c70161fc34aec15f3c01827d8bfe9032271b2d993ac4bda5e7a66590c",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step023State.lean": {
+      "sha256": "3f45c147e3a06e09d422ed3b04a480952a185bd56a8ec35706a4fbeaced444a8",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step024State.lean": {
+      "sha256": "577d1f467c5c6db9bc0c3eb102a9dc10bd59753c717e588d0c0fa949496b4ed2",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step025State.lean": {
+      "sha256": "07674610628e6d70bd5c52f7533d1055f5e88c7340b4ac07bf139bffccd1207f",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step026State.lean": {
+      "sha256": "23225e380e8385dc37b1ffd93e8ed5780f5719eb52ae7ea43f17ab17c7bce735",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step027State.lean": {
+      "sha256": "3f6eddcba9831fbf26d0b107b0e454a80c33959d3e955babb58168ecaf4b483a",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step028State.lean": {
+      "sha256": "6c8ee746f3c4bd0851b2b8d7dbb5d130c31209a0219a89aed027f945efdd8a77",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step029State.lean": {
+      "sha256": "668129def468e8d2ebfd2cab342377d49783d6dbb38ceaf240f67fdb30b03f3e",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step030State.lean": {
+      "sha256": "f112af2360ec20a3987868e915cd141cf4fe54e5bf0b5faedf1ca037aa6007f9",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step031State.lean": {
+      "sha256": "b660b124442b7d70f77a7c16f6c84905563dfe45d9211a6ef989a27cab01b621",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step032State.lean": {
+      "sha256": "6ed1a818e6c78cad5c48928f0b5fb5db5d20752b46c22d9105b928df6343982f",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step033State.lean": {
+      "sha256": "294898e8a2f170e0085c0df64660a2bc1bc2181ccd7c291c1205057090669d1c",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step034State.lean": {
+      "sha256": "51b331b767617a564fd22bb989a55f7965c4501030a75676ae9e8c22a319ef80",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step035State.lean": {
+      "sha256": "7264a5b6785029b85aae9a38a2ab74453d44ea7b56c993fd91cb19d2466b1c4b",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step036State.lean": {
+      "sha256": "6305867d9b9f8b38460cf71677f408531d9426bf312456fe8fe08d68f3077387",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step037State.lean": {
+      "sha256": "16d132c37abd04b8e2e6c31b705d0df4e8db46486fafe9dff394ca0220435632",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step038State.lean": {
+      "sha256": "e981d8f2206de1adaf124a2b344a862373a0fc5e9aae11df12d302c7b338921f",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step039State.lean": {
+      "sha256": "ba7629713d7531ca1a5d952eb85538bb85ef46653bd513d101d2b0e4006c573b",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step040State.lean": {
+      "sha256": "a286a1a5a0f66aa09faef2992738b65b8df287b224ed82f368411fa2aeb4cd22",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step041State.lean": {
+      "sha256": "a46aac2b818a7916216fbfe4671f7776f0b546dacfef6c7a1ba088bacf808e80",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step042State.lean": {
+      "sha256": "a3f208b379b950ffa37bdaf98983a2149ac1d441cac9149b9f03e2c87ffec5f3",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step043State.lean": {
+      "sha256": "d9eafcd896bae7fafc00afe542ac37b9ba7c037104d25589409fefdfe4f476d0",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step044State.lean": {
+      "sha256": "2b16c26ba6d3f16880f575117696638be7070846b785b328e6dc88cac4a50c56",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step045State.lean": {
+      "sha256": "2b4f0775694ee9df2159ca94abd93f43c68173ba876e1233e06b0440027c2df8",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step046State.lean": {
+      "sha256": "df14c2e192caf7a9ad997d0a417b6673f9476471b1c30b9f78eb7298f499f914",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step047State.lean": {
+      "sha256": "04036591f4aa6b1dc05dd3aa470439cddf0d8b231efe8c849c59fcb00a527421",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step048State.lean": {
+      "sha256": "2fb74b6d68b5be8d201f97393ddf8f685a6a9917e1b41de8c3737186b4c6a874",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step049State.lean": {
+      "sha256": "bd849fd9b0d01f7b08b34d264e8c5ffbb0ff43b21c3b532266c5e06379f1ef2c",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step050State.lean": {
+      "sha256": "535e4654581f8e9290c874f0483b2e3f763774f60e04f182ace50879b48563cc",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step051State.lean": {
+      "sha256": "06acecea0dbb71b9f693a90e79fff48eac39e7aab76ff8c9a34f4df8eed7985b",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step052State.lean": {
+      "sha256": "9865746e6d89fb2f58fa302702e7e7584c2717965236ede28c506d42ba88ea74",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step053State.lean": {
+      "sha256": "f6762090159efb9a16204c3b64d92a3ef6094cd51b4fea788a8025c2343d6bfc",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step054State.lean": {
+      "sha256": "bb1f274d0a13f4ea305bc410a6676f7d3e0822605516a9f1fa980da0b3e35556",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step055State.lean": {
+      "sha256": "e8276765e4eadb5c9c03541d5fa5aadf510dd1f7dd93bdc65025590add98da82",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step056State.lean": {
+      "sha256": "96c6095a32fc912bfe396d6715069ad728e89be973dec22df7cc85893c38b439",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step057State.lean": {
+      "sha256": "268f26d9e4405e2d05f94a6e0e1d16d5f667e963fc1feee78a9e7b98d258f706",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step058State.lean": {
+      "sha256": "0fb66795170d2cf495fa3331fccb79b098b51428176a912c8207e32c6a46da16",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step059State.lean": {
+      "sha256": "0339269d9e1df340ad9fd4b5dd9a4674c9a5b6f4c4f6a6f88e8dd13c62589d1a",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step060State.lean": {
+      "sha256": "c06f7427e787dc4be858430c09a0ca0177973b41def8942a245855faf85b313d",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step061State.lean": {
+      "sha256": "cb4344e63ac54e1b871dccc4662a636a51ddbac79faa2a5bc854bdb2bb0c8916",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step062State.lean": {
+      "sha256": "cd76c98976ab7e63a7644f65d16ebe7bbe6bf0ab89f0ad45008d1e632422caa2",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step063State.lean": {
+      "sha256": "fb45d84af5dde10e3357705100365a5578ac2d28f1eab782aaf2bcaf6655d4c7",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step064State.lean": {
+      "sha256": "4890280719f0c8cabd5a5d2add98760d2d3bf33ee18a2dece5c7fb26463bd33a",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step065State.lean": {
+      "sha256": "53f0732bda0ef5d332d45f606536756b4482ad38ae20338041eaca7f12cf9a92",
+      "bytes": 5619,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step066State.lean": {
+      "sha256": "1dbe12f5254326fdd86e638600dab05c35f7adc25dc7a5408bcd6a3fc4c42ba8",
+      "bytes": 7054,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step067State.lean": {
+      "sha256": "6971d461b8fa23bcccbddeb51120e86211fc981f4cf3463465e5560d93b57e5c",
+      "bytes": 7318,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step068State.lean": {
+      "sha256": "0e952c99cd0efc85a1a6993bafa088d2cf39ceba880607f4e4755fabdf60b09b",
+      "bytes": 7516,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step069State.lean": {
+      "sha256": "60543450f34ba9dc04a4c35ce1d1546f7f703f21b574d36852f92d6651d3f1c5",
+      "bytes": 7813,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step070State.lean": {
+      "sha256": "ddeb8e0626dcaeef52873f04d29c9f9db07829cca104a771b18f14e918a242f1",
+      "bytes": 8077,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step071State.lean": {
+      "sha256": "b7c2422832db6b0d405b0f95ca5992eef5cdd8a2637bf76a55109c09a317acd5",
+      "bytes": 8341,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step072State.lean": {
+      "sha256": "b1aa80fc19ba3e7f173bc52a1ddd99c8d338ccf67b341ccc36ce4fce082f8418",
+      "bytes": 8605,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step073State.lean": {
+      "sha256": "be24dee141d18a659e5cbba8dea19a75ef6c2b3881c97c0bee2ca8a71db0f53b",
+      "bytes": 8869,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step074State.lean": {
+      "sha256": "047391da48d28d4549381f5ef95970313e84cb672613eaf4d3443aa20e17451a",
+      "bytes": 9133,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step075State.lean": {
+      "sha256": "14cac3bc9486bc066edf7f52f144dff719f02917bd63dda383015d25d4a5b8d3",
+      "bytes": 9397,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step076State.lean": {
+      "sha256": "11555ee0dcc6e751e616e22e6300a53554f4c41128f796ac02951d46537e5a50",
+      "bytes": 9199,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step077State.lean": {
+      "sha256": "2dff9ce16fa792c24238921aeb1a56ebd296c06cc3aca5766da02307d4293c3e",
+      "bytes": 9343,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step078State.lean": {
+      "sha256": "c8654eb7a8cca3ee55d4bd407dc756b090e5855a4911b3dd6147e74647fa2a78",
+      "bytes": 9409,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step079State.lean": {
+      "sha256": "1feb78208e6b328323b708279150e80617c3d6278bfaa8dc3bf12890ecd3a26e",
+      "bytes": 8795,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step080State.lean": {
+      "sha256": "81d526a7d1f7a490deaa099282243a7cf4ea4a528e0c3105536f7ab8071d58b6",
+      "bytes": 9178,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step081State.lean": {
+      "sha256": "1f3ef4221d7476bd3bcb68b0f8408efa3f894b006549c2cf1accbf2118ec8b09",
+      "bytes": 8782,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step082State.lean": {
+      "sha256": "65a9802ebef4f44cdd6f3c696d32516c7a8a01aa41f01fe797fe1a2c0e0b7451",
+      "bytes": 8650,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step083State.lean": {
+      "sha256": "f3033e2eb7dde40eec66a6d148a5a3c24ed4bbca3128add80a36a29ddc70378a",
+      "bytes": 8485,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step084State.lean": {
+      "sha256": "20ee78edc2907e0465be86059f4a8baa822e6793fb6f0b1a8bfd3904dceb5ca8",
+      "bytes": 8122,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step085State.lean": {
+      "sha256": "585723f5f5c794824c7082940a1d9556c5f67dd120826b68db698238124032fd",
+      "bytes": 8386,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step086State.lean": {
+      "sha256": "be021d9773a33b9d1c590c81ef11ac1ca5430aa06816cbf0d000649b06c01f9a",
+      "bytes": 7858,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step087State.lean": {
+      "sha256": "5d92a00b18d4ead71a5f982ec15efeaf76750d90a61392c28e5f8791bc84715a",
+      "bytes": 7058,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step088State.lean": {
+      "sha256": "deef82b6c101db6c762a8721142c7927a9f1565bb32ad8e5a596480b5d1d56d1",
+      "bytes": 7752,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step089State.lean": {
+      "sha256": "2a7cb3891c45c2ff67e965238739403369b00440ab9eb487ecc0ffb4825da450",
+      "bytes": 8089,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step090State.lean": {
+      "sha256": "9473dfddb5f75a31974432a297794113356167950129222912589486d6e1ad42",
+      "bytes": 6741,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step091State.lean": {
+      "sha256": "5bf24b1d72f2d88221c610694f54d87c9d6967eaac79204a7e7a507be0035a52",
+      "bytes": 8023,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step092State.lean": {
+      "sha256": "2b6b351ef515f2d29dcd04accdddfb593ba6503a9c16b118139a8026dca364d0",
+      "bytes": 6913,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step093State.lean": {
+      "sha256": "c9928a26d6ab72585a99f9ae35341f555cebf1d0cfde7b15a517de7c118ef59f",
+      "bytes": 7098,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step094State.lean": {
+      "sha256": "6c79022360291d29031b59e7491161bfaf94404653d79bf28bcaf2ef7610bfea",
+      "bytes": 7065,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step095State.lean": {
+      "sha256": "750ef4a4c60ba558a9e469b417ee6a3c48b8b53cc533710e32e830d7a8fe70bd",
+      "bytes": 6642,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step096Partner01/Contexts000.lean": {
+      "sha256": "48636aaa07c1e8a03888bdfb2b6cd82c32c7d3c6d3b91b53b026bc46559eebcb",
+      "bytes": 45138,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step096Partner01/Contexts001.lean": {
+      "sha256": "e5cf0b3e53ffef61e9df6ea57309c0e573eaa9cb9895dff0abdc0895a28a0052",
+      "bytes": 14660,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step096Partner01/Data.lean": {
+      "sha256": "0eb716deef49a0843a5e772ce7eef4c5bc7eca7ccc1b73e62da1cb94cfc3436a",
+      "bytes": 2469,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step096State.lean": {
+      "sha256": "d504044f48e9f11b39507abe067245b905e20ab3e034cbd8625d33b32f26182e",
+      "bytes": 7858,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/HullData.lean": {
+      "sha256": "59196cf53da7a6bcc8e88abee65b1a2c55124eb03efa9e6b327d8a162361d8c3",
+      "bytes": 47199,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step000Data.lean": {
+      "sha256": "9e1702fcefb15d859563010ab38724587ace9cfcabd04367609251f96141f2f3",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step001Data.lean": {
+      "sha256": "2b4a022ac5d840ee4b85aad06b493e0c409f98c9bf90d00921bdb1d47f8d1dae",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step002Data.lean": {
+      "sha256": "a21e6afabf345b34e1fb2413291d474214d93e348bae8625ffafecdcb4fa3b99",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step003Data.lean": {
+      "sha256": "dda86c710d00c1fc0f941e0a29964c197110727952599b7fddafe861240a6343",
+      "bytes": 741,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step004Data.lean": {
+      "sha256": "0a95dd29060c7f5c7f42b7f951bf3eb158192989e66a3add33b7273e4aafbf69",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step005Data.lean": {
+      "sha256": "900c300bdd314e53b8dc4b0baa47735b9ba281a050728c1cdac4a2cce3211d9e",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step006Data.lean": {
+      "sha256": "fbb6ef2d10d3f4c48dbcddfe9ae9a166fdf7ba23dc3ab8fb8cb2c24156e42b6a",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step007Data.lean": {
+      "sha256": "d5aa5cf442988c900d2f05a1e53fd27845a71ca4d504da6aed0ba5ac9d2d4704",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step008Data.lean": {
+      "sha256": "ce8bf10a08ec1b3209ecd5734a71a58b37fa4401eb31a1b7ef8bf2a9093c3de4",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step009Data.lean": {
+      "sha256": "9bdc6972348014888ab07d1fd6555d1db0b556c3ae979f11b263862f04d6d060",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step010Data.lean": {
+      "sha256": "76064a68af2e641beea208da413edab853945ac672756d46e3f1faf44c04f3dc",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step011Data.lean": {
+      "sha256": "10aab951de89be832198cb63cde864eadaf3b4f30ae37f65ab2f52e1cf8dd2bf",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step012Data.lean": {
+      "sha256": "e76f2608f117ea3ab455a1e01f426f8e2618e799b448183053477fe158fde263",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step013Data.lean": {
+      "sha256": "e433f604af9e4acfb6a396e0fb056f4e105de5cc72763d063cf1f9a2c342ce4e",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step014Data.lean": {
+      "sha256": "6c796430eabf4a23b976242089979d04b671110ff0be002a4d47ab08700d7d76",
+      "bytes": 741,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step015Data.lean": {
+      "sha256": "d67e1c84ae782968c52adcb634e604496a808fb5756bd4b6854fc803fb6e6bac",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step016Data.lean": {
+      "sha256": "a7d40e3c318ca710f09bcd4f7385a635af5e188fe46614c01345a4a80117c64e",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step017Data.lean": {
+      "sha256": "f95cccdf5ee95be20ed0e838eef11d90358ccd9d1eb752fccd9daea343ce7ab8",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step018Data.lean": {
+      "sha256": "b702132b6724211e4309c67f3a0c6af8ed69b1c416417f29ea78a646279dc9fb",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step019Data.lean": {
+      "sha256": "33c767e5abe3f3c94cb07f2ac3342cd4c65255596ec298a61a4f8d1051e7336e",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step020Data.lean": {
+      "sha256": "ba724c1e6d8b737ad2f2d92a7ae46809eb28a749ac4c78944980a114cb32ed18",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step021Data.lean": {
+      "sha256": "d4f02428756589d6466089096d0f30c4df7cc303670ef81823e47fa3b3563a86",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step022Data.lean": {
+      "sha256": "a07ccf2600522d6b406a997608738c3235ea661fbad21d0f82185927d09bf6d0",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step023Data.lean": {
+      "sha256": "aa1da971e2c3f387c45e5323ee42ba57b8a9af482a5a4c754d928faca9dc2279",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step024Data.lean": {
+      "sha256": "97c867ba000dde014d3c3c5898c7f4364c2dcb29d2733321698a672cb2f220bb",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step025Data.lean": {
+      "sha256": "758e37c8bc4eeea636bfd8095e31d4c50a2fd5d3d1268b6d3eee83e02840204e",
+      "bytes": 741,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step026Data.lean": {
+      "sha256": "9c9e2a2027d244ee54362c4f645e1f0a2e3f6cbfb5097112ab42174367bdc180",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step027Data.lean": {
+      "sha256": "f81e60ec3199630ac969519a8fa825dee58c42f553ce49d4d4bc3af9e444d8ef",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step028Data.lean": {
+      "sha256": "067cf07b3e5366711a60b1b18874312c1d470de107e3519cf4f955aedde6d843",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step029Data.lean": {
+      "sha256": "9a15829c81c3f7773c8c3d68705f697ccbedb9242d73737aba798fe0bb6dea6c",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step030Data.lean": {
+      "sha256": "6335b976fac24a4ad5b9d20640069e867232dd1530aa16fa69090fc3924b5203",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step031Data.lean": {
+      "sha256": "6080a0353feadc71a72cff1044215238ccf010497e032ce66fb307c338dff70c",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step032Data.lean": {
+      "sha256": "92af5ba12f0935dbf9b9d77f0dd9f1316e37c30e573edc06be71036dbfdd1322",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step033Data.lean": {
+      "sha256": "dfbcfba580e6f539fbebfb5d80d057e4aa99023398d566053658ed22d80e61d5",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step034Data.lean": {
+      "sha256": "87c465329f65508e3d016cff962002b29f8781befae399757d4c8f40000ecb11",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step035Data.lean": {
+      "sha256": "3895c175ae65b348c6df8261383342ce924ac4d2229222488ec38a93ac3742d8",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step036Data.lean": {
+      "sha256": "51e1d7c588180c7d024b92c98e671f20e5b5623a63c561dcd659c7641517432e",
+      "bytes": 741,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step037Data.lean": {
+      "sha256": "dd2c7ef4e2e6207544d118dd06ee7ead84bc68044175edcd137ab9be4ccd2e70",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step038Data.lean": {
+      "sha256": "f3facc5207cbecbde5ed1072518bafeccbfcf961bf9d514d5a07caa8bca9f458",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step039Data.lean": {
+      "sha256": "2bb8cdfb31685a93fd2e3b2e242369bb50e657c4ab720d92ec0208abd7637ef8",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step040Data.lean": {
+      "sha256": "8850504bf04a857ef8b52e8313402e686bf9f26564935be289b1976bdbbf10a5",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step041Data.lean": {
+      "sha256": "f3e48e3eaf2a18c63f7299afbac4efe93789505a57edeb12e8f1eb8f60f09127",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step042Data.lean": {
+      "sha256": "f615a10e1b765fa14c3a5c11f2f8f74f642bc604819dc2a3a339d43615ec8e2f",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step043Data.lean": {
+      "sha256": "5c2156d45b46b8fca597c5d3a847b483de0a876e1d1d1f7bfecf84c8f5e4ac3e",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step044Data.lean": {
+      "sha256": "4b102d16009853d4584f8a8cefdb88af0b7e7126d0645d135273140daa00f70b",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step045Data.lean": {
+      "sha256": "c9cefe2417aa50f0b62ccc9629613cdb53e8ea9ff26a83bbb50d3f320f9ee2a9",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step046Data.lean": {
+      "sha256": "fd0563405ca4af34029cae2a4d1674693d7aebcd5bd9d22b8acaac7c7a47ff1f",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step047Data.lean": {
+      "sha256": "d1e1d93916eb44496cfb9d1986ae70f452e274283e42178b45c1db23e1c9447e",
+      "bytes": 741,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step048Data.lean": {
+      "sha256": "955e711ea77886c863411812fa82ea40f461ef1781fc2b08aeb2edef230d780f",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step049Data.lean": {
+      "sha256": "112778a5bcadeeb2fcfa398f15ab12da7edb1ee033db18ddfb191b0849496d19",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step050Data.lean": {
+      "sha256": "4fc227afd91bc4691520ed9b6ea63353dc3c6d04c2d0df5a2959cb8594b84612",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step051Data.lean": {
+      "sha256": "f1803dd2f6f9ae42e0f899de73725e8441e553769a10bebc56de7a465a335d60",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step052Data.lean": {
+      "sha256": "62ce7c07b580650985b0fcbec1420c69166401a56f59c5ca62d3070d6fb45e70",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step053Data.lean": {
+      "sha256": "de60ff7bb927eeaa7f0f6dccf2026b37ffe4b63c700e941d81742955acaadbe9",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step054Data.lean": {
+      "sha256": "467bbd4af8dbc49eddadd0ceba2fd03a66e4aa0b42ffa35e5dcc8b57bc66ac48",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step055Data.lean": {
+      "sha256": "e8ea3631c99baccbafed85780cbe9f4b6f0f017ba5b882987b9264467d2d75eb",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step056Data.lean": {
+      "sha256": "e9f593364eb5073829b3d36e1c2c1ad9b87923e93b3bf544878f0cd0f6940391",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step057Data.lean": {
+      "sha256": "0738c4facd973ba903dd35d178d1d3ce816eeaa1804929ccd520a0edfacf09f9",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step058Data.lean": {
+      "sha256": "437bf389c9cc15c3911d5742e41c0af391daed667a29ab906fd4da2b42a47189",
+      "bytes": 741,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step059Data.lean": {
+      "sha256": "a6a7bcddd16b1acb8fdec643eb863f56b915a7c895e8f193bd42f02ec5715d9c",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step060Data.lean": {
+      "sha256": "9b14fc4513900e34768cb204edc2ec8129042f7c43e8a28a7a2a06ee4c8255ba",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step061Data.lean": {
+      "sha256": "fa02b6489faec26d31b982645283547ec588ad600aff5db7f919a3ccd9b0394d",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step062Data.lean": {
+      "sha256": "b14a2043a0e19b8d00cb0c9a6696adfaf2b2596bd84cc9697c45dc6633fceb74",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step063Data.lean": {
+      "sha256": "0fc8513b0c04e904006e8ba6c91fe8fc0c6749ec7c23a11a8a5f913bec339e5a",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step064Data.lean": {
+      "sha256": "cc748c4d61386c3001c144d7a55acbb0f8bc002fe471baa8d315fcccf4739b15",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step065Data.lean": {
+      "sha256": "233720cfc65c7240b74cb6eb5e12c9b9c6d9d1d0b6ba0bc614868073c088e1fb",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/HullData.lean": {
+      "sha256": "1e9a3cd79bcaf6f8526c9ad7779c4cb2cd3397cb50f24fbbd6783a122e410389",
+      "bytes": 98297,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step000Data.lean": {
+      "sha256": "e5f4868f23b38b64912e9c93134d3c7503028c9aeeb5f3fdb405679c7d7d0cfc",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step001Data.lean": {
+      "sha256": "571103f22d1353a8e5c69c94e829cd693777f29d78c6853e87dba960f88befaa",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step002Data.lean": {
+      "sha256": "217c9f9017847f9c0f625e54f1cd676052334f0292bc5276cfe4b577a52d06d8",
+      "bytes": 741,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step003Data.lean": {
+      "sha256": "e88d5ba5c4b580a3f4458f2cf048062e49250a154b65d8d1ce42293fea332f91",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step004Data.lean": {
+      "sha256": "3c3a7ca82866a076cb6fd3420ec1559534feb6c7ac094514af35263d15028881",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step005Data.lean": {
+      "sha256": "d661e5853929b298975bd0491826b208b33407d1b465f9d519c2807c004190eb",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step006Data.lean": {
+      "sha256": "1e227475ecf6d33f7f496df73f6c4c7856d3330b826512040659906ebbf7d62a",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step007Data.lean": {
+      "sha256": "3c00c3592fca924f120f33e29601393da23a0482eeca00cacef7fee330da8377",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step008Data.lean": {
+      "sha256": "e9059ea05de9bc2869792fe3f78428f8f6e66b93f150d8e115fec98c193bd9d1",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step009Data.lean": {
+      "sha256": "6ab91e3cc5be6b896f719236d24b9a5afbb9c0a012a406a51576f8845c814d3e",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step010Data.lean": {
+      "sha256": "eb9c12936b9b001dc775ed663f00a630208262007f8b684fc37b63a78c1e47ef",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step011Data.lean": {
+      "sha256": "c4ad3829e5446b53e45c97551a41c39cffc8afd4a81b593519475dc683650dae",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step012Data.lean": {
+      "sha256": "6a08f4e13774f1b4d590c8d39952c02c87233a6a8f742e6f8049e484469f48d7",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step013Data.lean": {
+      "sha256": "73dc814931be4c2bc36e620a68e332f03f00c4ad63014e17e50583a22d281970",
+      "bytes": 741,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step014Data.lean": {
+      "sha256": "f398784d17409a469cace776a51e7d1b45abd3014ad829b288feb9e30edc83ad",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step015Data.lean": {
+      "sha256": "01d4f16496f627febdafad3ac1d8e1f84499029d4a758f2027f645c2c26afc8e",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step016Data.lean": {
+      "sha256": "a498ccd9280e98ff623aea503998657fd3cc11ed23e9000a1203ecc435b568af",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step017Data.lean": {
+      "sha256": "3f565726fab979584d24234f6a858c33c26517ae2b115749e3a953935e44020a",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step018Data.lean": {
+      "sha256": "6140fe32181bc961f2df0f42b91f513f12f043d05881ed5c093c2e4716d623cc",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step019Data.lean": {
+      "sha256": "79c29a167c8bf40997ffd871cd91582da065e6531dbf51135c434da252d90060",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step020Data.lean": {
+      "sha256": "46bd86b206223bf0d503e69440c01b70fe73e143d107b235f14afb3aeebcb758",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step021Data.lean": {
+      "sha256": "d668463e3a7ed766fc60045ce6105a75a955043cbc1a0b0b327da4484e1fb563",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step022Data.lean": {
+      "sha256": "0add52f28949e380852e335cf0ea6dec722887a0bdaa38e6788d4da52d0011a1",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step023Data.lean": {
+      "sha256": "0a9b5afb2e486c0a8c6a5b392f9dc0c4fc19e1838efdaf7cecce5ae62270ebb8",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step024Data.lean": {
+      "sha256": "4f931cb93c8a98d1f4c40eeaa0ea1cee5b826221096d1815c79ec771e05a4187",
+      "bytes": 741,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step025Data.lean": {
+      "sha256": "5ec03277781578ed0ca11b8648b31d417ac2c7b0f7a5714025aaedacc5b384c5",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step026Data.lean": {
+      "sha256": "db6133415f8dcec50dd5996983cf6ecd914cc59f54b99a7ad2d61b781eac2aac",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step027Data.lean": {
+      "sha256": "c2ae94ec272c4f0ca3b045802183bef3f1dc173aaf8b24d570803f8a533f9266",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step028Data.lean": {
+      "sha256": "7b536886c8946e54ba9bad252904955a179e9be09078fa43c77043697ca3c24c",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step029Data.lean": {
+      "sha256": "7621ad0671926c0c3f222b7213d47d70b3cccdbaac95e417558da71dc441cfce",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step030Data.lean": {
+      "sha256": "6b5c182978ef3b595f748ef90a83f3a2d1c51d2f464261d91f7d1275df7dacb3",
+      "bytes": 740,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/PackedNamespaced/Chunk000.lean": {
+      "sha256": "e4aef8f24be2c5dd5cf0194576e14e4fde22227e5a5eafaf0d6ee92481c27c62",
+      "bytes": 461016,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/CellGeometry.lean": {
+      "sha256": "603c814c4928a2100dab21b5eb770556e4df92fb3bf909c7b7e2d3d711b8f22d",
+      "bytes": 1327,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/CellLinear.lean": {
+      "sha256": "0ebf5ea519b79817f0a56b500ff2fbb240e583dbcf0d54c1402fa64c21a6c18c",
+      "bytes": 2046,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/CellPhysical.lean": {
+      "sha256": "aef1c650584d4aad685004bb78090a3df60aaaa1843577e0cae7a25422eec800",
+      "bytes": 1877,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Certificate.lean": {
+      "sha256": "a4f97caac156c08a14881fe1a5e295927ae0ae660b41d6de206f8c6dfbb7e3b9",
+      "bytes": 1737,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Certificates/PartnerCoverecb16807059d22b7fe96f51ePart000.lean": {
+      "sha256": "64e587fd13b5eafc17e296eb1071a3a9fd8a4cc918439a876b4cd3f37ea87660",
+      "bytes": 32302,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Certificates/PartnerCoverecb16807059d22b7fe96f51ePart001.lean": {
+      "sha256": "b075c2bad9e1f37c1080e230d8aba904ca004c2923a22cfe3fa9d120c9ed4aec",
+      "bytes": 14754,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Certificates/PartnerCoverf779ad9667b2157cbe3de6cePart000.lean": {
+      "sha256": "4246420d937cf8a5a55c5e6b0d35ac52f2630b00e23fb3b1eb514def09e87ccc",
+      "bytes": 29634,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Certificates/PartnerCoverf779ad9667b2157cbe3de6cePart001.lean": {
+      "sha256": "f48a9765f45161f713a5ae98767f8afe19136407a32745f944f8395c4b1c99b9",
+      "bytes": 29537,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Certificates/PartnerCoverf779ad9667b2157cbe3de6ceRows.lean": {
+      "sha256": "db8890e011ccf8ac1d71fc5607bb5ebd3b2ac80205da358b13bb6e4698686b12",
+      "bytes": 1864,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Certificates/StrictCoreBatch0036.lean": {
+      "sha256": "62188e4222542a441a89b9ce5441c75fdcb5894251c4bfe92b501f2ab87d1794",
+      "bytes": 88759,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Certificates/StrictCoreBatch0037.lean": {
+      "sha256": "3485d365bf4c91b5248fb83b3db3bd4f9e676cfbf191b83935a8c83c42c843f2",
+      "bytes": 58615,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/ChartIntervals.lean": {
+      "sha256": "3246c78cae7ce9a4e41e1971d94db31d15f51552fafa5a802a032aba18c4998f",
+      "bytes": 2356,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/CollisionFamily.lean": {
+      "sha256": "658d621e48497ffb1ef15df24cb063bb7540f93996473cb36d89cec0cd1f11a8",
+      "bytes": 2576,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/CollisionPlanes.lean": {
+      "sha256": "532b63b79b981655657a1e627557999f1d3e10f6845297d841f80ca743f40186",
+      "bytes": 1539,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/CollisionRows.lean": {
+      "sha256": "73a306dbd375cc6c2e1d3acb6750113049b673c1bfbf5ab5a364f3dc44686226",
+      "bytes": 2845,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Convexification.lean": {
+      "sha256": "0940b3bf7c6721e83da01a62b822299dde9c66d7bba553fc45fed37a32693b94",
+      "bytes": 3590,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/CorePointCertificates.lean": {
+      "sha256": "05fbcefc8fb5df6f7c820c5e8d829a34327d86c582582de971cee331cf125072",
+      "bytes": 2660,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/DifferenceSupport.lean": {
+      "sha256": "fb19f0cdbbe904086b8c27a42ac7bead99bb2078f8f0b9c188708fcb649a9d85",
+      "bytes": 3018,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/EmptyPartnerCover.lean": {
+      "sha256": "6670313309a5f5545114b8d285a7ba7aae577020284ac26f8e3162e87b7723e2",
+      "bytes": 486,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/FiniteConvex.lean": {
+      "sha256": "46d56b6a62c2711b301c8b02088fa4da7d45229fb5e5d2d9d10a7bf19e35b46f",
+      "bytes": 3167,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/ForwardRows.lean": {
+      "sha256": "224afe04b130dd78376147df8a8762461cc22260f82e6174325bc0064c2b87b0",
+      "bytes": 7524,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/HomogeneousPoints.lean": {
+      "sha256": "fe77dc3e920c429e391da1998c0e066f7ead9df610db2cbcc20479718a61daa5",
+      "bytes": 3343,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/HomogeneousSupport.lean": {
+      "sha256": "c5e88fe2e0102287d52a8033393d9f30765e1dd4c6daba27ce5fbabd1db5675e",
+      "bytes": 2463,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/HullLinearCertificates.lean": {
+      "sha256": "42ff42008512d9405b91d795724336fa896814ec2c92e68318d7e9c541643f28",
+      "bytes": 1060,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/IntegerRowTrace.lean": {
+      "sha256": "d9c5c65798e4cc42a9628ce3be561bc62a5cbf659e3fb37d68c76bdd0a73b902",
+      "bytes": 4277,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/IntegerRows.lean": {
+      "sha256": "244a6e9bebab9b7ab847ed67d3c2fd77a852a6ba9a61e07253cc8f8b55d8765f",
+      "bytes": 3253,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/KernelBoolRefl.lean": {
+      "sha256": "90111f1782484d93843ab7e8ec6789744ebf90afdd8deb6fa2d3ddf3880513ce",
+      "bytes": 429,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/KernelEqualityRefl.lean": {
+      "sha256": "579aba76120723d18a2d3ee1464e136612cca06ef76f9547a67ae183b2c92200",
+      "bytes": 581,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/LinearCertificates.lean": {
+      "sha256": "c24f3d50ad393d00d0a1d6650f853f419a3612f957b75cad881184517e1ac66d",
+      "bytes": 3837,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/LinearCover.lean": {
+      "sha256": "07a06e2af16eba8f1ab5c1874fb30b81eb6e625cffcf24ad7874c2f2bd6d94e8",
+      "bytes": 1798,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/ListRowSubset.lean": {
+      "sha256": "cfc25cb8ed4ef8e8171bf7000bd22ac7c9f27acd30c98cc3419222745f9a9c4d",
+      "bytes": 650,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/PhysicalRowInput.lean": {
+      "sha256": "65665ed05820583694a33f57766fe550ac974bc570150cc456396a81edac48e5",
+      "bytes": 2805,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/PhysicalRows.lean": {
+      "sha256": "8c49b244cce3f8140e05651a96769dfc94b246068b0d3f016d7a7c0e79bca9a0",
+      "bytes": 3538,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/PlaneTaggedPoints.lean": {
+      "sha256": "c96f214ffcea208fcc2cd0aecb2da52100d7b2c39914585f38ccc95725e81491",
+      "bytes": 4384,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/PolygonCertificates.lean": {
+      "sha256": "ab52222aa4fbfa52080ad9eb0eb085a444d27d68a7c57aeba74ba650b98fb33f",
+      "bytes": 5028,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/PosewiseReplay.lean": {
+      "sha256": "dc4b9b89ac1d7cb18df29a7d309c555ece03bdb90c4fcad29c004614ecb6f8e5",
+      "bytes": 4796,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Promotion.lean": {
+      "sha256": "8f635a0679b0d8abd7b75b9dbf8d25b07ad29348496c5256f4e77d7052b50665",
+      "bytes": 2701,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Quadratic.lean": {
+      "sha256": "c98a50d319fd55fc1c47d80bb758fda9bf0cd68bc5e05d000e94618feecdd25d",
+      "bytes": 2909,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/RefinementRows.lean": {
+      "sha256": "287348eeae2f3a4caee512129783a630fcff3451c5d6476117d2be78b742b8dd",
+      "bytes": 1672,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/RowRefinement.lean": {
+      "sha256": "a4bb7f0861b23c3343761c8146eca51c944e3ee1ed3f560fba5853559ea44983",
+      "bytes": 1958,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/RowTrace.lean": {
+      "sha256": "fec8299c0873dc32ef04cf71832caf1d10d3942622ed238c17d2aed3357f6963",
+      "bytes": 3364,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/RowsOwnership.lean": {
+      "sha256": "6e9a487d66cb2206902af697df999dcc21556e67c0d01f0b2508e2fc5498a9d3",
+      "bytes": 3620,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/SelfHullCertificates.lean": {
+      "sha256": "f99f5e5f57f8c6ecfdfe05520b6178d1327473dd64cee1d32c96c38a2529883e",
+      "bytes": 5673,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/SimplePolygonFan.lean": {
+      "sha256": "c09f1cc57f742f234031494ef5478d6691e66839b37c9622215552e97299f512",
+      "bytes": 4566,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/StrictCoreCheck.lean": {
+      "sha256": "9e1c19212e125c9280c4a7e9222a24c9919c98fc5c046c3d6cbc45a01e0cafae",
+      "bytes": 3668,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/TaggedPoints.lean": {
+      "sha256": "03d7fe57844686c2173ed786eec21c9accb45b04b1d7c925022b7ff2d0717fa9",
+      "bytes": 3002,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/TraceAssembly.lean": {
+      "sha256": "c5ac2f4fe23fcd0ccacf43c4f1b9709e566108c2151e6993f2b22905126df459",
+      "bytes": 3909,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/TriangleCertificates.lean": {
+      "sha256": "3fca75c845e23778f2c940325b8d19b0d43515553d2fa4c8e7bfd09bfdf81808",
+      "bytes": 3211,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/TriangleCover.lean": {
+      "sha256": "085f602a90d0935ae1294a65f063505a15d231b8dcbf39b8bdda23067cbef245",
+      "bytes": 2830,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/UniversalCollision.lean": {
+      "sha256": "bdec0c56b98f0b9c30ff5ba0c041ff1b1341554b52ea06b950d5a1d173176c74",
+      "bytes": 5001,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Walls.lean": {
+      "sha256": "e55e5ca9bbe30c15ced42411419edff8cd13b7d7ca8f94c9fff753dbff6596a5",
+      "bytes": 3732,
+      "published_source_member_verified": true
+    },
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/PackedNamespaced/Chunk001.lean": {
+      "sha256": "21aefe466d53606ee196b5097b3a736c05e190a1ae01dd68f35d437e59313049",
+      "bytes": 231553,
+      "published_source_member_verified": true
+    }
+  },
+  "unchanged_fixture_member_hashes": {
+    "TASK.json": "5f5d25af7e95db6b63075542c9ec8272383194b74e077a7798de3391d24171a1",
+    "project/ElevenSquare/BasicGeometry.lean": "0e291c05b9fa7670ed3bac5c605e5cdb3666994715c9f7e4a16786881d020c72",
+    "project/ElevenSquare/Cover.lean": "fe57460a07b6acd1561be1d63a9e93c27560716fd1af8df94f65fb7321f7cd1e",
+    "project/ElevenSquare/CoverChecks.lean": "cfb1ac4a0bbd79e078519e7d9df2e04892458a87cc309a6aa520a0cff2e4e68d",
+    "project/ElevenSquare/CoverData.lean": "d3ed474b9f3b8c88ffffcfa1c1005b98be709dd5443198088e94e659a299906d",
+    "project/ElevenSquare/GeneratedCover0.lean": "4936cc6f454137d9509976002e3c719de0dd28441e99ae8fbd0343ab7c2fba99",
+    "project/ElevenSquare/GeneratedCover1.lean": "e72e09742bd6a4d17a8152f6b69c9cdb94933d15829193e88ec52ba85c6c6d27",
+    "project/ElevenSquare/GeneratedCover2.lean": "f9d6ccc5aa2ae6c16140dcf8d474f869448c83d965a7644f16fb59b3d2c020b5",
+    "project/ElevenSquare/GeneratedCover3.lean": "973ed8e31b101004f93e72347411e153c6283022219cfcc5d5846ee1f65a9f0f",
+    "project/ElevenSquare/Geometry.lean": "fa8ff2c666453b56f04b22c164ef063cbd46dc85fb4afd7ed6fbb01b7c4f641a",
+    "project/ElevenSquare/Orientation.lean": "2bf5f26832afb8859c2463d5bf813a36fc0d701b598698f59a267db417915601",
+    "project/ElevenSquare/Pending/GeometryTypes.lean": "a7bf5e2a537e0b81a7d874c35c769f605b61da9e3fef28feb07390736690502a",
+    "project/ElevenSquare/Pending/S05_Minkowski.lean": "e39dcfc51ad822fffbd76414e140f476baf3d5f0e55f7790e273362ce5484e71",
+    "project/ElevenSquare/Pending/S05_OwnedHull.lean": "237234a0a57234a0fe6ca3d421758550b50266b6b1411b04ad07c49339a7db42",
+    "project/ElevenSquare/Pending/S05_Trace.lean": "c28d11831b4130263f31e046d4165e942ce15d6662b1902875e1de2b7c2f7a92",
+    "project/ElevenSquare/Pending/Types.lean": "a08828e4674559871cfa7ee6e5321d008b43ff66baf2fa6906b3225e59e6dd7a",
+    "project/ElevenSquare/Tasks/T03/AngleBands.lean": "4a079e796f4757b1326b87288c2e70750ad33fad817bdd9bf91c969fe5332da5",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/InitialStateData.lean": "632ad5e6c70d325519eb4f696926793efa8895697a92720260dbb2d16eb97927",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/RowData.lean": "f0a029bf8f110b370e9bbfbfce3bb6fc36f6986c4423edef576ff68448293dd3",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step000State.lean": "33dd1698bea69eecd1d1515c7cbd978126caf42463eb84c526d996923f944e2c",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step001State.lean": "8f93b8eb8f3681a006ac5951f49c52f81bc62cb87daf63ec2a9f1869e1f507f1",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step002State.lean": "88dc753a868cd77975d042a955e634f2c4b05f81c161e8816377b84125cf31a4",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step003State.lean": "505941b96e0c9de689ba85fdc804597ed7dc7a8f8cce54477b5546d834233213",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step004State.lean": "16a50f2989119be13073157d33fe253e41a09e3042d8b9c21ba355da7cac9726",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step005State.lean": "625706df0a9a1c481348fd476a5c18bfb7f4a42a4f745e6df29da78cf0970dc1",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step006State.lean": "91ee73322dc25f9bc976a4558922615e8e98e2863b09121dd96c07c8a0dbed48",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step007State.lean": "114d0cd8c147b1bcb487cea4a5c33c368c5f0ef74a3add6ae00e4535aae93232",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step008State.lean": "44265f0f271251611ee3d2ca82b66b228f7c35628083d4bac441682565807f0c",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step009State.lean": "95bae6a6aaf40f5d65f908d97db53f321a52dcbe8cbce04d2dbd5103ad6ce305",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step010State.lean": "26ad2f8c8971e3fdcab4c259254fd31b3c2b414c9133dbe0fef8327eec685f92",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step011State.lean": "bab6cfe662372b2285745f6219f4cb60a6373855780b4abff229d6f5275ee7f2",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step012State.lean": "4f31975ce6186c7b6dcb710d3b190cf4ec6d69844a67439a095b41ab394a22b2",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step013State.lean": "2d43c4860e8801f632a4a599b5c1785c788c125d88eaf03f19ef13bd33196651",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step014State.lean": "44282ce457ed908fbeba80c4a38d50747dcdfb547892ad456b803379400b85eb",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step015State.lean": "ca0d66840c025b6879c86ba8ed83b0c7c4cf431804385e682efffa5635aa4e3c",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step016State.lean": "b193bce355a09524b447dd906f21319f876afaf1955a3811f98e51974f48ffcf",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step017State.lean": "f2967e83894a1d1911095c59f798c3acad86f4f5ecfd184f431f5815b96dd319",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step018State.lean": "016982efd56431e3755a9252fe1533cc6176d08872f73353925a2fc81609e7a9",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step019State.lean": "514b01d541b5f500a968a77d0418f94d22a043acaf95816ab97c20471847fa75",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step020State.lean": "d729c83e31346c592eb13f78b704944b60781293709f15f50795035d6bad3b15",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step021State.lean": "57feaa124fc9e6ba2e07757c63743f9e95b7c9cdb14ce84917cb3bb0834aeb6f",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step022State.lean": "6656916c70161fc34aec15f3c01827d8bfe9032271b2d993ac4bda5e7a66590c",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step023State.lean": "3f45c147e3a06e09d422ed3b04a480952a185bd56a8ec35706a4fbeaced444a8",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step024State.lean": "577d1f467c5c6db9bc0c3eb102a9dc10bd59753c717e588d0c0fa949496b4ed2",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step025State.lean": "07674610628e6d70bd5c52f7533d1055f5e88c7340b4ac07bf139bffccd1207f",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step026State.lean": "23225e380e8385dc37b1ffd93e8ed5780f5719eb52ae7ea43f17ab17c7bce735",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step027State.lean": "3f6eddcba9831fbf26d0b107b0e454a80c33959d3e955babb58168ecaf4b483a",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step028State.lean": "6c8ee746f3c4bd0851b2b8d7dbb5d130c31209a0219a89aed027f945efdd8a77",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step029State.lean": "668129def468e8d2ebfd2cab342377d49783d6dbb38ceaf240f67fdb30b03f3e",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step030State.lean": "f112af2360ec20a3987868e915cd141cf4fe54e5bf0b5faedf1ca037aa6007f9",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step031State.lean": "b660b124442b7d70f77a7c16f6c84905563dfe45d9211a6ef989a27cab01b621",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step032State.lean": "6ed1a818e6c78cad5c48928f0b5fb5db5d20752b46c22d9105b928df6343982f",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step033State.lean": "294898e8a2f170e0085c0df64660a2bc1bc2181ccd7c291c1205057090669d1c",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step034State.lean": "51b331b767617a564fd22bb989a55f7965c4501030a75676ae9e8c22a319ef80",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step035State.lean": "7264a5b6785029b85aae9a38a2ab74453d44ea7b56c993fd91cb19d2466b1c4b",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step036State.lean": "6305867d9b9f8b38460cf71677f408531d9426bf312456fe8fe08d68f3077387",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step037State.lean": "16d132c37abd04b8e2e6c31b705d0df4e8db46486fafe9dff394ca0220435632",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step038State.lean": "e981d8f2206de1adaf124a2b344a862373a0fc5e9aae11df12d302c7b338921f",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step039State.lean": "ba7629713d7531ca1a5d952eb85538bb85ef46653bd513d101d2b0e4006c573b",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step040State.lean": "a286a1a5a0f66aa09faef2992738b65b8df287b224ed82f368411fa2aeb4cd22",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step041State.lean": "a46aac2b818a7916216fbfe4671f7776f0b546dacfef6c7a1ba088bacf808e80",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step042State.lean": "a3f208b379b950ffa37bdaf98983a2149ac1d441cac9149b9f03e2c87ffec5f3",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step043State.lean": "d9eafcd896bae7fafc00afe542ac37b9ba7c037104d25589409fefdfe4f476d0",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step044State.lean": "2b16c26ba6d3f16880f575117696638be7070846b785b328e6dc88cac4a50c56",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step045State.lean": "2b4f0775694ee9df2159ca94abd93f43c68173ba876e1233e06b0440027c2df8",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step046State.lean": "df14c2e192caf7a9ad997d0a417b6673f9476471b1c30b9f78eb7298f499f914",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step047State.lean": "04036591f4aa6b1dc05dd3aa470439cddf0d8b231efe8c849c59fcb00a527421",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step048State.lean": "2fb74b6d68b5be8d201f97393ddf8f685a6a9917e1b41de8c3737186b4c6a874",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step049State.lean": "bd849fd9b0d01f7b08b34d264e8c5ffbb0ff43b21c3b532266c5e06379f1ef2c",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step050State.lean": "535e4654581f8e9290c874f0483b2e3f763774f60e04f182ace50879b48563cc",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step051State.lean": "06acecea0dbb71b9f693a90e79fff48eac39e7aab76ff8c9a34f4df8eed7985b",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step052State.lean": "9865746e6d89fb2f58fa302702e7e7584c2717965236ede28c506d42ba88ea74",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step053State.lean": "f6762090159efb9a16204c3b64d92a3ef6094cd51b4fea788a8025c2343d6bfc",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step054State.lean": "bb1f274d0a13f4ea305bc410a6676f7d3e0822605516a9f1fa980da0b3e35556",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step055State.lean": "e8276765e4eadb5c9c03541d5fa5aadf510dd1f7dd93bdc65025590add98da82",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step056State.lean": "96c6095a32fc912bfe396d6715069ad728e89be973dec22df7cc85893c38b439",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step057State.lean": "268f26d9e4405e2d05f94a6e0e1d16d5f667e963fc1feee78a9e7b98d258f706",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step058State.lean": "0fb66795170d2cf495fa3331fccb79b098b51428176a912c8207e32c6a46da16",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step059State.lean": "0339269d9e1df340ad9fd4b5dd9a4674c9a5b6f4c4f6a6f88e8dd13c62589d1a",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step060State.lean": "c06f7427e787dc4be858430c09a0ca0177973b41def8942a245855faf85b313d",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step061State.lean": "cb4344e63ac54e1b871dccc4662a636a51ddbac79faa2a5bc854bdb2bb0c8916",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step062State.lean": "cd76c98976ab7e63a7644f65d16ebe7bbe6bf0ab89f0ad45008d1e632422caa2",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step063State.lean": "fb45d84af5dde10e3357705100365a5578ac2d28f1eab782aaf2bcaf6655d4c7",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step064State.lean": "4890280719f0c8cabd5a5d2add98760d2d3bf33ee18a2dece5c7fb26463bd33a",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step065State.lean": "53f0732bda0ef5d332d45f606536756b4482ad38ae20338041eaca7f12cf9a92",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step066State.lean": "1dbe12f5254326fdd86e638600dab05c35f7adc25dc7a5408bcd6a3fc4c42ba8",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step067State.lean": "6971d461b8fa23bcccbddeb51120e86211fc981f4cf3463465e5560d93b57e5c",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step068State.lean": "0e952c99cd0efc85a1a6993bafa088d2cf39ceba880607f4e4755fabdf60b09b",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step069State.lean": "60543450f34ba9dc04a4c35ce1d1546f7f703f21b574d36852f92d6651d3f1c5",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step070State.lean": "ddeb8e0626dcaeef52873f04d29c9f9db07829cca104a771b18f14e918a242f1",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step071State.lean": "b7c2422832db6b0d405b0f95ca5992eef5cdd8a2637bf76a55109c09a317acd5",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step072State.lean": "b1aa80fc19ba3e7f173bc52a1ddd99c8d338ccf67b341ccc36ce4fce082f8418",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step073State.lean": "be24dee141d18a659e5cbba8dea19a75ef6c2b3881c97c0bee2ca8a71db0f53b",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step074State.lean": "047391da48d28d4549381f5ef95970313e84cb672613eaf4d3443aa20e17451a",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step075State.lean": "14cac3bc9486bc066edf7f52f144dff719f02917bd63dda383015d25d4a5b8d3",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step076State.lean": "11555ee0dcc6e751e616e22e6300a53554f4c41128f796ac02951d46537e5a50",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step077State.lean": "2dff9ce16fa792c24238921aeb1a56ebd296c06cc3aca5766da02307d4293c3e",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step078State.lean": "c8654eb7a8cca3ee55d4bd407dc756b090e5855a4911b3dd6147e74647fa2a78",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step079State.lean": "1feb78208e6b328323b708279150e80617c3d6278bfaa8dc3bf12890ecd3a26e",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step080State.lean": "81d526a7d1f7a490deaa099282243a7cf4ea4a528e0c3105536f7ab8071d58b6",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step081State.lean": "1f3ef4221d7476bd3bcb68b0f8408efa3f894b006549c2cf1accbf2118ec8b09",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step082State.lean": "65a9802ebef4f44cdd6f3c696d32516c7a8a01aa41f01fe797fe1a2c0e0b7451",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step083State.lean": "f3033e2eb7dde40eec66a6d148a5a3c24ed4bbca3128add80a36a29ddc70378a",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step084State.lean": "20ee78edc2907e0465be86059f4a8baa822e6793fb6f0b1a8bfd3904dceb5ca8",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step085State.lean": "585723f5f5c794824c7082940a1d9556c5f67dd120826b68db698238124032fd",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step086State.lean": "be021d9773a33b9d1c590c81ef11ac1ca5430aa06816cbf0d000649b06c01f9a",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step087State.lean": "5d92a00b18d4ead71a5f982ec15efeaf76750d90a61392c28e5f8791bc84715a",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step088State.lean": "deef82b6c101db6c762a8721142c7927a9f1565bb32ad8e5a596480b5d1d56d1",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step089State.lean": "2a7cb3891c45c2ff67e965238739403369b00440ab9eb487ecc0ffb4825da450",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step090State.lean": "9473dfddb5f75a31974432a297794113356167950129222912589486d6e1ad42",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step091State.lean": "5bf24b1d72f2d88221c610694f54d87c9d6967eaac79204a7e7a507be0035a52",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step092State.lean": "2b6b351ef515f2d29dcd04accdddfb593ba6503a9c16b118139a8026dca364d0",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step093State.lean": "c9928a26d6ab72585a99f9ae35341f555cebf1d0cfde7b15a517de7c118ef59f",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step094State.lean": "6c79022360291d29031b59e7491161bfaf94404653d79bf28bcaf2ef7610bfea",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step095State.lean": "750ef4a4c60ba558a9e469b417ee6a3c48b8b53cc533710e32e830d7a8fe70bd",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step096Partner01/Contexts000.lean": "48636aaa07c1e8a03888bdfb2b6cd82c32c7d3c6d3b91b53b026bc46559eebcb",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step096Partner01/Contexts001.lean": "e5cf0b3e53ffef61e9df6ea57309c0e573eaa9cb9895dff0abdc0895a28a0052",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step096Partner01/Data.lean": "0eb716deef49a0843a5e772ce7eef4c5bc7eca7ccc1b73e62da1cb94cfc3436a",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Forward/Step096State.lean": "d504044f48e9f11b39507abe067245b905e20ab3e034cbd8625d33b32f26182e",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/HullData.lean": "59196cf53da7a6bcc8e88abee65b1a2c55124eb03efa9e6b327d8a162361d8c3",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step000Data.lean": "9e1702fcefb15d859563010ab38724587ace9cfcabd04367609251f96141f2f3",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step001Data.lean": "2b4a022ac5d840ee4b85aad06b493e0c409f98c9bf90d00921bdb1d47f8d1dae",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step002Data.lean": "a21e6afabf345b34e1fb2413291d474214d93e348bae8625ffafecdcb4fa3b99",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step003Data.lean": "dda86c710d00c1fc0f941e0a29964c197110727952599b7fddafe861240a6343",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step004Data.lean": "0a95dd29060c7f5c7f42b7f951bf3eb158192989e66a3add33b7273e4aafbf69",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step005Data.lean": "900c300bdd314e53b8dc4b0baa47735b9ba281a050728c1cdac4a2cce3211d9e",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step006Data.lean": "fbb6ef2d10d3f4c48dbcddfe9ae9a166fdf7ba23dc3ab8fb8cb2c24156e42b6a",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step007Data.lean": "d5aa5cf442988c900d2f05a1e53fd27845a71ca4d504da6aed0ba5ac9d2d4704",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step008Data.lean": "ce8bf10a08ec1b3209ecd5734a71a58b37fa4401eb31a1b7ef8bf2a9093c3de4",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step009Data.lean": "9bdc6972348014888ab07d1fd6555d1db0b556c3ae979f11b263862f04d6d060",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step010Data.lean": "76064a68af2e641beea208da413edab853945ac672756d46e3f1faf44c04f3dc",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step011Data.lean": "10aab951de89be832198cb63cde864eadaf3b4f30ae37f65ab2f52e1cf8dd2bf",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step012Data.lean": "e76f2608f117ea3ab455a1e01f426f8e2618e799b448183053477fe158fde263",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step013Data.lean": "e433f604af9e4acfb6a396e0fb056f4e105de5cc72763d063cf1f9a2c342ce4e",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step014Data.lean": "6c796430eabf4a23b976242089979d04b671110ff0be002a4d47ab08700d7d76",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step015Data.lean": "d67e1c84ae782968c52adcb634e604496a808fb5756bd4b6854fc803fb6e6bac",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step016Data.lean": "a7d40e3c318ca710f09bcd4f7385a635af5e188fe46614c01345a4a80117c64e",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step017Data.lean": "f95cccdf5ee95be20ed0e838eef11d90358ccd9d1eb752fccd9daea343ce7ab8",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step018Data.lean": "b702132b6724211e4309c67f3a0c6af8ed69b1c416417f29ea78a646279dc9fb",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step019Data.lean": "33c767e5abe3f3c94cb07f2ac3342cd4c65255596ec298a61a4f8d1051e7336e",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step020Data.lean": "ba724c1e6d8b737ad2f2d92a7ae46809eb28a749ac4c78944980a114cb32ed18",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step021Data.lean": "d4f02428756589d6466089096d0f30c4df7cc303670ef81823e47fa3b3563a86",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step022Data.lean": "a07ccf2600522d6b406a997608738c3235ea661fbad21d0f82185927d09bf6d0",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step023Data.lean": "aa1da971e2c3f387c45e5323ee42ba57b8a9af482a5a4c754d928faca9dc2279",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step024Data.lean": "97c867ba000dde014d3c3c5898c7f4364c2dcb29d2733321698a672cb2f220bb",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step025Data.lean": "758e37c8bc4eeea636bfd8095e31d4c50a2fd5d3d1268b6d3eee83e02840204e",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step026Data.lean": "9c9e2a2027d244ee54362c4f645e1f0a2e3f6cbfb5097112ab42174367bdc180",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step027Data.lean": "f81e60ec3199630ac969519a8fa825dee58c42f553ce49d4d4bc3af9e444d8ef",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step028Data.lean": "067cf07b3e5366711a60b1b18874312c1d470de107e3519cf4f955aedde6d843",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step029Data.lean": "9a15829c81c3f7773c8c3d68705f697ccbedb9242d73737aba798fe0bb6dea6c",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step030Data.lean": "6335b976fac24a4ad5b9d20640069e867232dd1530aa16fa69090fc3924b5203",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step031Data.lean": "6080a0353feadc71a72cff1044215238ccf010497e032ce66fb307c338dff70c",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step032Data.lean": "92af5ba12f0935dbf9b9d77f0dd9f1316e37c30e573edc06be71036dbfdd1322",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step033Data.lean": "dfbcfba580e6f539fbebfb5d80d057e4aa99023398d566053658ed22d80e61d5",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step034Data.lean": "87c465329f65508e3d016cff962002b29f8781befae399757d4c8f40000ecb11",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step035Data.lean": "3895c175ae65b348c6df8261383342ce924ac4d2229222488ec38a93ac3742d8",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step036Data.lean": "51e1d7c588180c7d024b92c98e671f20e5b5623a63c561dcd659c7641517432e",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step037Data.lean": "dd2c7ef4e2e6207544d118dd06ee7ead84bc68044175edcd137ab9be4ccd2e70",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step038Data.lean": "f3facc5207cbecbde5ed1072518bafeccbfcf961bf9d514d5a07caa8bca9f458",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step039Data.lean": "2bb8cdfb31685a93fd2e3b2e242369bb50e657c4ab720d92ec0208abd7637ef8",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step040Data.lean": "8850504bf04a857ef8b52e8313402e686bf9f26564935be289b1976bdbbf10a5",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step041Data.lean": "f3e48e3eaf2a18c63f7299afbac4efe93789505a57edeb12e8f1eb8f60f09127",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step042Data.lean": "f615a10e1b765fa14c3a5c11f2f8f74f642bc604819dc2a3a339d43615ec8e2f",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step043Data.lean": "5c2156d45b46b8fca597c5d3a847b483de0a876e1d1d1f7bfecf84c8f5e4ac3e",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step044Data.lean": "4b102d16009853d4584f8a8cefdb88af0b7e7126d0645d135273140daa00f70b",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step045Data.lean": "c9cefe2417aa50f0b62ccc9629613cdb53e8ea9ff26a83bbb50d3f320f9ee2a9",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step046Data.lean": "fd0563405ca4af34029cae2a4d1674693d7aebcd5bd9d22b8acaac7c7a47ff1f",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step047Data.lean": "d1e1d93916eb44496cfb9d1986ae70f452e274283e42178b45c1db23e1c9447e",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step048Data.lean": "955e711ea77886c863411812fa82ea40f461ef1781fc2b08aeb2edef230d780f",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step049Data.lean": "112778a5bcadeeb2fcfa398f15ab12da7edb1ee033db18ddfb191b0849496d19",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step050Data.lean": "4fc227afd91bc4691520ed9b6ea63353dc3c6d04c2d0df5a2959cb8594b84612",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step051Data.lean": "f1803dd2f6f9ae42e0f899de73725e8441e553769a10bebc56de7a465a335d60",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step052Data.lean": "62ce7c07b580650985b0fcbec1420c69166401a56f59c5ca62d3070d6fb45e70",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step053Data.lean": "de60ff7bb927eeaa7f0f6dccf2026b37ffe4b63c700e941d81742955acaadbe9",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step054Data.lean": "467bbd4af8dbc49eddadd0ceba2fd03a66e4aa0b42ffa35e5dcc8b57bc66ac48",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step055Data.lean": "e8ea3631c99baccbafed85780cbe9f4b6f0f017ba5b882987b9264467d2d75eb",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step056Data.lean": "e9f593364eb5073829b3d36e1c2c1ad9b87923e93b3bf544878f0cd0f6940391",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step057Data.lean": "0738c4facd973ba903dd35d178d1d3ce816eeaa1804929ccd520a0edfacf09f9",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step058Data.lean": "437bf389c9cc15c3911d5742e41c0af391daed667a29ab906fd4da2b42a47189",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step059Data.lean": "a6a7bcddd16b1acb8fdec643eb863f56b915a7c895e8f193bd42f02ec5715d9c",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step060Data.lean": "9b14fc4513900e34768cb204edc2ec8129042f7c43e8a28a7a2a06ee4c8255ba",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step061Data.lean": "fa02b6489faec26d31b982645283547ec588ad600aff5db7f919a3ccd9b0394d",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step062Data.lean": "b14a2043a0e19b8d00cb0c9a6696adfaf2b2596bd84cc9697c45dc6633fceb74",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step063Data.lean": "0fc8513b0c04e904006e8ba6c91fe8fc0c6749ec7c23a11a8a5f913bec339e5a",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step064Data.lean": "cc748c4d61386c3001c144d7a55acbb0f8bc002fe471baa8d315fcccf4739b15",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node000/Step065Data.lean": "233720cfc65c7240b74cb6eb5e12c9b9c6d9d1d0b6ba0bc614868073c088e1fb",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/HullData.lean": "1e9a3cd79bcaf6f8526c9ad7779c4cb2cd3397cb50f24fbbd6783a122e410389",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step000Data.lean": "e5f4868f23b38b64912e9c93134d3c7503028c9aeeb5f3fdb405679c7d7d0cfc",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step001Data.lean": "571103f22d1353a8e5c69c94e829cd693777f29d78c6853e87dba960f88befaa",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step002Data.lean": "217c9f9017847f9c0f625e54f1cd676052334f0292bc5276cfe4b577a52d06d8",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step003Data.lean": "e88d5ba5c4b580a3f4458f2cf048062e49250a154b65d8d1ce42293fea332f91",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step004Data.lean": "3c3a7ca82866a076cb6fd3420ec1559534feb6c7ac094514af35263d15028881",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step005Data.lean": "d661e5853929b298975bd0491826b208b33407d1b465f9d519c2807c004190eb",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step006Data.lean": "1e227475ecf6d33f7f496df73f6c4c7856d3330b826512040659906ebbf7d62a",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step007Data.lean": "3c00c3592fca924f120f33e29601393da23a0482eeca00cacef7fee330da8377",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step008Data.lean": "e9059ea05de9bc2869792fe3f78428f8f6e66b93f150d8e115fec98c193bd9d1",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step009Data.lean": "6ab91e3cc5be6b896f719236d24b9a5afbb9c0a012a406a51576f8845c814d3e",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step010Data.lean": "eb9c12936b9b001dc775ed663f00a630208262007f8b684fc37b63a78c1e47ef",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step011Data.lean": "c4ad3829e5446b53e45c97551a41c39cffc8afd4a81b593519475dc683650dae",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step012Data.lean": "6a08f4e13774f1b4d590c8d39952c02c87233a6a8f742e6f8049e484469f48d7",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step013Data.lean": "73dc814931be4c2bc36e620a68e332f03f00c4ad63014e17e50583a22d281970",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step014Data.lean": "f398784d17409a469cace776a51e7d1b45abd3014ad829b288feb9e30edc83ad",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step015Data.lean": "01d4f16496f627febdafad3ac1d8e1f84499029d4a758f2027f645c2c26afc8e",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step016Data.lean": "a498ccd9280e98ff623aea503998657fd3cc11ed23e9000a1203ecc435b568af",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step017Data.lean": "3f565726fab979584d24234f6a858c33c26517ae2b115749e3a953935e44020a",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step018Data.lean": "6140fe32181bc961f2df0f42b91f513f12f043d05881ed5c093c2e4716d623cc",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step019Data.lean": "79c29a167c8bf40997ffd871cd91582da065e6531dbf51135c434da252d90060",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step020Data.lean": "46bd86b206223bf0d503e69440c01b70fe73e143d107b235f14afb3aeebcb758",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step021Data.lean": "d668463e3a7ed766fc60045ce6105a75a955043cbc1a0b0b327da4484e1fb563",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step022Data.lean": "0add52f28949e380852e335cf0ea6dec722887a0bdaa38e6788d4da52d0011a1",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step023Data.lean": "0a9b5afb2e486c0a8c6a5b392f9dc0c4fc19e1838efdaf7cecce5ae62270ebb8",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step024Data.lean": "4f931cb93c8a98d1f4c40eeaa0ea1cee5b826221096d1815c79ec771e05a4187",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step025Data.lean": "5ec03277781578ed0ca11b8648b31d417ac2c7b0f7a5714025aaedacc5b384c5",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step026Data.lean": "db6133415f8dcec50dd5996983cf6ecd914cc59f54b99a7ad2d61b781eac2aac",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step027Data.lean": "c2ae94ec272c4f0ca3b045802183bef3f1dc173aaf8b24d570803f8a533f9266",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step028Data.lean": "7b536886c8946e54ba9bad252904955a179e9be09078fa43c77043697ca3c24c",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step029Data.lean": "7621ad0671926c0c3f222b7213d47d70b3cccdbaac95e417558da71dc441cfce",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/Node001/Step030Data.lean": "6b5c182978ef3b595f748ef90a83f3a2d1c51d2f464261d91f7d1275df7dacb3",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/PackedNamespaced/Chunk000.lean": "e4aef8f24be2c5dd5cf0194576e14e4fde22227e5a5eafaf0d6ee92481c27c62",
+    "project/ElevenSquare/Tasks/T03/CellGeometry.lean": "603c814c4928a2100dab21b5eb770556e4df92fb3bf909c7b7e2d3d711b8f22d",
+    "project/ElevenSquare/Tasks/T03/CellLinear.lean": "0ebf5ea519b79817f0a56b500ff2fbb240e583dbcf0d54c1402fa64c21a6c18c",
+    "project/ElevenSquare/Tasks/T03/CellPhysical.lean": "aef1c650584d4aad685004bb78090a3df60aaaa1843577e0cae7a25422eec800",
+    "project/ElevenSquare/Tasks/T03/Certificate.lean": "a4f97caac156c08a14881fe1a5e295927ae0ae660b41d6de206f8c6dfbb7e3b9",
+    "project/ElevenSquare/Tasks/T03/Certificates/PartnerCoverecb16807059d22b7fe96f51ePart000.lean": "64e587fd13b5eafc17e296eb1071a3a9fd8a4cc918439a876b4cd3f37ea87660",
+    "project/ElevenSquare/Tasks/T03/Certificates/PartnerCoverecb16807059d22b7fe96f51ePart001.lean": "b075c2bad9e1f37c1080e230d8aba904ca004c2923a22cfe3fa9d120c9ed4aec",
+    "project/ElevenSquare/Tasks/T03/Certificates/PartnerCoverf779ad9667b2157cbe3de6cePart000.lean": "4246420d937cf8a5a55c5e6b0d35ac52f2630b00e23fb3b1eb514def09e87ccc",
+    "project/ElevenSquare/Tasks/T03/Certificates/PartnerCoverf779ad9667b2157cbe3de6cePart001.lean": "f48a9765f45161f713a5ae98767f8afe19136407a32745f944f8395c4b1c99b9",
+    "project/ElevenSquare/Tasks/T03/Certificates/PartnerCoverf779ad9667b2157cbe3de6ceRows.lean": "db8890e011ccf8ac1d71fc5607bb5ebd3b2ac80205da358b13bb6e4698686b12",
+    "project/ElevenSquare/Tasks/T03/Certificates/StrictCoreBatch0036.lean": "62188e4222542a441a89b9ce5441c75fdcb5894251c4bfe92b501f2ab87d1794",
+    "project/ElevenSquare/Tasks/T03/Certificates/StrictCoreBatch0037.lean": "3485d365bf4c91b5248fb83b3db3bd4f9e676cfbf191b83935a8c83c42c843f2",
+    "project/ElevenSquare/Tasks/T03/ChartIntervals.lean": "3246c78cae7ce9a4e41e1971d94db31d15f51552fafa5a802a032aba18c4998f",
+    "project/ElevenSquare/Tasks/T03/CollisionFamily.lean": "658d621e48497ffb1ef15df24cb063bb7540f93996473cb36d89cec0cd1f11a8",
+    "project/ElevenSquare/Tasks/T03/CollisionPlanes.lean": "532b63b79b981655657a1e627557999f1d3e10f6845297d841f80ca743f40186",
+    "project/ElevenSquare/Tasks/T03/CollisionRows.lean": "73a306dbd375cc6c2e1d3acb6750113049b673c1bfbf5ab5a364f3dc44686226",
+    "project/ElevenSquare/Tasks/T03/Convexification.lean": "0940b3bf7c6721e83da01a62b822299dde9c66d7bba553fc45fed37a32693b94",
+    "project/ElevenSquare/Tasks/T03/CorePointCertificates.lean": "05fbcefc8fb5df6f7c820c5e8d829a34327d86c582582de971cee331cf125072",
+    "project/ElevenSquare/Tasks/T03/DifferenceSupport.lean": "fb19f0cdbbe904086b8c27a42ac7bead99bb2078f8f0b9c188708fcb649a9d85",
+    "project/ElevenSquare/Tasks/T03/EmptyPartnerCover.lean": "6670313309a5f5545114b8d285a7ba7aae577020284ac26f8e3162e87b7723e2",
+    "project/ElevenSquare/Tasks/T03/FiniteConvex.lean": "46d56b6a62c2711b301c8b02088fa4da7d45229fb5e5d2d9d10a7bf19e35b46f",
+    "project/ElevenSquare/Tasks/T03/ForwardRows.lean": "224afe04b130dd78376147df8a8762461cc22260f82e6174325bc0064c2b87b0",
+    "project/ElevenSquare/Tasks/T03/HomogeneousPoints.lean": "fe77dc3e920c429e391da1998c0e066f7ead9df610db2cbcc20479718a61daa5",
+    "project/ElevenSquare/Tasks/T03/HomogeneousSupport.lean": "c5e88fe2e0102287d52a8033393d9f30765e1dd4c6daba27ce5fbabd1db5675e",
+    "project/ElevenSquare/Tasks/T03/HullLinearCertificates.lean": "42ff42008512d9405b91d795724336fa896814ec2c92e68318d7e9c541643f28",
+    "project/ElevenSquare/Tasks/T03/IntegerRowTrace.lean": "d9c5c65798e4cc42a9628ce3be561bc62a5cbf659e3fb37d68c76bdd0a73b902",
+    "project/ElevenSquare/Tasks/T03/IntegerRows.lean": "244a6e9bebab9b7ab847ed67d3c2fd77a852a6ba9a61e07253cc8f8b55d8765f",
+    "project/ElevenSquare/Tasks/T03/KernelBoolRefl.lean": "90111f1782484d93843ab7e8ec6789744ebf90afdd8deb6fa2d3ddf3880513ce",
+    "project/ElevenSquare/Tasks/T03/KernelEqualityRefl.lean": "579aba76120723d18a2d3ee1464e136612cca06ef76f9547a67ae183b2c92200",
+    "project/ElevenSquare/Tasks/T03/LinearCertificates.lean": "c24f3d50ad393d00d0a1d6650f853f419a3612f957b75cad881184517e1ac66d",
+    "project/ElevenSquare/Tasks/T03/LinearCover.lean": "07a06e2af16eba8f1ab5c1874fb30b81eb6e625cffcf24ad7874c2f2bd6d94e8",
+    "project/ElevenSquare/Tasks/T03/ListRowSubset.lean": "cfc25cb8ed4ef8e8171bf7000bd22ac7c9f27acd30c98cc3419222745f9a9c4d",
+    "project/ElevenSquare/Tasks/T03/PhysicalRowInput.lean": "65665ed05820583694a33f57766fe550ac974bc570150cc456396a81edac48e5",
+    "project/ElevenSquare/Tasks/T03/PhysicalRows.lean": "8c49b244cce3f8140e05651a96769dfc94b246068b0d3f016d7a7c0e79bca9a0",
+    "project/ElevenSquare/Tasks/T03/PlaneTaggedPoints.lean": "c96f214ffcea208fcc2cd0aecb2da52100d7b2c39914585f38ccc95725e81491",
+    "project/ElevenSquare/Tasks/T03/PolygonCertificates.lean": "ab52222aa4fbfa52080ad9eb0eb085a444d27d68a7c57aeba74ba650b98fb33f",
+    "project/ElevenSquare/Tasks/T03/PosewiseReplay.lean": "dc4b9b89ac1d7cb18df29a7d309c555ece03bdb90c4fcad29c004614ecb6f8e5",
+    "project/ElevenSquare/Tasks/T03/Promotion.lean": "8f635a0679b0d8abd7b75b9dbf8d25b07ad29348496c5256f4e77d7052b50665",
+    "project/ElevenSquare/Tasks/T03/Quadratic.lean": "c98a50d319fd55fc1c47d80bb758fda9bf0cd68bc5e05d000e94618feecdd25d",
+    "project/ElevenSquare/Tasks/T03/RefinementRows.lean": "287348eeae2f3a4caee512129783a630fcff3451c5d6476117d2be78b742b8dd",
+    "project/ElevenSquare/Tasks/T03/RowRefinement.lean": "a4bb7f0861b23c3343761c8146eca51c944e3ee1ed3f560fba5853559ea44983",
+    "project/ElevenSquare/Tasks/T03/RowTrace.lean": "fec8299c0873dc32ef04cf71832caf1d10d3942622ed238c17d2aed3357f6963",
+    "project/ElevenSquare/Tasks/T03/RowsOwnership.lean": "6e9a487d66cb2206902af697df999dcc21556e67c0d01f0b2508e2fc5498a9d3",
+    "project/ElevenSquare/Tasks/T03/SelfHullCertificates.lean": "f99f5e5f57f8c6ecfdfe05520b6178d1327473dd64cee1d32c96c38a2529883e",
+    "project/ElevenSquare/Tasks/T03/SimplePolygonFan.lean": "c09f1cc57f742f234031494ef5478d6691e66839b37c9622215552e97299f512",
+    "project/ElevenSquare/Tasks/T03/StrictCoreCheck.lean": "9e1c19212e125c9280c4a7e9222a24c9919c98fc5c046c3d6cbc45a01e0cafae",
+    "project/ElevenSquare/Tasks/T03/TaggedPoints.lean": "03d7fe57844686c2173ed786eec21c9accb45b04b1d7c925022b7ff2d0717fa9",
+    "project/ElevenSquare/Tasks/T03/TraceAssembly.lean": "c5ac2f4fe23fcd0ccacf43c4f1b9709e566108c2151e6993f2b22905126df459",
+    "project/ElevenSquare/Tasks/T03/TriangleCertificates.lean": "3fca75c845e23778f2c940325b8d19b0d43515553d2fa4c8e7bfd09bfdf81808",
+    "project/ElevenSquare/Tasks/T03/TriangleCover.lean": "085f602a90d0935ae1294a65f063505a15d231b8dcbf39b8bdda23067cbef245",
+    "project/ElevenSquare/Tasks/T03/UniversalCollision.lean": "bdec0c56b98f0b9c30ff5ba0c041ff1b1341554b52ea06b950d5a1d173176c74",
+    "project/ElevenSquare/Tasks/T03/Walls.lean": "e55e5ca9bbe30c15ced42411419edff8cd13b7d7ca8f94c9fff753dbff6596a5",
+    "project/lake-manifest.json": "383259bb05fd384346e806086f1e041383dbf3898db2a6bc9bd0b91966f149ae",
+    "project/lakefile.lean": "dce4d550c15bb4cd272b68a1b5bbd7fbf947a2f02ddde5593b50d674891cc88c",
+    "project/lean-toolchain": "35100b5b8f5426dfa942d43e8f4995c6ffeccef24ac467df1fd477ce96a66747",
+    "project/scripts/check_handoff.py": "989c66964d906ddd77a058f6812c7078709bee838b625906e7ce652656ae35b1",
+    "project/scripts/lake.sh": "b886afc9290fd60e95aa544ae63194865a5dca6566c17fe1059a2c8acd014080",
+    "project/scripts/lean_small_check.py": "a9face3b56662d5f9fae52935d94916d3d01b2d530b849dffa87ad3aebc1ce1d",
+    "project/verification/LOW_RESOURCE_MODE.json": "ece1da78fe6bb583938815993e153afbcb569fabc13df74d0e6dfb2b9d5b2cc1",
+    "project/ElevenSquare/Tasks/T03/Batch10/Case2069/PackedNamespaced/Chunk001.lean": "21aefe466d53606ee196b5097b3a736c05e190a1ae01dd68f35d437e59313049"
+  },
+  "existing_published_fixture_source_asset": {
+    "asset_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-pending-case-retries-20261001/T03-pending-case2069-source-checkpoint.zip",
+    "asset_sha256": "0809155bd25a870aaf8f47aae575f30917d79a714f1660c719f89e98fbf38204",
+    "scope": "Every one of the 270 fixture Lean members independently matched and reread from this existing portable pending source ZIP; no full case acceptance."
+  },
+  "full_case_and_original_public_target_audits_still_required": true,
+  "new_release_assets": 0,
+  "Lean_jobs_or_worker_controls_for_publication": 0,
+  "portable_tools_validation": {
+    "status": "MULTI_TARGET_TOOLS_AST_HELP_PORTABLE_METADATA_PASS",
+    "files": [
+      {
+        "path": "scripts/t03_retry/prepare_multi_target_audit_probe.py",
+        "portable_sha256": "af3c60d39e862667a42a0172484416d01ca247cff02a626e3a261679f364f0ea",
+        "original_local_source_sha256": "952204029d960a8de058ce20e128363218eb4a5b84eaf4c6af5b352e848e75b6",
+        "AST_passed": true,
+        "CLI_help_checked": true,
+        "live_tool_actions_replayed": false
+      },
+      {
+        "path": "scripts/t03_retry/record_multi_target_audit_probe.py",
+        "portable_sha256": "a9518de081da6be102a4e839d6e3dd4bb3ccf07ed310a37f2fd890e607fe4a11",
+        "original_local_source_sha256": "5ea753d19547a7a614ed4ee6a05abb7e4d4611d007dc9265612b10da4a44153c",
+        "AST_passed": true,
+        "CLI_help_checked": true,
+        "live_tool_actions_replayed": false
+      },
+      {
+        "path": "scripts/t03_retry/paired_group_audits.py",
+        "portable_sha256": "667ff613b5706e09c4cee7f50e01edaee7fd12d6b8c0aaf04dab0c7b3fc3a745",
+        "original_local_source_sha256": "5eb50b59b5a5541eebd865b0559883bc83db5d149972248671458c8907f4d7b3",
+        "AST_passed": true,
+        "CLI_help_checked": false,
+        "live_tool_actions_replayed": false
+      },
+      {
+        "path": "scripts/t03_retry/parallel_packed_case_producer.py",
+        "portable_sha256": "0ed3c18d927857e05028e7d1971b6df4f1616077202eb9a3a67eb22917543d84",
+        "original_local_source_sha256": "1b189e6c2ab384442dc8a350b53c1c0deea07c164f8150d7fb0fa7c4a4839136",
+        "AST_passed": true,
+        "CLI_help_checked": true,
+        "live_tool_actions_replayed": false
+      },
+      {
+        "path": "scripts/t03_retry/checkpoint_native_packed_producer.py",
+        "portable_sha256": "876322fe957b4572194f886765f0190b98f44ffd9adefd4c413a6e5c453ae955",
+        "original_local_source_sha256": "d732cb229da48fe78824d81bbaed26869f02adcec148f9bc859d19cd43272a22",
+        "AST_passed": true,
+        "CLI_help_checked": true,
+        "live_tool_actions_replayed": false
+      },
+      {
+        "path": "scripts/t03_retry/run_independent_probe.py",
+        "portable_sha256": "dcc60b218a2d53c5208241a0cbee82aabe4277709653647eebc5b3d06c0e4398",
+        "original_local_source_sha256": "3413863af06a8463e63ecb7fb779e5135b516144a2d290b63984fc80f270377f",
+        "AST_passed": true,
+        "CLI_help_checked": true,
+        "live_tool_actions_replayed": false
+      },
+      {
+        "path": "scripts/t03_retry/record_paired_group_checkpoint.py",
+        "portable_sha256": "4d8d0f0245d639fe97bc48a029e2657799871561806b88ab1f7527703d3b769e",
+        "original_local_source_sha256": "783dc920f8cfc4d8a10219f8947d8619257513113f52d11d028972f95449a59f",
+        "AST_passed": true,
+        "CLI_help_checked": true,
+        "live_tool_actions_replayed": false
+      }
+    ],
+    "source_or_worker_or_process_actions_replayed": false
+  },
+  "first_production_pair_checkpoint": "verification/t03-case1463-production-pair-checkpoint-20261001.json",
+  "production_validation_scope": "Only the first frozen case1463 production pair, two original dependency group targets and genuine receipts, is verified; later jobs remain pending. No production timing gain is claimed."
+}
