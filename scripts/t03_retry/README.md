@@ -42,6 +42,19 @@ an already allocated pool ceiling up to six. The external dispatcher enforces
 that ceiling and excludes duplicate jobs; these tools do not create a worker
 pool. The producer defaults to at most eight live source transports.
 
+`parallel_packed_case_producer.py --raw-copy-transports` enables an opt-in
+transport fast path. Eligible `ZIP_STORED` and `ZIP_DEFLATED` members are copied
+from the frozen master transport without decompressing and recompressing their
+payloads; the per-group task and fresh source manifest are still written
+normally. Unsupported ZIP/runtime conditions fall back to the existing
+`read`/`writestr` path before writing that member. Corrupt or inconsistent ZIP
+data is not treated as a fallback condition. The producer still reopens every
+new transport and checks every recorded member SHA-256 before publication.
+Run `python3 scripts/t03_retry/test_zip_raw_copy.py` for the source-only raw-copy
+regressions. The option remains explicit because the resulting ZIP byte stream
+and compressed sizes can differ from transports produced by recompression even
+when all decompressed members are identical.
+
 The worker defaults to a scratch source workspace. It retains the worker lock,
 checks the exact opened transport digest, verifies every extracted member, and
 copies genuine checker receipts provisionally. The supplied checker must

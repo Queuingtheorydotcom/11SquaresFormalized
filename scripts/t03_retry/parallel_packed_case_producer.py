@@ -7,12 +7,14 @@ keeping the live transport footprint bounded.
 from pathlib import Path
 import argparse,collections,ctypes,datetime,functools,hashlib,json,os,re,shutil,time,zipfile
 from retry_paths import kit_paths, low_priority_single_core
+from zip_raw_copy import RawZipCopyUnsupported, copy_member_raw
 ap=argparse.ArgumentParser();ap.add_argument('--resume',action='store_true')
 ap.add_argument('--case',type=int,required=True);ap.add_argument('--publication');ap.add_argument('--preparation')
 ap.add_argument('--kit',required=True);ap.add_argument('--transport-dir')
 ap.add_argument('--scratch-root',required=True);ap.add_argument('--receipt-root',required=True)
 ap.add_argument('--object-root',required=True);ap.add_argument('--max-workers',type=int,default=1)
 ap.add_argument('--max-live-archives', '--max-live',type=int)
+ap.add_argument('--raw-copy-transports',action='store_true')
 args=ap.parse_args();case=args.case
 K,E,transport_root=kit_paths(args.kit,args.transport_dir)
 assert 1<=args.max_workers<=6
@@ -63,6 +65,7 @@ def event(**row):
  payload=dict(case=case,events=events[-1000:],maximum_live_chunk_archives=args.max_live_archives,maximum_parallel_lean_checks=args.max_workers,
               source_archive_sha256=publication['grouped_archive_sha256'],source_archive=str(master),
               destination=str(destination),full_case_guard=str(guard),full_case_and_final_audits_pending=True,
+              raw_copy_transports=args.raw_copy_transports,
               scheduling='READY_GROUPS_WITH_LONGEST_REMAINING_DEPENDENCY_PATH_FIRST')
  temp=record.with_suffix('.writing.json');temp.write_text(json.dumps(payload,indent=2)+'\n');temp.replace(record)
  print(json.dumps(row),flush=True)
@@ -206,9 +209,18 @@ with zipfile.ZipFile(master) as z:
    temp=destination/('.preparing-'+target.name);assert not temp.exists()
    with zipfile.ZipFile(temp,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=1) as output:
     for name in sorted(names):
-     data=raw(name[8:-5].replace('/','.')) if name.endswith('.lean') and name.startswith('project/ElevenSquare/') else z.read(name)
-     assert hashlib.sha256(data).hexdigest()==manifest[name],name
-     new_manifest[name]=manifest[name];output.writestr(name,data)
+     if args.raw_copy_transports:
+      try:
+       copy_member_raw(z,output,name)
+      except RawZipCopyUnsupported:
+       data=raw(name[8:-5].replace('/','.')) if name.endswith('.lean') and name.startswith('project/ElevenSquare/') else z.read(name)
+       assert hashlib.sha256(data).hexdigest()==manifest[name],name
+       output.writestr(name,data)
+     else:
+      data=raw(name[8:-5].replace('/','.')) if name.endswith('.lean') and name.startswith('project/ElevenSquare/') else z.read(name)
+      assert hashlib.sha256(data).hexdigest()==manifest[name],name
+      output.writestr(name,data)
+     new_manifest[name]=manifest[name]
     new_manifest[task_name]=hashlib.sha256(task_raw).hexdigest();output.writestr(task_name,task_raw)
     output.writestr('source-sync-manifest.json',json.dumps(new_manifest))
    with zipfile.ZipFile(temp) as check:

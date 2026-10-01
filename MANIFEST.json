@@ -42863,8 +42863,8 @@
     },
     {
       "path": "scripts/t03_retry/README.md",
-      "bytes": 19908,
-      "sha256": "42a951f68043a85be411d0732056d77aec6aad3f88cdee0975bcf634c7a43981"
+      "bytes": 20805,
+      "sha256": "a3a4cea368432b8c14d801ca2b218ae75b17e4d1123dc14c961986b271100829"
     },
     {
       "path": "scripts/t03_retry/activate_prepared_local_case.py",
@@ -42908,8 +42908,8 @@
     },
     {
       "path": "scripts/t03_retry/parallel_packed_case_producer.py",
-      "bytes": 14649,
-      "sha256": "c1dee49e56ee14f5b34523ee496e093198aee3618ae7eea3b0abcc810fd9239a"
+      "bytes": 15208,
+      "sha256": "666ecb63b0dc7c1fecdf771c0bd655e95a283e9dc1f24dcb8b59f66758d90443"
     },
     {
       "path": "scripts/t03_retry/plan_packed_case.py",
@@ -43052,9 +43052,19 @@
       "sha256": "4376cc668ef80c239c45b4b656dbff9e4f0381b2dd17028fe7d9d7b8dd9fffb0"
     },
     {
+      "path": "scripts/t03_retry/test_zip_raw_copy.py",
+      "bytes": 9318,
+      "sha256": "26174eea5ff6c3688e0be28f5f8e098101ade5d4ba70573e9c703363dec25c57"
+    },
+    {
       "path": "scripts/t03_retry/write_verified_report.py",
       "bytes": 25564,
       "sha256": "fda03acd7263d9502f39cb414df2d12c222b471ed5eeba8b44202540bfe73abb"
+    },
+    {
+      "path": "scripts/t03_retry/zip_raw_copy.py",
+      "bytes": 5829,
+      "sha256": "0f288590f1c94682738e8da4893fa810ffc92d8d0012a0dc269c8d0eca418830"
     },
     {
       "path": "scripts/verify.py",
