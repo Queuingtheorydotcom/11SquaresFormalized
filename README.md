@@ -80,6 +80,13 @@ python3 scripts/check_sources.py
 Build logs and objects remain in ignored `.verification/` and `.lake/` folders.
 The normal Lake entry point is also available via `lake build`.
 
+The integration branch also runs the `Bounded wand125 replay` GitHub Actions
+workflow. Sixteen public standard runners check independent module groups, then
+a final job runs the same full verifier and completion audit. Bounded caches
+preserve accepted work between runs; an interrupted or incomplete replay remains
+a failed check. This workflow does not publish verification evidence or merge
+the branch. Local verification remains available through the commands above.
+
 The verifier distinguishes clean milestones, which may use only `propext`,
 `Classical.choice`, and `Quot.sound`, from the explicit unfinished targets.
 Success with the two remaining source admissions is **partial assembly success**,
