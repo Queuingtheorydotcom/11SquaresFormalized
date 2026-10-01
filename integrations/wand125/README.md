@@ -50,8 +50,9 @@ The later published release supplies source for 1,904 field, 27 generic, and
 native baseline indices, and the prior family covers the original 76 prior
 indices. The source wrappers now use those families without changing the public
 native statements. All new complete-family paths remain compiler-unverified.
-Returned-family work is separate; its public admission and case438 capture remain
-open. The upper bound, canonical-case reduction, D4 bridge, and local isolation
+Returned-family work is separate; its public admission remains open. Case438
+capture is supplied by the extended traces of `ElevenSquare/Tasks/T07/Ext/`, whose
+generated node modules are the release unit U5. The upper bound, canonical-case reduction, D4 bridge, and local isolation
 overlap already completed native stages.
 
 ## How the proofs connect

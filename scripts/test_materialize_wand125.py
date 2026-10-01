@@ -72,7 +72,7 @@ class MaterializeTests(unittest.TestCase):
         self.assertEqual(result["lean_sources"], 1)
         self.assertEqual(source.stat().st_ino, inode)
         self.assertEqual([call.args[0] for call in self.read_plan.call_args_list],
-                         ["F", "FCOMMON", "U2G", "U2P"])
+                         ["F", "FCOMMON", "U2G", "U2P", "U5"])
         self.assertFalse(self.cache.exists())
 
     def test_corrupt_source_is_rejected_before_any_archive_action(self):

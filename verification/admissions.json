@@ -4,11 +4,7 @@
     {
       "path": "ElevenSquare/Pending/S06_Returned.lean",
       "line": 16
-    },
-    {
-      "path": "ElevenSquare/Tasks/T07/UnfinishedCapture.lean",
-      "line": 11
     }
   ],
-  "scope": "Two explicit source admissions remain. Baseline and prior source wiring is compiler-unverified pending full family replay; retired private T01 plan requirements were not proved."
+  "scope": "One explicit source admission remains. Baseline and prior source wiring is compiler-unverified pending full family replay; retired private T01 plan requirements were not proved."
 }
