@@ -1,0 +1,3 @@
+'SquarePacking.S11Opt.bridge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SquarePacking.S11Opt.triGroupOk_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SquarePacking.S11Opt.majority_capacity_idx' depends on axioms: [propext, Classical.choice, Quot.sound]

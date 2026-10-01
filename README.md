@@ -8,6 +8,14 @@ the final optimality theorem. See [MISSING.md](MISSING.md).
 
 At the latest checkpoint, **159/173** full case certificates have independently
 accepted exact target audits and published complete source closures; **14 remain**.
+The complete ordinary shared exclusion checker now passes the original pinned
+Lean 4.10.0-rc2 checker: `SquarePacking.S11Opt.Split.U2P.excluded_of_tris`, the
+majority lemma and three field-bridge targets have actual standard-three axiom
+audits. Their [exact audit evidence and 17-module frozen source closure](verification/source-checkpoints/wand125-pinned-exclusion-checker-20261001)
+are published separately from newly imported unaudited `Branch` and case sources.
+This supersedes the earlier shared-checker-pending status. Actual finite case
+probes and imported full-case audits remain pending; count stays **159/173**.
+
 Cover, box-tree and field-tree compatibility now have four additional accepted
 targets under the original Lean 4.10.0-rc2 checker, all with the standard three
 axioms. Their [exact audit evidence and nine-module source closure](verification/source-checkpoints/wand125-pinned-cover-trees-20261001)
@@ -24,7 +32,7 @@ and [isolated 25-module source closure](verification/source-checkpoints/wand125-
 preserve the original geometry, cell-mask and certificate statements exactly.
 Cell bounds, exact case-mask correspondence and a proved case exclusion remain
 explicit per-case inputs. No imported case is accepted; the count remains
-**159/173** and the imported exclusion checker is pending.
+**159/173** and concrete imported case proofs remain pending.
 
 The reused S11 basic lemmas and the original packing bridge now also pass
 the original pinned checker: `SquarePacking.S11Opt.peQ_pos_of_hIv`,
@@ -43,7 +51,7 @@ original checker accepted `SquarePacking.sq_subset_box_iff`, `lemmaG_box`,
 and [packing audit](verification/t03-wand125-pinned-packing-audit-checkpoint-20261001.json)
 bind their exact adapted source versions, genuine receipt/object hashes and
 unaltered CHECK/log bytes. This checks shared core only: no imported case has
-been accepted. The exclusion checker and concrete per-case contract instantiation
+been accepted. Concrete per-case checker proofs and contract instantiations
 remain pending; the full-case count stays **159/173**.
 
 New upstream sources are now available in [wand125's `n11-certs-v1` release](https://github.com/wand125/n11-optimality-lean/releases/tag/n11-certs-v1):

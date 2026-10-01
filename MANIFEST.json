@@ -42833,13 +42833,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 14874,
-      "sha256": "af93b99be9b2ce6092a795febd6bcb904f9efeb81a2f0441d7e5793894283cec"
+      "bytes": 15495,
+      "sha256": "0404be2077e3d4a9a94b53dd34fd536ff074f79766001a0f0349eaf2a0d541fa"
     },
     {
       "path": "T03_PROGRESS.md",
-      "bytes": 79406,
-      "sha256": "000af389cafe4bd66851b7445c5771f00b46c0d1b79e20b41f16b0d45516dbd5"
+      "bytes": 81542,
+      "sha256": "a4781fd0f421c96f5d773e50c650c5c131319b3dc0d131c135233ae8f9fac317"
     },
     {
       "path": "lake-manifest.json",
@@ -43098,8 +43098,8 @@
     },
     {
       "path": "verification/privacy-review.json",
-      "bytes": 15430,
-      "sha256": "6f307f7b3d83b281c2911826916854af8a70c29f8e4014c4b5df779cd0d401dd"
+      "bytes": 16125,
+      "sha256": "f3c648c9009cb11cafddcb2c2da970c5180db565769561398ec208ad6a041b7e"
     },
     {
       "path": "verification/source-check.json",
@@ -43210,6 +43210,151 @@
       "path": "verification/source-checkpoints/wand125-pinned-cover-trees-20261001/project/verification/LOW_RESOURCE_MODE.json",
       "bytes": 430,
       "sha256": "639a2a3131ae9ce8daac8238d3d4f1994f9a934e134ab44626ef5faee565e73b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-exclusion-checker-20261001/README.md",
+      "bytes": 2499,
+      "sha256": "7dc5521dcceda0dbb546e60b78a959feb234d7a25ab5a1db636bde8b144d883b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-exclusion-checker-20261001/SOURCE_BINDINGS.json",
+      "bytes": 20270,
+      "sha256": "3c76f5004d4d9d88b143e7458811abe624b5a1fca00aa273b905c669221c7802"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-exclusion-checker-20261001/library-case1849-node993-wand125-field-bridge-compatibility-retry01-task.json",
+      "bytes": 275,
+      "sha256": "5a063bfc70b7be45e65f1fc7fea1fe3f05e4cf05c15835949350ab566bbd2a6a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-exclusion-checker-20261001/library-case1849-node993-wand125-majority-compatibility-retry02-task.json",
+      "bytes": 190,
+      "sha256": "ae9b69670f3237d7137bba242cd4b76e16d37612550be5b703ba567149262969"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-exclusion-checker-20261001/library-case1849-node993-wand125-shared-checker-compatibility-retry16-task.json",
+      "bytes": 206,
+      "sha256": "54d52fce67dc5701f076b4badd3b3087aae1fda1abbc5ae63c919995df9813f9"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-exclusion-checker-20261001/project/ElevenSquare/Tasks/T03/KernelBoolRefl.lean",
+      "bytes": 429,
+      "sha256": "90111f1782484d93843ab7e8ec6789744ebf90afdd8deb6fa2d3ddf3880513ce"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-exclusion-checker-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/Basic.lean",
+      "bytes": 29484,
+      "sha256": "be7fd52c9a48cb26692c7d2de2c1fd825255661f05008637ce229d2fb510a268"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-exclusion-checker-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/BoxTree.lean",
+      "bytes": 37186,
+      "sha256": "a3efd7c2c5ff11b7f15175e291435a4cb9d64399cb2eff0096970931531ce2b2"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-exclusion-checker-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/Chord.lean",
+      "bytes": 15640,
+      "sha256": "05c6541ed26be6e78d9b8fef40c6f3d51e0cb8b18e05e8ab2616d5d7edeb63e0"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-exclusion-checker-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/Cover.lean",
+      "bytes": 9390,
+      "sha256": "a13e4fe2f9bba53aa8ec35c4187ebf03bc8f92f3338756f741e88b5b57e6a50f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-exclusion-checker-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/D4.lean",
+      "bytes": 15635,
+      "sha256": "69d2add9c3d221e215a499f9e1e6a139a16008ccb93e7b912d3d5e8397dcd307"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-exclusion-checker-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/Packing.lean",
+      "bytes": 7058,
+      "sha256": "236404e223ba728de2808bbaef290f343639e8b3d5ea0c5347e45737dc2c8b8a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-exclusion-checker-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Basic.lean",
+      "bytes": 9942,
+      "sha256": "e1a2363ca978e32b7264e8b42489d244f804314c652beea36c8db72b280a052b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-exclusion-checker-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Cells.lean",
+      "bytes": 4989,
+      "sha256": "1887a9d671edcf6926be95998b3a20b81dc0c262e348113b4ce79f2275fad70b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-exclusion-checker-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/FieldBridge.lean",
+      "bytes": 15920,
+      "sha256": "e486f3ae0705b67fe1df201c11a4cfeffc61a8fe2ebc72e6065772a549374ec6"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-exclusion-checker-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/FieldTree.lean",
+      "bytes": 14975,
+      "sha256": "49943a21338351ede71b827ee92a2f43c90713c94fba3f6f48aafe5b1ccf36e5"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-exclusion-checker-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Majority.lean",
+      "bytes": 5342,
+      "sha256": "63384110ffa4108d5f70b954858c4a5282c360d15ad5774385560847cf4c227e"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-exclusion-checker-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Shared/Grid.lean",
+      "bytes": 205495,
+      "sha256": "9649f75aee58ef8e67b2ccc35ef256b2f6f5fc7dc8a3ceb3a93c6b1148a6ad54"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-exclusion-checker-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Split/Interface.lean",
+      "bytes": 4360,
+      "sha256": "80fed4a3955f68360366f57600ce122dc68804dbc86e3afc15ec80dc510b8a29"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-exclusion-checker-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Split/U2P/Rules.lean",
+      "bytes": 5250,
+      "sha256": "f4db9b580aaa40b6ebb99c80f6a4bc4e13ac45051852cd3bfd0f9fcfe0ef5487"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-exclusion-checker-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Split/U2Rules.lean",
+      "bytes": 8313,
+      "sha256": "0b5df651b8c54ea417b0ef0564d9d1161f80aeb25a4f40d039f420469f37aeaa"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-exclusion-checker-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/ZeroMargin.lean",
+      "bytes": 55131,
+      "sha256": "00ac49186e97f21d10099c2355b039466b83acfe577624d79fe63a0bd2a77e75"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-exclusion-checker-20261001/project/lake-manifest.json",
+      "bytes": 2763,
+      "sha256": "383259bb05fd384346e806086f1e041383dbf3898db2a6bc9bd0b91966f149ae"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-exclusion-checker-20261001/project/lakefile.lean",
+      "bytes": 267,
+      "sha256": "dce4d550c15bb4cd272b68a1b5bbd7fbf947a2f02ddde5593b50d674891cc88c"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-exclusion-checker-20261001/project/lean-toolchain",
+      "bytes": 29,
+      "sha256": "35100b5b8f5426dfa942d43e8f4995c6ffeccef24ac467df1fd477ce96a66747"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-exclusion-checker-20261001/project/scripts/check_handoff.py",
+      "bytes": 3818,
+      "sha256": "989c66964d906ddd77a058f6812c7078709bee838b625906e7ce652656ae35b1"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-exclusion-checker-20261001/project/scripts/lake.sh",
+      "bytes": 570,
+      "sha256": "b886afc9290fd60e95aa544ae63194865a5dca6566c17fe1059a2c8acd014080"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-exclusion-checker-20261001/project/scripts/lean_small_check.py",
+      "bytes": 3895,
+      "sha256": "a9face3b56662d5f9fae52935d94916d3d01b2d530b849dffa87ad3aebc1ce1d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-exclusion-checker-20261001/project/verification/LOW_RESOURCE_MODE.json",
+      "bytes": 447,
+      "sha256": "2bbab7a12cc0f2b9fb030418bdc371aadad08db3064705ce92e0f13e6dbe7988"
     },
     {
       "path": "verification/source-checkpoints/wand125-pinned-original-transport-20261001/README.md",
@@ -43788,8 +43933,8 @@
     },
     {
       "path": "verification/t03-progress.json",
-      "bytes": 78977,
-      "sha256": "1e40ca08c26cea4fbc52619da012e1e094ed0c4e1ad7c83db383adcec07faaa8"
+      "bytes": 81502,
+      "sha256": "f475b8a48d719525b7c4568f0cef52c1e02e46badebd86208e95a2242948deba"
     },
     {
       "path": "verification/t03-ready-archive-prefilter-checkpoint-20261001.json",
@@ -43872,6 +44017,21 @@
       "sha256": "c7a6eb97b3f771376ca292e21c25f241f0ba0bea44db981047814ff2c4cc1b7c"
     },
     {
+      "path": "verification/t03-wand125-pinned-field-bridge-audit-CHECK.json",
+      "bytes": 446,
+      "sha256": "dc3f1389d021b42bb98e6bf3ca073338d8c5e3080d5531f74d74f0605f485c2b"
+    },
+    {
+      "path": "verification/t03-wand125-pinned-field-bridge-audit-checkpoint-20261001.json",
+      "bytes": 9160,
+      "sha256": "498e5aa01b998b6150f83addf4ea39184ac31c4b96021447184f020c87e49c46"
+    },
+    {
+      "path": "verification/t03-wand125-pinned-field-bridge-audit.txt",
+      "bytes": 290,
+      "sha256": "6f8211f99d4526817b67da420fdbf038b492c852a78f67544b93841d0ba7b933"
+    },
+    {
       "path": "verification/t03-wand125-pinned-field-tree-audit-CHECK.json",
       "bytes": 446,
       "sha256": "b21fc7825fc19278bbb43caa6c6768bf51570c794aa6f8489582c58af93528d7"
@@ -43885,6 +44045,21 @@
       "path": "verification/t03-wand125-pinned-field-tree-audit.txt",
       "bytes": 101,
       "sha256": "c0e1254fb3431f14fdab1ebe4697543a698f1d6bf8563da54eb19bbc3895a7a5"
+    },
+    {
+      "path": "verification/t03-wand125-pinned-majority-audit-CHECK.json",
+      "bytes": 446,
+      "sha256": "b6ad82173c77ad2e8466dd890a2ff9de5bbca6fa4fa5099801718d881099ccb0"
+    },
+    {
+      "path": "verification/t03-wand125-pinned-majority-audit-checkpoint-20261001.json",
+      "bytes": 6296,
+      "sha256": "1c7e5e95e4639ad5edf24c8dc0e3ba7c465423fb2e37904c95ba642f6a97ae7f"
+    },
+    {
+      "path": "verification/t03-wand125-pinned-majority-audit.txt",
+      "bytes": 100,
+      "sha256": "787b0a9c0c5a3541d9d4a323e4935b292916b690655f15f4ac7edcb1e313ab8e"
     },
     {
       "path": "verification/t03-wand125-pinned-original-geometry-audit-CHECK.json",
@@ -43945,6 +44120,21 @@
       "path": "verification/t03-wand125-pinned-s11-basic-audit.txt",
       "bytes": 195,
       "sha256": "62923f933a8256e35155df8481527056840c088b19e98f8cb43b0887e76e87c1"
+    },
+    {
+      "path": "verification/t03-wand125-pinned-shared-checker-audit-CHECK.json",
+      "bytes": 446,
+      "sha256": "1769e3efd85b4fc9e399db857ff6ae609bb06f8800fdd37079292091eb20cf4e"
+    },
+    {
+      "path": "verification/t03-wand125-pinned-shared-checker-audit-checkpoint-20261001.json",
+      "bytes": 11306,
+      "sha256": "5bad391735c097e211e51c59f4c9b1c95a2dd043bb9bbee5f87539baa492a01a"
+    },
+    {
+      "path": "verification/t03-wand125-pinned-shared-checker-audit.txt",
+      "bytes": 109,
+      "sha256": "332f22750a2e46dca6b6907647888f68fbe4d70c7a52c645f8408080a738a56e"
     },
     {
       "path": "verification/t03-wand125-site-equality-explicit-rational-goals-20261001.json",

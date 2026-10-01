@@ -6,6 +6,41 @@ repository, and global optimality remains unfinished. This branch supplies
 checked common tools and the complete source closure of one audited certificate,
 case2135. It does not discharge the full-family obligation.
 
+## Complete ordinary shared exclusion checker is audited
+
+The supplied original Lean 4.10.0-rc2 checker accepted five more shared targets:
+
+| Actual targets | Audit seconds |
+| --- | ---: |
+| `SquarePacking.S11Opt.majority_capacity` | 27.72 |
+| `SquarePacking.S11Opt.bridge`, `SquarePacking.S11Opt.triGroupOk_mem`, `SquarePacking.S11Opt.majority_capacity_idx` | 25.72 |
+| `SquarePacking.S11Opt.Split.U2P.excluded_of_tris` | 28.08 |
+
+All report only `propext`, `Classical.choice` and `Quot.sound`. The
+[majority](verification/t03-wand125-pinned-majority-audit-checkpoint-20261001.json),
+[field-bridge](verification/t03-wand125-pinned-field-bridge-audit-checkpoint-20261001.json)
+and [shared-checker](verification/t03-wand125-pinned-shared-checker-audit-checkpoint-20261001.json)
+records contain the exact accepted source/object/receipt bindings and
+byte-identical actual audit/CHECK sidecars. Publication verified all immutable
+transport members, real audit/wrapper/execution hashes and recorded source
+closure keys; root independently checked the genuine compiled objects/receipts.
+
+The [isolated source checkpoint](verification/source-checkpoints/wand125-pinned-exclusion-checker-20261001)
+supplies all 17 reachable Lean modules / **444,539 exact source bytes**, the frozen
+environment, supplied serial checkers and three unchanged tasks. No stronger
+merged source interface is overwritten. Only private handoff metadata is omitted
+and the resource profile is neutralized. The newly imported unaudited `Branch`
+and individual case modules are excluded.
+
+This completes shared exclusion-checker compatibility on the original compiler,
+superseding earlier pending status for that shared checker while retaining all
+historical snapshots. Its generic soundness theorem does not establish finite
+tables or exact mask correspondence for a concrete case. Actual finite case
+probes and imported full-case audits remain pending; **159/173**, zero imported
+case increments. Original public family audits and final return are unfinished.
+No fresh merged replay, additional release assets, proof jobs, queue controls or
+main changes are claimed.
+
 ## Cover, box-tree and field-tree target audits are accepted
 
 The supplied original Lean 4.10.0-rc2 checker accepted:

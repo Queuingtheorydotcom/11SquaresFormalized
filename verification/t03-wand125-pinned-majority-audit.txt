@@ -1,0 +1,1 @@
+'SquarePacking.S11Opt.majority_capacity' depends on axioms: [propext, Classical.choice, Quot.sound]

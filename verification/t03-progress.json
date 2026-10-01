@@ -1804,7 +1804,7 @@
     "meaning": "Historical equality-helper benchmark checkpoint, before the later accepted case2047 audit."
   },
   "external_returned_case_handoff": {
-    "status": "CONDITIONAL_ORIGINAL_CONTRACT_TRANSPORT_ACCEPTED_IMPORTED_CASE_PROOFS_PENDING",
+    "status": "ORDINARY_SHARED_EXCLUSION_CHECKER_AND_CONDITIONAL_ORIGINAL_TRANSPORT_ACCEPTED_CONCRETE_CASE_PROOFS_PENDING",
     "upstream_repository": "wand125/n11-optimality-lean",
     "inspected_source_commit": "a8b51d3e0682beb1bf911048bdc8e7fa62329124",
     "release_url": "https://github.com/wand125/n11-optimality-lean/releases/tag/n11-certs-v1",
@@ -1920,7 +1920,34 @@
       "Lean_jobs_or_worker_controls_for_publication": 0
     },
     "all13_source_archives_verified": true,
-    "all13_source_availability_manifest": "verification/t03-wand125-all-thirteen-pending-source-archives-checkpoint-20261001.json"
+    "all13_source_availability_manifest": "verification/t03-wand125-all-thirteen-pending-source-archives-checkpoint-20261001.json",
+    "shared_exclusion_checker_pinned_audit": {
+      "accepted_local_full_case_count_unchanged": 159,
+      "remaining": 14,
+      "actual_new_shared_targets_accepted": 5,
+      "original_Lean_version": "4.10.0-rc2",
+      "actual_audit_seconds": {
+        "majority": 27.72,
+        "field-bridge": 25.72,
+        "shared-checker": 28.08
+      },
+      "audit_manifests": [
+        "verification/t03-wand125-pinned-majority-audit-checkpoint-20261001.json",
+        "verification/t03-wand125-pinned-field-bridge-audit-checkpoint-20261001.json",
+        "verification/t03-wand125-pinned-shared-checker-audit-checkpoint-20261001.json"
+      ],
+      "source_checkpoint": "verification/source-checkpoints/wand125-pinned-exclusion-checker-20261001",
+      "exact_source_modules": 17,
+      "exact_source_bytes": 444539,
+      "ordinary_shared_exclusion_checker_accepted": true,
+      "conditional_original_certificate_transport_previously_accepted": true,
+      "imported_case_acceptances_added": 0,
+      "unaudited_Branch_and_individual_case_sources_excluded": true,
+      "actual_finite_case_probes_and_full_case_audits_pending": true,
+      "full_merged_Lean_replay": false,
+      "new_release_assets": 0,
+      "Lean_jobs_or_worker_controls_for_publication": 0
+    }
   },
   "operational_case1464_checkpoint": {
     "manifest": "verification/t03-case1464-parallel-retry.json",
@@ -2255,6 +2282,33 @@
     "source_available_bytes": 341699241,
     "missing_upstream_remaining_case": 1465,
     "source_availability_is_not_kernel_acceptance": true,
+    "full_merged_Lean_replay": false,
+    "new_release_assets": 0,
+    "Lean_jobs_or_worker_controls_for_publication": 0
+  },
+  "latest_pinned_shared_exclusion_checker_checkpoint": {
+    "accepted_local_full_case_count_unchanged": 159,
+    "remaining": 14,
+    "actual_new_shared_targets_accepted": 5,
+    "original_Lean_version": "4.10.0-rc2",
+    "actual_audit_seconds": {
+      "majority": 27.72,
+      "field-bridge": 25.72,
+      "shared-checker": 28.08
+    },
+    "audit_manifests": [
+      "verification/t03-wand125-pinned-majority-audit-checkpoint-20261001.json",
+      "verification/t03-wand125-pinned-field-bridge-audit-checkpoint-20261001.json",
+      "verification/t03-wand125-pinned-shared-checker-audit-checkpoint-20261001.json"
+    ],
+    "source_checkpoint": "verification/source-checkpoints/wand125-pinned-exclusion-checker-20261001",
+    "exact_source_modules": 17,
+    "exact_source_bytes": 444539,
+    "ordinary_shared_exclusion_checker_accepted": true,
+    "conditional_original_certificate_transport_previously_accepted": true,
+    "imported_case_acceptances_added": 0,
+    "unaudited_Branch_and_individual_case_sources_excluded": true,
+    "actual_finite_case_probes_and_full_case_audits_pending": true,
     "full_merged_Lean_replay": false,
     "new_release_assets": 0,
     "Lean_jobs_or_worker_controls_for_publication": 0

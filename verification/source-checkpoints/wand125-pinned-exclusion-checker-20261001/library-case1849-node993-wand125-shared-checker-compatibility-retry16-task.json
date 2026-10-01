@@ -1,0 +1,9 @@
+{
+  "id": "T03_compact_full_trace",
+  "modules": [
+    "ElevenSquare.Tasks.T03.Wand125.Upstream.S11Opt.Split.U2P.Rules"
+  ],
+  "axiom_targets": [
+    "SquarePacking.S11Opt.Split.U2P.excluded_of_tris"
+  ]
+}

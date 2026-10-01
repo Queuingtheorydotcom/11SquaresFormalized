@@ -1,0 +1,110 @@
+{
+  "status": "ACTUAL_PINNED_CORE_TARGET_AUDITS_PASSED_SOURCE_AND_OBJECT_BOUND",
+  "utc": "2026-10-01T14:44:21.060274+00:00",
+  "task": {
+    "id": "T03_compact_full_trace",
+    "modules": [
+      "ElevenSquare.Tasks.T03.Wand125.Upstream.S11Opt.Majority"
+    ],
+    "axiom_targets": [
+      "SquarePacking.S11Opt.majority_capacity"
+    ]
+  },
+  "axiom_targets": [
+    "SquarePacking.S11Opt.majority_capacity"
+  ],
+  "actual_axioms": {
+    "SquarePacking.S11Opt.majority_capacity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "source_bindings": [
+    {
+      "module": "ElevenSquare.Tasks.T03.KernelBoolRefl",
+      "source_sha256": "90111f1782484d93843ab7e8ec6789744ebf90afdd8deb6fa2d3ddf3880513ce",
+      "source_bytes": 429,
+      "source_closure_sha256": "a3da6dcbb82fc90e0e0768665497d087d54a2f788e73aaa980a384e3f84a2323",
+      "genuine_receipt_sha256": "8f19e9664b54a75ea8aa9ee1fa37490b503844b34a8f1c08567b4a07b40c73aa",
+      "object_sha256": "9e85dd325ed25ced1d96e2395ff05a2df1aa9a9752029bb7105a1fcc5b667952"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Wand125.Upstream.Basic",
+      "source_sha256": "be7fd52c9a48cb26692c7d2de2c1fd825255661f05008637ce229d2fb510a268",
+      "source_bytes": 29484,
+      "source_closure_sha256": "f7d0773538338af50868852ddf5d82c289d2b6af8ecee92ebc40cd6617af1cfe",
+      "genuine_receipt_sha256": "912fc275d0678b65364a224956c52b0e3cee6074b3344144e6b8756d4fe59f07",
+      "object_sha256": "faa24d667d03cd827415e617104aa7681a5eba1c93057eacd3aff3d747a6bca8"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Wand125.Upstream.Chord",
+      "source_sha256": "05c6541ed26be6e78d9b8fef40c6f3d51e0cb8b18e05e8ab2616d5d7edeb63e0",
+      "source_bytes": 15640,
+      "source_closure_sha256": "6837f234feb649ed5a91bc7ab6f4500c9b726a8757f6d1c5d404439bd7c2207c",
+      "genuine_receipt_sha256": "fa75ba63fb2bf2fbe63a71c0e3b68a5f5a5d82deaa3aa99ed4e5caae43473adb",
+      "object_sha256": "d1f168ba158d15ff4ae003c7fe27e3f50d0f43f210f75b90a8e647de034d134c"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Wand125.Upstream.ZeroMargin",
+      "source_sha256": "00ac49186e97f21d10099c2355b039466b83acfe577624d79fe63a0bd2a77e75",
+      "source_bytes": 55131,
+      "source_closure_sha256": "dad5980b7d669d758dd642d84506f137fc611aba8aab9b773f2f38b58f6a3b7f",
+      "genuine_receipt_sha256": "5ba2a6e31c950ab489901bb9cc5d15c243eb12b1836af5de09ecfc0ce02090c2",
+      "object_sha256": "67a81aa0951008a25014ceea3e68095a7a7614628fad05592b94981e713b0319"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Wand125.Upstream.Packing",
+      "source_sha256": "236404e223ba728de2808bbaef290f343639e8b3d5ea0c5347e45737dc2c8b8a",
+      "source_bytes": 7058,
+      "source_closure_sha256": "a3daa2034da53ba0004fbe01f89a5c3fdd7f1dd1c72f43c75ec0c76e2c12233b",
+      "genuine_receipt_sha256": "7b0a1eab3d9ebccb28d1abbc40f39d61867171f5d6730440547417200a08d01d",
+      "object_sha256": "f39dfaf0111a78a1d811cdd87a739d44fb9db096333d807918d13fa99a81bab5"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Wand125.Upstream.S11Opt.Basic",
+      "source_sha256": "e1a2363ca978e32b7264e8b42489d244f804314c652beea36c8db72b280a052b",
+      "source_bytes": 9942,
+      "source_closure_sha256": "21b31268d13c8abdb2ed3d52cda4919b6da0d4227415eb96203db7425f7b70d3",
+      "genuine_receipt_sha256": "b91247ca47b4f78fc5b803a5efe38ddfdc538b31f87a701e4e0020ca5feafff4",
+      "object_sha256": "f19ed468919c98130c23429cc6185c3b7293af47aed659922fd2b481f2a8966f"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Wand125.Upstream.S11Opt.Majority",
+      "source_sha256": "63384110ffa4108d5f70b954858c4a5282c360d15ad5774385560847cf4c227e",
+      "source_bytes": 5342,
+      "source_closure_sha256": "d2a5d985664302b7036ab4cc281affd2c72c040a2c4b6b58f097f9160841da1e",
+      "genuine_receipt_sha256": "e42dd9817cfc87b4c365f8aaddf974f1b2355e6eeb1298a7da76dfcc392cf256",
+      "object_sha256": "915e28517ef2b425bb8a418731654de622788c0643b7c211a579e6bda92329c7"
+    }
+  ],
+  "actual_audit_log_sha256": "787b0a9c0c5a3541d9d4a323e4935b292916b690655f15f4ac7edcb1e313ab8e",
+  "actual_check_sha256": "b6ad82173c77ad2e8466dd890a2ff9de5bbca6fa4fa5099801718d881099ccb0",
+  "actual_audit_seconds": 27.72,
+  "actual_wrapper_log_sha256": "6aa85d2ba90a946ba9ff0862579b7e0b6c8152178f6c64ada6597e15378ff4ae",
+  "actual_execution_sha256": "34e6ebdfe9a4d897a5b35d36795591ecd3f3e82d795330c5636645150da4d6ca",
+  "transport_sha256": "40ce5292549ea475fda648fd11f9f53cecbc076fe4161ca69ed4cbfbb3384e46",
+  "source_preserving_imports_and_compatible_proof_tactic_adaptations": true,
+  "original_compiler_and_supplied_checker_unchanged": true,
+  "full_case_increment": 0,
+  "local_full_case_count": 159,
+  "original_public_targets_and_case_certificates_still_pending": true,
+  "format": "T03-wand125-pinned-shared-core-audit-v1",
+  "original_record_sha256": "f9fc19ff41bfe841d6f0d7348f0c184c79e7aa5ae7c121e34096c0505f2b990a",
+  "actual_audit_log": "verification/t03-wand125-pinned-majority-audit.txt",
+  "actual_CHECK": "verification/t03-wand125-pinned-majority-audit-CHECK.json",
+  "exact_audit_log_bytes": 100,
+  "exact_CHECK_bytes": 446,
+  "actual_task_source_name": "library-case1849-node993-wand125-majority-compatibility-retry02-task.json",
+  "compiler_version": "4.10.0-rc2",
+  "compiler_sha256": "c2059c8da4034467e5f391cfd07b81c4a7b32a7e04ff7e50c7c385993cd77010",
+  "all_transport_member_hashes_independently_reverified": true,
+  "actual_audited_source_closure_keys_recomputed": true,
+  "standalone_source_checkpoint": "verification/source-checkpoints/wand125-pinned-exclusion-checker-20261001",
+  "receipt_and_object_binding_validation_scope": "Root independently verified the recorded genuine receipt and object hashes. Publication independently checked immutable actual audit/wrapper/execution bytes and accepted transport source bytes/closure keys; it did not rebuild or reinspect live compiler objects.",
+  "source_audit_scope": "Only the exact accepted source hashes in source_bindings, isolated from the stronger merged repository sources.",
+  "imported_case_certificates_accepted": 0,
+  "concrete_imported_case_exclusions_and_original_contract_instantiations_pending": true,
+  "new_source_archives_or_release_assets": 0,
+  "Lean_jobs_or_worker_controls_for_publication": 0
+}
