@@ -1,5 +1,5 @@
 {
-  "status": "UPSTREAM172_SUPPLIED_PROOFS_AND166_ORIGINAL_FULL_INTEGRATION_AUDITS_PUBLISHED",
+  "status": "UPSTREAM172_SUPPLIED_PROOFS_AND167_ORIGINAL_FULL_INTEGRATION_AUDITS_PUBLISHED",
   "snapshot_date": "2026-09-30",
   "meaning": "Independent returned compiler audits. This is not a fresh combined replay of the GitHub assembly.",
   "lean_version": "4.10.0-rc2",
@@ -1667,8 +1667,8 @@
     "source_lean_bytes": 5499202925,
     "meaning": "The original 151 source closures and six supplements remain unchanged, supplying 157 audited closures. The separately published frozen case1372 binding-retry02 source ZIP subsequently passed its exact full target audit, for 158. Only case2135 is directly integrated into Git source; no merged replay or full-family completion is claimed."
   },
-  "published_case_source_closures": 166,
-  "remaining_case_certificates": 7,
+  "published_case_source_closures": 167,
+  "remaining_case_certificates": 6,
   "source_supplements": [
     {
       "asset_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-audited-151-20260930/T03-audited-cases1484-2122-source-supplement.zip",
@@ -2368,7 +2368,7 @@
     "only_missing_case": 1465,
     "release_url": "https://github.com/wand125/n11-optimality-lean/releases/tag/n11-certs-v1",
     "required_remaining_source_archives_verified": 13,
-    "distinct_original_project_integration_metric": 166
+    "distinct_original_project_integration_metric": 167
   },
   "latest_pinned_import_components_checkpoint": {
     "upstream_supplied_case_proof_archives": 172,
@@ -2901,6 +2901,84 @@
         "digest": "sha256:7f3761e01f6db033794140790a3775fe6e6fec7446bce0c37aff5ba7abce508c",
         "state": "uploaded",
         "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-audited166-imported1823-20261001/T03-accepted-imported-case1823-source.zip"
+      }
+    ],
+    "server_asset_digests_and_sizes_match_all_verified_local_assets": true,
+    "all_actual_source_keys_genuine_receipts_and_object_hashes_independently_checked": true,
+    "all_finished_archive_member_hashes_verified": true,
+    "private_transports_objects_receipts_machine_paths_caches_included": false,
+    "canonical_sources_queues_workers_main_or_prior_assets_changed_for_publication": false,
+    "publication_Lean_jobs_or_process_controls": 0,
+    "fresh_merged_replay_original_public_family_global_optimality_final_return_complete": false
+  },
+  "latest_accepted1849_checkpoint": {
+    "format": "T03-exact-accepted-DirectTrees-original-case-release-v1",
+    "utc": "2026-10-01T19:15:50.088606+00:00",
+    "status": "ORIGINAL_CASE1849_FULL_CERTIFICATE_AND_COMPLETE_EXACT_SOURCE_COLLECTION_PUBLISHED",
+    "upstream_supplied_case_proof_archives": 172,
+    "upstream_only_missing_case": 1465,
+    "original_project_full_certificate_integration_audits": 167,
+    "remaining_original_integrations": 6,
+    "remaining_supplied_imported_full_integrations": 5,
+    "new_accepted_original_case": 1849,
+    "release_id": 401274619,
+    "release_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/tag/t03-audited167-imported1849-20261001",
+    "tag": "t03-audited167-imported1849-20261001",
+    "tag_target_commit": "fa09d2adfb038b85f09fe988eb332e9d231165ad",
+    "source_modules": 678,
+    "source_bytes": 30366105,
+    "actually_accepted_DirectTrees_source_members": 15,
+    "pending_unaccepted_conversion_sources_included": false,
+    "within_collection_source_version_conflicts": [],
+    "prior_prepared_snapshot_version_differences": [],
+    "actual_full_target": "ElevenSquare.Pending.T03.Batch09.Case1849.Forward.Certificate.certificate_exists",
+    "actual_full_audit_seconds": 41.49,
+    "actual_full_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "accepted_source_manifest": "verification/t03-wand125-case1849-full-original-audit-checkpoint-20261001.json",
+    "assets": [
+      {
+        "id": 603954437,
+        "name": "case1849-actual-audit.txt",
+        "size": 144,
+        "digest": "sha256:75df8231d5ac8eed40a1a3cd768534656ccebe45049e79967fe380d56a4808a2",
+        "state": "uploaded",
+        "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-audited167-imported1849-20261001/case1849-actual-audit.txt"
+      },
+      {
+        "id": 603954476,
+        "name": "case1849-actual-CHECK.json",
+        "size": 446,
+        "digest": "sha256:9d2514d7e5801808ed636c3fddac6995ab7d1f8dd1a826c7820ff0f4924eb3de",
+        "state": "uploaded",
+        "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-audited167-imported1849-20261001/case1849-actual-CHECK.json"
+      },
+      {
+        "id": 603954403,
+        "name": "CHECKPOINT-accepted-imported-cases-public.json",
+        "size": 402166,
+        "digest": "sha256:db06762a28bf7c20c98d300b9da8c4db800ce5eca96610effc16865013b4ce50",
+        "state": "uploaded",
+        "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-audited167-imported1849-20261001/CHECKPOINT-accepted-imported-cases-public.json"
+      },
+      {
+        "id": 603954510,
+        "name": "SHA256SUMS",
+        "size": 406,
+        "digest": "sha256:f5a440d0ac8b5b362ecbdef64c2a57953da948e0cd1deeac8e9b55ebf798a4b6",
+        "state": "uploaded",
+        "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-audited167-imported1849-20261001/SHA256SUMS"
+      },
+      {
+        "id": 603954332,
+        "name": "T03-accepted-imported-case1849-source.zip",
+        "size": 6359601,
+        "digest": "sha256:ba1878a07e5cd516922d1813359d8ef1e18f942593044cb32257e4af053aa302",
+        "state": "uploaded",
+        "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-audited167-imported1849-20261001/T03-accepted-imported-case1849-source.zip"
       }
     ],
     "server_asset_digests_and_sizes_match_all_verified_local_assets": true,
