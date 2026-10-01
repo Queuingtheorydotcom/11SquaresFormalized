@@ -4,3 +4,12 @@
 __pycache__/
 *.pyc
 .DS_Store
+
+# Generated certificate sources are reproduced from pinned release manifests.
+# Already tracked sources remain tracked; check_sources.py still audits these.
+/Sqpack/S11Opt/F[0-5][0-9]/
+/Sqpack/S11Opt/Own/
+/Sqpack/S11Opt/FieldAll.lean
+/Sqpack/S11Opt/Split/U2G/C*/
+/Sqpack/S11Opt/Split/U2P/C*/
+/Sqpack/S11Opt/Split/U2R/C*/
