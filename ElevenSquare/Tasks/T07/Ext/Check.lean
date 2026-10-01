@@ -814,5 +814,22 @@ theorem stepB_sound {s : PoseState} {i : Owner} {rs : List PoseRow} {pcov : ℕ 
     rw [List.mem_iff_getElem]; exact ⟨n, by simp [hn, hn'], by simp⟩
   exact rowB_sound hpcov (hall _ hmem) hc hown hcont
 
+/-- A step checked row by row (to split large steps across files). -/
+theorem stepB_of_rows {s : PoseState} {i : Owner} {rs : List PoseRow}
+    {pcov : ℕ → List (List PartnerPiece)} {certs : List (List Sub)}
+    (hlen : certs.length = (s.rows i).length)
+    (h : ∀ n < (s.rows i).length,
+      rowB s i rs pcov ((s.rows i).getD n ⟨0, 0, []⟩) (certs.getD n []) = true) :
+    stepB s i rs pcov certs = true := by
+  simp only [stepB, Bool.and_eq_true, beq_iff_eq, List.all_eq_true]
+  refine ⟨hlen, fun rc hrc => ?_⟩
+  obtain ⟨n, hn, rfl⟩ := List.getElem_of_mem hrc
+  have hn1 : n < (s.rows i).length := by simp at hn; omega
+  have hn2 : n < certs.length := by simp at hn; omega
+  have := h n hn1
+  rw [List.getD_eq_getElem?_getD, List.getElem?_eq_getElem hn1, Option.getD_some,
+    List.getD_eq_getElem?_getD, List.getElem?_eq_getElem hn2, Option.getD_some] at this
+  simpa [List.getElem_zip] using this
+
 end
 end ElevenSquare.Tasks.T07.Ext
