@@ -1,0 +1,141 @@
+{
+  "format": "T03-source-bound-accepted-imported-case-release-v1",
+  "utc": "2026-10-01T17:06:22.987652+00:00",
+  "status": "THREE_ORIGINAL_IMPORTED_FULL_CERTIFICATES_ACCEPTED_AND_COMPLETE_EXACT_SOURCE_COLLECTION_PUBLISHED",
+  "upstream_supplied_case_proof_archives": 172,
+  "upstream_only_missing_case": 1465,
+  "original_project_full_certificate_integration_audits": 163,
+  "remaining_original_integrations": 10,
+  "remaining_supplied_imported_full_integrations": 9,
+  "new_accepted_original_cases": [
+    2068,
+    2069,
+    2070
+  ],
+  "release_id": 401177240,
+  "release_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/tag/t03-audited163-imports2068-2069-2070-20261001",
+  "tag": "t03-audited163-imports2068-2069-2070-20261001",
+  "tag_target_commit": "ccaf06f6ec0c826e28203bef8a83254636eab270",
+  "source_modules": 690,
+  "source_bytes": 23857346,
+  "Combined_source_members": 28,
+  "within_collection_source_version_conflicts": [],
+  "prior_prepared_snapshot_version_differences": [],
+  "actual_full_target_audits": [
+    {
+      "case": 2068,
+      "target": "ElevenSquare.Pending.T03.Batch10.Case2068.Forward.Certificate.certificate_exists",
+      "seconds": 53.74,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "source_modules": 666
+    },
+    {
+      "case": 2069,
+      "target": "ElevenSquare.Pending.T03.Batch10.Case2069.Forward.Certificate.certificate_exists",
+      "seconds": 49.97,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "source_modules": 662
+    },
+    {
+      "case": 2070,
+      "target": "ElevenSquare.Pending.T03.Batch10.Case2070.Forward.Certificate.certificate_exists",
+      "seconds": 50.96,
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "source_modules": 667
+    }
+  ],
+  "accepted_source_manifest": "verification/t03-wand125-cases2068-2069-2070-full-original-audit-checkpoint-20261001.json",
+  "assets": [
+    {
+      "id": 603718725,
+      "name": "case2068-actual-audit.txt",
+      "size": 144,
+      "digest": "sha256:fb4d956cc53a859016f615c0b4adbca1f0ebab1678e3806bb188240e4b6e9c33",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-audited163-imports2068-2069-2070-20261001/case2068-actual-audit.txt"
+    },
+    {
+      "id": 603718761,
+      "name": "case2068-actual-CHECK.json",
+      "size": 446,
+      "digest": "sha256:f9022170923950b989a57cc4c063f8598c8e44175640d35dba05b452819fbc79",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-audited163-imports2068-2069-2070-20261001/case2068-actual-CHECK.json"
+    },
+    {
+      "id": 603718842,
+      "name": "case2069-actual-audit.txt",
+      "size": 144,
+      "digest": "sha256:6c09fe46fe18b45c265fafab7d082c34376056d153a14f67d4785da86c1f67be",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-audited163-imports2068-2069-2070-20261001/case2069-actual-audit.txt"
+    },
+    {
+      "id": 603718872,
+      "name": "case2069-actual-CHECK.json",
+      "size": 446,
+      "digest": "sha256:6464c279f74ca133b54ba6a1a0d3a927a01ba67c11e70b1160fc4fee5c5d1db4",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-audited163-imports2068-2069-2070-20261001/case2069-actual-CHECK.json"
+    },
+    {
+      "id": 603718915,
+      "name": "case2070-actual-audit.txt",
+      "size": 144,
+      "digest": "sha256:e8a85b984097c0c2e7462cca91a242e4a7d77a4e4ebed6248edbe75a9778565c",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-audited163-imports2068-2069-2070-20261001/case2070-actual-audit.txt"
+    },
+    {
+      "id": 603718965,
+      "name": "case2070-actual-CHECK.json",
+      "size": 446,
+      "digest": "sha256:3b8d089c87a6bd506e6d717ceb1ea2c9d249095de919c692ef9404cb5d19a865",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-audited163-imports2068-2069-2070-20261001/case2070-actual-CHECK.json"
+    },
+    {
+      "id": 603718657,
+      "name": "CHECKPOINT-accepted-imported-cases-public.json",
+      "size": 1180620,
+      "digest": "sha256:cfc4b1b9caa3d8ae04b6ab117ed0c0dffd3e3ea7dd1e5b1bfbaafb1f482601b6",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-audited163-imports2068-2069-2070-20261001/CHECKPOINT-accepted-imported-cases-public.json"
+    },
+    {
+      "id": 603719003,
+      "name": "SHA256SUMS",
+      "size": 787,
+      "digest": "sha256:63346a0a3ea6b60b9318b86ee7642ad0ac3aaa3f783e8bfe58276694fe6e248f",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-audited163-imports2068-2069-2070-20261001/SHA256SUMS"
+    },
+    {
+      "id": 603718567,
+      "name": "T03-accepted-imported-cases2068-2069-2070-source.zip",
+      "size": 8720246,
+      "digest": "sha256:780124a1fc453c621253aa11833beebfde9e474037d7e6e6b29b09b3fb3e55a4",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-audited163-imports2068-2069-2070-20261001/T03-accepted-imported-cases2068-2069-2070-source.zip"
+    }
+  ],
+  "server_asset_digests_and_sizes_match_all_verified_local_assets": true,
+  "all_actual_source_keys_genuine_receipts_and_object_hashes_independently_checked": true,
+  "all_finished_archive_member_hashes_verified": true,
+  "private_transports_objects_receipts_machine_paths_caches_included": false,
+  "canonical_sources_queues_workers_main_or_prior_assets_changed_for_publication": false,
+  "publication_Lean_jobs_or_process_controls": 0,
+  "fresh_merged_replay_original_public_family_global_optimality_final_return_complete": false
+}

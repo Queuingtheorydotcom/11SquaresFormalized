@@ -1,4 +1,50 @@
-# Supplied proofs, prepared imports and original-project integration
+# Supplied proofs and newly accepted original imported certificates
+
+Upstream supplies **172 case-proof archives**, with **only case1465 absent**.
+The original-project integration log now has **163/173** full certificate audits;
+these are different metrics. Newly accepted **cases2068,2069 and2070** reuse the
+supplied work through exact original geometry, mask and initialization contracts.
+
+| Case | Exact original source dependencies | Actual full target audit seconds |
+| --- | ---: | ---: |
+| 2068 | 666 | 53.74 |
+| 2069 | 662 | 49.97 |
+| 2070 | 667 | 50.96 |
+
+Each exact original `ElevenSquare.Pending.T03.Batch10.CaseN.Forward.Certificate.certificate_exists`
+target passed the supplied original Lean 4.10.0-rc2 checker and actual transitive
+axiom audit with only `propext`, `Classical.choice` and `Quot.sound`. The
+[accepted checkpoint](verification/t03-wand125-cases2068-2069-2070-full-original-audit-checkpoint-20261001.json)
+records actual exit0, byte-identical audit/CHECK hashes and immutable transport
+bindings for every source dependency, genuine source-closure key, receipt and
+independently read compiler-object hash. No Lean was started for publication.
+
+The [new standalone source release](https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/tag/t03-audited163-imports2068-2069-2070-20261001) deduplicates their complete
+exact closures into **690 modules /23,857,346 source bytes**, including **28 actual
+accepted Combined modules** absent from the earlier prepared snapshot. The
+8,720,246-byte ZIP has SHA-256
+`780124a1fc453c621253aa11833beebfde9e474037d7e6e6b29b09b3fb3e55a4`.
+There are no source-version conflicts between the accepted cases and no changed
+shared source versions relative to the prior prepared ZIP. Sources are isolated
+and every finished member is hash-verified; no merged interface is overwritten.
+[Server-verified asset bindings](verification/t03-wand125-cases2068-2069-2070-accepted-source-release-20261001.json)
+record all nine new asset sizes/digests. Earlier snapshots and assets are frozen.
+
+The exact source, task, environment and original checker bytes are preserved.
+Only private metadata is omitted and the resource profile is neutral serial.
+No original private transport archives, build objects, receipts, caches, machine
+paths or credentials are distributed. Follow the named ZIP's separate serial
+replay instructions; GitHub's automatic tag ZIP omits this full source asset.
+
+Nine other supplied original-target integrations plus local case1465 remain
+unfinished. Fresh merged replay, original public family audits, global optimality
+and final return are pending. No workers, queues, canonical sources, `main` or
+earlier release assets changed for this publication.
+
+## Previous source and audit checkpoint
+
+The following preserves the earlier160-count source freeze. The current accepted
+three-case record above supersedes its pending2068/2069/2070 integration status.
 
 Upstream supplies **172 case-proof archives**, with **only case1465 absent**.
 The [new frozen source release](https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/tag/t03-wand12513-imports-case2051-audit-20261001) publishes all 13 prepared imports

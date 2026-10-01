@@ -1,5 +1,30 @@
 # Eleven-square packing in Lean
 
+Upstream supplies **172 case-proof archives**; **case1465 is the sole missing case
+there**. The supplied proofs are being reused. The original-project full
+certificate integration audit log is a separate metric and now records **163/173**.
+
+The exact original full certificates for **cases2068,2069 and2070** now pass the
+original pinned Lean 4.10.0-rc2 checker and actual target audits, reporting only
+`propext`, `Classical.choice` and `Quot.sound`. Their
+[accepted audit/source bindings](verification/t03-wand125-cases2068-2069-2070-full-original-audit-checkpoint-20261001.json)
+and byte-identical CHECK/log sidecars are published with a
+[new complete exact source release](https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/tag/t03-audited163-imports2068-2069-2070-20261001): **690 modules /23,857,346 source
+bytes**, including all 28 accepted `Combined` dependencies. Every source member,
+genuine source-closure key, receipt and compiler-object hash was verified.
+
+The [earlier 13-prepared-import source release](https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/tag/t03-wand12513-imports-case2051-audit-20261001)
+and accepted case2051 evidence remain frozen. Nine other supplied imports still
+need their full original-target audits; case1465 continues locally. Global
+optimality, original public family obligations and final return are unfinished.
+Publication preserves merged proofs, `main`, earlier assets and live proof work.
+See [MISSING.md](MISSING.md) and [T03_PROGRESS.md](T03_PROGRESS.md).
+
+## Previous source and audit checkpoint
+
+The following preserves its earlier160-count snapshot; the accepted three-case
+checkpoint above supersedes its earlier pending2068/2069/2070 status.
+
 Upstream has supplied **172 case-proof archives**; **case1465 is the sole missing
 case there**. The supplied work is being reused. The [new portable source release](https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/tag/t03-wand12513-imports-case2051-audit-20261001)
 contains all **13 prepared imports**, including 762 case source members, 26
