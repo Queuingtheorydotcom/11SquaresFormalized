@@ -127,10 +127,120 @@ class Checkpoints(unittest.TestCase):
                 ci.merge(self.root, [archive])
 
     def test_setup_refuses_user_filesystem(self):
-        with mock.patch.dict(ci.os.environ, {}, clear=True), mock.patch.object(ci.subprocess, 'run') as run:
+        with mock.patch.dict(ci.os.environ, {}, clear=True), mock.patch.object(ci.subprocess, 'Popen') as run:
             with self.assertRaisesRegex(ValueError, 'disposable GitHub-hosted'):
                 ci.prepare()
             run.assert_not_called()
+
+
+class Preparation(unittest.TestCase):
+    def setUp(self):
+        temp = tempfile.TemporaryDirectory()
+        self.addCleanup(temp.cleanup)
+        self.root = Path(temp.name).resolve()
+        (self.root / '.verification').mkdir()
+        (self.root / 'lean-toolchain').write_text('leanprover/lean4:v4.34.1\n')
+        for patch in [mock.patch.object(ci, 'ROOT', self.root),
+                      mock.patch.object(ci, 'STATE', self.root / '.verification'),
+                      mock.patch.dict(ci.os.environ, {'GITHUB_ACTIONS': 'true',
+                          'RUNNER_ENVIRONMENT': 'github-hosted', 'RUNNER_OS': 'Linux',
+                          'GITHUB_WORKSPACE': str(self.root)}),
+                      mock.patch.object(ci.shutil, 'disk_usage', return_value=mock.Mock(free=33 * 1024**3))]:
+            patch.start()
+            self.addCleanup(patch.stop)
+
+    def test_privileged_timeout_runs_inside_noninteractive_sudo(self):
+        with mock.patch.object(ci.subprocess, 'Popen') as spawn, mock.patch('builtins.print') as output:
+            spawn.return_value.wait.return_value = 0
+            ci.setup_command('cleanup', ['rm', '-rf', '--', '/opt/ghc'], 90, ci.time.monotonic() + 600, True)
+            self.assertEqual(spawn.call_args.args[0], ['sudo', '-n', 'timeout', '--signal=TERM',
+                '--kill-after=15s', '90s', 'rm', '-rf', '--', '/opt/ghc'])
+            self.assertTrue(spawn.call_args.kwargs['start_new_session'])
+            self.assertIn('starting', output.call_args_list[0].args[0])
+            self.assertIn('exited 0', output.call_args_list[-1].args[0])
+            self.assertTrue(all(call.kwargs['flush'] for call in output.call_args_list))
+
+    def test_waiting_commands_emit_flushed_heartbeats(self):
+        with mock.patch.object(ci.subprocess, 'Popen') as spawn, mock.patch('builtins.print') as output:
+            spawn.return_value.wait.side_effect = [ci.subprocess.TimeoutExpired('test', 60), 0]
+            ci.setup_command('downloads', ['test-command'], 180, ci.time.monotonic() + 600)
+            self.assertTrue(any('still running' in call.args[0] for call in output.call_args_list))
+            self.assertTrue(all(call.kwargs['flush'] for call in output.call_args_list))
+            self.assertLessEqual(spawn.return_value.wait.call_args_list[0].kwargs['timeout'], 60)
+
+    def test_timeout_and_command_failure_are_not_success(self):
+        for code, error in [(124, TimeoutError), (137, TimeoutError), (1, ci.subprocess.CalledProcessError)]:
+            with self.subTest(code=code), mock.patch.object(ci.subprocess, 'Popen') as spawn:
+                spawn.return_value.wait.return_value = code
+                with self.assertRaises(error):
+                    ci.setup_command('failed phase', ['test-command'], 90, ci.time.monotonic() + 600)
+
+    def test_shared_deadline_reserves_termination_time(self):
+        with mock.patch.object(ci.time, 'monotonic', return_value=100), mock.patch.object(ci.subprocess, 'Popen') as spawn:
+            with self.assertRaisesRegex(TimeoutError, 'deadline reached'):
+                ci.setup_command('too late', ['test-command'], 90, 200)
+            spawn.assert_not_called()
+            spawn.return_value.wait.return_value = 0
+            ci.setup_command('remaining budget', ['test-command'], 900, 230)
+            self.assertIn('30s', spawn.call_args.args[0])
+
+    def test_stuck_wrapper_is_terminated_with_bounded_waits(self):
+        with mock.patch.object(ci.time, 'monotonic', return_value=0) as clock, \
+                mock.patch.object(ci.subprocess, 'Popen') as spawn, mock.patch.object(ci.os, 'killpg') as stop:
+            def wait(**kwargs):
+                clock.return_value = 200
+                raise ci.subprocess.TimeoutExpired('test', kwargs['timeout'])
+            spawn.return_value.wait.side_effect = lambda **kwargs: wait(**kwargs) if clock.return_value == 0 else 0
+            with self.assertRaisesRegex(TimeoutError, 'exceeded its deadline'):
+                ci.setup_command('stuck wrapper', ['test-command'], 90, 600)
+            stop.assert_called_once_with(spawn.return_value.pid, ci.signal.SIGTERM)
+            self.assertEqual(spawn.return_value.wait.call_args_list[-1].kwargs['timeout'], 15)
+
+    def test_interrupted_privileged_command_is_stopped_and_reaped(self):
+        with mock.patch.object(ci.subprocess, 'Popen') as spawn, mock.patch.object(ci.subprocess, 'run') as stop:
+            spawn.return_value.pid = 12345
+            spawn.return_value.wait.side_effect = [KeyboardInterrupt(), 0]
+            with self.assertRaises(KeyboardInterrupt):
+                ci.setup_command('apt', ['apt-get', 'update'], 180, ci.time.monotonic() + 600, True)
+            self.assertEqual(stop.call_args.args[0], ['sudo', '-n', 'timeout', '--signal=KILL',
+                '10s', 'kill', '-TERM', '--', '-12345'])
+            self.assertEqual(stop.call_args.kwargs['timeout'], 15)
+            self.assertEqual(spawn.return_value.wait.call_args_list[-1].kwargs['timeout'], 15)
+
+    def test_session_stop_escalates_and_reap_is_bounded(self):
+        child = mock.Mock(pid=12345)
+        child.wait.side_effect = [ci.subprocess.TimeoutExpired('test', 15), 0]
+        with mock.patch.object(ci.os, 'killpg') as stop:
+            ci.stop_setup(child, False)
+            self.assertEqual(stop.call_args_list, [mock.call(12345, ci.signal.SIGTERM),
+                                                  mock.call(12345, ci.signal.SIGKILL)])
+            self.assertEqual(child.wait.call_args_list, [mock.call(timeout=15), mock.call(timeout=15)])
+
+    def test_sufficient_disk_skips_disposable_cleanup(self):
+        with mock.patch.object(ci, 'setup_command') as run:
+            ci.prepare()
+            self.assertEqual(run.call_count, 6)
+            self.assertFalse(any(call.args[0].startswith('remove disposable') for call in run.call_args_list))
+            self.assertTrue(all(call.args[3] == run.call_args_list[0].args[3] for call in run.call_args_list))
+            self.assertTrue(run.call_args_list[0].kwargs['privileged'])
+            self.assertTrue(run.call_args_list[1].kwargs['privileged'])
+
+    def test_cleanup_timeout_rechecks_disk_before_next_directory(self):
+        with mock.patch.object(ci, 'setup_command') as run, mock.patch.object(ci.shutil, 'disk_usage') as disk:
+            disk.side_effect = [mock.Mock(free=n * 1024**3) for n in (12, 33, 4)]
+            run.side_effect = [TimeoutError('bounded cleanup'), None, None, None, None, None, None]
+            ci.prepare()
+            cleanup = [call for call in run.call_args_list if call.args[0].startswith('remove disposable')]
+            self.assertEqual(len(cleanup), 1)
+            self.assertEqual(cleanup[0].args[1], ['rm', '-rf', '--', '/usr/local/lib/android'])
+            self.assertEqual(cleanup[0].args[2], 90)
+            self.assertTrue(cleanup[0].kwargs['privileged'])
+
+    def test_final_disk_gate_is_preserved(self):
+        with mock.patch.object(ci, 'setup_command'), mock.patch.object(ci.shutil, 'disk_usage') as disk:
+            disk.side_effect = [mock.Mock(free=n * 1024**3) for n in (33, 3)]
+            with self.assertRaisesRegex(ValueError, 'Less than 4 GiB'):
+                ci.prepare()
 
 
 if __name__ == '__main__':

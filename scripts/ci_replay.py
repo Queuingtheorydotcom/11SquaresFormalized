@@ -203,20 +203,96 @@ def merge(root, archives):
     return invalid
 
 
+def stop_setup(child, privileged):
+    """Stop and reap an isolated setup session, including a privileged wrapper."""
+    for name in ('TERM', 'KILL'):
+        try:
+            if privileged:
+                subprocess.run(['sudo', '-n', 'timeout', '--signal=KILL', '10s',
+                                'kill', '-' + name, '--', '-' + str(child.pid)],
+                               cwd=ROOT, timeout=15, check=False)
+            else:
+                os.killpg(child.pid, getattr(signal, 'SIG' + name))
+        except (OSError, subprocess.TimeoutExpired) as error:
+            print(f'Prepare: session {name} signal failed: {error}', flush=True)
+        try:
+            child.wait(timeout=15)
+            return
+        except subprocess.TimeoutExpired:
+            pass
+    raise TimeoutError('Could not reap setup session after bounded termination')
+
+
+def setup_command(label, command, seconds, deadline, privileged=False):
+    """Bound the whole command tree, including root-owned cleanup children."""
+    # Reserve the wrapper watchdog and bounded termination waits as well.
+    seconds = min(seconds, int(deadline - time.monotonic()) - 100)
+    if seconds <= 0:
+        raise TimeoutError('Preparation deadline reached before ' + label)
+    # Ubuntu's timeout runs inside sudo so its TERM/KILL can reach privileged
+    # descendants. A Python timeout around sudo alone would not ensure this.
+    command = ['timeout', '--signal=TERM', '--kill-after=15s', f'{seconds}s', *command]
+    if privileged:
+        command = ['sudo', '-n', *command]
+    started = time.monotonic()
+    print(f'Prepare: {label} starting (limit {seconds}s)', flush=True)
+    child = subprocess.Popen(command, cwd=ROOT, start_new_session=True)
+    watchdog = started + seconds + 30
+    try:
+        while True:
+            try:
+                result = child.wait(timeout=min(60, max(1, watchdog - time.monotonic())))
+                break
+            except subprocess.TimeoutExpired:
+                elapsed = time.monotonic() - started
+                free = shutil.disk_usage(ROOT).free / 1024**3
+                print(f'Prepare: {label} still running after {elapsed:.0f}s; free disk {free:.2f} GiB', flush=True)
+                if time.monotonic() >= watchdog:
+                    raise TimeoutError('Preparation command exceeded its deadline: ' + label)
+    except BaseException:
+        print(f'Prepare: stopping interrupted {label}', flush=True)
+        stop_setup(child, privileged)
+        raise
+    elapsed = time.monotonic() - started
+    free = shutil.disk_usage(ROOT).free / 1024**3
+    print(f'Prepare: {label} exited {result} after {elapsed:.0f}s; free disk {free:.2f} GiB', flush=True)
+    if result in (124, 137):
+        raise TimeoutError('Preparation command timed out: ' + label)
+    if result:
+        raise subprocess.CalledProcessError(result, command)
+
+
 def prepare():
     if (os.environ.get('GITHUB_ACTIONS') != 'true' or os.environ.get('RUNNER_ENVIRONMENT') != 'github-hosted'
             or os.environ.get('RUNNER_OS') != 'Linux' or Path(os.environ.get('GITHUB_WORKSPACE', '/')).resolve() != ROOT):
         raise ValueError('Preparation is restricted to disposable GitHub-hosted Linux workspaces')
     (STATE / 'ci-job-started').write_text(str(time.time()))
+    deadline = time.monotonic() + 40 * 60  # Leave room before the 45-minute Actions step limit.
+    free = shutil.disk_usage(ROOT).free
+    print(f'Prepare: hosted workspace confirmed; free disk {free / 1024**3:.2f} GiB', flush=True)
     disposable = ['/usr/local/lib/android', '/usr/share/dotnet', '/opt/ghc',
                   '/opt/hostedtoolcache/CodeQL', '/usr/local/share/powershell']
-    subprocess.run(['sudo', 'rm', '-rf', '--', *disposable], check=True)
-    subprocess.run(['sudo', 'apt-get', 'update', '-qq'], check=True)
-    subprocess.run(['sudo', 'apt-get', 'install', '-y', 'elan', 'zstd'], check=True)
-    subprocess.run(['elan', 'toolchain', 'install', (ROOT / 'lean-toolchain').read_text().strip()], check=True)
-    subprocess.run([sys.executable, 'scripts/materialize_wand125.py'], check=True, cwd=ROOT)
-    shutil.rmtree(STATE / 'wand125/releases', ignore_errors=True)
-    subprocess.run(['lake', 'exe', 'cache', 'get'], check=True, cwd=ROOT)
+    for directory in disposable:
+        # Allow for dependencies, generated sources, and checkpoint restoration.
+        if free >= 32 * 1024**3:
+            print('Prepare: sufficient free disk; skipping remaining disposable-tool cleanup', flush=True)
+            break
+        try:
+            setup_command('remove disposable ' + directory, ['rm', '-rf', '--', directory],
+                          90, deadline, privileged=True)
+        except TimeoutError as error:
+            print(f'Prepare: {error}; checking disk before continuing cleanup', flush=True)
+        free = shutil.disk_usage(ROOT).free
+    setup_command('refresh package index', ['apt-get', 'update', '-qq'], 180, deadline, privileged=True)
+    setup_command('install elan and zstd', ['apt-get', 'install', '-y', 'elan', 'zstd'],
+                  180, deadline, privileged=True)
+    setup_command('install pinned Lean toolchain',
+                  ['elan', 'toolchain', 'install', (ROOT / 'lean-toolchain').read_text().strip()], 600, deadline)
+    setup_command('materialize pinned sources', [sys.executable, '-u', 'scripts/materialize_wand125.py'],
+                  1200, deadline)
+    setup_command('remove downloaded release archives', ['rm', '-rf', '--', str(STATE / 'wand125/releases')],
+                  90, deadline)
+    setup_command('fetch mathlib cache', ['lake', 'exe', 'cache', 'get'], 900, deadline)
     free = shutil.disk_usage(ROOT).free
     print(f'Prepared pinned toolchain/dependencies and all sources; free disk: {free / 1024**3:.2f} GiB', flush=True)
     if free < 4 * 1024**3:
