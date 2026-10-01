@@ -28,7 +28,7 @@ theorem baselinePhysicalSite_normalize (i : Fin 16) :
   dsimp only [normalizeCenter, baselinePhysicalSite, realPoint]
   push_cast
   rw [baselineRationalCap_cast, hx, hy]
-  ext <;> dsimp <;> field_simp [hu]
+  ext <;> dsimp <;> field_simp [hu] <;> ring
 
 theorem baseline_site_distance_bound (i : Fin 16) (p : Point)
     (h : ClosedCell i (normalizeCenter p)) :
