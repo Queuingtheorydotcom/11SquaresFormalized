@@ -8,6 +8,15 @@ the final optimality theorem. See [MISSING.md](MISSING.md).
 
 At the latest checkpoint, **159/173** full case certificates have independently
 accepted exact target audits and published complete source closures; **14 remain**.
+The conditional original-contract transport now passes the supplied checker on
+Lean 4.10.0-rc2: `ElevenSquare.Pending.T03.Wand125.certificate_of_case` reports
+only the standard three axioms. Its [actual audit](verification/t03-wand125-pinned-original-transport-audit-checkpoint-20261001.json)
+and [isolated 25-module source closure](verification/source-checkpoints/wand125-pinned-original-transport-20261001)
+preserve the original geometry, cell-mask and certificate statements exactly.
+Cell bounds, exact case-mask correspondence and a proved case exclusion remain
+explicit per-case inputs. No imported case is accepted; the count remains
+**159/173** and the imported exclusion checker is pending.
+
 The reused S11 basic lemmas and the original packing bridge now also pass
 the original pinned checker: `SquarePacking.S11Opt.peQ_pos_of_hIv`,
 `SquarePacking.S11Opt.disjoint_of_dir` and
@@ -25,14 +34,14 @@ original checker accepted `SquarePacking.sq_subset_box_iff`, `lemmaG_box`,
 and [packing audit](verification/t03-wand125-pinned-packing-audit-checkpoint-20261001.json)
 bind their exact adapted source versions, genuine receipt/object hashes and
 unaltered CHECK/log bytes. This checks shared core only: no imported case has
-been accepted. The exclusion checker and exact original-contract transport
+been accepted. The exclusion checker and concrete per-case contract instantiation
 remain pending; the full-case count stays **159/173**.
 
 New upstream sources are now available in [wand125's `n11-certs-v1` release](https://github.com/wand125/n11-optimality-lean/releases/tag/n11-certs-v1):
 172 U2R case archives include **13 of our 14 remaining cases**; case1465 is absent.
 Case1849's [source archive](https://github.com/wand125/n11-optimality-lean/releases/download/n11-certs-v1/n11-u2r-C1849.tar.xz)
 and all 54 source members match its archive checksum and manifest. Import,
-original-contract compatibility and actual kernel target audits are **pending**;
+concrete original-contract case instantiations and actual case target audits are **pending**;
 the local accepted count remains **159/173**. Thirteen duplicate local native
 producers were checkpointed at complete publication boundaries and their queues
 preserved for reuse. Existing Lean checks were allowed to finish normally;

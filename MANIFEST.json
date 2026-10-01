@@ -42833,13 +42833,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 13442,
-      "sha256": "9da17529359388667ac2e57a5abc22fef0a777b5981968d4b9b7a054ec86a178"
+      "bytes": 14162,
+      "sha256": "99458fd460b7e979a3b007c5c785219b1ae82534f081f891ad10da90625bf153"
     },
     {
       "path": "T03_PROGRESS.md",
-      "bytes": 74365,
-      "sha256": "9fe81ba2a1f68b65fb8ccc94e2bf5f091ab93222072669401b83d64f376561cf"
+      "bytes": 76902,
+      "sha256": "48fec966794417da7a1d529a8b32a77e10ff79c87b8872c7ddf8121c00d90aa3"
     },
     {
       "path": "lake-manifest.json",
@@ -43098,13 +43098,188 @@
     },
     {
       "path": "verification/privacy-review.json",
-      "bytes": 13923,
-      "sha256": "03448bf7ceee5a65cbb460aa96fd2e1a35428b848ab6b773f003d28c96b180b1"
+      "bytes": 14666,
+      "sha256": "99ab4c22ae5709d7b4d259ce7fb9c9a140bfafa2d11e1219b03c53d92009ba5c"
     },
     {
       "path": "verification/source-check.json",
       "bytes": 129,
       "sha256": "c8896e5b634fe0f8955953e2ad17250083dd93749c5be417332f975f2dd8dd98"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-original-transport-20261001/README.md",
+      "bytes": 2462,
+      "sha256": "070d1cc9e431b6c6bae297a11408994ac3ad1adbf5224d94c8a656b50489b22f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-original-transport-20261001/SOURCE_BINDINGS.json",
+      "bytes": 22777,
+      "sha256": "468895a9d7267ba615620035e47c2af215d13e59bde82b496a84a647c48b883e"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-original-transport-20261001/library-case1849-node993-wand125-original-transport-compatibility-retry05-task.json",
+      "bytes": 200,
+      "sha256": "b91bf9595ceafab27569a66315011f959d06a283205e37541fd6d65c816c330d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-original-transport-20261001/project/ElevenSquare/BasicGeometry.lean",
+      "bytes": 11070,
+      "sha256": "0e291c05b9fa7670ed3bac5c605e5cdb3666994715c9f7e4a16786881d020c72"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-original-transport-20261001/project/ElevenSquare/Cover.lean",
+      "bytes": 5665,
+      "sha256": "fe57460a07b6acd1561be1d63a9e93c27560716fd1af8df94f65fb7321f7cd1e"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-original-transport-20261001/project/ElevenSquare/CoverChecks.lean",
+      "bytes": 1564,
+      "sha256": "cfb1ac4a0bbd79e078519e7d9df2e04892458a87cc309a6aa520a0cff2e4e68d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-original-transport-20261001/project/ElevenSquare/CoverData.lean",
+      "bytes": 1267,
+      "sha256": "d3ed474b9f3b8c88ffffcfa1c1005b98be709dd5443198088e94e659a299906d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-original-transport-20261001/project/ElevenSquare/GeneratedCover0.lean",
+      "bytes": 51515,
+      "sha256": "4936cc6f454137d9509976002e3c719de0dd28441e99ae8fbd0343ab7c2fba99"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-original-transport-20261001/project/ElevenSquare/GeneratedCover1.lean",
+      "bytes": 41862,
+      "sha256": "e72e09742bd6a4d17a8152f6b69c9cdb94933d15829193e88ec52ba85c6c6d27"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-original-transport-20261001/project/ElevenSquare/GeneratedCover2.lean",
+      "bytes": 41894,
+      "sha256": "f9d6ccc5aa2ae6c16140dcf8d474f869448c83d965a7644f16fb59b3d2c020b5"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-original-transport-20261001/project/ElevenSquare/GeneratedCover3.lean",
+      "bytes": 52238,
+      "sha256": "973ed8e31b101004f93e72347411e153c6283022219cfcc5d5846ee1f65a9f0f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-original-transport-20261001/project/ElevenSquare/Geometry.lean",
+      "bytes": 1591,
+      "sha256": "fa8ff2c666453b56f04b22c164ef063cbd46dc85fb4afd7ed6fbb01b7c4f641a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-original-transport-20261001/project/ElevenSquare/Pending/GeometryTypes.lean",
+      "bytes": 337,
+      "sha256": "a7bf5e2a537e0b81a7d874c35c769f605b61da9e3fef28feb07390736690502a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-original-transport-20261001/project/ElevenSquare/Pending/S05_Minkowski.lean",
+      "bytes": 3477,
+      "sha256": "e39dcfc51ad822fffbd76414e140f476baf3d5f0e55f7790e273362ce5484e71"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-original-transport-20261001/project/ElevenSquare/Pending/S05_OwnedHull.lean",
+      "bytes": 1837,
+      "sha256": "237234a0a57234a0fe6ca3d421758550b50266b6b1411b04ad07c49339a7db42"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-original-transport-20261001/project/ElevenSquare/Pending/S05_Trace.lean",
+      "bytes": 5612,
+      "sha256": "c28d11831b4130263f31e046d4165e942ce15d6662b1902875e1de2b7c2f7a92"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-original-transport-20261001/project/ElevenSquare/Pending/S06_Data.lean",
+      "bytes": 111768,
+      "sha256": "95384cd8f89c4f412ab37f470768f63f49de6c2cf1fa97b97c3465058ed373bd"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-original-transport-20261001/project/ElevenSquare/Pending/Types.lean",
+      "bytes": 3142,
+      "sha256": "a08828e4674559871cfa7ee6e5321d008b43ff66baf2fa6906b3225e59e6dd7a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-original-transport-20261001/project/ElevenSquare/Tasks/T03/KernelBoolRefl.lean",
+      "bytes": 429,
+      "sha256": "90111f1782484d93843ab7e8ec6789744ebf90afdd8deb6fa2d3ddf3880513ce"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-original-transport-20261001/project/ElevenSquare/Tasks/T03/Wand125/Cells.lean",
+      "bytes": 7639,
+      "sha256": "0ebd860a8527323de59507125d20ed04f516bda3333c5186722cc048663aac43"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-original-transport-20261001/project/ElevenSquare/Tasks/T03/Wand125/CertificateTransport.lean",
+      "bytes": 1568,
+      "sha256": "df4715698f9fa3862be0abe70086df72ddbc171b79e651b6c17c66540903faf4"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-original-transport-20261001/project/ElevenSquare/Tasks/T03/Wand125/Geometry.lean",
+      "bytes": 4156,
+      "sha256": "b5c27bb04dbdca12eae03a0219c46cbf43252c45edb5f90d46cb7d7405dbf331"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-original-transport-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/Basic.lean",
+      "bytes": 29484,
+      "sha256": "be7fd52c9a48cb26692c7d2de2c1fd825255661f05008637ce229d2fb510a268"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-original-transport-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/Chord.lean",
+      "bytes": 15640,
+      "sha256": "05c6541ed26be6e78d9b8fef40c6f3d51e0cb8b18e05e8ab2616d5d7edeb63e0"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-original-transport-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/Packing.lean",
+      "bytes": 7058,
+      "sha256": "236404e223ba728de2808bbaef290f343639e8b3d5ea0c5347e45737dc2c8b8a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-original-transport-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Basic.lean",
+      "bytes": 9942,
+      "sha256": "e1a2363ca978e32b7264e8b42489d244f804314c652beea36c8db72b280a052b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-original-transport-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Cells.lean",
+      "bytes": 4989,
+      "sha256": "1887a9d671edcf6926be95998b3a20b81dc0c262e348113b4ce79f2275fad70b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-original-transport-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/ZeroMargin.lean",
+      "bytes": 55131,
+      "sha256": "00ac49186e97f21d10099c2355b039466b83acfe577624d79fe63a0bd2a77e75"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-original-transport-20261001/project/lake-manifest.json",
+      "bytes": 2763,
+      "sha256": "383259bb05fd384346e806086f1e041383dbf3898db2a6bc9bd0b91966f149ae"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-original-transport-20261001/project/lakefile.lean",
+      "bytes": 267,
+      "sha256": "dce4d550c15bb4cd272b68a1b5bbd7fbf947a2f02ddde5593b50d674891cc88c"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-original-transport-20261001/project/lean-toolchain",
+      "bytes": 29,
+      "sha256": "35100b5b8f5426dfa942d43e8f4995c6ffeccef24ac467df1fd477ce96a66747"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-original-transport-20261001/project/scripts/check_handoff.py",
+      "bytes": 3818,
+      "sha256": "989c66964d906ddd77a058f6812c7078709bee838b625906e7ce652656ae35b1"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-original-transport-20261001/project/scripts/lake.sh",
+      "bytes": 570,
+      "sha256": "b886afc9290fd60e95aa544ae63194865a5dca6566c17fe1059a2c8acd014080"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-original-transport-20261001/project/scripts/lean_small_check.py",
+      "bytes": 3895,
+      "sha256": "a9face3b56662d5f9fae52935d94916d3d01b2d530b849dffa87ad3aebc1ce1d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-original-transport-20261001/project/verification/LOW_RESOURCE_MODE.json",
+      "bytes": 435,
+      "sha256": "2ac2c2ee5cb1665470f2883a2c5973fe78cc47ba3f5503ec346c15cfc47423f8"
     },
     {
       "path": "verification/source-checkpoints/wand125-pinned-shared-core-20261001/README.md",
@@ -43508,8 +43683,8 @@
     },
     {
       "path": "verification/t03-progress.json",
-      "bytes": 73522,
-      "sha256": "6a20b62389d2162b10b40355d55e43b97a38df384b8264bde1d0a84fe683851c"
+      "bytes": 76077,
+      "sha256": "a4e4967c091d1310dbce20b0326802d7bce034baf974985a28d370261eda0bf3"
     },
     {
       "path": "verification/t03-ready-archive-prefilter-checkpoint-20261001.json",
@@ -43572,6 +43747,21 @@
       "sha256": "81c888d0a344fae9973f18fba95aee54fcc9e4d1e8926a4d9df894e819819e2d"
     },
     {
+      "path": "verification/t03-wand125-pinned-original-transport-audit-CHECK.json",
+      "bytes": 446,
+      "sha256": "9db5ddfbda16eab3c2221deed8db84bc94c3ee4e630344d25630034e0b975f12"
+    },
+    {
+      "path": "verification/t03-wand125-pinned-original-transport-audit-checkpoint-20261001.json",
+      "bytes": 14907,
+      "sha256": "90def2e1761ea14002006d72d538122ea8dd6718e46c3028d6f923e478a501a8"
+    },
+    {
+      "path": "verification/t03-wand125-pinned-original-transport-audit.txt",
+      "bytes": 114,
+      "sha256": "28b66b3eca9bb3e56e9ba7352db826a06c3bae89bf567b7c716bcdff0f562d04"
+    },
+    {
       "path": "verification/t03-wand125-pinned-packing-audit-CHECK.json",
       "bytes": 446,
       "sha256": "936645195dcb3115a69bd199451bdf30a3f19fb3917c4e7c5ed4e41e4927fc55"
@@ -43602,9 +43792,19 @@
       "sha256": "62923f933a8256e35155df8481527056840c088b19e98f8cb43b0887e76e87c1"
     },
     {
+      "path": "verification/t03-wand125-site-equality-explicit-rational-goals-20261001.json",
+      "bytes": 3201,
+      "sha256": "24a243f1149968073196fca841ede25630ce2b8d16240b8f5ba41c0323452b31"
+    },
+    {
       "path": "verification/t03-wand125-source-release-availability-20261001.json",
       "bytes": 17517,
       "sha256": "2b0756df6a5957c95b0f9139ff07ede97a5b5c7b8caa46f4b001b32157228596"
+    },
+    {
+      "path": "verification/t03-wand125-unused-half-turn-enumeration-proof-pruning-20261001.json",
+      "bytes": 3782,
+      "sha256": "9823b3a819b7da3f87d77f75605d8336080ffb97cc1efe2122beaf72fe9df2fe"
     }
   ]
 }

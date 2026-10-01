@@ -6,6 +6,43 @@ repository, and global optimality remains unfinished. This branch supplies
 checked common tools and the complete source closure of one audited certificate,
 case2135. It does not discharge the full-family obligation.
 
+## Conditional original-contract transport is audited
+
+The supplied Lean 4.10.0-rc2 checker actually accepted
+`ElevenSquare.Pending.T03.Wand125.certificate_of_case` in **28.21 seconds**,
+using only `propext`, `Classical.choice` and `Quot.sound`. The
+[accepted checkpoint](verification/t03-wand125-pinned-original-transport-audit-checkpoint-20261001.json)
+publishes its byte-identical actual audit/CHECK and the source/object/receipt
+bindings for all 25 reachable modules. Publication verified every accepted
+transport member, real audit/wrapper/execution hash and recorded source-closure
+key. The root coordinator independently checked the genuine objects/receipts.
+
+The [standalone source closure](verification/source-checkpoints/wand125-pinned-original-transport-20261001)
+contains **470,875 exact Lean source bytes**, the original geometry/cover/mask/trace
+definitions, the audited cell/packing bridge, exact task and pinned checker
+environment. It is isolated from the stronger merged repository interfaces.
+Frozen source bytes are unchanged; later pending checker adaptations are excluded.
+Only private handoff metadata is omitted and the resource profile is neutralized.
+
+This is a **conditional reusable transport theorem**. A concrete imported case
+must still provide bounds on its literal cell list, exact equality to the original
+case mask, and an independently proved `CaseExcluded` statement. The transport
+then produces the original chart/relabel/VerifiedTrace/Terminal certificate.
+No inherited inventory admission is used by the audited target. No imported case
+is accepted here; the count stays **159/173**, with 14 remaining. Imported
+exclusion-checker proofs, concrete per-case obligations, the full public targets
+and final return remain pending. No fresh merged repository replay is claimed.
+
+Historical [unused enumeration pruning](verification/t03-wand125-unused-half-turn-enumeration-proof-pruning-20261001.json)
+and [exact rational site-goal adaptation](verification/t03-wand125-site-equality-explicit-rational-goals-20261001.json)
+records retain their original pending status and before/after hashes. Their
+sidecars explicitly identify which exact later hashes occur in this accepted
+closure. This does not certify pending `Split.Interface` or exclusion-checker
+files and does not claim a measured compilation speedup.
+
+No new release assets, workers, queues or canonical source changes were needed
+for this publication; `main` and all previously frozen assets are preserved.
+
 ## S11 reusable core and original packing bridge are audited
 
 The original Lean 4.10.0-rc2 checker accepted two more shared-core checkpoints:
@@ -33,7 +70,7 @@ private handoff metadata is omitted and the resource profile is neutralized.
 There are no new source archive or release assets and no fresh merged replay.
 
 These are reusable-core and packing-bridge audits, **not imported case
-certificates**. The exclusion checker, original-contract case transport, public
+certificates**. The exclusion checker, concrete original-contract case instantiations, public
 family targets and final return remain pending. Count stays **159/173**, with
 14 remaining; no workers, queues or canonical sources were changed for this
 publication.
@@ -50,7 +87,7 @@ The original supplied checker on **Lean 4.10.0-rc2** actually audited:
 Every target reports only `propext`, `Classical.choice` and `Quot.sound`. These
 are **shared-core compatibility audits**, not imported case certificates.
 The local full-case count remains **159/173**, with 14 cases remaining. The
-case1849 exclusion checker, original-contract transport, full case/public target
+case1849 exclusion checker, concrete contract instantiation, full case/public target
 audits and final return are still pending.
 
 The [core record](verification/t03-wand125-pinned-core-audit-checkpoint-20261001.json)
@@ -1066,7 +1103,7 @@ asset to this repository.
 The upstream description reports 172 kernel-checked returned cases. That is an
 upstream claim under its own contract, **not an accepted original target audit
 here**. Source import, complete dependency/toolchain compatibility, exact
-original-contract transport and actual kernel target audits remain pending.
+concrete original-contract case instantiations and actual case target audits remain pending.
 The local full accepted count stays **159/173**. Neither original family target,
 merged repository replay nor final return ZIP is complete.
 

@@ -1,0 +1,482 @@
+{
+  "format": "T03-wand125-pinned-small-source-checkpoint-v1",
+  "accepted_conditional_transport_target": "ElevenSquare.Pending.T03.Wand125.certificate_of_case",
+  "actual_audit_seconds": 28.21,
+  "imported_case_certificates_accepted": 0,
+  "accepted_local_full_case_count": 159,
+  "compiler_version": "4.10.0-rc2",
+  "original_accepted_transport_sha256": "b3cba982675149d5bb713ce221b5938cc8a1dfd5936b380f56db08d73c7e027f",
+  "unchanged_members": [
+    {
+      "path": "library-case1849-node993-wand125-original-transport-compatibility-retry05-task.json",
+      "bytes": 200,
+      "sha256": "b91bf9595ceafab27569a66315011f959d06a283205e37541fd6d65c816c330d",
+      "exact_original_transport_sha256": [
+        "b3cba982675149d5bb713ce221b5938cc8a1dfd5936b380f56db08d73c7e027f"
+      ]
+    },
+    {
+      "path": "project/ElevenSquare/BasicGeometry.lean",
+      "bytes": 11070,
+      "sha256": "0e291c05b9fa7670ed3bac5c605e5cdb3666994715c9f7e4a16786881d020c72",
+      "exact_original_transport_sha256": [
+        "b3cba982675149d5bb713ce221b5938cc8a1dfd5936b380f56db08d73c7e027f"
+      ]
+    },
+    {
+      "path": "project/ElevenSquare/Cover.lean",
+      "bytes": 5665,
+      "sha256": "fe57460a07b6acd1561be1d63a9e93c27560716fd1af8df94f65fb7321f7cd1e",
+      "exact_original_transport_sha256": [
+        "b3cba982675149d5bb713ce221b5938cc8a1dfd5936b380f56db08d73c7e027f"
+      ]
+    },
+    {
+      "path": "project/ElevenSquare/CoverChecks.lean",
+      "bytes": 1564,
+      "sha256": "cfb1ac4a0bbd79e078519e7d9df2e04892458a87cc309a6aa520a0cff2e4e68d",
+      "exact_original_transport_sha256": [
+        "b3cba982675149d5bb713ce221b5938cc8a1dfd5936b380f56db08d73c7e027f"
+      ]
+    },
+    {
+      "path": "project/ElevenSquare/CoverData.lean",
+      "bytes": 1267,
+      "sha256": "d3ed474b9f3b8c88ffffcfa1c1005b98be709dd5443198088e94e659a299906d",
+      "exact_original_transport_sha256": [
+        "b3cba982675149d5bb713ce221b5938cc8a1dfd5936b380f56db08d73c7e027f"
+      ]
+    },
+    {
+      "path": "project/ElevenSquare/GeneratedCover0.lean",
+      "bytes": 51515,
+      "sha256": "4936cc6f454137d9509976002e3c719de0dd28441e99ae8fbd0343ab7c2fba99",
+      "exact_original_transport_sha256": [
+        "b3cba982675149d5bb713ce221b5938cc8a1dfd5936b380f56db08d73c7e027f"
+      ]
+    },
+    {
+      "path": "project/ElevenSquare/GeneratedCover1.lean",
+      "bytes": 41862,
+      "sha256": "e72e09742bd6a4d17a8152f6b69c9cdb94933d15829193e88ec52ba85c6c6d27",
+      "exact_original_transport_sha256": [
+        "b3cba982675149d5bb713ce221b5938cc8a1dfd5936b380f56db08d73c7e027f"
+      ]
+    },
+    {
+      "path": "project/ElevenSquare/GeneratedCover2.lean",
+      "bytes": 41894,
+      "sha256": "f9d6ccc5aa2ae6c16140dcf8d474f869448c83d965a7644f16fb59b3d2c020b5",
+      "exact_original_transport_sha256": [
+        "b3cba982675149d5bb713ce221b5938cc8a1dfd5936b380f56db08d73c7e027f"
+      ]
+    },
+    {
+      "path": "project/ElevenSquare/GeneratedCover3.lean",
+      "bytes": 52238,
+      "sha256": "973ed8e31b101004f93e72347411e153c6283022219cfcc5d5846ee1f65a9f0f",
+      "exact_original_transport_sha256": [
+        "b3cba982675149d5bb713ce221b5938cc8a1dfd5936b380f56db08d73c7e027f"
+      ]
+    },
+    {
+      "path": "project/ElevenSquare/Geometry.lean",
+      "bytes": 1591,
+      "sha256": "fa8ff2c666453b56f04b22c164ef063cbd46dc85fb4afd7ed6fbb01b7c4f641a",
+      "exact_original_transport_sha256": [
+        "b3cba982675149d5bb713ce221b5938cc8a1dfd5936b380f56db08d73c7e027f"
+      ]
+    },
+    {
+      "path": "project/ElevenSquare/Pending/GeometryTypes.lean",
+      "bytes": 337,
+      "sha256": "a7bf5e2a537e0b81a7d874c35c769f605b61da9e3fef28feb07390736690502a",
+      "exact_original_transport_sha256": [
+        "b3cba982675149d5bb713ce221b5938cc8a1dfd5936b380f56db08d73c7e027f"
+      ]
+    },
+    {
+      "path": "project/ElevenSquare/Pending/S05_Minkowski.lean",
+      "bytes": 3477,
+      "sha256": "e39dcfc51ad822fffbd76414e140f476baf3d5f0e55f7790e273362ce5484e71",
+      "exact_original_transport_sha256": [
+        "b3cba982675149d5bb713ce221b5938cc8a1dfd5936b380f56db08d73c7e027f"
+      ]
+    },
+    {
+      "path": "project/ElevenSquare/Pending/S05_OwnedHull.lean",
+      "bytes": 1837,
+      "sha256": "237234a0a57234a0fe6ca3d421758550b50266b6b1411b04ad07c49339a7db42",
+      "exact_original_transport_sha256": [
+        "b3cba982675149d5bb713ce221b5938cc8a1dfd5936b380f56db08d73c7e027f"
+      ]
+    },
+    {
+      "path": "project/ElevenSquare/Pending/S05_Trace.lean",
+      "bytes": 5612,
+      "sha256": "c28d11831b4130263f31e046d4165e942ce15d6662b1902875e1de2b7c2f7a92",
+      "exact_original_transport_sha256": [
+        "b3cba982675149d5bb713ce221b5938cc8a1dfd5936b380f56db08d73c7e027f"
+      ]
+    },
+    {
+      "path": "project/ElevenSquare/Pending/S06_Data.lean",
+      "bytes": 111768,
+      "sha256": "95384cd8f89c4f412ab37f470768f63f49de6c2cf1fa97b97c3465058ed373bd",
+      "exact_original_transport_sha256": [
+        "b3cba982675149d5bb713ce221b5938cc8a1dfd5936b380f56db08d73c7e027f"
+      ]
+    },
+    {
+      "path": "project/ElevenSquare/Pending/Types.lean",
+      "bytes": 3142,
+      "sha256": "a08828e4674559871cfa7ee6e5321d008b43ff66baf2fa6906b3225e59e6dd7a",
+      "exact_original_transport_sha256": [
+        "b3cba982675149d5bb713ce221b5938cc8a1dfd5936b380f56db08d73c7e027f"
+      ]
+    },
+    {
+      "path": "project/ElevenSquare/Tasks/T03/KernelBoolRefl.lean",
+      "bytes": 429,
+      "sha256": "90111f1782484d93843ab7e8ec6789744ebf90afdd8deb6fa2d3ddf3880513ce",
+      "exact_original_transport_sha256": [
+        "b3cba982675149d5bb713ce221b5938cc8a1dfd5936b380f56db08d73c7e027f"
+      ]
+    },
+    {
+      "path": "project/ElevenSquare/Tasks/T03/Wand125/Cells.lean",
+      "bytes": 7639,
+      "sha256": "0ebd860a8527323de59507125d20ed04f516bda3333c5186722cc048663aac43",
+      "exact_original_transport_sha256": [
+        "b3cba982675149d5bb713ce221b5938cc8a1dfd5936b380f56db08d73c7e027f"
+      ]
+    },
+    {
+      "path": "project/ElevenSquare/Tasks/T03/Wand125/CertificateTransport.lean",
+      "bytes": 1568,
+      "sha256": "df4715698f9fa3862be0abe70086df72ddbc171b79e651b6c17c66540903faf4",
+      "exact_original_transport_sha256": [
+        "b3cba982675149d5bb713ce221b5938cc8a1dfd5936b380f56db08d73c7e027f"
+      ]
+    },
+    {
+      "path": "project/ElevenSquare/Tasks/T03/Wand125/Geometry.lean",
+      "bytes": 4156,
+      "sha256": "b5c27bb04dbdca12eae03a0219c46cbf43252c45edb5f90d46cb7d7405dbf331",
+      "exact_original_transport_sha256": [
+        "b3cba982675149d5bb713ce221b5938cc8a1dfd5936b380f56db08d73c7e027f"
+      ]
+    },
+    {
+      "path": "project/ElevenSquare/Tasks/T03/Wand125/Upstream/Basic.lean",
+      "bytes": 29484,
+      "sha256": "be7fd52c9a48cb26692c7d2de2c1fd825255661f05008637ce229d2fb510a268",
+      "exact_original_transport_sha256": [
+        "b3cba982675149d5bb713ce221b5938cc8a1dfd5936b380f56db08d73c7e027f"
+      ]
+    },
+    {
+      "path": "project/ElevenSquare/Tasks/T03/Wand125/Upstream/Chord.lean",
+      "bytes": 15640,
+      "sha256": "05c6541ed26be6e78d9b8fef40c6f3d51e0cb8b18e05e8ab2616d5d7edeb63e0",
+      "exact_original_transport_sha256": [
+        "b3cba982675149d5bb713ce221b5938cc8a1dfd5936b380f56db08d73c7e027f"
+      ]
+    },
+    {
+      "path": "project/ElevenSquare/Tasks/T03/Wand125/Upstream/Packing.lean",
+      "bytes": 7058,
+      "sha256": "236404e223ba728de2808bbaef290f343639e8b3d5ea0c5347e45737dc2c8b8a",
+      "exact_original_transport_sha256": [
+        "b3cba982675149d5bb713ce221b5938cc8a1dfd5936b380f56db08d73c7e027f"
+      ]
+    },
+    {
+      "path": "project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Basic.lean",
+      "bytes": 9942,
+      "sha256": "e1a2363ca978e32b7264e8b42489d244f804314c652beea36c8db72b280a052b",
+      "exact_original_transport_sha256": [
+        "b3cba982675149d5bb713ce221b5938cc8a1dfd5936b380f56db08d73c7e027f"
+      ]
+    },
+    {
+      "path": "project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Cells.lean",
+      "bytes": 4989,
+      "sha256": "1887a9d671edcf6926be95998b3a20b81dc0c262e348113b4ce79f2275fad70b",
+      "exact_original_transport_sha256": [
+        "b3cba982675149d5bb713ce221b5938cc8a1dfd5936b380f56db08d73c7e027f"
+      ]
+    },
+    {
+      "path": "project/ElevenSquare/Tasks/T03/Wand125/Upstream/ZeroMargin.lean",
+      "bytes": 55131,
+      "sha256": "00ac49186e97f21d10099c2355b039466b83acfe577624d79fe63a0bd2a77e75",
+      "exact_original_transport_sha256": [
+        "b3cba982675149d5bb713ce221b5938cc8a1dfd5936b380f56db08d73c7e027f"
+      ]
+    },
+    {
+      "path": "project/lake-manifest.json",
+      "bytes": 2763,
+      "sha256": "383259bb05fd384346e806086f1e041383dbf3898db2a6bc9bd0b91966f149ae",
+      "exact_original_transport_sha256": [
+        "b3cba982675149d5bb713ce221b5938cc8a1dfd5936b380f56db08d73c7e027f"
+      ]
+    },
+    {
+      "path": "project/lakefile.lean",
+      "bytes": 267,
+      "sha256": "dce4d550c15bb4cd272b68a1b5bbd7fbf947a2f02ddde5593b50d674891cc88c",
+      "exact_original_transport_sha256": [
+        "b3cba982675149d5bb713ce221b5938cc8a1dfd5936b380f56db08d73c7e027f"
+      ]
+    },
+    {
+      "path": "project/lean-toolchain",
+      "bytes": 29,
+      "sha256": "35100b5b8f5426dfa942d43e8f4995c6ffeccef24ac467df1fd477ce96a66747",
+      "exact_original_transport_sha256": [
+        "b3cba982675149d5bb713ce221b5938cc8a1dfd5936b380f56db08d73c7e027f"
+      ]
+    },
+    {
+      "path": "project/scripts/check_handoff.py",
+      "bytes": 3818,
+      "sha256": "989c66964d906ddd77a058f6812c7078709bee838b625906e7ce652656ae35b1",
+      "exact_original_transport_sha256": [
+        "b3cba982675149d5bb713ce221b5938cc8a1dfd5936b380f56db08d73c7e027f"
+      ]
+    },
+    {
+      "path": "project/scripts/lake.sh",
+      "bytes": 570,
+      "sha256": "b886afc9290fd60e95aa544ae63194865a5dca6566c17fe1059a2c8acd014080",
+      "exact_original_transport_sha256": [
+        "b3cba982675149d5bb713ce221b5938cc8a1dfd5936b380f56db08d73c7e027f"
+      ]
+    },
+    {
+      "path": "project/scripts/lean_small_check.py",
+      "bytes": 3895,
+      "sha256": "a9face3b56662d5f9fae52935d94916d3d01b2d530b849dffa87ad3aebc1ce1d",
+      "exact_original_transport_sha256": [
+        "b3cba982675149d5bb713ce221b5938cc8a1dfd5936b380f56db08d73c7e027f"
+      ]
+    }
+  ],
+  "source_bindings": [
+    {
+      "module": "ElevenSquare.BasicGeometry",
+      "source_sha256": "0e291c05b9fa7670ed3bac5c605e5cdb3666994715c9f7e4a16786881d020c72",
+      "source_bytes": 11070,
+      "source_closure_sha256": "5d2c1ad9ef4d23c94d2855ea9dd1674bf2eb48da852e12a6b56b40008a2792aa",
+      "genuine_receipt_sha256": "57553d3fa48ae2fc65e1d31a3df3e2e59d3ba4a2436d679c0dab8f58dc7e359d",
+      "object_sha256": "666f8787e035c4751f3c69f2e183fb89efc0740f80d6c3d23d57f1f11b16be54"
+    },
+    {
+      "module": "ElevenSquare.Cover",
+      "source_sha256": "fe57460a07b6acd1561be1d63a9e93c27560716fd1af8df94f65fb7321f7cd1e",
+      "source_bytes": 5665,
+      "source_closure_sha256": "40ef2739dbaeba1f436363f5877298eee7d2dc7ac8b416f39362d18a638cb601",
+      "genuine_receipt_sha256": "9899de571ec551c0b9d2aaec2fd96208f24042c8020eec979ee81aeea3b64f6b",
+      "object_sha256": "114ddde91c2d44190f76fa24da8f90cb73ccb8c6174ad065fcc554d6f760b249"
+    },
+    {
+      "module": "ElevenSquare.CoverChecks",
+      "source_sha256": "cfb1ac4a0bbd79e078519e7d9df2e04892458a87cc309a6aa520a0cff2e4e68d",
+      "source_bytes": 1564,
+      "source_closure_sha256": "ec25ee8bbad72a1300d3ea452bc52977ee9d49e78c370a3852f9e42af0374f63",
+      "genuine_receipt_sha256": "325d681a58fabfe13da6bee640ea1dde714e816e99f90e5bb92943dc75ac7238",
+      "object_sha256": "19e8cc3f3ab3bcce4ea56b31e9558f40cbfbe8887ae8b256947586e9a4626290"
+    },
+    {
+      "module": "ElevenSquare.CoverData",
+      "source_sha256": "d3ed474b9f3b8c88ffffcfa1c1005b98be709dd5443198088e94e659a299906d",
+      "source_bytes": 1267,
+      "source_closure_sha256": "5b21dc8e2505fd846feadfc6bedd554c72d9022376566cc1db7e0989d437dd7f",
+      "genuine_receipt_sha256": "f3bd74d3651d05f145e2bcde848b08b33cea00ef347c405aaf6187ee665fe2fd",
+      "object_sha256": "36cd443adb89af72fee35d7d75cb253976a3eb203209f18896ff550b29dcd9ca"
+    },
+    {
+      "module": "ElevenSquare.GeneratedCover0",
+      "source_sha256": "4936cc6f454137d9509976002e3c719de0dd28441e99ae8fbd0343ab7c2fba99",
+      "source_bytes": 51515,
+      "source_closure_sha256": "762a79c7fea898296b8298df5bd0c2027492f5c53c1259c942ce03700890342b",
+      "genuine_receipt_sha256": "766d9d8f88d2e0d501066accb27526820df5e7170590f82a03418555a8e847f5",
+      "object_sha256": "092fe13eaf534b061c73d46e03aa6380836ae7426eeda40c8dbde6a793d1a936"
+    },
+    {
+      "module": "ElevenSquare.GeneratedCover1",
+      "source_sha256": "e72e09742bd6a4d17a8152f6b69c9cdb94933d15829193e88ec52ba85c6c6d27",
+      "source_bytes": 41862,
+      "source_closure_sha256": "008dd03c8df7ef4107d1510cdd5f87a27dda941f8c5bfe364ef50d01f991b185",
+      "genuine_receipt_sha256": "5b254689fbf74f5fca3e5c82101ab4c6cfcbad6060fb60debddaace3c4a6eadb",
+      "object_sha256": "7790de70747fc5bdf24a2930d01b6311403070e145be1eca2ed8fd8d3fcf2123"
+    },
+    {
+      "module": "ElevenSquare.GeneratedCover2",
+      "source_sha256": "f9d6ccc5aa2ae6c16140dcf8d474f869448c83d965a7644f16fb59b3d2c020b5",
+      "source_bytes": 41894,
+      "source_closure_sha256": "e6cc2a8690baecef810921d4042ec3d991947b576a29333962576710b37e1871",
+      "genuine_receipt_sha256": "07f2af5201fe8669ce0c311d669d8fb6797e08cc8565248170e75496cb5c0a41",
+      "object_sha256": "922ea9f0dcd597b3c389baaa5e4a63cdab88bc8ec07290d08ba8cd56c2bc5317"
+    },
+    {
+      "module": "ElevenSquare.GeneratedCover3",
+      "source_sha256": "973ed8e31b101004f93e72347411e153c6283022219cfcc5d5846ee1f65a9f0f",
+      "source_bytes": 52238,
+      "source_closure_sha256": "2c739ed0fc72c5ebd64b01baf913c5af4ddcee3fb93ceb6999af254d4c01a37e",
+      "genuine_receipt_sha256": "965b9d1929d0aaf5b069342170ff3b9d1016a957884bb0df63c90ffefa28cb34",
+      "object_sha256": "7ab520f8f1fc677b18949d3ac52facd395d4acffed282c1ca0d42c59039fcc31"
+    },
+    {
+      "module": "ElevenSquare.Geometry",
+      "source_sha256": "fa8ff2c666453b56f04b22c164ef063cbd46dc85fb4afd7ed6fbb01b7c4f641a",
+      "source_bytes": 1591,
+      "source_closure_sha256": "da54cdf076506d5084b2441b6ce6787e3940386d6513b22d3f76e9d48e317d59",
+      "genuine_receipt_sha256": "8b85f9df64eb3b501f0dd0871c1addd88dc0fb7a41bbddc27fe7ed675b0d1c16",
+      "object_sha256": "f47ee03cfc8fef14857cd9c88ba324aabcbbe08ff47c3789bf6aba6ea2d47f93"
+    },
+    {
+      "module": "ElevenSquare.Pending.GeometryTypes",
+      "source_sha256": "a7bf5e2a537e0b81a7d874c35c769f605b61da9e3fef28feb07390736690502a",
+      "source_bytes": 337,
+      "source_closure_sha256": "3a221875b2633f81cebe303e27f28999955dfc27ffc73f3bd72b71940952005a",
+      "genuine_receipt_sha256": "d2bf92525fff9ffabcb0fd00641790ba2de0aa66d4d3ce9eaf3e7875dbf2c485",
+      "object_sha256": "fddc40c9eb22f7fb4909e333064b1e73f6acc3da394626d1a4f09d8b21825cc3"
+    },
+    {
+      "module": "ElevenSquare.Pending.S05_Minkowski",
+      "source_sha256": "e39dcfc51ad822fffbd76414e140f476baf3d5f0e55f7790e273362ce5484e71",
+      "source_bytes": 3477,
+      "source_closure_sha256": "10564097c034793d9857b2c277ab4fb72ebb2e2fc7511f17a83651a807df3748",
+      "genuine_receipt_sha256": "180337dbbd65c069e267f852af74084dc3b3ac702d0b25bfe72b9cefdb4407a9",
+      "object_sha256": "bf3301bd9e216341b036ae179420bbff02434a9065c1b822bb4f7229a9b8d5bd"
+    },
+    {
+      "module": "ElevenSquare.Pending.S05_OwnedHull",
+      "source_sha256": "237234a0a57234a0fe6ca3d421758550b50266b6b1411b04ad07c49339a7db42",
+      "source_bytes": 1837,
+      "source_closure_sha256": "e42907f8e6762e7618704ef1a8b07adec12d2357b7a71685166739d29ab28990",
+      "genuine_receipt_sha256": "50abddff8eb968e4084eb5ec07d1e753439696d20c4067e542e83018226b5262",
+      "object_sha256": "14da74694d3b724d5280f8581734705749715b151c2ba5f8f8ac57a1e3768b85"
+    },
+    {
+      "module": "ElevenSquare.Pending.S05_Trace",
+      "source_sha256": "c28d11831b4130263f31e046d4165e942ce15d6662b1902875e1de2b7c2f7a92",
+      "source_bytes": 5612,
+      "source_closure_sha256": "7dbab8eeaa38ae885696c42ef2429ddabeb6cdec6489fbcec06208264ad757fe",
+      "genuine_receipt_sha256": "d888531e40c16d0c4b91b18d808ba036993a753d3837824345da3d6513c3dc15",
+      "object_sha256": "9ceba5395cdbdf1b4f7072ddd383ef4f0337d4a17f0bbff785cd88e7e93cd902"
+    },
+    {
+      "module": "ElevenSquare.Pending.S06_Data",
+      "source_sha256": "95384cd8f89c4f412ab37f470768f63f49de6c2cf1fa97b97c3465058ed373bd",
+      "source_bytes": 111768,
+      "source_closure_sha256": "38f05641862659f55b830e37a8848e0647b64289d45c716b0bd91365d4747a18",
+      "genuine_receipt_sha256": "d531f07fe4df126bc6456da78349699fe00653462c67eaf085e5f6b8054f1646",
+      "object_sha256": "49846c46f0dde0015f0e6743ed34a6fea14800f943ac2a8eed43bc56aae486c9"
+    },
+    {
+      "module": "ElevenSquare.Pending.Types",
+      "source_sha256": "a08828e4674559871cfa7ee6e5321d008b43ff66baf2fa6906b3225e59e6dd7a",
+      "source_bytes": 3142,
+      "source_closure_sha256": "6b0108cf16b91a463914ff286a2c2a6929bea969260a6dfdc56ae274c7901333",
+      "genuine_receipt_sha256": "fe57497ed249d6c9dfb332c0bf37c5954ba7e9fd1798f2d2cb856c996e5617cd",
+      "object_sha256": "e6dfc33de513137967248e1ac95040d9876dcfa7590c41a80d8633bb120d02a4"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.KernelBoolRefl",
+      "source_sha256": "90111f1782484d93843ab7e8ec6789744ebf90afdd8deb6fa2d3ddf3880513ce",
+      "source_bytes": 429,
+      "source_closure_sha256": "a3da6dcbb82fc90e0e0768665497d087d54a2f788e73aaa980a384e3f84a2323",
+      "genuine_receipt_sha256": "8f19e9664b54a75ea8aa9ee1fa37490b503844b34a8f1c08567b4a07b40c73aa",
+      "object_sha256": "9e85dd325ed25ced1d96e2395ff05a2df1aa9a9752029bb7105a1fcc5b667952"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Wand125.Cells",
+      "source_sha256": "0ebd860a8527323de59507125d20ed04f516bda3333c5186722cc048663aac43",
+      "source_bytes": 7639,
+      "source_closure_sha256": "639ca9934d5f00da6f26f0ec676d1979ad88b65f788d31fda56ce99d95ca3c14",
+      "genuine_receipt_sha256": "be2fa0ab141effad7a353b2103ab74214147c7ff31923b789ba54f46e8a2d1c4",
+      "object_sha256": "42889dd0ae9b7bdc5091028e9de123071526a359deea3a2aa3298afebd913e2d"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Wand125.CertificateTransport",
+      "source_sha256": "df4715698f9fa3862be0abe70086df72ddbc171b79e651b6c17c66540903faf4",
+      "source_bytes": 1568,
+      "source_closure_sha256": "b8c81f2a93f6689021cd8068e666ff1ffaac5937043b779eadf31b05593ff17e",
+      "genuine_receipt_sha256": "b1e3fdfc54c3916aceb3e60402db8ee4c5804672e6fef9ad613ebcd969092971",
+      "object_sha256": "8ca01c96104d046ddeea05b156501d84915315a1a1062580d1b71cc1083bef19"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Wand125.Geometry",
+      "source_sha256": "b5c27bb04dbdca12eae03a0219c46cbf43252c45edb5f90d46cb7d7405dbf331",
+      "source_bytes": 4156,
+      "source_closure_sha256": "96f1c6ed529d266cd092e1ffcb1f505160ac3d703b5fbc3dd68a8c925e652ea9",
+      "genuine_receipt_sha256": "2979db2d904a7cbbea872ad2153eb6e82bb094ea320fbafb411c6631d7a3cc66",
+      "object_sha256": "e912f07f2437f6a4bd48b1b14ba0a575161f5a05ec0f13bf0fa4f07fbeaa2a49"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Wand125.Upstream.Basic",
+      "source_sha256": "be7fd52c9a48cb26692c7d2de2c1fd825255661f05008637ce229d2fb510a268",
+      "source_bytes": 29484,
+      "source_closure_sha256": "f7d0773538338af50868852ddf5d82c289d2b6af8ecee92ebc40cd6617af1cfe",
+      "genuine_receipt_sha256": "912fc275d0678b65364a224956c52b0e3cee6074b3344144e6b8756d4fe59f07",
+      "object_sha256": "faa24d667d03cd827415e617104aa7681a5eba1c93057eacd3aff3d747a6bca8"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Wand125.Upstream.Chord",
+      "source_sha256": "05c6541ed26be6e78d9b8fef40c6f3d51e0cb8b18e05e8ab2616d5d7edeb63e0",
+      "source_bytes": 15640,
+      "source_closure_sha256": "6837f234feb649ed5a91bc7ab6f4500c9b726a8757f6d1c5d404439bd7c2207c",
+      "genuine_receipt_sha256": "fa75ba63fb2bf2fbe63a71c0e3b68a5f5a5d82deaa3aa99ed4e5caae43473adb",
+      "object_sha256": "d1f168ba158d15ff4ae003c7fe27e3f50d0f43f210f75b90a8e647de034d134c"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Wand125.Upstream.Packing",
+      "source_sha256": "236404e223ba728de2808bbaef290f343639e8b3d5ea0c5347e45737dc2c8b8a",
+      "source_bytes": 7058,
+      "source_closure_sha256": "a3daa2034da53ba0004fbe01f89a5c3fdd7f1dd1c72f43c75ec0c76e2c12233b",
+      "genuine_receipt_sha256": "7b0a1eab3d9ebccb28d1abbc40f39d61867171f5d6730440547417200a08d01d",
+      "object_sha256": "f39dfaf0111a78a1d811cdd87a739d44fb9db096333d807918d13fa99a81bab5"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Wand125.Upstream.S11Opt.Basic",
+      "source_sha256": "e1a2363ca978e32b7264e8b42489d244f804314c652beea36c8db72b280a052b",
+      "source_bytes": 9942,
+      "source_closure_sha256": "21b31268d13c8abdb2ed3d52cda4919b6da0d4227415eb96203db7425f7b70d3",
+      "genuine_receipt_sha256": "b91247ca47b4f78fc5b803a5efe38ddfdc538b31f87a701e4e0020ca5feafff4",
+      "object_sha256": "f19ed468919c98130c23429cc6185c3b7293af47aed659922fd2b481f2a8966f"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Wand125.Upstream.S11Opt.Cells",
+      "source_sha256": "1887a9d671edcf6926be95998b3a20b81dc0c262e348113b4ce79f2275fad70b",
+      "source_bytes": 4989,
+      "source_closure_sha256": "50220c417e50388eeff2b66e96c404a99bf77e16c30b6b0104632eef81e6d195",
+      "genuine_receipt_sha256": "d7bf2c4e4f01b9dcd932edf9b6663677ec9ee21dfdc69b95f41982d278c29c81",
+      "object_sha256": "843f88d419e42dab1d7606d640e83c8c553db82d21bfe3e4e10f95d0c23e979f"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Wand125.Upstream.ZeroMargin",
+      "source_sha256": "00ac49186e97f21d10099c2355b039466b83acfe577624d79fe63a0bd2a77e75",
+      "source_bytes": 55131,
+      "source_closure_sha256": "dad5980b7d669d758dd642d84506f137fc611aba8aab9b773f2f38b58f6a3b7f",
+      "genuine_receipt_sha256": "5ba2a6e31c950ab489901bb9cc5d15c243eb12b1836af5de09ecfc0ce02090c2",
+      "object_sha256": "67a81aa0951008a25014ceea3e68095a7a7614628fad05592b94981e713b0319"
+    }
+  ],
+  "metadata_replacements": [
+    {
+      "path": "project/verification/LOW_RESOURCE_MODE.json",
+      "reason": "Neutral single-thread serial resource profile. All proof sources, task, pinned Lake environment and supplied checker scripts unchanged."
+    }
+  ],
+  "omitted_original_members": [
+    "TASK.json",
+    "source-sync-manifest.json"
+  ],
+  "omitted_original_members_reason": "Private handoff metadata and transport-only manifest; no proof source or supplied checker member omitted.",
+  "full_case_or_merged_repository_replay_claimed": false,
+  "publication_Lean_jobs": 0
+}

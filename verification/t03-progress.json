@@ -1804,7 +1804,7 @@
     "meaning": "Historical equality-helper benchmark checkpoint, before the later accepted case2047 audit."
   },
   "external_returned_case_handoff": {
-    "status": "NEW_U2R_SOURCE_RELEASE_AVAILABLE_ORIGINAL_CONTRACT_AND_KERNEL_AUDITS_PENDING",
+    "status": "CONDITIONAL_ORIGINAL_CONTRACT_TRANSPORT_ACCEPTED_IMPORTED_CASE_PROOFS_PENDING",
     "upstream_repository": "wand125/n11-optimality-lean",
     "inspected_source_commit": "a8b51d3e0682beb1bf911048bdc8e7fa62329124",
     "release_url": "https://github.com/wand125/n11-optimality-lean/releases/tag/n11-certs-v1",
@@ -1862,6 +1862,29 @@
       "exact_source_bytes": 123431,
       "imported_case_acceptances_added": 0,
       "exclusion_checker_and_original_contract_case_transport_pending": true,
+      "full_merged_Lean_replay": false,
+      "new_release_assets": 0,
+      "Lean_jobs_or_worker_controls_for_publication": 0
+    },
+    "conditional_original_transport_pinned_audit": {
+      "accepted_local_full_case_count_unchanged": 159,
+      "remaining": 14,
+      "actual_conditional_transport_target": "ElevenSquare.Pending.T03.Wand125.certificate_of_case",
+      "original_Lean_version": "4.10.0-rc2",
+      "actual_audit_seconds": 28.21,
+      "audit_manifest": "verification/t03-wand125-pinned-original-transport-audit-checkpoint-20261001.json",
+      "source_checkpoint": "verification/source-checkpoints/wand125-pinned-original-transport-20261001",
+      "exact_source_modules": 25,
+      "exact_source_bytes": 470875,
+      "imported_case_acceptances_added": 0,
+      "conditional_original_contract_transport_accepted": true,
+      "literal_case_bounds_exact_mask_correspondence_and_CaseExcluded_remain_required": true,
+      "imported_exclusion_checker_and_full_case_audits_pending": true,
+      "private_pending_canonical_adaptations_excluded": true,
+      "historical_adaptation_provenance": [
+        "verification/t03-wand125-unused-half-turn-enumeration-proof-pruning-20261001.json",
+        "verification/t03-wand125-site-equality-explicit-rational-goals-20261001.json"
+      ],
       "full_merged_Lean_replay": false,
       "new_release_assets": 0,
       "Lean_jobs_or_worker_controls_for_publication": 0
@@ -2147,6 +2170,29 @@
     "exact_source_bytes": 123431,
     "imported_case_acceptances_added": 0,
     "exclusion_checker_and_original_contract_case_transport_pending": true,
+    "full_merged_Lean_replay": false,
+    "new_release_assets": 0,
+    "Lean_jobs_or_worker_controls_for_publication": 0
+  },
+  "latest_pinned_original_transport_checkpoint": {
+    "accepted_local_full_case_count_unchanged": 159,
+    "remaining": 14,
+    "actual_conditional_transport_target": "ElevenSquare.Pending.T03.Wand125.certificate_of_case",
+    "original_Lean_version": "4.10.0-rc2",
+    "actual_audit_seconds": 28.21,
+    "audit_manifest": "verification/t03-wand125-pinned-original-transport-audit-checkpoint-20261001.json",
+    "source_checkpoint": "verification/source-checkpoints/wand125-pinned-original-transport-20261001",
+    "exact_source_modules": 25,
+    "exact_source_bytes": 470875,
+    "imported_case_acceptances_added": 0,
+    "conditional_original_contract_transport_accepted": true,
+    "literal_case_bounds_exact_mask_correspondence_and_CaseExcluded_remain_required": true,
+    "imported_exclusion_checker_and_full_case_audits_pending": true,
+    "private_pending_canonical_adaptations_excluded": true,
+    "historical_adaptation_provenance": [
+      "verification/t03-wand125-unused-half-turn-enumeration-proof-pruning-20261001.json",
+      "verification/t03-wand125-site-equality-explicit-rational-goals-20261001.json"
+    ],
     "full_merged_Lean_replay": false,
     "new_release_assets": 0,
     "Lean_jobs_or_worker_controls_for_publication": 0

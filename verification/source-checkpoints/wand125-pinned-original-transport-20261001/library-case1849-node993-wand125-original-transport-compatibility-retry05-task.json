@@ -1,0 +1,9 @@
+{
+  "id": "T03_compact_full_trace",
+  "modules": [
+    "ElevenSquare.Tasks.T03.Wand125.CertificateTransport"
+  ],
+  "axiom_targets": [
+    "ElevenSquare.Pending.T03.Wand125.certificate_of_case"
+  ]
+}
