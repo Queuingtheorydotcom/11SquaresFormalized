@@ -1,6 +1,31 @@
 # Eleven-square packing in Lean
 
 Upstream has supplied **172 case-proof archives**; **case1465 is the sole missing
+case there**. The supplied work is being reused. The [new portable source release](https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/tag/t03-wand12513-imports-case2051-audit-20261001)
+contains all **13 prepared imports**, including 762 case source members, 26
+correspondence/certificate adapters and every reachable dependency: **1,477 Lean
+modules / 308,797,584 source bytes**. Later `Combined` pilots are excluded.
+
+Case2051 now passes the original project's full certificate audit on pinned
+Lean 4.10.0-rc2. Its exact original `certificate_exists` target reports only
+`propext`, `Classical.choice` and `Quot.sound` in 41.08 seconds. The
+[accepted audit and complete 662-module source binding](verification/t03-wand125-case2051-full-original-audit-checkpoint-20261001.json)
+includes actual CHECK/log bytes and independently verified genuine compiler
+receipts/object hashes. Its exact sources are in the release ZIP.
+
+The original-project full-certificate integration log is now **160/173**, a
+separate metric from the **172 supplied proofs**. Twelve other supplied imports
+still need their original full-target audits; case1465 continues locally.
+Global optimality, the original public family obligations and final return are
+unfinished. Existing merged proofs and `main` are preserved. See
+[MISSING.md](MISSING.md) and [T03_PROGRESS.md](T03_PROGRESS.md).
+
+The sections below retain historical checkpoints and their counts. Their
+earlier pending-import statements are superseded by the current case2051 audit.
+
+## Historical checkpoints
+
+Upstream has supplied **172 case-proof archives**; **case1465 is the sole missing
 case there**. The 13 supplied archives needed for the remaining imports have all
 been source/member verified. The **159/173** figure below is the original
 project's full-certificate integration audit log, a separate metric from the

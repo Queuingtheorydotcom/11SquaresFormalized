@@ -1,0 +1,196 @@
+{
+  "format": "T03-frozen-prepared-wand125-imports-v1",
+  "utc": "2026-10-01T16:14:15.313371+00:00",
+  "status": "SOURCE_SNAPSHOT_OF13_PREPARED_IMPORTS_ORIGINAL_TARGET_KERNEL_ACCEPTANCE_RECORDED_SEPARATELY",
+  "upstream_supplied_case_proof_archives": 172,
+  "upstream_only_missing_case": 1465,
+  "prepared_import_cases": [
+    1373,
+    1393,
+    1463,
+    1464,
+    1499,
+    1823,
+    1849,
+    1887,
+    1891,
+    2051,
+    2068,
+    2069,
+    2070
+  ],
+  "upstream_release": "https://github.com/wand125/n11-optimality-lean/releases/tag/n11-certs-v1",
+  "original_upstream_archives": [
+    {
+      "case": 1373,
+      "sha256": "87d0b37ab53fdd5aa03f61a6104edfb91545004ac49a9b97f2ec04f63bca25d1",
+      "source_members": 73,
+      "uncompressed_bytes": 60985141
+    },
+    {
+      "case": 1393,
+      "sha256": "648bc4ffd0739608780360aa65babd7b1e615a2b1697eb169580f7068e823adc",
+      "source_members": 65,
+      "uncompressed_bytes": 58179153
+    },
+    {
+      "case": 1463,
+      "sha256": "3bce73faa4ebc8801844126e712119ad7e2193b96efda79df647fe879dbec435",
+      "source_members": 132,
+      "uncompressed_bytes": 26216181
+    },
+    {
+      "case": 1464,
+      "sha256": "355063bc961a08fe69f1f3908ce772d9ee4a32dcb9d0310a3613ba180be52be0",
+      "source_members": 87,
+      "uncompressed_bytes": 70384269
+    },
+    {
+      "case": 1499,
+      "sha256": "220d7b9c63a684d038988b5bf570590ffc467f347db45aecfebde319c29a045b",
+      "source_members": 149,
+      "uncompressed_bytes": 33251555
+    },
+    {
+      "case": 1823,
+      "sha256": "6544f248dd0fbb208e5fcbab61d2d576f20f14d4b4655633114fc2920584a985",
+      "source_members": 42,
+      "uncompressed_bytes": 13243692
+    },
+    {
+      "case": 1849,
+      "sha256": "d20a413342c28dade5432a86c3ca6fd463d0d8efec29811cec703cd87b321853",
+      "source_members": 54,
+      "uncompressed_bytes": 17645543
+    },
+    {
+      "case": 1887,
+      "sha256": "9bdaaa4b9be44c8444959fa3c1058b1303b8783de4bd2ad6c5e095a1be6aa608",
+      "source_members": 34,
+      "uncompressed_bytes": 13930873
+    },
+    {
+      "case": 1891,
+      "sha256": "c8db1b09bea9fe2ca9e743268d2b8eabc01a9112bc4a0573f611316839c0231f",
+      "source_members": 29,
+      "uncompressed_bytes": 12336255
+    },
+    {
+      "case": 2051,
+      "sha256": "3ea152a6427aa3e0e6d3911924666ccecd2e98e867d9ca689a4132eff430a4f3",
+      "source_members": 23,
+      "uncompressed_bytes": 8053822
+    },
+    {
+      "case": 2068,
+      "sha256": "d61bb4daafe37573fdbbb1358064800292729868d4916fce301c250ae1dd8f99",
+      "source_members": 25,
+      "uncompressed_bytes": 9233557
+    },
+    {
+      "case": 2069,
+      "sha256": "046484ef5c0ce77a83288f971f67b4be26280f4ac8040f5a82e0ccaea7446328",
+      "source_members": 25,
+      "uncompressed_bytes": 8909338
+    },
+    {
+      "case": 2070,
+      "sha256": "b7fdad5e72f3a8a382c8c73d1b6e27aedd585f4f32b27f5e574bcc1917fe3f80",
+      "source_members": 24,
+      "uncompressed_bytes": 9329862
+    }
+  ],
+  "prepared_case_source_members": 762,
+  "correspondence_and_certificate_adapters": 26,
+  "total_source_modules": 1477,
+  "total_source_bytes": 308797584,
+  "pending_integration_status_is_distinct_from_upstream_supplied_proof_inventory": true,
+  "case2051_actual_full_audit_exists_and_is_bound_by_separate_accepted_sidecar": true,
+  "remaining12_full_imported_case_audits_pending": true,
+  "exact_numeric_data_and_proof_source_bytes_frozen_without_new_proof_regeneration": true,
+  "immutable_accepted_case2051_transport_sha256": "15416dd59317da9a202d99d1205cf86fe87af92b8932ed4a9848aa105e94aa7a",
+  "canonical_sources_changed_for_publication": 0,
+  "Combined_pilot_sources_included": false,
+  "proof_jobs_or_process_queue_controls_for_publication": 0,
+  "neutral_serial_resource_profile": true,
+  "private_metadata_original_handoff_archives_objects_receipts_caches_included": false,
+  "source_dependencies_complete": true,
+  "provenance": [
+    {
+      "path": "provenance/wand125-case1373-owned-import-preparation-20261001.json",
+      "original_record_sha256": "e8c71c50a29d9084d722913bd69046420c5e3dff2411d71c856b58d109c5d2ac"
+    },
+    {
+      "path": "provenance/wand125-case1393-owned-import-preparation-20261001.json",
+      "original_record_sha256": "2c64bf5e9ced21d9eba944db481bc4311d1fbaf6cc5ded90f0b8a4f5702d566c"
+    },
+    {
+      "path": "provenance/wand125-case1463-owned-import-preparation-20261001.json",
+      "original_record_sha256": "c77e08108904871b6ca7b7d049d219ccf750a80d6f3c310a761003a232639e18"
+    },
+    {
+      "path": "provenance/wand125-case1464-owned-import-preparation-20261001.json",
+      "original_record_sha256": "f1ef4f2d159d447214080e588f4eea9da7734e2d430b403992266c97e5718e28"
+    },
+    {
+      "path": "provenance/wand125-case1499-owned-import-preparation-20261001.json",
+      "original_record_sha256": "fce2570d275bd1a13150f1d2e5f6f9ef9139705165e4b88c50998d7245c789af"
+    },
+    {
+      "path": "provenance/wand125-case1823-owned-import-preparation-20261001.json",
+      "original_record_sha256": "9ce3744f81006ac229c1152a6b0b66856e414a4496f175c585803d37a6c6461a"
+    },
+    {
+      "path": "provenance/wand125-case1887-owned-import-preparation-20261001.json",
+      "original_record_sha256": "3ef8ce96fe52802909743cc863ca0de6a9a9a70accb3adec7a979ad68a3b2119"
+    },
+    {
+      "path": "provenance/wand125-case1891-owned-import-preparation-20261001.json",
+      "original_record_sha256": "2e56136c3c88dbdb70ce792b0fad7da04646b5cfa26f359965ab3997e2bdf8c1"
+    },
+    {
+      "path": "provenance/wand125-case2051-owned-import-preparation-20261001.json",
+      "original_record_sha256": "08683fbe9ef1d4613827624c3815f8549088e214b6b4e8193fea417424b13bff"
+    },
+    {
+      "path": "provenance/wand125-case2068-owned-import-preparation-20261001.json",
+      "original_record_sha256": "4c6743099c7f6ad97e056ce164a7d0f30f4251a210b22006fba307cef95980de"
+    },
+    {
+      "path": "provenance/wand125-case2069-owned-import-preparation-20261001.json",
+      "original_record_sha256": "15a3fe0bdefc40a4c378c4d7883e5dd23e661a9260ef65c1cf0660921f71b914"
+    },
+    {
+      "path": "provenance/wand125-case2070-owned-import-preparation-20261001.json",
+      "original_record_sha256": "672904a5e40b05a8f772bbd8881fec9bd8b7b89454cc4c87333d6f438c1657ed"
+    },
+    {
+      "path": "provenance/wand125-case1849-import-closure-preparation-20261001.json",
+      "original_record_sha256": "4b18b25fbb0cc6d311b6b5e78619cc7f8e77fd8bb4c8c8bd4b83ba94245cfb9f"
+    },
+    {
+      "path": "provenance/wand125-all-thirteen-pending-source-archives-checkpoint-20261001.json",
+      "original_record_sha256": "d88c83eb754fad1c07e9d573209e05e2d3bf739452cf39f805cd7d4b4437dca6"
+    },
+    {
+      "path": "provenance/wand125-case-advisory-long-line-linter-option-removal-20261001.json",
+      "original_record_sha256": "5d48d24b9bb3c53eb59fb9b7a369d3ae3b565632c84d79328227c41c21585c1d"
+    },
+    {
+      "path": "provenance/wand125-direct-explicit-case-exclusion-simplification-20261001.json",
+      "original_record_sha256": "b14510329187655d82e5dd7d90cf9ff53d8177537860f14ba222143e8d261c44"
+    },
+    {
+      "path": "provenance/wand125-case-mask-existing-opaque-seed-binding-reuse-20261001.json",
+      "original_record_sha256": "39d23ca39ee3fab1c906991bb1fc84504943f8a7705df0546d6ebaaa18751432"
+    },
+    {
+      "path": "provenance/wand125-identical-tree-root-sharing-20261001.json",
+      "original_record_sha256": "6ae8b748ecba7af55dc0444b848707bdb0c05f2b0c1aff707e7d59c84f8208c8"
+    }
+  ],
+  "source_zip": "T03-wand12513-prepared-imports-source-snapshot.zip",
+  "source_zip_bytes": 147821491,
+  "source_zip_sha256": "1f3f648b4581fb9ba64951d807a435d11a074019318a76f94d4e080a4c7388ce",
+  "all_finished_member_hashes_independently_verified": true
+}

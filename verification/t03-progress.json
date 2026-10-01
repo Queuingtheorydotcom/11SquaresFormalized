@@ -1,5 +1,5 @@
 {
-  "status": "PARTIAL_TESTED_COMMON_TOOLS_AND_159_AUDITED_CASE_SOURCE_CLOSURES",
+  "status": "UPSTREAM172_SUPPLIED_PROOFS13_PREPARED_IMPORTS_PUBLISHED160_ORIGINAL_INTEGRATION_AUDITS",
   "snapshot_date": "2026-09-30",
   "meaning": "Independent returned compiler audits. This is not a fresh combined replay of the GitHub assembly.",
   "lean_version": "4.10.0-rc2",
@@ -1667,8 +1667,8 @@
     "source_lean_bytes": 5499202925,
     "meaning": "The original 151 source closures and six supplements remain unchanged, supplying 157 audited closures. The separately published frozen case1372 binding-retry02 source ZIP subsequently passed its exact full target audit, for 158. Only case2135 is directly integrated into Git source; no merged replay or full-family completion is claimed."
   },
-  "published_case_source_closures": 159,
-  "remaining_case_certificates": 14,
+  "published_case_source_closures": 160,
+  "remaining_case_certificates": 13,
   "source_supplements": [
     {
       "asset_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-audited-151-20260930/T03-audited-cases1484-2122-source-supplement.zip",
@@ -2368,7 +2368,7 @@
     "only_missing_case": 1465,
     "release_url": "https://github.com/wand125/n11-optimality-lean/releases/tag/n11-certs-v1",
     "required_remaining_source_archives_verified": 13,
-    "distinct_original_project_integration_metric": 159
+    "distinct_original_project_integration_metric": 160
   },
   "latest_pinned_import_components_checkpoint": {
     "upstream_supplied_case_proof_archives": 172,
@@ -2419,5 +2419,105 @@
     "full_merged_Lean_replay": false,
     "new_release_assets": 0,
     "Lean_jobs_or_worker_controls_for_publication": 0
+  },
+  "latest_prepared_imports_and_accepted2051_checkpoint": {
+    "format": "T03-portable-prepared-imports-and-accepted-original-case-release-v1",
+    "utc": "2026-10-01T16:37:30.564482+00:00",
+    "status": "UPSTREAM172_SUPPLIED_PROOFS13_PREPARED_IMPORTS_SOURCE_PUBLISHED_CASE2051_ORIGINAL_FULL_AUDIT_ACCEPTED",
+    "release_id": 401155426,
+    "release_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/tag/t03-wand12513-imports-case2051-audit-20261001",
+    "tag": "t03-wand12513-imports-case2051-audit-20261001",
+    "tag_target_commit": "3d5ea0551b6c1fef43746b883ba295c106b2e451",
+    "upstream_supplied_case_proof_archives": 172,
+    "upstream_only_missing_case": 1465,
+    "original_project_full_certificate_integration_audits": 160,
+    "remaining_original_integrations": 13,
+    "new_imported_original_full_audit_case": 2051,
+    "prepared_import_cases": [
+      1373,
+      1393,
+      1463,
+      1464,
+      1499,
+      1823,
+      1849,
+      1887,
+      1891,
+      2051,
+      2068,
+      2069,
+      2070
+    ],
+    "prepared_source_modules": 1477,
+    "prepared_source_bytes": 308797584,
+    "prepared_case_source_members": 762,
+    "correspondence_and_certificate_adapters": 26,
+    "other12_imported_full_audits_pending": true,
+    "Combined_pilot_sources_included": false,
+    "every_finished_source_archive_member_hash_verified": true,
+    "accepted2051_exact_source_closure_modules": 662,
+    "actual2051_source_keys_genuine_receipts_and_compiler_object_hashes_independently_checked": true,
+    "accepted2051_actual_audit_seconds": 41.08,
+    "accepted2051_actual_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "accepted2051_manifest": "verification/t03-wand125-case2051-full-original-audit-checkpoint-20261001.json",
+    "source_checkpoint": "verification/t03-wand12513-prepared-source-checkpoint-20261001.json",
+    "assets": [
+      {
+        "id": 603671340,
+        "name": "case2051-actual-audit.txt",
+        "size": 144,
+        "digest": "sha256:47d690902db51e79615a46597934b6954e3c4e3b0bdce99d3d513d85e12dbea8",
+        "state": "uploaded",
+        "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-wand12513-imports-case2051-audit-20261001/case2051-actual-audit.txt"
+      },
+      {
+        "id": 603671416,
+        "name": "case2051-actual-CHECK.json",
+        "size": 446,
+        "digest": "sha256:fef3be2e2aa49f73787b01037f4df887fe7ef50ded630b4441125fee3327eaa0",
+        "state": "uploaded",
+        "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-wand12513-imports-case2051-audit-20261001/case2051-actual-CHECK.json"
+      },
+      {
+        "id": 603671311,
+        "name": "CHECKPOINT-case2051-accepted-original-public.json",
+        "size": 328660,
+        "digest": "sha256:3b8d5e5ebeddb91fb02a9920db98f75c4b770387ce0e93c8ebee52cea87443f5",
+        "state": "uploaded",
+        "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-wand12513-imports-case2051-audit-20261001/CHECKPOINT-case2051-accepted-original-public.json"
+      },
+      {
+        "id": 603671273,
+        "name": "CHECKPOINT-wand12513-prepared-imports-public.json",
+        "size": 7731,
+        "digest": "sha256:bd8e9de50fb23338c212746dd8a0564a5ca18a8e1fd5dcf517ef8a54500dbd25",
+        "state": "uploaded",
+        "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-wand12513-imports-case2051-audit-20261001/CHECKPOINT-wand12513-prepared-imports-public.json"
+      },
+      {
+        "id": 603671474,
+        "name": "SHA256SUMS",
+        "size": 534,
+        "digest": "sha256:93e31c8bab8787ab32f1c9470065f34886b836fd68436628f4bee2318ee074ad",
+        "state": "uploaded",
+        "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-wand12513-imports-case2051-audit-20261001/SHA256SUMS"
+      },
+      {
+        "id": 603669265,
+        "name": "T03-wand12513-prepared-imports-source-snapshot.zip",
+        "size": 147821491,
+        "digest": "sha256:1f3f648b4581fb9ba64951d807a435d11a074019318a76f94d4e080a4c7388ce",
+        "state": "uploaded",
+        "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-wand12513-imports-case2051-audit-20261001/T03-wand12513-prepared-imports-source-snapshot.zip"
+      }
+    ],
+    "server_asset_digests_and_sizes_match_verified_local_assets": true,
+    "fresh_merged_replay_original_public_family_global_optimality_final_return_completed": false,
+    "canonical_sources_queues_workers_main_or_prior_assets_changed_for_publication": false,
+    "publication_Lean_jobs_or_process_controls": 0
   }
 }

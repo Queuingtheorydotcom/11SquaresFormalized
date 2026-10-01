@@ -1,4 +1,43 @@
-# Returned-case supplied proofs and original-project integration
+# Supplied proofs, prepared imports and original-project integration
+
+Upstream supplies **172 case-proof archives**, with **only case1465 absent**.
+The [new frozen source release](https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/tag/t03-wand12513-imports-case2051-audit-20261001) publishes all 13 prepared imports
+needed for reuse: **1,477 modules / 308,797,584 source bytes** in a 147,821,491-byte
+ZIP. It includes all 762 prepared case members and 26 correspondence/certificate
+adapters with complete original dependencies; it excludes later `Combined` pilots.
+[Source checkpoint](verification/t03-wand12513-prepared-source-checkpoint-20261001.json)
+and [server-verified release bindings](verification/t03-wand12513-prepared-source-release-20261001.json)
+record SHA-256 hashes and provenance. Every finished archive member was verified.
+
+**Case2051's exact original full certificate is now accepted.** The actual
+Lean 4.10.0-rc2 audit of
+`ElevenSquare.Pending.T03.Batch10.Case2051.Forward.Certificate.certificate_exists`
+took **41.08 seconds** and reports only `propext`, `Classical.choice` and
+`Quot.sound`. The [accepted sidecar](verification/t03-wand125-case2051-full-original-audit-checkpoint-20261001.json)
+binds the original accepted transport to **all 662 exact source dependencies**
+in this ZIP, genuine receipt/source-closure keys and independently checked
+compiler-object hashes. The [actual audit](verification/t03-wand125-case2051-full-original-audit.txt)
+and [actual CHECK](verification/t03-wand125-case2051-full-original-audit-CHECK.json)
+are byte-identical to the checker output. No compiler was started for publication.
+
+The original-project full-certificate integration audit log is **160/173**;
+this is distinct from upstream's **172 supplied proofs**. The other 12 imported
+full-case audits remain pending, while unsupplied case1465 continues locally.
+Source availability, component audits and full original-target acceptance are
+recorded separately. A fresh merged replay, original public family audits,
+global optimality and the completed return remain unfinished.
+
+The snapshots preserve source, task, pinned environment and checker bytes.
+Private handoff metadata is omitted and the resource profile is neutral serial.
+No caches, objects, private paths, credentials or original private archives are
+published; no queues, workers, canonical proof sources, prior assets or `main`
+are changed. Extract the named asset separately and follow its serial replay
+instructions. GitHub's automatic tag ZIP does not contain the full source asset.
+
+## Historical checkpoints
+
+The following records preserve their original counts and pending status; the
+current accepted case2051 audit above supersedes their earlier import status.
 
 Upstream's supplied inventory contains **172 case-proof archives**, with
 **only case1465 absent**. All 13 source archives needed for the remaining imports

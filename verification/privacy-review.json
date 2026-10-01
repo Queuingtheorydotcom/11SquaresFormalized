@@ -346,5 +346,19 @@
     "complete_case_acceptance_claimed": false,
     "new_release_assets": 0,
     "publication_Lean_workers_queues_or_process_controls": 0
+  },
+  "prepared13_imports_and_accepted2051_source_release_review": {
+    "source_modules": 1477,
+    "source_bytes": 308797584,
+    "source_zip_bytes": 147821491,
+    "all_source_member_hashes_checked": true,
+    "original_accepted2051_closure_modules": 662,
+    "actual_source_keys_genuine_receipts_and_object_hashes_verified": true,
+    "actual_audit_CHECK_bytes_verified": true,
+    "neutral_serial_profile": true,
+    "private_metadata_paths_archives_objects_receipts_credentials_caches_included": false,
+    "canonical_source_or_worker_changes": 0,
+    "personal_information_findings": [],
+    "server_digests_and_sizes_match_all6_verified_assets": true
   }
 }

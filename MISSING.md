@@ -63,13 +63,15 @@ only the three standard axioms. A standalone source supplement adds the fully
 audited case1484 and case2122 closures. The accepted grouped case1646 source
 closure and the audited case2047 and case1848 closures are also published as
 standalone supplements, with later accepted 1311, 1372 and 1731 checkpoints:
-**159 published cases** in total. See T03_PROGRESS.md for the frozen audit/source
-bindings and the newer shared-core compatibility work; no imported case has yet
-been accepted.
+**160 published original-project full certificate audits** in total, now including
+accepted imported case2051. Upstream separately supplies 172 case-proof archives;
+only case1465 is absent there. All 13 prepared import source closures are
+published in the new portable source release; the other 12 imported full-target
+audits remain pending. See T03_PROGRESS.md for exact source/audit bindings.
 The Git source tree contains case2135 directly; the full generated source
 collections are distributed as release assets.
 
-The other 14 cases and assembly of all 173 certificates into the exact public
+The other 13 cases and assembly of all 173 certificates into the exact public
 family theorem remain unfinished. Its clean combined target audit and the final
 return package are also pending. No fresh merged repository Lean replay or
 completed T03 case-family return is claimed; the public admission remains open.
