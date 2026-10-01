@@ -157,3 +157,52 @@ def bary(w):
     c2 = (x0 * (y1 - y0) - (x1 - x0) * y0) / det
     a0, b0, c0 = -a1 - a2, -b1 - b2, 1 - c1 - c2
     return [(a0, b0, c0), (a1, b1, c1), (a2, b2, c2)]
+
+
+def _round(x, grid):
+    return F(round(x * grid), grid)
+
+
+def round_in(Q, grid=10 ** 12, shrink=F(1, 10 ** 9)):
+    """A strictly convex polygon with small rationals inside hull(Q)."""
+    H = hull(Q)
+    hs = halfplanes(H)
+    c = (sum(p[0] for p in H) / len(H), sum(p[1] for p in H) / len(H))
+    while True:
+        W = [(_round(c[0] + (1 - shrink) * (p[0] - c[0]), grid),
+              _round(c[1] + (1 - shrink) * (p[1] - c[1]), grid)) for p in H]
+        W = hull(W)
+        if len(W) >= 3 and all(contains(h, w) for h in hs for w in W):
+            return W
+        shrink *= 4
+
+
+def round_out(V, grid=10 ** 12, grow=F(1, 10 ** 9)):
+    """A strictly convex polygon with small rationals containing hull(V)."""
+    H = hull(V)
+    c = (sum(p[0] for p in H) / len(H), sum(p[1] for p in H) / len(H))
+    while True:
+        W = hull([(_round(c[0] + (1 + grow) * (p[0] - c[0]), grid),
+                   _round(c[1] + (1 + grow) * (p[1] - c[1]), grid)) for p in H])
+        hs = halfplanes(W)
+        if len(W) >= 3 and all(contains(h, v) for h in hs for v in H):
+            return W
+        grow *= 4
+
+
+def mink_ok(Qj, Qi, R, D):
+    """Every edge of hull(Qj - Qi) bounds every difference c - d, c in R, d in D."""
+    M = hull([(a[0] - b[0], a[1] - b[1]) for a in Qj for b in Qi])
+    for (a, b, c) in halfplanes(M):
+        if max(a * p[0] + b * p[1] for p in R) + max(-a * p[0] - b * p[1] for p in D) > c:
+            return False
+    return True
+
+
+def mink_labels(Qj, Qi):
+    """Index pairs (a, b) of the counter-clockwise vertices of hull(Qj - Qi)."""
+    lab = {}
+    for a, p in enumerate(Qj):
+        for b, r in enumerate(Qi):
+            lab.setdefault((p[0] - r[0], p[1] - r[1]), (a, b))
+    return [lab[v] for v in hull(list(lab))]

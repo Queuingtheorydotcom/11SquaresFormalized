@@ -10,6 +10,9 @@ The archived capture prunes a pose row using, besides the owned hulls of the
 * the closed square lies in the container of side `coverCap`
   (`Packing.contained`).
 
+Besides the disjuncts of `prunePosewise`, a pose may be dropped when it meets
+every possible pose of another square (a universal collision).
+
 `ExtStep.pruneOwned` makes both available to a posewise prune.  Every
 `VerifiedStep` is an `ExtStep`.  Soundness holds for packings in the container
 of side `coverCap`, the frame in which the case-438 composition works. -/
@@ -26,8 +29,12 @@ inductive ExtStep : PoseState → PoseState → Prop
         rationalHull (s.owned i) ⊆ {p | OpenSquare q p} →
         (∀ p, ClosedSquare q p → InContainer coverCap p) →
         RowsContain rs q ∨
-          ∃ j : Owner, i ≠ j ∧ ∃ Q : Set Point,
-            CoreFits Q q ∧ q.center ∈ forbiddenCenters (rationalHull (s.owned j)) Q) :
+          (∃ j : Owner, i ≠ j ∧ ∃ Q : Set Point,
+            CoreFits Q q ∧ q.center ∈ forbiddenCenters (rationalHull (s.owned j)) Q) ∨
+          (∃ j : Owner, i ≠ j ∧ ∀ r : UnitSquare, RowsContain (s.rows j) r →
+            rationalHull (s.owned j) ⊆ {p | OpenSquare r p} →
+            (∀ p, ClosedSquare r p → InContainer coverCap p) →
+            ∃ p, OpenSquare q p ∧ OpenSquare r p)) :
       ExtStep s (replaceRows s i rs)
 
 inductive ExtTrace : PoseState → PoseState → Prop
@@ -41,10 +48,12 @@ theorem ext_step_sound (P : Packing 11 coverCap) {a b : PoseState}
   | pruneOwned i rs hcover =>
     have hkeep : RowsContain rs (P.squares i) := by
       rcases hcover (P.squares i) (hs.1 i) (hs.2 i) (P.contained i) with
-        hrow | ⟨j, hij, Q, hQ, hc⟩
+        hrow | ⟨j, hij, Q, hQ, hc⟩ | ⟨j, hij, hcol⟩
       · exact hrow
       · obtain ⟨p, hp⟩ := forbidden_center_implies_overlap
           (P.squares i) (P.squares j) (rationalHull (a.owned j)) Q (hs.2 j) hQ hc
+        exact False.elim (P.interior_disjoint i j hij p hp)
+      · obtain ⟨p, hp⟩ := hcol (P.squares j) (hs.1 j) (hs.2 j) (P.contained j)
         exact False.elim (P.interior_disjoint i j hij p hp)
     refine ⟨?_, hs.2⟩
     intro k

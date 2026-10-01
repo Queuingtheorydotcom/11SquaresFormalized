@@ -1,5 +1,4 @@
-import ElevenSquare.Tasks.T07.Ext.Trace
-import Mathlib.Analysis.Convex.Combination
+import ElevenSquare.Tasks.T07.Ext.Poly
 
 /-! A Boolean checker for one `ExtStep.pruneOwned` step and its soundness.
 
@@ -409,15 +408,6 @@ structure Tri where
 
 def triW (T : Tri) : List QPoint := (T.k.zip T.v).map fun kv => (kv.1.1 - kv.2.1, kv.1.2 - kv.2.2)
 
-lemma conv3 {S : Set Point} (hS : Convex ℝ S) {x y z : Point} (hx : x ∈ S) (hy : y ∈ S)
-    (hz : z ∈ S) {a b c : ℝ} (ha : 0 ≤ a) (hb : 0 ≤ b) (hc : 0 ≤ c) (habc : a + b + c = 1) :
-    a • x + b • y + c • z ∈ S := by
-  have := hS.sum_mem (t := Finset.univ) (w := ![a, b, c]) (z := ![x, y, z])
-    (by intro i _; fin_cases i <;> simp [ha, hb, hc])
-    (by simp [Fin.sum_univ_three, habc])
-    (by intro i _; fin_cases i <;> simp [hx, hy, hz])
-  simpa [Fin.sum_univ_three] using this
-
 def lamHalf (l : ℚ × ℚ × ℚ) : Halfplane := ⟨-l.1, -l.2.1, l.2.2⟩
 
 def sum3 (f : ℕ → ℚ) : ℚ := f 0 + f 1 + f 2
@@ -489,18 +479,207 @@ theorem Tri.sound {T : Tri} {owned core : List QPoint} {P : Polygon} (h : T.chec
   · simp only [K, V, L0, L1, L2, realPoint, Prod.snd_sub, Prod.snd_add, Prod.smul_snd, smul_eq_mul]
     linear_combination (-p.1) * r7 + (-p.2) * r8 - r9
 
+/-! ## Partner pose covers -/
+
+/-- One angular piece of a partner row: cuts, core, and a vertex polygon `dverts`
+containing every admissible partner centre. -/
+structure PartnerPiece where
+  a : ℚ
+  b : ℚ
+  cuts : List SelfCut
+  wall : ℚ
+  core : List QPoint
+  dverts : List QPoint
+  dmus : List (List ℚ)
+
+def PartnerPiece.poly (R : PoseRow) (ps : PartnerPiece) : Polygon :=
+  R.centers ++ ps.cuts.map SelfCut.half ++ wallHalves ps.wall
+
+/-- A piece is either empty (`dverts = []`, one Farkas certificate) or has a
+non-empty core and a convex vertex polygon containing its centres. -/
+def PartnerPiece.check (owned : List QPoint) (R : PoseRow) (ps : PartnerPiece) : Bool :=
+  (ps.cuts.all fun k => k.check owned ps.a ps.b) && wallB ps.wall ps.a ps.b &&
+    (if ps.dverts = [] then emptyB (ps.poly R) (ps.dmus.headD []) else
+      decide (0 < ps.core.length) && (ps.core.all (coreVB ps.a ps.b)) && convexF ps.dverts &&
+        subsetB (ps.poly R) (edgesF ps.dverts) ps.dmus)
+
+/-- The sub-intervals cover `[x, hi]`. -/
+def coversB (hi : ℚ) : ℚ → List (ℚ × ℚ) → Bool
+  | x, [] => decide (hi < x)
+  | x, u :: L => decide (hi < x) ||
+      (decide (u.1 ≤ x) && decide (x ≤ u.2) && (decide (hi ≤ u.2) || coversB hi u.2 L))
+
+theorem coversB_sound (hi : ℚ) : ∀ (x : ℚ) (L : List (ℚ × ℚ)), coversB hi x L = true →
+    ∀ t : ℝ, (x : ℝ) ≤ t → t ≤ hi → ∃ u ∈ L, (u.1 : ℝ) ≤ t ∧ t ≤ u.2
+  | x, [], h, t, hx, hh => by
+    simp only [coversB, decide_eq_true_eq] at h
+    have : (hi : ℝ) < x := by exact_mod_cast h
+    linarith
+  | x, u :: L, h, t, hx, hh => by
+    simp only [coversB, Bool.or_eq_true, Bool.and_eq_true, decide_eq_true_eq] at h
+    rcases h with h | ⟨⟨hua, hxu⟩, hL⟩
+    · have : (hi : ℝ) < x := by exact_mod_cast h
+      linarith
+    · by_cases htu : t ≤ u.2
+      · exact ⟨u, List.mem_cons_self, le_trans (by exact_mod_cast hua) hx, htu⟩
+      · rcases hL with hL | hL
+        · have : (hi : ℝ) ≤ u.2 := by exact_mod_cast hL
+          exact absurd (le_trans hh this) htu
+        · obtain ⟨w, hw, hw'⟩ := coversB_sound hi u.2 L hL t (le_of_lt (lt_of_not_ge htu)) hh
+          exact ⟨w, List.mem_cons_of_mem _ hw, hw'⟩
+
+def ownedOf (s : PoseState) (j : ℕ) : List QPoint := if h : j < 11 then s.owned ⟨j, h⟩ else []
+
+def rowsOf (s : PoseState) (j : ℕ) : List PoseRow := if h : j < 11 then s.rows ⟨j, h⟩ else []
+
+/-- A complete pose cover of partner `j`: one list of pieces per row of `j`. -/
+def pcovB (s : PoseState) (j : ℕ) (tab : List (List PartnerPiece)) : Bool :=
+  decide (j < 11) && (tab.length == (rowsOf s j).length) &&
+    (((rowsOf s j).zip tab).all fun Rp =>
+      coversB Rp.1.hi Rp.1.lo (Rp.2.map fun ps => (ps.a, ps.b)) &&
+        Rp.2.all (PartnerPiece.check (ownedOf s j) Rp.1))
+
+/-- Every admissible pose of partner `j` lies in a piece: its centre in `dverts`'s
+hull and the piece's core inside its square. -/
+theorem pcovB_sound {s : PoseState} {j : ℕ} {tab : List (List PartnerPiece)} (h : pcovB s j tab = true)
+    (hj : j < 11) {r : UnitSquare} (hr : RowsContain (s.rows ⟨j, hj⟩) r)
+    (hown : rationalHull (s.owned ⟨j, hj⟩) ⊆ {p | OpenSquare r p})
+    (hcont : ∀ p, ClosedSquare r p → InContainer coverCap p) :
+    ∃ pss ∈ tab, ∃ ps ∈ pss, 0 < ps.core.length ∧ r.center ∈ convexHull ℝ (vpts ps.dverts) ∧
+      CoreFits (convexHull ℝ (corePts ps.core)) r := by
+  simp only [pcovB, Bool.and_eq_true, beq_iff_eq, decide_eq_true_eq, List.all_eq_true] at h
+  obtain ⟨⟨_, hlen⟩, hall⟩ := h
+  obtain ⟨R, hR, hc⟩ := hr
+  have hrows : rowsOf s j = s.rows ⟨j, hj⟩ := by simp [rowsOf, hj]
+  rw [hrows] at hlen hall
+  obtain ⟨n, hn, rfl⟩ := List.getElem_of_mem hR
+  have hn' : n < tab.length := hlen ▸ hn
+  have hmem : ((s.rows ⟨j, hj⟩)[n], tab[n]) ∈ (s.rows ⟨j, hj⟩).zip tab := by
+    rw [List.mem_iff_getElem]; exact ⟨n, by simp [hn, hn'], by simp⟩
+  have hRp := hall _ hmem
+  simp only [Bool.and_eq_true, List.all_eq_true] at hRp
+  obtain ⟨hcov, hps⟩ := hRp
+  obtain ⟨hcen, t, ht0, ht1, hlo, hhi, hax⟩ := hc
+  obtain ⟨u, hu, hua, hub⟩ := coversB_sound _ _ _ hcov t hlo hhi
+  obtain ⟨ps, hps', rfl⟩ := List.mem_map.mp hu
+  have hP := hps ps hps'
+  simp only [PartnerPiece.check, Bool.and_eq_true, List.all_eq_true, decide_eq_true_eq] at hP
+  obtain ⟨⟨hcuts, hwall⟩, hrest⟩ := hP
+  have hown' : rationalHull (ownedOf s j) ⊆ {p | OpenSquare r p} := by simpa [ownedOf, hj] using hown
+  have hpoly : r.center ∈ (ps.poly (s.rows ⟨j, hj⟩)[n]).carrier := by
+    intro l hl
+    simp only [PartnerPiece.poly, List.mem_append, List.mem_map] at hl
+    rcases hl with (hl | ⟨k, hk, rfl⟩) | hl
+    · exact hcen l hl
+    · exact SelfCut.sound (hcuts k hk) hua hub hax hown'
+    · exact wall_sound hwall hua hub hax hcont l hl
+  split_ifs at hrest with hemp
+  · exact absurd hpoly (emptyB_sound hrest _)
+  · simp only [Bool.and_eq_true, List.all_eq_true, decide_eq_true_eq] at hrest
+    obtain ⟨⟨⟨hpos, hcore⟩, hconv⟩, hsub⟩ := hrest
+    refine ⟨tab[n], List.getElem_mem hn', ps, hps', hpos, ?_,
+      core_fits (List.all_eq_true.mpr hcore) hua hub hax⟩
+    exact edgesF_subset_hull hconv (subsetB_sound hsub hpoly)
+
+/-! ## Collision regions -/
+
+def suppAux (a b init : ℚ) : List QPoint → ℚ
+  | [] => init
+  | v :: V => max (a * v.1 + b * v.2) (suppAux a b init V)
+
+/-- The support value `max_{v ∈ V} (a v.1 + b v.2)` (`V` nonempty). -/
+def supp (V : List QPoint) (a b : ℚ) : ℚ :=
+  suppAux a b (a * (V.headD (0, 0)).1 + b * (V.headD (0, 0)).2) V
+
+lemma le_suppAux (a b init : ℚ) : ∀ (V : List QPoint), ∀ v ∈ V, a * v.1 + b * v.2 ≤ suppAux a b init V
+  | [], v, h => absurd h List.not_mem_nil
+  | w :: V, v, h => by
+    simp only [suppAux]
+    rcases List.mem_cons.mp h with rfl | h
+    · exact le_max_left _ _
+    · exact le_trans (le_suppAux a b init V v h) (le_max_right _ _)
+
+lemma le_supp {V : List QPoint} {a b : ℚ} {v : QPoint} (h : v ∈ V) : a * v.1 + b * v.2 ≤ supp V a b :=
+  le_suppAux a b _ V v h
+
+/-- The Minkowski condition of a region against one partner piece, with the
+vertices of `hull (partner core) - hull Qi` given by index pairs `L`. -/
+def minkB (Qi : List QPoint) (ps : PartnerPiece) (L : List (ℕ × ℕ)) (R : List QPoint) : Bool :=
+  (L.all fun ab => decide (ab.1 < ps.core.length) && decide (ab.2 < Qi.length)) &&
+    convexF (diffs ps.core Qi L) &&
+    (edgesF (diffs ps.core Qi L)).all fun e =>
+      decide (supp R e.a e.b + supp ps.dverts (-e.a) (-e.b) ≤ e.c)
+
+structure CReg where
+  j : ℕ
+  verts : List QPoint
+  ms : List (List (ℕ × ℕ))
+
+def CReg.check (s : PoseState) (i : Owner) (Qi : List QPoint) (pcov : ℕ → List (List PartnerPiece))
+    (g : CReg) : Bool :=
+  decide (g.j < 11) && decide (g.j ≠ i.val) && convexF g.verts && decide (0 < Qi.length) &&
+    decide (pcov g.j ≠ []) && ((pcov g.j).flatten.length == g.ms.length) &&
+    (((pcov g.j).flatten.zip g.ms).all fun pl => pl.1.dverts = [] || minkB Qi pl.1 pl.2 g.verts)
+
+/-- A checked region collides with every admissible pose of its partner. -/
+theorem CReg.sound {s : PoseState} {i : Owner} {Qi : List QPoint} {pcov : ℕ → List (List PartnerPiece)}
+    {g : CReg} (hpcov : ∀ j, pcov j ≠ [] → pcovB s j (pcov j) = true)
+    (h : g.check s i Qi pcov = true) {q : UnitSquare}
+    (hc : q.center ∈ convexHull ℝ (vpts g.verts)) (hQ : CoreFits (convexHull ℝ (corePts Qi)) q) :
+    ∃ j : Owner, i ≠ j ∧ ∀ r : UnitSquare, RowsContain (s.rows j) r →
+      rationalHull (s.owned j) ⊆ {p | OpenSquare r p} →
+      (∀ p, ClosedSquare r p → InContainer coverCap p) → ∃ p, OpenSquare q p ∧ OpenSquare r p := by
+  simp only [CReg.check, Bool.and_eq_true, decide_eq_true_eq, List.all_eq_true] at h
+  obtain ⟨⟨⟨⟨⟨⟨hj, hji⟩, _⟩, hQi⟩, hne⟩, hlen⟩, hmk⟩ := h
+  have hpc := hpcov g.j hne
+  refine ⟨⟨g.j, hj⟩, fun e => hji (by rw [e]), ?_⟩
+  intro r hr hown hcont
+  obtain ⟨pss, hpss, ps, hps, hpos, hd, hQj⟩ := pcovB_sound hpc hj hr hown hcont
+  have hfl : ps ∈ (pcov g.j).flatten := List.mem_flatten.mpr ⟨pss, hpss, hps⟩
+  obtain ⟨n, hn, hpsn⟩ := List.getElem_of_mem hfl
+  have hn' : n < g.ms.length := by rw [← beq_iff_eq.mp hlen]; exact hn
+  have hmem : ((pcov g.j).flatten[n], g.ms[n]) ∈ (pcov g.j).flatten.zip g.ms := by
+    rw [List.mem_iff_getElem]
+    exact ⟨n, by rw [List.length_zip]; exact lt_min hn hn', by simp⟩
+  have hm := hmk _ hmem
+  rw [hpsn] at hm
+  have hne' : ps.dverts ≠ [] := by
+    intro h0; rw [h0] at hd; simp [vpts] at hd
+  simp only [hne', decide_false, Bool.false_or, minkB, Bool.and_eq_true, List.all_eq_true,
+    decide_eq_true_eq] at hm
+  obtain ⟨⟨hidx, hcv⟩, hedge⟩ := hm
+  have hz : q.center - r.center ∈ (edgesF (diffs ps.core Qi g.ms[n])).carrier := by
+    intro e he
+    have h1 := hull_contains (g := ⟨e.a, e.b, supp g.verts e.a e.b⟩)
+      (fun v hv => by simp only [Halfplane.contains, realPoint]; exact_mod_cast le_supp hv) hc
+    have h2 := hull_contains (g := ⟨-e.a, -e.b, supp ps.dverts (-e.a) (-e.b)⟩)
+      (fun v hv => by simp only [Halfplane.contains, realPoint]; exact_mod_cast le_supp hv) hd
+    have h3 : ((supp g.verts e.a e.b + supp ps.dverts (-e.a) (-e.b) : ℚ) : ℝ) ≤ e.c := by
+      exact_mod_cast hedge e he
+    simp only [Halfplane.contains] at h1 h2 ⊢
+    push_cast at h1 h2 h3
+    simp only [Prod.fst_sub, Prod.snd_sub]
+    linarith
+  obtain ⟨va, hva, vb, hvb, he⟩ := diffs_hull (fun ab hab => by
+    have := hidx ab hab; simpa using this) (edgesF_subset_hull hcv hz)
+  refine ⟨q.center + vb, hQ vb hvb, ?_⟩
+  have : q.center + vb = r.center + va := by
+    rw [show q.center = (q.center - r.center) + r.center by abel, he]; abel
+  rw [this]
+  exact hQj va hva
+
 /-! ## Cover trees -/
 
 inductive CTree
   | empty (mu : List ℚ)
   | keep (m : ℕ) (mus : List (List ℚ))
   | forbid (j : ℕ) (T : Tri)
+  | collide (k : ℕ) (mus : List (List ℚ))
   | split (l : Halfplane) (le ge : CTree)
 
 def negH (l : Halfplane) : Halfplane := ⟨-l.a, -l.b, -l.c⟩
 
-/-- The context of one sub-row: the state, the owner, the new rows, the core and
-the angle interval. -/
+/-- The context of one sub-row. -/
 structure Ctx where
   s : PoseState
   i : Owner
@@ -508,8 +687,7 @@ structure Ctx where
   core : List QPoint
   a : ℚ
   b : ℚ
-
-def ownedOf (s : PoseState) (j : ℕ) : List QPoint := if h : j < 11 then s.owned ⟨j, h⟩ else []
+  regs : List CReg
 
 def CTree.check (C : Ctx) : Polygon → CTree → Bool
   | P, .empty mu => emptyB P mu
@@ -517,15 +695,25 @@ def CTree.check (C : Ctx) : Polygon → CTree → Bool
       subsetB P (C.rs.getD m ⟨0, 0, []⟩).centers mus &&
       decide ((C.rs.getD m ⟨0, 0, []⟩).lo ≤ C.a) && decide (C.b ≤ (C.rs.getD m ⟨0, 0, []⟩).hi)
   | P, .forbid j T => decide (j < 11) && decide (j ≠ C.i.val) && T.check (ownedOf C.s j) C.core P
+  | P, .collide k mus => decide (k < C.regs.length) &&
+      convexF (C.regs.getD k ⟨0, [], []⟩).verts && subsetB P (edgesF (C.regs.getD k ⟨0, [], []⟩).verts) mus
   | P, .split l le ge => CTree.check C (l :: P) le && CTree.check C (negH l :: P) ge
 
 /-- The conclusion of a tree at a pose. -/
 def Good (C : Ctx) (q : UnitSquare) : Prop :=
-  RowsContain C.rs q ∨ ∃ j : Owner, C.i ≠ j ∧
-    q.center ∈ forbiddenCenters (rationalHull (C.s.owned j)) (convexHull ℝ (corePts C.core))
+  RowsContain C.rs q ∨
+    (∃ j : Owner, C.i ≠ j ∧ q.center ∈ forbiddenCenters (rationalHull (C.s.owned j))
+      (convexHull ℝ (corePts C.core))) ∨
+    (∃ j : Owner, C.i ≠ j ∧ ∀ r : UnitSquare, RowsContain (C.s.rows j) r →
+      rationalHull (C.s.owned j) ⊆ {p | OpenSquare r p} →
+      (∀ p, ClosedSquare r p → InContainer coverCap p) → ∃ p, OpenSquare q p ∧ OpenSquare r p)
 
 theorem CTree.sound (C : Ctx) {q : UnitSquare} {t : ℝ} (ht0 : 0 ≤ t) (ht1 : t ≤ 1)
-    (ha : (C.a : ℝ) ≤ t) (hb : t ≤ C.b) (hax : q.axis = chartAxis t) :
+    (ha : (C.a : ℝ) ≤ t) (hb : t ≤ C.b) (hax : q.axis = chartAxis t)
+    (hreg : ∀ g ∈ C.regs, q.center ∈ convexHull ℝ (vpts g.verts) →
+      ∃ j : Owner, C.i ≠ j ∧ ∀ r : UnitSquare, RowsContain (C.s.rows j) r →
+        rationalHull (C.s.owned j) ⊆ {p | OpenSquare r p} →
+        (∀ p, ClosedSquare r p → InContainer coverCap p) → ∃ p, OpenSquare q p ∧ OpenSquare r p) :
     ∀ (T : CTree) (P : Polygon), T.check C P = true → q.center ∈ P.carrier → Good C q
   | .empty mu, P, h, hp => absurd hp (emptyB_sound h _)
   | .keep m mus, P, h, hp => by
@@ -539,18 +727,26 @@ theorem CTree.sound (C : Ctx) {q : UnitSquare} {t : ℝ} (ht0 : 0 ≤ t) (ht1 : 
   | .forbid j T, P, h, hp => by
     simp only [CTree.check, Bool.and_eq_true, decide_eq_true_eq] at h
     obtain ⟨⟨hj, hji⟩, hT⟩ := h
-    right
+    right; left
     refine ⟨⟨j, hj⟩, fun e => hji (by rw [e]), ?_⟩
     have := Tri.sound hT hp
     simpa [ownedOf, hj] using this
+  | .collide k mus, P, h, hp => by
+    simp only [CTree.check, Bool.and_eq_true, decide_eq_true_eq] at h
+    obtain ⟨⟨hk, hcv⟩, hsub⟩ := h
+    right; right
+    have hg : C.regs.getD k ⟨0, [], []⟩ ∈ C.regs := by
+      rw [List.getD_eq_getElem?_getD, List.getElem?_eq_getElem hk, Option.getD_some]
+      exact List.getElem_mem hk
+    exact hreg _ hg (edgesF_subset_hull hcv (subsetB_sound hsub hp))
   | .split l le ge, P, h, hp => by
     simp only [CTree.check, Bool.and_eq_true] at h
     by_cases hl : l.contains q.center
-    · exact CTree.sound C ht0 ht1 ha hb hax le (l :: P) h.1 (by
+    · exact CTree.sound C ht0 ht1 ha hb hax hreg le (l :: P) h.1 (by
         intro g hg; rcases List.mem_cons.mp hg with rfl | hg
         · exact hl
         · exact hp g hg)
-    · exact CTree.sound C ht0 ht1 ha hb hax ge (negH l :: P) h.2 (by
+    · exact CTree.sound C ht0 ht1 ha hb hax hreg ge (negH l :: P) h.2 (by
         intro g hg; rcases List.mem_cons.mp hg with rfl | hg
         · unfold Halfplane.contains at hl ⊢; simp only [negH]; push_cast; push Not at hl; linarith
         · exact hp g hg)
@@ -564,59 +760,52 @@ structure Sub where
   cuts : List SelfCut
   wall : ℚ
   core : List QPoint
+  ccore : List QPoint
+  regs : List CReg
   tree : CTree
 
 def subPoly (r : PoseRow) (u : Sub) : Polygon :=
   r.centers ++ u.cuts.map SelfCut.half ++ wallHalves u.wall
 
-def Sub.check (s : PoseState) (i : Owner) (rs : List PoseRow) (r : PoseRow) (u : Sub) : Bool :=
+def Sub.check (s : PoseState) (i : Owner) (rs : List PoseRow) (pcov : ℕ → List (List PartnerPiece))
+    (r : PoseRow) (u : Sub) : Bool :=
   (u.cuts.all fun k => k.check (s.owned i) u.a u.b) && wallB u.wall u.a u.b &&
-    (u.core.all (coreVB u.a u.b)) && CTree.check ⟨s, i, rs, u.core, u.a, u.b⟩ (subPoly r u) u.tree
+    (u.core.all (coreVB u.a u.b)) && (u.ccore.all (coreVB u.a u.b)) &&
+    (u.regs.all (CReg.check s i u.ccore pcov)) &&
+    CTree.check ⟨s, i, rs, u.core, u.a, u.b, u.regs⟩ (subPoly r u) u.tree
 
-/-- The sub-rows cover `[x, hi]`. -/
-def coversB (hi : ℚ) : ℚ → List Sub → Bool
-  | x, [] => decide (hi < x)
-  | x, u :: L => decide (hi < x) ||
-      (decide (u.a ≤ x) && decide (x ≤ u.b) && (decide (hi ≤ u.b) || coversB hi u.b L))
+def rowB (s : PoseState) (i : Owner) (rs : List PoseRow) (pcov : ℕ → List (List PartnerPiece))
+    (r : PoseRow) (subs : List Sub) : Bool :=
+  coversB r.hi r.lo (subs.map fun u => (u.a, u.b)) && subs.all (Sub.check s i rs pcov r)
 
-theorem coversB_sound (hi : ℚ) : ∀ (x : ℚ) (L : List Sub), coversB hi x L = true →
-    ∀ t : ℝ, (x : ℝ) ≤ t → t ≤ hi → ∃ u ∈ L, (u.a : ℝ) ≤ t ∧ t ≤ u.b
-  | x, [], h, t, hx, hh => by
-    simp only [coversB, decide_eq_true_eq] at h
-    have : (hi : ℝ) < x := by exact_mod_cast h
-    linarith
-  | x, u :: L, h, t, hx, hh => by
-    simp only [coversB, Bool.or_eq_true, Bool.and_eq_true, decide_eq_true_eq] at h
-    rcases h with h | ⟨⟨hua, hxu⟩, hL⟩
-    · have : (hi : ℝ) < x := by exact_mod_cast h
-      linarith
-    · by_cases htu : t ≤ u.b
-      · exact ⟨u, List.mem_cons_self, le_trans (by exact_mod_cast hua) hx, htu⟩
-      · rcases hL with hL | hL
-        · have : (hi : ℝ) ≤ u.b := by exact_mod_cast hL
-          exact absurd (le_trans hh this) htu
-        · obtain ⟨w, hw, hw'⟩ := coversB_sound hi u.b L hL t (le_of_lt (lt_of_not_ge htu)) hh
-          exact ⟨w, List.mem_cons_of_mem _ hw, hw'⟩
+def stepB (s : PoseState) (i : Owner) (rs : List PoseRow) (pcov : ℕ → List (List PartnerPiece))
+    (certs : List (List Sub)) : Bool :=
+  (certs.length == (s.rows i).length) &&
+    (((s.rows i).zip certs).all fun rc => rowB s i rs pcov rc.1 rc.2)
 
-def rowB (s : PoseState) (i : Owner) (rs : List PoseRow) (r : PoseRow) (subs : List Sub) : Bool :=
-  coversB r.hi r.lo subs && subs.all (Sub.check s i rs r)
-
-def stepB (s : PoseState) (i : Owner) (rs : List PoseRow) (certs : List (List Sub)) : Bool :=
-  (certs.length == (s.rows i).length) && (((s.rows i).zip certs).all fun rc => rowB s i rs rc.1 rc.2)
-
-theorem rowB_sound {s : PoseState} {i : Owner} {rs : List PoseRow} {r : PoseRow} {subs : List Sub}
-    (h : rowB s i rs r subs = true) {q : UnitSquare} (hr : r.contains q)
+theorem rowB_sound {s : PoseState} {i : Owner} {rs : List PoseRow} {pcov : ℕ → List (List PartnerPiece)}
+    {r : PoseRow} {subs : List Sub}
+    (hpcov : ∀ j, pcov j ≠ [] → pcovB s j (pcov j) = true)
+    (h : rowB s i rs pcov r subs = true) {q : UnitSquare} (hr : r.contains q)
     (hown : rationalHull (s.owned i) ⊆ {p | OpenSquare q p})
     (hcont : ∀ p, ClosedSquare q p → InContainer coverCap p) :
-    RowsContain rs q ∨ ∃ j : Owner, i ≠ j ∧ ∃ Q : Set Point,
-      CoreFits Q q ∧ q.center ∈ forbiddenCenters (rationalHull (s.owned j)) Q := by
+    RowsContain rs q ∨
+      (∃ j : Owner, i ≠ j ∧ ∃ Q : Set Point,
+        CoreFits Q q ∧ q.center ∈ forbiddenCenters (rationalHull (s.owned j)) Q) ∨
+      (∃ j : Owner, i ≠ j ∧ ∀ r : UnitSquare, RowsContain (s.rows j) r →
+        rationalHull (s.owned j) ⊆ {p | OpenSquare r p} →
+        (∀ p, ClosedSquare r p → InContainer coverCap p) →
+        ∃ p, OpenSquare q p ∧ OpenSquare r p) := by
   simp only [rowB, Bool.and_eq_true, List.all_eq_true] at h
   obtain ⟨hcov, hsubs⟩ := h
   obtain ⟨hc, t, ht0, ht1, hlo, hhi, hax⟩ := hr
-  obtain ⟨u, hu, hua, hub⟩ := coversB_sound r.hi r.lo subs hcov t hlo hhi
+  obtain ⟨uu, huu, hua, hub⟩ := coversB_sound r.hi r.lo _ hcov t hlo hhi
+  obtain ⟨u, hu, rfl⟩ := List.mem_map.mp huu
   have hU := hsubs u hu
   simp only [Sub.check, Bool.and_eq_true, List.all_eq_true] at hU
-  obtain ⟨⟨⟨hcuts, hwall⟩, hcore⟩, htree⟩ := hU
+  obtain ⟨⟨⟨⟨⟨hcuts, hwall⟩, hcore⟩, hccore⟩, hregs⟩, htree⟩ := hU
+  have hQ := core_fits (List.all_eq_true.mpr hcore) hua hub hax
+  have hQc := core_fits (List.all_eq_true.mpr hccore) hua hub hax
   have hP : q.center ∈ (subPoly r u).carrier := by
     intro l hl
     simp only [subPoly, List.mem_append, List.mem_map] at hl
@@ -624,14 +813,18 @@ theorem rowB_sound {s : PoseState} {i : Owner} {rs : List PoseRow} {r : PoseRow}
     · exact hc l hl
     · exact SelfCut.sound (hcuts k hk) hua hub hax hown
     · exact wall_sound hwall hua hub hax hcont l hl
-  rcases CTree.sound ⟨s, i, rs, u.core, u.a, u.b⟩ ht0 ht1 hua hub hax u.tree (subPoly r u) htree hP with
-    hkeep | ⟨j, hij, hf⟩
+  rcases CTree.sound ⟨s, i, rs, u.core, u.a, u.b, u.regs⟩ ht0 ht1 hua hub hax
+      (fun g hg hcg => CReg.sound hpcov (hregs g hg) hcg hQc) u.tree (subPoly r u) htree hP with
+    hkeep | ⟨j, hij, hf⟩ | hcol
   · exact Or.inl hkeep
-  · exact Or.inr ⟨j, hij, _, core_fits (List.all_eq_true.mpr hcore) hua hub hax, hf⟩
+  · exact Or.inr (Or.inl ⟨j, hij, _, hQ, hf⟩)
+  · exact Or.inr (Or.inr hcol)
 
 /-- **Soundness of a checked step.** -/
-theorem stepB_sound {s : PoseState} {i : Owner} {rs : List PoseRow} {certs : List (List Sub)}
-    (h : stepB s i rs certs = true) : ExtStep s (replaceRows s i rs) := by
+theorem stepB_sound {s : PoseState} {i : Owner} {rs : List PoseRow} {pcov : ℕ → List (List PartnerPiece)}
+    {certs : List (List Sub)}
+    (hpcov : ∀ j, pcov j ≠ [] → pcovB s j (pcov j) = true)
+    (h : stepB s i rs pcov certs = true) : ExtStep s (replaceRows s i rs) := by
   apply ExtStep.pruneOwned
   intro q ⟨r, hr, hc⟩ hown hcont
   simp only [stepB, Bool.and_eq_true, beq_iff_eq, List.all_eq_true] at h
@@ -640,7 +833,7 @@ theorem stepB_sound {s : PoseState} {i : Owner} {rs : List PoseRow} {certs : Lis
   have hn' : n < certs.length := hlen ▸ hn
   have hmem : ((s.rows i)[n], certs[n]) ∈ (s.rows i).zip certs := by
     rw [List.mem_iff_getElem]; exact ⟨n, by simp [hn, hn'], by simp⟩
-  exact rowB_sound (hall _ hmem) hc hown hcont
+  exact rowB_sound hpcov (hall _ hmem) hc hown hcont
 
 end
 end ElevenSquare.Tasks.T07.Ext
