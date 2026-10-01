@@ -6,6 +6,16 @@ repository, and global optimality remains unfinished. This branch supplies
 checked common tools and the complete source closure of one audited certificate,
 case2135. It does not discharge the full-family obligation.
 
+## New upstream source availability
+
+The upstream release now supplies U2R source archives for 13 of the 14 remaining
+cases. The local count remains 159/173; source import, exact contract transport
+and actual kernel audits are pending. Thirteen duplicate native producers and
+their local queues are preserved on hold, while case1465 continues locally.
+See [current source-reuse status](#external-returned-case-source-release-import-pending).
+Earlier queue/experiment sections below retain their timestamped historical
+status and do not imply those thirteen queues are currently being dispatched.
+
 ## Actual multi-target experiment and first production pair
 
 The supplied original checker audited two already accepted group targets with
@@ -958,22 +968,55 @@ regeneration. Its full audit remains pending; no case1499 asset is added.
 [`verification/t03-case1499-local-resume.json`](verification/t03-case1499-local-resume.json)
 records the bounded queue continuation.
 
-## External returned-case handoff
+## External returned-case source release: import pending
 
-External progress reports name fifteen finished cases, but the inspected public
-branches do not supply their generated per-case source closures or matching
-individual target audits. These reports add no accepted cases to this count.
-Cases 1311, 1848 and 2047 are three of those fifteen and are now independently
-accepted here, leaving twelve possible additions once exact sources and
-audits are delivered.
+The earlier missing-artifact inspection is superseded by the actual
+[upstream `n11-certs-v1` release](https://github.com/wand125/n11-optimality-lean/releases/tag/n11-certs-v1).
+It contains **172 U2R source archives**, covering **13 of the 14 cases still
+pending here**: 1373, 1393, 1463, 1464, 1499, 1823, 1849, 1887, 1891, 2051,
+2068, 2069 and 2070. Case1465 has no U2R archive in this release. The repository
+source inspection is bound to split commit
+`a8b51d3e0682beb1bf911048bdc8e7fa62329124`; the actual release/tag and current
+branch objects are recorded separately, without equating a mutable branch name
+with an immutable release source binding.
+
+Publication independently rehashed [case1849's archive](https://github.com/wand125/n11-optimality-lean/releases/download/n11-certs-v1/n11-u2r-C1849.tar.xz)
+and streamed all **54 members / 17,645,543 uncompressed bytes**, matching each
+member to the upstream manifest and original inspection. Archive SHA-256:
+`d20a413342c28dade5432a86c3ca6fd463d0d8efec29811cec703cd87b321853`.
+The GitHub asset's digest/size and published checksum also match. The pinned
+repository file bindings were independently checked. All 13 available asset
+URLs/digests and exact provenance are in the [availability checkpoint](verification/t03-wand125-source-release-availability-20261001.json).
+No upstream source ZIP is uploaded again, and this checkpoint adds no release
+asset to this repository.
+
+The upstream description reports 172 kernel-checked returned cases. That is an
+upstream claim under its own contract, **not an accepted original target audit
+here**. Source import, complete dependency/toolchain compatibility, exact
+original-contract transport and actual kernel target audits remain pending.
+The local full accepted count stays **159/173**. Neither original family target,
+merged repository replay nor final return ZIP is complete.
+
+To avoid more duplicate preparation, thirteen owned local native producers were
+checkpointed at complete file-publication boundaries, and their queues renamed
+to preserved hold files. Publication independently read all thirteen immutable
+checkpoints and each held queue; the source archives and proof receipts remain
+preserved. Existing Lean checks were allowed to finish normally, without a
+signal to a compiler. Case1465's local queue/producer was left continuing.
+See the [hold checkpoint](verification/t03-wand125-local-duplicate-hold-20261001.json).
+These are root coordinator actions recorded for continuity; publication itself
+performed no queue or process controls.
 
 [PR 2](https://github.com/Queuingtheorydotcom/11SquaresFormalized/pull/2) provides
 the conditional per-case adapter
-`ElevenSquare.Interop.Wand125.certificate_of_maskAt`. Each actual upstream
-`CaseExcluded (maskAt k)` proof can use that adapter without waiting for a full
-family theorem. The inspected integration checkpoint records selected-module
-checks on Lean 4.34.1, while these source assets pin Lean 4.10.0-rc2; a complete
-toolchain integration and target replay are not claimed.
+`ElevenSquare.Interop.Wand125.certificate_of_maskAt`; an exact compatible
+upstream `CaseExcluded (maskAt k)` proof can use it without waiting for a full
+family theorem. Compatibility is still being investigated. The earlier
+integration checkpoint used selected-module checks on Lean 4.34.1, while the
+local source assets pin Lean 4.10.0-rc2; no complete toolchain integration or
+target replay is claimed. Historical pre-release inspection metadata remains
+in `verification/t03-progress.json`, labelled as history rather than current
+source unavailability.
 
 ## Audit scope
 

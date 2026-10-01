@@ -1,0 +1,471 @@
+{
+  "status": "NEW_SOURCE_RELEASE_AVAILABLE_CASE1849_ARCHIVE_AND_EVERY_MEMBER_HASH_VERIFIED",
+  "utc": "2026-10-01T12:29:50.062006+00:00",
+  "repository": "wand125/n11-optimality-lean",
+  "commit": "a8b51d3e0682beb1bf911048bdc8e7fa62329124",
+  "release_url": "https://github.com/wand125/n11-optimality-lean/releases/tag/n11-certs-v1",
+  "release_published_utc": "2026-10-01T05:10:50Z",
+  "upstream_release_claim": "172 returned cases kernel-checked; case1465 pending. This claim is not our target audit.",
+  "available_pending_case_archives": [
+    1373,
+    1393,
+    1463,
+    1464,
+    1499,
+    1823,
+    1849,
+    1887,
+    1891,
+    2051,
+    2068,
+    2069,
+    2070
+  ],
+  "missing_pending_case_archives": [
+    1465
+  ],
+  "verified_archive": "n11-u2r-C1849.tar.xz",
+  "archive_sha256": "d20a413342c28dade5432a86c3ca6fd463d0d8efec29811cec703cd87b321853",
+  "verified_members": 54,
+  "uncompressed_bytes": 17645543,
+  "verified_member_bindings": [
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/Data.lean",
+      "bytes": 428774,
+      "sha256": "46dddfa4ed14041cc1895387990050b6f5dbc6927877745591e7342e122260b8"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/Main.lean",
+      "bytes": 92983,
+      "sha256": "05a9b31954b7b8d066f4e975a6344a2986513311c5ddfff56bc4be9185f695db"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S0.lean",
+      "bytes": 271433,
+      "sha256": "9cadd901c4ee7a65b5664d15e4287d9c53a4a666b76d43b110a03c4311c0c391"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S1.lean",
+      "bytes": 372470,
+      "sha256": "736fc4617298a40e59bda8e4eac6099b84cc96bf5e4db6fdd699c71082405ca4"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S10.lean",
+      "bytes": 512452,
+      "sha256": "5e17b304ff7d4c95c3935ddef056d1ea59d2ba268b798dda83f3de720e22774c"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S11.lean",
+      "bytes": 682088,
+      "sha256": "983a8d8e5f264a6458095184830da205247bbaeb998de1e443fa911601fd87d6"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S12.lean",
+      "bytes": 407489,
+      "sha256": "5c0ff58ee0e87e86d99d248b9690a16c1d2a2afab654957ece6bf67d205a74ab"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S13.lean",
+      "bytes": 719458,
+      "sha256": "df1391dbe1e43b960c18363916d98d866c825c3fbf65747e07fa9c349bdf6b7f"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S14.lean",
+      "bytes": 319384,
+      "sha256": "03a31b2814f203324b856e6f7b4ce64a66909f2a1b6b0e835974ee9c1883668c"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S15.lean",
+      "bytes": 535618,
+      "sha256": "32366e152ed11be4ccc9050ad665a26bba5d012983885a99c19b704a858176b5"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S16.lean",
+      "bytes": 366161,
+      "sha256": "8376981e225e9e67e034f76e2c26ddff87e3d018628b6977cac1fc5414d464e2"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S17.lean",
+      "bytes": 243391,
+      "sha256": "daeb0c3efb66ed30fce5ade43e76f430951fd1c93b265e04390a14519ad7408b"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S18.lean",
+      "bytes": 448503,
+      "sha256": "78ce75dcb5d9930106a33c3a68ee32dc1a301e7c359508e74f9aa22a6bd6d7ed"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S19.lean",
+      "bytes": 248802,
+      "sha256": "78aedeb8f7d978702a412326cda5bf0b4a1cbbfca0ed32a208f630f10c09934e"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S2.lean",
+      "bytes": 434097,
+      "sha256": "b5c43427743453d4e9aa6d2ebd4444e6f7e6802c95962d32970a88f3c34f2176"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S20.lean",
+      "bytes": 157365,
+      "sha256": "3d34359c98c3ae29cd5e898393166581ff1b22f0aff632e325350344132afc45"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S21.lean",
+      "bytes": 526994,
+      "sha256": "99816b392d17ed1308f1e19c763b0e317c129e28b7217547090a4546a7a12a4e"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S22.lean",
+      "bytes": 635999,
+      "sha256": "16454e4977fd8b5a7869989b2bf3b3fdc12830f5e94c9480e4720deb36811273"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S23.lean",
+      "bytes": 263620,
+      "sha256": "f8b734c0993825e0f08342499c05fdcb6dba215b2ea077e616fc411d78a9d0b3"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S24.lean",
+      "bytes": 383218,
+      "sha256": "a20656ec5cf2b2995776baf962a4bcc639fe3a2cb455e3eb9f876b6e7dc11eb2"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S25.lean",
+      "bytes": 252712,
+      "sha256": "f32704b77052c0a743b680bfea54672675e12f7115a353ba2b4e660214a54b20"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S26.lean",
+      "bytes": 395283,
+      "sha256": "f1ec4b9416e7d881db3d2035c7a49f6220196737f26632935d5df7a8411f3567"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S27.lean",
+      "bytes": 321621,
+      "sha256": "32767a2556b97f3510302b469e12acac496b92f5511d761aa132b6caa7f6e715"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S28.lean",
+      "bytes": 178083,
+      "sha256": "027df47474a14211ce552f143e4d2056154b1b14097e33ff9edd0c4ac15c533b"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S29.lean",
+      "bytes": 264014,
+      "sha256": "878bcf6deeb675a7d76f6bd34841e92f4dcc8fef70223536e31e78df96522eea"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S3.lean",
+      "bytes": 862690,
+      "sha256": "80321fef49b486484f01bc821f892a6aaeff045240340783ef14e4277d6e4a88"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S30.lean",
+      "bytes": 83805,
+      "sha256": "c1db03464bee9c02e6921a283b8eb90a002ac4c7ef64fb5c01ecbc782ad20d41"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S31.lean",
+      "bytes": 151969,
+      "sha256": "6ed760a995529b7d5a5f9fe1299863a333248bd087c5efca29b73b8484a072fc"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S32.lean",
+      "bytes": 450151,
+      "sha256": "255175cb3dcb757964c18a258252f1d6360b5a5ec43a0d579a96060b728368e4"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S33.lean",
+      "bytes": 434952,
+      "sha256": "1dd07b159fa293ab1f61cd3ab0e9a868b0c4378caff47909eb790f735b17cd0d"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S34.lean",
+      "bytes": 257855,
+      "sha256": "a201c20c2f93a6fca1c18877ca3666e6782bb0ab5b9fa8347daa6d0f96050a85"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S35.lean",
+      "bytes": 327953,
+      "sha256": "55f08f18af16ab0292fc3837131da331d4bdd3ba309d24fee4a87a4bb8fcf0f7"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S36.lean",
+      "bytes": 101855,
+      "sha256": "408a0df75fe50f900736dc927c33b124019a09c226ea7a558b52a7c11a4139e1"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S37.lean",
+      "bytes": 333471,
+      "sha256": "73cb28832ccb82264ec4625b74baaf9b26127531da2ad04e6a8c40ab8c2b1e6c"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S38.lean",
+      "bytes": 291776,
+      "sha256": "66c7b9851b7fb75cf3a78c8159b8936dfbd4ea00a7f1cde95f08363923896f88"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S39.lean",
+      "bytes": 159881,
+      "sha256": "066bb8b7aa3c149a153ed685964278281d2a3930055b0c6543faaf65a18cf534"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S4.lean",
+      "bytes": 514071,
+      "sha256": "a777079cc24735ba7d75984bc9b1d4896d2801e20a14cfbe695d76fb229398ae"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S40.lean",
+      "bytes": 120197,
+      "sha256": "d2509deeccea570f4c5125febacc4bf63d6146636287eaee97e9d68eef05111b"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S41.lean",
+      "bytes": 55967,
+      "sha256": "ca57ecb23cf03b7ac015c0f85b08a42bbbe6863a3703f29aa3209812aefa4f5e"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S42.lean",
+      "bytes": 24172,
+      "sha256": "4ba6bf0ba9656040dd3fd1e3b84664ae8a26cc1d8728c12ffceabde17c1fd3e1"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S43.lean",
+      "bytes": 370656,
+      "sha256": "f6ec428fad518ecb3a5246e2136f0e4f69cd36455631f326921e60ea955bbafa"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S44.lean",
+      "bytes": 300887,
+      "sha256": "8fc3e594c295181e196746b1d89592bcbf125f9316664fa9356b6edabaca1dd3"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S45.lean",
+      "bytes": 131444,
+      "sha256": "159d3200a5c3a4b28147bf4687b468c027917e26851997bed63c7046b8e849a6"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S46.lean",
+      "bytes": 301909,
+      "sha256": "8974891010d2779fe80b74941e87711a5f3fdf67abee7e52990a55c22bc8f1c3"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S47.lean",
+      "bytes": 121099,
+      "sha256": "dcdd2d1a8d239d03f35cdeca92dd2dc189b9e4e9d9e5985f4d69ba204e088d6d"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S48.lean",
+      "bytes": 327858,
+      "sha256": "cbc2fde5088bf30eb00c5dfdd6894afe7eed599434e3662e7aea0b156d0e56fa"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S49.lean",
+      "bytes": 104668,
+      "sha256": "0392cbab015e2d2fc9caebab9a6793e0014d449c1acb88dcc0bea1ce161c7dfa"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S5.lean",
+      "bytes": 372602,
+      "sha256": "7aa49cdf3e2a2118bc5e8a0a11446402587354e3e196b15ee67eaa3d0bbaa6fb"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S50.lean",
+      "bytes": 68596,
+      "sha256": "19b7942d278dd08a3ae3f0bba45a06ff1587b47de2a1ff118aa77e422d9d81bd"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S51.lean",
+      "bytes": 14932,
+      "sha256": "8dd516711118b7501c8b7c8b1af91381ef9c8725a428ab76850a1fcc54817d16"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S6.lean",
+      "bytes": 459064,
+      "sha256": "3ea9b9118237a3fed6f4a9486d68bcb3e6f00f95b63a48c040155e2d870a4410"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S7.lean",
+      "bytes": 498227,
+      "sha256": "ebd9da966c8757504ad763846879671173ebac90d7acc029883287a855009202"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S8.lean",
+      "bytes": 605363,
+      "sha256": "7f361fb01e10688f65da04175f5877be3bbc3d2a1c3d016f7b5a175bb6b95cc0"
+    },
+    {
+      "path": "Sqpack/S11Opt/Split/U2R/C1849/S9.lean",
+      "bytes": 335461,
+      "sha256": "07febc3d1f54ec313066cf8eae60d77083418dcf263b14ca54753e1c4d7702cf"
+    }
+  ],
+  "repository_source_bindings": [
+    {
+      "path": "README.md",
+      "sha256": "9807a79970839cc7b3dde9c3015ff63c5e0e93b088ecf7d45955c32e799ccfc5",
+      "bytes": 18874
+    },
+    {
+      "path": "lean/Sqpack/S11Opt/Split/U2Returned.lean",
+      "sha256": "b40f260a9d44edae1a509e457be8bee520fd12c360bd51f56b0c4fad6aee40e9",
+      "bytes": 14102
+    },
+    {
+      "path": "scripts/u2p/README.md",
+      "sha256": "65c679209869d377814fc21d35c7e142c8894cc497994df62c62ebc911fde448",
+      "bytes": 3955
+    },
+    {
+      "path": "scripts/u2p/MANIFEST_U2R.sha256",
+      "sha256": "81a219885c34bf3c60628327b14184fb554894c8d3069f6a6076245604811399",
+      "bytes": 410338
+    },
+    {
+      "path": "scripts/fetch_wand125_data.py",
+      "sha256": "b03528bad2013ecd05047dc07685da37bf62fcf2b7841a15fd673e80d6a7220b",
+      "bytes": 13527
+    }
+  ],
+  "imported_as_completed_case": false,
+  "complete_case_acceptances_added": 0,
+  "requires_exact_contract_transport_and_actual_kernel_audits": true,
+  "format": "T03-external-U2R-source-release-availability-v1",
+  "publication_verified_utc": "2026-10-01T12:45:41.934652+00:00",
+  "original_inspection_record_sha256": "a678b958d1079b00fb6a9cc9a5364996678abf5ff0468efbeac16632e2b93e9d",
+  "release_id": 400666605,
+  "release_U2R_source_archive_count": 172,
+  "release_target_commitish": "split",
+  "release_tag_object": {
+    "sha": "112f91a0a0a30539472718b88e06e71f64d61694",
+    "type": "commit",
+    "url": "https://api.github.com/repos/wand125/n11-optimality-lean/git/commits/112f91a0a0a30539472718b88e06e71f64d61694"
+  },
+  "live_split_ref_at_publication": {
+    "sha": "a8b51d3e0682beb1bf911048bdc8e7fa62329124",
+    "type": "commit",
+    "url": "https://api.github.com/repos/wand125/n11-optimality-lean/git/commits/a8b51d3e0682beb1bf911048bdc8e7fa62329124"
+  },
+  "archive_asset": {
+    "id": 603021386,
+    "name": "n11-u2r-C1849.tar.xz",
+    "size": 7636300,
+    "digest": "sha256:d20a413342c28dade5432a86c3ca6fd463d0d8efec29811cec703cd87b321853",
+    "browser_download_url": "https://github.com/wand125/n11-optimality-lean/releases/download/n11-certs-v1/n11-u2r-C1849.tar.xz"
+  },
+  "archive_checksum_and_MANIFEST_and_all54members_independently_reverified": true,
+  "source_compatibility_status": "PENDING_ORIGINAL_CONTRACT_IMPORT_AND_KERNEL_TARGET_AUDITS",
+  "imported_full_cases_accepted_here": 0,
+  "accepted_local_full_case_count_unchanged": 159,
+  "remaining_local_case_count": 14,
+  "source_archives_complete_local_import_closure_or_original_target_audits_claimed": false,
+  "duplicate_source_asset_uploaded": false,
+  "new_local_release_assets": 0,
+  "Lean_jobs_or_worker_controls_for_publication": 0,
+  "available_pending_source_assets": [
+    {
+      "id": 603020260,
+      "name": "n11-u2r-C1373.tar.xz",
+      "size": 26154144,
+      "digest": "sha256:87d0b37ab53fdd5aa03f61a6104edfb91545004ac49a9b97f2ec04f63bca25d1",
+      "browser_download_url": "https://github.com/wand125/n11-optimality-lean/releases/download/n11-certs-v1/n11-u2r-C1373.tar.xz",
+      "case": 1373
+    },
+    {
+      "id": 603020378,
+      "name": "n11-u2r-C1393.tar.xz",
+      "size": 25119200,
+      "digest": "sha256:648bc4ffd0739608780360aa65babd7b1e615a2b1697eb169580f7068e823adc",
+      "browser_download_url": "https://github.com/wand125/n11-optimality-lean/releases/download/n11-certs-v1/n11-u2r-C1393.tar.xz",
+      "case": 1393
+    },
+    {
+      "id": 603020753,
+      "name": "n11-u2r-C1463.tar.xz",
+      "size": 11196852,
+      "digest": "sha256:3bce73faa4ebc8801844126e712119ad7e2193b96efda79df647fe879dbec435",
+      "browser_download_url": "https://github.com/wand125/n11-optimality-lean/releases/download/n11-certs-v1/n11-u2r-C1463.tar.xz",
+      "case": 1463
+    },
+    {
+      "id": 603020760,
+      "name": "n11-u2r-C1464.tar.xz",
+      "size": 30187224,
+      "digest": "sha256:355063bc961a08fe69f1f3908ce772d9ee4a32dcb9d0310a3613ba180be52be0",
+      "browser_download_url": "https://github.com/wand125/n11-optimality-lean/releases/download/n11-certs-v1/n11-u2r-C1464.tar.xz",
+      "case": 1464
+    },
+    {
+      "id": 603020860,
+      "name": "n11-u2r-C1499.tar.xz",
+      "size": 14224140,
+      "digest": "sha256:220d7b9c63a684d038988b5bf570590ffc467f347db45aecfebde319c29a045b",
+      "browser_download_url": "https://github.com/wand125/n11-optimality-lean/releases/download/n11-certs-v1/n11-u2r-C1499.tar.xz",
+      "case": 1499
+    },
+    {
+      "id": 603021321,
+      "name": "n11-u2r-C1823.tar.xz",
+      "size": 5697156,
+      "digest": "sha256:6544f248dd0fbb208e5fcbab61d2d576f20f14d4b4655633114fc2920584a985",
+      "browser_download_url": "https://github.com/wand125/n11-optimality-lean/releases/download/n11-certs-v1/n11-u2r-C1823.tar.xz",
+      "case": 1823
+    },
+    {
+      "id": 603021386,
+      "name": "n11-u2r-C1849.tar.xz",
+      "size": 7636300,
+      "digest": "sha256:d20a413342c28dade5432a86c3ca6fd463d0d8efec29811cec703cd87b321853",
+      "browser_download_url": "https://github.com/wand125/n11-optimality-lean/releases/download/n11-certs-v1/n11-u2r-C1849.tar.xz",
+      "case": 1849
+    },
+    {
+      "id": 603021453,
+      "name": "n11-u2r-C1887.tar.xz",
+      "size": 6037436,
+      "digest": "sha256:9bdaaa4b9be44c8444959fa3c1058b1303b8783de4bd2ad6c5e095a1be6aa608",
+      "browser_download_url": "https://github.com/wand125/n11-optimality-lean/releases/download/n11-certs-v1/n11-u2r-C1887.tar.xz",
+      "case": 1887
+    },
+    {
+      "id": 603021465,
+      "name": "n11-u2r-C1891.tar.xz",
+      "size": 5315272,
+      "digest": "sha256:c8db1b09bea9fe2ca9e743268d2b8eabc01a9112bc4a0573f611316839c0231f",
+      "browser_download_url": "https://github.com/wand125/n11-optimality-lean/releases/download/n11-certs-v1/n11-u2r-C1891.tar.xz",
+      "case": 1891
+    },
+    {
+      "id": 603021536,
+      "name": "n11-u2r-C2051.tar.xz",
+      "size": 3469976,
+      "digest": "sha256:3ea152a6427aa3e0e6d3911924666ccecd2e98e867d9ca689a4132eff430a4f3",
+      "browser_download_url": "https://github.com/wand125/n11-optimality-lean/releases/download/n11-certs-v1/n11-u2r-C2051.tar.xz",
+      "case": 2051
+    },
+    {
+      "id": 603021590,
+      "name": "n11-u2r-C2068.tar.xz",
+      "size": 3978008,
+      "digest": "sha256:d61bb4daafe37573fdbbb1358064800292729868d4916fce301c250ae1dd8f99",
+      "browser_download_url": "https://github.com/wand125/n11-optimality-lean/releases/download/n11-certs-v1/n11-u2r-C2068.tar.xz",
+      "case": 2068
+    },
+    {
+      "id": 603021600,
+      "name": "n11-u2r-C2069.tar.xz",
+      "size": 3843712,
+      "digest": "sha256:046484ef5c0ce77a83288f971f67b4be26280f4ac8040f5a82e0ccaea7446328",
+      "browser_download_url": "https://github.com/wand125/n11-optimality-lean/releases/download/n11-certs-v1/n11-u2r-C2069.tar.xz",
+      "case": 2069
+    },
+    {
+      "id": 603021609,
+      "name": "n11-u2r-C2070.tar.xz",
+      "size": 4029052,
+      "digest": "sha256:b7fdad5e72f3a8a382c8c73d1b6e27aedd585f4f32b27f5e574bcc1917fe3f80",
+      "browser_download_url": "https://github.com/wand125/n11-optimality-lean/releases/download/n11-certs-v1/n11-u2r-C2070.tar.xz",
+      "case": 2070
+    }
+  ]
+}

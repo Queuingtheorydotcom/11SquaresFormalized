@@ -256,5 +256,17 @@
     "portable_tools_AST_help_privacy_checked": true,
     "live_source_queue_service_actions_replayed": false,
     "new_release_assets": 0
+  },
+  "new_external_source_release_review": {
+    "remote_release_asset_count_and_digests_checked": true,
+    "case1849_archive_checksum_MANIFEST_all54members_reverified": true,
+    "repository_source_bindings_rehashed": true,
+    "all13_immutable_producer_checkpoints_and_preserved_queue_bytes_read": true,
+    "command_lines_local_paths_and_process_ids_omitted": true,
+    "original_record_hashes_retained": true,
+    "personal_information_findings": [],
+    "upstream_source_import_or_kernel_acceptance_claimed": false,
+    "duplicate_source_uploads": 0,
+    "publication_queue_process_or_compiler_controls": 0
   }
 }

@@ -1804,45 +1804,43 @@
     "meaning": "Historical equality-helper benchmark checkpoint, before the later accepted case2047 audit."
   },
   "external_returned_case_handoff": {
-    "reported_finished_cases": [
-      1311,
-      1372,
+    "status": "NEW_U2R_SOURCE_RELEASE_AVAILABLE_ORIGINAL_CONTRACT_AND_KERNEL_AUDITS_PENDING",
+    "upstream_repository": "wand125/n11-optimality-lean",
+    "inspected_source_commit": "a8b51d3e0682beb1bf911048bdc8e7fa62329124",
+    "release_url": "https://github.com/wand125/n11-optimality-lean/releases/tag/n11-certs-v1",
+    "release_U2R_source_archives": 172,
+    "available_remaining_case_archives": [
+      1373,
+      1393,
       1463,
+      1464,
       1499,
-      1731,
       1823,
-      1848,
       1849,
       1887,
       1891,
-      2047,
       2051,
       2068,
       2069,
       2070
     ],
-    "generated_case_source_closures_available_in_inspected_public_branches": false,
-    "matching_individual_case_target_audits_available": false,
-    "cases_added_from_external_reports": 0,
-    "already_independently_accepted_overlap": [
-      1848,
-      2047
+    "missing_remaining_case_archives": [
+      1465
     ],
-    "potential_new_cases_after_exact_handoff": 12,
+    "source_availability_manifest": "verification/t03-wand125-source-release-availability-20261001.json",
+    "local_duplicate_hold_manifest": "verification/t03-wand125-local-duplicate-hold-20261001.json",
+    "case1849_all54_member_archive_and_manifest_hashes_checked": true,
+    "imported_case_acceptances_added": 0,
+    "accepted_local_full_case_count": 159,
+    "remaining_cases": 14,
+    "source_import_original_contract_transport_and_actual_kernel_audits_complete": false,
+    "local_duplicate_producers_checkpointed": 13,
+    "continued_local_case": 1465,
+    "existing_Lean_checks_allowed_to_finish": true,
+    "proof_processes_signalled_for_hold": 0,
     "per_case_adapter": "ElevenSquare.Interop.Wand125.certificate_of_maskAt",
     "per_case_adapter_requires_full_family_theorem": false,
-    "pr_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/pull/2",
-    "inspected_integration_branch": "codex/import-wand125-progress",
-    "inspected_integration_commit": "abaaaf5103268d3356d0d0b29787f94fd3e68ed6",
-    "inspected_integration_toolchain": "4.34.1",
-    "checkpoint_toolchain": "4.10.0-rc2",
-    "full_toolchain_upgrade_verified": false,
-    "meaning": "Progress reports are not accepted certificate artifacts. Exact generated source closures, immutable hashes, and matching full target audits are still needed.",
-    "reported_finished_cases_already_independently_accepted_here": [
-      1311,
-      1848,
-      2047
-    ]
+    "merged_replay_original_public_target_audits_and_final_ZIP_complete": false
   },
   "operational_case1464_checkpoint": {
     "manifest": "verification/t03-case1464-parallel-retry.json",
@@ -2055,5 +2053,46 @@
     "remaining_cases": 14,
     "new_release_assets": 0,
     "Lean_jobs_or_worker_controls_for_publication": 0
+  },
+  "historical_external_returned_case_handoff_before_n11_certs_v1": {
+    "reported_finished_cases": [
+      1311,
+      1372,
+      1463,
+      1499,
+      1731,
+      1823,
+      1848,
+      1849,
+      1887,
+      1891,
+      2047,
+      2051,
+      2068,
+      2069,
+      2070
+    ],
+    "generated_case_source_closures_available_in_inspected_public_branches": false,
+    "matching_individual_case_target_audits_available": false,
+    "cases_added_from_external_reports": 0,
+    "already_independently_accepted_overlap": [
+      1848,
+      2047
+    ],
+    "potential_new_cases_after_exact_handoff": 12,
+    "per_case_adapter": "ElevenSquare.Interop.Wand125.certificate_of_maskAt",
+    "per_case_adapter_requires_full_family_theorem": false,
+    "pr_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/pull/2",
+    "inspected_integration_branch": "codex/import-wand125-progress",
+    "inspected_integration_commit": "abaaaf5103268d3356d0d0b29787f94fd3e68ed6",
+    "inspected_integration_toolchain": "4.34.1",
+    "checkpoint_toolchain": "4.10.0-rc2",
+    "full_toolchain_upgrade_verified": false,
+    "meaning": "Progress reports are not accepted certificate artifacts. Exact generated source closures, immutable hashes, and matching full target audits are still needed.",
+    "reported_finished_cases_already_independently_accepted_here": [
+      1311,
+      1848,
+      2047
+    ]
   }
 }

@@ -8,6 +8,17 @@ the final optimality theorem. See [MISSING.md](MISSING.md).
 
 At the latest checkpoint, **159/173** full case certificates have independently
 accepted exact target audits and published complete source closures; **14 remain**.
+New upstream sources are now available in [wand125's `n11-certs-v1` release](https://github.com/wand125/n11-optimality-lean/releases/tag/n11-certs-v1):
+172 U2R case archives include **13 of our 14 remaining cases**; case1465 is absent.
+Case1849's [source archive](https://github.com/wand125/n11-optimality-lean/releases/download/n11-certs-v1/n11-u2r-C1849.tar.xz)
+and all 54 source members match its archive checksum and manifest. Import,
+original-contract compatibility and actual kernel target audits are **pending**;
+the local accepted count remains **159/173**. Thirteen duplicate local native
+producers were checkpointed at complete publication boundaries and their queues
+preserved for reuse. Existing Lean checks were allowed to finish normally;
+case1465 continues locally. See [source provenance](verification/t03-wand125-source-release-availability-20261001.json)
+and the [preserved hold checkpoint](verification/t03-wand125-local-duplicate-hold-20261001.json).
+
 A measured multi-target experiment retained the same 278-member source/environment
 fixture (270 Lean modules) and exact target union: one combined actual audit
 took **27.16 seconds**, versus **26.12 + 20.90 = 47.02 seconds** for fresh separate
@@ -26,7 +37,8 @@ the complete import closure, task, environment and checkers. Its [accepted
 audit/source sidecar](verification/t03-case1731-accepted-source-audit.json) binds
 the existing immutable source ZIP; its original pending history is preserved.
 
-All 14 remaining cases have local dependency queues. Their first-group actual
+All 14 remaining cases retain prepared local dependency queues; thirteen are
+currently held for upstream source reuse. Their previously checked first-group actual
 audits are checked in the [timestamped queue checkpoint](verification/t03-local-queues-checkpoint-20261001.json); group counters remain partial observations.
 Selecting the same 35 ready tasks from 4,361 unattempted queue rows took 15.761
 seconds before a source-archive prefilter, 1.547 after and 1.543 on repeat. This

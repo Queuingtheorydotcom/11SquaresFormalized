@@ -1,0 +1,493 @@
+{
+  "status": "NEW_LOCAL_DUPLICATE_WORK_HELD_FOR_PUBLISHED_SOURCE_REUSE",
+  "utc": "2026-10-01T12:33:07.854268+00:00",
+  "source_inspection": "verification/t03-wand125-source-release-availability-20261001.json",
+  "continued_local_case": 1465,
+  "proof_processes_signalled": [],
+  "existing_lean_checks_finish_normally": true,
+  "all_existing_queues_archives_sources_objects_and_receipts_preserved": true,
+  "imported_source_contract_and_kernel_verification_still_pending": true,
+  "format": "T03-external-source-reuse-local-hold-v1",
+  "original_hold_record_sha256": "c6d83ff91b985392b96823e3b80b4d30bb2db48cbeeff46d3f9598964aa88212",
+  "cases": [
+    {
+      "case": 1373,
+      "status": "OWNED_NATIVE_PRODUCER_CHECKPOINTED_QUEUES_PRESERVED",
+      "producer_checkpoint": "case1373-equality-repair-producer-checkpoint-retry02.json",
+      "checkpoint": {
+        "status": "OWNED_NATIVE_PRODUCER_CHECKPOINTED_COMPILER_JOBS_UNTOUCHED",
+        "case": 1373,
+        "utc": "2026-10-01T12:32:31.829895+00:00",
+        "exact_publication": "case1373-packed-canonical-publication.json",
+        "source_archive_sha256": "0fd0f762ea9dd2d2a7a3fe6146193dff9f8c77868ab903cabf7a0382e966554c",
+        "repair_revision": 2,
+        "stopped_at_complete_file_boundary": true,
+        "partial_transport_files": [],
+        "preserved_status": "case1373-parallel-packed-status-before-equality-repair-retry02.json",
+        "preserved_status_sha256": "488df67bf4bf6c262d858dcfa51f8f4c883992011b147a756095fef509cda570",
+        "proof_processes_signalled": [],
+        "other_producers_untouched": true,
+        "reason": "New upstream172-case certificate source release exists; retain exact local work while prioritizing reuse and original-contract verification.",
+        "original_producer_checkpoint_sha256": "1e61956cbc7d01b9c0af72081d15a59fbfda7105164cdc139a90f534d2c36ec8"
+      },
+      "queues": [
+        {
+          "original": "library-case1373-node998-queue.json",
+          "preserved": ".held-for-new-wand125-release-library-case1373-node998-queue.json",
+          "sha256": "50879172c2e86a184557dd121d2f522461d94582dd3307fb509f5af7ffa196b3",
+          "task_rows": 198,
+          "preserved_queue_independently_read": true
+        }
+      ]
+    },
+    {
+      "case": 1393,
+      "status": "OWNED_NATIVE_PRODUCER_CHECKPOINTED_QUEUES_PRESERVED",
+      "producer_checkpoint": "case1393-equality-repair-producer-checkpoint-retry03.json",
+      "checkpoint": {
+        "status": "OWNED_NATIVE_PRODUCER_CHECKPOINTED_COMPILER_JOBS_UNTOUCHED",
+        "case": 1393,
+        "utc": "2026-10-01T12:32:34.764888+00:00",
+        "exact_publication": "case1393-packed-canonical-publication.json",
+        "source_archive_sha256": "ba7f61d0fc4437faa99aa3f432725ec4924a0b44b307306c913dc4a4d1c81c26",
+        "repair_revision": 3,
+        "stopped_at_complete_file_boundary": true,
+        "partial_transport_files": [],
+        "preserved_status": "case1393-parallel-packed-status-before-equality-repair-retry03.json",
+        "preserved_status_sha256": "05d32dbaeea88af7cdc5daf81c7297a1701f6fa332abc0979f2dff60b3463c2d",
+        "proof_processes_signalled": [],
+        "other_producers_untouched": true,
+        "reason": "New upstream172-case certificate source release exists; retain exact local work while prioritizing reuse and original-contract verification.",
+        "original_producer_checkpoint_sha256": "502b4248788b6c3a10faab4db0bc03989b289583c3c6757d49ca3b3184d22d14"
+      },
+      "queues": [
+        {
+          "original": "library-case1393-node994-queue.json",
+          "preserved": ".held-for-new-wand125-release-library-case1393-node994-queue.json",
+          "sha256": "fdae080b527c4c49638a47aa0142f688de4c82cbf0abaac35c0c0dce45d00e17",
+          "task_rows": 2,
+          "preserved_queue_independently_read": true
+        },
+        {
+          "original": "library-case1393-node998-queue.json",
+          "preserved": ".held-for-new-wand125-release-library-case1393-node998-queue.json",
+          "sha256": "361ca914404acfa92446fff113e9428cc02ce5d4318c2c12174e9e17f08a5c79",
+          "task_rows": 523,
+          "preserved_queue_independently_read": true
+        }
+      ]
+    },
+    {
+      "case": 1463,
+      "status": "OWNED_NATIVE_PRODUCER_CHECKPOINTED_QUEUES_PRESERVED",
+      "producer_checkpoint": "case1463-equality-repair-producer-checkpoint-retry02.json",
+      "checkpoint": {
+        "status": "OWNED_NATIVE_PRODUCER_CHECKPOINTED_COMPILER_JOBS_UNTOUCHED",
+        "case": 1463,
+        "utc": "2026-10-01T12:32:42.325474+00:00",
+        "exact_publication": "case1463-packed-canonical-publication.json",
+        "source_archive_sha256": "2f27827201e1ff5534862ee838bb07dd462c951fabfe01bd532d33958eb30579",
+        "repair_revision": 2,
+        "stopped_at_complete_file_boundary": true,
+        "partial_transport_files": [],
+        "preserved_status": "case1463-parallel-packed-status-before-equality-repair-retry02.json",
+        "preserved_status_sha256": "384124ffce43e0ed1ba5c36d977b546acdd261c7bdc516f78a79d2eda3388ee9",
+        "proof_processes_signalled": [],
+        "other_producers_untouched": true,
+        "reason": "New upstream172-case certificate source release exists; retain exact local work while prioritizing reuse and original-contract verification.",
+        "original_producer_checkpoint_sha256": "30f0837ead72caefb011d5ea3475802787e1d21c358fb12ed8d88b3122af83d4"
+      },
+      "queues": [
+        {
+          "original": "library-case1463-node994-queue.json",
+          "preserved": ".held-for-new-wand125-release-library-case1463-node994-queue.json",
+          "sha256": "bd0fd9edbce591534118369cece39df6c16898b19a1c9841061b1a76edc44a6a",
+          "task_rows": 7,
+          "preserved_queue_independently_read": true
+        },
+        {
+          "original": "library-case1463-node998-queue.json",
+          "preserved": ".held-for-new-wand125-release-library-case1463-node998-queue.json",
+          "sha256": "f57e7b88fc20460a57adb3ebfd7d211e31d0cc170cb3bcd7b812cf82a66fb843",
+          "task_rows": 292,
+          "preserved_queue_independently_read": true
+        }
+      ]
+    },
+    {
+      "case": 1464,
+      "status": "OWNED_NATIVE_PRODUCER_CHECKPOINTED_QUEUES_PRESERVED",
+      "producer_checkpoint": "case1464-equality-repair-producer-checkpoint-retry03.json",
+      "checkpoint": {
+        "status": "OWNED_NATIVE_PRODUCER_CHECKPOINTED_COMPILER_JOBS_UNTOUCHED",
+        "case": 1464,
+        "utc": "2026-10-01T12:32:45.007838+00:00",
+        "exact_publication": "case1464-packed-parallel-publication.json",
+        "source_archive_sha256": "e6006483335c1e808012a896cfe6736cbdb1fd2fcee854d2d5dd7c0cd06b211c",
+        "repair_revision": 3,
+        "stopped_at_complete_file_boundary": true,
+        "partial_transport_files": [],
+        "preserved_status": "case1464-parallel-packed-status-before-equality-repair-retry03.json",
+        "preserved_status_sha256": "a20a072aaf23b01e5f6668140b39ba4e3008cf46f71126dab51a7ed6d8ed2f7d",
+        "proof_processes_signalled": [],
+        "other_producers_untouched": true,
+        "reason": "New upstream172-case certificate source release exists; retain exact local work while prioritizing reuse and original-contract verification.",
+        "original_producer_checkpoint_sha256": "29fa8facac64d0c6649901432d2c83855b73fb534adcbd5bd1ff077b37197b6b"
+      },
+      "queues": [
+        {
+          "original": "library-case1464-node994-queue.json",
+          "preserved": ".held-for-new-wand125-release-library-case1464-node994-queue.json",
+          "sha256": "9e6ba56446af0c9b5cbed0d29ba70c94398347a87fae825f7b49930ec32135bc",
+          "task_rows": 2,
+          "preserved_queue_independently_read": true
+        },
+        {
+          "original": "library-case1464-node998-queue.json",
+          "preserved": ".held-for-new-wand125-release-library-case1464-node998-queue.json",
+          "sha256": "30567ac87931b72dfd3dd33c8a69a69500982b2e3f4308740e7208c10559c1c1",
+          "task_rows": 370,
+          "preserved_queue_independently_read": true
+        }
+      ]
+    },
+    {
+      "case": 1499,
+      "status": "OWNED_NATIVE_PRODUCER_CHECKPOINTED_QUEUES_PRESERVED",
+      "producer_checkpoint": "case1499-equality-repair-producer-checkpoint-retry02.json",
+      "checkpoint": {
+        "status": "OWNED_NATIVE_PRODUCER_CHECKPOINTED_COMPILER_JOBS_UNTOUCHED",
+        "case": 1499,
+        "utc": "2026-10-01T12:32:47.262083+00:00",
+        "exact_publication": "case1499-remaining-parallel-canonical-publication.json",
+        "source_archive_sha256": "f50d32e21a6babf4840f49f942d51768ed768f8d0bcadb665d4f69f50fe6979f",
+        "repair_revision": 2,
+        "stopped_at_complete_file_boundary": true,
+        "partial_transport_files": [],
+        "preserved_status": "case1499-parallel-packed-status-before-equality-repair-retry02.json",
+        "preserved_status_sha256": "26efd36078920e6770d4d517c26d31c19e4dfc485d085b1ac819dc1610b3b055",
+        "proof_processes_signalled": [],
+        "other_producers_untouched": true,
+        "reason": "New upstream172-case certificate source release exists; retain exact local work while prioritizing reuse and original-contract verification.",
+        "original_producer_checkpoint_sha256": "10f37cdab12052296047b3804a289ac26f8bd0ea58df0251d46a2cc95a9deb95"
+      },
+      "queues": [
+        {
+          "original": "library-case1499-node994-queue.json",
+          "preserved": ".held-for-new-wand125-release-library-case1499-node994-queue.json",
+          "sha256": "a6aa720f23b0f4149ccaecdb6ef71795bf71bc09de8897924df99b8c7e20a298",
+          "task_rows": 2,
+          "preserved_queue_independently_read": true
+        },
+        {
+          "original": "library-case1499-node996-comparison-queue.json",
+          "preserved": ".held-for-new-wand125-release-library-case1499-node996-comparison-queue.json",
+          "sha256": "6d01fdd5ee39408fd7debd7656ffceed345fc4dda89b5d9d36cfc59e0534983c",
+          "task_rows": 1,
+          "preserved_queue_independently_read": true
+        },
+        {
+          "original": "library-case1499-node996-queue.json",
+          "preserved": ".held-for-new-wand125-release-library-case1499-node996-queue.json",
+          "sha256": "d2b215222fac331b21a01ed960130ccd77525ed5f2c7c02bfbbb134db7126949",
+          "task_rows": 1,
+          "preserved_queue_independently_read": true
+        },
+        {
+          "original": "library-case1499-node998-queue.json",
+          "preserved": ".held-for-new-wand125-release-library-case1499-node998-queue.json",
+          "sha256": "8f87348dd4e1557fc9dd609fbf6dcf813f020c175bcc98a5a7f40e058ca5d092",
+          "task_rows": 72,
+          "preserved_queue_independently_read": true
+        }
+      ]
+    },
+    {
+      "case": 1823,
+      "status": "OWNED_NATIVE_PRODUCER_CHECKPOINTED_QUEUES_PRESERVED",
+      "producer_checkpoint": "case1823-equality-repair-producer-checkpoint-retry02.json",
+      "checkpoint": {
+        "status": "OWNED_NATIVE_PRODUCER_CHECKPOINTED_COMPILER_JOBS_UNTOUCHED",
+        "case": 1823,
+        "utc": "2026-10-01T12:32:49.612748+00:00",
+        "exact_publication": "case1823-packed-canonical-publication.json",
+        "source_archive_sha256": "2b9bb0e4bfc5c0f71d4ec5b07035606048b958799a6b3ad1615c1d3acf45a377",
+        "repair_revision": 2,
+        "stopped_at_complete_file_boundary": true,
+        "partial_transport_files": [],
+        "preserved_status": "case1823-parallel-packed-status-before-equality-repair-retry02.json",
+        "preserved_status_sha256": "b674d074a474b8c326ba8f4f22bcdb4329062ea90f6d89ba3572be09b89b588c",
+        "proof_processes_signalled": [],
+        "other_producers_untouched": true,
+        "reason": "New upstream172-case certificate source release exists; retain exact local work while prioritizing reuse and original-contract verification.",
+        "original_producer_checkpoint_sha256": "a379e8c584e1d4732ea86c5ba2450804acb75a5c5da4d6fec7c3af6b01541a2f"
+      },
+      "queues": [
+        {
+          "original": "library-case1823-node994-queue.json",
+          "preserved": ".held-for-new-wand125-release-library-case1823-node994-queue.json",
+          "sha256": "18af563dc4d9dc77b05857bfce72bf423176d1ec172110f7653dd5981e594ea8",
+          "task_rows": 3,
+          "preserved_queue_independently_read": true
+        },
+        {
+          "original": "library-case1823-node998-queue.json",
+          "preserved": ".held-for-new-wand125-release-library-case1823-node998-queue.json",
+          "sha256": "1d6ec80b38a3f4b1fba03f1d2b6c84ca88a55afb43ece1d4d34fad00ed84652e",
+          "task_rows": 641,
+          "preserved_queue_independently_read": true
+        }
+      ]
+    },
+    {
+      "case": 1849,
+      "status": "OWNED_NATIVE_PRODUCER_CHECKPOINTED_QUEUES_PRESERVED",
+      "producer_checkpoint": "case1849-equality-repair-producer-checkpoint-retry02.json",
+      "checkpoint": {
+        "status": "OWNED_NATIVE_PRODUCER_CHECKPOINTED_COMPILER_JOBS_UNTOUCHED",
+        "case": 1849,
+        "utc": "2026-10-01T12:32:52.092898+00:00",
+        "exact_publication": "case1849-packed-parallel-publication.json",
+        "source_archive_sha256": "40e4815e327c7c8858af9cfa78b34bef01db237e32f55612bac2e1e3a09dd52d",
+        "repair_revision": 2,
+        "stopped_at_complete_file_boundary": true,
+        "partial_transport_files": [],
+        "preserved_status": "case1849-parallel-packed-status-before-equality-repair-retry02.json",
+        "preserved_status_sha256": "17f1c3d169296832a8cd5bcfc186bb1e1d7b79742fb4c7cc3a84bf69e3204412",
+        "proof_processes_signalled": [],
+        "other_producers_untouched": true,
+        "reason": "New upstream172-case certificate source release exists; retain exact local work while prioritizing reuse and original-contract verification.",
+        "original_producer_checkpoint_sha256": "32de291084509d27d250e89e98a9efedd7994a90140d8dc40f3b5262be3c29aa"
+      },
+      "queues": [
+        {
+          "original": "library-case1849-node995-queue.json",
+          "preserved": ".held-for-new-wand125-release-library-case1849-node995-queue.json",
+          "sha256": "bad6401afc03461c3b0ab3b8048daa1ef15b525369713fed4f11d658f187462c",
+          "task_rows": 1,
+          "preserved_queue_independently_read": true
+        },
+        {
+          "original": "library-case1849-node998-queue.json",
+          "preserved": ".held-for-new-wand125-release-library-case1849-node998-queue.json",
+          "sha256": "de0fd5dda5c1fa253226612d047bfbf884c758a139d570cb65157fcfa0cbe06a",
+          "task_rows": 150,
+          "preserved_queue_independently_read": true
+        }
+      ]
+    },
+    {
+      "case": 1887,
+      "status": "OWNED_NATIVE_PRODUCER_CHECKPOINTED_QUEUES_PRESERVED",
+      "producer_checkpoint": "case1887-equality-repair-producer-checkpoint-retry02.json",
+      "checkpoint": {
+        "status": "OWNED_NATIVE_PRODUCER_CHECKPOINTED_COMPILER_JOBS_UNTOUCHED",
+        "case": 1887,
+        "utc": "2026-10-01T12:32:54.860568+00:00",
+        "exact_publication": "case1887-packed-canonical-publication.json",
+        "source_archive_sha256": "289117cc4c737492fd0a2f3c5fa3d3b45140e38b8ca4e272dfbc987dcfd3c368",
+        "repair_revision": 2,
+        "stopped_at_complete_file_boundary": true,
+        "partial_transport_files": [],
+        "preserved_status": "case1887-parallel-packed-status-before-equality-repair-retry02.json",
+        "preserved_status_sha256": "344d640a9265b772cd24fa9ea67b2f5208c40022ce4c592b3a591acc61ff5283",
+        "proof_processes_signalled": [],
+        "other_producers_untouched": true,
+        "reason": "New upstream172-case certificate source release exists; retain exact local work while prioritizing reuse and original-contract verification.",
+        "original_producer_checkpoint_sha256": "bb635814ec73b812a7bc0e027ab1113dcfda0038e8b3ee7e3c4fb0817a3d6a60"
+      },
+      "queues": [
+        {
+          "original": "library-case1887-node998-queue.json",
+          "preserved": ".held-for-new-wand125-release-library-case1887-node998-queue.json",
+          "sha256": "f8197261fcf7d2e28ee7aaa7c3716ed673a2991415b65db054fc331a19ef6f17",
+          "task_rows": 294,
+          "preserved_queue_independently_read": true
+        }
+      ]
+    },
+    {
+      "case": 1891,
+      "status": "OWNED_NATIVE_PRODUCER_CHECKPOINTED_QUEUES_PRESERVED",
+      "producer_checkpoint": "case1891-equality-repair-producer-checkpoint-retry02.json",
+      "checkpoint": {
+        "status": "OWNED_NATIVE_PRODUCER_CHECKPOINTED_COMPILER_JOBS_UNTOUCHED",
+        "case": 1891,
+        "utc": "2026-10-01T12:32:57.691971+00:00",
+        "exact_publication": "case1891-packed-canonical-publication.json",
+        "source_archive_sha256": "c03e1befc0b4aa98d1ac4be1cdd66ed70140d0036656d3f48e3f909d54a5d205",
+        "repair_revision": 2,
+        "stopped_at_complete_file_boundary": true,
+        "partial_transport_files": [],
+        "preserved_status": "case1891-parallel-packed-status-before-equality-repair-retry02.json",
+        "preserved_status_sha256": "6fbad0a94b7f9d9146daabf7588ded2c86c58942cd03d3d85edc51ca476e455d",
+        "proof_processes_signalled": [],
+        "other_producers_untouched": true,
+        "reason": "New upstream172-case certificate source release exists; retain exact local work while prioritizing reuse and original-contract verification.",
+        "original_producer_checkpoint_sha256": "9f5b1d1f3b176d65f9674c8a5e70ea5d6f20363ad7ad3d99ece4dfdf1401ccfe"
+      },
+      "queues": [
+        {
+          "original": "library-case1891-node994-queue.json",
+          "preserved": ".held-for-new-wand125-release-library-case1891-node994-queue.json",
+          "sha256": "f7b8d4388ff3bd827e37dacfbe12976b4e9f81d7a5e5ee251107e57e83cc93e5",
+          "task_rows": 3,
+          "preserved_queue_independently_read": true
+        },
+        {
+          "original": "library-case1891-node998-queue.json",
+          "preserved": ".held-for-new-wand125-release-library-case1891-node998-queue.json",
+          "sha256": "d722b9fa647e6a68ccd69dac934e1be59deb0cdb38c1e678a0a2db8cf55e8fc5",
+          "task_rows": 365,
+          "preserved_queue_independently_read": true
+        }
+      ]
+    },
+    {
+      "case": 2051,
+      "status": "OWNED_NATIVE_PRODUCER_CHECKPOINTED_QUEUES_PRESERVED",
+      "producer_checkpoint": "case2051-equality-repair-producer-checkpoint-retry02.json",
+      "checkpoint": {
+        "status": "OWNED_NATIVE_PRODUCER_CHECKPOINTED_COMPILER_JOBS_UNTOUCHED",
+        "case": 2051,
+        "utc": "2026-10-01T12:33:00.372669+00:00",
+        "exact_publication": "case2051-packed-canonical-publication.json",
+        "source_archive_sha256": "964c1f96ff52764e3f0e3cff586d49830114d9d924291b8b4a8529d11453b3c8",
+        "repair_revision": 2,
+        "stopped_at_complete_file_boundary": true,
+        "partial_transport_files": [],
+        "preserved_status": "case2051-parallel-packed-status-before-equality-repair-retry02.json",
+        "preserved_status_sha256": "5f60dbff16492e59b6560192b329c1cc480f2ece99b1f97ce43d9b76ff4acd6e",
+        "proof_processes_signalled": [],
+        "other_producers_untouched": true,
+        "reason": "New upstream172-case certificate source release exists; retain exact local work while prioritizing reuse and original-contract verification.",
+        "original_producer_checkpoint_sha256": "f00a95771250b084efeee5416e7067576c36368302f5f1d6603045cc610865cb"
+      },
+      "queues": [
+        {
+          "original": "library-case2051-node998-queue.json",
+          "preserved": ".held-for-new-wand125-release-library-case2051-node998-queue.json",
+          "sha256": "8c5ad6eeb120a8d7efaee177f9d486ebd109cd6795cb5fd8301b44faa7c8fc0c",
+          "task_rows": 291,
+          "preserved_queue_independently_read": true
+        }
+      ]
+    },
+    {
+      "case": 2068,
+      "status": "OWNED_NATIVE_PRODUCER_CHECKPOINTED_QUEUES_PRESERVED",
+      "producer_checkpoint": "case2068-equality-repair-producer-checkpoint-retry02.json",
+      "checkpoint": {
+        "status": "OWNED_NATIVE_PRODUCER_CHECKPOINTED_COMPILER_JOBS_UNTOUCHED",
+        "case": 2068,
+        "utc": "2026-10-01T12:33:02.609618+00:00",
+        "exact_publication": "case2068-packed-canonical-publication.json",
+        "source_archive_sha256": "7b831f9a2bad8fc5135cb55b2f5242325f131663ffcf6208ba9b9a81edd30e4b",
+        "repair_revision": 2,
+        "stopped_at_complete_file_boundary": true,
+        "partial_transport_files": [],
+        "preserved_status": "case2068-parallel-packed-status-before-equality-repair-retry02.json",
+        "preserved_status_sha256": "716905ac5c3de7d7bcdefa25da20924fe0cb04a643d235fcdd5c1b1ffdca9a1b",
+        "proof_processes_signalled": [],
+        "other_producers_untouched": true,
+        "reason": "New upstream172-case certificate source release exists; retain exact local work while prioritizing reuse and original-contract verification.",
+        "original_producer_checkpoint_sha256": "292aa7763a7860acdc67ac87ecae76bdcd05727f858d3db2cbe7af4902a19d0a"
+      },
+      "queues": [
+        {
+          "original": "library-case2068-node994-queue.json",
+          "preserved": ".held-for-new-wand125-release-library-case2068-node994-queue.json",
+          "sha256": "47d826c0d7a6463e38747bdcfb3519a02ef3e7b0f86c57d946438184d16fd9e2",
+          "task_rows": 3,
+          "preserved_queue_independently_read": true
+        },
+        {
+          "original": "library-case2068-node998-queue.json",
+          "preserved": ".held-for-new-wand125-release-library-case2068-node998-queue.json",
+          "sha256": "b9777f66949d0c584b6adc1cc9b19e1db7c23baba3e39506e75bf9a4936cf96d",
+          "task_rows": 545,
+          "preserved_queue_independently_read": true
+        }
+      ]
+    },
+    {
+      "case": 2069,
+      "status": "OWNED_NATIVE_PRODUCER_CHECKPOINTED_QUEUES_PRESERVED",
+      "producer_checkpoint": "case2069-equality-repair-producer-checkpoint-retry02.json",
+      "checkpoint": {
+        "status": "OWNED_NATIVE_PRODUCER_CHECKPOINTED_COMPILER_JOBS_UNTOUCHED",
+        "case": 2069,
+        "utc": "2026-10-01T12:33:05.205335+00:00",
+        "exact_publication": "case2069-packed-parallel-publication.json",
+        "source_archive_sha256": "e9be51f8d9dff430971bbcb95a7e5689517ce999355a1471ff5a7855fbbfe1b4",
+        "repair_revision": 2,
+        "stopped_at_complete_file_boundary": true,
+        "partial_transport_files": [],
+        "preserved_status": "case2069-parallel-packed-status-before-equality-repair-retry02.json",
+        "preserved_status_sha256": "aa81992e5606de39a7862ba47973ff6bdbf8000f02fe088f2f887a7b2f19caab",
+        "proof_processes_signalled": [],
+        "other_producers_untouched": true,
+        "reason": "New upstream172-case certificate source release exists; retain exact local work while prioritizing reuse and original-contract verification.",
+        "original_producer_checkpoint_sha256": "f8bbc4b341721b6b3bc336da585617dd136b3299f552966599ff0494dbc9d696"
+      },
+      "queues": [
+        {
+          "original": "library-case2069-node995-queue.json",
+          "preserved": ".held-for-new-wand125-release-library-case2069-node995-queue.json",
+          "sha256": "f890bac331933385a0db10c7b21698c4519f7f3a195889daa6c02626e50b3567",
+          "task_rows": 3,
+          "preserved_queue_independently_read": true
+        },
+        {
+          "original": "library-case2069-node998-queue.json",
+          "preserved": ".held-for-new-wand125-release-library-case2069-node998-queue.json",
+          "sha256": "290a475a4d18c9e8bb18040e5094317268e2483bec7740c499617d61f3ea1740",
+          "task_rows": 120,
+          "preserved_queue_independently_read": true
+        }
+      ]
+    },
+    {
+      "case": 2070,
+      "status": "OWNED_NATIVE_PRODUCER_CHECKPOINTED_QUEUES_PRESERVED",
+      "producer_checkpoint": "case2070-equality-repair-producer-checkpoint-retry02.json",
+      "checkpoint": {
+        "status": "OWNED_NATIVE_PRODUCER_CHECKPOINTED_COMPILER_JOBS_UNTOUCHED",
+        "case": 2070,
+        "utc": "2026-10-01T12:33:07.723140+00:00",
+        "exact_publication": "case2070-packed-canonical-publication.json",
+        "source_archive_sha256": "32d1e2fda4884a557223ff99f8ffee25891d9ca82db95bab0634b7101506c7cc",
+        "repair_revision": 2,
+        "stopped_at_complete_file_boundary": true,
+        "partial_transport_files": [],
+        "preserved_status": "case2070-parallel-packed-status-before-equality-repair-retry02.json",
+        "preserved_status_sha256": "45632150d7a1619a9b25f3f3fd88fde8ca2f1b925947cb126bcc4b1b0c810143",
+        "proof_processes_signalled": [],
+        "other_producers_untouched": true,
+        "reason": "New upstream172-case certificate source release exists; retain exact local work while prioritizing reuse and original-contract verification.",
+        "original_producer_checkpoint_sha256": "e0e0a4eea24dfe1169115bf8fc3e0a44b9b38ee564085676dfccfb0c9b65701c"
+      },
+      "queues": [
+        {
+          "original": "library-case2070-node994-queue.json",
+          "preserved": ".held-for-new-wand125-release-library-case2070-node994-queue.json",
+          "sha256": "b072c642ad0fb7c109e72412ecd3e3b5878145b5685007961aff98d82930e23b",
+          "task_rows": 2,
+          "preserved_queue_independently_read": true
+        },
+        {
+          "original": "library-case2070-node998-queue.json",
+          "preserved": ".held-for-new-wand125-release-library-case2070-node998-queue.json",
+          "sha256": "e81c1662f358dfdb3739fe4d6f3ca3a4c367572b048a2832acd8eca2e71ae6b2",
+          "task_rows": 617,
+          "preserved_queue_independently_read": true
+        }
+      ]
+    }
+  ],
+  "held_native_producers": 13,
+  "local_full_accepted_cases_unchanged": 159,
+  "hold_snapshot_not_publication_process_controls": true,
+  "source_contract_import_and_kernel_audits_status": "PENDING",
+  "Lean_jobs_or_worker_controls_for_publication": 0
+}
