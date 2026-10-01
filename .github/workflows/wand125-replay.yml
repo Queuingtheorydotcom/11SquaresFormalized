@@ -1,10 +1,9 @@
 name: Bounded wand125 replay
 
+# Optional manual replay only; integration checks currently run locally.
 # Public standard runners only. No paid runner, artifact upload, quota-setting,
 # or scheduled trigger; cache preflight and offline tests precede the fleet.
 on:
-  push:
-    branches: [codex/import-wand125-progress]
   workflow_dispatch:
 
 permissions:
