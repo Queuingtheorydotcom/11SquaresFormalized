@@ -488,8 +488,8 @@ structure PartnerPiece where
   b : ℚ
   cuts : List SelfCut
   wall : ℚ
-  core : List QPoint
-  dverts : List QPoint
+  core : List ZPoint
+  dverts : List ZPoint
   dmus : List (List ℚ)
 
 def PartnerPiece.poly (R : PoseRow) (ps : PartnerPiece) : Polygon :=
@@ -500,8 +500,8 @@ non-empty core and a convex vertex polygon containing its centres. -/
 def PartnerPiece.check (owned : List QPoint) (R : PoseRow) (ps : PartnerPiece) : Bool :=
   (ps.cuts.all fun k => k.check owned ps.a ps.b) && wallB ps.wall ps.a ps.b &&
     (if ps.dverts = [] then emptyB (ps.poly R) (ps.dmus.headD []) else
-      decide (0 < ps.core.length) && (ps.core.all (coreVB ps.a ps.b)) && convexF ps.dverts &&
-        subsetB (ps.poly R) (edgesF ps.dverts) ps.dmus)
+      decide (0 < ps.core.length) && ((ps.core.map toQ).all (coreVB ps.a ps.b)) && convexZF ps.dverts &&
+        subsetB (ps.poly R) (edgesF (ps.dverts.map toQ)) ps.dmus)
 
 /-- The sub-intervals cover `[x, hi]`. -/
 def coversB (hi : ℚ) : ℚ → List (ℚ × ℚ) → Bool
@@ -545,8 +545,9 @@ theorem pcovB_sound {s : PoseState} {j : ℕ} {tab : List (List PartnerPiece)} (
     (hj : j < 11) {r : UnitSquare} (hr : RowsContain (s.rows ⟨j, hj⟩) r)
     (hown : rationalHull (s.owned ⟨j, hj⟩) ⊆ {p | OpenSquare r p})
     (hcont : ∀ p, ClosedSquare r p → InContainer coverCap p) :
-    ∃ pss ∈ tab, ∃ ps ∈ pss, 0 < ps.core.length ∧ r.center ∈ convexHull ℝ (vpts ps.dverts) ∧
-      CoreFits (convexHull ℝ (corePts ps.core)) r := by
+    ∃ pss ∈ tab, ∃ ps ∈ pss, 0 < ps.core.length ∧ ps.dverts ≠ [] ∧
+      r.center ∈ convexHull ℝ (vpts (ps.dverts.map toQ)) ∧
+      CoreFits (convexHull ℝ (corePts (ps.core.map toQ))) r := by
   simp only [pcovB, Bool.and_eq_true, beq_iff_eq, decide_eq_true_eq, List.all_eq_true] at h
   obtain ⟨⟨_, hlen⟩, hall⟩ := h
   obtain ⟨R, hR, hc⟩ := hr
@@ -577,9 +578,9 @@ theorem pcovB_sound {s : PoseState} {j : ℕ} {tab : List (List PartnerPiece)} (
   · exact absurd hpoly (emptyB_sound hrest _)
   · simp only [Bool.and_eq_true, List.all_eq_true, decide_eq_true_eq] at hrest
     obtain ⟨⟨⟨hpos, hcore⟩, hconv⟩, hsub⟩ := hrest
-    refine ⟨tab[n], List.getElem_mem hn', ps, hps', hpos, ?_,
+    refine ⟨tab[n], List.getElem_mem hn', ps, hps', hpos, hemp, ?_,
       core_fits (List.all_eq_true.mpr hcore) hua hub hax⟩
-    exact edgesF_subset_hull hconv (subsetB_sound hsub hpoly)
+    exact edgesF_subset_hull (convexZF_imp hconv) (subsetB_sound hsub hpoly)
 
 /-! ## Collision regions -/
 
@@ -602,30 +603,24 @@ lemma le_suppAux (a b init : ℚ) : ∀ (V : List QPoint), ∀ v ∈ V, a * v.1 
 lemma le_supp {V : List QPoint} {a b : ℚ} {v : QPoint} (h : v ∈ V) : a * v.1 + b * v.2 ≤ supp V a b :=
   le_suppAux a b _ V v h
 
-/-- The Minkowski condition of a region against one partner piece, with the
-vertices of `hull (partner core) - hull Qi` given by index pairs `L`. -/
-def minkB (Qi : List QPoint) (ps : PartnerPiece) (L : List (ℕ × ℕ)) (R : List QPoint) : Bool :=
-  (L.all fun ab => decide (ab.1 < ps.core.length) && decide (ab.2 < Qi.length)) &&
-    convexF (diffs ps.core Qi L) &&
-    (edgesF (diffs ps.core Qi L)).all fun e =>
-      decide (supp R e.a e.b + supp ps.dverts (-e.a) (-e.b) ≤ e.c)
-
 structure CReg where
   j : ℕ
-  verts : List QPoint
+  verts : List ZPoint
   ms : List (List (ℕ × ℕ))
 
-def CReg.check (s : PoseState) (i : Owner) (Qi : List QPoint) (pcov : ℕ → List (List PartnerPiece))
+def CReg.check (s : PoseState) (i : Owner) (Qi : List ZPoint) (pcov : ℕ → List (List PartnerPiece))
     (g : CReg) : Bool :=
-  decide (g.j < 11) && decide (g.j ≠ i.val) && convexF g.verts && decide (0 < Qi.length) &&
+  decide (g.j < 11) && decide (g.j ≠ i.val) && convexZF g.verts && decide (0 < Qi.length) &&
     decide (pcov g.j ≠ []) && ((pcov g.j).flatten.length == g.ms.length) &&
-    (((pcov g.j).flatten.zip g.ms).all fun pl => pl.1.dverts = [] || minkB Qi pl.1 pl.2 g.verts)
+    (((pcov g.j).flatten.zip g.ms).all fun pl =>
+      pl.1.dverts = [] || minkZ Qi pl.1.core pl.2 g.verts pl.1.dverts)
 
 /-- A checked region collides with every admissible pose of its partner. -/
-theorem CReg.sound {s : PoseState} {i : Owner} {Qi : List QPoint} {pcov : ℕ → List (List PartnerPiece)}
+theorem CReg.sound {s : PoseState} {i : Owner} {Qi : List ZPoint} {pcov : ℕ → List (List PartnerPiece)}
     {g : CReg} (hpcov : ∀ j, pcov j ≠ [] → pcovB s j (pcov j) = true)
     (h : g.check s i Qi pcov = true) {q : UnitSquare}
-    (hc : q.center ∈ convexHull ℝ (vpts g.verts)) (hQ : CoreFits (convexHull ℝ (corePts Qi)) q) :
+    (hc : q.center ∈ convexHull ℝ (vpts (g.verts.map toQ)))
+    (hQ : CoreFits (convexHull ℝ (corePts (Qi.map toQ))) q) :
     ∃ j : Owner, i ≠ j ∧ ∀ r : UnitSquare, RowsContain (s.rows j) r →
       rationalHull (s.owned j) ⊆ {p | OpenSquare r p} →
       (∀ p, ClosedSquare r p → InContainer coverCap p) → ∃ p, OpenSquare q p ∧ OpenSquare r p := by
@@ -634,7 +629,7 @@ theorem CReg.sound {s : PoseState} {i : Owner} {Qi : List QPoint} {pcov : ℕ �
   have hpc := hpcov g.j hne
   refine ⟨⟨g.j, hj⟩, fun e => hji (by rw [e]), ?_⟩
   intro r hr hown hcont
-  obtain ⟨pss, hpss, ps, hps, hpos, hd, hQj⟩ := pcovB_sound hpc hj hr hown hcont
+  obtain ⟨pss, hpss, ps, hps, hpos, hne', hd, hQj⟩ := pcovB_sound hpc hj hr hown hcont
   have hfl : ps ∈ (pcov g.j).flatten := List.mem_flatten.mpr ⟨pss, hpss, hps⟩
   obtain ⟨n, hn, hpsn⟩ := List.getElem_of_mem hfl
   have hn' : n < g.ms.length := by rw [← beq_iff_eq.mp hlen]; exact hn
@@ -643,25 +638,8 @@ theorem CReg.sound {s : PoseState} {i : Owner} {Qi : List QPoint} {pcov : ℕ �
     exact ⟨n, by rw [List.length_zip]; exact lt_min hn hn', by simp⟩
   have hm := hmk _ hmem
   rw [hpsn] at hm
-  have hne' : ps.dverts ≠ [] := by
-    intro h0; rw [h0] at hd; simp [vpts] at hd
-  simp only [hne', decide_false, Bool.false_or, minkB, Bool.and_eq_true, List.all_eq_true,
-    decide_eq_true_eq] at hm
-  obtain ⟨⟨hidx, hcv⟩, hedge⟩ := hm
-  have hz : q.center - r.center ∈ (edgesF (diffs ps.core Qi g.ms[n])).carrier := by
-    intro e he
-    have h1 := hull_contains (g := ⟨e.a, e.b, supp g.verts e.a e.b⟩)
-      (fun v hv => by simp only [Halfplane.contains, realPoint]; exact_mod_cast le_supp hv) hc
-    have h2 := hull_contains (g := ⟨-e.a, -e.b, supp ps.dverts (-e.a) (-e.b)⟩)
-      (fun v hv => by simp only [Halfplane.contains, realPoint]; exact_mod_cast le_supp hv) hd
-    have h3 : ((supp g.verts e.a e.b + supp ps.dverts (-e.a) (-e.b) : ℚ) : ℝ) ≤ e.c := by
-      exact_mod_cast hedge e he
-    simp only [Halfplane.contains] at h1 h2 ⊢
-    push_cast at h1 h2 h3
-    simp only [Prod.fst_sub, Prod.snd_sub]
-    linarith
-  obtain ⟨va, hva, vb, hvb, he⟩ := diffs_hull (fun ab hab => by
-    have := hidx ab hab; simpa using this) (edgesF_subset_hull hcv hz)
+  simp only [hne', decide_false, Bool.false_or] at hm
+  obtain ⟨va, hva, vb, hvb, he⟩ := minkZ_sound hm hc hd
   refine ⟨q.center + vb, hQ vb hvb, ?_⟩
   have : q.center + vb = r.center + va := by
     rw [show q.center = (q.center - r.center) + r.center by abel, he]; abel
@@ -696,7 +674,8 @@ def CTree.check (C : Ctx) : Polygon → CTree → Bool
       decide ((C.rs.getD m ⟨0, 0, []⟩).lo ≤ C.a) && decide (C.b ≤ (C.rs.getD m ⟨0, 0, []⟩).hi)
   | P, .forbid j T => decide (j < 11) && decide (j ≠ C.i.val) && T.check (ownedOf C.s j) C.core P
   | P, .collide k mus => decide (k < C.regs.length) &&
-      convexF (C.regs.getD k ⟨0, [], []⟩).verts && subsetB P (edgesF (C.regs.getD k ⟨0, [], []⟩).verts) mus
+      convexZF (C.regs.getD k ⟨0, [], []⟩).verts &&
+        subsetB P (edgesF ((C.regs.getD k ⟨0, [], []⟩).verts.map toQ)) mus
   | P, .split l le ge => CTree.check C (l :: P) le && CTree.check C (negH l :: P) ge
 
 /-- The conclusion of a tree at a pose. -/
@@ -710,7 +689,7 @@ def Good (C : Ctx) (q : UnitSquare) : Prop :=
 
 theorem CTree.sound (C : Ctx) {q : UnitSquare} {t : ℝ} (ht0 : 0 ≤ t) (ht1 : t ≤ 1)
     (ha : (C.a : ℝ) ≤ t) (hb : t ≤ C.b) (hax : q.axis = chartAxis t)
-    (hreg : ∀ g ∈ C.regs, q.center ∈ convexHull ℝ (vpts g.verts) →
+    (hreg : ∀ g ∈ C.regs, q.center ∈ convexHull ℝ (vpts (g.verts.map toQ)) →
       ∃ j : Owner, C.i ≠ j ∧ ∀ r : UnitSquare, RowsContain (C.s.rows j) r →
         rationalHull (C.s.owned j) ⊆ {p | OpenSquare r p} →
         (∀ p, ClosedSquare r p → InContainer coverCap p) → ∃ p, OpenSquare q p ∧ OpenSquare r p) :
@@ -738,7 +717,7 @@ theorem CTree.sound (C : Ctx) {q : UnitSquare} {t : ℝ} (ht0 : 0 ≤ t) (ht1 : 
     have hg : C.regs.getD k ⟨0, [], []⟩ ∈ C.regs := by
       rw [List.getD_eq_getElem?_getD, List.getElem?_eq_getElem hk, Option.getD_some]
       exact List.getElem_mem hk
-    exact hreg _ hg (edgesF_subset_hull hcv (subsetB_sound hsub hp))
+    exact hreg _ hg (edgesF_subset_hull (convexZF_imp hcv) (subsetB_sound hsub hp))
   | .split l le ge, P, h, hp => by
     simp only [CTree.check, Bool.and_eq_true] at h
     by_cases hl : l.contains q.center
@@ -760,7 +739,7 @@ structure Sub where
   cuts : List SelfCut
   wall : ℚ
   core : List QPoint
-  ccore : List QPoint
+  ccore : List ZPoint
   regs : List CReg
   tree : CTree
 
@@ -770,7 +749,7 @@ def subPoly (r : PoseRow) (u : Sub) : Polygon :=
 def Sub.check (s : PoseState) (i : Owner) (rs : List PoseRow) (pcov : ℕ → List (List PartnerPiece))
     (r : PoseRow) (u : Sub) : Bool :=
   (u.cuts.all fun k => k.check (s.owned i) u.a u.b) && wallB u.wall u.a u.b &&
-    (u.core.all (coreVB u.a u.b)) && (u.ccore.all (coreVB u.a u.b)) &&
+    (u.core.all (coreVB u.a u.b)) && ((u.ccore.map toQ).all (coreVB u.a u.b)) &&
     (u.regs.all (CReg.check s i u.ccore pcov)) &&
     CTree.check ⟨s, i, rs, u.core, u.a, u.b, u.regs⟩ (subPoly r u) u.tree
 

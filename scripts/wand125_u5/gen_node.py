@@ -141,11 +141,20 @@ def tree_lean(t):
     return f"(.split {half(t[1])}\n    {tree_lean(t[2])}\n    {tree_lean(t[3])})"
 
 
+GRID = 10 ** 12
+
+
+def zp(p):
+    x, y = p[0] * GRID, p[1] * GRID
+    assert x.denominator == 1 and y.denominator == 1, 'off-grid point'
+    return f"({x.numerator}, {y.numerator})"
+
+
 def regs_lean(regs):
     out = []
     for j, vs, ms in regs:
         labs = lst(lst(f"({a}, {b})" for a, b in L) for L in ms)
-        out.append(f"⟨{j}, {lst(qp(v) for v in vs)}, {labs}⟩")
+        out.append(f"⟨{j}, {lst(zp(v) for v in vs)}, {labs}⟩")
     return lst(out)
 
 
@@ -270,7 +279,7 @@ def main(node_path, parent_path, k, out_path, modname='Gen'):
     for j, tab in pcov.items():
         L.append(f"def pc{j} : List (List PartnerPiece) := " + lst(
             lst(f"⟨{q(ps['a'])}, {q(ps['b'])}, {cuts_lean(ps['cuts'])}, {q(ps['h'])}, "
-                f"{lst(qp(v) for v in ps['core'])}, {lst(qp(v) for v in ps['dverts'])}, "
+                f"{lst(zp(v) for v in ps['core'])}, {lst(zp(v) for v in ps['dverts'])}, "
                 f"{lst(lst(q(x) for x in mu) for mu in ps['dmus'])}⟩" for ps in pieces)
             for pieces in tab) + "\n")
     body = " else ".join(f"if j = {j} then pc{j}" for j in pcov)
@@ -278,7 +287,7 @@ def main(node_path, parent_path, k, out_path, modname='Gen'):
     for m, subs in enumerate(certs):
         L.append(f"def cert{m} : List Sub := " + lst(
             f"⟨{q(u['a'])}, {q(u['b'])}, {cuts_lean(u['cuts'])}, {q(u['h'])}, {lst(qp(v) for v in u['core'])}, "
-            f"{lst(qp(v) for v in u['ccore'])}, "
+            f"{lst(zp(v) for v in u['ccore'])}, "
             f"{regs_lean(u['regs'])},\n  {tree_lean(u['tree'])}⟩"
             for u in subs) + "\n")
         L.append(f"theorem cert{m}_ok : rowB state {i} newRows pcov (rows{i}.getD {m} ⟨0, 0, []⟩) cert{m} = true := by\n"

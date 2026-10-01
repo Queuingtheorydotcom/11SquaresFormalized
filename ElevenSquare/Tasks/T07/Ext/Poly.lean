@@ -336,5 +336,161 @@ theorem edgesF_subset_hull {V : List QPoint} (hV : convexF V = true) :
     (edgesF V).carrier ⊆ convexHull ℝ (vpts V) := by
   rw [edgesF_eq]; exact edges_subset_hull (convexF_imp hV)
 
+/-! ## Integer grid points
+
+Rounded data live on the grid `ℤ² / G`.  The collision checks run in integer
+arithmetic; `toQ` carries them back to the rational statements above. -/
+
+abbrev ZPoint := ℤ × ℤ
+
+def gridG : ℕ := 10 ^ 12
+
+def toQ (p : ZPoint) : QPoint := ((p.1 : ℚ) / gridG, (p.2 : ℚ) / gridG)
+
+lemma gridG_pos : (0 : ℚ) < gridG := by norm_num [gridG]
+
+/-- Integer edge of `p → q` at scale `(G, G, G²)`. -/
+def edgeZ (p q : ZPoint) : ℤ × ℤ × ℤ :=
+  (q.2 - p.2, p.1 - q.1, (q.2 - p.2) * p.1 + (p.1 - q.1) * p.2)
+
+def edgesZ (V : List ZPoint) : List (ℤ × ℤ × ℤ) := List.zipWith edgeZ V (V.tail ++ V.take 1)
+
+def scaleH (e : ℤ × ℤ × ℤ) : Halfplane :=
+  ⟨(e.1 : ℚ) / gridG, (e.2.1 : ℚ) / gridG, (e.2.2 : ℚ) / ((gridG : ℚ) * gridG)⟩
+
+lemma edgeH_toQ (p q : ZPoint) : edgeH (toQ p) (toQ q) = scaleH (edgeZ p q) := by
+  have hG : (gridG : ℚ) ≠ 0 := gridG_pos.ne'
+  simp only [edgeH, toQ, scaleH, edgeZ, Halfplane.mk.injEq]
+  push_cast
+  refine ⟨by field_simp, by field_simp, by field_simp⟩
+
+lemma edgesF_toQ (V : List ZPoint) : edgesF (V.map toQ) = (edgesZ V).map scaleH := by
+  unfold edgesF edgesZ
+  rw [List.map_zipWith]
+  have : (V.map toQ).tail ++ (V.map toQ).take 1 = (V.tail ++ V.take 1).map toQ := by
+    simp [List.map_append, List.map_tail, List.map_take]
+  rw [this, List.zipWith_map]
+  simp only [edgeH_toQ]
+
+/-- Strict convexity on the grid, in integer arithmetic. -/
+def convexZF (V : List ZPoint) : Bool :=
+  decide (3 ≤ V.length) &&
+    ((edgesZ V).zipIdx.all fun ek => V.zipIdx.all fun vm =>
+      decide (vm.2 = ek.2) || decide (vm.2 = (ek.2 + 1) % V.length) ||
+        decide (ek.1.1 * vm.1.1 + ek.1.2.1 * vm.1.2 < ek.1.2.2))
+
+lemma scaleH_strict (e : ℤ × ℤ × ℤ) (v : ZPoint) :
+    (scaleH e).a * (toQ v).1 + (scaleH e).b * (toQ v).2 < (scaleH e).c ↔
+      e.1 * v.1 + e.2.1 * v.2 < e.2.2 := by
+  have hG := gridG_pos
+  simp only [scaleH, toQ]
+  rw [show ((e.1 : ℚ) / gridG) * ((v.1 : ℚ) / gridG) + ((e.2.1 : ℚ) / gridG) * ((v.2 : ℚ) / gridG)
+      = ((e.1 * v.1 + e.2.1 * v.2 : ℤ) : ℚ) / ((gridG : ℚ) * gridG) by push_cast; field_simp,
+    div_lt_div_iff_of_pos_right (by positivity)]
+  exact_mod_cast Iff.rfl
+
+lemma convexZF_imp {V : List ZPoint} (h : convexZF V = true) : convexF (V.map toQ) = true := by
+  simp only [convexZF, Bool.and_eq_true, decide_eq_true_eq, List.all_eq_true, Bool.or_eq_true] at h
+  obtain ⟨hn, hall⟩ := h
+  simp only [convexF, Bool.and_eq_true, decide_eq_true_eq, List.all_eq_true, Bool.or_eq_true,
+    List.length_map]
+  refine ⟨hn, fun ek hek vm hvm => ?_⟩
+  rw [edgesF_toQ] at hek
+  rw [List.mem_zipIdx_iff_getElem?] at hek hvm
+  rw [List.getElem?_map] at hek hvm
+  obtain ⟨e, he, hee⟩ := Option.map_eq_some_iff.mp hek
+  obtain ⟨v, hv, hvv⟩ := Option.map_eq_some_iff.mp hvm
+  rw [← hee, ← hvv]
+  have hek' : (e, ek.2) ∈ (edgesZ V).zipIdx := by rw [List.mem_zipIdx_iff_getElem?]; exact he
+  have hvm' : (v, vm.2) ∈ V.zipIdx := by rw [List.mem_zipIdx_iff_getElem?]; exact hv
+  rcases hall _ hek' _ hvm' with (h | h) | h
+  · exact Or.inl (Or.inl h)
+  · exact Or.inl (Or.inr h)
+  · exact Or.inr ((scaleH_strict e v).mpr h)
+
+def diffsZ (A B : List ZPoint) (L : List (ℕ × ℕ)) : List ZPoint :=
+  L.map fun ab => ((A.getD ab.1 (0, 0)).1 - (B.getD ab.2 (0, 0)).1,
+    (A.getD ab.1 (0, 0)).2 - (B.getD ab.2 (0, 0)).2)
+
+lemma toQ_zero : toQ (0, 0) = (0, 0) := by simp [toQ]
+
+lemma getD_map_toQ (A : List ZPoint) (k : ℕ) : (A.map toQ).getD k (0, 0) = toQ (A.getD k (0, 0)) := by
+  rw [List.getD_eq_getElem?_getD, List.getElem?_map, List.getD_eq_getElem?_getD]
+  cases A[k]? <;> simp [toQ_zero]
+
+lemma diffs_toQ (A B : List ZPoint) (L : List (ℕ × ℕ)) :
+    diffs (A.map toQ) (B.map toQ) L = (diffsZ A B L).map toQ := by
+  simp only [diffs, diffsZ, List.map_map]
+  congr 1; funext ab
+  simp only [Function.comp, getD_map_toQ, toQ]
+  push_cast; ext <;> simp only <;> ring
+
+def suppZAux (a b init : ℤ) : List ZPoint → ℤ
+  | [] => init
+  | v :: V => max (a * v.1 + b * v.2) (suppZAux a b init V)
+
+def suppZ (V : List ZPoint) (a b : ℤ) : ℤ :=
+  suppZAux a b (a * (V.headD (0, 0)).1 + b * (V.headD (0, 0)).2) V
+
+lemma le_suppZAux (a b init : ℤ) : ∀ (V : List ZPoint), ∀ v ∈ V, a * v.1 + b * v.2 ≤ suppZAux a b init V
+  | [], v, h => absurd h List.not_mem_nil
+  | w :: V, v, h => by
+    simp only [suppZAux]
+    rcases List.mem_cons.mp h with rfl | h
+    · exact le_max_left _ _
+    · exact le_trans (le_suppZAux a b init V v h) (le_max_right _ _)
+
+lemma le_suppZ {V : List ZPoint} {a b : ℤ} {v : ZPoint} (h : v ∈ V) : a * v.1 + b * v.2 ≤ suppZ V a b :=
+  le_suppZAux a b _ V v h
+
+/-- A linear bound at the integer vertices holds on the hull of their images. -/
+lemma hull_supp {V : List ZPoint} (a b : ℤ) {x : Point} (hx : x ∈ convexHull ℝ (vpts (V.map toQ))) :
+    ((a : ℝ) / gridG) * x.1 + ((b : ℝ) / gridG) * x.2 ≤ (suppZ V a b : ℝ) / ((gridG : ℝ) * gridG) := by
+  have hG : (0 : ℝ) < gridG := by norm_num [gridG]
+  refine hull_contains (g := ⟨(a : ℚ) / gridG, (b : ℚ) / gridG, (suppZ V a b : ℚ) / ((gridG : ℚ) * gridG)⟩)
+    (fun v hv => ?_) hx |> fun h => by simpa [Halfplane.contains] using h
+  obtain ⟨w, hw, rfl⟩ := List.mem_map.mp hv
+  have := le_suppZ (a := a) (b := b) hw
+  simp only [Halfplane.contains, realPoint, toQ]
+  push_cast
+  rw [show (a : ℝ) / gridG * ((w.1 : ℝ) / gridG) + (b : ℝ) / gridG * ((w.2 : ℝ) / gridG)
+      = ((a * w.1 + b * w.2 : ℤ) : ℝ) / ((gridG : ℝ) * gridG) by push_cast; field_simp]
+  gcongr
+
+/-- The Minkowski condition in integer arithmetic. -/
+def minkZ (Qi Qj : List ZPoint) (L : List (ℕ × ℕ)) (R D : List ZPoint) : Bool :=
+  (L.all fun ab => decide (ab.1 < Qj.length) && decide (ab.2 < Qi.length)) &&
+    convexZF (diffsZ Qj Qi L) &&
+    (edgesZ (diffsZ Qj Qi L)).all fun e => decide (suppZ R e.1 e.2.1 + suppZ D (-e.1) (-e.2.1) ≤ e.2.2)
+
+/-- **Soundness of the integer Minkowski condition.** -/
+theorem minkZ_sound {Qi Qj : List ZPoint} {L : List (ℕ × ℕ)} {R D : List ZPoint}
+    (h : minkZ Qi Qj L R D = true) {c d : Point}
+    (hc : c ∈ convexHull ℝ (vpts (R.map toQ))) (hd : d ∈ convexHull ℝ (vpts (D.map toQ))) :
+    ∃ a ∈ convexHull ℝ (vpts (Qj.map toQ)), ∃ b ∈ convexHull ℝ (vpts (Qi.map toQ)), c - d = a - b := by
+  simp only [minkZ, Bool.and_eq_true, List.all_eq_true, decide_eq_true_eq] at h
+  obtain ⟨⟨hidx, hcv⟩, hedge⟩ := h
+  have hz : c - d ∈ (edgesF ((diffsZ Qj Qi L).map toQ)).carrier := by
+    rw [edgesF_toQ]
+    intro g hg
+    obtain ⟨e, he, rfl⟩ := List.mem_map.mp hg
+    have h1 := hull_supp e.1 e.2.1 hc
+    have h2 := hull_supp (-e.1) (-e.2.1) hd
+    have h3 : ((suppZ R e.1 e.2.1 + suppZ D (-e.1) (-e.2.1) : ℤ) : ℝ) ≤ e.2.2 := by
+      exact_mod_cast hedge e he
+    have hG : (0 : ℝ) < gridG := by norm_num [gridG]
+    simp only [Halfplane.contains, scaleH, Prod.fst_sub, Prod.snd_sub]
+    push_cast at h1 h2 h3 ⊢
+    have h4 : ((suppZ R e.1 e.2.1 : ℝ) + suppZ D (-e.1) (-e.2.1)) / ((gridG : ℝ) * gridG)
+        ≤ (e.2.2 : ℝ) / ((gridG : ℝ) * gridG) := by gcongr
+    rw [add_div] at h4
+    have e1 : (e.1 : ℝ) / gridG * (c.1 - d.1) + (e.2.1 : ℝ) / gridG * (c.2 - d.2)
+        = ((e.1 : ℝ) / gridG * c.1 + (e.2.1 : ℝ) / gridG * c.2)
+          + (-(e.1 : ℝ) / gridG * d.1 + -(e.2.1 : ℝ) / gridG * d.2) := by ring
+    rw [e1]; linarith
+  have hhull := edgesF_subset_hull (convexZF_imp hcv) hz
+  rw [← diffs_toQ] at hhull
+  exact diffs_hull (fun ab hab => by have := hidx ab hab; simpa using this) hhull
+
 end
 end ElevenSquare.Tasks.T07.Ext
