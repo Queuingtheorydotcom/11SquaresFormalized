@@ -86,7 +86,7 @@ theorem far15_scaled_box_collision (q : UnitSquare) (pField : Point)
       simpa using hdsHi
     have hright : dx*c-d*s ≤ dx*c := by
       simpa only [sub_eq_add_neg, add_zero] using
-        (add_le_add_left (neg_nonpos.mpr hds0) (dx*c))
+        (add_le_add le_rfl (neg_nonpos.mpr hds0))
     refine ⟨lt_of_lt_of_le hlo hbound, lt_of_le_of_lt hright ?_⟩
     exact lt_of_le_of_lt hxcHi (by linarith [fieldScale_gt_983])
   have hy : |dx*(-s)-d*c| < fieldScale/2 := by

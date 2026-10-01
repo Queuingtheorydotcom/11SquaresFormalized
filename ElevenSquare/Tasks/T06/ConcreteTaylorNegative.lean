@@ -38,7 +38,7 @@ theorem concrete_feature_linear_bound (q : Owner → UnitSquare)
         |h (coordinate f.owner 2)*dot (featureCenterDifference q f) (perp (featureNormal q f))| +
         |(h (coordinate f.other 2)-h (coordinate f.owner 2))*
           dot (perp (cornerOffset q f.other v)) (featureNormal q f)| :=
-      (abs_add_le _ _).trans (add_le_add_right (abs_add_le _ _) _)
+      (abs_add_le _ _).trans (add_le_add (abs_add_le _ _) le_rfl)
     _ ≤ _ := by
       simp only [abs_mul]
       exact add_le_add (add_le_add hv' hd) hc

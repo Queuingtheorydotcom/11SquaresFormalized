@@ -177,7 +177,7 @@ theorem far15_scaled_row239_collision (q : UnitSquare) (pField : Point)
       exact le_trans h₁ h₂
     have hright : dx*c-d*s ≤ dx*c := by
       simpa only [sub_eq_add_neg, add_zero] using
-        (add_le_add_left (neg_nonpos.mpr hds0) (dx*c))
+        (add_le_add le_rfl (neg_nonpos.mpr hds0))
     refine ⟨lt_of_lt_of_le hlo hbound, lt_of_le_of_lt hright ?_⟩
     exact lt_of_le_of_lt hdxCHi (by linarith [fieldScale_gt_985])
   have hy : |dx*(-s)-d*c| < fieldScale/2 := by

@@ -1,4 +1,5 @@
 import ElevenSquare.Pending.S08_Packet
+import Mathlib.Algebra.BigOperators.Field
 import Mathlib.Data.Rat.BigOperators
 import Mathlib.Tactic.FinCases
 import Mathlib.Tactic.FieldSimp
@@ -48,7 +49,7 @@ theorem weighted_residual_error_bound
     _ ≤ |∑ i, w i * (A i k - B i k)| + |(∑ i, w i * B i k) - v k| :=
       abs_add_le _ _
     _ ≤ (∑ i, w i * D i k) + |(∑ i, w i * B i k) - v k| :=
-      add_le_add_right herr _
+      add_le_add herr le_rfl
     _ = |(∑ i, w i * B i k) - v k| + ∑ i, w i * D i k := add_comm _ _
 
 /-- Exact rational arithmetic plus proved entry enclosures implies the real
