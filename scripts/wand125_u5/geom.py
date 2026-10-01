@@ -163,7 +163,7 @@ def _round(x, grid):
     return F(round(x * grid), grid)
 
 
-def round_in(Q, grid=10 ** 12, shrink=F(1, 10 ** 9)):
+def round_in(Q, grid=10 ** 20, shrink=F(1, 10 ** 18)):
     """A strictly convex polygon with small rationals inside hull(Q)."""
     H = hull(Q)
     hs = halfplanes(H)
@@ -177,7 +177,7 @@ def round_in(Q, grid=10 ** 12, shrink=F(1, 10 ** 9)):
         shrink *= 4
 
 
-def round_out(V, grid=10 ** 12, grow=F(1, 10 ** 9)):
+def round_out(V, grid=10 ** 20, grow=F(1, 10 ** 18)):
     """A strictly convex polygon with small rationals containing hull(V)."""
     H = hull(V)
     c = (sum(p[0] for p in H) / len(H), sum(p[1] for p in H) / len(H))
@@ -206,3 +206,28 @@ def mink_labels(Qj, Qi):
         for b, r in enumerate(Qi):
             lab.setdefault((p[0] - r[0], p[1] - r[1]), (a, b))
     return [lab[v] for v in hull(list(lab))]
+
+
+def mink_slack(Qj, Qi, R, D):
+    """Least slack of the edges of hull(Qj - Qi) over the differences R - D."""
+    M = hull([(a[0] - b[0], a[1] - b[1]) for a in Qj for b in Qi])
+    out = None
+    for (a, b, c) in halfplanes(M):
+        n = (a * a + b * b) ** 0.5
+        s = (c - max(a * p[0] + b * p[1] for p in R) - max(-a * p[0] - b * p[1] for p in D)) / F(n)
+        out = s if out is None else min(out, s)
+    return out
+
+
+def round_core(Q, ok, grid=10 ** 20):
+    """A slightly larger grid polygon around hull(Q) whose vertices all pass `ok`
+    (the cores only need to stay in the open squares), else `round_in`.  Growing
+    the cores gives the collision checks a margin where the exact data touch."""
+    H = hull(Q)
+    c = (sum(p[0] for p in H) / len(H), sum(p[1] for p in H) / len(H))
+    for grow in (F(1, 10 ** 16), F(1, 10 ** 17), F(1, 10 ** 18)):
+        W = hull([(_round(c[0] + (1 + grow) * (p[0] - c[0]), grid),
+                   _round(c[1] + (1 + grow) * (p[1] - c[1]), grid)) for p in H])
+        if len(W) >= 3 and all(contains(h, v) for h in halfplanes(W) for v in H) and all(ok(v) for v in W):
+            return W
+    return round_in(Q, grid)

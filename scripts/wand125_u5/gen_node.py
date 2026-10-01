@@ -10,7 +10,7 @@ and its half-angle constraints applied to the interval (`clipAngle*`).
 """
 import json, sys, os
 from fractions import Fraction as F
-from geom import hull, halfplanes, contains, vertices, implies_mu, empty_mu, round_in, round_out, mink_ok, mink_labels
+from geom import hull, halfplanes, contains, vertices, implies_mu, empty_mu, round_in, round_out, round_core, mink_ok, mink_labels
 from gen_step import (OWNER, cs, envelope, supportB, coreVB, wallB, wall_halves, Region,
                       minkowski_regions, centroid, q, qp, half, lst)
 
@@ -141,7 +141,7 @@ def tree_lean(t):
     return f"(.split {half(t[1])}\n    {tree_lean(t[2])}\n    {tree_lean(t[3])})"
 
 
-GRID = 10 ** 12
+GRID = 10 ** 20
 
 
 def zp(p):
@@ -209,7 +209,7 @@ def main(node_path, parent_path, k, out_path, modname='Gen'):
                     pieces.append(dict(a=a, b=b, cuts=cuts, h=h, core=[], dverts=[], dmus=[empty_mu(poly)]))
                     continue
                 assert len(V) >= 3
-                core = round_in([N.phys(v) for v in r['core']])
+                core = round_core([N.phys(v) for v in r['core']], lambda v: coreVB(a, b, v))
                 assert all(coreVB(a, b, v) for v in core)
                 Dv = round_out(V)
                 dmus = [implies_mu(poly, g, V) for g in halfplanes(Dv)]
@@ -233,7 +233,7 @@ def main(node_path, parent_path, k, out_path, modname='Gen'):
             assert wallB(h, a, b)
             core = hull([N.phys(v) for v in r['core_vertices']])
             assert all(coreVB(a, b, v) for v in core)
-            ccore = round_in(core) if core else []
+            ccore = round_core(core, lambda v: coreVB(a, b, v)) if core else []
             assert all(coreVB(a, b, v) for v in ccore)
             regions, regs = [], []
             for j, K in owned.items():

@@ -343,7 +343,7 @@ arithmetic; `toQ` carries them back to the rational statements above. -/
 
 abbrev ZPoint := ℤ × ℤ
 
-def gridG : ℕ := 10 ^ 12
+def gridG : ℕ := 10 ^ 20
 
 def toQ (p : ZPoint) : QPoint := ((p.1 : ℚ) / gridG, (p.2 : ℚ) / gridG)
 
