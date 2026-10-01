@@ -57,6 +57,12 @@ the pinned toolchain. `ElevenSquare/Interop/Wand125/` supplies the connection:
   initialized-terminal-trace contract, as the native completed groups do.
 - `Coverage.lean` and `Coverage/`: check the concrete 247 new cases and their disjointness from
   the old completed groups.
+- `Families.lean` and `Families/CaseOrder.lean`: check that the recorded case tuples equal
+  upstream `maskAt` (one kernel check per 64-row chunk), that the prior, returned, and
+  candidate arrays equal upstream `priorIdx`, `returnedIdx`, and `candIdx`, and that the 27
+  upstream generic cases are baseline cases. They turn any upstream family statement
+  `∀ i ∈ …, CaseExcluded (maskAt i)` into the `S06` trace contract. Every theorem there is
+  conditional on that statement; no admission site changes.
 
 The T01 dispatcher tries the imported certificate before the existing groups
 and residual plan obligations. Public packing definitions and theorem statements
