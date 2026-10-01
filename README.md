@@ -17,6 +17,35 @@ unfinished. Global optimality, original public family obligations and final
 return are pending. Publication preserves merged proofs, `main`, earlier assets
 and live proof work. See [MISSING.md](MISSING.md) and [T03_PROGRESS.md](T03_PROGRESS.md).
 
+## Two audited fixed-claim tree pilots
+
+Both new pilots prove the same original coverage claim on the original pinned
+Lean 4.10.0-rc2 checker, with only `propext`, `Classical.choice` and `Quot.sound`.
+The [actual timing and audit/source checkpoint](verification/t03-wand125-pruned-coarse-tree-pilot-actual-comparison-20261001.json)
+and [complete frozen source snapshot](verification/source-checkpoints/wand125-pruned-coarse-tree-comparison-20261001)
+publish **20 modules /702,578 exact source bytes**, both tasks, byte-identical
+actual compile CHECK and axiom-audit CHECK/logs, genuine source/object/receipt
+bindings and historical preparation/proposal records. Publication independently
+verified every immutable transport member, complete source key, object and receipt.
+
+| Version of one coverage subtree | Nodes | Compile seconds | Axiom audit seconds | Compile + audit seconds |
+| --- | ---: | ---: | ---: | ---: |
+| Earlier direct pilot | 2,947 | 58.94 | 31.79 | 90.73 |
+| Pruned spatial pilot | 1,295 | 31.76 | 26.89 | 58.65 |
+| Coarse parent-leaf pilot | 823 | 27.83 | 30.47 | 58.30 |
+
+The spatial pilot's observed compilation time is about **46% lower** than the
+earlier direct pilot's. The coarse candidate compiles faster again, but its
+observed compile-plus-audit total is only **0.6% lower than the spatial pilot**.
+These are timings for one fixed coverage claim, with no whole-proof or broad
+speedup inferred. Python preparation/proposal records retain their historical
+unverified labels; actual kernel checks establish the two pilot claims separately.
+
+No new full case is added: upstream inventory remains **172 supplied proofs**,
+only1465 absent, and original-project integration remains **167/173**. Pending
+pruned/rebound component variants are excluded. No Lean jobs, workers, queues,
+canonical sources, `main` or prior release assets changed for publication.
+
 ## Previous source and audit checkpoint
 
 The following preserves its earlier166-count snapshot; accepted1849 above

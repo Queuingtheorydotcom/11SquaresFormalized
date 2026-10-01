@@ -1,0 +1,15 @@
+{
+  "enabled": true,
+  "reason": "Portable sequential replay of two actually accepted tree-comparison probes.",
+  "max_concurrent_lean_checks": 1,
+  "lean_threads": 1,
+  "lean_memory_mb": 8192,
+  "cpu_seconds": 1800,
+  "wall_seconds": 2100,
+  "nice_increment": 10,
+  "full_builds_disabled": true,
+  "large_finite_checks_deferred": false,
+  "spawn_subagents": false,
+  "lean_thread_stack_kb": 32768,
+  "lean_main_stack_kb": 65536
+}

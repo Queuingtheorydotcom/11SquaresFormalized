@@ -1,0 +1,29 @@
+{
+  "status": "SAME_ORIGINAL_COVERAGE_CLAIM_ACTUALLY_ACCEPTED_WITH_TESTED_COARSER_PARENT_LEAVES",
+  "utc": "2026-10-01T19:42:17.702004+00:00",
+  "coverage_claim": "CovF G.Q G.M G.R (hpsC 9) opts6 0 16651963104 0 16651963104 0 2097152",
+  "original_nodes": 2947,
+  "spatial_nodes": 1295,
+  "coarse_nodes": 823,
+  "successful_parent_merges": {
+    "Y": 132,
+    "X": 102
+  },
+  "direct_compile_seconds": 58.94,
+  "spatial_compile_seconds": 31.76,
+  "coarse_compile_seconds": 27.83,
+  "coarse_actual_audit_seconds": 30.47,
+  "compile_reduction_from_spatial_fraction": 0.12374055415617136,
+  "total_compile_plus_audit_reduction_from_spatial_fraction": 0.0059676044330777556,
+  "coarse_compile_CHECK_sha256": "90c01d7b8c4fd3837eb1b3bee37dd6f0f1025119f04e919a6ed1354ac0c54d8d",
+  "actual_audit_checkpoint_sha256": "b05840e797df84ffec33d9208338dff97d9ae497c2069e62e5187564e7b0ce09",
+  "proposal_sha256": "80dc37e4bdd941fe7683efef79d73e82f52f2858938498d9e80c6d47b648128e",
+  "prior_comparison_sha256": "5aaa6b056abcb279a7645f7610d593c9e7bf4327cf1a1788f47e4f8dd2f5df1e",
+  "scope": "One actual fixed-claim kernel pilot; total compile-plus-audit improvement under1%; no whole-proof speedup inferred.",
+  "global_compiler_cap": 4,
+  "original_statements_compiler_checker_unchanged": true,
+  "full_case_increment": 0,
+  "original_local_record_sha256": "0b5dc3fe8cca37dc87f4b2e8047e3c36b81fbda9826bc1f5108f6ab08888804e",
+  "historical_preparation_or_comparison_status_preserved": true,
+  "actual_kernel_acceptance_recorded_separately": true
+}

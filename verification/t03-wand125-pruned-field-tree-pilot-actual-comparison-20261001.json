@@ -1,0 +1,21 @@
+{
+  "status": "SAME_ORIGINAL_COVERAGE_CLAIM_ACTUALLY_ACCEPTED_WITH_PRUNED_SPATIAL_BRANCHES",
+  "utc": "2026-10-01T19:00:56.626311+00:00",
+  "coverage_claim": "CovF G.Q G.M G.R (hpsC 9) opts6 0 16651963104 0 16651963104 0 2097152",
+  "original_tree_nodes": 2947,
+  "pruned_tree_nodes": 1295,
+  "direct_compile_seconds": 58.94,
+  "pruned_compile_seconds": 31.76,
+  "measured_compile_time_reduction_fraction": 0.46114692908042076,
+  "pruned_actual_audit_seconds": 26.89,
+  "actual_audit_checkpoint_sha256": "211b0a5c2325f89b9259bce918686767636d8b53620c924f57e4ed27eb7ed035",
+  "pruned_compile_CHECK_sha256": "44a3fc5e69aeee2eabbbbf85326ec7ee65729ef4f0eef0580d634fde4640c724",
+  "original_source_sha256": "325fd5bd0f4409ec0d20dbb61833a4a6a8723c4ef349f934a72b1a8cfbb78000",
+  "pruned_source_sha256": "b1dcf4052d45d0400455f8af5f87240c5f23083e04392d63889794813c089fa9",
+  "scope": "One previously audited coverage subtree; no whole-project speedup claimed.",
+  "parent_kernel_checker_and_public_statements_unchanged": true,
+  "full_case_increment": 0,
+  "original_local_record_sha256": "5aaa6b056abcb279a7645f7610d593c9e7bf4327cf1a1788f47e4f8dd2f5df1e",
+  "historical_preparation_or_comparison_status_preserved": true,
+  "actual_kernel_acceptance_recorded_separately": true
+}

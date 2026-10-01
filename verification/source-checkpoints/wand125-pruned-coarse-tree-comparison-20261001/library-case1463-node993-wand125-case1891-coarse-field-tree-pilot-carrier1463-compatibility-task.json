@@ -1,0 +1,9 @@
+{
+  "id": "T03_compact_full_trace",
+  "modules": [
+    "ElevenSquare.Tasks.T03.Wand125.Pilots.C1891CoarseCov6_4"
+  ],
+  "axiom_targets": [
+    "SquarePacking.S11Opt.Split.U2R.C1891.T03FieldTreePilotCoarse.coverage"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "status": "EXACT_INTEGER_COARSER_LEAF_CANDIDATE_NOT_LEAN_VERIFIED",
+  "original_nodes": 2947,
+  "spatial_nodes": 1295,
+  "coarse_nodes": 823,
+  "successful_parent_merges": {
+    "Y": 132,
+    "X": 102
+  },
+  "original_and_spatial_numeric_checks": true,
+  "coarse_numeric_check": true,
+  "primitive_negative_control": true,
+  "input_sources": {
+    "project/ElevenSquare/Tasks/T03/Wand125/Pilots/C1891DecodedCov6_4.lean": "325fd5bd0f4409ec0d20dbb61833a4a6a8723c4ef349f934a72b1a8cfbb78000",
+    "project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Shared/Grid.lean": "9649f75aee58ef8e67b2ccc35ef256b2f6f5fc7dc8a3ceb3a93c6b1148a6ad54",
+    "project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Split/U2R/C1891/Data.lean": "2bb50d33b5a2785486d41681ec4e26e00c3f0a24db90c3e07f6cc2fa8c31076c",
+    "project/ElevenSquare/Tasks/T03/Wand125/Upstream/BoxTree.lean": "a3efd7c2c5ff11b7f15175e291435a4cb9d64399cb2eff0096970931531ce2b2",
+    "project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/FieldTree.lean": "49943a21338351ede71b827ee92a2f43c90713c94fba3f6f48aafe5b1ccf36e5",
+    "project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Split/U2P/Rules.lean": "f4db9b580aaa40b6ebb99c80f6a4bc4e13ac45051852cd3bfd0f9fcfe0ef5487"
+  },
+  "proof_workers_started": 0,
+  "full_case_acceptances": 0,
+  "module": "ElevenSquare.Tasks.T03.Wand125.Pilots.C1891CoarseCov6_4",
+  "source_sha256": "329fbf7054da720b6e52a54e58aea137db938cc1e0e005ea9dd24b1ed4d0175f",
+  "exact_original_coverage_statement_preserved": true,
+  "requires_original_kernel_check": true,
+  "original_local_record_sha256": "80dc37e4bdd941fe7683efef79d73e82f52f2858938498d9e80c6d47b648128e",
+  "historical_preparation_or_comparison_status_preserved": true,
+  "actual_kernel_acceptance_recorded_separately": true,
+  "full_case_increment": 0
+}

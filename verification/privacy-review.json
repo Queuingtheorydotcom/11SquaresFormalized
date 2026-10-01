@@ -442,5 +442,18 @@
     "canonical_source_or_worker_changes": 0,
     "personal_information_findings": [],
     "server_digests_and_sizes_match_all5_assets": true
+  },
+  "pruned_coarse_tree_optimization_review": {
+    "source_modules": 20,
+    "source_bytes": 702578,
+    "actual_source_transport_complete_closure_genuine_receipt_object_bindings_verified": true,
+    "actual_compile_CHECK_and_target_audit_CHECK_log_bytes_verified": true,
+    "neutral_serial_resource_profile": true,
+    "historical_preparation_proposal_status_labels_preserved": true,
+    "pending_components_private_paths_transports_objects_receipts_caches_credentials_included": false,
+    "personal_information_findings": [],
+    "full_case_increment": 0,
+    "Lean_jobs_or_process_controls": 0,
+    "new_assets": 0
   }
 }

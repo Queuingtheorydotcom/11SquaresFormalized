@@ -1,0 +1,67 @@
+{
+  "status": "TWO_SAME_CLAIM_PRUNED_AND_COARSE_PILOTS_ACTUALLY_AUDITED_STD3",
+  "utc": "2026-10-01T19:49:00.748898+00:00",
+  "scope": "One 2947-node original coverage subtree; no whole-project speedup or additional full-case acceptance inferred.",
+  "coverage_claim": "CovF G.Q G.M G.R (hpsC 9) opts6 0 16651963104 0 16651963104 0 2097152",
+  "original_tree_nodes": 2947,
+  "pruned_tree_nodes": 1295,
+  "coarse_tree_nodes": 823,
+  "direct_compile_seconds": 58.94,
+  "results": {
+    "pruned": {
+      "actual_source_and_object_audit_record_sha256": "211b0a5c2325f89b9259bce918686767636d8b53620c924f57e4ed27eb7ed035",
+      "compile_seconds": 31.76,
+      "audit_seconds": 26.89,
+      "actual_source_and_object_audit_record": "verification/t03-wand125-case1891-pruned-tree-pilot-actual-audit-checkpoint-20261001.json",
+      "published_record_sha256": "c524471ed2592a753dbf811af2432c42e42ef37fe58814987e08dd3701db23b6"
+    },
+    "coarse": {
+      "actual_source_and_object_audit_record_sha256": "b05840e797df84ffec33d9208338dff97d9ae497c2069e62e5187564e7b0ce09",
+      "compile_seconds": 27.83,
+      "audit_seconds": 30.47,
+      "actual_source_and_object_audit_record": "verification/t03-wand125-case1891-coarse-tree-pilot-actual-audit-checkpoint-20261001.json",
+      "published_record_sha256": "f367dd80359256dc140690628ed5cecc2b3fb8f93523241f8776ae45ecf4adaf"
+    }
+  },
+  "full_case_increment": 0,
+  "original_project_full_integration_audits": 167,
+  "upstream_supplied_case_proof_archives": 172,
+  "upstream_only_missing_case": 1465,
+  "pruned_compile_reduction_from_direct_fraction": 0.46114692908042076,
+  "coarse_compile_reduction_from_pruned_fraction": 0.12374055415617136,
+  "coarse_total_compile_plus_audit_reduction_from_pruned_fraction": 0.0059676044330777556,
+  "original_comparison_records_sha256": {
+    "pruned": "5aaa6b056abcb279a7645f7610d593c9e7bf4327cf1a1788f47e4f8dd2f5df1e",
+    "coarse": "0b5dc3fe8cca37dc87f4b2e8047e3c36b81fbda9826bc1f5108f6ab08888804e"
+  },
+  "pending_pruned_or_rebound_component_variants_included": false,
+  "original_comparison_record_sha256": "0b5dc3fe8cca37dc87f4b2e8047e3c36b81fbda9826bc1f5108f6ab08888804e",
+  "source_checkpoint": "verification/source-checkpoints/wand125-pruned-coarse-tree-comparison-20261001",
+  "source_modules": 20,
+  "source_bytes": 702578,
+  "both_actual_compile_CHECK_and_target_audit_CHECK_bytes_verified": true,
+  "complete_source_keys_genuine_object_receipt_bindings_independently_checked": true,
+  "finite_scope_only": true,
+  "publication_Lean_jobs_or_process_controls": 0,
+  "historical_provenance": [
+    {
+      "path": "verification/t03-wand125-pruned-field-tree-pilot-preparation-20261001.json",
+      "original_local_record_sha256": "2261bbe1b205f4a0f9a8cc6f57faa066489952873264d018544d825567db14e6"
+    },
+    {
+      "path": "verification/t03-wand125-coarse-field-tree-pilot-proposal-20261001.json",
+      "original_local_record_sha256": "80dc37e4bdd941fe7683efef79d73e82f52f2858938498d9e80c6d47b648128e"
+    },
+    {
+      "path": "verification/t03-wand125-pruned-field-tree-pilot-actual-comparison-20261001.json",
+      "original_local_record_sha256": "5aaa6b056abcb279a7645f7610d593c9e7bf4327cf1a1788f47e4f8dd2f5df1e"
+    },
+    {
+      "path": "verification/t03-wand125-coarse-field-tree-pilot-actual-comparison-20261001.json",
+      "original_local_record_sha256": "0b5dc3fe8cca37dc87f4b2e8047e3c36b81fbda9826bc1f5108f6ab08888804e"
+    }
+  ],
+  "same_original_coverage_claim_in_both_actual_comparisons": true,
+  "pruned_compile_plus_audit_seconds": 58.650000000000006,
+  "coarse_compile_plus_audit_seconds": 58.3
+}

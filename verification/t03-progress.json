@@ -1,5 +1,5 @@
 {
-  "status": "UPSTREAM172_SUPPLIED_PROOFS_AND167_ORIGINAL_FULL_INTEGRATION_AUDITS_PUBLISHED",
+  "status": "UPSTREAM172_SUPPLIED_PROOFS167_ORIGINAL_INTEGRATIONS_AND_TWO_AUDITED_TREE_OPTIMIZATION_PILOTS_PUBLISHED",
   "snapshot_date": "2026-09-30",
   "meaning": "Independent returned compiler audits. This is not a fresh combined replay of the GitHub assembly.",
   "lean_version": "4.10.0-rc2",
@@ -2988,5 +2988,52 @@
     "canonical_sources_queues_workers_main_or_prior_assets_changed_for_publication": false,
     "publication_Lean_jobs_or_process_controls": 0,
     "fresh_merged_replay_original_public_family_global_optimality_final_return_complete": false
+  },
+  "latest_audited_pruned_coarse_tree_optimization_checkpoint": {
+    "status": "TWO_PILOT_TARGETS_ACTUALLY_AUDITED_SOURCE_AND_OBJECT_BOUND",
+    "record": "verification/t03-wand125-pruned-coarse-tree-pilot-actual-comparison-20261001.json",
+    "source_checkpoint": "verification/source-checkpoints/wand125-pruned-coarse-tree-comparison-20261001",
+    "source_modules": 20,
+    "source_bytes": 702578,
+    "original_tree_nodes": 2947,
+    "pruned_tree_nodes": 1295,
+    "coarse_tree_nodes": 823,
+    "direct_compile_seconds": 58.94,
+    "pruned_compile_seconds": 31.76,
+    "pruned_audit_seconds": 26.89,
+    "coarse_compile_seconds": 27.83,
+    "coarse_audit_seconds": 30.47,
+    "pruned_compile_plus_audit_seconds": 58.65,
+    "coarse_compile_plus_audit_seconds": 58.3,
+    "coarse_total_reduction_from_pruned_fraction": 0.0059676044330777556,
+    "measurement_scope": "One fixed coverage claim; no whole-proof or broad speedup inferred.",
+    "actual_target_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "full_case_increment": 0,
+    "accepted_original_integration_count_unchanged": 167,
+    "pending_pruned_or_rebound_component_variants_included": false,
+    "historical_provenance": [
+      {
+        "path": "verification/t03-wand125-pruned-field-tree-pilot-preparation-20261001.json",
+        "original_local_record_sha256": "2261bbe1b205f4a0f9a8cc6f57faa066489952873264d018544d825567db14e6"
+      },
+      {
+        "path": "verification/t03-wand125-coarse-field-tree-pilot-proposal-20261001.json",
+        "original_local_record_sha256": "80dc37e4bdd941fe7683efef79d73e82f52f2858938498d9e80c6d47b648128e"
+      },
+      {
+        "path": "verification/t03-wand125-pruned-field-tree-pilot-actual-comparison-20261001.json",
+        "original_local_record_sha256": "5aaa6b056abcb279a7645f7610d593c9e7bf4327cf1a1788f47e4f8dd2f5df1e"
+      },
+      {
+        "path": "verification/t03-wand125-coarse-field-tree-pilot-actual-comparison-20261001.json",
+        "original_local_record_sha256": "0b5dc3fe8cca37dc87f4b2e8047e3c36b81fbda9826bc1f5108f6ab08888804e"
+      }
+    ],
+    "publication_Lean_jobs_or_queue_process_controls": 0,
+    "new_release_assets": 0
   }
 }
