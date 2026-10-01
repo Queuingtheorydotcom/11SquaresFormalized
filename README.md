@@ -2,6 +2,28 @@
 
 Upstream supplies **172 case-proof archives**; **case1465 is the sole missing case
 there**. The supplied proofs are being reused. The original-project full
+certificate integration audit log is a separate metric and now records **168/173**.
+
+**Case1463's exact original full certificate now passes** the pinned Lean
+4.10.0-rc2 checker and actual target audit in **47.36 seconds**, reporting only
+`propext`, `Classical.choice` and `Quot.sound`. Its [accepted audit/source bindings](verification/t03-wand125-case1463-full-original-audit-checkpoint-20261001.json)
+and [complete exact source release](https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/tag/t03-audited168-imported1463-20261001) include **687 modules
+/39,475,043 source bytes**, with the actual accepted `PrunedTrees`
+dependencies. Every source member, genuine source-closure key, receipt and
+compiler-object hash was verified. Other pending conversion sources are excluded.
+
+Supplied cases1373,1393,1464,1499 and local case1465 remain
+unfinished. Global optimality, original public family obligations and final
+return are pending. Publication preserves merged proofs, `main`, earlier assets
+and live proof work. See [MISSING.md](MISSING.md) and [T03_PROGRESS.md](T03_PROGRESS.md).
+
+## Previous source and audit checkpoint
+
+The following preserves its earlier167-count snapshot; accepted1463 above
+supersedes its earlier pending1463 integration status.
+
+Upstream supplies **172 case-proof archives**; **case1465 is the sole missing case
+there**. The supplied proofs are being reused. The original-project full
 certificate integration audit log is a separate metric and now records **167/173**.
 
 **Case1849's exact original full certificate now passes** the pinned Lean

@@ -42828,18 +42828,18 @@
     },
     {
       "path": "MISSING.md",
-      "bytes": 7284,
-      "sha256": "cc390f0fca9c90bec5147c96a0a2615288ede598a6ca2eac30780567bfe65698"
+      "bytes": 7312,
+      "sha256": "15c8f10d4c6e7d3fcee7459db37f5b78d2370c3c1b88f5f258a557d4dc3cf290"
     },
     {
       "path": "README.md",
-      "bytes": 27876,
-      "sha256": "651f8de0bc5c06bd42a95a3cedd8c2293aee67e476889b1a201a47bbe95a0404"
+      "bytes": 29307,
+      "sha256": "461993896ab73763803e85ca5d55e5e6b69264690ee2762c3824bbb4bccc5833"
     },
     {
       "path": "T03_PROGRESS.md",
-      "bytes": 102515,
-      "sha256": "32513eb82d200a52784f4d96f7dd6d6cd7ed900329da22a9ffb0d78c4a7221e6"
+      "bytes": 105010,
+      "sha256": "596e011c57c1e3c61683f2bab1b1038609fe26622361f19c0e47283b4deb2273"
     },
     {
       "path": "lake-manifest.json",
@@ -43098,8 +43098,8 @@
     },
     {
       "path": "verification/privacy-review.json",
-      "bytes": 21805,
-      "sha256": "37eacaa734af2944aa7078806b17b32f542050d1e22bc1fc5ba6b69dac4f502f"
+      "bytes": 22503,
+      "sha256": "51ebb79360ed71d5b85317209ca8c4c9e8e56e797688f92c4e891284a2049b4b"
     },
     {
       "path": "verification/source-check.json",
@@ -47628,8 +47628,8 @@
     },
     {
       "path": "verification/t03-progress.json",
-      "bytes": 117539,
-      "sha256": "e47eac199221aeefe31a45bfbaab74f77fed2675f12868bcf8ed7e9d881d11dc"
+      "bytes": 121633,
+      "sha256": "9ad95826089cff9b3b24f6ea4e51aeccabf64ac0c479a6d6f939691245b5f868"
     },
     {
       "path": "verification/t03-ready-archive-prefilter-checkpoint-20261001.json",
@@ -47665,6 +47665,26 @@
       "path": "verification/t03-wand125-case-mask-existing-opaque-seed-binding-reuse-20261001.json",
       "bytes": 6753,
       "sha256": "011c5b6d005999caa39313e95809d056604b75aa30331773616077dd1f56d337"
+    },
+    {
+      "path": "verification/t03-wand125-case1463-accepted-source-release-20261001.json",
+      "bytes": 3929,
+      "sha256": "b6d476a0b1bb2280fd5081fc831c9407c48cb546ebe800d1b1bf90907dd9e608"
+    },
+    {
+      "path": "verification/t03-wand125-case1463-full-original-audit-CHECK.json",
+      "bytes": 446,
+      "sha256": "16a49b3b4bf4cf787be2bd1aab52c2205c1388c554e5b25f49c33599356df5b1"
+    },
+    {
+      "path": "verification/t03-wand125-case1463-full-original-audit-checkpoint-20261001.json",
+      "bytes": 408137,
+      "sha256": "32796cde2462191d7e746787d9663fe78dcacfda847afe6ea0998ea0ae038d06"
+    },
+    {
+      "path": "verification/t03-wand125-case1463-full-original-audit.txt",
+      "bytes": 144,
+      "sha256": "7f0c506d9b9836ec1634a203b9ef794f2f6bf89845b1c359b9e0d78e59e0d29e"
     },
     {
       "path": "verification/t03-wand125-case1823-accepted-source-release-20261001.json",

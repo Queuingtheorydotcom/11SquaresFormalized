@@ -1,4 +1,42 @@
-# Supplied proofs and accepted original case1849
+# Supplied proofs and accepted original case1463
+
+Upstream supplies **172 case-proof archives**, with **only case1465 absent**.
+The original-project integration log now has **168/173** full certificate audits;
+these are separate metrics. Newly accepted case1463 reuses the supplied proof
+through the original geometry, mask and initialization contracts.
+
+The exact target `ElevenSquare.Pending.T03.Batch04.Case1463.Forward.Certificate.certificate_exists` passed the supplied original
+Lean 4.10.0-rc2 checker and actual full axiom audit in **47.36 seconds**, reporting
+only `propext`, `Classical.choice` and `Quot.sound`. Its actual accepted root is
+`ElevenSquare.Tasks.T03.Wand125.PrunedTrees.C1463.Certificate`. The [accepted checkpoint](verification/t03-wand125-case1463-full-original-audit-checkpoint-20261001.json)
+records actual exit0/PASS, immutable transport SHA, byte-identical CHECK/log
+hashes and **all 687 exact source dependencies**, genuine source-closure
+keys, receipts and independently read compiler-object hashes. Publication starts
+no Lean jobs and changes no proof sources, queues or workers.
+
+The [standalone source release](https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/tag/t03-audited168-imported1463-20261001) contains **39,475,043 exact source
+bytes**, including **33 actually accepted PrunedTrees modules**. Other pending
+conversions are excluded. Every finished member is hash-verified, with no
+source-version conflicts or changed shared versions relative to the earlier
+prepared13 ZIP. The **6,082,761-byte ZIP** has SHA-256
+`0ca8711430aa018f0209192fcc232616ec8dd79977033ead606644068b07110c`.
+[Server-verified asset bindings](verification/t03-wand125-case1463-accepted-source-release-20261001.json)
+record all five new asset sizes/digests. Earlier snapshots and assets are frozen.
+
+Exact source, task, environment and supplied checker bytes are preserved. Only
+private metadata is omitted and the resource profile is neutral serial. No
+private archives, objects, receipts, caches, credentials or machine paths are
+distributed. Keep the snapshot separate from stronger merged interfaces and
+follow its serial replay instructions. `main` is unchanged.
+
+Supplied cases1373,1393,1464,1499 plus local case1465 remain
+unfinished. Fresh merged replay, original public family audits, global optimality
+and final return are pending.
+
+## Previous source and audit checkpoint
+
+The following preserves the earlier167-count snapshot. Accepted1463 above
+supersedes its earlier pending1463 integration status.
 
 Upstream supplies **172 case-proof archives**, with **only case1465 absent**.
 The original-project integration log now has **167/173** full certificate audits;
