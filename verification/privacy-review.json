@@ -306,5 +306,19 @@
     "current_pending_checker_sources_excluded": true,
     "new_release_assets": 0,
     "publication_Lean_workers_queues_or_process_controls": 0
+  },
+  "pinned_cover_trees_review": {
+    "actual_audit_CHECK_wrapper_execution_hashes_verified": true,
+    "all_transport_member_hashes_and_source_closure_keys_verified": true,
+    "exact9module_source_snapshot_isolated_from_main_library": true,
+    "unchanged_source_task_environment_and_checker_bytes": true,
+    "private_resource_configuration_replaced_with_neutral_profile": true,
+    "private_TASK_runtime_and_archive_paths_omitted": true,
+    "personal_information_findings": [],
+    "unaccepted_Majority_and_shared_checker_sources_excluded": true,
+    "imported_case_acceptance_claimed": false,
+    "all13_availability_record_distinguished_from_kernel_audit": true,
+    "new_release_assets": 0,
+    "publication_Lean_workers_queues_or_process_controls": 0
   }
 }

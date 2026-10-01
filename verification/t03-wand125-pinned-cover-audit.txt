@@ -1,0 +1,2 @@
+'SquarePacking.PTree.nodup_of_chainB' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SquarePacking.d4_reduction' depends on axioms: [propext, Classical.choice, Quot.sound]

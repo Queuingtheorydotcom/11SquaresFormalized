@@ -1,0 +1,152 @@
+{
+  "utc": "2026-10-01T14:30:31.296187+00:00",
+  "status": "ALL_13_SUPPLIED_PENDING_CASE_ARCHIVES_AND_MEMBERS_SOURCE_VERIFIED",
+  "repository": "wand125/n11-optimality-lean",
+  "commit": "a8b51d3e0682beb1bf911048bdc8e7fa62329124",
+  "cases": [
+    {
+      "case": 1373,
+      "archive_sha256": "87d0b37ab53fdd5aa03f61a6104edfb91545004ac49a9b97f2ec04f63bca25d1",
+      "source_members": 73,
+      "uncompressed_bytes": 60985141,
+      "largest_source_bytes": 1516040,
+      "archive_name": "n11-u2r-C1373.tar.xz",
+      "archive_url": "https://github.com/wand125/n11-optimality-lean/releases/download/n11-certs-v1/n11-u2r-C1373.tar.xz",
+      "archive_bytes": 26154144
+    },
+    {
+      "case": 1393,
+      "archive_sha256": "648bc4ffd0739608780360aa65babd7b1e615a2b1697eb169580f7068e823adc",
+      "source_members": 65,
+      "uncompressed_bytes": 58179153,
+      "largest_source_bytes": 1381483,
+      "archive_name": "n11-u2r-C1393.tar.xz",
+      "archive_url": "https://github.com/wand125/n11-optimality-lean/releases/download/n11-certs-v1/n11-u2r-C1393.tar.xz",
+      "archive_bytes": 25119200
+    },
+    {
+      "case": 1463,
+      "archive_sha256": "3bce73faa4ebc8801844126e712119ad7e2193b96efda79df647fe879dbec435",
+      "source_members": 132,
+      "uncompressed_bytes": 26216181,
+      "largest_source_bytes": 1174553,
+      "archive_name": "n11-u2r-C1463.tar.xz",
+      "archive_url": "https://github.com/wand125/n11-optimality-lean/releases/download/n11-certs-v1/n11-u2r-C1463.tar.xz",
+      "archive_bytes": 11196852
+    },
+    {
+      "case": 1464,
+      "archive_sha256": "355063bc961a08fe69f1f3908ce772d9ee4a32dcb9d0310a3613ba180be52be0",
+      "source_members": 87,
+      "uncompressed_bytes": 70384269,
+      "largest_source_bytes": 1486382,
+      "archive_name": "n11-u2r-C1464.tar.xz",
+      "archive_url": "https://github.com/wand125/n11-optimality-lean/releases/download/n11-certs-v1/n11-u2r-C1464.tar.xz",
+      "archive_bytes": 30187224
+    },
+    {
+      "case": 1499,
+      "archive_sha256": "220d7b9c63a684d038988b5bf570590ffc467f347db45aecfebde319c29a045b",
+      "source_members": 149,
+      "uncompressed_bytes": 33251555,
+      "largest_source_bytes": 1466104,
+      "archive_name": "n11-u2r-C1499.tar.xz",
+      "archive_url": "https://github.com/wand125/n11-optimality-lean/releases/download/n11-certs-v1/n11-u2r-C1499.tar.xz",
+      "archive_bytes": 14224140
+    },
+    {
+      "case": 1823,
+      "archive_sha256": "6544f248dd0fbb208e5fcbab61d2d576f20f14d4b4655633114fc2920584a985",
+      "source_members": 42,
+      "uncompressed_bytes": 13243692,
+      "largest_source_bytes": 862690,
+      "archive_name": "n11-u2r-C1823.tar.xz",
+      "archive_url": "https://github.com/wand125/n11-optimality-lean/releases/download/n11-certs-v1/n11-u2r-C1823.tar.xz",
+      "archive_bytes": 5697156
+    },
+    {
+      "case": 1849,
+      "archive_sha256": "d20a413342c28dade5432a86c3ca6fd463d0d8efec29811cec703cd87b321853",
+      "source_members": 54,
+      "uncompressed_bytes": 17645543,
+      "archive_name": "n11-u2r-C1849.tar.xz",
+      "archive_url": "https://github.com/wand125/n11-optimality-lean/releases/download/n11-certs-v1/n11-u2r-C1849.tar.xz",
+      "archive_bytes": 7636300
+    },
+    {
+      "case": 1887,
+      "archive_sha256": "9bdaaa4b9be44c8444959fa3c1058b1303b8783de4bd2ad6c5e095a1be6aa608",
+      "source_members": 34,
+      "uncompressed_bytes": 13930873,
+      "largest_source_bytes": 783245,
+      "archive_name": "n11-u2r-C1887.tar.xz",
+      "archive_url": "https://github.com/wand125/n11-optimality-lean/releases/download/n11-certs-v1/n11-u2r-C1887.tar.xz",
+      "archive_bytes": 6037436
+    },
+    {
+      "case": 1891,
+      "archive_sha256": "c8db1b09bea9fe2ca9e743268d2b8eabc01a9112bc4a0573f611316839c0231f",
+      "source_members": 29,
+      "uncompressed_bytes": 12336255,
+      "largest_source_bytes": 783245,
+      "archive_name": "n11-u2r-C1891.tar.xz",
+      "archive_url": "https://github.com/wand125/n11-optimality-lean/releases/download/n11-certs-v1/n11-u2r-C1891.tar.xz",
+      "archive_bytes": 5315272
+    },
+    {
+      "case": 2051,
+      "archive_sha256": "3ea152a6427aa3e0e6d3911924666ccecd2e98e867d9ca689a4132eff430a4f3",
+      "source_members": 23,
+      "uncompressed_bytes": 8053822,
+      "largest_source_bytes": 597033,
+      "archive_name": "n11-u2r-C2051.tar.xz",
+      "archive_url": "https://github.com/wand125/n11-optimality-lean/releases/download/n11-certs-v1/n11-u2r-C2051.tar.xz",
+      "archive_bytes": 3469976
+    },
+    {
+      "case": 2068,
+      "archive_sha256": "d61bb4daafe37573fdbbb1358064800292729868d4916fce301c250ae1dd8f99",
+      "source_members": 25,
+      "uncompressed_bytes": 9233557,
+      "largest_source_bytes": 864986,
+      "archive_name": "n11-u2r-C2068.tar.xz",
+      "archive_url": "https://github.com/wand125/n11-optimality-lean/releases/download/n11-certs-v1/n11-u2r-C2068.tar.xz",
+      "archive_bytes": 3978008
+    },
+    {
+      "case": 2069,
+      "archive_sha256": "046484ef5c0ce77a83288f971f67b4be26280f4ac8040f5a82e0ccaea7446328",
+      "source_members": 25,
+      "uncompressed_bytes": 8909338,
+      "largest_source_bytes": 864986,
+      "archive_name": "n11-u2r-C2069.tar.xz",
+      "archive_url": "https://github.com/wand125/n11-optimality-lean/releases/download/n11-certs-v1/n11-u2r-C2069.tar.xz",
+      "archive_bytes": 3843712
+    },
+    {
+      "case": 2070,
+      "archive_sha256": "b7fdad5e72f3a8a382c8c73d1b6e27aedd585f4f32b27f5e574bcc1917fe3f80",
+      "source_members": 24,
+      "uncompressed_bytes": 9329862,
+      "largest_source_bytes": 864986,
+      "archive_name": "n11-u2r-C2070.tar.xz",
+      "archive_url": "https://github.com/wand125/n11-optimality-lean/releases/download/n11-certs-v1/n11-u2r-C2070.tar.xz",
+      "archive_bytes": 4029052
+    }
+  ],
+  "total_source_members": 762,
+  "total_source_bytes": 341699241,
+  "missing_case": 1465,
+  "actual_proof_status": "Conditional original certificate transport audited; actual imported case certificates and common exclusion checker still pending.",
+  "full_case_increment": 0,
+  "local_full_case_count": 159,
+  "no_upstream_generators_or_build_scripts_executed": true,
+  "format": "T03-wand125-all13-source-availability-checkpoint-v1",
+  "original_record_sha256": "d88c83eb754fad1c07e9d573209e05e2d3bf739452cf39f805cd7d4b4437dca6",
+  "release_url": "https://github.com/wand125/n11-optimality-lean/releases/tag/n11-certs-v1",
+  "release_metadata_sha256": "2bc04360a7edd67371118d6983f11814641967101429686f55ac8d379590279e",
+  "validation_scope": "Root independently checked each supplied archive and source member against its checksum/manifest. Publication inspected this immutable record, checked its aggregate counts and matched all13 archive digests to preserved GitHub release asset metadata. Publication did not run upstream generators or revalidate case proofs.",
+  "imported_case_certificates_accepted": 0,
+  "source_availability_is_not_kernel_acceptance": true,
+  "new_source_uploads": 0
+}

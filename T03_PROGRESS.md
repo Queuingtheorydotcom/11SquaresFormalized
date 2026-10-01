@@ -6,6 +6,46 @@ repository, and global optimality remains unfinished. This branch supplies
 checked common tools and the complete source closure of one audited certificate,
 case2135. It does not discharge the full-family obligation.
 
+## Cover, box-tree and field-tree target audits are accepted
+
+The supplied original Lean 4.10.0-rc2 checker accepted:
+
+| Actual targets | Audit seconds |
+| --- | ---: |
+| `SquarePacking.PTree.nodup_of_chainB`, `SquarePacking.d4_reduction` | 34.46 |
+| `SquarePacking.BoxTree.ptOk_mem` | 31.30 |
+| `SquarePacking.S11Opt.FieldTree.soundDec` | 33.62 |
+
+All targets report only `propext`, `Classical.choice` and `Quot.sound`. The
+[cover record](verification/t03-wand125-pinned-cover-audit-checkpoint-20261001.json),
+[box-tree record](verification/t03-wand125-pinned-box-tree-audit-checkpoint-20261001.json)
+and [field-tree record](verification/t03-wand125-pinned-field-tree-audit-checkpoint-20261001.json)
+publish their byte-identical actual audit/CHECK sidecars and source/object/receipt
+bindings. Publication checked every immutable transport member, actual
+audit/wrapper/execution hash and source-closure key. Root independently checked
+the genuine objects and receipts. No compiler was run for publication.
+
+The [standalone exact source snapshot](verification/source-checkpoints/wand125-pinned-cover-trees-20261001)
+contains nine reachable Lean modules / **184,928 source bytes**, the frozen pinned
+environment, supplied checkers and three exact tasks. Source bytes remain
+unchanged, isolated from the stronger merged repository and later canonical
+adaptations. Mutable unaccepted `Majority` and shared-checker sources are excluded.
+Only private handoff metadata is omitted and the resource profile is neutralized.
+
+The [all-13 source availability checkpoint](verification/t03-wand125-all-thirteen-pending-source-archives-checkpoint-20261001.json)
+records root's genuine archive/member checks for 13 of the 14 remaining cases:
+**762 members / 341,699,241 uncompressed source bytes**. Publication independently
+matched all archive digests against the preserved release asset metadata and
+checked aggregate counts; it did not recompile those sources. Case1465 is absent
+from that upstream source release. Direct upstream links avoid duplicate uploads.
+
+These are **shared-module audits and source availability**, not completed
+imported cases. Count stays **159/173**. The conditional original-contract
+transport is already audited, but concrete case bounds/correspondence, the
+complete exclusion checker, imported full-case audits, original public family
+targets and final return remain pending. No merged repository replay, new release
+assets, workers, queue/process controls or main changes are claimed.
+
 ## Conditional original-contract transport is audited
 
 The supplied Lean 4.10.0-rc2 checker actually accepted

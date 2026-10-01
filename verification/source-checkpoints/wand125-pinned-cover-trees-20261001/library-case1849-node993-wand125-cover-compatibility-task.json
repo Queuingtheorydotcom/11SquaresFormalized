@@ -1,0 +1,10 @@
+{
+  "id": "T03_compact_full_trace",
+  "modules": [
+    "ElevenSquare.Tasks.T03.Wand125.Upstream.Cover"
+  ],
+  "axiom_targets": [
+    "SquarePacking.PTree.nodup_of_chainB",
+    "SquarePacking.d4_reduction"
+  ]
+}

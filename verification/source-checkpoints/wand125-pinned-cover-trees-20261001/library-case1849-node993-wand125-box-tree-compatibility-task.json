@@ -1,0 +1,9 @@
+{
+  "id": "T03_compact_full_trace",
+  "modules": [
+    "ElevenSquare.Tasks.T03.Wand125.Upstream.BoxTree"
+  ],
+  "axiom_targets": [
+    "SquarePacking.BoxTree.ptOk_mem"
+  ]
+}

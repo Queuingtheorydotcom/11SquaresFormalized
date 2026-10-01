@@ -1,0 +1,9 @@
+{
+  "id": "T03_compact_full_trace",
+  "modules": [
+    "ElevenSquare.Tasks.T03.Wand125.Upstream.S11Opt.FieldTree"
+  ],
+  "axiom_targets": [
+    "SquarePacking.S11Opt.FieldTree.soundDec"
+  ]
+}

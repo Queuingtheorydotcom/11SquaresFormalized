@@ -8,6 +8,15 @@ the final optimality theorem. See [MISSING.md](MISSING.md).
 
 At the latest checkpoint, **159/173** full case certificates have independently
 accepted exact target audits and published complete source closures; **14 remain**.
+Cover, box-tree and field-tree compatibility now have four additional accepted
+targets under the original Lean 4.10.0-rc2 checker, all with the standard three
+axioms. Their [exact audit evidence and nine-module source closure](verification/source-checkpoints/wand125-pinned-cover-trees-20261001)
+are frozen separately from mutable pending checker work. Root also verified
+[all 13 available remaining source archives](verification/t03-wand125-all-thirteen-pending-source-archives-checkpoint-20261001.json):
+762 source members / 341,699,241 bytes. Source availability does not add an
+accepted case. Count remains **159/173**; case1465 has no upstream source archive,
+and imported full-case audits remain pending.
+
 The conditional original-contract transport now passes the supplied checker on
 Lean 4.10.0-rc2: `ElevenSquare.Pending.T03.Wand125.certificate_of_case` reports
 only the standard three axioms. Its [actual audit](verification/t03-wand125-pinned-original-transport-audit-checkpoint-20261001.json)
