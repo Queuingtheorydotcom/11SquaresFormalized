@@ -66,7 +66,8 @@ def write(path, lines):
 def final_file(out, name, n, terminal_owner):
     mod = f"ElevenSquare.Tasks.T07.Ext.Gen.{name}"
     base = f"{NS}.{name}"
-    T = [f"import {mod}.S{n - 1}\nimport ElevenSquare.Tasks.T07.CaptureTraceCombinators\n",
+    # every step's trace: the step modules do not import each other
+    T = ["\n".join(f"import {mod}.S{k}" for k in range(n)) + "\nimport ElevenSquare.Tasks.T07.CaptureTraceCombinators\n",
          f"namespace {base}", HDR, f"def final : PoseState := S{n - 1}.next\n",
          "theorem trace : ExtTrace st0 final := by"]
     expr = f"S{n - 1}.trace"
