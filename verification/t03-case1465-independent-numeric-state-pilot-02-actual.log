@@ -1,0 +1,5 @@
+'ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.terminal_snapshot' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step012State.state_binding' depends on axioms: [propext,
+ Quot.sound]

@@ -1,4 +1,31 @@
-# Supplied proof inventory and bounded cache audit
+# Accepted numeric-state pilot and supplied proof inventory
+
+Upstream supplies **172 case-proof source archives**; **only case 1465 is absent**.
+We are reusing the supplied proofs. **169/173** is the separate count of completed
+original-project full-certificate integrations. Cases **1373, 1393, 1464 and 1465**
+remain in that integration log. The [refreshed upstream inventory](verification/t03-wand125-upstream-source-inventory-refresh-20261001.json)
+records all supplied archives and their asset identities.
+
+The **case 1465 numeric dependency-separation pilot actually passed** the original
+Lean 4.10.0-rc2 checker: States **51.85s**, State012 **17.09s**, both target audits
+**16.68s**. All 75 original numeric definition bodies are preserved. The terminal
+numeric snapshot has only `propext`, `Classical.choice` and `Quot.sound`; the
+Step012 state binding has only `propext` and `Quot.sound`.
+
+The [complete accepted pilot source release](https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/tag/t03-numeric1465-pilot-audited-20261001) includes **126 exact modules**
+and **9,744,540 source bytes**, in a **3,086,131-byte ZIP**.
+[Actual source/object/audit bindings](verification/t03-case1465-independent-numeric-state-pilot-source-checkpoint-20261001.json)
+and byte-identical CHECK/log sidecars are published. This is a numeric/state-binding
+pilot; the full geometric transition and case certificate remain pending. No
+unverified geometric pilot is included, no full case is added and no whole-proof
+speedup is claimed. Existing proof workers, `main` and earlier assets are preserved.
+
+The public family theorem, merged replay, global optimality and final return
+remain unfinished. See [MISSING.md](MISSING.md) and [T03_PROGRESS.md](T03_PROGRESS.md).
+
+## Earlier inventory and cache checkpoint
+
+The following preserves the earlier timestamped component/cache status.
 
 Upstream supplies **172 case-proof source archives**; **only case 1465 is absent**.
 The [fresh inventory](verification/t03-wand125-upstream-source-inventory-refresh-20261001.json) matches every archive

@@ -42828,18 +42828,18 @@
     },
     {
       "path": "MISSING.md",
-      "bytes": 7809,
-      "sha256": "bfcc6aad45166c54d08fb93af294c7b9c3152af55955f1f24d51986b0b3efcac"
+      "bytes": 8131,
+      "sha256": "445d36fa941a7227a090a0a8dc5f0b20c99e2ce364fde355babef8bcb5ad7551"
     },
     {
       "path": "README.md",
-      "bytes": 32245,
-      "sha256": "1c60128e4e96b044163774f1bab62fd0bb971adc071109a0ef23aace4a9ca7c3"
+      "bytes": 34072,
+      "sha256": "b74989c043a3bc5ff427671a4fd51dceb80cf3cba10166911cae27f23ba72f5e"
     },
     {
       "path": "T03_PROGRESS.md",
-      "bytes": 109014,
-      "sha256": "0ffc56f4ba084460907e3d64b1825a1153cdcadaadbb42ae97b6e384f37c7b4f"
+      "bytes": 110850,
+      "sha256": "cb01da9356266b311acf9a211fee84175378076a91ba843936eda8e920c2af8d"
     },
     {
       "path": "lake-manifest.json",
@@ -43098,8 +43098,8 @@
     },
     {
       "path": "verification/privacy-review.json",
-      "bytes": 23557,
-      "sha256": "a3322e382f7bd9b6041a9e576ff1827232e0b4ad7efa47572ab947aab6f32fe7"
+      "bytes": 24181,
+      "sha256": "9a46b1138710729fd7ef557d199abfec789f61afe134dbd1e8b385c3f91c4a89"
     },
     {
       "path": "verification/source-check.json",
@@ -47397,6 +47397,61 @@
       "sha256": "19dcc36eeb02bc5f1dcd6309b8390b9a67b3545f6cd488e342ecc6d54ca74e74"
     },
     {
+      "path": "verification/t03-case1465-independent-numeric-state-pilot-00-actual-CHECK.json",
+      "bytes": 569,
+      "sha256": "acb4663af2861f16fdcb3c25347206b11eb9f430b6ba5044d1e0a75efdd37abe"
+    },
+    {
+      "path": "verification/t03-case1465-independent-numeric-state-pilot-00-actual.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "verification/t03-case1465-independent-numeric-state-pilot-01-actual-CHECK.json",
+      "bytes": 573,
+      "sha256": "85b9967d34bb7b2bbc0f3b3935b60c39e45c0521d209d844b3e245ed1c8100c8"
+    },
+    {
+      "path": "verification/t03-case1465-independent-numeric-state-pilot-01-actual.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "verification/t03-case1465-independent-numeric-state-pilot-02-actual-CHECK.json",
+      "bytes": 446,
+      "sha256": "046f24bed8bb6c14c2817cecdaf759ce9a320814cf6306a7edd5d4982bd23102"
+    },
+    {
+      "path": "verification/t03-case1465-independent-numeric-state-pilot-02-actual.log",
+      "bytes": 288,
+      "sha256": "581b1ef5ea1dc79e415f30f41ba0785b32f75e7953451a52346be75543fada0e"
+    },
+    {
+      "path": "verification/t03-case1465-independent-numeric-state-pilot-actual-checkpoint-20261001.json",
+      "bytes": 3970,
+      "sha256": "47e0858f3ad1125fac70bc2294463b3e273ba52bbe224eeaf36b2cdfcf29072e"
+    },
+    {
+      "path": "verification/t03-case1465-independent-numeric-state-pilot-preparation-historical-20261001.json",
+      "bytes": 35904,
+      "sha256": "549dee05cbdf1a2824660be6d90fe17ce263b110cb57b8e8a6c7e85c56eac721"
+    },
+    {
+      "path": "verification/t03-case1465-independent-numeric-state-pilot-queued-historical-20261001.json",
+      "bytes": 811,
+      "sha256": "cfcf4c22ba88c2b0e7397f61c9f24468985f7ef97f0730dd27d71e7be2921624"
+    },
+    {
+      "path": "verification/t03-case1465-independent-numeric-state-pilot-source-checkpoint-20261001.json",
+      "bytes": 74059,
+      "sha256": "0ef58f6d7c0f384cb12b0f9ac91660e7efa51b14464a431a8cf3c30d6413f864"
+    },
+    {
+      "path": "verification/t03-case1465-independent-numeric-state-pilot-source-release-20261001.json",
+      "bytes": 4054,
+      "sha256": "0c2060535f0c6c2a5e6251ba3d99f6c16c4da01c33b0ded12e1129d8fdedc8b1"
+    },
+    {
       "path": "verification/t03-case1465-operational-retry.json",
       "bytes": 8083,
       "sha256": "4cc5ecd979e04eea8a9a012b70d0a7bfcad645e5c86b4710f7502b6e3df66bb8"
@@ -47673,8 +47728,8 @@
     },
     {
       "path": "verification/t03-progress.json",
-      "bytes": 133646,
-      "sha256": "e3cc30515152a0a95b03d538147206b0fc58c6c2eb17973fdc2f125829822211"
+      "bytes": 137915,
+      "sha256": "b490b241f7d173bc2f27958c98ac4df36b4c9343eb800ea6451d5c542c1c74ac"
     },
     {
       "path": "verification/t03-ready-archive-prefilter-checkpoint-20261001.json",

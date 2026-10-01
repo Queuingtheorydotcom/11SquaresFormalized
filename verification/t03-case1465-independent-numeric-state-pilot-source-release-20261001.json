@@ -1,0 +1,90 @@
+{
+  "format": "T03-exact-accepted-numeric-state-pilot-release-v1",
+  "status": "ACTUAL_ACCEPTED_NUMERIC_DEPENDENCY_SEPARATION_PILOT_SOURCE_PUBLISHED_NOT_FULL_CASE",
+  "upstream_supplied_archives": 172,
+  "sole_upstream_missing_case": 1465,
+  "original_full_case_integration_audits": 169,
+  "remaining_original_cases": [
+    1373,
+    1393,
+    1464,
+    1465
+  ],
+  "release_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/tag/t03-numeric1465-pilot-audited-20261001",
+  "release_id": 401429721,
+  "tag": "t03-numeric1465-pilot-audited-20261001",
+  "tag_target_commit": "62b4c977a10607aedaccbddda276e056df93711a",
+  "source_modules": 126,
+  "source_bytes": 9744540,
+  "source_zip_bytes": 3086131,
+  "source_zip_sha256": "cb989c775bdd1a6e71896bf0a13cd78165ad72e32209d366e197975bb23fa644",
+  "source_zip_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-numeric1465-pilot-audited-20261001/T03-accepted-case1465-numeric-state-pilot-source.zip",
+  "source_manifest": "verification/t03-case1465-independent-numeric-state-pilot-source-checkpoint-20261001.json",
+  "exact_original_numeric_definition_bodies": 75,
+  "actual_compile_seconds": [
+    51.85,
+    17.09
+  ],
+  "actual_axiom_audit_seconds": 16.68,
+  "actual_target_axioms": {
+    "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.terminal_snapshot": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step012State.state_binding": [
+      "propext",
+      "Quot.sound"
+    ]
+  },
+  "all_exact_member_and_genuine_receipt_object_source_bindings_verified": true,
+  "all_five_server_asset_sizes_digests_verified": true,
+  "unverified_geometric_Step012_pilot_included": false,
+  "whole_case_certificate_increment": 0,
+  "full_case_and_geometric_transition_pending": true,
+  "whole_case_speedup_or_uncached_comparison_claimed": false,
+  "publication_Lean_jobs_worker_controls": 0,
+  "private_transports_objects_receipts_caches_machine_paths_included": false,
+  "assets": [
+    {
+      "id": 604345683,
+      "name": "02-actual-CHECK.json",
+      "size": 446,
+      "digest": "sha256:046f24bed8bb6c14c2817cecdaf759ce9a320814cf6306a7edd5d4982bd23102",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-numeric1465-pilot-audited-20261001/02-actual-CHECK.json"
+    },
+    {
+      "id": 604345656,
+      "name": "02-actual.log",
+      "size": 288,
+      "digest": "sha256:581b1ef5ea1dc79e415f30f41ba0785b32f75e7953451a52346be75543fada0e",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-numeric1465-pilot-audited-20261001/02-actual.log"
+    },
+    {
+      "id": 604345712,
+      "name": "SHA256SUMS",
+      "size": 382,
+      "digest": "sha256:77c553b209434b51a4da4e34f04a36f688fe6b3680ee1f5c3cf3471c102bb01c",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-numeric1465-pilot-audited-20261001/SHA256SUMS"
+    },
+    {
+      "id": 604345623,
+      "name": "SOURCE-CHECKPOINT-public.json",
+      "size": 74059,
+      "digest": "sha256:0ef58f6d7c0f384cb12b0f9ac91660e7efa51b14464a431a8cf3c30d6413f864",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-numeric1465-pilot-audited-20261001/SOURCE-CHECKPOINT-public.json"
+    },
+    {
+      "id": 604345583,
+      "name": "T03-accepted-case1465-numeric-state-pilot-source.zip",
+      "size": 3086131,
+      "digest": "sha256:cb989c775bdd1a6e71896bf0a13cd78165ad72e32209d366e197975bb23fa644",
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-numeric1465-pilot-audited-20261001/T03-accepted-case1465-numeric-state-pilot-source.zip"
+    }
+  ]
+}

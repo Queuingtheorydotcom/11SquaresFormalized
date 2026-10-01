@@ -1,0 +1,1246 @@
+{
+  "format": "T03-exact-accepted-numeric-state-pilot-source-checkpoint-v1",
+  "status": "NUMERIC_DEFINITIONS_AND_STEP012_STATE_BINDING_ACTUALLY_ACCEPTED_NOT_FULL_CASE",
+  "upstream_supplied_source_archives": 172,
+  "sole_upstream_missing_case": 1465,
+  "original_full_integration_audits": 169,
+  "remaining_original_cases": [
+    1373,
+    1393,
+    1464,
+    1465
+  ],
+  "whole_case_certificate_increment": 0,
+  "source_modules": 126,
+  "source_bytes": 9744540,
+  "original_numeric_states": 75,
+  "exact_original_numeric_definition_bodies_independently_checked": true,
+  "task": "library-case1465-node998-independent-state-snapshot-pilot-task.json",
+  "task_sha256": "c15ecbe4372305287463eea94608720f94eb36188237032d592c310067cfa831",
+  "immutable_raw_transport_sha256": "100e3358daf89bc1063dbe4bd072c8b9e6e00fd4d9da41282e882a2228259882",
+  "actual_execution_sha256": "ce78f5e6758678664424405a2284d70a3b14bcba74f70033e925c98998eb4fc6",
+  "actual_wrapper_sha256": "bfb63d638a562ee29de51aa8b14c1e21f24b4b7b492aa7a04b957dbd930c7b5b",
+  "actual_targets": {
+    "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.terminal_snapshot": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step012State.state_binding": [
+      "propext",
+      "Quot.sound"
+    ]
+  },
+  "actual_checks": [
+    {
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual_check_sha256": "acb4663af2861f16fdcb3c25347206b11eb9f430b6ba5044d1e0a75efdd37abe",
+      "check": {
+        "status": "accepted",
+        "source": "ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/States.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 51.85,
+        "lean_memory_limit_mb": 8192,
+        "lean_threads": 1,
+        "lean_thread_stack_kb": 32768,
+        "lean_main_stack_kb": 65536,
+        "cpu_seconds_limit": 1800,
+        "wall_seconds_limit": 2100,
+        "nice_increment": 0,
+        "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/States.olean",
+        "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+      }
+    },
+    {
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual_check_sha256": "85b9967d34bb7b2bbc0f3b3935b60c39e45c0521d209d844b3e245ed1c8100c8",
+      "check": {
+        "status": "accepted",
+        "source": "ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/State012.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 17.09,
+        "lean_memory_limit_mb": 8192,
+        "lean_threads": 1,
+        "lean_thread_stack_kb": 32768,
+        "lean_main_stack_kb": 65536,
+        "cpu_seconds_limit": 1800,
+        "wall_seconds_limit": 2100,
+        "nice_increment": 0,
+        "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/State012.olean",
+        "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+      }
+    },
+    {
+      "actual_log_sha256": "581b1ef5ea1dc79e415f30f41ba0785b32f75e7953451a52346be75543fada0e",
+      "actual_check_sha256": "046f24bed8bb6c14c2817cecdaf759ce9a320814cf6306a7edd5d4982bd23102",
+      "check": {
+        "status": "accepted",
+        "source": "verification/HandoffAudit.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 16.68,
+        "lean_memory_limit_mb": 8192,
+        "lean_threads": 1,
+        "lean_thread_stack_kb": 32768,
+        "lean_main_stack_kb": 65536,
+        "cpu_seconds_limit": 1800,
+        "wall_seconds_limit": 2100,
+        "nice_increment": 0,
+        "emitted_olean": null,
+        "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+      }
+    }
+  ],
+  "complete_source_dependency_order": [
+    "ElevenSquare.Geometry",
+    "ElevenSquare.Pending.GeometryTypes",
+    "ElevenSquare.CoverData",
+    "ElevenSquare.Pending.Types",
+    "ElevenSquare.Pending.S05_Minkowski",
+    "ElevenSquare.BasicGeometry",
+    "ElevenSquare.Pending.S05_OwnedHull",
+    "ElevenSquare.Pending.S05_Trace",
+    "ElevenSquare.Tasks.T03.Convexification",
+    "ElevenSquare.Tasks.T03.Promotion",
+    "ElevenSquare.Tasks.T03.RowsOwnership",
+    "ElevenSquare.Tasks.T03.RowTrace",
+    "ElevenSquare.Tasks.T03.LinearCertificates",
+    "ElevenSquare.Tasks.T03.LinearCover",
+    "ElevenSquare.Tasks.T03.TriangleCover",
+    "ElevenSquare.Tasks.T03.TriangleCertificates",
+    "ElevenSquare.Tasks.T03.PolygonCertificates",
+    "ElevenSquare.Tasks.T03.Quadratic",
+    "ElevenSquare.Tasks.T03.SelfHullCertificates",
+    "ElevenSquare.Tasks.T03.IntegerRows",
+    "ElevenSquare.Tasks.T03.TraceAssembly",
+    "ElevenSquare.Orientation",
+    "ElevenSquare.CoverChecks",
+    "ElevenSquare.GeneratedCover0",
+    "ElevenSquare.GeneratedCover1",
+    "ElevenSquare.GeneratedCover2",
+    "ElevenSquare.GeneratedCover3",
+    "ElevenSquare.Cover",
+    "ElevenSquare.Tasks.T03.Certificate",
+    "ElevenSquare.Tasks.T03.PosewiseReplay",
+    "ElevenSquare.Tasks.T03.IntegerRowTrace",
+    "ElevenSquare.Tasks.T03.ForwardRows",
+    "ElevenSquare.Tasks.T03.CellLinear",
+    "ElevenSquare.Tasks.T03.CellGeometry",
+    "ElevenSquare.Tasks.T03.CellPhysical",
+    "ElevenSquare.Tasks.T03.Walls",
+    "ElevenSquare.Tasks.T03.ChartIntervals",
+    "ElevenSquare.Tasks.T03.AngleBands",
+    "ElevenSquare.Tasks.T03.PhysicalRowInput",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Forward.RowData",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node000.HullData",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node000.Step000Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Forward.InitialStateData",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node000.Step001Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node000.Step002Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node000.Step003Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node000.Step004Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node000.Step005Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node000.Step006Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node000.Step007Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node000.Step008Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node000.Step009Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node000.Step010Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node000.Step011Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node000.Step012Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node000.Step013Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node000.Step014Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node000.Step015Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node000.Step016Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node000.Step017Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node001.HullData",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node001.Step000Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node001.Step001Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node001.Step002Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node001.Step003Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node001.Step004Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node001.Step005Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node001.Step006Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node001.Step007Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node001.Step008Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node001.Step009Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node001.Step010Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node001.Step011Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node001.Step012Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node001.Step013Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.HullData",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step000Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step001Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step002Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step003Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step004Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step005Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step006Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step007Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step008Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step009Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step010Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step011Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step012Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step013Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step014Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step015Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step016Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step017Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step018Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step019Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step020Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step021Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step022Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step023Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step024Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step025Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step026Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step027Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step028Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step029Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step030Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step031Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step032Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step033Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step034Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step035Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step036Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step037Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step038Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step039Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step040Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step041Data",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step042Data",
+    "ElevenSquare.Tasks.T03.KernelBoolRefl",
+    "ElevenSquare.Tasks.T03.KernelEqualityRefl",
+    "ElevenSquare.Tasks.T03.RowRefinement",
+    "ElevenSquare.Tasks.T03.RefinementRows",
+    "ElevenSquare.Tasks.T03.SemanticCertificate",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.IndependentReplay.States",
+    "ElevenSquare.Tasks.T03.Batch04.Case1465.IndependentReplay.State012"
+  ],
+  "source_bindings": [
+    {
+      "module": "ElevenSquare.BasicGeometry",
+      "source_sha256": "0e291c05b9fa7670ed3bac5c605e5cdb3666994715c9f7e4a16786881d020c72",
+      "source_bytes": 11070,
+      "source_closure_sha256": "5d2c1ad9ef4d23c94d2855ea9dd1674bf2eb48da852e12a6b56b40008a2792aa",
+      "genuine_receipt_sha256": "57553d3fa48ae2fc65e1d31a3df3e2e59d3ba4a2436d679c0dab8f58dc7e359d",
+      "object_sha256": "666f8787e035c4751f3c69f2e183fb89efc0740f80d6c3d23d57f1f11b16be54"
+    },
+    {
+      "module": "ElevenSquare.Cover",
+      "source_sha256": "fe57460a07b6acd1561be1d63a9e93c27560716fd1af8df94f65fb7321f7cd1e",
+      "source_bytes": 5665,
+      "source_closure_sha256": "40ef2739dbaeba1f436363f5877298eee7d2dc7ac8b416f39362d18a638cb601",
+      "genuine_receipt_sha256": "9899de571ec551c0b9d2aaec2fd96208f24042c8020eec979ee81aeea3b64f6b",
+      "object_sha256": "114ddde91c2d44190f76fa24da8f90cb73ccb8c6174ad065fcc554d6f760b249"
+    },
+    {
+      "module": "ElevenSquare.CoverChecks",
+      "source_sha256": "cfb1ac4a0bbd79e078519e7d9df2e04892458a87cc309a6aa520a0cff2e4e68d",
+      "source_bytes": 1564,
+      "source_closure_sha256": "ec25ee8bbad72a1300d3ea452bc52977ee9d49e78c370a3852f9e42af0374f63",
+      "genuine_receipt_sha256": "325d681a58fabfe13da6bee640ea1dde714e816e99f90e5bb92943dc75ac7238",
+      "object_sha256": "19e8cc3f3ab3bcce4ea56b31e9558f40cbfbe8887ae8b256947586e9a4626290"
+    },
+    {
+      "module": "ElevenSquare.CoverData",
+      "source_sha256": "d3ed474b9f3b8c88ffffcfa1c1005b98be709dd5443198088e94e659a299906d",
+      "source_bytes": 1267,
+      "source_closure_sha256": "5b21dc8e2505fd846feadfc6bedd554c72d9022376566cc1db7e0989d437dd7f",
+      "genuine_receipt_sha256": "f3bd74d3651d05f145e2bcde848b08b33cea00ef347c405aaf6187ee665fe2fd",
+      "object_sha256": "36cd443adb89af72fee35d7d75cb253976a3eb203209f18896ff550b29dcd9ca"
+    },
+    {
+      "module": "ElevenSquare.GeneratedCover0",
+      "source_sha256": "4936cc6f454137d9509976002e3c719de0dd28441e99ae8fbd0343ab7c2fba99",
+      "source_bytes": 51515,
+      "source_closure_sha256": "762a79c7fea898296b8298df5bd0c2027492f5c53c1259c942ce03700890342b",
+      "genuine_receipt_sha256": "766d9d8f88d2e0d501066accb27526820df5e7170590f82a03418555a8e847f5",
+      "object_sha256": "092fe13eaf534b061c73d46e03aa6380836ae7426eeda40c8dbde6a793d1a936"
+    },
+    {
+      "module": "ElevenSquare.GeneratedCover1",
+      "source_sha256": "e72e09742bd6a4d17a8152f6b69c9cdb94933d15829193e88ec52ba85c6c6d27",
+      "source_bytes": 41862,
+      "source_closure_sha256": "008dd03c8df7ef4107d1510cdd5f87a27dda941f8c5bfe364ef50d01f991b185",
+      "genuine_receipt_sha256": "5b254689fbf74f5fca3e5c82101ab4c6cfcbad6060fb60debddaace3c4a6eadb",
+      "object_sha256": "7790de70747fc5bdf24a2930d01b6311403070e145be1eca2ed8fd8d3fcf2123"
+    },
+    {
+      "module": "ElevenSquare.GeneratedCover2",
+      "source_sha256": "f9d6ccc5aa2ae6c16140dcf8d474f869448c83d965a7644f16fb59b3d2c020b5",
+      "source_bytes": 41894,
+      "source_closure_sha256": "e6cc2a8690baecef810921d4042ec3d991947b576a29333962576710b37e1871",
+      "genuine_receipt_sha256": "07f2af5201fe8669ce0c311d669d8fb6797e08cc8565248170e75496cb5c0a41",
+      "object_sha256": "922ea9f0dcd597b3c389baaa5e4a63cdab88bc8ec07290d08ba8cd56c2bc5317"
+    },
+    {
+      "module": "ElevenSquare.GeneratedCover3",
+      "source_sha256": "973ed8e31b101004f93e72347411e153c6283022219cfcc5d5846ee1f65a9f0f",
+      "source_bytes": 52238,
+      "source_closure_sha256": "2c739ed0fc72c5ebd64b01baf913c5af4ddcee3fb93ceb6999af254d4c01a37e",
+      "genuine_receipt_sha256": "965b9d1929d0aaf5b069342170ff3b9d1016a957884bb0df63c90ffefa28cb34",
+      "object_sha256": "7ab520f8f1fc677b18949d3ac52facd395d4acffed282c1ca0d42c59039fcc31"
+    },
+    {
+      "module": "ElevenSquare.Geometry",
+      "source_sha256": "fa8ff2c666453b56f04b22c164ef063cbd46dc85fb4afd7ed6fbb01b7c4f641a",
+      "source_bytes": 1591,
+      "source_closure_sha256": "da54cdf076506d5084b2441b6ce6787e3940386d6513b22d3f76e9d48e317d59",
+      "genuine_receipt_sha256": "8b85f9df64eb3b501f0dd0871c1addd88dc0fb7a41bbddc27fe7ed675b0d1c16",
+      "object_sha256": "f47ee03cfc8fef14857cd9c88ba324aabcbbe08ff47c3789bf6aba6ea2d47f93"
+    },
+    {
+      "module": "ElevenSquare.Orientation",
+      "source_sha256": "2bf5f26832afb8859c2463d5bf813a36fc0d701b598698f59a267db417915601",
+      "source_bytes": 5807,
+      "source_closure_sha256": "bb623080ecf05597cf1e49488d75f1b69bc3a7b1cf58eefae3d1337c67788272",
+      "genuine_receipt_sha256": "b62462d5219e7ed3d6191f340e4f0f41f168981e9a2e841b90d56b138d759a77",
+      "object_sha256": "f16cc5b1abc6f32db2ac66e0c5bf90786dd47e67a9915c6768b5cbbacb038b5e"
+    },
+    {
+      "module": "ElevenSquare.Pending.GeometryTypes",
+      "source_sha256": "a7bf5e2a537e0b81a7d874c35c769f605b61da9e3fef28feb07390736690502a",
+      "source_bytes": 337,
+      "source_closure_sha256": "3a221875b2633f81cebe303e27f28999955dfc27ffc73f3bd72b71940952005a",
+      "genuine_receipt_sha256": "d2bf92525fff9ffabcb0fd00641790ba2de0aa66d4d3ce9eaf3e7875dbf2c485",
+      "object_sha256": "fddc40c9eb22f7fb4909e333064b1e73f6acc3da394626d1a4f09d8b21825cc3"
+    },
+    {
+      "module": "ElevenSquare.Pending.S05_Minkowski",
+      "source_sha256": "e39dcfc51ad822fffbd76414e140f476baf3d5f0e55f7790e273362ce5484e71",
+      "source_bytes": 3477,
+      "source_closure_sha256": "10564097c034793d9857b2c277ab4fb72ebb2e2fc7511f17a83651a807df3748",
+      "genuine_receipt_sha256": "180337dbbd65c069e267f852af74084dc3b3ac702d0b25bfe72b9cefdb4407a9",
+      "object_sha256": "bf3301bd9e216341b036ae179420bbff02434a9065c1b822bb4f7229a9b8d5bd"
+    },
+    {
+      "module": "ElevenSquare.Pending.S05_OwnedHull",
+      "source_sha256": "237234a0a57234a0fe6ca3d421758550b50266b6b1411b04ad07c49339a7db42",
+      "source_bytes": 1837,
+      "source_closure_sha256": "e42907f8e6762e7618704ef1a8b07adec12d2357b7a71685166739d29ab28990",
+      "genuine_receipt_sha256": "50abddff8eb968e4084eb5ec07d1e753439696d20c4067e542e83018226b5262",
+      "object_sha256": "14da74694d3b724d5280f8581734705749715b151c2ba5f8f8ac57a1e3768b85"
+    },
+    {
+      "module": "ElevenSquare.Pending.S05_Trace",
+      "source_sha256": "c28d11831b4130263f31e046d4165e942ce15d6662b1902875e1de2b7c2f7a92",
+      "source_bytes": 5612,
+      "source_closure_sha256": "7dbab8eeaa38ae885696c42ef2429ddabeb6cdec6489fbcec06208264ad757fe",
+      "genuine_receipt_sha256": "d888531e40c16d0c4b91b18d808ba036993a753d3837824345da3d6513c3dc15",
+      "object_sha256": "9ceba5395cdbdf1b4f7072ddd383ef4f0337d4a17f0bbff785cd88e7e93cd902"
+    },
+    {
+      "module": "ElevenSquare.Pending.Types",
+      "source_sha256": "a08828e4674559871cfa7ee6e5321d008b43ff66baf2fa6906b3225e59e6dd7a",
+      "source_bytes": 3142,
+      "source_closure_sha256": "6b0108cf16b91a463914ff286a2c2a6929bea969260a6dfdc56ae274c7901333",
+      "genuine_receipt_sha256": "fe57497ed249d6c9dfb332c0bf37c5954ba7e9fd1798f2d2cb856c996e5617cd",
+      "object_sha256": "e6dfc33de513137967248e1ac95040d9876dcfa7590c41a80d8633bb120d02a4"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.AngleBands",
+      "source_sha256": "4a079e796f4757b1326b87288c2e70750ad33fad817bdd9bf91c969fe5332da5",
+      "source_bytes": 3066,
+      "source_closure_sha256": "6e9ffa4acd84429e5e0dc69f9ee6710181e77c88e5dcf7305ca9191ba922a9db",
+      "genuine_receipt_sha256": "99c1f62a406f21c09676da7a065e52a3bd557d0319c58b063c6dee03ca4c4e93",
+      "object_sha256": "7a55e204e648c2d6d0c4dbc7d23bf282265b4f71bfac78f764f9b15ff4b8e4e2"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Forward.InitialStateData",
+      "source_sha256": "408334aa51d1c8e4cd9ad44e1dc5e43cd30e656e46c36c8eb7e003ed66e8656d",
+      "source_bytes": 23036,
+      "source_closure_sha256": "b5ab38600bcc895d5baf10095c1ca3df8ba5ac293116ada9b4f77a918c161d5c",
+      "genuine_receipt_sha256": "cf208bacafcab1a9d8977e74db49a58ed1e7f84f68bbf049e51e099938b2bd6e",
+      "object_sha256": "ddf126db97b9fc5846d90f35f4069190f6970106d6e945a4afa94dcb77c63d3f"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Forward.RowData",
+      "source_sha256": "13b3e82b9af2097b32ac67f040aadd6edbd4af69c7846347b6f8208dd775124b",
+      "source_bytes": 6494459,
+      "source_closure_sha256": "bc42efe8c297cb827693ded834985d3c1f3d68b108cc3d9d596e3e36cad2a93a",
+      "genuine_receipt_sha256": "f88bcd5f92ced75cfb9a4fa697bd7ea43dc1da4f6392d47bc4589cc9bce6338c",
+      "object_sha256": "acc888cfdf6827f32ec63d5bce4251386f3c2096abdab0c1219671abd2845e41"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.IndependentReplay.State012",
+      "source_sha256": "c1e8aeac04b0742c1d54b136e03701b9fb737050b68cdd44250464569b8c74dd",
+      "source_bytes": 966,
+      "source_closure_sha256": "6cc285da639dd439492cc89706af88d9926c7d134d779995056df670d69f5e20",
+      "genuine_receipt_sha256": "c263b8ca12164fb49e5de1d504808a27f0c1683a056d5c76e30d6a65543a30f2",
+      "object_sha256": "affcd71b3010967725c0832a32aa7c6a1f0c7c6ed73d53796b13f31587e66218"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.IndependentReplay.States",
+      "source_sha256": "6c72422fadc6630afbd45bb19253d1cea5994d51c1828270f0b13d5a941d4d9a",
+      "source_bytes": 2717956,
+      "source_closure_sha256": "30de4045b57964f12170f713197e54a236df0f5b406779dce44e597ecc498f35",
+      "genuine_receipt_sha256": "3ac1384c1094c1a4fd7ad765ef219445eedc54d123a595e22b161f5d28f1cbcd",
+      "object_sha256": "1144acc87facdc254efd66211856ffe1ab19667af1a34f9e72006b475f93ccd8"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node000.HullData",
+      "source_sha256": "85c28482d8fadf119b114ff8e549921144233b8a77621682e37cd4bf442c5193",
+      "source_bytes": 24092,
+      "source_closure_sha256": "7e0e230ae308077fd4e381a564229afc95ef15486f6338e6a96be3b5af3ae88f",
+      "genuine_receipt_sha256": "71ecf03a07b643d2d0f2dc73be445691513b042eec8d98f6e78a487459cece78",
+      "object_sha256": "79f82d70353a2dff4caadee9f487ac54683e6d1b465e25d7a47de0e85054f919"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node000.Step000Data",
+      "source_sha256": "258f2fe35aaed1eeddd9ec1095a92ceb8190e90c63c6a09b02fed9b9742d5832",
+      "source_bytes": 740,
+      "source_closure_sha256": "fe6b5227d75be39d868aa555c78d42fbf77f34a72aa8b4772ce2b06abb4c804e",
+      "genuine_receipt_sha256": "683fd4ea0d079034fd97b22304e15bb834e51d5b390c41d9e84251867496ef38",
+      "object_sha256": "75f33b90258a275f118637cb7d78b43cadeb0c3ce6ef3d012f39c901a344a103"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node000.Step001Data",
+      "source_sha256": "7bbfc719602aaa38ef3f8cfda5857f0708653bc4d1a84b836b2639283af12577",
+      "source_bytes": 740,
+      "source_closure_sha256": "c801a8acdc62a2d07f8a05b811dacab80809b58da5001b04363e6a464a7b89ab",
+      "genuine_receipt_sha256": "4f6f45a3b47058f36978c502e0c082bab76c24c2207c5e096563cdd772be35f3",
+      "object_sha256": "5c312c8fa5bc22eb79a9cbd57dd2dfb984a40af9123d5561d0ab6c4c3807b7c0"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node000.Step002Data",
+      "source_sha256": "2997ba877e86d7d33659a60e94fcd7f4a922e487ddfeac3e650069cb879eb3b9",
+      "source_bytes": 740,
+      "source_closure_sha256": "aefb35e4fc9d29e6d1847470734829a287c9af756ba76a7341bc71ecd4ab30f9",
+      "genuine_receipt_sha256": "5687386c8afe554c3f072bde363606ae475944652bc56b06043db47ba61e107d",
+      "object_sha256": "ac49b6773858f90a7000c65be05c7fe474d5858677608dfc80207a400145d301"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node000.Step003Data",
+      "source_sha256": "7c7306ae66262b9002946977ef923d66e926aeec78bbfa30fd8ff89f146fbace",
+      "source_bytes": 740,
+      "source_closure_sha256": "4ba448e8f00e6e4a921354eb09b6b569c4d186a54c8be2911bac30ffc072f554",
+      "genuine_receipt_sha256": "3252b67ccb6bee9999efc23eae8fcaa1e8132158e2f3b6561a253c7b8e12bd52",
+      "object_sha256": "8a690902017b575bce18fb1edcc4b080a2676b1468d65b7d008750a41da071ff"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node000.Step004Data",
+      "source_sha256": "d834adc4bbc9e7e6bc82ab1e5195f28268e3a641e1a09ca03b4bf87753d559a5",
+      "source_bytes": 740,
+      "source_closure_sha256": "b8725a7234fef34b8a20aa3be1a4163781d408ef997f537f81617aeb89b7a5ca",
+      "genuine_receipt_sha256": "05b35d16351ba7196be8cb0e9b5ba50346300179e88ffbbc89a01f9eee38860f",
+      "object_sha256": "81810b139c6f1d2dae57aaac3b5a3869b5eeb81d8cf5d2fd25b713f88312fa39"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node000.Step005Data",
+      "source_sha256": "6af1a8ed64a558759b6c9b8fb215e05e9bd0bf9ebd70f115f1abf7c17bf04d88",
+      "source_bytes": 740,
+      "source_closure_sha256": "8928bbb3a5caccd25a66618fe6658050b66204f12e2c69e8e03f8091117e3e13",
+      "genuine_receipt_sha256": "b8a6c8a2b8d9ad346d545fbf11ff9a219314821d24ce92b4dba1a089b2eccdad",
+      "object_sha256": "e9d8e92dfa6122f08856c46878959de7df07bb7f68b2dc3302c834b8903a7fe0"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node000.Step006Data",
+      "source_sha256": "55640f337146d0fe6a74da42a6e439d91a0acb796602648937d6f0491c2b9b09",
+      "source_bytes": 740,
+      "source_closure_sha256": "2e7958624756f8e7b43d7ead1a4e9dc09781df13ae436ffa2d34dcaa29480ad1",
+      "genuine_receipt_sha256": "e6deb7d4fa3ae567abb3476477b2ef2307e25efb15c2ebd17926b87487517a1a",
+      "object_sha256": "d38e37a5a330c31c09fa7a28f4d208819bda1a95e8f4487cf445e5ee8bed2e39"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node000.Step007Data",
+      "source_sha256": "e98a5fdf1c9bc427807436311e6b01cb1bac921d1d2e7dc477ff34472c99c454",
+      "source_bytes": 740,
+      "source_closure_sha256": "089310f5eaa2b5bb27e276634ca89aa4303543f08757cdb6def7337082361d01",
+      "genuine_receipt_sha256": "ae2950dd8f33bd4df3a73a50edd5acbee47f58eccf885f9e34e3f7b834d1ce7a",
+      "object_sha256": "5c7f6da836b8eb86c518159fd5e993787da317a97e2fdf9b9d57e71059cf5882"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node000.Step008Data",
+      "source_sha256": "58c4f183a397d50c04abd07275a9fcfb30be0ca77ec6a0972c7bed04d33cacf0",
+      "source_bytes": 740,
+      "source_closure_sha256": "a4f8a201763764cc63dc6202ace3326e8f088d10fb061894decf04bbd2e8aa42",
+      "genuine_receipt_sha256": "e075b65cf52e51d2de4098fa576986d09d6085ce19e21989560b863643fc3799",
+      "object_sha256": "e464b391820eb3f96e19bdd460e06618f614d609a7dfb17e9fd6ebcb69638fd9"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node000.Step009Data",
+      "source_sha256": "2832be380341e03a7ec540bf465946683ccaed84aceba07ae08ca608f51c02e5",
+      "source_bytes": 741,
+      "source_closure_sha256": "10173f76081f0b740371e8e783e5b80f660f5b05bfe62eed275edbe4c221a127",
+      "genuine_receipt_sha256": "cab383ccbc2b5cb706d39999d6c689fdba18bb582444e143e0f93ffe3903562c",
+      "object_sha256": "ceb5b419835e9031312984aa66717c28fc38f97b8b7c78b139b5874f1eb4b1b2"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node000.Step010Data",
+      "source_sha256": "7e8b3fe71fe6142039f0805df2fa85740507d583e8e8e3af9a17c3a9de48d588",
+      "source_bytes": 740,
+      "source_closure_sha256": "4412ee28a27a7c3afddf22247bcd12387caa1076ae74c5e82e96a60fa4ea3d1e",
+      "genuine_receipt_sha256": "db3d90a5c660d7da31015338314fbcb6c856f2c2ed67e980541371df3b8439d2",
+      "object_sha256": "b60cdbce82d98d7af04236ae7d792ab3a370531ae1f32b51601798d8258cf0ea"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node000.Step011Data",
+      "source_sha256": "1b833ed876a22da6efa219fa948f61293faac5217f583f2cc39221c6e90a2bf1",
+      "source_bytes": 740,
+      "source_closure_sha256": "acc4218cb5e99d02b5e5437ac10221c9b400ca172001518f29ed8b72b3ecc509",
+      "genuine_receipt_sha256": "d5c72d316d6eadbada39bbf62129c9d0b63eee1a104d8d1bf47b5de2d1333c00",
+      "object_sha256": "9460a395d55ee7e271533bd78a8ef7013b8ef25f41465048535cd0b7132bf17c"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node000.Step012Data",
+      "source_sha256": "1f57b2449c4c20662467702f527e7d659ddf31515bac834e92cf2fd06be6711c",
+      "source_bytes": 740,
+      "source_closure_sha256": "657ad44d0467b1a63befff517614eb6fa9018a3d63b7d075ee650d9a15f4ee22",
+      "genuine_receipt_sha256": "42c4747c8ee4ed431d2f38d37493e5249504096c756f3c3e059280b10b3a6b73",
+      "object_sha256": "e11e17a881d30cd8693f084346fd8c0223e96651147fb191ea8654442e655c8c"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node000.Step013Data",
+      "source_sha256": "6a0b9debfe010d2511da3a88b3855cfb759e80762e68d09d28a0bc0695c28263",
+      "source_bytes": 740,
+      "source_closure_sha256": "e163587b4ff72fff1126ec1ec3d66a08065aceab9059a9652880ffddc154d778",
+      "genuine_receipt_sha256": "bc6c24a0ffdb8015dbceea164163a34c0f25ee40ce3443f573a4899f0680620b",
+      "object_sha256": "b2ffb587ce4fa4fa371d8368f96df581faf9de27162ef1880848fe91dc474f96"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node000.Step014Data",
+      "source_sha256": "8055b3bad6b0e5d9fd94811f6eeb564f337884f2c3a5f28f87bdb20f9ae9b71e",
+      "source_bytes": 740,
+      "source_closure_sha256": "2ddec97c6531a768f539d530f5c22d7c985ebd194b2197e587c1567d2842418d",
+      "genuine_receipt_sha256": "f3b756bf1b807ebac8c9ba70b0068c2cd93b45539c75f124dc2017278305d812",
+      "object_sha256": "61727ef2b37c29b7aaddb216418be49a924d1e16850550d89f276647b4e34230"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node000.Step015Data",
+      "source_sha256": "c7e209e585a5f883d24266492cb94e294602bb3ed6a15be4ae43dc03ce360055",
+      "source_bytes": 740,
+      "source_closure_sha256": "6e5ea109d4f929a4ced4dd24123877ccbe6862a5f670fdf00861edc057745cff",
+      "genuine_receipt_sha256": "ed0227f3ed3f3c8a390f2dd6e526d73f9fcb6eed4b826ed00e70a470c69befcf",
+      "object_sha256": "fd00f5b6f447587936bb0f2df514d043ad53d54f365a0fb6e38d5b7ad44eaf74"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node000.Step016Data",
+      "source_sha256": "f1f7a119ea0eca9861e90649417aeec83664b2522a01e28931136b75fd011609",
+      "source_bytes": 740,
+      "source_closure_sha256": "9155eb174539664faa0c956a8ea25cc1cbd1f8c85fb79228022d7a75420edac3",
+      "genuine_receipt_sha256": "3c3b8f4cc88bead9280f6dd58ccc062edb336fed3df5b9e1c710e47098ccd6f9",
+      "object_sha256": "d3347b85be14829f85f8ad519b57762c522e464be3578239b3ac6f912891074b"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node000.Step017Data",
+      "source_sha256": "0fe2f607fc7f7a51ee2d94d7ad3f90f84647042545e220339e808f62495fa832",
+      "source_bytes": 740,
+      "source_closure_sha256": "94bac54a3b4f58cd2c16fe7ac22c223cebd8bf095c0bff1cf2f78763d4e2ffd4",
+      "genuine_receipt_sha256": "34ec0b582459a5901f9d14cfc683f31247e8aec9fdb01c0004a077135d2868c9",
+      "object_sha256": "7b7bc0a8bdb7acbcc8343d15847b66ceb7ac8b205fe3a85f3ef4fe5cc82058e7"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node001.HullData",
+      "source_sha256": "c3b93b85e70d4be6477d750aa62bd427c37bb43360a85d94d0f6993e9d53674c",
+      "source_bytes": 34280,
+      "source_closure_sha256": "b0ec6a402bbfd4087f2331f957b830ebde089194411bc52287c3fecfd231063e",
+      "genuine_receipt_sha256": "91e44741f4500b5603fd120a7cc96271f4bf70d72ee813571cedcc5bf3375d87",
+      "object_sha256": "3545ef147537c3ca1f58c8be3c51acaaff274ac65242dc4ff3b12c91c38e1f7f"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node001.Step000Data",
+      "source_sha256": "2ac0d95f33ab65549fe801c9434f1d30cca217644d3be7528c6d3fb61e7a9d80",
+      "source_bytes": 740,
+      "source_closure_sha256": "4935dc9274415bf59ceb1a02f588ba1388edd4c69b8004649169a8eddbee99a3",
+      "genuine_receipt_sha256": "6b39fb58c90e4156b8cf2a778b5bac703cedadda58a0dec89e03e1510e0c10ff",
+      "object_sha256": "6901bbde853c4b90e5720f9429583ad6175e29813e3d28d69eedfe19a385e81f"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node001.Step001Data",
+      "source_sha256": "0a33c444973a1a5590fb78246f09e278550111024a95e7f2378b34d681d6b872",
+      "source_bytes": 740,
+      "source_closure_sha256": "f9587dd5ff1b3ebbf829fc90927123a6760dbd0514ac4427ad0c3f28aa1f55db",
+      "genuine_receipt_sha256": "6bd94b23d636ce55c2eb3902ca399980ef2c566d9375de7c5760494300bac4e2",
+      "object_sha256": "5c0a391e236c8ddd18c7a27b37192be58635e1555a5534c5659c8f9ed072d93c"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node001.Step002Data",
+      "source_sha256": "17082916d72f82ee9d91ad73c1960d446e6e4f316897c75f54cbb261ea657b13",
+      "source_bytes": 740,
+      "source_closure_sha256": "aea7e072b3af97f2c26e7e5b7f0ebbf57d13088627cd3696c1a5f676f7d77579",
+      "genuine_receipt_sha256": "8ac40bf042f0246097a4e424eb29f8057ec181706f0c5c2bd332f2653aa28926",
+      "object_sha256": "96bff6a69025bd3fa8f371b93cf4a80a5d2856d1236ca7f199bf5d09ca31b553"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node001.Step003Data",
+      "source_sha256": "ae04d3f63f015cc36df2c0598b489b21284a9afa557b47429557f5e7761ae8c7",
+      "source_bytes": 740,
+      "source_closure_sha256": "0491e2d78cd48d2ecdabff71af485b0814a35ec4352aabfbf5a07d9ca92d970c",
+      "genuine_receipt_sha256": "758266ff57ed25f7167a0ee1dbae42f4dc51974d2abd199649361b624948c110",
+      "object_sha256": "31bef5d1bb73dc549172a7161ad06cd89791dc12764ec69a722022119cfda1d9"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node001.Step004Data",
+      "source_sha256": "4d4fe68bc650498a091f64d45e7864641ee7c59d069f92ca3fecd9b22f420410",
+      "source_bytes": 740,
+      "source_closure_sha256": "7c3ad6e82eb53d115deb2a064d36e66f9d4842063bf65f0b5d0837f704e63cc3",
+      "genuine_receipt_sha256": "18feb10f3c490fbb21fa8ec1ac35b5bc33c20f058c24d95ed9b0666a23df6bd5",
+      "object_sha256": "5cb04e61b53f66bbcf4d929e46495f7f99dc6ee14899fbc20c2326693321ae0f"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node001.Step005Data",
+      "source_sha256": "36ef33ec3bee49f36ba9198bc1937a4b93431c0c1aa691bab0488345785d3927",
+      "source_bytes": 740,
+      "source_closure_sha256": "09319537a5e20823911338c31f961581c24af95e7b9429f795690d34c36a9510",
+      "genuine_receipt_sha256": "8315aa8ff372ac6ce7483d375837c6be725a8fca23becdcfc1899b877cf30458",
+      "object_sha256": "d833bcba8fdd9b4c2658c311c91bf993b0ceb3000c6ef393341c3178ea28be15"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node001.Step006Data",
+      "source_sha256": "bb640b3d698ebba7dd495e87a38b755d42d15fb17abf3e0c77dcd792e73e4d08",
+      "source_bytes": 740,
+      "source_closure_sha256": "7dcd229931ce65a49f17cd11ea542d4c57a4cb5947fd2af1d4948d5e5bb3d528",
+      "genuine_receipt_sha256": "959c3202064a06b104656ccec1a2d52b17b7cfc9833da4e6ee077fa49dce1d1c",
+      "object_sha256": "b2ec3945e99c540d4ce5901e47185bf9bc36049aca2783324be56336f239ca08"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node001.Step007Data",
+      "source_sha256": "8c295f8c3311dc3dad7f97dc71b91e55ad99c8ec8d23d6271d7b85a40c5ed1c1",
+      "source_bytes": 740,
+      "source_closure_sha256": "9ac9436b769e51041978f893e6f64cc584a7827ead0347370b09ccd5a078c44b",
+      "genuine_receipt_sha256": "a8f1f74a02568dd265e020af015464c8ca25d7ed5bea0382efdec78ecb0252e5",
+      "object_sha256": "759e7396afdd479c5aa87f03ca25c6951d160cd3a8ade1676dfbeb158c487cd2"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node001.Step008Data",
+      "source_sha256": "849270408029fbbb9c4bfd41590342c8b0d4a34a25da12a0e0ba4a40833ea5bf",
+      "source_bytes": 740,
+      "source_closure_sha256": "9dc38e1cd942d48468380e2782e6e0f77be10e0a080dc7e1beddc798649e6892",
+      "genuine_receipt_sha256": "8adf628679f266a7d0b3b3cc3796ec9b03c60c7331ae6b56dc30bd69e330bc92",
+      "object_sha256": "4933d3596244df5e493f886ab948c61f12f5496982f45483c7ce1cd3c3c0e13e"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node001.Step009Data",
+      "source_sha256": "33719ae64a981bf691fde7b5a036737f1714785930166bbdf4080d0bd9f6a8d4",
+      "source_bytes": 741,
+      "source_closure_sha256": "38335326165c1a20c9c7612a9781dfb741a0116fb17011d6fef634781b3a9645",
+      "genuine_receipt_sha256": "ef96b40c8b709c11eb2be1e55f069dd9bddd43277a9e2f94756a7996efbc119b",
+      "object_sha256": "546170ea09d23a84869f9e21741d40dc02f6756df5d7088d8264f892f4cc7c55"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node001.Step010Data",
+      "source_sha256": "252b8cc9820b925f672193526d1123d46ec01fe07fb15bf3211b726482679aad",
+      "source_bytes": 740,
+      "source_closure_sha256": "bfc7f37bcff3de5f9f0b123e1d53ab081438b643246d7e71e18c9ab3a337bd08",
+      "genuine_receipt_sha256": "a5a894fed4c5c8ed4df6575cfbad89f28084127aee3ee1e5b0bf185fcb2c2b1b",
+      "object_sha256": "7821a6f6aba97248f813ac476e9dd42f08251962fcacd4fc44b98858ca485ce6"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node001.Step011Data",
+      "source_sha256": "4d49dfed3f7a7664a35d65605df0ef6bfde118176514dd8511b704fb012d1140",
+      "source_bytes": 740,
+      "source_closure_sha256": "99e4dde8bd2afdea05c45d9b9ebf1784ae41e7b71fd510ffae9f11bb1ecc5409",
+      "genuine_receipt_sha256": "fa0baf6cdf7b3a84f9141e8db05dd9f8cb4bacd306069203e5c8b44608b2df72",
+      "object_sha256": "6946a8b84c0e21bce71615e9ee0d07a35484e9cf9a08dadeb77cf179a465f830"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node001.Step012Data",
+      "source_sha256": "099700ce879b90042cd38acd1c4d44c2b0769a951816455e27a0cb0c9aa4b6fa",
+      "source_bytes": 740,
+      "source_closure_sha256": "45b91f062a47e917dfc88ea244d01a5f592d0be0976112fbc43f68a7b763053b",
+      "genuine_receipt_sha256": "6eaecaa3c9843de17d92fb469c99f1c0cc42d785239d39c079a671fd787fbc3d",
+      "object_sha256": "994125c238285dcc51f2bdf752b49d8875f4c576b0b94d9df44292144e4cfe7b"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node001.Step013Data",
+      "source_sha256": "ab71071f02168d75e7162e797160ba0ea44172294c8d549e751d0b71df5d944e",
+      "source_bytes": 740,
+      "source_closure_sha256": "e1586ab552f5043ee7a60e9e7369f67571b362500ca9045734bf94599f5e31c7",
+      "genuine_receipt_sha256": "9900d23cfea3eb915ff399a560c4c53491233aff3dd135bfe13f010f4d9aa6ed",
+      "object_sha256": "40ba97e174428aebcb197dfade9b41bac055da8a11ce696911c9c24902401fb7"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.HullData",
+      "source_sha256": "b11d09c93ccd3f7f6ce39e65425d0a18e610a190dc5958f5443407937c7d807c",
+      "source_bytes": 76333,
+      "source_closure_sha256": "d219e9abb26cb786a3da123ccdf0f6dcc13008e1d9f691ff1924dd4a49316af5",
+      "genuine_receipt_sha256": "15709d6faa7f0bb8ffcd64f1e7befe928a55c4f676a33da9e1d5cba490895c56",
+      "object_sha256": "2dbdcc50a9482fa72dbe6c29396adafcdd672ec71d5d14aeaa4619617568a8b5"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step000Data",
+      "source_sha256": "37e80dfcb0b155e9aa78eff2d4907bd17a5a346dd821ba536f9186f08a230002",
+      "source_bytes": 740,
+      "source_closure_sha256": "6bc6e6c1abb8329ed2ef1acdac3ef475ea1e88161690e0d7bf855d23897caea2",
+      "genuine_receipt_sha256": "9878c97936e4dcac00aa6d0ded11025ca92ee46447b118920d33ade4a18c3847",
+      "object_sha256": "ec9bb897b64abfec106d901b34a898e42a74dbe579177b7f406c290bf95a4e8d"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step001Data",
+      "source_sha256": "e16006824c34f424fc080b81b6d2e1db1614781cb93cc53a00ef338aeb63071b",
+      "source_bytes": 740,
+      "source_closure_sha256": "d3b1489fee3c48e557112083f4d4a6040bf6fa3758ab379e13a41b159548b840",
+      "genuine_receipt_sha256": "9ca9dbb38383303bc7992624a1c9f9d88a51eb52c230c67d2363105df825cce0",
+      "object_sha256": "29a72a7d51385e744686365891783cefec5e3173e465f8eea5f6a0a562535a29"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step002Data",
+      "source_sha256": "543673a51387357254a7e138c4f081eec9c359ee34aa7130dfdb2cb33bd11e1a",
+      "source_bytes": 740,
+      "source_closure_sha256": "1a3644b8cde74b02493597c9445ce7bdc3fd07fa2e80c01c29b145b9798aa01d",
+      "genuine_receipt_sha256": "01f23575ab8496ccf206e1a335750347601659a82eae67cdc0134182adaae2e2",
+      "object_sha256": "c3620f171ab6d05e4a323e3d9b7af112f5f6dbb3287ac41f1e120b7e1fb7caa7"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step003Data",
+      "source_sha256": "a5b5ba0ba4765a93f8f0c6881362f4a0d53b11b28ef2b7d6ae0e37ba388bc877",
+      "source_bytes": 740,
+      "source_closure_sha256": "ea5558950867f448d763b2a588eaa1ec9a3fdd20257e222415bf399404666eb6",
+      "genuine_receipt_sha256": "5068b55d92e01bcb93cdc0da48b5e4b05699020bacb28f945b562b30b54a1a78",
+      "object_sha256": "0fac8e2085b237f62f4b819f72cb21eb0bfcb68820ef7cfc96320a5854175acb"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step004Data",
+      "source_sha256": "94b1a07dc0bf14f46189767615cab58ab7d6d50394eae399f7ed51e559d02c08",
+      "source_bytes": 740,
+      "source_closure_sha256": "abd1792834f853270d85482519ce002536694b856ec46bd8958287414c42d692",
+      "genuine_receipt_sha256": "0e492167d1ad67eea97b9b9095e087ad15abf4cc97164eacde277a6c9b7033e3",
+      "object_sha256": "b512962c3262cfeb0b7c78b1cceae78987914d7f7379387c7d49cd49e42917e9"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step005Data",
+      "source_sha256": "d0f4ec95fec265498e38b29637aae9ed484c699786415dc27851d56bfd50a48a",
+      "source_bytes": 740,
+      "source_closure_sha256": "30a4fd50126fc1f2d1e3328e74a787f162249ddc44586af03b4add1535c129bf",
+      "genuine_receipt_sha256": "fb67b1fac1d3cd2b7bff2f54c2a96f8bbe65f66d6c290adc717478414aa90c92",
+      "object_sha256": "7be165c7d94afb80e3c13ece4670cb32e763e10ea11ec32c955f2808484940d4"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step006Data",
+      "source_sha256": "0ed261e7ac6f4f52476d659ff96ca48480ba49f197b182e07d69e983cd9d4798",
+      "source_bytes": 740,
+      "source_closure_sha256": "6de3783cdc6208b20f2520d2841658f9278d9d2552c824e35c7066e47d396cf7",
+      "genuine_receipt_sha256": "b43c794241f11e30c82d9f9865e7d33d85492216e3cfc8e52b65bfd75c9f1ff4",
+      "object_sha256": "3451e6b92bed12961b47b0d42a4fc1c03291f87a74bf156f3b1694cca81d3e21"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step007Data",
+      "source_sha256": "d74f72b64920a308b0f98ffaf991ed6423885ff322b6e78e8376a980e0452fc3",
+      "source_bytes": 740,
+      "source_closure_sha256": "1c897d7780967fb166465857b4beaea2fe5ece4fd1209acc4378fad153dd02eb",
+      "genuine_receipt_sha256": "e5c9320dad93507879097168f7c75af421a8ca05ae02eb168636491797289391",
+      "object_sha256": "c5a145587aa9388008d53e0d1997afaa9174387bbaaa9e49a1ab70f9be9d303b"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step008Data",
+      "source_sha256": "8435b99a451dcf481ebe670ca08c5e6737de76bf24df8404ad5ff16aebd78f1e",
+      "source_bytes": 741,
+      "source_closure_sha256": "a4e6ba27bec0d00a00b78a0ef9012e0f020794a6f46701f04fadb523f91120a3",
+      "genuine_receipt_sha256": "951491572ec596c9ed5477586b1ffb41482cd4e2e0b09ca48e0be50d6e237e92",
+      "object_sha256": "e0fee8b1d58bdfcd40b4bfe24c78ad7b1898e70ec9098b395d98d4dfb317a0d8"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step009Data",
+      "source_sha256": "80467d87e5e2e11d675e3a710fc996a0bbe9d21848c6c0858153e85c3f185a1d",
+      "source_bytes": 740,
+      "source_closure_sha256": "00a1867de17d4570bc3e94288864426d444733398902b55d56f91c1c7ccb046f",
+      "genuine_receipt_sha256": "88e44948ed3c48a643e9e82d5d1bf9bbc42db4c4c14fb52d859812bd42c040c3",
+      "object_sha256": "06e56d831f10e20b7c58c8c140d867fe3018c859c8ac7c42f2cea3147acf686e"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step010Data",
+      "source_sha256": "a57e135a5a4ea4dadd7f886feba3d45f54e1417a592c45b6a4bba1fa3cc8367b",
+      "source_bytes": 740,
+      "source_closure_sha256": "c199700f4c8a090124f6c607f35f2f1e2bd35b41177617d854292fa56b2838ca",
+      "genuine_receipt_sha256": "4669dfddab51b8a7e507bd5d8f02a80f3cd77bfbe30a6c7f0b18b908db1c03ee",
+      "object_sha256": "aba51489431aa28c1903aab4ef4cbd26e3d38ea9f6cec97caf7903bfc192c497"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step011Data",
+      "source_sha256": "176fe528a91c5bfea7d0d182eb776b30220a62a10ed597a8762a9b31252bbfe8",
+      "source_bytes": 740,
+      "source_closure_sha256": "c4f5dd5921aadb49065357093850f9f335d55530b87424f43546064e0d960f42",
+      "genuine_receipt_sha256": "1f2d4db13c87bb3a0ead380eb60610744beb7965331285a07f33ee5d8a1f7afa",
+      "object_sha256": "bf56617df939fb1311cf82f452df46249b2c23ec6e68903774d21ad9f10c7d43"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step012Data",
+      "source_sha256": "5ddfcea4afa81ea7b4b008cca3f41d5d76855418de3b07034fafe69d176db6c7",
+      "source_bytes": 740,
+      "source_closure_sha256": "8370ee8ce81ac72470eb442f97f2702fab86d4d6701019d182fff6785bb95db1",
+      "genuine_receipt_sha256": "5abe2190f98ff873793f7cf48cf607839e42203fb7b3bc136d920e6866ed3799",
+      "object_sha256": "2b4a43d24220f7876864f65c85e11e7314169e2c3565ecf0af011438be117659"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step013Data",
+      "source_sha256": "1fff733f6bd44dd093895f3c77b70f6fbb11d1361698109e93bb13bee9ad7f33",
+      "source_bytes": 740,
+      "source_closure_sha256": "375423794569aa8697559a83e829630621c05ab8cb977bb86cad810034aa6898",
+      "genuine_receipt_sha256": "3d809a746f5359750b1b96e09b0ffb8d025208884c149ac07ed894f47fb384ec",
+      "object_sha256": "7644e2c74f6c0b0fda33e6f4733aa82e936dcafa4d1fab5ccf8feaf2df458a74"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step014Data",
+      "source_sha256": "77a81dc2cae3e290261622ea82639fcb52ee552768ca88bd8fab8d0768e97ba4",
+      "source_bytes": 740,
+      "source_closure_sha256": "145dbb59e2cd52236c40b149f616ff7fb55769950e19efce04b87bdc55dbbbd2",
+      "genuine_receipt_sha256": "00c0a0aa3ea7150c5d57f3cae8a2741b810372a5d446ee60a72373e42194c6c8",
+      "object_sha256": "f13acc6119cdb70185b3c680d3fd0efb42c280daa7bc339865b08c746debc797"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step015Data",
+      "source_sha256": "60e0efb7a93d6d79115e546adcd55dd7a37559b8fcf1408236d980549070c387",
+      "source_bytes": 740,
+      "source_closure_sha256": "72629102f67e257e365affec462bd32b20219787ced7ecd0974eebd1e141b3d5",
+      "genuine_receipt_sha256": "dd1f76009d8eafe0cd53434aadd3865f5b1e786860dfddf3d892ace0be31e548",
+      "object_sha256": "d0e297e0a6cf33063807d78b701d513278c0312c09657b41b78b07d1c1a5c0b5"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step016Data",
+      "source_sha256": "3b9c6c600e382cef008624dd0583958dae9cce939f153e8bf034552d980335b3",
+      "source_bytes": 740,
+      "source_closure_sha256": "8c5046004feb57db01d3dd4bbc96976b320daa427d52b1ebb5b7b95315abc858",
+      "genuine_receipt_sha256": "36328ef60ff020ff41f680dc38609a7ee29d09babba2aaa54add621d2ba76fb3",
+      "object_sha256": "bc5d369139c1b7d694cfb55358f95cfea4cd32eb48d5a8154a662df57a6ebf7e"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step017Data",
+      "source_sha256": "9929f1f8762fb0deec9f7c0d9de2200e23ea5cbb54ea61d94d181d552de5062f",
+      "source_bytes": 740,
+      "source_closure_sha256": "658f4d57a674194c68de7838bddfd0206d18bd28f34c3874704059eb048af3cc",
+      "genuine_receipt_sha256": "2c4facdaba8354ef679b130b44c8cc5319655631e999d055017db553f50ec0d5",
+      "object_sha256": "d448cee657d604ee6f23d1ee6de3d9bf8988eaac0086e5af2766894d96f0fb35"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step018Data",
+      "source_sha256": "4958d5462857662733ed0fe2db00415dbf9037a5bb48d05d26258878af71a7d2",
+      "source_bytes": 740,
+      "source_closure_sha256": "854a6ac43bd973fa76c383af13b2a23e4de5ba25387731368e72a01a3c1ccf1f",
+      "genuine_receipt_sha256": "a3863f1e9527f5993b366850ae2213cf4b0c63d4cefba12107dee795b7dbf85d",
+      "object_sha256": "fce60ceed03ef9ec3db4d55b7cf79e18fd225ec1e434df54f1395e76c34191e6"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step019Data",
+      "source_sha256": "a38d606e9e65ef322c00c66eabac84c1b8125870bce74a21289c12b05335858e",
+      "source_bytes": 741,
+      "source_closure_sha256": "439a16190943652ef024b7c4642d84c93644ad616e0a3fdb6616579b01181b6e",
+      "genuine_receipt_sha256": "69906bf85a1e8fa1dd1530fc4224c8f92ae5bdb9fb23a9a2968f02d0264ed6b8",
+      "object_sha256": "33bd30dc7bc2323a887870c206db245b54a799605f0c6b4678b5c01ea8013a88"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step020Data",
+      "source_sha256": "30ceb63fdf50dd1f88d796f847592028817587be3c3663fa0fac8b8b7cdab3d6",
+      "source_bytes": 740,
+      "source_closure_sha256": "3c7ef9851f3c6f9aafd203598098c6be3735bc82a7af8babcf6d5e1bb5e5d2fb",
+      "genuine_receipt_sha256": "8c48ae79b1cf7463669f4961d93e7eae37e74b47a091fc9c4fbb804cc67584bb",
+      "object_sha256": "9d5ad74d6473fda894d53b08b251b67a20110d5d01210b6f87122fef87ec57d9"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step021Data",
+      "source_sha256": "9d66bb652a6da6372f68d5ec3431dc5f43462715492e07eb4963dbc49b8abf95",
+      "source_bytes": 740,
+      "source_closure_sha256": "dae491887e82b653b15055ea7e702e070c1adca4ae853f70d18c47867931dd32",
+      "genuine_receipt_sha256": "4a44286dc1753273a596858619d8dd31526495ff80de61bcbb6467addd830c4b",
+      "object_sha256": "ca54d19a8b9c77763908f83c5de76a743ac0556f65464ecde28913b0cc741e28"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step022Data",
+      "source_sha256": "f7bf311e71106e281285775115fb848ec2af3a486aaf1e5eb55f2da0f22f700f",
+      "source_bytes": 740,
+      "source_closure_sha256": "d44d85fd143038b6e08ebca71f98d7f07a9f2011f412c65af2102ab7018d9c8a",
+      "genuine_receipt_sha256": "11b6021a35ad4793ac9e9c9b46aa728996a1e2bbe872245da2b49a68f2dc2525",
+      "object_sha256": "fc00fac062137f96eddc2e29df7867889f7c6f31dada28b973d234edd9af1ac1"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step023Data",
+      "source_sha256": "20d14bd72284c7ac7e1d113ce6c15d9dc64b232118b7b273223fb31198a29c04",
+      "source_bytes": 740,
+      "source_closure_sha256": "856194addab863a6ee7ccc7c6f2ade872f568d79402fc7fb3e78520e0ce83d9b",
+      "genuine_receipt_sha256": "1c6f497a95e420d03438a3d7df57deeddccbd9c9a78ca06bdf17fc21731840c8",
+      "object_sha256": "a4e3f2f4d01d4d76034e745d96cddbf16ca01741259ccf5fe2da76480b35ccfc"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step024Data",
+      "source_sha256": "51b3412e48977a04d60aa0f18385434b76bb1456276e3874ce07a768dcb3bc4c",
+      "source_bytes": 740,
+      "source_closure_sha256": "ea2e7ad630bb972bd58fa0b126292e680146fc07a05d755e9a096ca0b3bb66b0",
+      "genuine_receipt_sha256": "a5464e2c5c2777f585ee24ee8e6aad85f94b0ef66fb13314624c15480e05b1b0",
+      "object_sha256": "baebba98c60e3d72625765f3299fb1a3a70e2b9c62cd92620c1f317d5d5e2d37"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step025Data",
+      "source_sha256": "33588b0881a6e9cfc97365c3384c348c6d11834396f2b28e4297cb04f65379d0",
+      "source_bytes": 740,
+      "source_closure_sha256": "a508b2998b86664bfcc36434a56297b986057a0e8e8081dc8593db9862763be7",
+      "genuine_receipt_sha256": "93cdc5daaf3669b46e8632a3c27a06680ffc5b976eff12ee3c08bcf9e9ec41b2",
+      "object_sha256": "cce9c6a8b24ddb156da5978e69c337745653f3458b062266d9998923995c9351"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step026Data",
+      "source_sha256": "0f3eacf355eb5ce414820fa3e152ea8580c86e4987718a68ae8d89654d325e36",
+      "source_bytes": 740,
+      "source_closure_sha256": "981fc014cd03b78dc877ab519b89119ab65e7f326b6c183b0c9e40cc7743594f",
+      "genuine_receipt_sha256": "558d27ff88652f95e7d2b43739b609af669d81204b8b347b30965870965b91fe",
+      "object_sha256": "47e4556d21338c7e93bb4574dba5a96e8a630bc6b16b1e272445cb71f9490f91"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step027Data",
+      "source_sha256": "ea51078b9683627e2f2b187e196fc454e00297954fbba452ee16c036d132642c",
+      "source_bytes": 740,
+      "source_closure_sha256": "88ac4367df823e6aebfd16e2656badafc9023c508a0075801d4fb6636749379a",
+      "genuine_receipt_sha256": "d48816925e0c02a90ec16e36144e84bb70432dae1e162ae15158d7da8789668a",
+      "object_sha256": "8a490ff45e3dfc0512afca71cfb87bf0a49f02a0e592b3ec09dd190f811f20a2"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step028Data",
+      "source_sha256": "5ac3880ffcceb3337ef2505169310a3581c5183bc9e01943b48d2b5afd666e11",
+      "source_bytes": 740,
+      "source_closure_sha256": "d2cf67eeb7dd9d2b63613f2240e6639bf71a4c1f7e52712e329155450c890fa8",
+      "genuine_receipt_sha256": "e1dd0213eb490a26bef8412fe18d55f8d0372f1db2a362de4e1c91abddd3cfdc",
+      "object_sha256": "c902e6435c73084f3d8d31a62846430257b8007ead66e9db2bd0a5b3c3399a75"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step029Data",
+      "source_sha256": "c7ae8f696e5fbd94a177943fd60d586f80b43f9cb8fa262ec0bff3c74e2effc7",
+      "source_bytes": 740,
+      "source_closure_sha256": "4b528c87d1d0e5ba83691fd83bb7db494f56db9775a15379686d922dd6d28f79",
+      "genuine_receipt_sha256": "b55817712b1d5a929e6e29d992e2c03770862964bb9a3a18fbafd8aacf971b91",
+      "object_sha256": "f567c613ceee4a1399ce69e558710f12e9d07a3ad0cfc818e62c91ae7ca422f9"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step030Data",
+      "source_sha256": "0d7d556267cb67ac5eafb5656d6982f28eaf950b6f0b584b0a0a65f7550d967b",
+      "source_bytes": 741,
+      "source_closure_sha256": "d13389f395f13aaa27253ca63dc25d2151258659e7bfb85982cf170e54797aeb",
+      "genuine_receipt_sha256": "6d2735b18e7b952fcdb02e1891ecf69a4af56451ec8f32c8417b94ee9b4c530a",
+      "object_sha256": "7fe7cb122b8cf802188c7fda3dce113826bdd02a376c38b5de17e2b5fd38a6c0"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step031Data",
+      "source_sha256": "63e4b464544666da2a971c2a1daf31f998f9f07a3943a4fb0c467363971edf0a",
+      "source_bytes": 740,
+      "source_closure_sha256": "4fb243f9469f2f378c7d23de3520530b183f8d4b18d13d27c48b9177a72edc11",
+      "genuine_receipt_sha256": "540e46f49e3f2d960bd16dbbc2a4932177255fdf14aec9a3b611f0bb3ed61074",
+      "object_sha256": "e38fc584bab4069fe4d7daa56440070eec75671f39555b78ac23a4d045716198"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step032Data",
+      "source_sha256": "8d893095806cd8450519ee6f582cd95c99af0910d8bdfdea114ac0b3eb7abd22",
+      "source_bytes": 740,
+      "source_closure_sha256": "2c102a18594e007699c7ba8bd3c8e70cebfadbb0afb2d1d5229372c1fe84c5e0",
+      "genuine_receipt_sha256": "87bd2511208ad161e63c6f7cec89e7224a04db4065b3aee3f62b289452f58832",
+      "object_sha256": "98b775597f37f71a664362681202bc25d5b15e5333eee6bb08762081247ac20b"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step033Data",
+      "source_sha256": "e287c6fae2d034ec642384bfb4f36a4f5e95d7aac0a85d9b2dae90ec0239792b",
+      "source_bytes": 740,
+      "source_closure_sha256": "0f91b1310746ae835bb801707df6c35f033870e9e54bb059dbb3542c37fcd6b9",
+      "genuine_receipt_sha256": "6c8a85c34a748894adad00e9889d1dfede83bf3de16a3db1ad4a728190c7b873",
+      "object_sha256": "9e3ade2995db136da61007a33d2a00d3a37bc8a566c6b855ca3ae4756e0b76e0"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step034Data",
+      "source_sha256": "463aa17fa00b66e955922794f0decb4b13e35325635ed8717bcbaac5f419523a",
+      "source_bytes": 740,
+      "source_closure_sha256": "d9ef3b409e0c86ebd8bbbc2c31a9b7e48b07fd1794b7dff584ecc6cbdd7f43b4",
+      "genuine_receipt_sha256": "8ca2614b2c4ec834ea0efd45b364292f55307b29f966474dadf2fb29a570427d",
+      "object_sha256": "8274e29e4c6679c5a9899ee9f54406307cd6c87d64ef2e3fdab384e9467c1ff6"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step035Data",
+      "source_sha256": "09e75e12ab55d6101a6b6519cbb730f77a597ff233f8ba199b52ed95bf0ed8ea",
+      "source_bytes": 740,
+      "source_closure_sha256": "5a81cce9fdecc8d80d1dde2000553076f2ea8b1c7dde8ea1d93d8940dfdcb518",
+      "genuine_receipt_sha256": "ae9bd9e7e2739361ae3b393e863378b029f55dbdc5f7dcdc25efb7868b78293a",
+      "object_sha256": "c515e3865aedf392b8c34742489ba02c81bce7e397d50477582ff61dfe51d2ff"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step036Data",
+      "source_sha256": "f8a85e4a0aeb88a65efb53b04464f8e4018f1fbb4e8b410a6bf60a6e21007ea2",
+      "source_bytes": 740,
+      "source_closure_sha256": "c1971739747fb07ffe9102200c833845b5aac62759539a80de1e9bd956f61791",
+      "genuine_receipt_sha256": "e6531d03b23b93673396f85c20dceb0e33d578210bcea77f8829abba2c66666d",
+      "object_sha256": "7abb8ab6715d81e8d85cc111132ff2e63756e8f2479691c6de8bfef7a717686c"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step037Data",
+      "source_sha256": "5b32fbb5c3362cc4ad810238f650d56674f96d974b06018c8455ca417f7f14ad",
+      "source_bytes": 740,
+      "source_closure_sha256": "6ff0487d204d5b5c773b259a089783f962996acbe7134a75284aef7667146976",
+      "genuine_receipt_sha256": "10be0ca9353bf53077b043d04317f56468a9b31fbd682f98d9f33119ac5c42fa",
+      "object_sha256": "1fa02401a5a1ff6116b43721cf38b9e7df9bfd317f3d98a65f60bfc50aab3dba"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step038Data",
+      "source_sha256": "bb44d7b47a0334d9733eee7ccf6f6459e5738110d11a9e225b383c8880b3dc3d",
+      "source_bytes": 740,
+      "source_closure_sha256": "37f9c57b17ef517b60d70e10bad7e6ceb218a730b19249c0d3346c404fa154c9",
+      "genuine_receipt_sha256": "e463b72430a26b812b2b7a74aef2a52ee02eb3fa96ae2c275c13ff58ee2e2c10",
+      "object_sha256": "d6d51a4bfbf77ca83b69e7c5e30ec0bb18309b3d7f5065aa3a6533f6fe18f8c0"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step039Data",
+      "source_sha256": "4cc83e954120cedd601af2d855a8b35c9598eef01169373ac5e77af96df0458b",
+      "source_bytes": 740,
+      "source_closure_sha256": "35ada845b79f5ec3f6b0a2f5df2784aff11d85db3b582571533752d0c77a6dc2",
+      "genuine_receipt_sha256": "2fa3847877ca75be9f2dc3818070a82e0520432613c8111352ed08f60e045301",
+      "object_sha256": "813b6050dc61529a5cf6262e57cdb877f7a418346f26a3638123e2ec9453420f"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step040Data",
+      "source_sha256": "0bf17836e446398b4c7a452935f785d6b76a3529aeaefb9f5737a61d00b7cbc1",
+      "source_bytes": 740,
+      "source_closure_sha256": "101dc9fecb7780e9d49f21c99cc3e3b8aa1007c57b69eb6bcc263fa2c8c41122",
+      "genuine_receipt_sha256": "dd5514fc412510a7c4b5c98f77ce4d52dbef2908a9eb8c65a7580d415ffe1849",
+      "object_sha256": "ac01a3b7d8f480972e305730b504a732e1d6d8f3d099ce253c9d36bf68cf7b5d"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step041Data",
+      "source_sha256": "228f95227075e5a5a986331d0210634fb6716ef855dd6f0a29173aa8f4cc3dfa",
+      "source_bytes": 741,
+      "source_closure_sha256": "6a680888a51e52346f815a6250b41462d832af529c4b0e8240bc58db87519032",
+      "genuine_receipt_sha256": "1ece7b52c1d707275325677cd22d953b70f332954b36426c03d68e5a34d27baa",
+      "object_sha256": "9ae8966524c46ea124f7a9fce07f8c36772890bb638f6b3876803ad9e95ba7dd"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.Node002.Step042Data",
+      "source_sha256": "839475fdc8da612003d6768abf2ec4d7f81fb7eea5435a295d8769bb6dc58e74",
+      "source_bytes": 740,
+      "source_closure_sha256": "9da7d6dd31cf44474dd4ce873f2dbeb9e06261dc5d1e684b1d690da748c3bc55",
+      "genuine_receipt_sha256": "a51b9ac9d0a95beb00bb2860946c05437c0317b3204e6ccb97782205f1602057",
+      "object_sha256": "cda8d49c8df8aaed87b2a456f1b355473883fc39a0d63494233f9f3b38cee5ca"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.CellGeometry",
+      "source_sha256": "603c814c4928a2100dab21b5eb770556e4df92fb3bf909c7b7e2d3d711b8f22d",
+      "source_bytes": 1327,
+      "source_closure_sha256": "02abc4258d3ed80ff81f5427771b70d301be6e3e839b9103563cc69308cea0ee",
+      "genuine_receipt_sha256": "feb3c877f6566b90708a9b8de54fc0623eb6ffc15fe553e67dea5b2e1bf68936",
+      "object_sha256": "c7145140b37910e74f3ef250c3a1e84c92e00c5851ca63ceed487066731d0b7b"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.CellLinear",
+      "source_sha256": "0ebf5ea519b79817f0a56b500ff2fbb240e583dbcf0d54c1402fa64c21a6c18c",
+      "source_bytes": 2046,
+      "source_closure_sha256": "fbf363f30d9b6368a9569d1cb89d1f680c108efdc730ab6d135f6aef4112e980",
+      "genuine_receipt_sha256": "533a56c863c397eb9667d45b967d5eeba06df85fb54dd473897c639d3b4528aa",
+      "object_sha256": "981f186e69a469ab83011f0fe08d0c24f08493c276ecb1fefeb77ac2d39e0546"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.CellPhysical",
+      "source_sha256": "aef1c650584d4aad685004bb78090a3df60aaaa1843577e0cae7a25422eec800",
+      "source_bytes": 1877,
+      "source_closure_sha256": "442dccb08681c0248f1f3676f0a40b069083e0a7a619057353675219c2330c24",
+      "genuine_receipt_sha256": "919cf722c6f63849c36c21a71f7b33d0a4986ece30c71361a84b0d4c5ae40892",
+      "object_sha256": "5e4174d22a92010d37444ede2b44c86c9e5203d95259c0e23a907bd30eb0e003"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Certificate",
+      "source_sha256": "a4f97caac156c08a14881fe1a5e295927ae0ae660b41d6de206f8c6dfbb7e3b9",
+      "source_bytes": 1737,
+      "source_closure_sha256": "6730ebb370e8f58d3e96c78654d09352c41016ff858de22453f46a5fba5fadec",
+      "genuine_receipt_sha256": "a79be1ce3dfa65b68daddd707111a89fefcfd6a990926b8682e51b7a08824eee",
+      "object_sha256": "4953c37519b83fb305a77074b30eb79664bf6b7963a995e0eadad4605dcf249a"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.ChartIntervals",
+      "source_sha256": "3246c78cae7ce9a4e41e1971d94db31d15f51552fafa5a802a032aba18c4998f",
+      "source_bytes": 2356,
+      "source_closure_sha256": "264f96a08083a20030e6f094995d6fcbcc8fad097d1a4595928b12da52520dd4",
+      "genuine_receipt_sha256": "90367af1c4b7b455cc301383271b623b0dd9139129f27264ee32c7612a6df796",
+      "object_sha256": "f93f1f460b10675ae6da41d68ecd8ce50dd5a82104dc5bdb967af66b76cce9bb"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Convexification",
+      "source_sha256": "0940b3bf7c6721e83da01a62b822299dde9c66d7bba553fc45fed37a32693b94",
+      "source_bytes": 3590,
+      "source_closure_sha256": "5c07d4f05ffe35faf68f7ddd14291048e3cc37c111751f07f039528c2ca5f61e",
+      "genuine_receipt_sha256": "063a7b40e0de846b286a00c7b6955be72c96b47120131d9ecb82d5335f833209",
+      "object_sha256": "98443a79f08faffd65ba6fa83ffab4a404ece1e947d45830c801c4a127caa034"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.ForwardRows",
+      "source_sha256": "224afe04b130dd78376147df8a8762461cc22260f82e6174325bc0064c2b87b0",
+      "source_bytes": 7524,
+      "source_closure_sha256": "737f6a7d50280bcbe5ef2ff4df8458bc83d6790e970e7fda61be91f2a58d1740",
+      "genuine_receipt_sha256": "78698b2c95c6cb50824b0b540d633501600b2fd93fb6d18c8e9a25f8cc998742",
+      "object_sha256": "3830caf6cdf82413059eb0ae6eab4110524db03cbd315d82da316d85b0e2579b"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.IntegerRowTrace",
+      "source_sha256": "d9c5c65798e4cc42a9628ce3be561bc62a5cbf659e3fb37d68c76bdd0a73b902",
+      "source_bytes": 4277,
+      "source_closure_sha256": "fdae1432b928b36115c3319a15ce5f0e15f86472e9df1b39ba3314694eecdf54",
+      "genuine_receipt_sha256": "8c4a6e10a4ad1ace7669f31b4140187f1ee0f1182c9c5a89b66696860293b095",
+      "object_sha256": "c9f993ad02b7a1bfcc5d4e780bbdced4adeace495784b68e3e00d6e115988161"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.IntegerRows",
+      "source_sha256": "244a6e9bebab9b7ab847ed67d3c2fd77a852a6ba9a61e07253cc8f8b55d8765f",
+      "source_bytes": 3253,
+      "source_closure_sha256": "20c1dd2dcfaa3e75f2136f68d60a80912c8e2bd2c76011bdc06a1d5e3960cd59",
+      "genuine_receipt_sha256": "cc981874faa3e264ad2e566ec5ab5a4f41788bd68227e4112a00c9e3b892fed4",
+      "object_sha256": "d090740621c32bf72a7e757e9f6d8a15b4294f0b834185735e2764b5bf466536"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.KernelBoolRefl",
+      "source_sha256": "90111f1782484d93843ab7e8ec6789744ebf90afdd8deb6fa2d3ddf3880513ce",
+      "source_bytes": 429,
+      "source_closure_sha256": "a3da6dcbb82fc90e0e0768665497d087d54a2f788e73aaa980a384e3f84a2323",
+      "genuine_receipt_sha256": "8f19e9664b54a75ea8aa9ee1fa37490b503844b34a8f1c08567b4a07b40c73aa",
+      "object_sha256": "9e85dd325ed25ced1d96e2395ff05a2df1aa9a9752029bb7105a1fcc5b667952"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.KernelEqualityRefl",
+      "source_sha256": "579aba76120723d18a2d3ee1464e136612cca06ef76f9547a67ae183b2c92200",
+      "source_bytes": 581,
+      "source_closure_sha256": "66436ba96530a2cb02c68a65e5ad0354ef56ec85a003e2f94142e84114f5aea4",
+      "genuine_receipt_sha256": "ddf175ef66934a001e74f40397b15385c0b4dc5ee2195bb93d89801973033133",
+      "object_sha256": "e06db3617d2870fb8d7f458f1159c6f82785af56f65745f4c22fa82dd1d3ceed"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.LinearCertificates",
+      "source_sha256": "c24f3d50ad393d00d0a1d6650f853f419a3612f957b75cad881184517e1ac66d",
+      "source_bytes": 3837,
+      "source_closure_sha256": "8c4792b2af424305c05f8a3102b662b2fd8359b035b2a7513d07e8af96433818",
+      "genuine_receipt_sha256": "1b483f268bc4bebc9f04d2362e141f69413324cffb684de45213702232e5a0cd",
+      "object_sha256": "6befe8497369e49d5f4bee7d58d235419badbd429c82d10b73e1fb0f70ef1f3a"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.LinearCover",
+      "source_sha256": "07a06e2af16eba8f1ab5c1874fb30b81eb6e625cffcf24ad7874c2f2bd6d94e8",
+      "source_bytes": 1798,
+      "source_closure_sha256": "da94ec21b38f8fa9b1fad231eff1f3a34615bf3e0c576d5ad4d168240966441e",
+      "genuine_receipt_sha256": "9df32d40a48d2eb36fb849759f8a13fd4d714e105f98b9105d411564d131ed65",
+      "object_sha256": "87a87a0ae33a03b07661f09f18ed930c385f51e97c55e98b16f8e23fa777f091"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.PhysicalRowInput",
+      "source_sha256": "65665ed05820583694a33f57766fe550ac974bc570150cc456396a81edac48e5",
+      "source_bytes": 2805,
+      "source_closure_sha256": "6457e8eb7067bfcc2b9d02a67e700bcff329c2c196872f0d8c46cb0a89baf2bc",
+      "genuine_receipt_sha256": "997a649b6b7a5ccd56b3926459916e77a509dfb80438d557dc89fcda3715efef",
+      "object_sha256": "cba1d11228a48a9136865205be845758bdc18379bf849d41fe8a32198bad0448"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.PolygonCertificates",
+      "source_sha256": "ab52222aa4fbfa52080ad9eb0eb085a444d27d68a7c57aeba74ba650b98fb33f",
+      "source_bytes": 5028,
+      "source_closure_sha256": "00e4ad7c41e0bf52a16bc64db99db2bee0450763858355aa0985dd5932c88d05",
+      "genuine_receipt_sha256": "8e5cf7173abfab4e0854b23d5b9193b27b86602784ee81b5a4949b731110367b",
+      "object_sha256": "91a749956fe839d3a6815bd1df5ea6d700eac539e97e2ccc309ae8fa6cca9509"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.PosewiseReplay",
+      "source_sha256": "dc4b9b89ac1d7cb18df29a7d309c555ece03bdb90c4fcad29c004614ecb6f8e5",
+      "source_bytes": 4796,
+      "source_closure_sha256": "7c1fef51f9967ae20ad100d44d6fbd4f4a0d1d2008c834c53ad0f005bf46d71e",
+      "genuine_receipt_sha256": "aa08496743722bf6fb9e395cc12aaf516034cf30482fe26b514a42b41ed433ee",
+      "object_sha256": "d81e18bc3fc5534e6879c7c7776f8bc6f3cecc7817f422847699bba10d2f1940"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Promotion",
+      "source_sha256": "8f635a0679b0d8abd7b75b9dbf8d25b07ad29348496c5256f4e77d7052b50665",
+      "source_bytes": 2701,
+      "source_closure_sha256": "7dcf5da5bc94ede425bca7978b7a698ffdefda64a5a3914dd89b0a18a99df7f3",
+      "genuine_receipt_sha256": "91a68b98795c992c06c478f62df29cb368ee0641e74a36b43a960030218b0dca",
+      "object_sha256": "b96c3f00f492c21881d9ff3dc491deb0b3af4a41b974820ded076055e03c6cc8"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Quadratic",
+      "source_sha256": "c98a50d319fd55fc1c47d80bb758fda9bf0cd68bc5e05d000e94618feecdd25d",
+      "source_bytes": 2909,
+      "source_closure_sha256": "0bf50b3bc9a115b9f17b38bef4be8dda9061db3ec8e75d5053eb54cfd7c8094b",
+      "genuine_receipt_sha256": "3d62d7589f4e3f67160c066588096bcf27b76260c1a81481755c086cab79c06c",
+      "object_sha256": "d0d947843ff2628aca978f2a96f1e74d2dcd92d000355e4f50764a0e8fa114f8"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.RefinementRows",
+      "source_sha256": "287348eeae2f3a4caee512129783a630fcff3451c5d6476117d2be78b742b8dd",
+      "source_bytes": 1672,
+      "source_closure_sha256": "400552b6e5b16863debe6a40cc73a4e3503c96ab89ad37dd7e7fbaa7925f85b7",
+      "genuine_receipt_sha256": "afa2b010e0ff89c2c5d2c0206dd6fff421f35972961e945f77964cabe79eba00",
+      "object_sha256": "9fa1f7d8a21f89df90bb36512a5611185609028cec668f37d18cd8abebc9ecc8"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.RowRefinement",
+      "source_sha256": "a4bb7f0861b23c3343761c8146eca51c944e3ee1ed3f560fba5853559ea44983",
+      "source_bytes": 1958,
+      "source_closure_sha256": "73a810ec95ce44c574065e7967215ac6b0ac5ae05ee3199489537acf0cc4ed29",
+      "genuine_receipt_sha256": "982d50c599cf9dd9210f05e5b0fdd8560eb19504d337fdbc03997a908aacebba",
+      "object_sha256": "6104d73d75dfa639e1f01e685a48ace5cefeca04453a809b0b52479af32af154"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.RowTrace",
+      "source_sha256": "fec8299c0873dc32ef04cf71832caf1d10d3942622ed238c17d2aed3357f6963",
+      "source_bytes": 3364,
+      "source_closure_sha256": "d47cc6bebc05db25844c68b8711596395c94273707e0e1da160f34971501e0ce",
+      "genuine_receipt_sha256": "5ced2bf83ddf48a78d1647cd817c8e7e358ca70d98b5e205d24e8766fe1d5348",
+      "object_sha256": "6e918498fc996996b85b54c494f1aaca1cc6d07fe95aee4d34cc5297eeee6005"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.RowsOwnership",
+      "source_sha256": "6e9a487d66cb2206902af697df999dcc21556e67c0d01f0b2508e2fc5498a9d3",
+      "source_bytes": 3620,
+      "source_closure_sha256": "1658e911ff99bf55cf1d77fccdc8c48d89b8eba2dba5fdc6109c6eeaf68770b7",
+      "genuine_receipt_sha256": "20e8e824944bd9d8542010fcb96325596c0adb15365c3c1ae805527f79d3f297",
+      "object_sha256": "c4e249a26ffaab3a902a9d3ee6edbf5212b157ce5842cf3820573d338259dd09"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.SelfHullCertificates",
+      "source_sha256": "f99f5e5f57f8c6ecfdfe05520b6178d1327473dd64cee1d32c96c38a2529883e",
+      "source_bytes": 5673,
+      "source_closure_sha256": "d5a6971e30b39a5a0a00a1f96c118c2518a5c3d8af9ba5164eee686f7ffe5546",
+      "genuine_receipt_sha256": "693812d0ebdbeca31987685f674c6dc835ba9219b23ffd7891cf10674e242864",
+      "object_sha256": "72a0dd2b8af0f3fd8d59db8099d0b3b5db379d5a6e796eb1f45c8010505d0288"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.SemanticCertificate",
+      "source_sha256": "465d86961d7c62a95e19903c76ebdb25a09ded85c2fa75564d71cccbf8e0779e",
+      "source_bytes": 3128,
+      "source_closure_sha256": "525d32d4a2abeddd8f4a1f72163ee69ce95f6294ba079bea96adaa481d0c4fb7",
+      "genuine_receipt_sha256": "ee06feb8dcf4b8d0434fad76dc220b31386fc7f45fa9f953e07db799370c7368",
+      "object_sha256": "d40bf63de6ed48285834eea4bfeaec35d19a715e03a4fa61fcae3f0fdb3b2388"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.TraceAssembly",
+      "source_sha256": "c5ac2f4fe23fcd0ccacf43c4f1b9709e566108c2151e6993f2b22905126df459",
+      "source_bytes": 3909,
+      "source_closure_sha256": "ba7614338961a14ebe9b99780137673f121cfc55a1f570b0b382a2bf607114fa",
+      "genuine_receipt_sha256": "1f1a5d9ad01e3a26e7c9a6fd3f8b9bac4633d08b22bfa38880e95ded2e429a97",
+      "object_sha256": "53b57491a1bc7269a594821c6276da829c8d56b5c568a129222b871e41c29b29"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.TriangleCertificates",
+      "source_sha256": "3fca75c845e23778f2c940325b8d19b0d43515553d2fa4c8e7bfd09bfdf81808",
+      "source_bytes": 3211,
+      "source_closure_sha256": "cfb3777bdb2ab2eeed603fa6b6b2e1445ed1b69d6ea3236affc303b38c51b2c5",
+      "genuine_receipt_sha256": "e08e539aebcafb84040f5b1ff3e2b2fbaac59ad2d346e48769edb1efc792c420",
+      "object_sha256": "ae36470ff8fa6a81f743ff067637f6c4987cfb8aa39001a41294b49309fdb24f"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.TriangleCover",
+      "source_sha256": "085f602a90d0935ae1294a65f063505a15d231b8dcbf39b8bdda23067cbef245",
+      "source_bytes": 2830,
+      "source_closure_sha256": "4f92b2636c29d8566c0ee9a29623fc81f0274a846dc48410acab0400bde4003c",
+      "genuine_receipt_sha256": "1635d84aa1dc8e141358c028336939a7bc92a135fc19f50039a063d594e9148a",
+      "object_sha256": "114b555b40d34e86c0d5a08534858e83472b131b156ec45f0e308c0d2ff41e75"
+    },
+    {
+      "module": "ElevenSquare.Tasks.T03.Walls",
+      "source_sha256": "e55e5ca9bbe30c15ced42411419edff8cd13b7d7ca8f94c9fff753dbff6596a5",
+      "source_bytes": 3732,
+      "source_closure_sha256": "89d1032ea67f865ef9f529d2ae2ad931d66fee56abe8b2799d901c3c1dcc1922",
+      "genuine_receipt_sha256": "77d96af4ed8229a6f5b04277d8dbb50693405bc21556eb1dced1eef16f4eea20",
+      "object_sha256": "2f6bf60d5564e70e004c834a6e715f3969396c4d442d9a885b8ea6279516d91d"
+    }
+  ],
+  "all_original_archive_members_and_exact_reachable_sources_verified": true,
+  "all_genuine_source_keys_receipts_and_actual_compiler_objects_verified": true,
+  "pinned_original_Lean": "4.10.0-rc2",
+  "pinned_original_compiler_sha256": "c2059c8da4034467e5f391cfd07b81c4a7b32a7e04ff7e50c7c385993cd77010",
+  "unverified_geometric_Step012_pilot_included": false,
+  "actual_full_geometric_transition_and_case_certificate_pending": true,
+  "same_claim_uncached_or_whole_case_speedup_claimed": false,
+  "publication_Lean_jobs_worker_controls": 0,
+  "original_source_task_environment_checker_bytes_preserved": true,
+  "private_metadata_objects_receipts_caches_original_transport_excluded": true,
+  "neutral_serial_resource_profile": true,
+  "source_zip": "T03-accepted-case1465-numeric-state-pilot-source.zip",
+  "source_zip_bytes": 3086131,
+  "source_zip_sha256": "cb989c775bdd1a6e71896bf0a13cd78165ad72e32209d366e197975bb23fa644",
+  "all_finished_archive_member_hashes_verified": true
+}

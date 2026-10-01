@@ -1,0 +1,17 @@
+{
+  "status": "EXACT_NUMERIC_STATE_DEPENDENCY_SEPARATION_PILOT_QUEUED_NOT_KERNEL_CHECKED",
+  "utc": "2026-10-01T22:57:04.271363+00:00",
+  "task": "library-case1465-node998-independent-state-snapshot-pilot-task.json",
+  "transport_sha256": "100e3358daf89bc1063dbe4bd072c8b9e6e00fd4d9da41282e882a2228259882",
+  "transport_bytes": 3036071,
+  "source_modules": 126,
+  "source_bytes": 9744540,
+  "source_member_hashes_verified": true,
+  "prior_packed_geometry_and_transition_modules_in_closure": 0,
+  "unchanged_original_checker_in_transport": true,
+  "queue_sha256": "defc02c5c1bd1192164ab930dd0b3f1e066c21061a58ef8af2c40471d41c6e5e",
+  "current_proof_path_retained": true,
+  "whole_case_certificate_increment": 0,
+  "maximum_global_lean_workers": 4,
+  "additional_compiler_processes_started": 0
+}

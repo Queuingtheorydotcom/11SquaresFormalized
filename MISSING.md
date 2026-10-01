@@ -50,6 +50,11 @@ useful components, not a complete case exclusion.
 
 ## 3. Complete the returned-exclusion family
 
+The [accepted numeric-state pilot](verification/t03-case1465-independent-numeric-state-pilot-source-release-20261001.json) preserves 75 numeric definitions
+and checks Step012 state binding, but adds no full case certificate. Its geometric
+transition and whole case audit are still required. Integration remains 169/173.
+
+
 The refreshed [upstream inventory](verification/t03-wand125-upstream-source-inventory-refresh-20261001.json) supplies
 172 source archives; only case 1465 is absent upstream. This is distinct from
 the original-project integration log, currently 169/173, with cases 1373, 1393,
