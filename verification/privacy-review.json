@@ -507,5 +507,22 @@
     "whole_case_increment": 0,
     "publication_Lean_jobs_worker_controls": 0,
     "personal_information_findings": []
+  },
+  "case1393_and_geometric1465_review": {
+    "full_case": 1393,
+    "geometric1465_pilot_only": true,
+    "exact_reachable_modules": [
+      680,
+      1389
+    ],
+    "all_source_raw_final_and_genuine_object_receipt_bindings_verified": true,
+    "all_actual_original_CHECK_log_bytes_verified": true,
+    "later_unverified_replay_batches_excluded": true,
+    "original_task_checker_environment_source_bytes_preserved": true,
+    "neutral_serial_profile": true,
+    "private_runtime_original_transports_objects_receipts_caches_excluded": true,
+    "all_ten_server_asset_digests_sizes_match": true,
+    "Lean_jobs_worker_controls": 0,
+    "personal_information_findings": []
   }
 }

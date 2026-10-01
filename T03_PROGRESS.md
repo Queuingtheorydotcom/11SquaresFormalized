@@ -1,4 +1,35 @@
-# Accepted numeric-state pilot and supplied proof inventory
+# Accepted original case 1393 and geometric Step012 pilot
+
+Upstream supplies **172 case-proof source archives**; **only case 1465 is absent**.
+We are reusing these supplied proofs. The separate original-project full
+integration log now records **170/173**, with **1373, 1464 and 1465** remaining.
+
+**Case 1393's exact original full certificate now passes** the pinned original
+Lean 4.10.0-rc2 checker: Main **67.03s**, Certificate **40.14s**, actual full-target
+audit **39.88s**, reporting only `propext`, `Classical.choice` and `Quot.sound`.
+The [accepted audit/source bindings](verification/t03-wand125-case1393-full-original-audit-checkpoint-20261001.json)
+and [complete exact source release](https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/tag/t03-audited170-imported1393-20261001) contain
+**680 modules /62,949,475 source bytes**, including 22 accepted PrunedTrees modules.
+Every source member, genuine closure/receipt and actual object hash was verified.
+
+Separately, the **case 1465 geometric Step012 pilot actually passed** in **82.71s**
+compiling and **43.46s** auditing, with only the three standard axioms. Its
+[complete pilot source release](https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/tag/t03-geometric1465-step012-pilot-audited-20261001) includes
+**1,389 exact modules /125,288,070 source bytes**. This checked geometric step
+adds no full case certificate. All later replay batches and case 1465's full
+certificate remain pending; no whole-proof speedup is claimed.
+
+[Server-verified source assets and actual evidence](verification/t03-case1393-and-geometric1465-accepted-source-releases-20261001.json) preserve
+exact task/source/environment/checker bytes and omit private runtime metadata.
+Main, earlier releases and live proof work are preserved. Public family assembly,
+merged replay, global optimality and final return remain unfinished.
+See [MISSING.md](MISSING.md) and [T03_PROGRESS.md](T03_PROGRESS.md).
+
+## Earlier numeric-pilot checkpoint
+
+The following retains the earlier 169-count snapshot; accepted case 1393 above
+supersedes its earlier pending integration status, and Step012 geometry above
+supersedes the earlier pending single-step pilot status. Later steps remain pending.
 
 Upstream supplies **172 case-proof source archives**; **only case 1465 is absent**.
 We are reusing the supplied proofs. **169/173** is the separate count of completed

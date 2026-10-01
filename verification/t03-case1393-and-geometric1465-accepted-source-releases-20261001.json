@@ -1,0 +1,157 @@
+{
+  "format": "T03-accepted-original-case1393-and-geometric-Step012-pilot-release-v1",
+  "status": "ORIGINAL_CASE1393_FULL_CERTIFICATE_ACCEPTED_AND_SEPARATE_GEOMETRIC1465_PILOT_ACCEPTED",
+  "upstream_supplied_source_archives": 172,
+  "sole_upstream_missing_case": 1465,
+  "original_full_case_integration_audits": 170,
+  "remaining_original_cases": [
+    1373,
+    1464,
+    1465
+  ],
+  "new_full_case": 1393,
+  "new_full_case_count_increment": 1,
+  "geometric1465_pilot_full_case_increment": 0,
+  "case1393_actual_root": "ElevenSquare.Tasks.T03.Wand125.PrunedTrees.C1393.Certificate",
+  "case1393_actual_full_target": "ElevenSquare.Pending.T03.Batch03.Case1393.Forward.Certificate.certificate_exists",
+  "case1393_compile_seconds": [
+    67.03,
+    40.14
+  ],
+  "case1393_actual_full_audit_seconds": 39.88,
+  "case1393_actual_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "case1393_complete_source_modules": 680,
+  "case1393_exact_source_bytes": 62949475,
+  "case1393_actual_PrunedTrees_modules": 22,
+  "geometric1465_actual_target": "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step012Trace.step_trace",
+  "geometric1465_compile_seconds": 82.71,
+  "geometric1465_actual_audit_seconds": 43.46,
+  "geometric1465_actual_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "geometric1465_source_modules": 1389,
+  "geometric1465_source_bytes": 125288070,
+  "geometric1465_actual_IndependentReplay_modules": 3,
+  "geometric1465_full_case_pending": true,
+  "later_replay_batches_included": false,
+  "all_exact_raw_and_final_members_actual_source_keys_genuine_receipts_objects_CHECK_logs_verified": true,
+  "source_version_conflicts_within_each_collection": [],
+  "prior13_source_snapshot_version_differences": [],
+  "releases": {
+    "case1393": {
+      "release_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/tag/t03-audited170-imported1393-20261001",
+      "release_id": 401435504,
+      "tag": "t03-audited170-imported1393-20261001",
+      "tag_target_commit": "51954bd3fea2a56a281163bc8f8344a6e9b57f88",
+      "source_zip_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-audited170-imported1393-20261001/T03-accepted-imported-case1393-source.zip",
+      "source_zip_bytes": 5812354,
+      "source_zip_sha256": "7039de96f59bb7ce67814eea167413d35545e517b559f8d4eae68d502ff4388f",
+      "all_five_server_asset_digests_sizes_verified": true,
+      "assets": [
+        {
+          "id": 604367216,
+          "name": "case1393-actual-audit.txt",
+          "size": 144,
+          "digest": "sha256:4568c624a3397a22ce30a3f1cc4939586f18121b5dbcd2f1ee1e529b585233f5",
+          "state": "uploaded",
+          "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-audited170-imported1393-20261001/case1393-actual-audit.txt"
+        },
+        {
+          "id": 604367231,
+          "name": "case1393-actual-CHECK.json",
+          "size": 446,
+          "digest": "sha256:01a53e586a7d57a2fd3f0811f0767800dcc2b6fced6953e7d3429c925127df15",
+          "state": "uploaded",
+          "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-audited170-imported1393-20261001/case1393-actual-CHECK.json"
+        },
+        {
+          "id": 604367203,
+          "name": "CHECKPOINT-accepted-imported-cases-public.json",
+          "size": 403698,
+          "digest": "sha256:160a1a15c93ae0be1fef30c9f80ae87008e34103abf3b744c77d9c2411f15cf3",
+          "state": "uploaded",
+          "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-audited170-imported1393-20261001/CHECKPOINT-accepted-imported-cases-public.json"
+        },
+        {
+          "id": 604367252,
+          "name": "SHA256SUMS",
+          "size": 406,
+          "digest": "sha256:3f14b97a666eb80de511457561992a0e8a3d2c1202c404f22679ffde9159d529",
+          "state": "uploaded",
+          "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-audited170-imported1393-20261001/SHA256SUMS"
+        },
+        {
+          "id": 604367169,
+          "name": "T03-accepted-imported-case1393-source.zip",
+          "size": 5812354,
+          "digest": "sha256:7039de96f59bb7ce67814eea167413d35545e517b559f8d4eae68d502ff4388f",
+          "state": "uploaded",
+          "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-audited170-imported1393-20261001/T03-accepted-imported-case1393-source.zip"
+        }
+      ]
+    },
+    "geometric1465": {
+      "release_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/tag/t03-geometric1465-step012-pilot-audited-20261001",
+      "release_id": 401435549,
+      "tag": "t03-geometric1465-step012-pilot-audited-20261001",
+      "tag_target_commit": "51954bd3fea2a56a281163bc8f8344a6e9b57f88",
+      "source_zip_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-geometric1465-step012-pilot-audited-20261001/T03-accepted-case1465-geometric-step012-pilot-source.zip",
+      "source_zip_bytes": 35642449,
+      "source_zip_sha256": "812f425f069a42c2341ed45f2c78a49ad279a918ab9e9ffd1b4ef743ac6e9ede",
+      "all_five_server_asset_digests_sizes_verified": true,
+      "assets": [
+        {
+          "id": 604367535,
+          "name": "case1465-actual-audit.txt",
+          "size": 155,
+          "digest": "sha256:f37376fba233fd2c24be2dd7912b7224769613d21b38b9d9d36a3163e5d8dd38",
+          "state": "uploaded",
+          "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-geometric1465-step012-pilot-audited-20261001/case1465-actual-audit.txt"
+        },
+        {
+          "id": 604367572,
+          "name": "case1465-actual-CHECK.json",
+          "size": 446,
+          "digest": "sha256:3b8aeb7d1bc5ec41d3bf1d4d4bba25c1df705ad62d2ae688ef5f59b053df23c1",
+          "state": "uploaded",
+          "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-geometric1465-step012-pilot-audited-20261001/case1465-actual-CHECK.json"
+        },
+        {
+          "id": 604367599,
+          "name": "SHA256SUMS",
+          "size": 420,
+          "digest": "sha256:b80f006f081cd9c2f42f596f2e0aca6b1ca6394149f77842221d4a35719e49e7",
+          "state": "uploaded",
+          "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-geometric1465-step012-pilot-audited-20261001/SHA256SUMS"
+        },
+        {
+          "id": 604367512,
+          "name": "SOURCE-CHECKPOINT-geometric-pilot-public.json",
+          "size": 825233,
+          "digest": "sha256:705911d7df99832e3eea397a9df959fc3d34fb9bfdfd733088b114969a748a76",
+          "state": "uploaded",
+          "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-geometric1465-step012-pilot-audited-20261001/SOURCE-CHECKPOINT-geometric-pilot-public.json"
+        },
+        {
+          "id": 604367305,
+          "name": "T03-accepted-case1465-geometric-step012-pilot-source.zip",
+          "size": 35642449,
+          "digest": "sha256:812f425f069a42c2341ed45f2c78a49ad279a918ab9e9ffd1b4ef743ac6e9ede",
+          "state": "uploaded",
+          "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-geometric1465-step012-pilot-audited-20261001/T03-accepted-case1465-geometric-step012-pilot-source.zip"
+        }
+      ]
+    }
+  },
+  "publication_Lean_jobs_worker_controls": 0,
+  "private_paths_archives_objects_receipts_caches_included": false,
+  "main_and_live_proof_work_unchanged": true,
+  "whole_proof_speedup_claimed": false,
+  "fresh_merged_replay_public_family_global_optimality_final_return_complete": false
+}

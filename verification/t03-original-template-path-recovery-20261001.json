@@ -1,0 +1,17 @@
+{
+  "status": "STOPPED_IMPORT_COORDINATOR_RECOVERED_EXACT_TEMPLATE_BYTES_RESOLVED_FROM_PRESERVATION_JOURNAL",
+  "utc": "2026-10-01T23:32:23.532831+00:00",
+  "original_preparer_sha256": "d1fa4bea8fac1602238b285042c840ded050d231b07d2347f4c2925da5503d64",
+  "repaired_preparer_sha256": "f3419affe90b79818f1e8e46835c9ffce0ba7edf4705f09167a21af444c67d6e",
+  "original_failure_log_sha256": "f2fd1070c23468eeedcf4061666d0c284c66ef27c6e9414b066a236f980bdeac",
+  "case1393_final_check_issued": true,
+  "maximum_global_lean_workers": 4,
+  "additional_lean_processes_started": 0,
+  "whole_case_certificate_increment": 0,
+  "cause": "The full-case preparer did not resolve a byte-preserved template through its preservation journal.",
+  "fix": "Resolve the exact preserved template using its journal, validating archive size/SHA and all original source member hashes.",
+  "original_private_record_sha256": "ceb567d1d2edd2163f53343c88d38c7bb7142e285181b72ad958cbe0360ac55a",
+  "metadata_omissions": [
+    "local process IDs and storage-volume names"
+  ]
+}

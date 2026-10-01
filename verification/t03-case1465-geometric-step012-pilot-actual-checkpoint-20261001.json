@@ -1,0 +1,83 @@
+{
+  "status": "ACTUAL_FULL_GEOMETRIC_STEP012_INDEPENDENT_REPLAY_PILOT_PASSED",
+  "utc": "2026-10-01T23:33:11.778072+00:00",
+  "task": "library-case1465-node998-independent-step012-pilot-task.json",
+  "task_sha256": "cf1daa9fdc64557f6c30056247cec2157e3d73b3b700901a76943fdb237d3064",
+  "transport_sha256": "0359fe59b556f174ef7386445ee047317659ae65424eca9a1c6dd36ddb84480f",
+  "execution": "independent-library-case1465-node998-independent-step012-pilot-task.json",
+  "execution_sha256": "ce265058cf7a1747778ad7edd7b1696a4a4babe4f9a93bc15ac8721512f19883",
+  "wrapper": "independent-library-case1465-node998-independent-step012-pilot-task.log",
+  "wrapper_sha256": "4d59358ae243132ed9fb0bef3f0d113bab6095765d912574f123b686ad755c4f",
+  "actual_target_axioms": {
+    "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step012Trace.step_trace": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "real_geometric_refinement_and_collision_claims_checked": true,
+  "cumulative_previous_trace_dependency_removed": true,
+  "whole_case_certificate_increment": 0,
+  "maximum_global_lean_workers": 4,
+  "checks": [
+    {
+      "actual_check_sha256": "e266095fef4abf906388c8e4df586debd498380e5cb22aedb55ec7f584680b2c",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "check": {
+        "status": "accepted",
+        "source": "ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/Step012.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 82.71,
+        "lean_memory_limit_mb": 8192,
+        "lean_threads": 1,
+        "lean_thread_stack_kb": 32768,
+        "lean_main_stack_kb": 65536,
+        "cpu_seconds_limit": 1800,
+        "wall_seconds_limit": 2100,
+        "nice_increment": 0,
+        "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/Step012.olean",
+        "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+      }
+    },
+    {
+      "actual_check_sha256": "3b8aeb7d1bc5ec41d3bf1d4d4bba25c1df705ad62d2ae688ef5f59b053df23c1",
+      "actual_log_sha256": "f37376fba233fd2c24be2dd7912b7224769613d21b38b9d9d36a3163e5d8dd38",
+      "check": {
+        "status": "accepted",
+        "source": "verification/HandoffAudit.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 43.46,
+        "lean_memory_limit_mb": 8192,
+        "lean_threads": 1,
+        "lean_thread_stack_kb": 32768,
+        "lean_main_stack_kb": 65536,
+        "cpu_seconds_limit": 1800,
+        "wall_seconds_limit": 2100,
+        "nice_increment": 0,
+        "emitted_olean": null,
+        "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+      }
+    }
+  ],
+  "source_and_receipt_sync": {
+    "status": "EXACT_NATIVE_SOURCE_AND_PROVISIONAL_GENUINE_RECEIPT_SYNC_COMPLETE",
+    "utc": "2026-10-01T23:28:22.858601+00:00",
+    "archive_sha256": "0359fe59b556f174ef7386445ee047317659ae65424eca9a1c6dd36ddb84480f",
+    "verified_members": 1398,
+    "verified_source_bytes": 125301257,
+    "source_files_written": 30,
+    "source_files_reused": 1368,
+    "obsolete_matching_sources_removed": 10524,
+    "source_sync_seconds": 141.234,
+    "total_seconds": 159.062,
+    "genuine_receipts_copied": 0,
+    "existing_genuine_receipts_preserved": 1388,
+    "proof_receipts_created": 0,
+    "lean_processes_started": 0,
+    "supplied_checker_still_validates_sources_objects_and_actual_proofs": true
+  },
+  "original_private_record_sha256": "d1924e89741c13ee154e295e767f304f8fb1416d3d341a45836098eb0dada658",
+  "metadata_omissions": [
+    "machine-specific audit/source-sync runtime/archive paths"
+  ]
+}
