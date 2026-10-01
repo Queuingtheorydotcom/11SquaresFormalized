@@ -333,5 +333,18 @@
     "imported_case_acceptance_claimed": false,
     "new_release_assets": 0,
     "publication_Lean_workers_queues_or_process_controls": 0
+  },
+  "pinned_import_components_review": {
+    "actual_audit_CHECK_wrapper_execution_hashes_verified": true,
+    "all_transport_member_hashes_and_source_closure_keys_verified": true,
+    "exact663module_source_snapshot_deduplicated_and_isolated": true,
+    "unchanged_source_task_environment_and_checker_bytes": true,
+    "private_resource_configuration_replaced_with_neutral_profile": true,
+    "private_TASK_runtime_and_archive_paths_omitted": true,
+    "personal_information_findings": [],
+    "upstream172_inventory_distinguished_from_original159_integration_log": true,
+    "complete_case_acceptance_claimed": false,
+    "new_release_assets": 0,
+    "publication_Lean_workers_queues_or_process_controls": 0
   }
 }

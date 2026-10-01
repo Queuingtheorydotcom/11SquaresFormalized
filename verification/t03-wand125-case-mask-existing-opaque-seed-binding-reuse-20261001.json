@@ -1,0 +1,106 @@
+{
+  "status": "REUSE_EXISTING_MASK_BINDING_THM_PENDING_REAL_CHECKS",
+  "utc": "2026-10-01T15:25:54.476166+00:00",
+  "reason": "Reuse existing original Seed.mask_binding theorem opaquely. New Boolean proof only compares two eleven-element literal cell sets; it never includes recordedCaseTuples or caseMask. Avoids kernel reconstruction of the full array equality.",
+  "changes": [
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Case1373Correspondence.lean",
+      "before_sha256": "dd58f0005417677ffed91d48357dd30b44bee50faed714202052741d878e84fa",
+      "after_sha256": "57bec4114fc6e6ad8daaccc1e7a9241ec23d147383683d81065cea6d828f0942",
+      "reused_existing_mask_binding": "ElevenSquare.Pending.T03.Batch03.Seed1373.mask_binding",
+      "exact_after_hash_occurs_in_this_accepted_component_closure": false
+    },
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Case1393Correspondence.lean",
+      "before_sha256": "b14fa4a01ed3dab36667d76cdf5c40ae959acfb1459081b23890dcde3edeade1",
+      "after_sha256": "782dd2698b8ca147e92e320f477999fa169c4855c84d0cf9367316cdc36c3a4a",
+      "reused_existing_mask_binding": "ElevenSquare.Pending.T03.Batch03.Seed1393.mask_binding",
+      "exact_after_hash_occurs_in_this_accepted_component_closure": false
+    },
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Case1463Correspondence.lean",
+      "before_sha256": "f7bb2ea6768bc14131a630cd4e6dd2a85436ce55eb6a124c9fdc13b8d8978728",
+      "after_sha256": "81607c7c0816bc6c8eb03a45cb5009d156cae44712812d34429d96c39954e926",
+      "reused_existing_mask_binding": "ElevenSquare.Pending.T03.Batch04.Seed1463.mask_binding",
+      "exact_after_hash_occurs_in_this_accepted_component_closure": false
+    },
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Case1464Correspondence.lean",
+      "before_sha256": "0b421778f8adcf2da4ab26e4cf630fa9f3068c6acdb9b46452bc6e778aff677e",
+      "after_sha256": "5a82d58f36a70d918d10fe93d55508c94146b8c1abdabb8235fb312f4d66c427",
+      "reused_existing_mask_binding": "ElevenSquare.Pending.T03.Batch04.Seed1464.mask_binding",
+      "exact_after_hash_occurs_in_this_accepted_component_closure": false
+    },
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Case1499Correspondence.lean",
+      "before_sha256": "d05e0f6f9406b4d39bfdd3b7ed1a880d357c9ac6f40d9fb6722a26fff9755854",
+      "after_sha256": "741a66e5953cb81e7e932bd69549335dfa7e834fd3c3dc7d7c09eb9bd4d1242e",
+      "reused_existing_mask_binding": "ElevenSquare.Pending.T03.Batch05.Seed1499.mask_binding",
+      "exact_after_hash_occurs_in_this_accepted_component_closure": false
+    },
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Case1823Correspondence.lean",
+      "before_sha256": "8141f96721565783092e6dc9292f0e221af96a01a6a4f0325c738e2e235f754f",
+      "after_sha256": "be81eaae6fc56469268011c16e69c1942164d50e477bb84642509e7f17f64317",
+      "reused_existing_mask_binding": "ElevenSquare.Pending.T03.Batch08.Seed1823.mask_binding",
+      "exact_after_hash_occurs_in_this_accepted_component_closure": false
+    },
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Case1849Correspondence.lean",
+      "before_sha256": "dd8f959cf9ea8011a239bbd15bbcf9afb30007402040e028ecd04689b603775a",
+      "after_sha256": "eebe9779aeea20d96bf27a539326bce48648ac902dc0902c8dcee762336ad14d",
+      "reused_existing_mask_binding": "ElevenSquare.Pending.T03.Batch09.Seed1849.mask_binding",
+      "exact_after_hash_occurs_in_this_accepted_component_closure": true
+    },
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Case1887Correspondence.lean",
+      "before_sha256": "06e12cc6ab0682d6af054fab186c748ba3ddd037355bf43c47a76acd03fd4411",
+      "after_sha256": "0ed0a132f5f22846192c9581383405ac3a326d23df6518282d909031bf1f516f",
+      "reused_existing_mask_binding": "ElevenSquare.Pending.T03.Batch09.Seed1887.mask_binding",
+      "exact_after_hash_occurs_in_this_accepted_component_closure": false
+    },
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Case1891Correspondence.lean",
+      "before_sha256": "6abddea8ec2198d30840c1362369206661137dc175d6cea5902310db03d5696f",
+      "after_sha256": "9fe21437d919c0bc2c908a8d34d8b72bd2c43fec4f7b4ee4e2e06ea6d5f1315a",
+      "reused_existing_mask_binding": "ElevenSquare.Pending.T03.Batch09.Seed1891.mask_binding",
+      "exact_after_hash_occurs_in_this_accepted_component_closure": false
+    },
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Case2051Correspondence.lean",
+      "before_sha256": "fed3f0cd56ad01b71c72ed72495ac63d56facab8bf5cad2bc7861c56dba56792",
+      "after_sha256": "3edb06a4959edd408c6aef9b18f98197b0fb7d842dbbef63ed2b5d14795b0c6b",
+      "reused_existing_mask_binding": "ElevenSquare.Pending.T03.Batch10.Seed2051.mask_binding",
+      "exact_after_hash_occurs_in_this_accepted_component_closure": true
+    },
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Case2068Correspondence.lean",
+      "before_sha256": "3478fa753a0a3ce7a65474722eb91577facc655a10db4143769cfe637d54bc3c",
+      "after_sha256": "a8109fbda3b75137fdc48f010067c0fb5e652cbe448933d775eedaf8874be89c",
+      "reused_existing_mask_binding": "ElevenSquare.Pending.T03.Batch10.Seed2068.mask_binding",
+      "exact_after_hash_occurs_in_this_accepted_component_closure": false
+    },
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Case2069Correspondence.lean",
+      "before_sha256": "dc505bcbbfaa77a9afc00d055dad0008665e6be4150c64e6345924e12fc6f555",
+      "after_sha256": "5000e53ac9ab4f6a2f5c76cf6a2139747d9c85702f63c8308af736e075990634",
+      "reused_existing_mask_binding": "ElevenSquare.Pending.T03.Batch10.Seed2069.mask_binding",
+      "exact_after_hash_occurs_in_this_accepted_component_closure": false
+    },
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Case2070Correspondence.lean",
+      "before_sha256": "50dbc20d0335741e2519b4fdce23ae00334d166586a6505112ce8c83d8dfaf74",
+      "after_sha256": "cc40bac01cd400b07df25cddcfbd3456fbd94882933113ed8dd5b429a8ccb9b6",
+      "reused_existing_mask_binding": "ElevenSquare.Pending.T03.Batch10.Seed2070.mask_binding",
+      "exact_after_hash_occurs_in_this_accepted_component_closure": false
+    }
+  ],
+  "proof_receipts_created": 0,
+  "full_case_increment": 0,
+  "format": "T03-wand125-import-adaptation-provenance-v1",
+  "original_record_sha256": "39d23ca39ee3fab1c906991bb1fc84504943f8a7705df0546d6ebaaa18751432",
+  "historical_preparation_status_preserved": true,
+  "accepted_component_checkpoint": "verification/source-checkpoints/wand125-pinned-import-components-20261001/SOURCE_BINDINGS.json",
+  "all_remaining_adaptations_require_actual_original_checker_audits": true,
+  "complete_case_acceptance_claimed": false
+}

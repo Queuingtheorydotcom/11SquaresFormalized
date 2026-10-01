@@ -1804,7 +1804,7 @@
     "meaning": "Historical equality-helper benchmark checkpoint, before the later accepted case2047 audit."
   },
   "external_returned_case_handoff": {
-    "status": "ORDINARY_SHARED_EXCLUSION_CHECKER_AND_CONDITIONAL_ORIGINAL_TRANSPORT_ACCEPTED_CONCRETE_CASE_PROOFS_PENDING",
+    "status": "UPSTREAM172_CASE_PROOFS_SUPPLIED_ORIGINAL_PROJECT_INTEGRATION_IN_PROGRESS",
     "upstream_repository": "wand125/n11-optimality-lean",
     "inspected_source_commit": "a8b51d3e0682beb1bf911048bdc8e7fa62329124",
     "release_url": "https://github.com/wand125/n11-optimality-lean/releases/tag/n11-certs-v1",
@@ -1944,6 +1944,56 @@
       "imported_case_acceptances_added": 0,
       "unaudited_Branch_and_individual_case_sources_excluded": true,
       "actual_finite_case_probes_and_full_case_audits_pending": true,
+      "full_merged_Lean_replay": false,
+      "new_release_assets": 0,
+      "Lean_jobs_or_worker_controls_for_publication": 0
+    },
+    "import_components_pinned_audits": {
+      "upstream_supplied_case_proof_archives": 172,
+      "upstream_only_missing_case": 1465,
+      "original_project_integration_full_certificate_audits": 159,
+      "original_project_metric_distinct_from_upstream_inventory": true,
+      "actual_new_component_targets_accepted": 8,
+      "bounds_axioms": [],
+      "other_targets_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "original_Lean_version": "4.10.0-rc2",
+      "actual_audit_seconds": {
+        "branch": 30.81,
+        "case2051-first-tree": 41.74,
+        "case1849-first-tree": 34.65,
+        "case2051-correspondence": 38.01,
+        "case1849-correspondence": 38.55
+      },
+      "audit_manifests": [
+        "verification/t03-wand125-pinned-branch-audit-checkpoint-20261001.json",
+        "verification/t03-wand125-pinned-case2051-first-tree-audit-checkpoint-20261001.json",
+        "verification/t03-wand125-pinned-case1849-first-tree-audit-checkpoint-20261001.json",
+        "verification/t03-wand125-pinned-case2051-correspondence-audit-checkpoint-20261001.json",
+        "verification/t03-wand125-pinned-case1849-correspondence-audit-checkpoint-20261001.json"
+      ],
+      "source_checkpoint": "verification/source-checkpoints/wand125-pinned-import-components-20261001",
+      "deduplicated_source_modules": 663,
+      "deduplicated_source_bytes": 13680277,
+      "correspondence_original_initialization_closures": {
+        "case2051": 639,
+        "case1849": 656
+      },
+      "imported_full_case_audit_increment": 0,
+      "complete_case_integration_pending": true,
+      "proof_adaptation_provenance": [
+        "verification/t03-wand125-case-advisory-long-line-linter-option-removal-20261001.json",
+        "verification/t03-wand125-direct-explicit-case-exclusion-simplification-20261001.json",
+        "verification/t03-wand125-case-mask-existing-opaque-seed-binding-reuse-20261001.json",
+        "verification/t03-wand125-identical-tree-root-sharing-20261001.json"
+      ],
+      "pending_identical_root_aliases": 86,
+      "root_alias_original_bytes": 47278843,
+      "root_alias_replacement_bytes": 43030,
+      "root_alias_size_reduction_is_not_measured_compile_speedup": true,
       "full_merged_Lean_replay": false,
       "new_release_assets": 0,
       "Lean_jobs_or_worker_controls_for_publication": 0
@@ -2309,6 +2359,63 @@
     "imported_case_acceptances_added": 0,
     "unaudited_Branch_and_individual_case_sources_excluded": true,
     "actual_finite_case_probes_and_full_case_audits_pending": true,
+    "full_merged_Lean_replay": false,
+    "new_release_assets": 0,
+    "Lean_jobs_or_worker_controls_for_publication": 0
+  },
+  "supplied_upstream_inventory": {
+    "case_proof_archives": 172,
+    "only_missing_case": 1465,
+    "release_url": "https://github.com/wand125/n11-optimality-lean/releases/tag/n11-certs-v1",
+    "required_remaining_source_archives_verified": 13,
+    "distinct_original_project_integration_metric": 159
+  },
+  "latest_pinned_import_components_checkpoint": {
+    "upstream_supplied_case_proof_archives": 172,
+    "upstream_only_missing_case": 1465,
+    "original_project_integration_full_certificate_audits": 159,
+    "original_project_metric_distinct_from_upstream_inventory": true,
+    "actual_new_component_targets_accepted": 8,
+    "bounds_axioms": [],
+    "other_targets_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "original_Lean_version": "4.10.0-rc2",
+    "actual_audit_seconds": {
+      "branch": 30.81,
+      "case2051-first-tree": 41.74,
+      "case1849-first-tree": 34.65,
+      "case2051-correspondence": 38.01,
+      "case1849-correspondence": 38.55
+    },
+    "audit_manifests": [
+      "verification/t03-wand125-pinned-branch-audit-checkpoint-20261001.json",
+      "verification/t03-wand125-pinned-case2051-first-tree-audit-checkpoint-20261001.json",
+      "verification/t03-wand125-pinned-case1849-first-tree-audit-checkpoint-20261001.json",
+      "verification/t03-wand125-pinned-case2051-correspondence-audit-checkpoint-20261001.json",
+      "verification/t03-wand125-pinned-case1849-correspondence-audit-checkpoint-20261001.json"
+    ],
+    "source_checkpoint": "verification/source-checkpoints/wand125-pinned-import-components-20261001",
+    "deduplicated_source_modules": 663,
+    "deduplicated_source_bytes": 13680277,
+    "correspondence_original_initialization_closures": {
+      "case2051": 639,
+      "case1849": 656
+    },
+    "imported_full_case_audit_increment": 0,
+    "complete_case_integration_pending": true,
+    "proof_adaptation_provenance": [
+      "verification/t03-wand125-case-advisory-long-line-linter-option-removal-20261001.json",
+      "verification/t03-wand125-direct-explicit-case-exclusion-simplification-20261001.json",
+      "verification/t03-wand125-case-mask-existing-opaque-seed-binding-reuse-20261001.json",
+      "verification/t03-wand125-identical-tree-root-sharing-20261001.json"
+    ],
+    "pending_identical_root_aliases": 86,
+    "root_alias_original_bytes": 47278843,
+    "root_alias_replacement_bytes": 43030,
+    "root_alias_size_reduction_is_not_measured_compile_speedup": true,
     "full_merged_Lean_replay": false,
     "new_release_assets": 0,
     "Lean_jobs_or_worker_controls_for_publication": 0

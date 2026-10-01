@@ -42833,13 +42833,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 15495,
-      "sha256": "0404be2077e3d4a9a94b53dd34fd536ff074f79766001a0f0349eaf2a0d541fa"
+      "bytes": 16396,
+      "sha256": "6e5263febb6dd9da45bc5c0411033e1b9ac2f6c489e9efb31437f877842ef831"
     },
     {
       "path": "T03_PROGRESS.md",
-      "bytes": 81542,
-      "sha256": "a4781fd0f421c96f5d773e50c650c5c131319b3dc0d131c135233ae8f9fac317"
+      "bytes": 84055,
+      "sha256": "c11d1c888f01b6ea85a0fae5daef1648a59773a519b209fb678c458e67f95a34"
     },
     {
       "path": "lake-manifest.json",
@@ -43098,8 +43098,8 @@
     },
     {
       "path": "verification/privacy-review.json",
-      "bytes": 16125,
-      "sha256": "f3c648c9009cb11cafddcb2c2da970c5180db565769561398ec208ad6a041b7e"
+      "bytes": 16838,
+      "sha256": "d5ece9fef2b999ea34130c5c4d3d2324891d10f20e6bdce62fee4cabd3f272f1"
     },
     {
       "path": "verification/source-check.json",
@@ -43355,6 +43355,3391 @@
       "path": "verification/source-checkpoints/wand125-pinned-exclusion-checker-20261001/project/verification/LOW_RESOURCE_MODE.json",
       "bytes": 447,
       "sha256": "2bbab7a12cc0f2b9fb030418bdc371aadad08db3064705ce92e0f13e6dbe7988"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/README.md",
+      "bytes": 3127,
+      "sha256": "cbe48978f3f5caaf65ce4c1fa2f80ba4320494b19049a0c435b89b94752da41f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/SOURCE_BINDINGS.json",
+      "bytes": 602347,
+      "sha256": "752947389a82cea513dfd4f316d1474f5ff3e562c0e2189a0683d22a6f18b8c3"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/library-case1849-node993-wand125-branch-compatibility-task.json",
+      "bytes": 254,
+      "sha256": "c5f8dec8c078fda353fc9698cc4b87c890a21d3972d51da77cf320ecdb3d11c5"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/library-case1849-node993-wand125-case1849-correspondence-compatibility-retry05-task.json",
+      "bytes": 255,
+      "sha256": "b7a9b1e7e17ca644e122226fe095b30dbec782a03aab85a2c3a2369946ecb096"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/library-case1849-node993-wand125-case1849-s0-compatibility-retry02-task.json",
+      "bytes": 203,
+      "sha256": "764a0cc11ccbf941827ce1664f2b5122a4ce480490086c779cb17c09adf9a371"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/library-case1849-node993-wand125-case2051-correspondence-compatibility-retry02-task.json",
+      "bytes": 255,
+      "sha256": "3fb0da7d0df131dc4223997783f1249e12933cc8ffddfe07624b52ad249b8863"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/library-case1849-node993-wand125-case2051-s0-compatibility-retry01-task.json",
+      "bytes": 203,
+      "sha256": "37d8559b931257359002397fba849c31a26dfb7f88504301dcd32168890e2042"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/BasicGeometry.lean",
+      "bytes": 11070,
+      "sha256": "0e291c05b9fa7670ed3bac5c605e5cdb3666994715c9f7e4a16786881d020c72"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Cover.lean",
+      "bytes": 5665,
+      "sha256": "fe57460a07b6acd1561be1d63a9e93c27560716fd1af8df94f65fb7321f7cd1e"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/CoverChecks.lean",
+      "bytes": 1564,
+      "sha256": "cfb1ac4a0bbd79e078519e7d9df2e04892458a87cc309a6aa520a0cff2e4e68d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/CoverData.lean",
+      "bytes": 1267,
+      "sha256": "d3ed474b9f3b8c88ffffcfa1c1005b98be709dd5443198088e94e659a299906d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/GeneratedCover0.lean",
+      "bytes": 51515,
+      "sha256": "4936cc6f454137d9509976002e3c719de0dd28441e99ae8fbd0343ab7c2fba99"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/GeneratedCover1.lean",
+      "bytes": 41862,
+      "sha256": "e72e09742bd6a4d17a8152f6b69c9cdb94933d15829193e88ec52ba85c6c6d27"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/GeneratedCover2.lean",
+      "bytes": 41894,
+      "sha256": "f9d6ccc5aa2ae6c16140dcf8d474f869448c83d965a7644f16fb59b3d2c020b5"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/GeneratedCover3.lean",
+      "bytes": 52238,
+      "sha256": "973ed8e31b101004f93e72347411e153c6283022219cfcc5d5846ee1f65a9f0f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Geometry.lean",
+      "bytes": 1591,
+      "sha256": "fa8ff2c666453b56f04b22c164ef063cbd46dc85fb4afd7ed6fbb01b7c4f641a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Pending/GeometryTypes.lean",
+      "bytes": 337,
+      "sha256": "a7bf5e2a537e0b81a7d874c35c769f605b61da9e3fef28feb07390736690502a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Pending/S05_Minkowski.lean",
+      "bytes": 3477,
+      "sha256": "e39dcfc51ad822fffbd76414e140f476baf3d5f0e55f7790e273362ce5484e71"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Pending/S05_OwnedHull.lean",
+      "bytes": 1837,
+      "sha256": "237234a0a57234a0fe6ca3d421758550b50266b6b1411b04ad07c49339a7db42"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Pending/S05_Trace.lean",
+      "bytes": 5612,
+      "sha256": "c28d11831b4130263f31e046d4165e942ce15d6662b1902875e1de2b7c2f7a92"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Pending/S06_Data.lean",
+      "bytes": 111768,
+      "sha256": "95384cd8f89c4f412ab37f470768f63f49de6c2cf1fa97b97c3465058ed373bd"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Pending/Types.lean",
+      "bytes": 3142,
+      "sha256": "a08828e4674559871cfa7ee6e5321d008b43ff66baf2fa6906b3225e59e6dd7a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/AngleBands.lean",
+      "bytes": 3066,
+      "sha256": "4a079e796f4757b1326b87288c2e70750ad33fad817bdd9bf91c969fe5332da5"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Batch09/Seed1849.lean",
+      "bytes": 44,
+      "sha256": "b39d14d83a5addf5b728a3dcc480b9fe7d6d9cf54a4dc0535c670215fcf06ebc"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Batch09/Seeds.lean",
+      "bytes": 15392,
+      "sha256": "f816ca5cb6278dafe2c1b65b9c46881614522ce322342de94ddcd4edbe526a2a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Batch10/Seed2051.lean",
+      "bytes": 44,
+      "sha256": "08f97fd9a563de0f4828abdeef2a457049f82b27b7c9a25fd19d1916953652c3"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Batch10/Seeds.lean",
+      "bytes": 15343,
+      "sha256": "b9b24e1be24acb91037302f1ab3a4696a3539c25cbb9a48f0c47ea366e3ec7d9"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/BernsteinBands.lean",
+      "bytes": 3245,
+      "sha256": "aa2de6bdbc0ad3c21eb36d419b004ad66de2cdcb2885a84658b8021ad591a12a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/BernsteinProjection.lean",
+      "bytes": 2268,
+      "sha256": "1968c0d612e58f53ce00e146268fac7b1de1d2b6e82eccbb791a65dadbd1c8e8"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/CaseTable.lean",
+      "bytes": 51737,
+      "sha256": "599fe4d3c5e4aeb7c079626a39d0144d13ff567fea58eac62a18f8d6d550dfa8"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/CaseTablePrefixes.lean",
+      "bytes": 10189,
+      "sha256": "90196573f70983e4c97c17d253ab1f4305f4d44ec44fc40bf4286681c1231382"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/CellGeometry.lean",
+      "bytes": 1327,
+      "sha256": "603c814c4928a2100dab21b5eb770556e4df92fb3bf909c7b7e2d3d711b8f22d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/CellLinear.lean",
+      "bytes": 2046,
+      "sha256": "0ebf5ea519b79817f0a56b500ff2fbb240e583dbcf0d54c1402fa64c21a6c18c"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/CellPhysical.lean",
+      "bytes": 1877,
+      "sha256": "aef1c650584d4aad685004bb78090a3df60aaaa1843577e0cae7a25422eec800"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/ChartIntervals.lean",
+      "bytes": 2356,
+      "sha256": "3246c78cae7ce9a4e41e1971d94db31d15f51552fafa5a802a032aba18c4998f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/CornerCertificates.lean",
+      "bytes": 1414,
+      "sha256": "b6b52932ef70f0c8ba589f8e0a4360cffaad39df9f87b100130c1efe2511f23a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Group00.lean",
+      "bytes": 1411,
+      "sha256": "20dd3f56f5dc4809013095ed2026c0da564464e5072ee940347783f9eddbd1f6"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Group01.lean",
+      "bytes": 1280,
+      "sha256": "5a6f22fb35a49fa49ed85715692e5c43f09156a663ff902c8b8ad8b838d55fb0"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Group02.lean",
+      "bytes": 1542,
+      "sha256": "1aa7a3cb123b3a241979147bef548985dfffbaae5c30664ecea5eea4af04d1d7"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Group03.lean",
+      "bytes": 1542,
+      "sha256": "04c0cff726428cf3b4f7746345c7630939908515186a5a824904ec7a988a214f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Group04.lean",
+      "bytes": 1673,
+      "sha256": "e0d4d6d7df949b817ed24939d7ca297890986b04539dec608f5c1cac0b664988"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Group05.lean",
+      "bytes": 1411,
+      "sha256": "f084fd2ad65e5aff7279e485f50107536145a3eaf72f5ec2188b4114934c7cb7"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Group06.lean",
+      "bytes": 1280,
+      "sha256": "34b86841e7d39700d90225fb507a188a9247dc2b6993b0dcce7fdccf0d5ed722"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Group07.lean",
+      "bytes": 1935,
+      "sha256": "8eb3f2fc6e209a25586d9aa995babd17566676a28aa27455311a0469b5798694"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Group08.lean",
+      "bytes": 1804,
+      "sha256": "2893399b500312d8b6a57bf0da51613eff3a91ec364bd8c10a993c887bdae406"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Group09.lean",
+      "bytes": 1280,
+      "sha256": "046649dd0b76f231493d091c76417ab639f257174a1f0448e1b0b9a170d1aacb"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Group10.lean",
+      "bytes": 1412,
+      "sha256": "6e26b26acd4fe64b6fd03c5de32690fc7abec9316ce3d7c2b6d39ebda58e8c5d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Group11.lean",
+      "bytes": 1674,
+      "sha256": "82c8c56811f1a9f006bd107be3cc8f01347eb56bb173919dee23a0e5230d5941"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Group12.lean",
+      "bytes": 1543,
+      "sha256": "79251a839c624b82aebe81b7adb36ab5eb625a1c48fb96a62d4f409555021006"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Group13.lean",
+      "bytes": 1543,
+      "sha256": "18bb9a9f43220bff455247321a18665ae744810127f04ff834ac46bc521e0d0d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Group14.lean",
+      "bytes": 1281,
+      "sha256": "8d82ac97de1474cd6e28247d4d82e1c6345ccc0f5a87ff26d03b8ec4a28f6a08"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Group15.lean",
+      "bytes": 1412,
+      "sha256": "55f1cc35db8aaca4ce84cc414a3ee18654706e5b1ae7ce1673b8ecf8096edd6f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Library08.lean",
+      "bytes": 4840,
+      "sha256": "1b0a9e2c272d4891da0db1f01fe621917bd495f943af2d067e9487eafe06c17f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Library64.lean",
+      "bytes": 4840,
+      "sha256": "1fc901cb6a8bdeea4a791492091e31945b007410f556466c8e822ef5c52df0ea"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_00.lean",
+      "bytes": 12413,
+      "sha256": "2281f235f6f23da1dc43719dc03d0aeff4d1d419142c9f4f1762d170c7a595f9"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_00Data.lean",
+      "bytes": 319,
+      "sha256": "31af19955f46cbe08c56f70c016e3b29cbd89db5693a029792988bbe24f23a7b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_00Part000.lean",
+      "bytes": 14515,
+      "sha256": "a8867c3ecb568e0e2d61376fbac2ac9570cf0ab94181e2c981eb5dbb8745f137"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_00Part001.lean",
+      "bytes": 14056,
+      "sha256": "792683e1bb8654f7a3fe202ee5141ce960b6153cd35e2479bbe8eeb9589cfe22"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_00Part002.lean",
+      "bytes": 13611,
+      "sha256": "2c84b09f6d83685f329418530af415aa6cd8d87a36683f0304c3e8ca0a488a82"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_00Part003.lean",
+      "bytes": 13229,
+      "sha256": "fe4b7ca2c0c1dbd939f6d9a3575d998b0cfc1209154f9620d76b073c7bfeade0"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_00Part004.lean",
+      "bytes": 13559,
+      "sha256": "41a47e5a94d5a825f3d9d8411834530053912e49097c45f519d82bbdd8251157"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_00Part005.lean",
+      "bytes": 14475,
+      "sha256": "ca22cd1956ecd1bd2f9ee672cd1773bae70cc53ea179502dc3049851c8083ac1"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_00Part006.lean",
+      "bytes": 7476,
+      "sha256": "7ecdd890b48850509fd9c29de1d67b89553048479add357ff4e2afd5d356fc92"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_01.lean",
+      "bytes": 4504,
+      "sha256": "fa517cd493375a37a9efae50a7761b4c9bfbb7fae2054c1d7c89364d90ddce16"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_01Data.lean",
+      "bytes": 318,
+      "sha256": "37f46cc767faa66e1072ef4da9407dc3165360556a76fed5e1929d297ba71a03"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_01Part000.lean",
+      "bytes": 26548,
+      "sha256": "4a0d1edf087ad96eef9ea91ec1b49e91035f51b8dbc8f63180e83594aea92f6b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_01Part001.lean",
+      "bytes": 3526,
+      "sha256": "5a5b0dde9b9d5ccd1ff66c5e4382c42354507161ec9dd8453c2dd3413e41ea7c"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_02.lean",
+      "bytes": 8617,
+      "sha256": "82cfc4d080e0b9e7c649299a4c4f2eade3ac9ced0ee51d60585428281ece4a19"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_02Data.lean",
+      "bytes": 318,
+      "sha256": "0cee68e521f969fe790a146a8e4bd1074b4d828798cdc000a10c5feae4cc1ed1"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_02Part000.lean",
+      "bytes": 27446,
+      "sha256": "cf10351cca692c4973bab3d49e5baad61163d89c57af09a8394a7f5aba01d36c"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_02Part001.lean",
+      "bytes": 27110,
+      "sha256": "288d699a2082cc8ea7ea6a3a12e0182e82539ce667c96586f7c345836cecd460"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_02Part002.lean",
+      "bytes": 6938,
+      "sha256": "f75ff347e70827393e8f78cb1eb741db7eb4d6ae1d0f23da051e4e6bc61a4f67"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_03.lean",
+      "bytes": 9945,
+      "sha256": "670c2c3510295a210cb016c5808324eb341e5578371fe6bba52689d9fb6395f6"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_03Data.lean",
+      "bytes": 317,
+      "sha256": "bc9485f343ade097a1a9446dc8716510c21d2ffde189a4d6d41b5e3a9bda2ca8"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_03Part000.lean",
+      "bytes": 27386,
+      "sha256": "a496fac00161b34881e98c5ea2697704ea5228be5185e5b395c984c0ead7df8c"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_03Part001.lean",
+      "bytes": 27519,
+      "sha256": "b7521161c88124d4ef9a84661cb4c6936978ef073ba186fe660741a4ac065116"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_03Part002.lean",
+      "bytes": 16841,
+      "sha256": "1ef487baccc6207c3889bca583cf98564b7f0ca6df8f52b0051b2a90833c5406"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_04.lean",
+      "bytes": 17755,
+      "sha256": "bdc7b606e8797bbd4b14fe5a5f3c7b73071efbbe374d6a5216bf326b8c6338b3"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_04Data.lean",
+      "bytes": 319,
+      "sha256": "465acad24a1509dab6a78e29bb02b6a6a6b1a738d5a2a8755ffc75cedfbb64d2"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_04Part000.lean",
+      "bytes": 27680,
+      "sha256": "d8aabb5792f94b55cb848ddc72d4ec3b062840cd12f70ec51fc9c99032c93a87"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_04Part001.lean",
+      "bytes": 27347,
+      "sha256": "fcf90c31a6a8e891fd461d16cd10afce4f9fa8ed59d7bdf7f45a88419fb55601"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_04Part002.lean",
+      "bytes": 26794,
+      "sha256": "d943024c1c27350a3874fad3dffeeb706f9bb14ef47bdb4d2cc25c207415f85b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_04Part003.lean",
+      "bytes": 28261,
+      "sha256": "6c36e6025cca39e07bcdd0ad2deacae50c6cab1ecd4325687846026430491e0d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_04Part004.lean",
+      "bytes": 22052,
+      "sha256": "51a24d89f3a5dc3b14e48561bdf22d9a4ac675c3b90e4b73556888e99deb195b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_05.lean",
+      "bytes": 23941,
+      "sha256": "a2b444a4b850f2d1a96373ffc5f35758f96cd714cf92667e3b92a84a893bed07"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_05Data.lean",
+      "bytes": 319,
+      "sha256": "dd5191fb9173b197d98e687f500c48f706de8da3b7420a5e8d0ba676c0a8b1e5"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_05Part000.lean",
+      "bytes": 28263,
+      "sha256": "4b944ebeab2c2512a8e58c629b44b2ab527f6ac623a1840e3ab542eee228a862"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_05Part001.lean",
+      "bytes": 27929,
+      "sha256": "27ea6b22c552cbc59f9b655359fbe7360bdf1443ab1d7324c87ea4690703dc72"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_05Part002.lean",
+      "bytes": 26669,
+      "sha256": "fb6ce55318b5600dc7471da8cade642c0c4a1107582e5636bb40fa1629e346ba"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_05Part003.lean",
+      "bytes": 28673,
+      "sha256": "098b50bb0c190634341c47e4bc0d86ca7b3b25bf1322d873412f8ee6a6f92ada"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_05Part004.lean",
+      "bytes": 29887,
+      "sha256": "bb3074f7a535b589be2fdf91fdde48af3eed2990ee2b13b973b762f0d82ba5e3"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_05Part005.lean",
+      "bytes": 30148,
+      "sha256": "3e16a1a4bde9227b0779383b70d102c8992849a4db8c4215d8ba61be6f2b26ee"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned00_05Part006.lean",
+      "bytes": 11291,
+      "sha256": "1d7673306980babc986b50b95256f0646ce1e77e3fe12c3bd94ba1c284c13cb2"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned01_00.lean",
+      "bytes": 7268,
+      "sha256": "395e095952b5994a2e84c9fb0d14bffdc191afd0fbe5c8bfda7e1b1934c16d72"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned01_00Data.lean",
+      "bytes": 321,
+      "sha256": "bafd3244ca96de78bbea5202642a993253128a8ee04a3a8adedf6db39a107796"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned01_00Part000.lean",
+      "bytes": 30577,
+      "sha256": "c38c5f3aa459e6ce4ea1e991b1ef344697aecec2d75b9db85440016a0e40dabf"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned01_00Part001.lean",
+      "bytes": 27087,
+      "sha256": "e492f5af1be751918efe23de6f51f361520950085a8e0fcd4c63b4a791397aca"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned01_01.lean",
+      "bytes": 4944,
+      "sha256": "f5eaa93556918d62b26761542213b81fd2ccb9ab18949586956c03ec7c8b3cfc"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned01_01Data.lean",
+      "bytes": 318,
+      "sha256": "743e1380626e9bfc30ff78ef85722c3b04c6242c8e1a4ca44dac40539c1660a3"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned01_01Part000.lean",
+      "bytes": 31175,
+      "sha256": "9e5db0d9d7f3e49b3516536edfb761caebe816487aca031d950e20f90b369dee"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned01_01Part001.lean",
+      "bytes": 7533,
+      "sha256": "084a0b660b52d91411ee5ec1b9d753bd2d4e7a46c414a449876eed8a2161c17f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned01_02.lean",
+      "bytes": 7222,
+      "sha256": "2c1c5e8d930eea1e017e4fda57d0e159c9d7a2735ed756fcbdadc75436a6fec2"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned01_02Data.lean",
+      "bytes": 319,
+      "sha256": "377e8ded27ab74cf9264d390414df6bb81257557a27b15783cf864f5a3d3a349"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned01_02Part000.lean",
+      "bytes": 31226,
+      "sha256": "ffe427f8e917d9f22260dc90e8f5750610dbeedd42026f60402cf94ea716776a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned01_02Part001.lean",
+      "bytes": 26628,
+      "sha256": "b6b43cb039cecf50e1504ce23d0d48dfacfe017a7a9e5e2209e44ccddfe6108f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned01_03.lean",
+      "bytes": 32381,
+      "sha256": "95571853e53a66ef1e6a9e2c5dd001e1844cedd5b4ecf253670f17ec080095e1"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned01_03Data.lean",
+      "bytes": 320,
+      "sha256": "817c434f0c56f3f9bb833d958e9e4afb7b3c9ebcc31108a61955e012480b5b6e"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned01_03Part000.lean",
+      "bytes": 30576,
+      "sha256": "22b519b0d7f979918d16c333301b2d8e922d2c2e47ded8ffb8745a5b6752b1a6"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned01_03Part001.lean",
+      "bytes": 31751,
+      "sha256": "6dfdaa0f7d59a8c1d69298512912b5e0bc21c25b8d34dd2289381f0366dba495"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned01_03Part002.lean",
+      "bytes": 31574,
+      "sha256": "fb5842364c6d50f54d3610150082fba59911b2f563e6e0044c21ff1ce2a59cb7"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned01_03Part003.lean",
+      "bytes": 31439,
+      "sha256": "187f03720f639d4de298f6503df3ed21d3288570da38b5f53df9339b28bd7029"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned01_03Part004.lean",
+      "bytes": 31740,
+      "sha256": "794866e2c7af72cf653bb675d52ed4ec65a222b2cff13e6a01822ca6d0bb3281"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned01_03Part005.lean",
+      "bytes": 31287,
+      "sha256": "37af8a4376ea4916e0451ebc7148d1a18815cbc33d282fc78ddadff913eecfc3"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned01_03Part006.lean",
+      "bytes": 31590,
+      "sha256": "dc418aecb905288b83e2947b8f159309971c916c5b624a51697c6e83c1e0c013"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned01_03Part007.lean",
+      "bytes": 31220,
+      "sha256": "e103c8274d2942189110a1f3daba5a36b317466368a657713916b5b8b6ce34ef"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned01_03Part008.lean",
+      "bytes": 18858,
+      "sha256": "e4f261f174b9aef14dc732f25c8ed7d72fa307e43187d5895a7277fc3adb4105"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned01_04.lean",
+      "bytes": 10193,
+      "sha256": "d5ce1310d247962a94f16b632d6b2cb3a5e51f33c2a40de7f9b636809702bc22"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned01_04Data.lean",
+      "bytes": 320,
+      "sha256": "d5df9810806ec951b9c5ff3508832855804d84a784e521386d0c70ce33131eed"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned01_04Part000.lean",
+      "bytes": 30159,
+      "sha256": "6427dd98b53d9640ab7640ae60eba1bda2d6ba5bfb8703641da844b89203c5b3"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned01_04Part001.lean",
+      "bytes": 31567,
+      "sha256": "e13abdd1a2c9854a05726144d1daa5df0bd985a87f2bd69eb55d024d8691727a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned01_04Part002.lean",
+      "bytes": 19831,
+      "sha256": "0bc1ae0b779982eb3fef6fb4e849afe189f5ad364563f5e540dc4ccee37f86ed"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned02_00.lean",
+      "bytes": 12656,
+      "sha256": "16234e47b5505e3ae026fabd99191aea441aa4d49a378e7e6e014a527bac832f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned02_00Data.lean",
+      "bytes": 314,
+      "sha256": "1601a597bd79c4b947e1c57a31eb27e70c01cbe4a1beea86b1a701585aafd9de"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned02_00Part000.lean",
+      "bytes": 33506,
+      "sha256": "6bdc555a74201c6a2dcf68a9e41b1f7e640c8e947ea5c5bd1cd789fb395fc0fc"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned02_00Part001.lean",
+      "bytes": 31601,
+      "sha256": "538f1db1bbac61423b8b02a6a495335b79aa12f04455fa9d628c9f67b6aea0e1"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned02_00Part002.lean",
+      "bytes": 31969,
+      "sha256": "746bc5746d06339164ce3ddd5c0dc7cfdc48516a5ed59d608cd96cc6fc19b366"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned02_00Part003.lean",
+      "bytes": 12568,
+      "sha256": "892ee436e3d24570da2a702dbca0a6b425731b208e80768b17f88735425f1c2a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned02_01.lean",
+      "bytes": 4918,
+      "sha256": "b795b5460465f0f5c8cb64d5d6d2cbb1cfec66033b96eb5b67b50d580fcb1cef"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned02_01Data.lean",
+      "bytes": 314,
+      "sha256": "178b857a24e67fc2ac95d29b2586177f93b2ce4bfc7cf926a985b330db335dba"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned02_01Part000.lean",
+      "bytes": 31606,
+      "sha256": "564c4f28759ed543949d463dcdd4941789bfdcf6adfe9a2579338e5c5aff020a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned02_01Part001.lean",
+      "bytes": 8059,
+      "sha256": "a3bc724eeabf67fe934be78607d950a153b240ccd771fdc1d559a6fef64a556d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned02_02.lean",
+      "bytes": 3985,
+      "sha256": "1abd7163332f22a9254fa9d1400db2219e51c1fc33864b290247298a1b04983c"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned02_02Data.lean",
+      "bytes": 321,
+      "sha256": "d376d8e309d4263f23917b2ba20656b234478c78f5c3b56ea27f4feee4251ac2"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned02_02Part000.lean",
+      "bytes": 31375,
+      "sha256": "10da6a8646607a06fb25386c5c527ead03ebf8cd71cab09e9395179caf585b05"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned02_03.lean",
+      "bytes": 4936,
+      "sha256": "aab24fc49c3e9daf4fb944ad4a4fff32c8317d63dfde13679337d29001b058d6"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned02_03Data.lean",
+      "bytes": 318,
+      "sha256": "d597f05cab537334b067f9e0958dd8191c170a885da017144a894cc74dd47a6d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned02_03Part000.lean",
+      "bytes": 31346,
+      "sha256": "c06b32ec295e83ceb581c440d8d1ba2bdd99a945e1c3d0e1b64445a208ab7a42"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned02_03Part001.lean",
+      "bytes": 7932,
+      "sha256": "90d12ec59afcdd861b3d22fb54da289a0dfd2b7c4faa991e3fd2824e17c744e7"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned02_04.lean",
+      "bytes": 4500,
+      "sha256": "bec01793b9e9c117e440cf39c560f4c7137d9ba037cd204f056b6a998f56cfd6"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned02_04Data.lean",
+      "bytes": 318,
+      "sha256": "1dfd7f02904950de4d54e07242fffd16a7cc6249a67c447ae9a039ec6acf140f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned02_04Part000.lean",
+      "bytes": 31129,
+      "sha256": "bc93d1c41e53ee44c449f79068b0b47a9a1661eca8f02c827d81dfbc531e6273"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned02_04Part001.lean",
+      "bytes": 4163,
+      "sha256": "3121009dadb6267e6c43335f44c16eecb066cbaef4cc111c369500be335d3259"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned02_05.lean",
+      "bytes": 9951,
+      "sha256": "14dce09973f54ac8c5fff237e55757ec691bc69c1a16cd11fc4c01b14e028041"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned02_05Data.lean",
+      "bytes": 318,
+      "sha256": "6e2abdf5694cb440fea9521cba2f676faea841ab32cd9abbf20dba2190d99640"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned02_05Part000.lean",
+      "bytes": 32869,
+      "sha256": "e8217cdff5ea40784780c30f6aab9b30f034a4554607bcdf66e8af586413d334"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned02_05Part001.lean",
+      "bytes": 32086,
+      "sha256": "eb1fe2f2b8721875b0fd98c1fa04a8f65cdfa9c04040e051cb1f7f00c341a4fa"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned02_05Part002.lean",
+      "bytes": 21288,
+      "sha256": "dd4d10dc7a3a9597725f5454f90c046f8799b5a5530c3566647a559e527e7b4b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned02_06.lean",
+      "bytes": 15401,
+      "sha256": "5ab563bee9ca11612bd63f28860a1180a6abf547beb51936f406a12ba31b010a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned02_06Data.lean",
+      "bytes": 319,
+      "sha256": "71911b60954a7b12aefcd2a3c437b2bf5972da852d6175d7d51b84faf98b0cd0"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned02_06Part000.lean",
+      "bytes": 34103,
+      "sha256": "a0b7ecc272434e83c3ce39a5fdcc1ae3f2ad985372acbaedcd00c391aff94ac7"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned02_06Part001.lean",
+      "bytes": 33325,
+      "sha256": "fdc2a50d03198366647a4b2246ac4421746db3ae11ebaf4519fb35424cecec9b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned02_06Part002.lean",
+      "bytes": 31796,
+      "sha256": "73fcbca928d9a23f5d2d73e0cf1ca66f6ab2427fa0eccfeb89e823910afba073"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned02_06Part003.lean",
+      "bytes": 32879,
+      "sha256": "86b9ffcd1ba94b27d00c10241ce7660939aa1238b7d110ff618b4789567e562a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned02_06Part004.lean",
+      "bytes": 4253,
+      "sha256": "71b9a1220cecc147e7e05a7d5e791920c23f2de82e5c4f0c104d0797aa1ce0a6"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_00.lean",
+      "bytes": 15401,
+      "sha256": "84668a52fcc3309d54828801b5467f3b48a65375ad4d061cf2dd1a5b4460f76f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_00Data.lean",
+      "bytes": 319,
+      "sha256": "3bd28b31f125d3c6295a950c7fa0175fa9f00b218efc2e2a953116b27df775af"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_00Part000.lean",
+      "bytes": 29351,
+      "sha256": "05af97d13ee59f8af71115eb98830765cf900483a5807edf5af7adc5c72819fd"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_00Part001.lean",
+      "bytes": 28780,
+      "sha256": "169194834519a9860449cfe5dec5d08832da4a2f2dea85f4c8a556f6d87fcd1f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_00Part002.lean",
+      "bytes": 28582,
+      "sha256": "73aa90791f06b1e2e63e3adf6e279e47a3aa682e57c32c527140261de92a5f7a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_00Part003.lean",
+      "bytes": 28319,
+      "sha256": "4803620e1f0f2d254e5ba7ccf57795fff1008091a9123787b09e46bf08da2aff"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_00Part004.lean",
+      "bytes": 3577,
+      "sha256": "729e14a581490cedb2f5292226cfafac6e01bcff69e0b7e7459740e39df3deb8"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_01.lean",
+      "bytes": 8583,
+      "sha256": "e54873787bdc664abc9ce5908417c9e1220cf4083d7f43478b803f16c773a8bd"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_01Data.lean",
+      "bytes": 320,
+      "sha256": "0290d7d56ebe65a0b25c1369296a35e0a830567a2d5e8fc2b47a0b99627d6e7a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_01Part000.lean",
+      "bytes": 27797,
+      "sha256": "cb40386cae7031c686468c6d59e69977730351b371ae7d92bea96a26c002df6d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_01Part001.lean",
+      "bytes": 28907,
+      "sha256": "61c04f4983090eea2920d4872f999a69b69f4603c8afa4440d0487be7c96b18a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_01Part002.lean",
+      "bytes": 6838,
+      "sha256": "5f43aa7d4b632f12881f20ad667efba326af8aca8e1f4c3f36c138e765c513af"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_02.lean",
+      "bytes": 3985,
+      "sha256": "e00e778f24dec3a0438e62928ad62862873d6aa9571df099780c4b7a477b0579"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_02Data.lean",
+      "bytes": 318,
+      "sha256": "f244eb00fa031ff4e813c32918a423c526494364018aa38487381c3a162ffa52"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_02Part000.lean",
+      "bytes": 27225,
+      "sha256": "e6aa4feda85c76170e0da342a50380ca8883ae10929f7c9ae656af5e2d9805ef"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_03.lean",
+      "bytes": 11842,
+      "sha256": "17f1f0d36883163a3d6a29be7f3095b00cdf10a677e2e14c23820491773cd693"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_03Data.lean",
+      "bytes": 320,
+      "sha256": "1dd89c09ef4d2656354faca0ba1c9c73b8ef9b62c5c934f53c7b34f11c59ccf2"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_03Part000.lean",
+      "bytes": 28941,
+      "sha256": "084186c1a902a87f31ae472b147940291f56764f28b46d42fba98950408e9e80"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_03Part001.lean",
+      "bytes": 29680,
+      "sha256": "21421e06c61a64fa91a47ff92a6a31a665c53182824cdae18310430ccb41a48c"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_03Part002.lean",
+      "bytes": 28293,
+      "sha256": "e4f4300417de4061c2c9e653e9edb019a837e543db588582ecf34d99398cfddb"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_03Part003.lean",
+      "bytes": 3435,
+      "sha256": "3a9de76f62e404c7e6aa7b01ca4f7eaa9388e9750c04cfd6fbd21ab1b5a3add0"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_04.lean",
+      "bytes": 13628,
+      "sha256": "336ef38b95438bb23ff3ef4cc6f801012ac8b171415815196e7d12a2a8014509"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_04Data.lean",
+      "bytes": 320,
+      "sha256": "4f4c4d6a75d655d02ed24051fcd57489b1016d0590a85aafb8decb291e52384e"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_04Part000.lean",
+      "bytes": 28634,
+      "sha256": "c04071c1a84fe7322d75d40aeba83a34e15892fe0d82c94b3343d5fdb9cb5814"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_04Part001.lean",
+      "bytes": 29610,
+      "sha256": "0224a0a34725c19f6ffb21018d6ebf37be0fa2f365dc5a44fa83b776acd109d5"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_04Part002.lean",
+      "bytes": 28606,
+      "sha256": "3acd8c46ae476e3f2c756b4617d7730ff1932d842b85f7c2f7c52387df21196e"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_04Part003.lean",
+      "bytes": 17239,
+      "sha256": "772cd9b68455088169004ea50085b79185f806ee248745c506f8fd9ab11e1709"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_05.lean",
+      "bytes": 20498,
+      "sha256": "68f2d63fc90d339bbd94fa44610ac3da0d804ca7f0bfe3c807f06eca59112119"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_05Data.lean",
+      "bytes": 319,
+      "sha256": "160606de04ae5bfcfaa566d89f90f08bf22b2ff6dbf652407ce8228d1510319d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_05Part000.lean",
+      "bytes": 28960,
+      "sha256": "78f2ea4a7013720b151dac75a3a3e92edcdd09d1a1c414f6cb9736df8880dc58"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_05Part001.lean",
+      "bytes": 29101,
+      "sha256": "872f9981cbc5316e67691c3e0eed76e8f49772e678c606883d2c68df5f5ea6af"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_05Part002.lean",
+      "bytes": 29236,
+      "sha256": "431886f078c0947a8a09d443fa77bad7d4dcce1d618a3e9bc4c21942f9ce5391"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_05Part003.lean",
+      "bytes": 28186,
+      "sha256": "aaacb49c5c5112fe9c492b1d60c363d6907d275b1fbcbb2e91467b01891225dc"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_05Part004.lean",
+      "bytes": 28278,
+      "sha256": "e53a41684fd64808c8269e706eee7a306c76a65feb680664740ae53d8e932759"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_05Part005.lean",
+      "bytes": 14452,
+      "sha256": "dcf432804bb7cfb7f526c417558c743b5a9c51fc4cc75bcd1a0e75323b37350e"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_06.lean",
+      "bytes": 23941,
+      "sha256": "596d5ac51b63c3c83ac9b1ba7222308fba71679725c20bbe6a31d77d28d90e0b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_06Data.lean",
+      "bytes": 319,
+      "sha256": "2ceebba1882b3881bad6898c26b4eed135ee91beb2ac238f1cc0836b7785908c"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_06Part000.lean",
+      "bytes": 29466,
+      "sha256": "0da3d732a01d4321bbd55c87f04e52a9dfeae86b10b44841cb3f7cbbe37b9cd9"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_06Part001.lean",
+      "bytes": 29462,
+      "sha256": "2cb1aa53ff2616d84f9fda86185e51e4767bc3c84728e7eab16122bcab436ca2"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_06Part002.lean",
+      "bytes": 28303,
+      "sha256": "063e5e16f7bfa5572731a6b19692817150ace9d5599c2daec4bbac1afeaa7b62"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_06Part003.lean",
+      "bytes": 28075,
+      "sha256": "a7c73a7f56ce1fae06bd45c1aaf3d0e3ac73d62cfde82b8691fc365ef2c8a429"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_06Part004.lean",
+      "bytes": 29376,
+      "sha256": "aff568d7238cc8eecc1e5a72f2482cc80b9a9eba309517fcfc0959e89eb8da36"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_06Part005.lean",
+      "bytes": 29610,
+      "sha256": "70ae5ba848cc9a6cc9ace35c11baae5bdff0548db7a82994064d060711ede72f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned03_06Part006.lean",
+      "bytes": 10963,
+      "sha256": "1a416d388a131fa80fb9567089b9117f4d24f720934cadcb98c9b387039197a8"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_00.lean",
+      "bytes": 4009,
+      "sha256": "78791bb22ee5c3fc8c602c4c35a81d820ecd07c3f7c440aabb51dbcde51463ee"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_00Data.lean",
+      "bytes": 319,
+      "sha256": "46f1c9a8944d2de7fc8aaede1bd6b91efb70833dc1ab12746fd56eac90321446"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_00Part000.lean",
+      "bytes": 30803,
+      "sha256": "b0ae3bdbd07394add976b073ef2dcc95414320ab019026b6778377ca0f06ddb0"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_01.lean",
+      "bytes": 3999,
+      "sha256": "d701d05b6bba556256d5b36a4c3992b3751e5ead537176871773342f291c04f5"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_01Data.lean",
+      "bytes": 321,
+      "sha256": "4cd44c1b632b9cf43915e38f5281e8257d29c898c0453b6b96648fcee154633e"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_01Part000.lean",
+      "bytes": 30800,
+      "sha256": "48f58eed2a86a5e9f1c2408f8f440a7d96d55278919127361bfbdd542c0b6be2"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_02.lean",
+      "bytes": 8609,
+      "sha256": "f35461cb8473512d5516271c8f857d01398ad7b37e4f84ad45fb7b367a820c14"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_02Data.lean",
+      "bytes": 321,
+      "sha256": "f635ca86d41cf92992c67e015a8c1f389df121f0afc0b1981ca34e022d374d31"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_02Part000.lean",
+      "bytes": 32050,
+      "sha256": "3262d1ce1707435e8d924fd8ad3d0e98fe7e851112e37f9fd1872c0befb8e09b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_02Part001.lean",
+      "bytes": 31853,
+      "sha256": "29c9d0a248e0a4278bb50aab6bb8b0f9563d596062360ed904916a96023b3957"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_02Part002.lean",
+      "bytes": 7683,
+      "sha256": "543c11099bf0ac2c210cec45f7b051ebd3c282d82f13c1d0006cc77ab79c364a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_03.lean",
+      "bytes": 9945,
+      "sha256": "3a991651739055dda8b898060e8a5a27caabe70d8942fa15788559fd0fd2404d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_03Data.lean",
+      "bytes": 318,
+      "sha256": "84843c96595f40401ddcaca9b3008a0f1d175a6b83b20208c819847a16f5d9ce"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_03Part000.lean",
+      "bytes": 31826,
+      "sha256": "eebdf88fee0052caef2e3ce8e02a8cb3030c10423e3fe2239e33c7b23e1ce1de"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_03Part001.lean",
+      "bytes": 32173,
+      "sha256": "7e33655a18adf56cb4a792b1742d7833568e47d901ab185644213588fa3f609a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_03Part002.lean",
+      "bytes": 19188,
+      "sha256": "d6b1fe918ac0ed7d0938cfcd611e17a867bf468a88fa55474964ec7e09111fd3"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_04.lean",
+      "bytes": 18665,
+      "sha256": "788d199450f3dbabbc2fc9ef016cec86eb8d606a666a4153b2c14965dd4334e1"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_04Data.lean",
+      "bytes": 310,
+      "sha256": "944d3fbdef2b16902bd1134b9b957dc542d33ef4c8d5070331d06c6b217ae4d7"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_04Part000.lean",
+      "bytes": 31393,
+      "sha256": "b914069b79fe7d7785c4ec4dca822b84bd0c5ff8eb6726e8d45f65e16313feca"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_04Part001.lean",
+      "bytes": 31554,
+      "sha256": "da6e5549cef6a7ced0f372f811cb15faf3a7a62c7e5e02781b5a4c9d93e2f1a8"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_04Part002.lean",
+      "bytes": 31627,
+      "sha256": "62bc43a9d6a5f9399f35f00e4e6da27d260c7ce351443c9d173a47265268512e"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_04Part003.lean",
+      "bytes": 30729,
+      "sha256": "4b704a9f3d45f6223020b7b24caa788d3e75db9564cb9cab6ce07e08d216b686"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_04Part004.lean",
+      "bytes": 31015,
+      "sha256": "1611a722a2fa40878e4f5336d398202d98760338191ab63c6a3bceb4fd87083d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_05.lean",
+      "bytes": 19142,
+      "sha256": "547f68ceac70733983df98ab9f2fde1b299870ea071a26e01a3a91373d1e501d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_05Data.lean",
+      "bytes": 312,
+      "sha256": "4a5942ffcea97debf5e0b15d3eecd4d264a85af5db2f393a74c7897a29b48772"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_05Part000.lean",
+      "bytes": 32017,
+      "sha256": "64c05a20216dd517ead7f1b47f49ad44f93cedef89c84de384f64dd91f451240"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_05Part001.lean",
+      "bytes": 31475,
+      "sha256": "e83bd371497cace13d5d21cebbbc5d7d35f42d8f23746dfd2f2a379df1a2fb3c"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_05Part002.lean",
+      "bytes": 31761,
+      "sha256": "1dac233e15bb91c5bbf7af61391a65ebb814e357478708b0124b958c807e7727"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_05Part003.lean",
+      "bytes": 31619,
+      "sha256": "c09a3fbc643b64ecd93337ff89711cdd96de848af86784be69e633b2ae3e00c1"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_05Part004.lean",
+      "bytes": 31507,
+      "sha256": "7b9187f93fb6b802f48b0b92cf0af802093ef4fe23535bebe2611ed9a1be0112"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_05Part005.lean",
+      "bytes": 3830,
+      "sha256": "c1f7166b25ad36ecd8e527161ef27c66d05e1d3a2bc87ca868604467e616e226"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_06.lean",
+      "bytes": 10449,
+      "sha256": "8581ccab17c9923c767600b28413ae870eedddc41626a9b71857d3e7291bb86e"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_06Data.lean",
+      "bytes": 320,
+      "sha256": "06b27e52111b0ac36c9d46a3d4072751f73a79c91fa47209596609674908ecbf"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_06Part000.lean",
+      "bytes": 31169,
+      "sha256": "d50225802986e614d4533a0bae27396bf7f8e5a1acddab44120de79464e03bbf"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_06Part001.lean",
+      "bytes": 32605,
+      "sha256": "72922d1f2ef943ece9ab50aa021131ecb54d7fb45c1cbe327d19a61b24132292"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_06Part002.lean",
+      "bytes": 23549,
+      "sha256": "c373628621710789f4b0926cc3809d99554571674445d5f1ddf7a93231e94a5d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_07.lean",
+      "bytes": 9533,
+      "sha256": "52904688211a0f81951dcfffe12e1b2e70ed48b49a3f7bfb56758275878dbc2e"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_07Data.lean",
+      "bytes": 321,
+      "sha256": "96f44886d35c343bf6da41ff28227a09c05a0be2f54869b1d5c680f8835bd9aa"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_07Part000.lean",
+      "bytes": 31239,
+      "sha256": "b2781f437f9d1d26baf0b8fe8d16feb65b41979f669215542b0941824e5f5f9a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_07Part001.lean",
+      "bytes": 32448,
+      "sha256": "d2e857ea8ca8f2ea7dc30683d620d31f68f4f817a3087756e10b053afe9d9be5"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned04_07Part002.lean",
+      "bytes": 15790,
+      "sha256": "8543c40eb2ed2f7b2885ea25a0769b5006a30e66e34fc96643f66cc0564152d7"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned05_00.lean",
+      "bytes": 3999,
+      "sha256": "45d3fc52bb262273992232edd4b1a53b047f5613efac512a1d71c7b4f288ef50"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned05_00Data.lean",
+      "bytes": 318,
+      "sha256": "25d44867084d48eb0eaf51491f8814c7e3cf287e8335eb9a3555586fa6ba8b5f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned05_00Part000.lean",
+      "bytes": 34633,
+      "sha256": "2878332cce1b402513098fc083350c75b546e90b0674842bea63963fc9509a19"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned05_01.lean",
+      "bytes": 4944,
+      "sha256": "ab860cd83b326aefb386c9cb3d1e08e897b9eae35059ed7a6e03e9bbacd2b23b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned05_01Data.lean",
+      "bytes": 320,
+      "sha256": "ca899d210309293cf7aedf7492e78fef52e8df80ed5f3bca5be6e815870a7de9"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned05_01Part000.lean",
+      "bytes": 35041,
+      "sha256": "3f8e013013f9bbe8a4254fee7ca34dcbc3372ab62a7f8ff3ea7e1acc542a6d73"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned05_01Part001.lean",
+      "bytes": 8795,
+      "sha256": "23912ab52c3c6d03b2595cff082f4e29e7a10b08b1a1f89d4dbfddc00f80a4c6"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned05_02.lean",
+      "bytes": 4009,
+      "sha256": "73ec467eae7844706999908d07cdf122bacc69eb90ba7537eba78138d5b6b00e"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned05_02Data.lean",
+      "bytes": 320,
+      "sha256": "835fc21d169a1bc6235a14653ef2661a366b493bf8fb59c78c16811a8c268412"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned05_02Part000.lean",
+      "bytes": 34713,
+      "sha256": "61fe38e9bd24bc94b2d072430616bc9d1b36c675e987cf129f5af61454c7fe3b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned05_03.lean",
+      "bytes": 4940,
+      "sha256": "395837f966987fdf133fcdf03d02a00ea812fbb96b530bf06be1a7163b383d9a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned05_03Data.lean",
+      "bytes": 320,
+      "sha256": "c79ec887c79c3a7dd250860f7b979b7966f6dafcb7ab605e12f1fd891db5021a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned05_03Part000.lean",
+      "bytes": 34982,
+      "sha256": "ba8894c73cbb719019af1c5f7469bb14d9feceb982f57b9606daa1bc621c4e73"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned05_03Part001.lean",
+      "bytes": 8740,
+      "sha256": "95a4c1aa759611ba38b11ba0f628f519b454fa8992b27012d582c96c56e1321d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned05_04.lean",
+      "bytes": 5814,
+      "sha256": "f7bb8a2eeb885a2362a77758693139f6e3991bdb12b2e413f784725ba774e739"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned05_04Data.lean",
+      "bytes": 318,
+      "sha256": "b57789927d4687d46042715bff61d51763b9053c57e0fa3c02faaf069dba750d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned05_04Part000.lean",
+      "bytes": 34866,
+      "sha256": "a67f05134979f2b289b57e5f7b4fc2d0234204091e129560fc58fa2641531604"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned05_04Part001.lean",
+      "bytes": 17482,
+      "sha256": "a867ba38a1e4c9107589b3021bacb9ec3232865317dcfa09462724a913e43f29"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned05_05.lean",
+      "bytes": 4958,
+      "sha256": "b3078b07875fc541e28a5f6a5af7cde6b0d82ad475d545746b3f572d441c02a2"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned05_05Data.lean",
+      "bytes": 320,
+      "sha256": "a5bd2fc3488297dd0dcf552d616473be267da388721f1a6d91538ffc2530c25b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned05_05Part000.lean",
+      "bytes": 34953,
+      "sha256": "188b7d34cfd7ca1c8b0b5e09f44f448c34dc93ffa845d7f3e03961f03f6c07de"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned05_05Part001.lean",
+      "bytes": 8912,
+      "sha256": "04ca612e7583e9c6009c36334a3a0635acf72a5277cf5643fe9cb21a2a4e68d9"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned06_00.lean",
+      "bytes": 4506,
+      "sha256": "aa1fc25beebefa837cc1fe45997c69842136dd2e1e73d9ca01743546cf91d080"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned06_00Data.lean",
+      "bytes": 316,
+      "sha256": "ccf77f7e3ab0c1f1580572b24d04216330935b5c0f4bacd6678824cfb89c7703"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned06_00Part000.lean",
+      "bytes": 34941,
+      "sha256": "690d917dbd299f1fa77503cc7b1f3e3d1d70f659806c0fef2b4b9661b7e190ca"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned06_00Part001.lean",
+      "bytes": 4449,
+      "sha256": "b75860af4faa886546c104e677c0a91f466bd0f62a2975044180526518ca7a18"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned06_01.lean",
+      "bytes": 4944,
+      "sha256": "cac8c8eb2a24a524a4df64d1cb32ea4ffb5c4dad7421affb84713a0173cd92cb"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned06_01Data.lean",
+      "bytes": 320,
+      "sha256": "1a2c75bbd738f4625289990bc5aaecfb567301ef571447a90f7d24359048b489"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned06_01Part000.lean",
+      "bytes": 35057,
+      "sha256": "a87d68a5c24f92105c9d9c69aff3a7004c89a5da1ff07ef26cf27b209529012f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned06_01Part001.lean",
+      "bytes": 8853,
+      "sha256": "0d8704318ae6b28c6f2ad5e3aa977efe177307734ebef7dad082f6f592731ecb"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned06_02.lean",
+      "bytes": 4500,
+      "sha256": "bd7f9a76045e496d298be45c114001c4048bf8589d6e154669c5ddd84b660c65"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned06_02Data.lean",
+      "bytes": 320,
+      "sha256": "289968b260abc973d3df008aca276979c96ae8f01b87f9e36561dbb0715f12c4"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned06_02Part000.lean",
+      "bytes": 34757,
+      "sha256": "304a3316a62acb0c6baf9aa5e3fd4e9ad615f0ab579057aa84df1a9c196b4687"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned06_02Part001.lean",
+      "bytes": 4528,
+      "sha256": "1eea92b1e4b41026b64cee2db215592a8e3b8257e1d5033953177d553383b911"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned06_03.lean",
+      "bytes": 4492,
+      "sha256": "149dab028e02849cea4d10f64fcdbabf3cce47a4cefa861ba20eb646adf8d6ae"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned06_03Data.lean",
+      "bytes": 321,
+      "sha256": "d5eecba17ad6b4bfd35ffb4d6ffce74bd5412772c06006f1bcc6bf781fb4aa96"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned06_03Part000.lean",
+      "bytes": 34843,
+      "sha256": "bb3dcb56f267ca52f8d2740099c566ca324c9d660792b8e16b47efe13356d8ef"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned06_03Part001.lean",
+      "bytes": 4527,
+      "sha256": "e8b82f87ff30928ca5c3e3ba3da45d44d86f60a5c78f7eab1e28360edba4795e"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned06_04.lean",
+      "bytes": 4936,
+      "sha256": "ab4e8daa6105131251da522b4d0cbaf1a48eb7d671a629f32577e62cbbf99366"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned06_04Data.lean",
+      "bytes": 320,
+      "sha256": "96f3cb60b86201d74e59899c4f83bd3392734a899b1dfbaf73c0ef203d427c37"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned06_04Part000.lean",
+      "bytes": 35016,
+      "sha256": "d9894450479eff3ae2887191ef43be003b0358acc7f4a7b4ac7eb68a2cd63934"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned06_04Part001.lean",
+      "bytes": 8830,
+      "sha256": "9d80e7a1381b3c8dd541a03311c02d5afd50b179f551a81906f8ce9909da3a0a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_00.lean",
+      "bytes": 18139,
+      "sha256": "8fe9bff3675bba9c54d9f9cd685e7d34209e92792aaff181c946b375dc71598a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_00Data.lean",
+      "bytes": 319,
+      "sha256": "225e7b38de6da466fdcf2b8c7fbaa230c9532435bc7dd8bd723e86ec40120499"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_00Part000.lean",
+      "bytes": 33251,
+      "sha256": "fd97baf17139501ac13bcf3a525dbb7bae2c8e5986f0e93172b7cb4ef9c106e3"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_00Part001.lean",
+      "bytes": 32612,
+      "sha256": "f7221144a795506ec38670f9390847d6f1e2cbcc82fa2772902a967364414d32"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_00Part002.lean",
+      "bytes": 32878,
+      "sha256": "1fcc59cf4dd208d29f85078a9b7dceefa3ea312a633bba1fcbb713e74db33c6e"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_00Part003.lean",
+      "bytes": 32723,
+      "sha256": "753c20dbc9a0714b45730b80675681ddbeb826734931a06994cd82e27720c2a5"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_00Part004.lean",
+      "bytes": 28106,
+      "sha256": "e2da470fa966526b3fb682ae905de36f1bccea3c9db0cf592ac2c9ccdc1eae08"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_01.lean",
+      "bytes": 9995,
+      "sha256": "76c5c5181d0fef5b978257e4521f7a9859a1bd1c561d96f52323306b1f3f6fd4"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_01Data.lean",
+      "bytes": 322,
+      "sha256": "97add2819d4177229ce32f2f1613c22083b2039b9a1f474dd36bdcc57266d521"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_01Part000.lean",
+      "bytes": 32242,
+      "sha256": "9f07420c5bea748f2fe2457eb69e951b41af5ebe61d06d5700392424cf4ee5e5"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_01Part001.lean",
+      "bytes": 33701,
+      "sha256": "b398cfc754af19a5b3ae37f6e27e696ac0ca78b041a6d1d42e90a6a6c3c7a3f4"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_01Part002.lean",
+      "bytes": 20147,
+      "sha256": "efbce047a7d38e319c6a6f944ffb2778a75ca3391259ed07b307b13028d69a4c"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_02.lean",
+      "bytes": 9055,
+      "sha256": "303f70fbda0eaa56dbf0146d5da1c88a578f986a278cf353adafcb29c7452273"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_02Data.lean",
+      "bytes": 322,
+      "sha256": "aabd8a6e232d8655b8ced7c8c4a8fc9ae1d4e2f20d11eacbf81848aef5739579"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_02Part000.lean",
+      "bytes": 32080,
+      "sha256": "7bb67686f549160cc11678625096702d2245e27665bee68c9c04538699c6487a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_02Part001.lean",
+      "bytes": 33512,
+      "sha256": "e75b45ac32b3e57e984bf5237aaf5fec3c31cc800e0a064de237160c7feda05a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_02Part002.lean",
+      "bytes": 12046,
+      "sha256": "3b3fb6c23676d228a60a263f1d8bd1a1b18e53ae479b9d6bd8e45d71301d340e"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_03.lean",
+      "bytes": 4504,
+      "sha256": "d20e9c0756ac8709a84af779c611aab5496dcb1f05dd92448f2d8343d1befb75"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_03Data.lean",
+      "bytes": 322,
+      "sha256": "ed2d95c9e14cc51edb16ac057cfed11352923dcb639685d6235bd2837c83f700"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_03Part000.lean",
+      "bytes": 32164,
+      "sha256": "caec4718655ba71cb38e3acabe9262dc64c23c49016a4d26185aa468f394e95d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_03Part001.lean",
+      "bytes": 3960,
+      "sha256": "5f49e064a05933cd6fc0f0643460008627e87e12b47f79d8761e885f29d5696c"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_04.lean",
+      "bytes": 3131,
+      "sha256": "bd742f678a34de4aff7c5edd7547e6f9af04568c72564b4b737b5969c0205859"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_04Data.lean",
+      "bytes": 321,
+      "sha256": "4beb18cce9ec417155dd22a5ef69378dcd160b9d5307ba133718266de422cfbc"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_04Part000.lean",
+      "bytes": 23671,
+      "sha256": "c7a20dd6da80247da535913c51f2ee265895aed3870fbcfb09b06145ee6719cd"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_05.lean",
+      "bytes": 3985,
+      "sha256": "225e88d2b99a4c00e114c9fe681ad46b3c4270d07db9d97cb1359724ec59b59b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_05Data.lean",
+      "bytes": 320,
+      "sha256": "84d02de403a01cd6b609aa97044e7fe9b70ac54f7dadb2d46110d1eb87f3333d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_05Part000.lean",
+      "bytes": 31575,
+      "sha256": "ef82c61e7990117f11fc2f2499440e5363958111be65b573f2978e198eac6213"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_06.lean",
+      "bytes": 9495,
+      "sha256": "e6d062cae29b3961e568b3facd7d865f53b84fa28a8c423cb8a2ba0fcfd5f179"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_06Data.lean",
+      "bytes": 322,
+      "sha256": "b323c2dc1ee8cfc9bb4d07480b5c99092bd86d1f5a48be2fa10ddb0b98ba2649"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_06Part000.lean",
+      "bytes": 33042,
+      "sha256": "59219de7817e1c229c4ee79965ce3e5525ed702fcf7fa4700984afa9c74deaf6"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_06Part001.lean",
+      "bytes": 33126,
+      "sha256": "4e129cbd617a800cac897a23c8b2bc20e57cde76e1df55dea0a065d633d1d648"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_06Part002.lean",
+      "bytes": 15849,
+      "sha256": "9efc7f434545539b7ab84dda141e32d62317dff599e4d429eecbae538a1e43d2"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_07.lean",
+      "bytes": 12340,
+      "sha256": "8c37987701f27b817f4c5ac2f331fe5bc07f3b6c6b90071725b673dbad6d9c94"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_07Data.lean",
+      "bytes": 321,
+      "sha256": "397de1e445fb1a56fc8758def8d6e966b1e3d9b331c1f240e26f67d2027682aa"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_07Part000.lean",
+      "bytes": 33093,
+      "sha256": "9b8b92eb9c67e1188fe7bd33f5591c1f9d05dc6c2d1524a87dbcd42187395faa"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_07Part001.lean",
+      "bytes": 34037,
+      "sha256": "317ba9a29594b6cd4fa1287bf917de8425470a09b7109e953eef3f5f4fbaa75e"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_07Part002.lean",
+      "bytes": 32910,
+      "sha256": "1ea1740dfd35163b2deb042dff9770b00969b6c0dc0da914922ff30aeb742361"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_07Part003.lean",
+      "bytes": 7952,
+      "sha256": "113b68894322b84b64f070f2d2f52474c1902ceaeb857280339d42a72aff5600"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_08.lean",
+      "bytes": 11814,
+      "sha256": "699491a9ddfc67b8e92cd000f52eb9efb3b277e846d5715063bc1df8a6de26fc"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_08Data.lean",
+      "bytes": 320,
+      "sha256": "f2cb780b31f77fc8ad9df93affeda57dd542dd965d65dc659ba620ab814488e0"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_08Part000.lean",
+      "bytes": 32832,
+      "sha256": "0b52dc7f65418bdd84234997081cbb22aac280defdd9bf2faa929aff82e373b9"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_08Part001.lean",
+      "bytes": 33487,
+      "sha256": "d91d90c4ab40a569c6816d7a84b4dd7c3a985623a6b122c2034dfa866dbdcf02"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_08Part002.lean",
+      "bytes": 32066,
+      "sha256": "6ab216d0456dec8a0f2f4184e4c72defee6e1a0004c2f1a5ffa7dff8a8724dd8"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_08Part003.lean",
+      "bytes": 3891,
+      "sha256": "c38375485b98a879d3ecf79f9d3f6c2c1275258384775adb21ec008129f793f1"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_09.lean",
+      "bytes": 19148,
+      "sha256": "58dbb92af7c5eaf3c71bdf790021674aa893f1b0e9fac6cf27b419b50ea33489"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_09Data.lean",
+      "bytes": 319,
+      "sha256": "651b1c4b55a94b3bd5cff722c4ba132d1e8c41c47d4d7a585c48e7e1896d88b9"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_09Part000.lean",
+      "bytes": 32874,
+      "sha256": "75ecef552a5f28bc4a8824e2998e9a84638af9c66aca928b179fc5a7533ea10f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_09Part001.lean",
+      "bytes": 33047,
+      "sha256": "2290714e0d06972cad21673815bf15b4bd96fcb96ea7a2b85ce33cd58495777e"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_09Part002.lean",
+      "bytes": 32975,
+      "sha256": "e77cd9ec25010c6026dc296170296e7ad8adf99c5a721b3c487aae5399ffa925"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_09Part003.lean",
+      "bytes": 32336,
+      "sha256": "195b094fea75ad5c2fa85bbdf293745a9adb9338490afe7f5b9d41d1f278edb6"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_09Part004.lean",
+      "bytes": 32352,
+      "sha256": "9253ce7c66261b4ff05ac7691886131abb33cb763546d0c6c69bcc57e4237639"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned07_09Part005.lean",
+      "bytes": 4073,
+      "sha256": "2984f66fa4eabfca80ad2abdebb9ca9e603d5d18757f729d5c692ded63b57142"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_00.lean",
+      "bytes": 4504,
+      "sha256": "014adc7e83395697f96982f1ee92fd8a4cc911c9194143794475fe4b70cb1ac5"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_00Data.lean",
+      "bytes": 321,
+      "sha256": "9903887c2efc5790379d608904b871603aeaac98fb01ed78866deab6ad855f65"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_00Part000.lean",
+      "bytes": 31409,
+      "sha256": "af1475969c96874fa409c7afb49a48518cd8ba9125afc4ad1f1c16bd64a2758b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_00Part001.lean",
+      "bytes": 3959,
+      "sha256": "b17622a322dbf4f2a600571bc55c37a0bab09d3d2212a1f258cf31428a8dbead"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_01.lean",
+      "bytes": 3131,
+      "sha256": "e239a735eebd96779a18f0533810e4c834ea336f1b3911d172ce99bebe697e66"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_01Data.lean",
+      "bytes": 320,
+      "sha256": "4a7589bf32f5afbf32249923df7da33cccf7ae4a9a59b6ae9c54b7f9f6acae77"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_01Part000.lean",
+      "bytes": 23184,
+      "sha256": "b9f86f9ddb1a74d8784012a7164b36717e4c7cca5d07886f117bdd120ca479f3"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_02.lean",
+      "bytes": 3985,
+      "sha256": "2da65456bb18ef916e98af0492b697a8f43482ef77aa54a90b9656a54ef887fc"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_02Data.lean",
+      "bytes": 319,
+      "sha256": "3d97e68e7d873b896d827a37050377a6bef694dcfd1751e6c090328752f1307f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_02Part000.lean",
+      "bytes": 30745,
+      "sha256": "acf2bfe46051b50276444757d4ad2dc75cc61291514098a8a8be646956a26621"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_03.lean",
+      "bytes": 9495,
+      "sha256": "b6ce0139eeaa53eb43e9a6534e61d11007b7c0c7619e140e268438a08fee9e9d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_03Data.lean",
+      "bytes": 320,
+      "sha256": "7c73a31c0c990fce2ba786cb0cebf8877ea4d12621eecea64f7b6cb8fc53262f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_03Part000.lean",
+      "bytes": 32222,
+      "sha256": "53a97b8884ac1cbb01396d635b98b653b8cb447b6b3d1fbfacd02fb35529e4cf"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_03Part001.lean",
+      "bytes": 32241,
+      "sha256": "5729fff42c722a9dadeb2c8af36134a0b9249e955e571a9aaf056e6dff654bd5"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_03Part002.lean",
+      "bytes": 15472,
+      "sha256": "c70db5ac3036a20f1461c6bd88259c1e0e9bd866b23e32b81509b7a3307b0279"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_04.lean",
+      "bytes": 11814,
+      "sha256": "78adff3a12742e46ea3eb05b56818ca04717a727e382ddb7087d9b159488a467"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_04Data.lean",
+      "bytes": 320,
+      "sha256": "3bd0044bf51360213e25c1e7943b631f139ad52f3fb54323caebd44272282a60"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_04Part000.lean",
+      "bytes": 32079,
+      "sha256": "5741d395bd4aceb4e7c35e915dad01f029cb3785242ec4fcbf3209dd69dc78ba"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_04Part001.lean",
+      "bytes": 32632,
+      "sha256": "8dd979e266ec2d7378604e7c9f972201f65c95a4641bbab5bcf4360bca624736"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_04Part002.lean",
+      "bytes": 31062,
+      "sha256": "7fc0922e4ce07966f1c8d36ed0a22f5ffc1aab7b04d75982a7c0216022119c88"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_04Part003.lean",
+      "bytes": 3891,
+      "sha256": "be81e059085cc6be2978e416e4163d125daac439aa6a8f3b842ff10546eb33a2"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_05.lean",
+      "bytes": 19148,
+      "sha256": "7a1a0246bb4cae3cb64a0c347d80b53f6cec2e27af2027b2c3669ba46126521d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_05Data.lean",
+      "bytes": 320,
+      "sha256": "2acf93f3b54f5804da4a0327e3c9a31dbdbd0bc23a48d5b5942fd3bb6a21f3d2"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_05Part000.lean",
+      "bytes": 32249,
+      "sha256": "443acfef181a7d42b90ef1a844e5196ef66ee99af0889b14e05b0677188548f7"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_05Part001.lean",
+      "bytes": 32337,
+      "sha256": "dd2f9c5a4efdcdd6ca2776140b04f26be6ce133aa359269a6a3b80771d139743"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_05Part002.lean",
+      "bytes": 32247,
+      "sha256": "8258697383e4a570dd4c8fedf76e66b131022fa8371dc0a9346ac12506229c77"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_05Part003.lean",
+      "bytes": 31403,
+      "sha256": "c46c22c628e64420ae414554a9a23f88d7574a380427dcbe74850fed8b439c9f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_05Part004.lean",
+      "bytes": 31141,
+      "sha256": "d7b0b31e2b7ea388b54ca4df80ad24d416edf7efa881d3cc243cd2660383a4c0"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_05Part005.lean",
+      "bytes": 4076,
+      "sha256": "47141fdc7a069bbb6db638a34e829cfb82a534ac5f7a7378d30b1792ddd3c28c"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_06.lean",
+      "bytes": 18139,
+      "sha256": "c82fd0a126bfc26b5e3c6f8a00fe16ecb227f83eb82507509e5f7a1424d12604"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_06Data.lean",
+      "bytes": 320,
+      "sha256": "04482f2117283068799b6f6ad3b4d83a9745de116bae2b5bf3c70ae99f34ff48"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_06Part000.lean",
+      "bytes": 32559,
+      "sha256": "a481debeef378c7ca24eef1e1e8385fd83183af2fdd2d9810f89370226a22301"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_06Part001.lean",
+      "bytes": 31840,
+      "sha256": "3caafb0b2457e180fe9dcd8e5bd3079f5bdfea002704f5caca882d41fea11738"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_06Part002.lean",
+      "bytes": 32005,
+      "sha256": "1cd3eb4107592bf1099d5eeaada109821f9cf74ec7027fa00b71f2b2bd932093"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_06Part003.lean",
+      "bytes": 31808,
+      "sha256": "8ad35a01c16ba8895598866c155e3434218789f94dcc5a8f2d838479e19f40ba"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_06Part004.lean",
+      "bytes": 27164,
+      "sha256": "4b2aded1e7ad9dbf32979a099e1bac3b82cbba0a1d549002b6e18f188b78c59e"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_07.lean",
+      "bytes": 9995,
+      "sha256": "0683023a95fd6a3ca6ed52b4286a6d6dba4c2926155f138fc873f906ae087759"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_07Data.lean",
+      "bytes": 321,
+      "sha256": "c62019ef8bd409f057ef61258854001406743c957c5777cde8055a3565e00024"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_07Part000.lean",
+      "bytes": 31398,
+      "sha256": "680c39d6700775239bbf3cadc6c71db7d12bb879446196b33956947145966799"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_07Part001.lean",
+      "bytes": 32689,
+      "sha256": "decf6d237ff7b03642b28f33ccbb4564204b20c751411b3c9addfc0da44bad49"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_07Part002.lean",
+      "bytes": 19562,
+      "sha256": "fc63483e54b7662692884fe9433f244fc889c3a577100d5a8caf77da20dc664e"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_08.lean",
+      "bytes": 9055,
+      "sha256": "5d8127990032946561a3e7cfedccfb5f6e5c3b9d6b420e67e4a933c5fd0622a9"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_08Data.lean",
+      "bytes": 321,
+      "sha256": "a4d3caf8adf1988a6daa4a564c12ac8f9909561cbf924a7dc18f613d3cf415e0"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_08Part000.lean",
+      "bytes": 31278,
+      "sha256": "97c3f2e1d85828ef67912b47943e133d3fc36bae910f27408c897d902e58312b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_08Part001.lean",
+      "bytes": 32437,
+      "sha256": "213c4770ae47d0dcfdd5825574b92cec6fbd3581b0ea256ef3d1b5352e9e789f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned08_08Part002.lean",
+      "bytes": 11756,
+      "sha256": "d591ab2b44ea0786877c26bcb2f1fc5cc3bd1f53c2519e719acfaf56b814e79c"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned09_00.lean",
+      "bytes": 4492,
+      "sha256": "e678020cf102f3b746bdf29805155bff0b245c87e56c6a73752f3044619d5279"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned09_00Data.lean",
+      "bytes": 320,
+      "sha256": "8e30968f60fe80ae2ffedca64a11063737c228e94a7f77fd4fdf80887ee09dc0"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned09_00Part000.lean",
+      "bytes": 34702,
+      "sha256": "ba6ddd015450e9dcd5b94314b5bc391f839326b61df04f29c7ebe4a813e5c461"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned09_00Part001.lean",
+      "bytes": 4529,
+      "sha256": "41e917d50bd4fba79c3dcac100754cf5da567fcb46d5c3bb7c559d439c216d0d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned09_01.lean",
+      "bytes": 4936,
+      "sha256": "2cebb4f8ae2e425756ddd004fa4b28afd48a93fe8fcb2146abb8ff41e90fe099"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned09_01Data.lean",
+      "bytes": 321,
+      "sha256": "0d1cb4f7672bc467ae9139bc2f0c359123ff2e29b6fcef1a309842a1a3d400dc"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned09_01Part000.lean",
+      "bytes": 35031,
+      "sha256": "52bc069edb718b86e83c73e6deaf5bf17a113c3824e7f63a30c2299b52bb3fa9"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned09_01Part001.lean",
+      "bytes": 8835,
+      "sha256": "2c3630cf59b4ecf698f6e6ed4986f9afc84b067d1541f962782e2626ec0af0ad"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned09_02.lean",
+      "bytes": 4506,
+      "sha256": "41685ea468281335aa465125982af57acc4507d1d80f8f962f9dda025bf67e0c"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned09_02Data.lean",
+      "bytes": 316,
+      "sha256": "988c58bb311656ea49b259786ad78ed3e0c7ff042cdec46781514d146a3245fd"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned09_02Part000.lean",
+      "bytes": 34727,
+      "sha256": "e82acd3b3f20d5e2172335c637571dfe6a51d0b77970db8ed1e10140498c1e61"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned09_02Part001.lean",
+      "bytes": 4429,
+      "sha256": "bbb75c8db3e8d9fff32255acf2986bba5526be174f32788b26ffc69e8dda8c81"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned09_03.lean",
+      "bytes": 4944,
+      "sha256": "04fd2a2b14386d0c8046cc51108ae67abf88ec9051b51d8d64a8dc383c5876d8"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned09_03Data.lean",
+      "bytes": 320,
+      "sha256": "8b927bf2c472cd7b420ce242d1eaef207e16b3890f5eb50efaf46f99adce913f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned09_03Part000.lean",
+      "bytes": 34943,
+      "sha256": "e409eb92a35007eaf67be0e486b149d99d9c06362dd5835628eaf548faba3db1"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned09_03Part001.lean",
+      "bytes": 8822,
+      "sha256": "ce083428afb3aa8e754e7ed19d933fd70e3cee6a57366cc7e3a78157a69ce660"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned09_04.lean",
+      "bytes": 4500,
+      "sha256": "6d9a9b5115ccc6b24e5446cd9f378db170d3a510d258690f5916871c29564a5a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned09_04Data.lean",
+      "bytes": 320,
+      "sha256": "b03515ffff1ea6fca80446e3fb835a2a3c32228bb2ae8970df4db6ceed34568d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned09_04Part000.lean",
+      "bytes": 34763,
+      "sha256": "a58d9bce72b880730e6ad7a290ec42ec6da96b3a270b923bc3840fc248b9895d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned09_04Part001.lean",
+      "bytes": 4527,
+      "sha256": "667020b8cb6fcb93a9ec69927c272f6e8653377e6e5742a46b1307e1c1a31b05"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned10_00.lean",
+      "bytes": 4042,
+      "sha256": "6d229acacf72ca4f7f0f880106326fdab8681fc31d7ea42faa9e9dc91164335e"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned10_00Data.lean",
+      "bytes": 319,
+      "sha256": "fb24c01c3b9aadcd2c7d10b5ac1137a64305e69b55fbdd82933c21286665e9f7"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned10_00Part000.lean",
+      "bytes": 34717,
+      "sha256": "5acbb42616bb30fd70d6ae5cdc647db4d34101bf89146bac61cd04284e38104b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned10_01.lean",
+      "bytes": 4981,
+      "sha256": "bfca9966aa8cce24e72b390b747bcd42c6964be38c6f4d5d615fa450b3e4da3c"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned10_01Data.lean",
+      "bytes": 320,
+      "sha256": "7ca6f64710dab1a1e63b9ca8d0db9df9be32c4dd690183bb8d97e65bbbd8e84c"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned10_01Part000.lean",
+      "bytes": 34966,
+      "sha256": "7b95b1089effb730a36ea4fb7bf6dd32cc3b98c7d8c43592652a1643ad183e18"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned10_01Part001.lean",
+      "bytes": 8720,
+      "sha256": "1e9162ba7535c4419323192db3b3d67de4744e1d06b5ce6d4f4777e1d47ba7b8"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned10_02.lean",
+      "bytes": 5863,
+      "sha256": "06794bce0fa36bf109e85c51a37d20492114cd924eae7e5e2dd5c684154b542f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned10_02Data.lean",
+      "bytes": 318,
+      "sha256": "9dc55c8118b3894ec7aceed4c8a068bffc6b77ba38d5916a899d9f8e0cfaf72f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned10_02Part000.lean",
+      "bytes": 34915,
+      "sha256": "2a4a44fcbd377d5e4f0e2fd9df15773e7145020a18a94e63f38dc5b28ed5e1f1"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned10_02Part001.lean",
+      "bytes": 17502,
+      "sha256": "cf05b642877aa775592dd32f7a430e9c9ab6073af7e876ac279ede66f2d7670d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned10_03.lean",
+      "bytes": 4999,
+      "sha256": "5ad279c6eec79e0e7a142b150fae23f78afbd8360f782e1131fe5a8e69dc363b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned10_03Data.lean",
+      "bytes": 320,
+      "sha256": "a2afe024acb03fde40c32a8630cb165bce41ba9c79b1a6e2a76af8cebe9be459"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned10_03Part000.lean",
+      "bytes": 34987,
+      "sha256": "6f56645455a63438d6e565d690643c6e776b9606b8372427ba257620fee9e2b2"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned10_03Part001.lean",
+      "bytes": 8920,
+      "sha256": "71525ef78a42d005ce1e033b9c4c0bb0845db77eda93a08c3b02428dc1c8f688"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned10_04.lean",
+      "bytes": 4032,
+      "sha256": "17be94b7a684fe822829f9ce64b1fc474e46375f8e269007a26195bbdd770afa"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned10_04Data.lean",
+      "bytes": 319,
+      "sha256": "6b2655dcab95251f057694a287596152e8c57bd4b78a4119ddc66fc2c765958b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned10_04Part000.lean",
+      "bytes": 34729,
+      "sha256": "d91ea3383aace0e97344573751eae810e5333761375739abf79081a291c31720"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned10_05.lean",
+      "bytes": 4985,
+      "sha256": "9bfe54e15175a0ad03d2950d2286057a8789c23e17a29f198778db722a27cdf8"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned10_05Data.lean",
+      "bytes": 320,
+      "sha256": "00295cb7a6a713c79a380b8bcfd8f35cfc0cb16d5775e4da2a18391ba2e70c68"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned10_05Part000.lean",
+      "bytes": 35051,
+      "sha256": "db8022c181ba26933996a269a27e0c1914925539d981b00961abacbe7c92b6bd"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned10_05Part001.lean",
+      "bytes": 8804,
+      "sha256": "3e72eb76964303e7a05adbc33264607f2ed7c86fd7291d68746f02a6339cba09"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_00.lean",
+      "bytes": 19307,
+      "sha256": "1ce160c3571b77a146d30a7cbc1f46f7d7895d008b06c53b713ee3b72af8a0bb"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_00Data.lean",
+      "bytes": 318,
+      "sha256": "e9cb6044f7d5f0c5b187caa09eecb613e55a4eb7c2eb16382a5f481062b051c9"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_00Part000.lean",
+      "bytes": 33182,
+      "sha256": "775b17276926eca289a78d5174529f3375faa357e119cc71395cec1e30b64029"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_00Part001.lean",
+      "bytes": 32703,
+      "sha256": "e2ec2374fce7399fedd16ea5bbe35a312b55531472dfc8e6a04fe51dcf00fb47"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_00Part002.lean",
+      "bytes": 33091,
+      "sha256": "9b8a08d11c20d5d62e4269f2614faae4092ebd3c796bc0d5b3e5ff33559e416f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_00Part003.lean",
+      "bytes": 32949,
+      "sha256": "cf3977f39e8fb0b08d6622612742ddb67234cf20aea59a2129b4d6c57f5ad5aa"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_00Part004.lean",
+      "bytes": 33003,
+      "sha256": "4263b7b179c9d847ea144d7abbee8366b0f64e9e5a5cffcba012492aa69a91e7"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_00Part005.lean",
+      "bytes": 3864,
+      "sha256": "49e3771e8ab1abed597509bab8c44cfe77ded9a538d0c2a202bf6906c121bc03"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_01.lean",
+      "bytes": 10538,
+      "sha256": "b489aba25d8d3e39690f74eaa3c34e4b75b5720c29f175a5c86fb153bab825e3"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_01Data.lean",
+      "bytes": 320,
+      "sha256": "891805c90a145761d279a7288318bc7f31463b09cca854c8a9db5a08f8d32d20"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_01Part000.lean",
+      "bytes": 32154,
+      "sha256": "f2e8d143614ef1641e45c5e107db708779cf0c2cfe088799a602b83368fe94f5"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_01Part001.lean",
+      "bytes": 33756,
+      "sha256": "560fa604c2a09b651c7440dca7bcb5f0007da8ac2e87c4cd653218a7a47022ed"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_01Part002.lean",
+      "bytes": 24341,
+      "sha256": "4c28f12df57c636c092ce153617893efa1a9ab7ae30d120f19370dee052fb651"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_02.lean",
+      "bytes": 9614,
+      "sha256": "08ef79577ef58ee80c342002926a0e8144ae8ed05d7689d4204acdda962a0e3a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_02Data.lean",
+      "bytes": 320,
+      "sha256": "73fa4b0bd7fe3c39469bbe3727c040531e6e5048174de9e37f35c38f22e3a6cd"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_02Part000.lean",
+      "bytes": 32145,
+      "sha256": "3d2baf62b6d14b98e4bb4e2889fd1ddb5afae3f41ea3c3561cafbf38ddd2ec50"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_02Part001.lean",
+      "bytes": 33634,
+      "sha256": "b96b42b8735dd7280632782704757f2de05f8bda23ff337f4c414088efcec705"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_02Part002.lean",
+      "bytes": 16229,
+      "sha256": "3210fc34592da9df580d415bea047bec50cdca9073f37a38d8932147f916723b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_03.lean",
+      "bytes": 4042,
+      "sha256": "e65a665d78c34bf5d5ff3aae2ecc07145bd4e4c61c34024fa8bd59d454f0645a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_03Data.lean",
+      "bytes": 320,
+      "sha256": "c71300ba2f1dc5326c3b324cfc6963a2de70e35b861ca7d9b490e22fc013b0d8"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_03Part000.lean",
+      "bytes": 31595,
+      "sha256": "557f6790ea67ef0815580c1546d66f470de620bff0ce7a4c97882b5cda63d890"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_04.lean",
+      "bytes": 4032,
+      "sha256": "8860578527ddb82e7ed7385e8daaa240fb8cc1dc13c0a8ffe23132d1b4b9674e"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_04Data.lean",
+      "bytes": 322,
+      "sha256": "8583e31018b2d81133e16e6801e75ba48bc47f5f197361c99d8576bee4f26757"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_04Part000.lean",
+      "bytes": 31627,
+      "sha256": "27941607d22beff3adca4c7ecd965e8fa0a986fd1c21d880792b5e9c8a72cae8"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_05.lean",
+      "bytes": 8682,
+      "sha256": "acef3c7e5e6653da9830402a031880919125d1a7060d222c85498b1e6d89790d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_05Data.lean",
+      "bytes": 322,
+      "sha256": "32a9279d3e83fb2aef02ef119cd5e9f1320a12af8d4bdf5ac9e1ba58d88fd1c1"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_05Part000.lean",
+      "bytes": 33055,
+      "sha256": "04f5c5264bb9b59a160467aabf3ecaa89736fd21f1ce290f82bdb94b3fbce20f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_05Part001.lean",
+      "bytes": 33002,
+      "sha256": "22301d568d8b6a6d236080d7b6975bbbaf545c451b18a184481f9fb147bec538"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_05Part002.lean",
+      "bytes": 7857,
+      "sha256": "09217bfc75bc7d095c68dc470fa481ba5f24c9f27826a29e3fc98ba0d55000c0"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_06.lean",
+      "bytes": 10030,
+      "sha256": "c53e7118812dfeeac45cf9d7d6946b3d2d1e5cb44eb9e88778d9ac5f2bc27b9e"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_06Data.lean",
+      "bytes": 318,
+      "sha256": "d0978cd4ea8766da99aa387ab25125b99cd777a47b5dc952555e70597672a4ec"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_06Part000.lean",
+      "bytes": 32752,
+      "sha256": "06ca1316b53df0a8b9324cfd78bb58e1e525b1d5b47e12d07fefb6a0106b1964"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_06Part001.lean",
+      "bytes": 33209,
+      "sha256": "b76a5f6d4bea16c35a92ddb111bc5c839010de8e10ea71332d054d71c2ddba4a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_06Part002.lean",
+      "bytes": 19771,
+      "sha256": "5f9c99efbc7cc00291dbfeeca36be2140777ba5e8bdca0f07f38494ed837ac7d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_07.lean",
+      "bytes": 18826,
+      "sha256": "cfef178ce306536fa20fbe20b96bc01ac2debd27919b3d387dc455f3e1a40118"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_07Data.lean",
+      "bytes": 318,
+      "sha256": "4a61120117b5baa7ee4cab94b3d351fad718dfd5f6caafdbe43eea992c933b5b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_07Part000.lean",
+      "bytes": 32827,
+      "sha256": "23aae41569d2882e8c2afee06a1bbfd004407d420385b45473f2e85628714eb9"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_07Part001.lean",
+      "bytes": 33089,
+      "sha256": "a63404af0e2d4ddef30b3f3aa4a43d3a43e25165c2c1034a70859ce335d6ae68"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_07Part002.lean",
+      "bytes": 33150,
+      "sha256": "f5671426b4bb23ff12b68e08343ceca14152adec3df371ebc80e71078423aca8"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_07Part003.lean",
+      "bytes": 32326,
+      "sha256": "9fd8233d5b3aa569f5ea9e55bf751488409133a0de5fbe9804ad7ba34bff4174"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned11_07Part004.lean",
+      "bytes": 32643,
+      "sha256": "e0d8e75ec4769adbfbbb85545887f8c62ae19153462d777cf77efd4f02b8b823"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_00.lean",
+      "bytes": 11943,
+      "sha256": "6c36ecdf8cc733a3cc2639eae57679f47dcaf5c78b5682ea94b16e6c0c131631"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_00Data.lean",
+      "bytes": 320,
+      "sha256": "13a09823ec211ee5f929250749f983f49f7677364eec5463a3b3e5d4863b0fbb"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_00Part000.lean",
+      "bytes": 29150,
+      "sha256": "3f59ec019226131295333374c9716116a81d96733f85b31d5b3ab2fb388f41a5"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_00Part001.lean",
+      "bytes": 29943,
+      "sha256": "53c9c914e8a96631442254b6ff5b06fd321f388f4ef77354f8f561be19821fd2"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_00Part002.lean",
+      "bytes": 28472,
+      "sha256": "eafffc9a82005e3f11cb648f617b6be7d98dcb9f4075789f54f8d559006e5c5d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_00Part003.lean",
+      "bytes": 3429,
+      "sha256": "36927cc7fd7c37127d86643b4bffc14f79f9b06fcd345f982c3381cc6b0a9b5d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_01.lean",
+      "bytes": 13745,
+      "sha256": "b56c13354f4d80474de04f21d4827521352401c454030aa4da023c9d8799fcb5"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_01Data.lean",
+      "bytes": 319,
+      "sha256": "4e656d34524e339ccb6734c64f72e6429d41fdaae987f5701911850ea7e4eac2"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_01Part000.lean",
+      "bytes": 28865,
+      "sha256": "b18504746dd430352d40283b2e00e8d9ede87c6446e83d623ae143fc7b602195"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_01Part001.lean",
+      "bytes": 29899,
+      "sha256": "1c4151d1158c49b7971b86747eed66af0303e7a584c43c2f2bc5b5457a3e1af5"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_01Part002.lean",
+      "bytes": 28840,
+      "sha256": "67bb15b6446452e78f68dcffe0e62870490318b1723fe8d1c2c6df357256ad03"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_01Part003.lean",
+      "bytes": 17386,
+      "sha256": "c9122261275f90ca4065818e9331ab032f33c4eb0a40d1834e7a3511ac5f0d88"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_02.lean",
+      "bytes": 20675,
+      "sha256": "61c89d1fda02c2233e52b7951f4c02740d3f08f22164b3c522c4a94d55b9b8b7"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_02Data.lean",
+      "bytes": 318,
+      "sha256": "74c9e2fc5d58c1d824208a092c5baacd5200f995caaff2409c48602be845653f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_02Part000.lean",
+      "bytes": 29071,
+      "sha256": "0ecd5cbda687c4df21676c48175c9855b2afcab0d65bea5caf0efcb335f6a409"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_02Part001.lean",
+      "bytes": 29300,
+      "sha256": "944d30d21da93ccd48137922606c47adb0df71020b0df4c9e1d10a6166767d7a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_02Part002.lean",
+      "bytes": 29453,
+      "sha256": "7469d3797a8ee8714780a2ea047cbf15f4db0e3a6484d6ada08b01d8fd4e8fd7"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_02Part003.lean",
+      "bytes": 28255,
+      "sha256": "ef5d6574b21a6c3b7a3f1be8b948e2c30484d16412f3a1ea67eb58989507ca8f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_02Part004.lean",
+      "bytes": 28947,
+      "sha256": "6493322cb9050b5836be10a5e0a9ed1c84d439dec894fa1ae1b451e55a567599"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_02Part005.lean",
+      "bytes": 14803,
+      "sha256": "a4add7ca4d52517709db852689017f6a8c6c7230af042697c852a57a6aaeb0c0"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_03.lean",
+      "bytes": 24146,
+      "sha256": "daa74259f46a847d82cb6475f47247f906b7e9238ab64db2c1ea7ac4c678e043"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_03Data.lean",
+      "bytes": 318,
+      "sha256": "e28f886ee9f0174e096bd5583af84b5fb4315525f02a06ce66ca31a462eb3fc4"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_03Part000.lean",
+      "bytes": 29613,
+      "sha256": "55058989ed685bfbda298591d2aacacb4b3e667dc3df59cb9a6a9e38514254e7"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_03Part001.lean",
+      "bytes": 29642,
+      "sha256": "e29518bb8ce293641a5d8255e93a92d1c387dd6542e79fdb4d982e66fdccb4f1"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_03Part002.lean",
+      "bytes": 28423,
+      "sha256": "f047ebea2f03e72f49b4c7a1f0da3e10f9acfe649e265327fb16208f3584a1a7"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_03Part003.lean",
+      "bytes": 28373,
+      "sha256": "029212388527879743e9884eff517b7f5127b222bcb49f2485277a6e3df669cb"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_03Part004.lean",
+      "bytes": 30277,
+      "sha256": "fe28d118258605bd91aaccf69eb1ffa427832f8c22823b9231b4df4e38da97b6"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_03Part005.lean",
+      "bytes": 30583,
+      "sha256": "aa17e211bebc18d831b4a33d23d11e97d3f7cd1ef2581644f3d09561c4b0f9e3"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_03Part006.lean",
+      "bytes": 11199,
+      "sha256": "4f0326bdbf012c40465e1d8a5fb27676473ad68680df364fee6dfaaae3db678b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_04.lean",
+      "bytes": 15534,
+      "sha256": "fba1d704efca6ec6ab6b79665cbbc904a42585cf1f06b3551849617091c6cdd2"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_04Data.lean",
+      "bytes": 318,
+      "sha256": "a74837911a5948317b4e54578e0cf05c68616162ecb0d6358e93c7b81db349a0"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_04Part000.lean",
+      "bytes": 29484,
+      "sha256": "1d1b16c4e887b177e1aac8182fe99ad995799599a880fe400615832935de9ab8"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_04Part001.lean",
+      "bytes": 28909,
+      "sha256": "e7efd0ae6ee1b227a0b5c8af78e623de3730ec86dcb25547a1d23e4390d0eee7"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_04Part002.lean",
+      "bytes": 28602,
+      "sha256": "8bd6ed288584e21af4e3e5143d3dac74c6c9f19b25b8b6ae66b136f7af9e016b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_04Part003.lean",
+      "bytes": 28801,
+      "sha256": "b13f81d6fad5455ab59728d1e170e941c650311cc079b416a06e56dc6e4851b5"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_04Part004.lean",
+      "bytes": 3554,
+      "sha256": "07617e7ceb6b904f9db09c8b2f2d92a6366f45ac0ab9209e21df716cc475b3c8"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_05.lean",
+      "bytes": 8656,
+      "sha256": "5b5ec070c682de5c7eaeb6088ce90a038cc17751c62cf3258b8c848cf15c27a8"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_05Data.lean",
+      "bytes": 320,
+      "sha256": "6a595dc5f2f8e0211668b161006851dbf2f718025f7dbce8c8088b56f816a66a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_05Part000.lean",
+      "bytes": 27939,
+      "sha256": "be71f4f8ad1b5339ebb0cf4bce066951a23fbe597a161d7a9b35845f6b192504"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_05Part001.lean",
+      "bytes": 29020,
+      "sha256": "b239fcb53e12e9483e83d1b893cd0f429e066590029032103dee9f278b762a82"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_05Part002.lean",
+      "bytes": 6862,
+      "sha256": "08d704d843e056432fd4de468cb205bef1b0612b5d457a94d8d0bc3467956da6"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_06.lean",
+      "bytes": 4018,
+      "sha256": "34575c993a81663c84dd4493b89567aa21879c02ff21de7572c4a7d340578699"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_06Data.lean",
+      "bytes": 319,
+      "sha256": "cf95b83d1d662cc372a523238a2fa286a62044c7c72726db9ccbc3c8bf965e33"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned12_06Part000.lean",
+      "bytes": 27467,
+      "sha256": "8b4c6e0e8d71c3bb69a2d63faab858d1d4186f18b5ecb99a20c7c902c668e3a6"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned13_00.lean",
+      "bytes": 10036,
+      "sha256": "3002b1bf75032453af59fc15f90ef8f7a978cf44c003e8a1bafd24b14fa456be"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned13_00Data.lean",
+      "bytes": 319,
+      "sha256": "a684c42d7fa85c6509b60621e1edeacfb8f090bc8e0cb894b1207379d60ddf1b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned13_00Part000.lean",
+      "bytes": 33584,
+      "sha256": "1876d5a187715dde923ef539bf4f32549599b1eea96820ae7ea6efd42ed7320f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned13_00Part001.lean",
+      "bytes": 32960,
+      "sha256": "e4664b63db352e9d3e0b3df36c62867d2058df0059a1d05f26fd6b2f102d1a13"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned13_00Part002.lean",
+      "bytes": 21628,
+      "sha256": "a684d1404fb0f7cb7d2862e9a7b6f4ccb700d6213011dc5cd5e3869a258897b3"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned13_01.lean",
+      "bytes": 15534,
+      "sha256": "f0936a594d80981b7a4329d95f2067e9eb5659e0f05f2635ddac22cb6d321f21"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned13_01Data.lean",
+      "bytes": 319,
+      "sha256": "ef341d0750bd6abc728c74482bc179d480cd57bfc1c3e82262f229506de0b225"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned13_01Part000.lean",
+      "bytes": 34587,
+      "sha256": "9f82fb6ea1120ae0a1333b8b022c73e8a09c0e44750a0571d5abc8593cc80778"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned13_01Part001.lean",
+      "bytes": 33969,
+      "sha256": "c0686012342137d4eae1213e9cd5ac238db69d1b849d1f8e8bebafaa3c615e18"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned13_01Part002.lean",
+      "bytes": 32780,
+      "sha256": "151c2404a5de9329486c5af32141f3a87607db1038ac560597d5eaf4b6f15e63"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned13_01Part003.lean",
+      "bytes": 33623,
+      "sha256": "6a3cbcd8798ac8ece5bb783016855f5225855a5d1b69ea6d21e250daf7b7ca9f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned13_01Part004.lean",
+      "bytes": 4259,
+      "sha256": "6c82bdcea8d6f800675de67951eaabb410db51a09adcf616909716c15bb20871"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned13_02.lean",
+      "bytes": 12765,
+      "sha256": "9b96810bece811927f8c6e3fb81d04ddf7c1c8c5e1af351715af7fae003a7dd6"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned13_02Data.lean",
+      "bytes": 319,
+      "sha256": "aeb532742fc8951050c3ee8f9e24d6f22f21d983a29c177f09664d1b3c544e7f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned13_02Part000.lean",
+      "bytes": 34311,
+      "sha256": "7dbd0b2a2581910ea0ab1db3ecc30071ea5c216a058a93af3302096236f24b69"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned13_02Part001.lean",
+      "bytes": 32787,
+      "sha256": "c657b813a7b3e179e677d8f0299ac5b2fa5a74e68944f17a4525c622b933de7b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned13_02Part002.lean",
+      "bytes": 33098,
+      "sha256": "8ea31cbdd6f2fd66889043b2e72d1bab0b693ed7d507d5433f4a90d3c9ce839d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned13_02Part003.lean",
+      "bytes": 12810,
+      "sha256": "97f299437b2d86b0f6cbf899b385dfba93f958a6fe7b9c7d3641725f126a0e65"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned13_03.lean",
+      "bytes": 4959,
+      "sha256": "bd58e128ba7ebeba71afa87763ca9c3b9863860ce46b145c0d19a722204e3932"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned13_03Data.lean",
+      "bytes": 318,
+      "sha256": "d4b951dff5b24d96a80134211814c1c24ef86e674bdc7f1ab9cc7abc2a8a4fc1"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned13_03Part000.lean",
+      "bytes": 32579,
+      "sha256": "f57733c82d617ab0dabd5c81b8f744115c2720e9cdace0e671a2d65afd3f918e"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned13_03Part001.lean",
+      "bytes": 8223,
+      "sha256": "af48aa4173d15e7a29b95cd7bb5c94fca593fa0807ce40caeadfbaa2ea7b9ac5"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned13_04.lean",
+      "bytes": 4018,
+      "sha256": "8bad0511237dffb9b4c4f74a3249d1250195d6f85a67ff551aa118421238995c"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned13_04Data.lean",
+      "bytes": 322,
+      "sha256": "286dcbcfacd3065cac05512b3d6102e6dcf62c8c35a7aad8fa7b292c5fbf9570"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned13_04Part000.lean",
+      "bytes": 32093,
+      "sha256": "bbc2111314a32d4db355159911b69a12deaaf9387ab149ec3e6f6035e98fa166"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned13_05.lean",
+      "bytes": 4977,
+      "sha256": "20d3ff17eb028cc320b89c0792bf6050934219bfd249c85a153f30d951963817"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned13_05Data.lean",
+      "bytes": 318,
+      "sha256": "560cb868064d3c1228476ab449075ed10e86a09569f9423a235119fe6e83e94c"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned13_05Part000.lean",
+      "bytes": 32263,
+      "sha256": "dc6ba420378b83f867e4a09d038cc11430b20c3fcfc9e5b9210739b392fec348"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned13_05Part001.lean",
+      "bytes": 8051,
+      "sha256": "69f4b008893d57785cbbf429e2b3c21e5a72bcdbe070d2e4b1c55b49787f6357"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned13_06.lean",
+      "bytes": 4537,
+      "sha256": "fab90cff1064d3223491bced153b007597abefecb5d5a00af002a6caf4fca3aa"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned13_06Data.lean",
+      "bytes": 318,
+      "sha256": "094f63a721603718f43930c9487b136cb6080f0fcd63417b32050dcbc210ffc9"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned13_06Part000.lean",
+      "bytes": 32177,
+      "sha256": "87f8cc498577708219a5cde61b18647d9358d68cd47128754296c34b1f21659f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned13_06Part001.lean",
+      "bytes": 4187,
+      "sha256": "9b4188e513e14ab2aaf2013ecc4a4980407d712e775a58a7635496f9d9c85228"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned14_00.lean",
+      "bytes": 7283,
+      "sha256": "da1d37cfdb7cf970249c9b39287f6844eb38f61def39aedda9ce072281d58a43"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned14_00Data.lean",
+      "bytes": 319,
+      "sha256": "a013d0282eaa6c77d2c74a74d9b5cf73ec26b5facee10c3cc8942eee1d1b6a16"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned14_00Part000.lean",
+      "bytes": 32677,
+      "sha256": "2ea4e659abc8101c67bfcf367fc47778f4db21c6e56e9f12895cab290a9eca7a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned14_00Part001.lean",
+      "bytes": 27616,
+      "sha256": "a1b6a2e0fdc2a156ce9236736fb0e709452a9ad5bbe30661c7c146022d005875"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned14_01.lean",
+      "bytes": 32658,
+      "sha256": "30ed5a8ecf35cf976460f98bd5b69fee683f48e70c8c5b158d6b0faa46ba7b9e"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned14_01Data.lean",
+      "bytes": 321,
+      "sha256": "e9baae0278c5fa91b35bc146cf6127c83e5a54119bc60d06e3be9e8bb8584442"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned14_01Part000.lean",
+      "bytes": 32033,
+      "sha256": "94116561020e1f270a0edbb9c6e9dbf23207d9252e438135064d4b7d5d7805ef"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned14_01Part001.lean",
+      "bytes": 33434,
+      "sha256": "1747ba2e82741a4c240280bc33b8cbe85abccd28fcd4dadbfb8775b02dc275a5"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned14_01Part002.lean",
+      "bytes": 33277,
+      "sha256": "e777c935b35a495834dea5b3a22f38af15466cca1f3b94f63cebd75772dca7fe"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned14_01Part003.lean",
+      "bytes": 32973,
+      "sha256": "2f64a9001402bbcbdcd31194f89a3b979fb99ffde88578d27a897b51675daa9f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned14_01Part004.lean",
+      "bytes": 33024,
+      "sha256": "c612b370f53bb95ead5b507a821fd9f3d54681056f37d2aedeebf321fe876b2a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned14_01Part005.lean",
+      "bytes": 32923,
+      "sha256": "c58886444a4dacce7f14ebf72dc5b82e9377ec3110d1ab61c0d4a7321d03c9f3"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned14_01Part006.lean",
+      "bytes": 33210,
+      "sha256": "11243c8c54ed92ebb11a861192fc069fb5490f69ccde3f7462cd03f8d66afaf3"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned14_01Part007.lean",
+      "bytes": 32849,
+      "sha256": "e0fbdc0807735a389789e54ccb9a3fe2d82d1599a73db26be6ec71b203bb6f8c"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned14_01Part008.lean",
+      "bytes": 19665,
+      "sha256": "83d07ccca37faaf5d76c7b769631aa0f9643f1d8a7e0ac0746dc43b2bae01e81"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned14_02.lean",
+      "bytes": 10278,
+      "sha256": "18b5bfe9dbbea306c85ad85f2c6b4e6b4f7b3bd3496d18e7990d224fe01cc3e0"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned14_02Data.lean",
+      "bytes": 320,
+      "sha256": "605ed90194da8a591fda19cd727010e2dcc831aced5b8bf05729aae8e7efe163"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned14_02Part000.lean",
+      "bytes": 31455,
+      "sha256": "7271c9c3eefe5459d77bac65b88d874b8f361f0420dd08d0d02eb7f5982678b3"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned14_02Part001.lean",
+      "bytes": 33112,
+      "sha256": "7b84f481eaa943bcd27fe41bf50454f0d76e138aabd973eaa0b8b7c8a73bb2db"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned14_02Part002.lean",
+      "bytes": 20627,
+      "sha256": "bdb8d49fbf781a84d361eb90fb6d547ec55a30696b12c3dab969c21c6fc1f866"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned14_03.lean",
+      "bytes": 7329,
+      "sha256": "e0919633723692ed71e2cc4a9c3b4452cda1f130d950ae5c40f3a33c0611b5b1"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned14_03Data.lean",
+      "bytes": 322,
+      "sha256": "3bbd664bb94c2b83ba055d9f6dd410fec2b7501e749e8c995e651d8fb4c076b6"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned14_03Part000.lean",
+      "bytes": 31726,
+      "sha256": "89fefb1841e90738da98e66e8b6f24304b53b3fe0c7d6d68945091e867dc5a11"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned14_03Part001.lean",
+      "bytes": 28298,
+      "sha256": "84b26a91f39a0e3a42d971a5c9287ee4ff796be3fcb2ba8fcec7d2431d882380"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned14_04.lean",
+      "bytes": 4985,
+      "sha256": "82b6e9ef9b9d20ec17bae77d08abc8e9a4cf89fd39a03d778a9c019435d69040"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned14_04Data.lean",
+      "bytes": 318,
+      "sha256": "68ab66810459c04dd81d577b625240657e650ce7563b1c0b0df37a4ed994866b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned14_04Part000.lean",
+      "bytes": 32120,
+      "sha256": "766f0d659eed143bfa2e258bd981a4af976c31810cf9641b576b448641eaf346"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned14_04Part001.lean",
+      "bytes": 7682,
+      "sha256": "e9915c0b84d5cbf87967cd20c4030d20d535c7fb103e0fb229974d0ddf2fba33"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned15_00.lean",
+      "bytes": 24146,
+      "sha256": "d76a3b9110fafecf5af287a4f347f3307317d439d6f3a34625b6aa18411e288f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned15_00Data.lean",
+      "bytes": 320,
+      "sha256": "1d2b6ea2bee70ec9a3f9854bafae32c88537ac97639861f8adadd1ebc4847574"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned15_00Part000.lean",
+      "bytes": 30783,
+      "sha256": "4fc3fa60ab9c2e79ad39db26ec2cad8e06dee90403327e202bc063e31bc20d86"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned15_00Part001.lean",
+      "bytes": 30782,
+      "sha256": "ad35e42995ffb0d12f14fceaa2b785520dceec4f0870fe7f642316937f3509d1"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned15_00Part002.lean",
+      "bytes": 29510,
+      "sha256": "ced7d0f96871574f9b5e2f911d4f0c84d941c00d6e264c124ac37024c9ef48f1"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned15_00Part003.lean",
+      "bytes": 31214,
+      "sha256": "fe88dc75c559efc402c0987a3b8236309dcbb0478f0b6ed90e850bbaf0e197cb"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned15_00Part004.lean",
+      "bytes": 32367,
+      "sha256": "271a2ae5c120f0b57af3db3083f8942429b513c948465673a04b2836bcbaa24c"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned15_00Part005.lean",
+      "bytes": 32644,
+      "sha256": "4a8b9920364ae9eb4b6a27aa24d13715e0fd111dd4009973e4c020b859c35ee1"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned15_00Part006.lean",
+      "bytes": 11935,
+      "sha256": "3ca411f2d231bd92e8345451904405b1941e6f0d30d2d96d50d4b1b5259cd62e"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned15_01.lean",
+      "bytes": 12329,
+      "sha256": "6d5b17cf8ff44f1a0d9d71a3cbdc41ebfa1964eb18911d06901202207b3567a1"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned15_01Data.lean",
+      "bytes": 320,
+      "sha256": "aee358170f56002b03f20fe0128491af3850d98c5bc9a6c4c8bd2691958ea8f2"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned15_01Part000.lean",
+      "bytes": 30847,
+      "sha256": "c9e0cc23fc964611c3c8652762a1cf29674a385fffaa565f1c263cef80661e6a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned15_01Part001.lean",
+      "bytes": 29441,
+      "sha256": "a006ee5356228bd4f877b9585ba3914606ca6dd52c9cafa09aa08281ada512fd"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned15_01Part002.lean",
+      "bytes": 30479,
+      "sha256": "b609ee37c9edffad9253130651cf20a35a25391be02cd8c78b77656d3a3ba4d4"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned15_01Part003.lean",
+      "bytes": 7814,
+      "sha256": "ec8d3e56dc9051bc9e86eda8c3f47b0baaf0f7baca13d50cad9f97400f751ef6"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned15_02.lean",
+      "bytes": 4541,
+      "sha256": "b4af957b515fab334cdca34fe578f3baedb1ea1a3eb0006c09cc4ed5cccd1284"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned15_02Data.lean",
+      "bytes": 318,
+      "sha256": "4540219c458bbfdd3d5dc11d3eee0ce022a2f1439dee642ad960802d5c66bef5"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned15_02Part000.lean",
+      "bytes": 28932,
+      "sha256": "743f662566da9a8392548afae5f52cdca8b10864a6541296e247682b362da5e0"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned15_02Part001.lean",
+      "bytes": 3516,
+      "sha256": "d10c7b98b59c680fd357788c4604812d611371f5f3de70bf7e99348e0e6f3f57"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned15_03.lean",
+      "bytes": 8690,
+      "sha256": "3373861578a795c0e769257c44df6613b67f499df57f73faffb2042d816a5973"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned15_03Data.lean",
+      "bytes": 318,
+      "sha256": "afa93d2204b03ac04d3c9672461f2d6b296d60bab355aa87598d16fb54559076"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned15_03Part000.lean",
+      "bytes": 29989,
+      "sha256": "174ee2c1093518712f87d3e4513e6362a7d3861e474d317fcab692b90d50fd49"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned15_03Part001.lean",
+      "bytes": 29967,
+      "sha256": "9b10ca361dee47201075ad389643664bdf54327cefa6039acfdef0bb10df538d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned15_03Part002.lean",
+      "bytes": 7312,
+      "sha256": "c842e8559085774991727bd697950b293735bb4d3632ed53e0472c4538fe3e82"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned15_04.lean",
+      "bytes": 10030,
+      "sha256": "145489212093776f01bd7b08468852643340fd3787a905e683f5975b9a0a9027"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned15_04Data.lean",
+      "bytes": 320,
+      "sha256": "4395664a9855fd67687470de8f884cc3f24476c851471eda11b4362f528d119d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned15_04Part000.lean",
+      "bytes": 29946,
+      "sha256": "134b73842fe792ce3cd6be3382b582ff495116e143bfc623e5dd555c545140cd"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned15_04Part001.lean",
+      "bytes": 30451,
+      "sha256": "801cbd434c73ad2260198623279bfed56f2d615e57186c7c13bb4bbba809cc2b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned15_04Part002.lean",
+      "bytes": 18274,
+      "sha256": "7b73b2e82cfc50b66c1d4a2b96d9970476370324fd42945bb01a938658d96e75"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned15_05.lean",
+      "bytes": 17908,
+      "sha256": "0968a4af0f0f7cf32722919e89d2ce7b6508575111feff0a5f63d6fe2484feb9"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned15_05Data.lean",
+      "bytes": 320,
+      "sha256": "e50dfc48f7855f8d9e4e95e77abd19df6b7a50b2715c54553fdaca8bd02f6ad6"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned15_05Part000.lean",
+      "bytes": 30196,
+      "sha256": "a3ddce37a6cb5e9a5604044113ed18ad35e555aaedc6640a4143414c171526fa"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned15_05Part001.lean",
+      "bytes": 30202,
+      "sha256": "c22ec5868c3e818bf1e7968277103e7367ddff9f8879896a9943a8a2e3267b64"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned15_05Part002.lean",
+      "bytes": 29678,
+      "sha256": "0e29aad45708216fa5c7e76eb5893a495007d6ac2dd89304e97253585404b3cb"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned15_05Part003.lean",
+      "bytes": 30867,
+      "sha256": "2d19df5735dee1fd96faf4220f36b41fee111db7bcc5913a61a8998f9115b9c3"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Owned15_05Part004.lean",
+      "bytes": 23652,
+      "sha256": "19867b035931e07fc44577c30c33afc92babbf4daba456e8781d407be94c3558"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Pose00_08.lean",
+      "bytes": 11375,
+      "sha256": "f936e3e6d94805663cf213131764a0e470b2e585324c4050be3b1d764e3f70fd"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Pose00_64.lean",
+      "bytes": 88118,
+      "sha256": "369037c6c926c8618a57a832f384d9b1bf6c2212bfb1e5d362f244d1d9164501"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Pose01_08.lean",
+      "bytes": 10863,
+      "sha256": "984c5cd3dcd34a660d60ea4694a5ad79d3069b27ab9c9398cf30f05d6eaac233"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Pose01_64.lean",
+      "bytes": 84416,
+      "sha256": "d48e7a287724afa3edd0ba12fcc40e04d6897d7bfb1d2f52262cc01a9a3173f9"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Pose02_08.lean",
+      "bytes": 14631,
+      "sha256": "5046ed0b3edee92733e44ebc43c64ec2115f84ee15773366f76dce38c8a9424a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Pose02_64.lean",
+      "bytes": 114560,
+      "sha256": "ac98f245a81b37ba0820f58afa450fceb91607f3ea762b8c19ded7bfa1b6e9d1"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Pose03_08.lean",
+      "bytes": 9993,
+      "sha256": "8303942a67506f41a2013781428a18092f068d24823f6586d5673798b0618322"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Pose03_64.lean",
+      "bytes": 77935,
+      "sha256": "8d9d9dbe23a772ce477d00dfe0a521a0aca019c2095ef78f64ee997b76736493"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Pose04_08.lean",
+      "bytes": 12647,
+      "sha256": "1c630ab1167dac6e77e5b2a00bd8d2793285f64ca80806fcccfcd41f0296f6af"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Pose04_64.lean",
+      "bytes": 98688,
+      "sha256": "d2e1067649659e4ef74322fe7ccdacc9f2fbc213adca1a9823df070cb828ebb8"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Pose05_08.lean",
+      "bytes": 15951,
+      "sha256": "3b76b8491f4e78358530a5ab3da907be7b52fc7ad9ee4828d93be53fecf76e7e"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Pose05_64.lean",
+      "bytes": 125514,
+      "sha256": "b8744de2fc2b0966175c40c9a56e1c3fa6f49f67978087e16fe6b337d6354022"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Pose06_08.lean",
+      "bytes": 15919,
+      "sha256": "e17d65f2767b9ec2f3876fcec02495e3754fa635bb240dcc495a3320b658f540"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Pose06_64.lean",
+      "bytes": 125258,
+      "sha256": "db1568920e7866e6cfbfd4c9552c8349bdd0a0db48de715093fe476920b083f8"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Pose07_08.lean",
+      "bytes": 13345,
+      "sha256": "73bc19e21cb3397cc8237e39a78dfe2213e9be505cbd9ca68e0930c49afa1b33"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Pose07_64.lean",
+      "bytes": 105145,
+      "sha256": "1d171774820c0c43df5596d510bc65f3d0d696620c0b51fe54b35c36462a9142"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Pose08_08.lean",
+      "bytes": 12791,
+      "sha256": "41ac7c60fe1192de4164f269aa124bb52eaf41ec3d3252146ec471a647815953"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Pose08_64.lean",
+      "bytes": 99840,
+      "sha256": "f8b71868a3a701b8687722e083c8612730df9822be998f4ef6882214aa7b23fd"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Pose09_08.lean",
+      "bytes": 15895,
+      "sha256": "59f64d8994620f638f161be60e0106471914997da883f653831d11797b482ed4"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Pose09_64.lean",
+      "bytes": 125066,
+      "sha256": "f28afd2b3810b508e5caab3ec0309fedbc2b2713a9ff8f17263eab26a37bd19b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Pose10_08.lean",
+      "bytes": 16016,
+      "sha256": "d81ffde7dfe5d0b4784b1524dc08ff3b84ce196b6359467689ed65a36381706d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Pose10_64.lean",
+      "bytes": 126027,
+      "sha256": "f8ab4108be0063422903aa1ff659f491116ac604b69eaf00f4e28e9f54e140de"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Pose11_08.lean",
+      "bytes": 13298,
+      "sha256": "b837ad1c403adde1384e23c028fc87684ff328f2b855a7ecddd2338cdf214938"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Pose11_64.lean",
+      "bytes": 104762,
+      "sha256": "d92ee8a3cf62cc43c423323ffd19c008a5c81f6cdf45b084cb56690c9af5b1fa"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Pose12_08.lean",
+      "bytes": 10066,
+      "sha256": "633daccc508c77e51f18488c904e976f1310db1f30fafc93064ce298be6de7a9"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Pose12_64.lean",
+      "bytes": 78512,
+      "sha256": "1ad6fbd6f42afaf07c2808880e8b13a29eba6868cb29f84143c63a562074c26f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Pose13_08.lean",
+      "bytes": 15210,
+      "sha256": "e0f52609148ce4a33815206ba87e3818d243ae9131b65604a09d0e152a789de3"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Pose13_64.lean",
+      "bytes": 120058,
+      "sha256": "175a4e19eeee3e8ef651d885364ba39eb3f3339d420277473d0aa3ae638ee70f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Pose14_08.lean",
+      "bytes": 11466,
+      "sha256": "a59fe6ae9bd010725d7a8ff3a4368efe621ae5f628e0fd27511234654a2828a5"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Pose14_64.lean",
+      "bytes": 90106,
+      "sha256": "3118fb03bdc876cc1e6e006002fada558ecfb300193a041b4174e360912b2cfe"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Pose15_08.lean",
+      "bytes": 12508,
+      "sha256": "a8b711aa5862e60c4672f49c56711c84473a137a66ffead0ab97f52042e56cbe"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Initialization/Pose15_64.lean",
+      "bytes": 98921,
+      "sha256": "02851da3c31ad33c126407ba70e7d29aae0e49788bffc8d325e762123ba724b5"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/KernelBoolRefl.lean",
+      "bytes": 429,
+      "sha256": "90111f1782484d93843ab7e8ec6789744ebf90afdd8deb6fa2d3ddf3880513ce"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/LinearCertificates.lean",
+      "bytes": 3837,
+      "sha256": "c24f3d50ad393d00d0a1d6650f853f419a3612f957b75cad881184517e1ac66d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/OwnershipTree.lean",
+      "bytes": 1905,
+      "sha256": "2e0a484a8d0f2e28d6918664b76a866aaea23a6aa25f803a0bf3b1e775d596d3"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/PoseTemplates.lean",
+      "bytes": 3029,
+      "sha256": "fd8232757af8b97168c840e087ea6f89d4f7efb11200253ab0f4b362d998614b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/ProjectionCertificates.lean",
+      "bytes": 2957,
+      "sha256": "42b337347915b6da9fb21fa82ebbe4bea6fdf684ed2eb3c3c51db1959e90c667"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Quadratic.lean",
+      "bytes": 2909,
+      "sha256": "c98a50d319fd55fc1c47d80bb758fda9bf0cd68bc5e05d000e94618feecdd25d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/SeedLibrary.lean",
+      "bytes": 2907,
+      "sha256": "b67339d0d48fe7c063e3624fd7a8f841318e12f76f26911e5ede5db780e7276b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/TreeChecks.lean",
+      "bytes": 1298,
+      "sha256": "03681c1edb5168d52290c5073fbff57fdf21bb1bd30ad438b1261678a1b2b96f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Walls.lean",
+      "bytes": 3732,
+      "sha256": "e55e5ca9bbe30c15ced42411419edff8cd13b7d7ca8f94c9fff753dbff6596a5"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Wand125/Case1849Correspondence.lean",
+      "bytes": 851,
+      "sha256": "eebe9779aeea20d96bf27a539326bce48648ac902dc0902c8dcee762336ad14d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Wand125/Case2051Correspondence.lean",
+      "bytes": 851,
+      "sha256": "3edb06a4959edd408c6aef9b18f98197b0fb7d842dbbef63ed2b5d14795b0c6b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Wand125/Cells.lean",
+      "bytes": 7639,
+      "sha256": "0ebd860a8527323de59507125d20ed04f516bda3333c5186722cc048663aac43"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Wand125/CertificateTransport.lean",
+      "bytes": 1568,
+      "sha256": "df4715698f9fa3862be0abe70086df72ddbc171b79e651b6c17c66540903faf4"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Wand125/Geometry.lean",
+      "bytes": 4156,
+      "sha256": "b5c27bb04dbdca12eae03a0219c46cbf43252c45edb5f90d46cb7d7405dbf331"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/Basic.lean",
+      "bytes": 29484,
+      "sha256": "be7fd52c9a48cb26692c7d2de2c1fd825255661f05008637ce229d2fb510a268"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/BoxTree.lean",
+      "bytes": 37186,
+      "sha256": "a3efd7c2c5ff11b7f15175e291435a4cb9d64399cb2eff0096970931531ce2b2"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/Chord.lean",
+      "bytes": 15640,
+      "sha256": "05c6541ed26be6e78d9b8fef40c6f3d51e0cb8b18e05e8ab2616d5d7edeb63e0"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/Cover.lean",
+      "bytes": 9390,
+      "sha256": "a13e4fe2f9bba53aa8ec35c4187ebf03bc8f92f3338756f741e88b5b57e6a50f"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/D4.lean",
+      "bytes": 15635,
+      "sha256": "69d2add9c3d221e215a499f9e1e6a139a16008ccb93e7b912d3d5e8397dcd307"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/Packing.lean",
+      "bytes": 7058,
+      "sha256": "236404e223ba728de2808bbaef290f343639e8b3d5ea0c5347e45737dc2c8b8a"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Basic.lean",
+      "bytes": 9942,
+      "sha256": "e1a2363ca978e32b7264e8b42489d244f804314c652beea36c8db72b280a052b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Cells.lean",
+      "bytes": 4989,
+      "sha256": "1887a9d671edcf6926be95998b3a20b81dc0c262e348113b4ce79f2275fad70b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/FieldBridge.lean",
+      "bytes": 15920,
+      "sha256": "e486f3ae0705b67fe1df201c11a4cfeffc61a8fe2ebc72e6065772a549374ec6"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/FieldTree.lean",
+      "bytes": 14975,
+      "sha256": "49943a21338351ede71b827ee92a2f43c90713c94fba3f6f48aafe5b1ccf36e5"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Majority.lean",
+      "bytes": 5342,
+      "sha256": "63384110ffa4108d5f70b954858c4a5282c360d15ad5774385560847cf4c227e"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Shared/Grid.lean",
+      "bytes": 205495,
+      "sha256": "9649f75aee58ef8e67b2ccc35ef256b2f6f5fc7dc8a3ceb3a93c6b1148a6ad54"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Split/Interface.lean",
+      "bytes": 4360,
+      "sha256": "80fed4a3955f68360366f57600ce122dc68804dbc86e3afc15ec80dc510b8a29"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Split/U2P/Branch.lean",
+      "bytes": 7187,
+      "sha256": "6a8a450ac4df05b752a4fa5dedd69ef70dde0c83e1bd5afb74bf90c0bc9da990"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Split/U2P/Rules.lean",
+      "bytes": 5250,
+      "sha256": "f4db9b580aaa40b6ebb99c80f6a4bc4e13ac45051852cd3bfd0f9fcfe0ef5487"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Split/U2R/C1849/Data.lean",
+      "bytes": 429109,
+      "sha256": "768cc720386697b86e145aa2c0d4c9fa2154ed1b317cb3d6f6fd267d4ecc7620"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Split/U2R/C1849/S0.lean",
+      "bytes": 271752,
+      "sha256": "bc3847124c11276bf154f53786baf755ed30068c50b1f2d79c9f322344d81c93"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Split/U2R/C2051/Data.lean",
+      "bytes": 128171,
+      "sha256": "b368e3a2a5419bf93dc093f9f3e34e12a1cb102232e17061f210c6b00143dee8"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Split/U2R/C2051/S0.lean",
+      "bytes": 257324,
+      "sha256": "ef65a08b6fce7ec9677fd5ae7d7fd2aca1a35114a603c30c2ab5a1fd696c499b"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Split/U2Rules.lean",
+      "bytes": 8313,
+      "sha256": "0b5df651b8c54ea417b0ef0564d9d1161f80aeb25a4f40d039f420469f37aeaa"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/ElevenSquare/Tasks/T03/Wand125/Upstream/ZeroMargin.lean",
+      "bytes": 55131,
+      "sha256": "00ac49186e97f21d10099c2355b039466b83acfe577624d79fe63a0bd2a77e75"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/lake-manifest.json",
+      "bytes": 2763,
+      "sha256": "383259bb05fd384346e806086f1e041383dbf3898db2a6bc9bd0b91966f149ae"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/lakefile.lean",
+      "bytes": 267,
+      "sha256": "dce4d550c15bb4cd272b68a1b5bbd7fbf947a2f02ddde5593b50d674891cc88c"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/lean-toolchain",
+      "bytes": 29,
+      "sha256": "35100b5b8f5426dfa942d43e8f4995c6ffeccef24ac467df1fd477ce96a66747"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/scripts/check_handoff.py",
+      "bytes": 3818,
+      "sha256": "989c66964d906ddd77a058f6812c7078709bee838b625906e7ce652656ae35b1"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/scripts/lake.sh",
+      "bytes": 570,
+      "sha256": "b886afc9290fd60e95aa544ae63194865a5dca6566c17fe1059a2c8acd014080"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/scripts/lean_small_check.py",
+      "bytes": 3895,
+      "sha256": "a9face3b56662d5f9fae52935d94916d3d01b2d530b849dffa87ad3aebc1ce1d"
+    },
+    {
+      "path": "verification/source-checkpoints/wand125-pinned-import-components-20261001/project/verification/LOW_RESOURCE_MODE.json",
+      "bytes": 419,
+      "sha256": "9750c900b806f528c8137831507ef7501d6fcd7e2c00ddcc2d2e5b786dc52904"
     },
     {
       "path": "verification/source-checkpoints/wand125-pinned-original-transport-20261001/README.md",
@@ -43933,8 +47318,8 @@
     },
     {
       "path": "verification/t03-progress.json",
-      "bytes": 81502,
-      "sha256": "f475b8a48d719525b7c4568f0cef52c1e02e46badebd86208e95a2242948deba"
+      "bytes": 86463,
+      "sha256": "a1bd8fae98070a17243c26727a14176f10b2c595d291888a072aa1a244876091"
     },
     {
       "path": "verification/t03-ready-archive-prefilter-checkpoint-20261001.json",
@@ -43962,9 +47347,29 @@
       "sha256": "baf7c78917c9bbbe9e8bcf0f395b336047c968ba67d8fc3fe58b8668508bf20e"
     },
     {
+      "path": "verification/t03-wand125-case-advisory-long-line-linter-option-removal-20261001.json",
+      "bytes": 308685,
+      "sha256": "998aeea62da821d1ab850392df21cbb2c799465cc1e8b44112f0369d5c70787a"
+    },
+    {
+      "path": "verification/t03-wand125-case-mask-existing-opaque-seed-binding-reuse-20261001.json",
+      "bytes": 6753,
+      "sha256": "011c5b6d005999caa39313e95809d056604b75aa30331773616077dd1f56d337"
+    },
+    {
       "path": "verification/t03-wand125-case1849-closure-preparation-history-20261001.json",
       "bytes": 2039,
       "sha256": "71083d315344704c86cf6fa63c55f374bdb7ee7e13aba16a4526a8d5308a29ca"
+    },
+    {
+      "path": "verification/t03-wand125-direct-explicit-case-exclusion-simplification-20261001.json",
+      "bytes": 12824,
+      "sha256": "034503b8976d85772ef4d6f95d0adff7f06e5f8c5745920b99823ef9aa61066e"
+    },
+    {
+      "path": "verification/t03-wand125-identical-tree-root-sharing-20261001.json",
+      "bytes": 58360,
+      "sha256": "350f0b18aec1af4a36b640acd032beeae54a16f8153bb9fe9110e8c07699d251"
     },
     {
       "path": "verification/t03-wand125-local-duplicate-hold-20261001.json",
@@ -43985,6 +47390,81 @@
       "path": "verification/t03-wand125-pinned-box-tree-audit.txt",
       "bytes": 92,
       "sha256": "b5569e2a688f0bdeff95bff2dd1b0c2e3327de9a658225e08373861c77bd2f93"
+    },
+    {
+      "path": "verification/t03-wand125-pinned-branch-audit-CHECK.json",
+      "bytes": 446,
+      "sha256": "3b45aa6f9411f2a8ba171a553b8747c4478233862ae5f901ab3ad1d44f0037d1"
+    },
+    {
+      "path": "verification/t03-wand125-pinned-branch-audit-checkpoint-20261001.json",
+      "bytes": 11967,
+      "sha256": "4ea83f1b35b2e64912d7a52be2de4f7f49b2572eafcd33801a521e022575e530"
+    },
+    {
+      "path": "verification/t03-wand125-pinned-branch-audit.txt",
+      "bytes": 210,
+      "sha256": "f13d54fc9823c7a458e970d2ebac654b1f4c8900df32f2f79d70379e261a08cf"
+    },
+    {
+      "path": "verification/t03-wand125-pinned-case1849-correspondence-audit-CHECK.json",
+      "bytes": 446,
+      "sha256": "65c282cb6292d7ec6365e2188f5098d700ce50cc5b971fee958fb16934e15a3d"
+    },
+    {
+      "path": "verification/t03-wand125-pinned-case1849-correspondence-audit-checkpoint-20261001.json",
+      "bytes": 326367,
+      "sha256": "a42f14669882d14e8cffd2c4354e991e9094f85088cb4eba9780f4c43021706b"
+    },
+    {
+      "path": "verification/t03-wand125-pinned-case1849-correspondence-audit.txt",
+      "bytes": 192,
+      "sha256": "1d7f1740110edce7d693a86116271441da00265ea4386cb8eb204147f5064043"
+    },
+    {
+      "path": "verification/t03-wand125-pinned-case1849-first-tree-audit-CHECK.json",
+      "bytes": 446,
+      "sha256": "9dd41e7abe62d1c25e4fb976d79ff8dc63926ba2e1c204e358671d42bcde0763"
+    },
+    {
+      "path": "verification/t03-wand125-pinned-case1849-first-tree-audit-checkpoint-20261001.json",
+      "bytes": 12290,
+      "sha256": "c3f4207d61d75802fb8a40fd69c6197ebad0d3f95e7e23456994db9e611dcbfc"
+    },
+    {
+      "path": "verification/t03-wand125-pinned-case1849-first-tree-audit.txt",
+      "bytes": 103,
+      "sha256": "286774fb7e7b95d49f4f6959232c4c13fe11bd1a118527035d208c3a41ba56d4"
+    },
+    {
+      "path": "verification/t03-wand125-pinned-case2051-correspondence-audit-CHECK.json",
+      "bytes": 446,
+      "sha256": "9ee5b6bd20a964105415ebd6b35019ce9b5cf8013c10c1674e9bd0c6af12552e"
+    },
+    {
+      "path": "verification/t03-wand125-pinned-case2051-correspondence-audit-checkpoint-20261001.json",
+      "bytes": 318047,
+      "sha256": "c0ffac5811e7263c7f10e1f51877cdf3e4d93714cc146616a48e6819d598370f"
+    },
+    {
+      "path": "verification/t03-wand125-pinned-case2051-correspondence-audit.txt",
+      "bytes": 192,
+      "sha256": "ca39a21118d9ba3af31bee1f0894a58e25318b71cbe54e559475a86e3bfc5348"
+    },
+    {
+      "path": "verification/t03-wand125-pinned-case2051-first-tree-audit-CHECK.json",
+      "bytes": 446,
+      "sha256": "4918e7b06bfafe441f50ca3750018cd5186be8f01d2978ad48b135a63f7b3437"
+    },
+    {
+      "path": "verification/t03-wand125-pinned-case2051-first-tree-audit-checkpoint-20261001.json",
+      "bytes": 12290,
+      "sha256": "27353d07ce8214545b0daf49fae6733804967ead557dd96047dddf2a7f78972b"
+    },
+    {
+      "path": "verification/t03-wand125-pinned-case2051-first-tree-audit.txt",
+      "bytes": 103,
+      "sha256": "923d93ac486ab14a021b9070a6b9ea85bad2f94a155becb790658c2e6d671a0c"
     },
     {
       "path": "verification/t03-wand125-pinned-core-audit-CHECK.json",

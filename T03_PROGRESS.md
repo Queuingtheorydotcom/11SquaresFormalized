@@ -1,4 +1,42 @@
-# Returned-case common tools: partial progress
+# Returned-case supplied proofs and original-project integration
+
+Upstream's supplied inventory contains **172 case-proof archives**, with
+**only case1465 absent**. All 13 source archives needed for the remaining imports
+are verified and are being reused. The historical **159/173** figure is the
+original-project full certificate audit log; it does not count or limit the
+supplied upstream proof inventory. Integration checks reconcile those proofs
+with the original packing, ownership, mask, initialization and certificate types.
+
+## New original-project import component audits
+
+The original Lean4.10.0-rc2 checker accepted eight exact component targets:
+Branch's `not_in_of_excl` / `split_excl`, case2051 and1849 `cov0`, and each case's
+`bounds` / `mask_eq`. The two bounds targets use no axioms; all six others use
+only `propext`, `Classical.choice` and `Quot.sound`. Their actual audit times are
+30.81 /41.74 /34.65 /38.01 /38.55 seconds respectively.
+
+The [deduplicated frozen source checkpoint](verification/source-checkpoints/wand125-pinned-import-components-20261001)
+contains **663 modules /13,680,277 exact source bytes**, five unchanged tasks and
+their complete dependency closures. The correspondence checks genuinely include
+639/656-module original initialization closures, not a substituted mask table.
+Exact actual audit/CHECK sidecars and immutable transport/source/object/receipt
+bindings are published. Publication independently checked source members and
+closure keys plus real audit/wrapper/execution bytes; root checked genuine
+source-bound compiler objects/receipts. No Lean was run for publication.
+
+Historical adaptation provenance preserves its before/after hashes and pending
+labels: advisory-only option removal, direct literal-J exclusions, reuse of
+opaque original `Seed.mask_binding`, and86 identical-tree root aliases reducing
+47,278,843 source bytes to43,030. Exact after-hash matches in these accepted
+closures are identified; all other proofs still require their actual audits.
+The source reduction is not claimed as a measured compilation speedup.
+
+Complete imported case audits are pending. The original-project full audit log
+remains159/173 at this snapshot; upstream inventory remains172 supplied proofs.
+Original public family audits and final return are unfinished. Frozen snapshots
+preserve source/task/environment/checker bytes and stronger merged interfaces;
+only private handoff metadata is omitted and resource profiles are neutralized.
+No worker, queue, proof-source or main changes were needed for publication.
 
 The returned family requires certificates for all 173 assigned indices.
 `ElevenSquare.Pending.returned_certificate_exists` remains admitted in this

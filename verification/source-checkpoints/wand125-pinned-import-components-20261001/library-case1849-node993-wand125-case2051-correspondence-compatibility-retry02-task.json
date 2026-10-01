@@ -1,0 +1,10 @@
+{
+  "id": "T03_compact_full_trace",
+  "modules": [
+    "ElevenSquare.Tasks.T03.Wand125.Case2051Correspondence"
+  ],
+  "axiom_targets": [
+    "ElevenSquare.Pending.T03.Wand125.Case2051.bounds",
+    "ElevenSquare.Pending.T03.Wand125.Case2051.mask_eq"
+  ]
+}

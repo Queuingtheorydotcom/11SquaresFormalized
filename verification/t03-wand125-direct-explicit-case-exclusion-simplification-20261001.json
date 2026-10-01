@@ -1,0 +1,211 @@
+{
+  "status": "DIRECT_LITERAL_CASE_EXCLUSION_FROM_SUPPLIED_NOTIN_PROOFS_PENDING_FULL_CASE_CHECKS",
+  "utc": "2026-10-01T15:03:11.130638+00:00",
+  "reason": "Original contract needs explicit J exclusion plus correspondence with frozen recordedCaseTuples. Dynamic upstream combs/filter/getD inventory enumeration is unnecessary. Every original notIn, ownership and tree proof is unchanged, raw upstream sources preserved.",
+  "changes": [
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Split/U2R/C1373/Main.lean",
+      "before_sha256": "81f90b8ccf61226b84cf792db790cb4c2a7c499fc7a7e0355515aa73051ef1bf",
+      "after_sha256": "56252789d764a2a3b88a55e3b9eb0c660fa32f637c3f5db174069870b12b1a1c",
+      "omitted_unused_upstream_inventory_correspondence": true,
+      "direct_exclusion_from_same_existing_notIn_proof": true,
+      "exact_after_hash_occurs_in_this_accepted_component_closure": false
+    },
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Case1373Certificate.lean",
+      "before_sha256": "cc78150319e802f4fc631458b033255aeab42d864f5cc34129494a4dcbb39bcd",
+      "after_sha256": "01ca805afdfbc1e5c438c635c2ad61d99a12b55c1a0f0ebef1e0a6763e2457cc",
+      "exact_original_certificate_statement_unchanged": true,
+      "exact_after_hash_occurs_in_this_accepted_component_closure": false
+    },
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Split/U2R/C1393/Main.lean",
+      "before_sha256": "86781addc059d16d7639cbe8c54d1a8fdefbb7723542ffa1eae3efb4eef1d7bf",
+      "after_sha256": "28ac2881035deb49e54f453c98ef9ec775d5de1ca38bf6cbeb44edc1afd3bcc1",
+      "omitted_unused_upstream_inventory_correspondence": true,
+      "direct_exclusion_from_same_existing_notIn_proof": true,
+      "exact_after_hash_occurs_in_this_accepted_component_closure": false
+    },
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Case1393Certificate.lean",
+      "before_sha256": "226ee9a8eec01975c37af642bd521c552f5b3f8a693bef2ee58a340166df1802",
+      "after_sha256": "484f7c725924afcd34a3188465270fc3923c5aca7977328d9d80879fe2294ea6",
+      "exact_original_certificate_statement_unchanged": true,
+      "exact_after_hash_occurs_in_this_accepted_component_closure": false
+    },
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Split/U2R/C1463/Main.lean",
+      "before_sha256": "cee09e6aa49eb69f984e2908b8f6178c1917f3a459a35c917ccd17daf9f3de78",
+      "after_sha256": "9c193f2d895a3705a659f20a312867576d96d308285cf56812af0d9d8a224d47",
+      "omitted_unused_upstream_inventory_correspondence": true,
+      "direct_exclusion_from_same_existing_notIn_proof": true,
+      "exact_after_hash_occurs_in_this_accepted_component_closure": false
+    },
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Case1463Certificate.lean",
+      "before_sha256": "d5272e15639e27fb176fac31c941138c16e8b2ad41c154e0c67b26bf81ec39c3",
+      "after_sha256": "2763d60cd4d8e39058c8a11b352c72b6256ab7d8e0ff96ac38f6c27862871f9e",
+      "exact_original_certificate_statement_unchanged": true,
+      "exact_after_hash_occurs_in_this_accepted_component_closure": false
+    },
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Split/U2R/C1464/Main.lean",
+      "before_sha256": "ffc4182bf7a8b66276f3d2b46be4f7f5144ce6fcca0e085583d7e33af8285ec0",
+      "after_sha256": "cbae9169b151c49ca2fdd934b685cdcba1d85c561eac107592a960149548495f",
+      "omitted_unused_upstream_inventory_correspondence": true,
+      "direct_exclusion_from_same_existing_notIn_proof": true,
+      "exact_after_hash_occurs_in_this_accepted_component_closure": false
+    },
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Case1464Certificate.lean",
+      "before_sha256": "1fd7b47f774aea6ce654dec03c3c4b64e2939fcda87dc9cab91c0b05ef5e4fc8",
+      "after_sha256": "ddb89636b518d1e08db4c06b6a27528f6a4676d4e11c90d8a4e890db5d385303",
+      "exact_original_certificate_statement_unchanged": true,
+      "exact_after_hash_occurs_in_this_accepted_component_closure": false
+    },
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Split/U2R/C1499/Main.lean",
+      "before_sha256": "105b2a06eb527a5db883e0c71524abbe668a234c06a95bdbeec1165fb0689cbe",
+      "after_sha256": "1de25280328fbb4224215556f5bcbb76f167fee2270b90537cd8a59225d7b8e1",
+      "omitted_unused_upstream_inventory_correspondence": true,
+      "direct_exclusion_from_same_existing_notIn_proof": true,
+      "exact_after_hash_occurs_in_this_accepted_component_closure": false
+    },
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Case1499Certificate.lean",
+      "before_sha256": "1eeecd4512cbb083c3e633df140eab8ef5f20ed5bd1a73f481210e051675dc52",
+      "after_sha256": "d8d0101750175039127340c5e211e6bc2467bee7a7008ef7684c5b73c3b16e3a",
+      "exact_original_certificate_statement_unchanged": true,
+      "exact_after_hash_occurs_in_this_accepted_component_closure": false
+    },
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Split/U2R/C1823/Main.lean",
+      "before_sha256": "ed6ced1231304218f3507e069ed84934082676ae20d1dfb0444e3f8b50331728",
+      "after_sha256": "c5b41de38b844d9f668636091066f3e9460de625087b5a620cd6accbd25ea9ad",
+      "omitted_unused_upstream_inventory_correspondence": true,
+      "direct_exclusion_from_same_existing_notIn_proof": true,
+      "exact_after_hash_occurs_in_this_accepted_component_closure": false
+    },
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Case1823Certificate.lean",
+      "before_sha256": "b44501197c5a11d22e1ad2243484ca47d1c3725347581e1905018610a7fcecdf",
+      "after_sha256": "5b637a9054abbe8039c3360f03c1e77f60dda69d493c42fc87018f05516259b6",
+      "exact_original_certificate_statement_unchanged": true,
+      "exact_after_hash_occurs_in_this_accepted_component_closure": false
+    },
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Split/U2R/C1849/Main.lean",
+      "before_sha256": "6f4c872f9cc199fd19e2a27e826f940e0a0c81c10b774f6ac1bb8f86d7cb7af4",
+      "after_sha256": "720f03d6d879359723ca3c140c8dfa8f22b07498b5e9edd27f53eb9da888d219",
+      "omitted_unused_upstream_inventory_correspondence": true,
+      "direct_exclusion_from_same_existing_notIn_proof": true,
+      "exact_after_hash_occurs_in_this_accepted_component_closure": false
+    },
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Case1849Certificate.lean",
+      "before_sha256": "2b8b53b83cffc13c0e5bc9e00f3d7d467cc1b28a6b49abad5c903897873d4e76",
+      "after_sha256": "81cc2eb3bddef5360c840528d1d23d8cbe2b9b1203787a111e6c9c19eb1bb6ff",
+      "exact_original_certificate_statement_unchanged": true,
+      "exact_after_hash_occurs_in_this_accepted_component_closure": false
+    },
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Split/U2R/C1887/Main.lean",
+      "before_sha256": "f7c94b0e18a881b2414162c43f9a681d5e39f99910568763b337ba8a213e63ea",
+      "after_sha256": "cb31b8b9b68c42c7b3bca4f0396398a688938ad9a2cedf11a80fb737f8c93739",
+      "omitted_unused_upstream_inventory_correspondence": true,
+      "direct_exclusion_from_same_existing_notIn_proof": true,
+      "exact_after_hash_occurs_in_this_accepted_component_closure": false
+    },
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Case1887Certificate.lean",
+      "before_sha256": "bbe853882f39af226c170a27bea3d84e51ff3faba5a9c244985e99354c81af61",
+      "after_sha256": "0b790b761ee51e282880b1799f03234c60097f0c60c9312641b6665dd2272a6e",
+      "exact_original_certificate_statement_unchanged": true,
+      "exact_after_hash_occurs_in_this_accepted_component_closure": false
+    },
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Split/U2R/C1891/Main.lean",
+      "before_sha256": "fdc54a30e7f2f4bc5f1cccb81cf22456047c5de331718cc60b039ec8baa9da1d",
+      "after_sha256": "1fae7029cddb3b087117a26ab446ac61cc94d50cbfd2337e1066730e4c9edb6f",
+      "omitted_unused_upstream_inventory_correspondence": true,
+      "direct_exclusion_from_same_existing_notIn_proof": true,
+      "exact_after_hash_occurs_in_this_accepted_component_closure": false
+    },
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Case1891Certificate.lean",
+      "before_sha256": "45fa9beb8a0618366077c38c8a70e15c44941db0b3f1b03a1de81a4f95edf5d4",
+      "after_sha256": "13e0a8423a03d40106d2e882b6fc62ad4230913981173efe8462b4f0c2e28c89",
+      "exact_original_certificate_statement_unchanged": true,
+      "exact_after_hash_occurs_in_this_accepted_component_closure": false
+    },
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Split/U2R/C2051/Main.lean",
+      "before_sha256": "b62c3715de49edcae5e5742bbde2f60afdcf31165474f544885fcc67d885d961",
+      "after_sha256": "68764f2d92ac9e0e07b71f12d91c6a31fff03a82950e9b175ac6324b798e110d",
+      "omitted_unused_upstream_inventory_correspondence": true,
+      "direct_exclusion_from_same_existing_notIn_proof": true,
+      "exact_after_hash_occurs_in_this_accepted_component_closure": false
+    },
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Case2051Certificate.lean",
+      "before_sha256": "c83ed703aa0ee41beebc90a5f89001f28db79b2048301f32979f3e5d64d09a3a",
+      "after_sha256": "11e8b049584647343801c2b14e0749286c99c8c7eb6c72d171c42c090d2a40d4",
+      "exact_original_certificate_statement_unchanged": true,
+      "exact_after_hash_occurs_in_this_accepted_component_closure": false
+    },
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Split/U2R/C2068/Main.lean",
+      "before_sha256": "16ab757cb43a1bbb31cd52dd74bfef73699fe53bd4af5e63de47ce89f92197bb",
+      "after_sha256": "137a3b3f52a3aa56caf2982779cb099ad740c5b375d91b56eff9b58e1033b457",
+      "omitted_unused_upstream_inventory_correspondence": true,
+      "direct_exclusion_from_same_existing_notIn_proof": true,
+      "exact_after_hash_occurs_in_this_accepted_component_closure": false
+    },
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Case2068Certificate.lean",
+      "before_sha256": "67624769005014f9eb70a768345b51041e67e584ddeee0c1d3e430f61108c3ad",
+      "after_sha256": "8ac18147513efae74628459cc6def1cb31bb62967bd2c97aa5a91237c91b45d9",
+      "exact_original_certificate_statement_unchanged": true,
+      "exact_after_hash_occurs_in_this_accepted_component_closure": false
+    },
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Split/U2R/C2069/Main.lean",
+      "before_sha256": "b4780f71e442d1748579bfaf28aa0c7c0f3b5e0b80e834c1c4ee97ec0f67df24",
+      "after_sha256": "0342e43131183d195ff7f7da1451bd2d6b8d9e0b9fc196519e66e73c086e0d01",
+      "omitted_unused_upstream_inventory_correspondence": true,
+      "direct_exclusion_from_same_existing_notIn_proof": true,
+      "exact_after_hash_occurs_in_this_accepted_component_closure": false
+    },
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Case2069Certificate.lean",
+      "before_sha256": "1d059b78ac0f033b56ffc07db099f942638c7669b6c149e3e0fc3ce745c085a2",
+      "after_sha256": "d85e54bb7dac127b757148b44aa46564fe30e1b665a43f1ef275337fbbee31f7",
+      "exact_original_certificate_statement_unchanged": true,
+      "exact_after_hash_occurs_in_this_accepted_component_closure": false
+    },
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Upstream/S11Opt/Split/U2R/C2070/Main.lean",
+      "before_sha256": "81146b8d2dcfcd0137e04aabf3555dbf2db0cb744df127ba15de5398add67ad0",
+      "after_sha256": "7c38b4396a7c42a047a5f798406ab366c4d6cb234ea1a4521bf2315fc64e3a4d",
+      "omitted_unused_upstream_inventory_correspondence": true,
+      "direct_exclusion_from_same_existing_notIn_proof": true,
+      "exact_after_hash_occurs_in_this_accepted_component_closure": false
+    },
+    {
+      "source": "project/ElevenSquare/Tasks/T03/Wand125/Case2070Certificate.lean",
+      "before_sha256": "66bb31943a166f8da723aa85c99ef8b6c1525c63d0ea8e9d81d2f02d383cfe5b",
+      "after_sha256": "41b3125c952b5481b9f02f99ffba07f70edf69c596e4aa9b34aac19fb0afc3c0",
+      "exact_original_certificate_statement_unchanged": true,
+      "exact_after_hash_occurs_in_this_accepted_component_closure": false
+    }
+  ],
+  "original_frozen_masks_still_individually_proved": true,
+  "proof_receipts_created": 0,
+  "full_case_increment": 0,
+  "format": "T03-wand125-import-adaptation-provenance-v1",
+  "original_record_sha256": "b14510329187655d82e5dd7d90cf9ff53d8177537860f14ba222143e8d261c44",
+  "historical_preparation_status_preserved": true,
+  "accepted_component_checkpoint": "verification/source-checkpoints/wand125-pinned-import-components-20261001/SOURCE_BINDINGS.json",
+  "all_remaining_adaptations_require_actual_original_checker_audits": true,
+  "complete_case_acceptance_claimed": false
+}

@@ -1,0 +1,2 @@
+'ElevenSquare.Pending.T03.Wand125.Case1849.bounds' does not depend on any axioms
+'ElevenSquare.Pending.T03.Wand125.Case1849.mask_eq' depends on axioms: [propext, Classical.choice, Quot.sound]

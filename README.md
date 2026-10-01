@@ -1,13 +1,26 @@
 # Eleven-square packing in Lean
 
+Upstream has supplied **172 case-proof archives**; **case1465 is the sole missing
+case there**. The 13 supplied archives needed for the remaining imports have all
+been source/member verified. The **159/173** figure below is the original
+project's full-certificate integration audit log, a separate metric from the
+172 supplied proofs. The supplied proofs are being reused.
+
+New [audited import components and deduplicated exact source snapshots](verification/source-checkpoints/wand125-pinned-import-components-20261001)
+include Branch, the first trees for cases2051 and1849 trees and both original mask correspondences.
+The bounds proofs have no axioms; mask equalities and the other component targets
+use only the standard three. Complete imported cases remain under integration.
+
 This repository assembles the completed foundations and the available partial
 formalizations of the optimal eleven-square packing. **Global optimality is
 still unfinished.** Six explicit `sorry` sites record the remaining obligations.
 A build that accepts those sites checks the surrounding code but does not prove
 the final optimality theorem. See [MISSING.md](MISSING.md).
 
-At the latest checkpoint, **159/173** full case certificates have independently
-accepted exact target audits and published complete source closures; **14 remain**.
+At this checkpoint, the original-project integration log records **159/173**
+full certificates with exact accepted target audits and published closures.
+Thirteen of its remaining integrations already have supplied upstream case
+proofs; case1465 is the one unsupplied upstream case.
 The complete ordinary shared exclusion checker now passes the original pinned
 Lean 4.10.0-rc2 checker: `SquarePacking.S11Opt.Split.U2P.excluded_of_tris`, the
 majority lemma and three field-bridge targets have actual standard-three axiom
