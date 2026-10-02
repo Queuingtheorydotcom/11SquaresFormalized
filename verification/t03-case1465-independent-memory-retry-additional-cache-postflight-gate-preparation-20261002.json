@@ -1,0 +1,15 @@
+{
+  "status": "FINAL_POSTFLIGHT_ALSO_REQUIRES_ALL_ADDITIONAL_GENUINE_CACHE_BYTES_UNCHANGED_IF_ADOPTED",
+  "utc": "2026-10-02T06:05:53.992119+00:00",
+  "helper": "verify_exact_live_cache_postflight_20261002.py",
+  "helper_before_sha256": "1272bf4f5d37de9a96d22e5bf458aab211caa3a6122ff957c947cd067fb9109e",
+  "helper_after_sha256": "a797096881d05f7013ace6dfaf7fdfea0c39c238860e7d9591d13c0bd7c6d472",
+  "additional_objects": 9642,
+  "total_cached_objects": 21483,
+  "source_or_original_checker_or_exporter_changes": 0,
+  "scope": "Actual postflight remains pending; this only adds its guard for any successfully adopted additional exact cache.",
+  "original_private_record_sha256": "a6b405b73eafe5483fff1b34b1fd2261ee0035ea6484d9e0b5ebe6c5375fddbe",
+  "publication_scope": "Exact record hashes, metadata counts/totals/binding shapes, helper hashes and configuration bindings checked. No large object/source collection rehash or proof execution.",
+  "whole_case_increment": 0,
+  "publication_Lean_jobs_worker_queue_source_changes": 0
+}

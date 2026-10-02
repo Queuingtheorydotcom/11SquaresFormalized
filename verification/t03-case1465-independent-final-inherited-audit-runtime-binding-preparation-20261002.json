@@ -1,0 +1,13 @@
+{
+  "status": "FUTURE_INHERITED_ADMISSION_AUDIT_BINDS_ACTUAL_ACCEPTED_FINAL_RUNTIME",
+  "utc": "2026-10-02T06:11:36.091936+00:00",
+  "helper": "audit_inherited_admissions.py",
+  "helper_before_sha256": "72f73e021ad8edfe95594ce0054c3792b3558b9a5c66d471035aece23593f67c",
+  "helper_after_sha256": "fdee0dba07de58df411ec35627d030aa8736e40926faa6a63a5e52a5eb89cc57",
+  "proof_or_frozen_source_or_original_checker_changes": 0,
+  "scope": "Own separate admission audit now derives its runtime from the actual accepted final execution and requires runtime frozen source bytes to match the final transport. This prepares an actual audit; none has run yet.",
+  "original_private_record_sha256": "9a6c38856cd0917110bd5d3484d89417cf72bbac041600707077a8e1d5bcc854",
+  "publication_scope": "Exact record hashes, metadata counts/totals/binding shapes, helper hashes and configuration bindings checked. No large object/source collection rehash or proof execution.",
+  "whole_case_increment": 0,
+  "publication_Lean_jobs_worker_queue_source_changes": 0
+}

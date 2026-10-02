@@ -1,0 +1,12 @@
+{
+  "status": "FINAL_REPORT_REUSES_ONLY_POSTFLIGHT_BOUND_TO_SAME_ACTUAL_ACCEPTED_FULLCASE",
+  "utc": "2026-10-02T06:27:09.144075+00:00",
+  "report_before_sha256": "bd23d9dd3a8ccc24ba961a7c965b147842e7963ea797f713705929313ee7e704",
+  "report_after_sha256": "87abcc4af99bf6f30b3b9dfba6afc08acca3a7e5b312164258c6e46969abf57b",
+  "provided_checker_or_exporter_changes": 0,
+  "scope": "Allows postflight after actual fullcase completion to run during final source packing, then requires identical accepted controller/execution bindings before final report.",
+  "original_private_record_sha256": "34744a2470f38900b7dfaa1db55e89c587d63336e2f1fdc9aa78243af85878ae",
+  "original_private_record_bytes": 563,
+  "publication_Lean_jobs_worker_controls": 0,
+  "actual_final_report_not_completed": true
+}

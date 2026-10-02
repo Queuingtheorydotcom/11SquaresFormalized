@@ -1,0 +1,16 @@
+{
+  "status": "DANGLING_UNDEFINED_REDUNDANT_SOURCE_SCANNER_CALL_REMOVED_FROM_OWN_STAGING",
+  "utc": "2026-10-02T06:17:42.832212+00:00",
+  "helper": "stage_verified_return.py",
+  "helper_before_sha256": "4a1f9f3c7719ba41d6dc992ed90a62e510738896eea115acc4078539c240a4d3",
+  "helper_after_sha256": "89e286fd57dbbca7126af354aa712300b07e100a96979a495be15ce4d1dd15e0",
+  "original_exporter_and_read_return_scans_remain_required": true,
+  "provided_script_changes": 0,
+  "owned_size_scaffold_source_hash_and_frozen_hash_guards_retained": true,
+  "package_integrity_log_preserved_in_final_evidence": true,
+  "scope": "Own staging had retained a scan_source call after removal of its import. Removing that redundant dangling call prevents a NameError; original provided exporter/read_return still scan every returned source. Staging and export remain pending.",
+  "original_private_record_sha256": "190a4cc07a914a3635dfbe363007140ba243cb6bfbd247133cf1e118f86b54ef",
+  "publication_scope": "Exact record hashes, metadata counts/totals/binding shapes, helper hashes and configuration bindings checked. No large object/source collection rehash or proof execution.",
+  "whole_case_increment": 0,
+  "publication_Lean_jobs_worker_queue_source_changes": 0
+}

@@ -1,0 +1,14 @@
+{
+  "status": "FINAL_REPORT_REQUIRES_BOTH_ADOPTED_EXACT_CACHE_POSTFLIGHTS",
+  "utc": "2026-10-02T06:12:58.271992+00:00",
+  "report_before_sha256": "f6c514f6c2f4960be91bbf59f5a30f67d9c98efc59546dcca29a414f84f13d11",
+  "report_after_sha256": "bd23d9dd3a8ccc24ba961a7c965b147842e7963ea797f713705929313ee7e704",
+  "required_original_cached_objects": 11841,
+  "required_additional_cached_objects": 9642,
+  "source_or_original_checker_or_exporter_changes": 0,
+  "scope": "Preparation for the final report only; neither final case nor public target acceptance is claimed.",
+  "original_private_record_sha256": "18b0a3259ad2d47657617ebf3922004c5ba4b1b0d5e5e8e0d7eb026cda067b17",
+  "publication_scope": "Exact record hashes, metadata counts/totals/binding shapes, helper hashes and configuration bindings checked. No large object/source collection rehash or proof execution.",
+  "whole_case_increment": 0,
+  "publication_Lean_jobs_worker_queue_source_changes": 0
+}

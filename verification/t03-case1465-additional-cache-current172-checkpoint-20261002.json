@@ -1,0 +1,113 @@
+{
+  "format": "T03-additional-exact-genuine-cache-and-final-audit-preparation-v1",
+  "utc": "2026-10-02T06:24:47.141954+00:00",
+  "status": "173_ORIGINAL_FULLCASES_AUDITED_LOCAL1465_FULL65_ACCEPTED_PUBLIC2_AND_POSTFLIGHTS_PENDING",
+  "historical_original_fullcase_audits": 172,
+  "remaining_original_fullcase": [],
+  "historical_components": 17,
+  "additional_objects": 9642,
+  "additional_bytes": 1894518368,
+  "old_objects": 11841,
+  "total_cached_objects": 21483,
+  "total_current_modules": 21510,
+  "original_path_fallbacks": 27,
+  "source_original_object_receipt_changes": 0,
+  "cache_object_copies_and_original_hashes_checked_in_recorded_root_preflight": true,
+  "large_cache_objects_not_rehashed_by_publication": true,
+  "old_C_backed_cache_unchanged_new_objects_on_existing_D_backed_ext4_volume": true,
+  "future_compiler_input_paths_only_memory8GiB_threads1_unchanged": true,
+  "latest_stable_actual_elaboration": [
+    {
+      "check": {
+        "status": "accepted",
+        "source": "ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/PartnerReplayBatch013.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 51.81,
+        "lean_memory_limit_mb": 8192,
+        "lean_threads": 1,
+        "lean_thread_stack_kb": 32768,
+        "lean_main_stack_kb": 65536,
+        "cpu_seconds_limit": 1800,
+        "wall_seconds_limit": 2100,
+        "nice_increment": 0,
+        "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/PartnerReplayBatch013.olean",
+        "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+      },
+      "check_sha256": "e6579a89373fc65200805a7c6e2a904d5d4f232df233bc9ce996cdde7b5da1b0",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_CHECK": "verification/t03-case1465-additional-cache-elaboration/PartnerReplayBatch013-CHECK.json",
+      "published_log": "verification/t03-case1465-additional-cache-elaboration/PartnerReplayBatch013-lean.log",
+      "source_sha256": "a1919b6f161aed60a7b703bfc83e933074914538c8548bf656572d88555fc923",
+      "source_bytes": 848422,
+      "source_transport_sha256": "7653120c1977003d33caf44e605c5ab7a528b693f12b8c0b95a0678dd69592d7",
+      "accepted_elaboration_only_not_fullcase_axiom_audit": true
+    },
+    {
+      "check": {
+        "status": "accepted",
+        "source": "ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/Certificate.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 22.41,
+        "lean_memory_limit_mb": 8192,
+        "lean_threads": 1,
+        "lean_thread_stack_kb": 32768,
+        "lean_main_stack_kb": 65536,
+        "cpu_seconds_limit": 1800,
+        "wall_seconds_limit": 2100,
+        "nice_increment": 0,
+        "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/Certificate.olean",
+        "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+      },
+      "check_sha256": "e7c82d90083ac18cc9f5f86cb3046f995b33a4e58d2bbaae1970611e79461a40",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_CHECK": "verification/t03-case1465-additional-cache-elaboration/Certificate-CHECK.json",
+      "published_log": "verification/t03-case1465-additional-cache-elaboration/Certificate-lean.log",
+      "source_sha256": "400c07dfab0f986c08478bf514076ea843fe1be081ac55aa54cd3901990f1e41",
+      "source_bytes": 19015,
+      "source_transport_sha256": "7653120c1977003d33caf44e605c5ab7a528b693f12b8c0b95a0678dd69592d7",
+      "accepted_elaboration_only_not_fullcase_axiom_audit": true
+    }
+  ],
+  "records": [
+    {
+      "checkpoint": "verification/t03-case1465-independent-memory-retry-additional-genuine-cache-eligibility-20261002.json",
+      "original_private_record_sha256": "8ecb3d09529d79b6dc80e8a1e25db0d11b01f1fd76bac3c81797bba29da28e65"
+    },
+    {
+      "checkpoint": "verification/t03-case1465-independent-memory-retry-additional-genuine-cache-application-20261002.json",
+      "original_private_record_sha256": "2399cb57918879d777f15dc2edcbf82672b8f96b39e4f59b2991139a2e519d9b"
+    },
+    {
+      "checkpoint": "verification/t03-case1465-independent-memory-retry-additional-cache-postflight-gate-preparation-20261002.json",
+      "original_private_record_sha256": "a6b405b73eafe5483fff1b34b1fd2261ee0035ea6484d9e0b5ebe6c5375fddbe"
+    },
+    {
+      "checkpoint": "verification/t03-case1465-independent-final-inherited-audit-runtime-binding-preparation-20261002.json",
+      "original_private_record_sha256": "9a6c38856cd0917110bd5d3484d89417cf72bbac041600707077a8e1d5bcc854"
+    },
+    {
+      "checkpoint": "verification/t03-case1465-independent-final-report-additional-cache-binding-preparation-20261002.json",
+      "original_private_record_sha256": "18b0a3259ad2d47657617ebf3922004c5ba4b1b0d5e5e8e0d7eb026cda067b17"
+    },
+    {
+      "checkpoint": "verification/t03-case1465-independent-final-staging-dangling-scan-call-repair-20261002.json",
+      "original_private_record_sha256": "190a4cc07a914a3635dfbe363007140ba243cb6bfbd247133cf1e118f86b54ef"
+    }
+  ],
+  "two_cache_postflight_gates_prepared_not_passed": true,
+  "inherited_audit_runtime_binding_prepared_not_run": true,
+  "runtime_frozen_source_bytes_must_match_actual_successful_final_transport": true,
+  "staging_dangling_scan_call_repaired_original_exporter_guards_preserved": true,
+  "fresh_65target_fullcase_axiom_audit_accepted": true,
+  "fresh_two_public_combined_target_audits_accepted": false,
+  "final_zip_complete": false,
+  "no_same_claim_or_wholeproof_speedup_benchmark": true,
+  "new_release_assets": 0,
+  "large_archive_source_object_copy_or_rehash_by_publication": false,
+  "publication_Lean_jobs_worker_queue_source_changes": 0,
+  "original_fullcase_audits": 173,
+  "accepted_full65_checkpoint": "verification/t03-case1465-original-full65-accepted-checkpoint-20261002.json",
+  "cache_postflights_actually_accepted": true,
+  "cache_postflight_checkpoint": "verification/t03-case1465-independent-memory-retry-exact-live-cache-postflight-20261002.json",
+  "cache_postflights_pending": false
+}

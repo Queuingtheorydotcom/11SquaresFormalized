@@ -1,12 +1,48 @@
 # Eleven-square packing in Lean
 
-Upstream supplies **172 case-proof source archives**; **only case 1465 is absent**.
-All 172 supplied original full-case certificates passed actual pinned-checker
-audits with only the standard axioms: **172/173**, with **case 1465 alone remaining**.
-These audits apply to their immutable original source versions.
-The [172-audit reconciliation](verification/t03-case1465-independent-original-172-audit-count-reconciliation-20261002.json)
-binds every distinct exact target, actual audit log and printed audit source;
-only case 1465 is missing.
+Upstream supplies **172 case-proof source archives**; case 1465 was its sole
+omission and is now proved locally. **All 173 original full-case certificates
+have actual named-target audits: 173/173, no original case remains.**
+
+The [accepted case 1465 full audit](verification/t03-case1465-original-full65-accepted-checkpoint-20261002.json)
+passed the unchanged pinned Lean 4.10.0-rc2 checker at 8 GiB with one thread.
+All **65 exact targets**—64 route component targets and the original
+`certificate_exists`—report only standard axioms. Exact actual audit source,
+CHECK/log, task, accepted Certificate source/composition hash and genuine
+source/receipt/object bindings are preserved. The old memory failure remains
+recorded as history.
+
+Both [genuine-cache postflights](verification/t03-case1465-independent-memory-retry-exact-live-cache-postflight-20261002.json) are now complete:
+all **21,483 original, cached and visible object bindings** were checked with
+zero mismatches. **The two public combined target audits and final return ZIP
+remain pending.** This case completion does not claim global optimality or
+fresh completion of those obligations. Earlier counts below describe dated
+source snapshots, including the 172/173 and 159/173 stages.
+
+The [additional exact-cache checkpoint](verification/t03-case1465-additional-cache-current172-checkpoint-20261002.json)
+adds **9,642 genuine objects /1,894,518,368 bytes**, each bound to the current
+dependency key and existing actual receipt. Recorded copy/original hash checks
+have zero mismatches. The total is **21,483 of 21,510 objects**, with **27 original
+path fallbacks**. The earlier 11,841-object cache is preserved; the new data uses
+the existing D-backed ext4 volume. Source, original object and receipt bytes,
+8 GiB memory and one-thread settings are unchanged. Only future input paths change.
+
+PartnerReplayBatch013 and the Certificate module have fresh actual accepted
+elaboration CHECK/log records. **Elaboration is not the 65-target axiom audit**;
+that checkpoint preceded the complete full65 audit above. The final inherited audit is prepared to
+bind its runtime to the actual successful final execution and verify frozen
+source bytes against that transport. The report requires both cache postflights.
+A dangling redundant scanner call was removed from staging, preserving the
+mandatory original exporter/read-return scans and source guards. The runtime binding
+and staging changes are preparatory. The full-case acceptance and completed
+postflights are recorded above; public-target audits, a completed ZIP and a
+whole-proof speedup are not claimed.
+
+
+### Earlier 172/173 memory-retry snapshot
+
+The following describes its earlier captured state; the fresh full65 acceptance
+and cache postflights above supersede its pending-case status.
 
 The [current memory-retry checkpoint](verification/t03-case1465-memory-retry-current172-checkpoint-20261002.json)
 preserves a real 4 GiB memory failure in Chunk159, followed by an unchanged-source

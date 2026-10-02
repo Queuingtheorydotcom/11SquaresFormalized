@@ -1,0 +1,55 @@
+{
+  "status": "EXACT_FULLCASE_65_TARGET_AUDIT_ACCEPTED_AND_GENUINE_CACHE_BYTES_UNCHANGED",
+  "utc": "2026-10-02T06:30:36.262430+00:00",
+  "controller_sha256": "8db962186758a5415cfea3755d3861e7a417b8b3dda1a87748e480feb60b6fe7",
+  "actual_execution_sha256": "f85a544326861daba885a7e467e6123a142caf0ed0e1d0d905c1cba0c2271d8f",
+  "actual_check_sha256": "2ec22fba7638f31b0883a0e07c589024bfd3e6aa36441a0485f79c175a07b5ce",
+  "actual_axiom_log_sha256": "3ba5cf200eae8281710a29ac01b043b8cafc9feca59a913a01033eafafc51c25",
+  "audited_targets": 65,
+  "seconds": 184.593,
+  "scope": "Existing genuine objects and namespace hardlinks remain byte-identical to original runtime objects; actual original checker accepts all65 targets with standard axioms. This creates no proof receipts and claims no whole-proof performance benchmark.",
+  "original_private_record_sha256": "ad896168039cae495ae2ef062cebc04b85b5ef8a8875df568ff5a096d827866e",
+  "original_private_record_bytes": 5049979,
+  "publication_scope": "Compact completed original-checker and genuine-cache postflight record; large namespace member arrays omitted with original record digest retained. No cache bytes copied or rehashed by publication.",
+  "publication_Lean_jobs_worker_controls": 0,
+  "postflight": {
+    "task": "forward-case1465-packed-namespaced-independent-replay-memory-retry01-assembly-task.json",
+    "application_sha256": "d7e5c814c7726847afb3481761173b90f722cf7aafe44742ec879acfd5527b61",
+    "preparation_sha256": "205db7663499360ff6209b58b0c9b5e8b2de8c2ea4e9cb599f51bf17d112b617",
+    "cached_object_bytes": 3418898720,
+    "cached_objects": 11841,
+    "postflight": {
+      "status": "ORIGINAL_GENUINE_OBJECT_BYTES_MATCH_CACHE_CATALOG",
+      "checked_objects": 11841,
+      "checked_bytes": 3418898720,
+      "mismatches": [],
+      "elapsed_seconds": 53.89100000000326,
+      "proof_receipts_created": 0,
+      "compiler_processes_started": 0
+    },
+    "cached_object_postflight_hashes_validated": 11841,
+    "original_checker_independently_validated_sources_and_objects": true,
+    "proof_receipts_created": 0,
+    "additional_compiler_processes_started": 0
+  },
+  "additional_genuine_cache_postflight": {
+    "task": "forward-case1465-packed-namespaced-independent-replay-memory-retry01-assembly-task.json",
+    "application_sha256": "2399cb57918879d777f15dc2edcbf82672b8f96b39e4f59b2991139a2e519d9b",
+    "preparation_sha256": "8ecb3d09529d79b6dc80e8a1e25db0d11b01f1fd76bac3c81797bba29da28e65",
+    "cached_object_bytes": 1894518368,
+    "cached_objects": 9642,
+    "postflight": {
+      "status": "ORIGINAL_GENUINE_OBJECT_BYTES_MATCH_CACHE_CATALOG",
+      "checked_objects": 9642,
+      "checked_bytes": 1894518368,
+      "mismatches": [],
+      "elapsed_seconds": 41.59399999998277,
+      "proof_receipts_created": 0,
+      "compiler_processes_started": 0
+    },
+    "cached_object_postflight_hashes_validated": 9642,
+    "original_checker_independently_validated_sources_and_objects": true,
+    "proof_receipts_created": 0,
+    "additional_compiler_processes_started": 0
+  }
+}

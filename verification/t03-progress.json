@@ -1,5 +1,5 @@
 {
-  "status": "HISTORICAL172_ORIGINAL_CERTIFICATES_AUDITED_REPAIRED_SOURCE_FRESH_AUDITS_PENDING",
+  "status": "ALL173_ORIGINAL_CASE_TARGET_AUDITS_ACCEPTED_PUBLIC_COMBINED_AND_EXPORT_PENDING",
   "snapshot_date": "2026-09-30",
   "meaning": "Independent returned compiler audits. This is not a fresh combined replay of the GitHub assembly.",
   "lean_version": "4.10.0-rc2",
@@ -1668,7 +1668,7 @@
     "meaning": "The original 151 source closures and six supplements remain unchanged, supplying 157 audited closures. The separately published frozen case1372 binding-retry02 source ZIP subsequently passed its exact full target audit, for 158. Only case2135 is directly integrated into Git source; no merged replay or full-family completion is claimed."
   },
   "published_case_source_closures": 172,
-  "remaining_case_certificates": 1,
+  "remaining_case_certificates": 0,
   "source_supplements": [
     {
       "asset_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-audited-151-20260930/T03-audited-cases1484-2122-source-supplement.zip",
@@ -4653,5 +4653,566 @@
     "publication_Lean_jobs_worker_queue_source_changes": 0,
     "final_cache_postflight_gate_prepared_not_run": true,
     "lightweight_monitor_regex_import_repair_proof_neutral": true
-  }
+  },
+  "latest_additional_cache_current172_checkpoint": {
+    "format": "T03-additional-exact-genuine-cache-and-final-audit-preparation-v1",
+    "utc": "2026-10-02T06:24:47.141954+00:00",
+    "status": "173_ORIGINAL_FULLCASES_AUDITED_LOCAL1465_FULL65_ACCEPTED_PUBLIC2_AND_POSTFLIGHTS_PENDING",
+    "historical_original_fullcase_audits": 172,
+    "remaining_original_fullcase": [],
+    "historical_components": 17,
+    "additional_objects": 9642,
+    "additional_bytes": 1894518368,
+    "old_objects": 11841,
+    "total_cached_objects": 21483,
+    "total_current_modules": 21510,
+    "original_path_fallbacks": 27,
+    "source_original_object_receipt_changes": 0,
+    "cache_object_copies_and_original_hashes_checked_in_recorded_root_preflight": true,
+    "large_cache_objects_not_rehashed_by_publication": true,
+    "old_C_backed_cache_unchanged_new_objects_on_existing_D_backed_ext4_volume": true,
+    "future_compiler_input_paths_only_memory8GiB_threads1_unchanged": true,
+    "latest_stable_actual_elaboration": [
+      {
+        "check": {
+          "status": "accepted",
+          "source": "ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/PartnerReplayBatch013.lean",
+          "exit_code": 0,
+          "elapsed_seconds": 51.81,
+          "lean_memory_limit_mb": 8192,
+          "lean_threads": 1,
+          "lean_thread_stack_kb": 32768,
+          "lean_main_stack_kb": 65536,
+          "cpu_seconds_limit": 1800,
+          "wall_seconds_limit": 2100,
+          "nice_increment": 0,
+          "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/PartnerReplayBatch013.olean",
+          "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+        },
+        "check_sha256": "e6579a89373fc65200805a7c6e2a904d5d4f232df233bc9ce996cdde7b5da1b0",
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "published_CHECK": "verification/t03-case1465-additional-cache-elaboration/PartnerReplayBatch013-CHECK.json",
+        "published_log": "verification/t03-case1465-additional-cache-elaboration/PartnerReplayBatch013-lean.log",
+        "source_sha256": "a1919b6f161aed60a7b703bfc83e933074914538c8548bf656572d88555fc923",
+        "source_bytes": 848422,
+        "source_transport_sha256": "7653120c1977003d33caf44e605c5ab7a528b693f12b8c0b95a0678dd69592d7",
+        "accepted_elaboration_only_not_fullcase_axiom_audit": true
+      },
+      {
+        "check": {
+          "status": "accepted",
+          "source": "ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/Certificate.lean",
+          "exit_code": 0,
+          "elapsed_seconds": 22.41,
+          "lean_memory_limit_mb": 8192,
+          "lean_threads": 1,
+          "lean_thread_stack_kb": 32768,
+          "lean_main_stack_kb": 65536,
+          "cpu_seconds_limit": 1800,
+          "wall_seconds_limit": 2100,
+          "nice_increment": 0,
+          "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/Certificate.olean",
+          "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+        },
+        "check_sha256": "e7c82d90083ac18cc9f5f86cb3046f995b33a4e58d2bbaae1970611e79461a40",
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "published_CHECK": "verification/t03-case1465-additional-cache-elaboration/Certificate-CHECK.json",
+        "published_log": "verification/t03-case1465-additional-cache-elaboration/Certificate-lean.log",
+        "source_sha256": "400c07dfab0f986c08478bf514076ea843fe1be081ac55aa54cd3901990f1e41",
+        "source_bytes": 19015,
+        "source_transport_sha256": "7653120c1977003d33caf44e605c5ab7a528b693f12b8c0b95a0678dd69592d7",
+        "accepted_elaboration_only_not_fullcase_axiom_audit": true
+      }
+    ],
+    "records": [
+      {
+        "checkpoint": "verification/t03-case1465-independent-memory-retry-additional-genuine-cache-eligibility-20261002.json",
+        "original_private_record_sha256": "8ecb3d09529d79b6dc80e8a1e25db0d11b01f1fd76bac3c81797bba29da28e65"
+      },
+      {
+        "checkpoint": "verification/t03-case1465-independent-memory-retry-additional-genuine-cache-application-20261002.json",
+        "original_private_record_sha256": "2399cb57918879d777f15dc2edcbf82672b8f96b39e4f59b2991139a2e519d9b"
+      },
+      {
+        "checkpoint": "verification/t03-case1465-independent-memory-retry-additional-cache-postflight-gate-preparation-20261002.json",
+        "original_private_record_sha256": "a6b405b73eafe5483fff1b34b1fd2261ee0035ea6484d9e0b5ebe6c5375fddbe"
+      },
+      {
+        "checkpoint": "verification/t03-case1465-independent-final-inherited-audit-runtime-binding-preparation-20261002.json",
+        "original_private_record_sha256": "9a6c38856cd0917110bd5d3484d89417cf72bbac041600707077a8e1d5bcc854"
+      },
+      {
+        "checkpoint": "verification/t03-case1465-independent-final-report-additional-cache-binding-preparation-20261002.json",
+        "original_private_record_sha256": "18b0a3259ad2d47657617ebf3922004c5ba4b1b0d5e5e8e0d7eb026cda067b17"
+      },
+      {
+        "checkpoint": "verification/t03-case1465-independent-final-staging-dangling-scan-call-repair-20261002.json",
+        "original_private_record_sha256": "190a4cc07a914a3635dfbe363007140ba243cb6bfbd247133cf1e118f86b54ef"
+      }
+    ],
+    "two_cache_postflight_gates_prepared_not_passed": true,
+    "inherited_audit_runtime_binding_prepared_not_run": true,
+    "runtime_frozen_source_bytes_must_match_actual_successful_final_transport": true,
+    "staging_dangling_scan_call_repaired_original_exporter_guards_preserved": true,
+    "fresh_65target_fullcase_axiom_audit_accepted": true,
+    "fresh_two_public_combined_target_audits_accepted": false,
+    "final_zip_complete": false,
+    "no_same_claim_or_wholeproof_speedup_benchmark": true,
+    "new_release_assets": 0,
+    "large_archive_source_object_copy_or_rehash_by_publication": false,
+    "publication_Lean_jobs_worker_queue_source_changes": 0,
+    "original_fullcase_audits": 173,
+    "accepted_full65_checkpoint": "verification/t03-case1465-original-full65-accepted-checkpoint-20261002.json",
+    "cache_postflights_actually_accepted": true,
+    "cache_postflight_checkpoint": "verification/t03-case1465-independent-memory-retry-exact-live-cache-postflight-20261002.json",
+    "cache_postflights_pending": false
+  },
+  "latest_case1465_full65_accepted_checkpoint": {
+    "format": "T03-original-case1465-full65-target-actual-audit-v1",
+    "utc": "2026-10-02T06:39:10.687799+00:00",
+    "status": "ORIGINAL_FULLCASE1465_AND_ALL64_COMPONENT_TARGETS_ACTUALLY_ACCEPTED_STD3",
+    "original_fullcase_audits": 173,
+    "required_original_fullcases": 173,
+    "remaining_original_fullcases": [],
+    "upstream_supplied_archives": 172,
+    "local_unsupplied_case1465_now_full_audited": true,
+    "task": "forward-case1465-packed-namespaced-independent-replay-memory-retry01-assembly-task.json",
+    "task_sha256": "1fd34550fc7acc4e3f36c4abd049bf6cfdf9a2240a72602b44a5364c238943b9",
+    "actual_execution_sha256": "f85a544326861daba885a7e467e6123a142caf0ed0e1d0d905c1cba0c2271d8f",
+    "actual_wrapper_sha256": "3bac7d704395abd877f786a5c604af163a2b9a825480232689729ce0641222c7",
+    "actual_execution_exit_code": 0,
+    "immutable_transport_sha256": "7653120c1977003d33caf44e605c5ab7a528b693f12b8c0b95a0678dd69592d7",
+    "transport_digest_independently_verified": true,
+    "actual_target_axioms": {
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.Certificate.certificate_exists": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Prefix012.boundary_binding": [
+        "propext"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Prefix012.trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step013Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step014Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step015Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step016Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step017Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step018Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step019Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step020Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step021Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step022Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step023Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step024Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step025Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step026Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step027Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step028Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step029Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step030Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step031Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step032Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step033Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step034Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step035Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step036Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step037Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step038Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step039Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step040Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step041Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step042Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step043Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step044Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step045Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step046Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step047Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step048Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step049Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step050Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step051Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step052Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step053Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step054Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step055Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step056Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step057Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step058Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step059Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step060Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step061Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step062Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step063Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step064Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step065Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step066Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step067Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step068Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step069Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step070Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step071Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step072Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step073Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step074Trace.step_trace": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "exact_original_fullcase_target": "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.Certificate.certificate_exists",
+    "actual_audit_seconds": 188.93,
+    "actual_audit_log": "verification/t03-case1465-original-full65-actual-audit-20261002.log",
+    "actual_audit_log_sha256": "3ba5cf200eae8281710a29ac01b043b8cafc9feca59a913a01033eafafc51c25",
+    "actual_CHECK": "verification/t03-case1465-original-full65-actual-audit-20261002-CHECK.json",
+    "actual_CHECK_sha256": "2ec22fba7638f31b0883a0e07c589024bfd3e6aa36441a0485f79c175a07b5ce",
+    "actual_audit_source": "verification/t03-case1465-original-full65-actual-audit-20261002.lean",
+    "actual_audit_source_sha256": "64658b23c54bc912ad24c7acc80eca0309239f8f1332ea9f02ee7e0febbd94b8",
+    "accepted_Certificate_source": "verification/t03-case1465-original-full65-actual-audit-20261002-Certificate.lean",
+    "accepted_Certificate_source_sha256": "400c07dfab0f986c08478bf514076ea843fe1be081ac55aa54cd3901990f1e41",
+    "accepted_Certificate_source_bytes": 19015,
+    "accepted_composition_source_sha256": "400c07dfab0f986c08478bf514076ea843fe1be081ac55aa54cd3901990f1e41",
+    "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.IndependentReplay.Certificate",
+    "genuine_receipt_sha256": "5ce03b6541f68c51f20329d146ff7726ed1f7f4035889213769cc3807fa3520f",
+    "source_closure_sha256": "a088109879bc2ff49d0c4fe70abf4f66a1f8f028143afafcf1c842789da8b7cb",
+    "actual_original_object_sha256": "5c942ba646f2bf2a336cf0dc103806d77274a9a200d16c29b37dfce05fb128c9",
+    "actual_original_object_independently_rehashed": true,
+    "direct_dependency_closure_keys": [
+      "11844c9f1f22d60e5ac0be9c221fa97c79dc945969524e0c395b4d5f682c0c53",
+      "54ff25c716c6124d58414e0330ff3450335c5e6be6c21d7d9d59413ae7523eda",
+      "4b84df983919b1196d8fedddbd89a0f25b55115b2acd1043047a22fc1740434a",
+      "c7397d22e371fdf60866c41af643ee1b3be83c2ebd481db7538ea9d04192c49e",
+      "d4298515275a40021da5291716301cec495a113110c9577bc1bef570873ed4ac",
+      "2d6f078a96e7858ac125bf18c1c04cdefcbc41237e1990126a45f3ec3b050a1f",
+      "d7dc9fb401269cb6ad9cfea426776a972feff2cfd516b3b8f2f4d7354a83608e",
+      "600790c4fda799d28909897e02ecc2d819711dbd822e0aa57b16e81a71b08607",
+      "a8f4c04da824600f7cfdd5bdfb738adb254857860209c6b2c3e2efefdea5e61c",
+      "f38a1fdeceae1a858b3f084e790b6e67e45ff8ea6f0ed8a65493f92364883166",
+      "f2c8599331ca033aea2dea4b36e3e885f597c442287473c67582544769302a1f",
+      "182bc0eab21223b15f392d4f6e1100251ebe8919106296d16698c6b729b7e7fe",
+      "064b5a041f693e78afe7785194a25c9565419317bece5f66d902c1639c75498a",
+      "731c64e48824aba7826ebc352fb4156c2a1a59be74b7e4efb5f07a112ab98020",
+      "dc2bdf5811ba9a8475bd45c35e3a1b2be95ff915f451647838598cf02ba50ef0",
+      "ca0a14db76e10f72097d06b1d70ffb0505997a49491bdeea086d2b1e637485c6",
+      "7a5e5a504b16b39c8ec768c51ba6bea071ce831eab30074d290f302e324da614"
+    ],
+    "root_source_and_exact_original_target_bytes_preserved": true,
+    "complete_source_closure_republished": false,
+    "cache_postflights_pending": false,
+    "two_public_combined_target_audits_accepted": false,
+    "final_return_zip_complete": false,
+    "whole_optimality_goal_complete": false,
+    "publication_Lean_jobs_worker_queue_source_changes": 0,
+    "cache_postflights_actually_accepted": true,
+    "cache_postflight_checkpoint": "verification/t03-case1465-independent-memory-retry-exact-live-cache-postflight-20261002.json",
+    "cache_postflight_original_private_record_sha256": "ad896168039cae495ae2ef062cebc04b85b5ef8a8875df568ff5a096d827866e"
+  },
+  "current_snapshot_date": "2026-10-02",
+  "original_project_full_case_audits": 173,
+  "required_original_project_full_cases": 173,
+  "remaining_original_case_certificates": [],
+  "latest_completed_cache_postflight_checkpoint": {
+    "status": "EXACT_FULLCASE_65_TARGET_AUDIT_ACCEPTED_AND_GENUINE_CACHE_BYTES_UNCHANGED",
+    "utc": "2026-10-02T06:30:36.262430+00:00",
+    "controller_sha256": "8db962186758a5415cfea3755d3861e7a417b8b3dda1a87748e480feb60b6fe7",
+    "actual_execution_sha256": "f85a544326861daba885a7e467e6123a142caf0ed0e1d0d905c1cba0c2271d8f",
+    "actual_check_sha256": "2ec22fba7638f31b0883a0e07c589024bfd3e6aa36441a0485f79c175a07b5ce",
+    "actual_axiom_log_sha256": "3ba5cf200eae8281710a29ac01b043b8cafc9feca59a913a01033eafafc51c25",
+    "audited_targets": 65,
+    "seconds": 184.593,
+    "scope": "Existing genuine objects and namespace hardlinks remain byte-identical to original runtime objects; actual original checker accepts all65 targets with standard axioms. This creates no proof receipts and claims no whole-proof performance benchmark.",
+    "original_private_record_sha256": "ad896168039cae495ae2ef062cebc04b85b5ef8a8875df568ff5a096d827866e",
+    "original_private_record_bytes": 5049979,
+    "publication_scope": "Compact completed original-checker and genuine-cache postflight record; large namespace member arrays omitted with original record digest retained. No cache bytes copied or rehashed by publication.",
+    "publication_Lean_jobs_worker_controls": 0,
+    "postflight": {
+      "task": "forward-case1465-packed-namespaced-independent-replay-memory-retry01-assembly-task.json",
+      "application_sha256": "d7e5c814c7726847afb3481761173b90f722cf7aafe44742ec879acfd5527b61",
+      "preparation_sha256": "205db7663499360ff6209b58b0c9b5e8b2de8c2ea4e9cb599f51bf17d112b617",
+      "cached_object_bytes": 3418898720,
+      "cached_objects": 11841,
+      "postflight": {
+        "status": "ORIGINAL_GENUINE_OBJECT_BYTES_MATCH_CACHE_CATALOG",
+        "checked_objects": 11841,
+        "checked_bytes": 3418898720,
+        "mismatches": [],
+        "elapsed_seconds": 53.89100000000326,
+        "proof_receipts_created": 0,
+        "compiler_processes_started": 0
+      },
+      "cached_object_postflight_hashes_validated": 11841,
+      "original_checker_independently_validated_sources_and_objects": true,
+      "proof_receipts_created": 0,
+      "additional_compiler_processes_started": 0
+    },
+    "additional_genuine_cache_postflight": {
+      "task": "forward-case1465-packed-namespaced-independent-replay-memory-retry01-assembly-task.json",
+      "application_sha256": "2399cb57918879d777f15dc2edcbf82672b8f96b39e4f59b2991139a2e519d9b",
+      "preparation_sha256": "8ecb3d09529d79b6dc80e8a1e25db0d11b01f1fd76bac3c81797bba29da28e65",
+      "cached_object_bytes": 1894518368,
+      "cached_objects": 9642,
+      "postflight": {
+        "status": "ORIGINAL_GENUINE_OBJECT_BYTES_MATCH_CACHE_CATALOG",
+        "checked_objects": 9642,
+        "checked_bytes": 1894518368,
+        "mismatches": [],
+        "elapsed_seconds": 41.59399999998277,
+        "proof_receipts_created": 0,
+        "compiler_processes_started": 0
+      },
+      "cached_object_postflight_hashes_validated": 9642,
+      "original_checker_independently_validated_sources_and_objects": true,
+      "proof_receipts_created": 0,
+      "additional_compiler_processes_started": 0
+    }
+  },
+  "case1465_complete_source_closure_republished": false
 }

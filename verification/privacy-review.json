@@ -592,5 +592,32 @@
     "new_theorems_or_fullcase_increments": 0,
     "Lean_jobs_worker_controls": 0,
     "personal_information_findings": []
+  },
+  "additional_cache172_metadata_review": {
+    "exact_record_hash_bindings": 6,
+    "cache_object_table_omitted": true,
+    "metadata_counts_bytes_disjoint_sets_helper_config_hashes_checked": true,
+    "object_copy_original_byte_validation_is_root_record_not_publication_rehash": true,
+    "actual_small_CHECK_log_pairs": 2,
+    "private_paths_and_process_ids_excluded": true,
+    "source_root_hashes_match_existing_bound_transport": true,
+    "new_assets": 0,
+    "fullcase_increment": 0,
+    "Lean_jobs_worker_controls": 0,
+    "personal_information_findings": []
+  },
+  "actual_fullcase1465_full65_review": {
+    "actual65_named_axiom_outputs_exactly_match_task": true,
+    "actual_fullcase_target_Std3": true,
+    "task_execution_wrapper_transport_and_raw_audit_source_CHECK_log_hashes_verified": true,
+    "exact_Certificate_composition_source_preserved": true,
+    "genuine_root_receipt_source_key_and_actual_object_verified": true,
+    "no_complete_large_closure_repacked": true,
+    "public2_cache_postflights_and_export_pending": false,
+    "Lean_jobs_worker_controls": 0,
+    "personal_information_findings": [],
+    "public2_and_export_pending": true,
+    "cache_postflights_recorded_actually_complete": true,
+    "large_cache_objects_not_rehashed_or_copied_by_publication": true
   }
 }
