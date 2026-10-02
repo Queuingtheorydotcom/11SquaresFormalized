@@ -33,7 +33,7 @@ theorem rational_residual_of_integer
     (fun k => if k = j then (![-1, 1] : Fin 2 → ℤ) s else 0)
     1000000000000 (residualNumerators b j s : ℤ) (by norm_num) (by
       simpa only [integerResidualCheck, show (1000000000000 : ℤ) ^ 2 =
-        1000000000000000000000000 by norm_num, mul_ite, mul_zero, mul_comm] using hcheck)
+        1000000000000000000000000 by norm_num, mul_ite, mul_zero, zero_mul, mul_comm] using hcheck)
   simpa only [certificateResidualCheck, certificateWeight, certificateMatrix,
     Int.cast_natCast, Int.cast_ofNat, apply_ite, Int.cast_zero, hsign,
     show (1000000000000 : ℚ) ^ 2 = 1000000000000000000000000 by norm_num] using h

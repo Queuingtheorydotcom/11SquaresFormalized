@@ -483,108 +483,208 @@ theorem branchDot068_32 (n : Fin 42 → ℕ) :
 def branchSparseDots068 : Fin 33 → (Fin 42 → ℕ) → ℤ :=
   ![sparseDot00, sparseDot01, sparseDot02, sparseDot03, sparseDot04, sparseDot05, sparseDot06, sparseDot07, sparseDot08, sparseDot09, sparseDot10, sparseDot11, sparseDot12, sparseDot13, sparseDot14, sparseDot15, sparseDot16, sparseDot17, sparseDot18, sparseDot19, sparseDot55, sparseDot21, sparseDot22, sparseDot23, sparseDot24, sparseDot25, sparseDot56, sparseDot27, sparseDot28, sparseDot42, sparseDot30, sparseDot31, sparseDot43]
 
+-- Keep vector indexing opaque when transporting the large matrix sum.
+private theorem branchSparseDot068_0 :
+    branchSparseDots068 0 = sparseDot00 := rfl
+
+private theorem branchSparseDot068_1 :
+    branchSparseDots068 1 = sparseDot01 := rfl
+
+private theorem branchSparseDot068_2 :
+    branchSparseDots068 2 = sparseDot02 := rfl
+
+private theorem branchSparseDot068_3 :
+    branchSparseDots068 3 = sparseDot03 := rfl
+
+private theorem branchSparseDot068_4 :
+    branchSparseDots068 4 = sparseDot04 := rfl
+
+private theorem branchSparseDot068_5 :
+    branchSparseDots068 5 = sparseDot05 := rfl
+
+private theorem branchSparseDot068_6 :
+    branchSparseDots068 6 = sparseDot06 := rfl
+
+private theorem branchSparseDot068_7 :
+    branchSparseDots068 7 = sparseDot07 := rfl
+
+private theorem branchSparseDot068_8 :
+    branchSparseDots068 8 = sparseDot08 := rfl
+
+private theorem branchSparseDot068_9 :
+    branchSparseDots068 9 = sparseDot09 := rfl
+
+private theorem branchSparseDot068_10 :
+    branchSparseDots068 10 = sparseDot10 := rfl
+
+private theorem branchSparseDot068_11 :
+    branchSparseDots068 11 = sparseDot11 := rfl
+
+private theorem branchSparseDot068_12 :
+    branchSparseDots068 12 = sparseDot12 := rfl
+
+private theorem branchSparseDot068_13 :
+    branchSparseDots068 13 = sparseDot13 := rfl
+
+private theorem branchSparseDot068_14 :
+    branchSparseDots068 14 = sparseDot14 := rfl
+
+private theorem branchSparseDot068_15 :
+    branchSparseDots068 15 = sparseDot15 := rfl
+
+private theorem branchSparseDot068_16 :
+    branchSparseDots068 16 = sparseDot16 := rfl
+
+private theorem branchSparseDot068_17 :
+    branchSparseDots068 17 = sparseDot17 := rfl
+
+private theorem branchSparseDot068_18 :
+    branchSparseDots068 18 = sparseDot18 := rfl
+
+private theorem branchSparseDot068_19 :
+    branchSparseDots068 19 = sparseDot19 := rfl
+
+private theorem branchSparseDot068_20 :
+    branchSparseDots068 20 = sparseDot55 := rfl
+
+private theorem branchSparseDot068_21 :
+    branchSparseDots068 21 = sparseDot21 := rfl
+
+private theorem branchSparseDot068_22 :
+    branchSparseDots068 22 = sparseDot22 := rfl
+
+private theorem branchSparseDot068_23 :
+    branchSparseDots068 23 = sparseDot23 := rfl
+
+private theorem branchSparseDot068_24 :
+    branchSparseDots068 24 = sparseDot24 := rfl
+
+private theorem branchSparseDot068_25 :
+    branchSparseDots068 25 = sparseDot25 := rfl
+
+private theorem branchSparseDot068_26 :
+    branchSparseDots068 26 = sparseDot56 := rfl
+
+private theorem branchSparseDot068_27 :
+    branchSparseDots068 27 = sparseDot27 := rfl
+
+private theorem branchSparseDot068_28 :
+    branchSparseDots068 28 = sparseDot28 := rfl
+
+private theorem branchSparseDot068_29 :
+    branchSparseDots068 29 = sparseDot42 := rfl
+
+private theorem branchSparseDot068_30 :
+    branchSparseDots068 30 = sparseDot30 := rfl
+
+private theorem branchSparseDot068_31 :
+    branchSparseDots068 31 = sparseDot31 := rfl
+
+private theorem branchSparseDot068_32 :
+    branchSparseDots068 32 = sparseDot43 := rfl
+
 theorem branchDots068 (n : Fin 42 → ℕ) (k : Fin 33) :
     (∑ i : Fin 42, (n i : ℤ) * roundedGradients (branchRows 68 i) k) = branchSparseDots068 k n := by
   fin_cases k
   · calc
       _ = sparseDot00 n := branchDot068_0 n
-      _ = _ := rfl
+      _ = _ := congrFun branchSparseDot068_0.symm n
   · calc
       _ = sparseDot01 n := branchDot068_1 n
-      _ = _ := rfl
+      _ = _ := congrFun branchSparseDot068_1.symm n
   · calc
       _ = sparseDot02 n := branchDot068_2 n
-      _ = _ := rfl
+      _ = _ := congrFun branchSparseDot068_2.symm n
   · calc
       _ = sparseDot03 n := branchDot068_3 n
-      _ = _ := rfl
+      _ = _ := congrFun branchSparseDot068_3.symm n
   · calc
       _ = sparseDot04 n := branchDot068_4 n
-      _ = _ := rfl
+      _ = _ := congrFun branchSparseDot068_4.symm n
   · calc
       _ = sparseDot05 n := branchDot068_5 n
-      _ = _ := rfl
+      _ = _ := congrFun branchSparseDot068_5.symm n
   · calc
       _ = sparseDot06 n := branchDot068_6 n
-      _ = _ := rfl
+      _ = _ := congrFun branchSparseDot068_6.symm n
   · calc
       _ = sparseDot07 n := branchDot068_7 n
-      _ = _ := rfl
+      _ = _ := congrFun branchSparseDot068_7.symm n
   · calc
       _ = sparseDot08 n := branchDot068_8 n
-      _ = _ := rfl
+      _ = _ := congrFun branchSparseDot068_8.symm n
   · calc
       _ = sparseDot09 n := branchDot068_9 n
-      _ = _ := rfl
+      _ = _ := congrFun branchSparseDot068_9.symm n
   · calc
       _ = sparseDot10 n := branchDot068_10 n
-      _ = _ := rfl
+      _ = _ := congrFun branchSparseDot068_10.symm n
   · calc
       _ = sparseDot11 n := branchDot068_11 n
-      _ = _ := rfl
+      _ = _ := congrFun branchSparseDot068_11.symm n
   · calc
       _ = sparseDot12 n := branchDot068_12 n
-      _ = _ := rfl
+      _ = _ := congrFun branchSparseDot068_12.symm n
   · calc
       _ = sparseDot13 n := branchDot068_13 n
-      _ = _ := rfl
+      _ = _ := congrFun branchSparseDot068_13.symm n
   · calc
       _ = sparseDot14 n := branchDot068_14 n
-      _ = _ := rfl
+      _ = _ := congrFun branchSparseDot068_14.symm n
   · calc
       _ = sparseDot15 n := branchDot068_15 n
-      _ = _ := rfl
+      _ = _ := congrFun branchSparseDot068_15.symm n
   · calc
       _ = sparseDot16 n := branchDot068_16 n
-      _ = _ := rfl
+      _ = _ := congrFun branchSparseDot068_16.symm n
   · calc
       _ = sparseDot17 n := branchDot068_17 n
-      _ = _ := rfl
+      _ = _ := congrFun branchSparseDot068_17.symm n
   · calc
       _ = sparseDot18 n := branchDot068_18 n
-      _ = _ := rfl
+      _ = _ := congrFun branchSparseDot068_18.symm n
   · calc
       _ = sparseDot19 n := branchDot068_19 n
-      _ = _ := rfl
+      _ = _ := congrFun branchSparseDot068_19.symm n
   · calc
       _ = sparseDot55 n := branchDot068_20 n
-      _ = _ := rfl
+      _ = _ := congrFun branchSparseDot068_20.symm n
   · calc
       _ = sparseDot21 n := branchDot068_21 n
-      _ = _ := rfl
+      _ = _ := congrFun branchSparseDot068_21.symm n
   · calc
       _ = sparseDot22 n := branchDot068_22 n
-      _ = _ := rfl
+      _ = _ := congrFun branchSparseDot068_22.symm n
   · calc
       _ = sparseDot23 n := branchDot068_23 n
-      _ = _ := rfl
+      _ = _ := congrFun branchSparseDot068_23.symm n
   · calc
       _ = sparseDot24 n := branchDot068_24 n
-      _ = _ := rfl
+      _ = _ := congrFun branchSparseDot068_24.symm n
   · calc
       _ = sparseDot25 n := branchDot068_25 n
-      _ = _ := rfl
+      _ = _ := congrFun branchSparseDot068_25.symm n
   · calc
       _ = sparseDot56 n := branchDot068_26 n
-      _ = _ := rfl
+      _ = _ := congrFun branchSparseDot068_26.symm n
   · calc
       _ = sparseDot27 n := branchDot068_27 n
-      _ = _ := rfl
+      _ = _ := congrFun branchSparseDot068_27.symm n
   · calc
       _ = sparseDot28 n := branchDot068_28 n
-      _ = _ := rfl
+      _ = _ := congrFun branchSparseDot068_28.symm n
   · calc
       _ = sparseDot42 n := branchDot068_29 n
-      _ = _ := rfl
+      _ = _ := congrFun branchSparseDot068_29.symm n
   · calc
       _ = sparseDot30 n := branchDot068_30 n
-      _ = _ := rfl
+      _ = _ := congrFun branchSparseDot068_30.symm n
   · calc
       _ = sparseDot31 n := branchDot068_31 n
-      _ = _ := rfl
+      _ = _ := congrFun branchSparseDot068_31.symm n
   · calc
       _ = sparseDot43 n := branchDot068_32 n
-      _ = _ := rfl
+      _ = _ := congrFun branchSparseDot068_32.symm n
 
 def branchIntegerCurvature068 : Fin 42 → ℕ := ![5144483, 5144483, 5144483, 5144483, 3112095, 3112095, 3112095, 3112095, 5144483, 5144483, 2286437, 2286437, 2286437, 2286437, 4064777, 4064777, 2286437, 2286437, 9519013, 34962020, 106147352, 100287661, 30814247, 240392540, 39659306, 39659306, 26751322, 26751322, 42331420, 42331420, 33780595, 79795748, 101981296, 101981296, 79086693, 79086693, 115699695, 115699695, 48290998, 48290998, 289103692, 289103692]
 

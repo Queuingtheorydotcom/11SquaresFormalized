@@ -80,6 +80,34 @@ Inspect actual failures and axiom reports. Do not claim success because source
 generation, a pilot, or an admitted theorem compiles. Defer optional legacy
 repairs unless needed by this closure; `--all` includes substantial extra work.
 
+## T06 return integrated on October 2
+
+Tiny dot's return `68818f523c83925f164be32ea3932bc60a7120d7` is now included
+on this handoff branch. It ports all 128 integer certificate shards, adds the
+two public axiom queries in `ElevenSquare.Tasks.T06.LocalIsolationAudit`, and
+preserves all 8,448 numerical checks and the original public statements.
+
+The supplied Linux Lean 4.34.1 evidence reports an accepted 833-module packet
+and 834-module public audit, with only the standard three axioms. Every one of
+those 834 source hashes matches this integrated checkout. Local integration
+checks passed all 18 preservation tests and the full T06 preservation checker;
+Lean was not rerun on the old Mac for this import. The reported compiler run
+was resumed with validated fingerprints, not a single fresh replay. See
+`verification/t06-local-isolation.md`, its JSON evidence, and
+`verification/t06-local-isolation-integration.json` for provenance.
+
+After setup on the new machine, reproduce this selected closure:
+
+```sh
+python3 -m unittest discover -s scripts -p 'test_check_t06_preservation.py' -v
+python3 scripts/check_t06_preservation.py
+python3 scripts/verify.py --module ElevenSquare.Tasks.T06.LocalIsolationAudit --keep-going
+```
+
+The returned `CertificateInteger087.lean` supersedes the older unverified draft
+saved in `dbf2eef`; that draft remains in Git history. This scoped T06 result
+does not complete baseline/prior replay or the global theorem.
+
 ## Remaining obligations and ownership
 
 Two source admissions remain: `Pending/S06_Returned.lean` and
@@ -91,8 +119,9 @@ types; they were **not proved**.
 T03 is untouched. Its latest checkpoint is `16cebf4`: case-1465 prefix-40 audits
 on old Lean 4.10 and 172/173 individual certificates, not a complete case-1465
 proof or an accepted aggregate on the current toolchain. A separate human owns
-returned-172 work. Dot 1 owns U5/PR4 integration; Dot 2 has T06 reserved.
-Tiny/Little ownership mapping is unknown: resolve it before overlapping edits.
+returned-172 work. The U5/PR4 dot task remains separate. Tiny dot delivered
+the integrated T06 port described above; coordinate any further T06 changes
+with that collaborator before overlapping edits.
 
 Commit `dbf2eef` preserves roughly 240 older, unverified compatibility drafts,
 separate from the bundling work. Review actual diffs and coordinate ownership;
