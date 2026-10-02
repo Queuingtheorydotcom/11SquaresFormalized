@@ -690,5 +690,14 @@
     "tool_sources_AST_parsed_only_not_run_or_ported": true,
     "final_public2_and_ZIP_pending": true,
     "source_and_proof_jobs_changes": 0
+  },
+  "final_import_only_actual_accepted_diagnostic_review": {
+    "actual_accepted_CHECK_empty_log_and_exact_diagnostic_source_preserved": true,
+    "mixed_v1_v2_chronology_and_terminal_resource_record_hashes_bound": true,
+    "event_tables_and_private_runtime_process_ids_omitted": true,
+    "helper_and_controller_sources_AST_parsed_only_by_publication": true,
+    "main_retry_phase_timestamped_not_final_acceptance": true,
+    "public2_ZIP_pending": true,
+    "publication_proof_cache_process_changes": 0
   }
 }

@@ -1,0 +1,51 @@
+{
+  "status": "ACTUAL_MIXED_POLICY_IMPORT_ONLY_DIAGNOSTIC_ELABORATION_ACCEPTED_RESOURCE_ADVISER_FINISHED",
+  "original_v1_running_record_sha256": "16870380887a560c67b8abcc5e2261f5e24f9df90c95ed5d6cd42f1223546bfa",
+  "original_v1_record_bytes": 16877,
+  "v1_last_observed_utc": "2026-10-02T13:39:17.052675+00:00",
+  "v1_events": 55,
+  "v1_policy": "Read-only private file-backed .olean mappings; MADV_PAGEOUT=21",
+  "original_policy_handoff_record_sha256": "91af2250f8d8125a4cdc20395af9c08802737d31f3ca4702d7495c61f7c415fb",
+  "handoff_utc": "2026-10-02T13:39:33.800403+00:00",
+  "same_original_checker_and_compiler_identity_verified": true,
+  "old_adviser_source_sha256": "25d5bbba40d8a4c6b96aa9dc42f8e6c90bb0faa0cda33cff0afee395388854c1",
+  "refined_adviser_source_sha256": "e3d74be9b714bf82feb90e9ba13429dc7f6c8f4a6f5887d540aa16575ba5df75",
+  "original_v2_terminal_record_sha256": "56e4ee4beafdb24bc401f4e838b128118073d53b899302490aed46f34d94f331",
+  "original_v2_record_bytes": 39532,
+  "v2_terminal_status": "CHECKER_HANDLE_TERMINAL_FINITE_ADVISER_FINISHED",
+  "v2_terminal_utc": "2026-10-02T13:56:16.067378+00:00",
+  "v2_events": 80,
+  "v2_policy": "Only recently unreferenced read-only private file-backed .olean mappings (Referenced=0) after clear_refs=3; MADV_PAGEOUT=21",
+  "v1_event_table_sha256": "5afbbf966f2144153d17a00e08ef0ed4c15b36e2aaf5ffbf9b87dd34fdcfde02",
+  "v2_event_table_sha256": "6f76990b1e40bc98c5b43ca65817846d426b86fe716488d421eaaa56625a5566",
+  "event_tables_and_private_runtime_process_identifiers_omitted": true,
+  "all_recorded_adviser_event_errors": null,
+  "source_object_receipt_bytes_changes_recorded": 0,
+  "compiler_configuration_changes_recorded": 0,
+  "proof_jobs_started_stopped_or_signalled_recorded": 0,
+  "diagnostic_result_includes_both_policies_not_an_isolated_policy_benchmark": true,
+  "no_general_or_end_to_end_speedup_claim": true,
+  "source_tools_provenance": [
+    {
+      "original_private_source_name": "manage_final_cold_readonly_olean_pages_20261002.py",
+      "original_private_source_sha256": "e3d74be9b714bf82feb90e9ba13429dc7f6c8f4a6f5887d540aa16575ba5df75",
+      "source_bytes": 8041,
+      "syntax_parsed_only_by_publication": true,
+      "executed_or_ported_by_publication": false
+    },
+    {
+      "original_private_source_name": "resume_verified_return_after_batch04_memory_20261002.py",
+      "original_private_source_sha256": "31fcdd12a83941cbf3cba2ded79703f4897e6629c1690f776a223b49c162bc5f",
+      "source_bytes": 12395,
+      "syntax_parsed_only_by_publication": true,
+      "executed_or_ported_by_publication": false
+    },
+    {
+      "original_private_source_name": "continue_final_return_when_diagnostic_passes_20261002.py",
+      "original_private_source_sha256": "5dbcc688567c56067a46d27de47067de86c0ba95c8f2c04b2b5e4e11841a26c9",
+      "source_bytes": 5981,
+      "syntax_parsed_only_by_publication": true,
+      "executed_or_ported_by_publication": false
+    }
+  ]
+}
