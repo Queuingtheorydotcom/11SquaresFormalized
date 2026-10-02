@@ -57,6 +57,17 @@ For every included source module, including progress outside the main chain:
 python3 scripts/verify.py --setup --all
 ```
 
+To check only the final theorem's dependency closure and its component axiom
+queries, use the focused audit:
+
+```sh
+python3 scripts/verify.py --module ElevenSquare.ProofAudit --keep-going
+```
+
+This target is still unfinished while the listed admissions or compiler failures
+remain. A focused result does not establish that every optional legacy module
+builds, and does not satisfy the full-upgrade publication gate.
+
 For a progress display and saved log, run `bash scripts/check_lean.sh`.
 It checks all modules and continues through independent failures.
 
@@ -100,7 +111,8 @@ fresh final audit.
 The source now wires wand125's 1,904 field and 27 generic exclusions into all
 1,931 native baseline indices, and all 76 published prior exclusions into the
 native prior interface. The public packing definitions and theorem statements
-are preserved. **These complete-family dependency paths are compiler-unverified
+are preserved. The final baseline dispatcher uses the complete imported family
+directly; independent native group proofs remain available as optional progress. **These complete-family dependency paths are compiler-unverified
 until full replay and axiom auditing finish.** See the
 [integration details](integrations/wand125/README.md) and
 [pinned release restoration instructions](integrations/wand125/release/README.md).

@@ -10,9 +10,9 @@ count does not establish verified proof completion.
 ## 1. Baseline source wiring; replay pending
 
 The baseline dispatcher now uses the published 1,904 field and 27 generic
-exclusions for all 1,931 native baseline indices. Its previously completed
-imported-field branch and native G003/G004/G007 branches remain intact. The
-public `baseline_certificate_exists` and `baseline_excluded` statements are
+exclusions for all 1,931 native baseline indices. The final dispatcher uses this complete family directly. The previously
+completed imported-field and native G003/G004/G007 proofs remain in their own
+modules as optional progress. The public `baseline_certificate_exists` and `baseline_excluded` statements are
 unchanged, as are the packing, closed cells, masks, and trace semantics.
 
 The three old private plan obligations in `PlanData.lean`,

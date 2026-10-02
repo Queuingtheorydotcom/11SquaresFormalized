@@ -6,8 +6,8 @@ import ElevenSquare.Pending.S06_Data
 import ElevenSquare.Pending.S06_Exclusion
 import ElevenSquare.Pending.S05_Trace
 
-/-! Baseline source wiring through completed native groups and the published
-field and generic families. The public contract is unchanged. Full compiler and
+/-! Baseline source wiring through the complete published field and generic
+families. Native group proofs remain independent. The public contract is unchanged. Full compiler and
 axiom acceptance of the new dependency path remains to be checked. -/
 
 namespace ElevenSquare.Pending

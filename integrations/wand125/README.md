@@ -79,8 +79,9 @@ the pinned toolchain. `ElevenSquare/Interop/Wand125/` supplies the connection:
   sources to those bridges. Their complete dependency paths await fresh compiler
   and axiom validation.
 
-The T01 dispatcher retains the imported-field branch and completed native
-groups, then uses the published baseline family. Its three admitted private plan
+The final T01 dispatcher uses the complete published baseline family directly.
+The imported-field and completed native group proofs remain available in their
+own modules as optional progress. Its three admitted private plan
 claims were retired as an unused alternative route and replaced by explicit
 requirement types; they were not proved. All completed native proofs remain.
 The prior wrapper keeps its original baseline premise, while its new source proof
