@@ -1,0 +1,18 @@
+{
+  "status": "TESTED_INDEPENDENT_REPLAY_ROUTE_ADOPTED_COMPONENT_AUDITS_AND_FINAL_CERTIFICATE_PENDING",
+  "utc": "2026-10-02T00:32:33.151769+00:00",
+  "legacy_queue_sha256": "7730df8c003c28b42fd1b4aaeaa1a16c011ac612501a5df4149c1013167195bc",
+  "legacy_all_source_and_actual_proofs_preserved": true,
+  "active_original_chunk182_allowed_to_finish": true,
+  "global_lean_workers": 4,
+  "additional_compilers_started": 0,
+  "original_fullcase_guard_retained": true,
+  "whole_case_certificate_increment": 0,
+  "legacy_native_producer_stopped_after_exact_identity_validation": true,
+  "legacy_queue_held_reversibly": true,
+  "metadata_omissions": [
+    "local process IDs and queue path"
+  ],
+  "original_private_record_sha256": "3a9a094a67d4e263b233632376802b7c592981507cb51239b2f64ddc08ce10b6",
+  "publication_Lean_jobs_worker_controls": 0
+}

@@ -1,0 +1,83 @@
+{
+  "status": "EXACT_ORIGINAL_CASE1464_FULL_CERTIFICATE_AND_ACTUAL_AXIOM_AUDIT_INDEPENDENTLY_VERIFIED",
+  "task": "forward-case1464-wand125-import-assembly-task.json",
+  "task_sha256": "1e437cfff43d08f9e5a70ca5ad4629f7497a3600daa5218898e0f7fd3831335b",
+  "execution_sha256": "b16c1a0ef12f0aa8a4e953022213be1311aa2971fc74fc1ae78926fa84420fa9",
+  "wrapper_sha256": "5b178fe75abd3675f6d76027f55ad5a919a4d420716b5760ec7d83e337f54dd8",
+  "transport_sha256": "0f800b18a616154d088ee7dea0af2e7e249cfeea91713626ff581d46d7a669f3",
+  "actual_target_axioms": {
+    "ElevenSquare.Pending.T03.Batch04.Case1464.Forward.Certificate.certificate_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "checks": [
+    {
+      "check": {
+        "status": "accepted",
+        "source": "ElevenSquare/Tasks/T03/Wand125/ReboundPrunedTrees/C1464/Main.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 103.49,
+        "lean_memory_limit_mb": 8192,
+        "lean_threads": 1,
+        "lean_thread_stack_kb": 32768,
+        "lean_main_stack_kb": 65536,
+        "cpu_seconds_limit": 1800,
+        "wall_seconds_limit": 2100,
+        "nice_increment": 0,
+        "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/Wand125/ReboundPrunedTrees/C1464/Main.olean",
+        "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+      },
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual_check_sha256": "b847cee48052233d331f28fbfc5b9a6a52e524df215e15bd49ec30ed0cad30e7"
+    },
+    {
+      "check": {
+        "status": "accepted",
+        "source": "ElevenSquare/Tasks/T03/Wand125/ReboundPrunedTrees/C1464/Certificate.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 46.48,
+        "lean_memory_limit_mb": 8192,
+        "lean_threads": 1,
+        "lean_thread_stack_kb": 32768,
+        "lean_main_stack_kb": 65536,
+        "cpu_seconds_limit": 1800,
+        "wall_seconds_limit": 2100,
+        "nice_increment": 0,
+        "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/Wand125/ReboundPrunedTrees/C1464/Certificate.olean",
+        "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+      },
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual_check_sha256": "bb62f15b247022a997c998ef97058f34ac1be6f3389e78ec601a263847436d52"
+    },
+    {
+      "check": {
+        "status": "accepted",
+        "source": "verification/HandoffAudit.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 52.37,
+        "lean_memory_limit_mb": 8192,
+        "lean_threads": 1,
+        "lean_thread_stack_kb": 32768,
+        "lean_main_stack_kb": 65536,
+        "cpu_seconds_limit": 1800,
+        "wall_seconds_limit": 2100,
+        "nice_increment": 0,
+        "emitted_olean": null,
+        "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+      },
+      "actual_log_sha256": "9f86ec3afc0905524f51b2a170068f081e668988fba210c256e7f5a826fef7fa",
+      "actual_check_sha256": "f92cc56211737ee28eca5d806704a411ae7a1962aefd86dc7a93cfe4ce529d97"
+    }
+  ],
+  "whole_case_certificate_increment": 1,
+  "original_full_integration_count": 172,
+  "upstream_supplied_source_archives": 172,
+  "remaining_original_cases": [
+    1465
+  ],
+  "actual_raw_logs_preserved_byte_identically": true,
+  "maximum_global_lean_workers": 4,
+  "publication_Lean_jobs_worker_controls": 0
+}

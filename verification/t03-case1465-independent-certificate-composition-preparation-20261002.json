@@ -1,0 +1,16 @@
+{
+  "status": "EXACT_ORIGINAL_CERTIFICATE_COMPOSITION_SOURCE_PREPARED_NOT_KERNEL_CHECKED",
+  "utc": "2026-10-02T00:33:59.985382+00:00",
+  "task": "forward-case1465-packed-namespaced-independent-replay-assembly-task.json",
+  "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.IndependentReplay.Certificate",
+  "source_bytes": 19015,
+  "source_sha256": "400c07dfab0f986c08478bf514076ea843fe1be081ac55aa54cd3901990f1e41",
+  "prefix_through_step012_reused": true,
+  "remaining_step_count": 62,
+  "all_universal_quantifiers_covercap_and_exact_existential_type_preserved": true,
+  "requires_all_component_actual_audits_before_release": true,
+  "whole_case_certificate_increment": 0,
+  "compiler_processes_started": 0,
+  "original_private_record_sha256": "e8d1ed1872c08d67ca6d9cf9d4e02a2d3af90b1c5fb37f5e53376adf7576d0d3",
+  "publication_Lean_jobs_worker_controls": 0
+}

@@ -1,0 +1,84 @@
+{
+  "status": "EXACT_ORIGINAL_CASE1373_FULL_CERTIFICATE_AND_ACTUAL_AXIOM_AUDIT_INDEPENDENTLY_VERIFIED",
+  "task": "forward-case1373-wand125-import-assembly-task.json",
+  "task_sha256": "7da5c9e566b2d5bf6586654cc4579af705e27f13f8cfd977ca7c1ad916f68a1a",
+  "execution_sha256": "1034ac63368ddcd272a18dcd16d253467054fd71319e6fc00509e50b3d3ff6b3",
+  "wrapper_sha256": "5e7e14bf374840b22bb8303e726880ac7d3a3f5cf86d15ffde1c0f4cbe204f64",
+  "transport_sha256": "6f8b9414d5c373d236d3fec8a8526d6ec0eba0f67296b5e4f41efa95806730d7",
+  "actual_target_axioms": {
+    "ElevenSquare.Pending.T03.Batch03.Case1373.Forward.Certificate.certificate_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "checks": [
+    {
+      "check": {
+        "status": "accepted",
+        "source": "ElevenSquare/Tasks/T03/Wand125/PrunedTrees/C1373/Main.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 105.04,
+        "lean_memory_limit_mb": 8192,
+        "lean_threads": 1,
+        "lean_thread_stack_kb": 32768,
+        "lean_main_stack_kb": 65536,
+        "cpu_seconds_limit": 1800,
+        "wall_seconds_limit": 2100,
+        "nice_increment": 0,
+        "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/Wand125/PrunedTrees/C1373/Main.olean",
+        "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+      },
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual_check_sha256": "5d0afffcec48e4b8b9717197da21900994eaa26a0d98aa8a957a4fdb552bd8e9"
+    },
+    {
+      "check": {
+        "status": "accepted",
+        "source": "ElevenSquare/Tasks/T03/Wand125/PrunedTrees/C1373/Certificate.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 38.26,
+        "lean_memory_limit_mb": 8192,
+        "lean_threads": 1,
+        "lean_thread_stack_kb": 32768,
+        "lean_main_stack_kb": 65536,
+        "cpu_seconds_limit": 1800,
+        "wall_seconds_limit": 2100,
+        "nice_increment": 0,
+        "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/Wand125/PrunedTrees/C1373/Certificate.olean",
+        "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+      },
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual_check_sha256": "5e2288510a20665b8b556eb0ad3be88eaac83a88c27e97a9a38fa203a8701fec"
+    },
+    {
+      "check": {
+        "status": "accepted",
+        "source": "verification/HandoffAudit.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 43.85,
+        "lean_memory_limit_mb": 8192,
+        "lean_threads": 1,
+        "lean_thread_stack_kb": 32768,
+        "lean_main_stack_kb": 65536,
+        "cpu_seconds_limit": 1800,
+        "wall_seconds_limit": 2100,
+        "nice_increment": 0,
+        "emitted_olean": null,
+        "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+      },
+      "actual_log_sha256": "a097ff09cd2c3da95bf3fd3894c5b1b1f08a08432517e4a1b96e0c4c375f61c3",
+      "actual_check_sha256": "11dc51c6e43ed1261a5dd711a8ced95f7693124358d6acbbdca875d88447a9c9"
+    }
+  ],
+  "whole_case_certificate_increment": 1,
+  "original_full_integration_count": 171,
+  "upstream_supplied_source_archives": 172,
+  "remaining_original_cases": [
+    1464,
+    1465
+  ],
+  "actual_raw_logs_preserved_byte_identically": true,
+  "maximum_global_lean_workers": 4,
+  "publication_Lean_jobs_worker_controls": 0
+}

@@ -42828,18 +42828,18 @@
     },
     {
       "path": "MISSING.md",
-      "bytes": 8619,
-      "sha256": "579374b75b5cc456a9b9a8cab7fd4b9cf20e64159b26ff146e4ad46de5b3bdfe"
+      "bytes": 9072,
+      "sha256": "d8fa570061963fce88dd19d8ec28ce550936674de301525f0fb3d1476d71a370"
     },
     {
       "path": "README.md",
-      "bytes": 36263,
-      "sha256": "a59f0b626e28f04113be10db531859fb453d233be46492963d5daef35217a934"
+      "bytes": 39412,
+      "sha256": "9e97ca75981087e556947a7e03f4f6c2da4c2c2d17735db43984f8d018bbb321"
     },
     {
       "path": "T03_PROGRESS.md",
-      "bytes": 113039,
-      "sha256": "72cf3c21325291cc67a57b7090688599b041aae5b3640102967ec4f0f0306e58"
+      "bytes": 116188,
+      "sha256": "16fd58590838406175033a31eb822a4a57cbbf3378cf2fb043eb06990a212fc7"
     },
     {
       "path": "lake-manifest.json",
@@ -43098,8 +43098,8 @@
     },
     {
       "path": "verification/privacy-review.json",
-      "bytes": 24859,
-      "sha256": "8fed16bfcf0dc359db5a8608581652d1c3a221b1d43e67b2995f628912496679"
+      "bytes": 25702,
+      "sha256": "ecbbbbcd5720c6351785d411633211ce20b4722275af15faff3df47fa36d0a35"
     },
     {
       "path": "verification/source-check.json",
@@ -47432,6 +47432,46 @@
       "sha256": "705911d7df99832e3eea397a9df959fc3d34fb9bfdfd733088b114969a748a76"
     },
     {
+      "path": "verification/t03-case1465-independent-certificate-composition-preparation-20261002.json",
+      "bytes": 863,
+      "sha256": "bf19d8405a6094f4a5073db76e04d929e5f3325a1c7dfd0463832c652fe8905a"
+    },
+    {
+      "path": "verification/t03-case1465-independent-finite-file-transfer-promotion-20261002.json",
+      "bytes": 2283,
+      "sha256": "0bcc9148b75cec3c8e6a3c3a960afba127830b7eba265b628aa4ad9c532e2af8"
+    },
+    {
+      "path": "verification/t03-case1465-independent-four-step-batch000-retry01-actual-checkpoint-20261002-00-actual-CHECK.json",
+      "bytes": 600,
+      "sha256": "2037a51c76b257bfd9596472af83126149c9488f94c9e2da7e79ae83b76b5988"
+    },
+    {
+      "path": "verification/t03-case1465-independent-four-step-batch000-retry01-actual-checkpoint-20261002-00-actual.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "verification/t03-case1465-independent-four-step-batch000-retry01-actual-checkpoint-20261002-01-actual-CHECK.json",
+      "bytes": 446,
+      "sha256": "721edb13618fcc697a32d795704367385dbdfa0a96416471d494aa70c2fc456f"
+    },
+    {
+      "path": "verification/t03-case1465-independent-four-step-batch000-retry01-actual-checkpoint-20261002-01-actual.log",
+      "bytes": 620,
+      "sha256": "01f4f3080867277e5ab4559876eb59f72150d0097b3b50bfac159241cf2aa7ca"
+    },
+    {
+      "path": "verification/t03-case1465-independent-four-step-batch000-retry01-actual-checkpoint-20261002-task.json",
+      "bytes": 576,
+      "sha256": "bea042ea47893fb7b79b834e96944e49687fcac915325667c33068d0b5de45df"
+    },
+    {
+      "path": "verification/t03-case1465-independent-four-step-batch000-retry01-actual-checkpoint-20261002.json",
+      "bytes": 5050,
+      "sha256": "33865fe385782339992aee196cfcc594d02cf6bc739f9fb923bda01ae06cbf71"
+    },
+    {
       "path": "verification/t03-case1465-independent-numeric-state-pilot-00-actual-CHECK.json",
       "bytes": 569,
       "sha256": "acb4663af2861f16fdcb3c25347206b11eb9f430b6ba5044d1e0a75efdd37abe"
@@ -47485,6 +47525,41 @@
       "path": "verification/t03-case1465-independent-numeric-state-pilot-source-release-20261001.json",
       "bytes": 4054,
       "sha256": "0c2060535f0c6c2a5e6251ba3d99f6c16c4da01c33b0ded12e1129d8fdedc8b1"
+    },
+    {
+      "path": "verification/t03-case1465-independent-partner01801-pilot-actual-checkpoint-20261001-00-actual-CHECK.json",
+      "bytes": 581,
+      "sha256": "dc8164a30d8b3d089b2472f6d41468172da44e420ac479aed0bf46d5c880bc97"
+    },
+    {
+      "path": "verification/t03-case1465-independent-partner01801-pilot-actual-checkpoint-20261001-00-actual.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "verification/t03-case1465-independent-partner01801-pilot-actual-checkpoint-20261001-01-actual-CHECK.json",
+      "bytes": 446,
+      "sha256": "742bbdaa2d12fc534f826fea0b059e205ef4cf2b9c2b47b15d11b2e1db359231"
+    },
+    {
+      "path": "verification/t03-case1465-independent-partner01801-pilot-actual-checkpoint-20261001-01-actual.log",
+      "bytes": 167,
+      "sha256": "d59bd5ffa83648379f57013eb7ec28fed1d1ac510bc9a740e80d796dd9f1fd05"
+    },
+    {
+      "path": "verification/t03-case1465-independent-partner01801-pilot-actual-checkpoint-20261001-task.json",
+      "bytes": 279,
+      "sha256": "4ddfaad739fbd653ffb35e1d9ea2a7a98e53f32bd7a0cb0d79094eb8c69bf31b"
+    },
+    {
+      "path": "verification/t03-case1465-independent-partner01801-pilot-actual-checkpoint-20261001.json",
+      "bytes": 4499,
+      "sha256": "03d76c494fadb5a86b844dde4cf69c6e40115f29ee32715be2fc2d1f19e6247b"
+    },
+    {
+      "path": "verification/t03-case1465-independent-replay-route-adoption-20261002.json",
+      "bytes": 838,
+      "sha256": "99a37b2cc4a9f48bda875df8b8fab2aad68500583be703d80e5d172829f8c86e"
     },
     {
       "path": "verification/t03-case1465-operational-retry.json",
@@ -47768,8 +47843,8 @@
     },
     {
       "path": "verification/t03-progress.json",
-      "bytes": 146254,
-      "sha256": "5618ff8bae5dfb60b07987b9047a6bc45d469ae6266376bdc97caa3a8781657c"
+      "bytes": 156242,
+      "sha256": "247fa4e7e8b96e70e3a19b3bd6b52bca8c452f98d7c9a8e7218581db88853dbb"
     },
     {
       "path": "verification/t03-ready-archive-prefilter-checkpoint-20261001.json",
@@ -47805,6 +47880,51 @@
       "path": "verification/t03-wand125-case-mask-existing-opaque-seed-binding-reuse-20261001.json",
       "bytes": 6753,
       "sha256": "011c5b6d005999caa39313e95809d056604b75aa30331773616077dd1f56d337"
+    },
+    {
+      "path": "verification/t03-wand125-case1373-00-actual-CHECK.json",
+      "bytes": 548,
+      "sha256": "5d0afffcec48e4b8b9717197da21900994eaa26a0d98aa8a957a4fdb552bd8e9"
+    },
+    {
+      "path": "verification/t03-wand125-case1373-00-actual.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "verification/t03-wand125-case1373-01-actual-CHECK.json",
+      "bytes": 561,
+      "sha256": "5e2288510a20665b8b556eb0ad3be88eaac83a88c27e97a9a38fa203a8701fec"
+    },
+    {
+      "path": "verification/t03-wand125-case1373-01-actual.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "verification/t03-wand125-case1373-02-actual-CHECK.json",
+      "bytes": 446,
+      "sha256": "11dc51c6e43ed1261a5dd711a8ced95f7693124358d6acbbdca875d88447a9c9"
+    },
+    {
+      "path": "verification/t03-wand125-case1373-02-actual.log",
+      "bytes": 144,
+      "sha256": "a097ff09cd2c3da95bf3fd3894c5b1b1f08a08432517e4a1b96e0c4c375f61c3"
+    },
+    {
+      "path": "verification/t03-wand125-case1373-accepted-source-release-20261002.json",
+      "bytes": 9545,
+      "sha256": "16d8a6a7fbae55ff6586042227aa9d97b476899c377f618a7ba4de8dd5e121f1"
+    },
+    {
+      "path": "verification/t03-wand125-case1373-full-original-audit-checkpoint-20261002.json",
+      "bytes": 421163,
+      "sha256": "e06906293ebcee3fb739ba9dac494ce6c74838442b40293f8538d094d7c8acde"
+    },
+    {
+      "path": "verification/t03-wand125-case1373-original-target-actual-checkpoint-20261002.json",
+      "bytes": 3517,
+      "sha256": "cea848d0cbf9f3cb29bfa3e9663b57ee82fb751d678baa2a5b96cc3c49f7a04d"
     },
     {
       "path": "verification/t03-wand125-case1393-00-actual-CHECK.json",
@@ -47865,6 +47985,46 @@
       "path": "verification/t03-wand125-case1463-full-original-audit.txt",
       "bytes": 144,
       "sha256": "7f0c506d9b9836ec1634a203b9ef794f2f6bf89845b1c359b9e0d78e59e0d29e"
+    },
+    {
+      "path": "verification/t03-wand125-case1464-00-actual-CHECK.json",
+      "bytes": 562,
+      "sha256": "b847cee48052233d331f28fbfc5b9a6a52e524df215e15bd49ec30ed0cad30e7"
+    },
+    {
+      "path": "verification/t03-wand125-case1464-00-actual.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "verification/t03-wand125-case1464-01-actual-CHECK.json",
+      "bytes": 575,
+      "sha256": "bb62f15b247022a997c998ef97058f34ac1be6f3389e78ec601a263847436d52"
+    },
+    {
+      "path": "verification/t03-wand125-case1464-01-actual.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "verification/t03-wand125-case1464-02-actual-CHECK.json",
+      "bytes": 446,
+      "sha256": "f92cc56211737ee28eca5d806704a411ae7a1962aefd86dc7a93cfe4ce529d97"
+    },
+    {
+      "path": "verification/t03-wand125-case1464-02-actual.log",
+      "bytes": 144,
+      "sha256": "9f86ec3afc0905524f51b2a170068f081e668988fba210c256e7f5a826fef7fa"
+    },
+    {
+      "path": "verification/t03-wand125-case1464-full-original-audit-checkpoint-20261002.json",
+      "bytes": 423598,
+      "sha256": "baba20d4639ea77a6f7616410597798adbe392b1cc7bf678def7a5dcf1aca6c9"
+    },
+    {
+      "path": "verification/t03-wand125-case1464-original-target-actual-checkpoint-20261002.json",
+      "bytes": 3535,
+      "sha256": "3091c3e4aa6141d4cfc452620f1e73d59f55bd4363857227d95ef83831c53261"
     },
     {
       "path": "verification/t03-wand125-case1499-accepted-source-release-20261001.json",

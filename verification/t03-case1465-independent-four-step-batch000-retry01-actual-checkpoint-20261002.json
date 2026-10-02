@@ -1,0 +1,110 @@
+{
+  "status": "ACTUAL_REPLAY_COMPONENT_AND_EXACT_TARGET_AXIOM_AUDITS_PASSED",
+  "utc": "2026-10-02T00:24:44.825008+00:00",
+  "task": "library-case1465-node998-independent-replay-batch000-retry01-task.json",
+  "task_sha256": "bea042ea47893fb7b79b834e96944e49687fcac915325667c33068d0b5de45df",
+  "transport_sha256": "fdc9e276324717de09a7fef90df4dd80f713bd52564bcf29df5174772b775307",
+  "execution": "helper-library-case1465-node998-independent-replay-batch000-retry01-task.json",
+  "execution_sha256": "1fcd661a52b10fd5d131ea45c82a0f7097cf8e081f583960417aea5c1d197c0c",
+  "wrapper": "helper-library-case1465-node998-independent-replay-batch000-retry01-task.log",
+  "wrapper_sha256": "8e2ea533cc9ad13157ce77fb6542740b7010b35f6fa1f6e6bdf88e72220403eb",
+  "actual_target_axioms": {
+    "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step013Trace.step_trace": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step014Trace.step_trace": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step015Trace.step_trace": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step016Trace.step_trace": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "original_checker_unchanged": true,
+  "whole_case_certificate_increment": 0,
+  "maximum_global_lean_workers": 4,
+  "scope": "Actual component proof and named transitive target audits only; not a full case certificate.",
+  "checks": [
+    {
+      "actual_check_sha256": "2037a51c76b257bfd9596472af83126149c9488f94c9e2da7e79ae83b76b5988",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "check": {
+        "status": "accepted",
+        "source": "ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/ReplayBatch000Retry01.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 206.79,
+        "lean_memory_limit_mb": 8192,
+        "lean_threads": 1,
+        "lean_thread_stack_kb": 32768,
+        "lean_main_stack_kb": 65536,
+        "cpu_seconds_limit": 1800,
+        "wall_seconds_limit": 2100,
+        "nice_increment": 0,
+        "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/ReplayBatch000Retry01.olean",
+        "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+      }
+    },
+    {
+      "actual_check_sha256": "721edb13618fcc697a32d795704367385dbdfa0a96416471d494aa70c2fc456f",
+      "actual_log_sha256": "01f4f3080867277e5ab4559876eb59f72150d0097b3b50bfac159241cf2aa7ca",
+      "check": {
+        "status": "accepted",
+        "source": "verification/HandoffAudit.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 57.06,
+        "lean_memory_limit_mb": 8192,
+        "lean_threads": 1,
+        "lean_thread_stack_kb": 32768,
+        "lean_main_stack_kb": 65536,
+        "cpu_seconds_limit": 1800,
+        "wall_seconds_limit": 2100,
+        "nice_increment": 0,
+        "emitted_olean": null,
+        "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+      }
+    }
+  ],
+  "source_synchronization": {
+    "status": "EXACT_NATIVE_SOURCE_AND_PROVISIONAL_GENUINE_RECEIPT_SYNC_COMPLETE",
+    "utc": "2026-10-02T00:07:40.263295+00:00",
+    "archive_sha256": "fdc9e276324717de09a7fef90df4dd80f713bd52564bcf29df5174772b775307",
+    "verified_members": 1726,
+    "verified_source_bytes": 174845851,
+    "source_files_written": 35,
+    "source_files_reused": 1691,
+    "obsolete_matching_sources_removed": 10193,
+    "source_sync_seconds": 133.797,
+    "total_seconds": 158.703,
+    "genuine_receipts_copied": 21,
+    "existing_genuine_receipts_preserved": 1695,
+    "proof_receipts_created": 0,
+    "lean_processes_started": 0,
+    "supplied_checker_still_validates_sources_objects_and_actual_proofs": true
+  },
+  "original_private_record_sha256": "dc1fca176d168f9e23d786df3a87210c883dd52cabb5db027a4145e672b0848c",
+  "metadata_omissions": [
+    "machine-specific actual/preserved log and source-sync paths"
+  ],
+  "root_source_bindings": [
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.IndependentReplay.ReplayBatch000Retry01",
+      "source_bytes": 2012356,
+      "source_sha256": "ca31a80c2ab51beaad725c75d055e29647acb87ceee3e7122547ec49c6fbc7fc"
+    }
+  ],
+  "task_snapshot_sha256": "bea042ea47893fb7b79b834e96944e49687fcac915325667c33068d0b5de45df",
+  "publication_verification_scope": "Compact actual task/execution/wrapper/CHECK/log and available root source-member hashes. Complete pilot closures and compiler-object bytes are not rehashed or distributed in this metadata checkpoint.",
+  "complete_pilot_source_closure_published": false,
+  "full_transport_rehashed_for_this_compact_checkpoint": false,
+  "publication_Lean_jobs_worker_controls": 0
+}

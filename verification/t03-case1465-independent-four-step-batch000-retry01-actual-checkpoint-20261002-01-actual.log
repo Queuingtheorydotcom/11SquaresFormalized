@@ -1,0 +1,12 @@
+'ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step013Trace.step_trace' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step014Trace.step_trace' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step015Trace.step_trace' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step016Trace.step_trace' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

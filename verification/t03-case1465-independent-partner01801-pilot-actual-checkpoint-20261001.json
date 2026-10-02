@@ -1,0 +1,95 @@
+{
+  "status": "ACTUAL_REPLAY_COMPONENT_AND_EXACT_TARGET_AXIOM_AUDITS_PASSED",
+  "utc": "2026-10-01T23:56:08.688884+00:00",
+  "task": "library-case1465-node998-independent-partner01801-pilot-task.json",
+  "task_sha256": "4ddfaad739fbd653ffb35e1d9ea2a7a98e53f32bd7a0cb0d79094eb8c69bf31b",
+  "transport_sha256": "413d34225b131b509503fbd7adf9a4d4731b4fcf4091dc4cd1f5739a93624e11",
+  "execution": "primary-library-case1465-node998-independent-partner01801-pilot-task.json",
+  "execution_sha256": "136cfe1e246ab690668be087374b8b7262b262a8333219461fc3d866c8715391",
+  "wrapper": "primary-library-case1465-node998-independent-partner01801-pilot-task.log",
+  "wrapper_sha256": "4520d442d61dfbe52c99986e55da09c724073fa4bcd94b32136dc464c3df77b1",
+  "actual_target_axioms": {
+    "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step018Partner01.Proof.actual_cover": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "original_checker_unchanged": true,
+  "whole_case_certificate_increment": 0,
+  "maximum_global_lean_workers": 4,
+  "scope": "Actual component proof and named transitive target audits only; not a full case certificate.",
+  "checks": [
+    {
+      "actual_check_sha256": "dc8164a30d8b3d089b2472f6d41468172da44e420ac479aed0bf46d5c880bc97",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "check": {
+        "status": "accepted",
+        "source": "ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/Partner01801.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 50.72,
+        "lean_memory_limit_mb": 8192,
+        "lean_threads": 1,
+        "lean_thread_stack_kb": 32768,
+        "lean_main_stack_kb": 65536,
+        "cpu_seconds_limit": 1800,
+        "wall_seconds_limit": 2100,
+        "nice_increment": 0,
+        "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/Partner01801.olean",
+        "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+      }
+    },
+    {
+      "actual_check_sha256": "742bbdaa2d12fc534f826fea0b059e205ef4cf2b9c2b47b15d11b2e1db359231",
+      "actual_log_sha256": "d59bd5ffa83648379f57013eb7ec28fed1d1ac510bc9a740e80d796dd9f1fd05",
+      "check": {
+        "status": "accepted",
+        "source": "verification/HandoffAudit.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 25.75,
+        "lean_memory_limit_mb": 8192,
+        "lean_threads": 1,
+        "lean_thread_stack_kb": 32768,
+        "lean_main_stack_kb": 65536,
+        "cpu_seconds_limit": 1800,
+        "wall_seconds_limit": 2100,
+        "nice_increment": 0,
+        "emitted_olean": null,
+        "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+      }
+    }
+  ],
+  "source_synchronization": {
+    "status": "EXACT_NATIVE_SOURCE_AND_PROVISIONAL_GENUINE_RECEIPT_SYNC_COMPLETE",
+    "utc": "2026-10-01T23:50:30.628021+00:00",
+    "archive_sha256": "413d34225b131b509503fbd7adf9a4d4731b4fcf4091dc4cd1f5739a93624e11",
+    "verified_members": 165,
+    "verified_source_bytes": 10849340,
+    "source_files_written": 6,
+    "source_files_reused": 159,
+    "obsolete_matching_sources_removed": 1564,
+    "source_sync_seconds": 2.219,
+    "total_seconds": 3.641,
+    "genuine_receipts_copied": 0,
+    "existing_genuine_receipts_preserved": 155,
+    "proof_receipts_created": 0,
+    "lean_processes_started": 0,
+    "supplied_checker_still_validates_sources_objects_and_actual_proofs": true
+  },
+  "original_private_record_sha256": "795c36fb8f4aa978b895f8d489a9324c1f8a8374d26f0ae100cdd40268a66eec",
+  "metadata_omissions": [
+    "machine-specific actual/preserved log and source-sync paths"
+  ],
+  "root_source_bindings": [
+    {
+      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.IndependentReplay.Partner01801",
+      "source_bytes": 347605,
+      "source_sha256": "68d842544e3f8d93e746288260e5443e54892a056043b7ab302ad91ab9657b8c"
+    }
+  ],
+  "task_snapshot_sha256": "4ddfaad739fbd653ffb35e1d9ea2a7a98e53f32bd7a0cb0d79094eb8c69bf31b",
+  "publication_verification_scope": "Compact actual task/execution/wrapper/CHECK/log and available root source-member hashes. Complete pilot closures and compiler-object bytes are not rehashed or distributed in this metadata checkpoint.",
+  "complete_pilot_source_closure_published": false,
+  "full_transport_rehashed_for_this_compact_checkpoint": false,
+  "publication_Lean_jobs_worker_controls": 0
+}

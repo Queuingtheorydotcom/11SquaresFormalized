@@ -1,4 +1,46 @@
-# Accepted original case 1393 and geometric Step012 pilot
+# All supplied cases audited and local case 1465 progress
+
+Upstream supplies **172 case-proof source archives**; **only case 1465 is absent**.
+All 172 supplied cases now have completed original-project full-certificate
+audits: **172/173**, with **case 1465 alone remaining**. Public family assembly
+and the final global optimality proof are separate, unfinished obligations.
+
+**Cases 1373 and 1464's exact original full certificates now pass** the unchanged
+pinned Lean 4.10.0-rc2 checker, with only `propext`, `Classical.choice` and `Quot.sound`.
+Case 1373: Main **105.04s**, Certificate **38.26s**, full audit **43.85s**.
+Case 1464: Main **103.49s**, Certificate **46.48s**, full audit **52.37s**.
+
+The [case 1373 accepted source release](https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/tag/t03-audited171-imported1373-20261002) supplies **709 exact
+modules /74,648,300 source bytes**. The [case 1464 accepted source release](https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/tag/t03-audited172-imported1464-20261002)
+supplies **713 exact modules /80,774,230 source bytes**, including
+the actual accepted ReboundPrunedTrees root. [Complete source/object/audit bindings](verification/t03-wand125-case1373-accepted-source-release-20261002.json)
+preserve every exact source member, genuine closure/receipt and actual object hash.
+The earlier frozen case 1373 release retains its historical 171-count checkpoint.
+
+Compact actual case 1465 component audits are also included: Partner01801
+**50.72s compile /25.75s audit**, and steps 013–016 retry batch **206.79s compile
+/57.06s audit**, all named targets using only the three standard axioms. These
+checked components add no full certificate. Their complete source closures are
+not distributed in this metadata checkpoint; later unverified batches and
+case 1465's whole proof remain pending. No whole-proof speedup is claimed.
+
+The remaining case 1465 route now separates numeric states and individual
+geometric steps. Its [route adoption](verification/t03-case1465-independent-replay-route-adoption-20261002.json) preserves the old source/proof
+path and holds its queue reversibly. The [exact certificate composition](verification/t03-case1465-independent-certificate-composition-preparation-20261002.json)
+is prepared and remains unverified; it requires all component audits before the
+original full certificate check. A [finite 17-task transfer extension](verification/t03-case1465-independent-finite-file-transfer-promotion-20261002.json)
+keeps the original checker, compiler and identity guards unchanged. The same
+four-worker pool continues; these operational records add no proof acceptance.
+
+Exact accepted source/task/pinned environment/checker bytes are preserved.
+Main, earlier releases and live proof work are unchanged. Merged replay, the
+public case-family theorem, global optimality and final return remain unfinished.
+See [MISSING.md](MISSING.md) and [T03_PROGRESS.md](T03_PROGRESS.md).
+
+## Earlier accepted-case and geometric-pilot checkpoint
+
+The following preserves its earlier 170-count snapshot; the two accepted full
+certificates and component audits above supersede their earlier pending status.
 
 Upstream supplies **172 case-proof source archives**; **only case 1465 is absent**.
 We are reusing these supplied proofs. The separate original-project full

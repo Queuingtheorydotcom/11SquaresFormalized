@@ -50,8 +50,13 @@ useful components, not a complete case exclusion.
 
 ## 3. Complete the returned-exclusion family
 
-Current full-certificate integration status is **170/173**, with 1373, 1464 and
-1465 remaining. The [accepted case 1393 and geometric Step012 source releases](verification/t03-case1393-and-geometric1465-accepted-source-releases-20261001.json)
+The [case 1373 exact full certificate and source release](verification/t03-wand125-case1373-accepted-source-release-20261002.json) and case1464 closures add
+two original integrations, now 172/173. The separately audited case 1465 partner
+and four-step components add no full case certificate. Earlier dated checkpoint
+paragraphs below preserve their historical scope and integration metrics.
+
+
+Current full-certificate integration status is **172/173**, with case 1465 alone remaining. The [accepted case 1393 and geometric Step012 source releases](verification/t03-case1393-and-geometric1465-accepted-source-releases-20261001.json)
 provide the new full certificate and a separate checked single-step pilot. The
 pilot adds no full case; all later replay batches remain pending. Earlier dated
 checkpoint paragraphs below preserve their historical integration metrics.
@@ -82,16 +87,16 @@ only the three standard axioms. A standalone source supplement adds the fully
 audited case1484 and case2122 closures. The accepted grouped case1646 source
 closure and the audited case2047 and case1848 closures are also published as
 standalone supplements, with later accepted 1311, 1372 and 1731 checkpoints:
-**170 published original-project full certificate audits** in total, now including
-accepted imported cases1393,1463,1499,1823,1849,1887,1891,2051,2068,2069 and2070. Upstream separately supplies 172 case-proof archives;
+**172 published original-project full certificate audits** in total, now including
+accepted imported cases1373,1393,1464,1463,1499,1823,1849,1887,1891,2051,2068,2069 and2070. Upstream separately supplies 172 case-proof archives;
 only case1465 is absent there. All 13 prepared import source closures are
 published in the prepared source release, with exact accepted Combined,
-DirectTrees and PrunedTrees source closures for2068/2069/2070,1891,1887,1823,1849,1463,1499 and1393. The remaining two supplied full-target audits
-remain pending. See T03_PROGRESS.md for exact source/audit bindings.
+DirectTrees, PrunedTrees and ReboundPrunedTrees source closures for2068/2069/2070,1891,1887,1823,1849,1463,1499,1393,1373 and1464. All supplied full-target audits are complete; local case1465
+remains pending. See T03_PROGRESS.md for exact source/audit bindings.
 The Git source tree contains case2135 directly; the full generated source
 collections are distributed as release assets.
 
-The other three cases and assembly of all 173 certificates into the exact public
+The remaining local case1465 and assembly of all 173 certificates into the exact public
 family theorem remain unfinished. Its clean combined target audit and the final
 return package are also pending. No fresh merged repository Lean replay or
 completed T03 case-family return is claimed; the public admission remains open.

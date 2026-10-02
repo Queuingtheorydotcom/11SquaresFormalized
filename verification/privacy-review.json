@@ -524,5 +524,22 @@
     "all_ten_server_asset_digests_sizes_match": true,
     "Lean_jobs_worker_controls": 0,
     "personal_information_findings": []
+  },
+  "case1373_compact_pilot_review": {
+    "full_case1373_complete_source_modules": 709,
+    "all_raw_final_genuine_source_object_receipt_bindings_verified": true,
+    "exact_actual_CHECK_log_bytes_verified": true,
+    "original_source_task_checker_environment_bytes_preserved": true,
+    "compact_pilot_scope_explicit": true,
+    "large_pilot_closures_not_copied": true,
+    "private_metadata_paths_original_transports_objects_receipts_caches_excluded": true,
+    "neutral_serial_profile": true,
+    "all_five_server_asset_digests_sizes_verified": true,
+    "unverified_later_batches_excluded": true,
+    "publication_Lean_jobs_worker_controls": 0,
+    "personal_information_findings": [],
+    "full_case1464_complete_source_modules": 713,
+    "all_ten_server_asset_digests_sizes_verified": true,
+    "pending_route_records_labeled": true
   }
 }
