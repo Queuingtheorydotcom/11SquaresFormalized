@@ -10,13 +10,15 @@ open Propagation
 
 theorem all_roots_rejected (k : Fin 6) :
     ¬ Sat compatible supports (initialDomains k.val) (List.range 216) := by
-  fin_cases k
-  · exact root_rejected0
-  · exact root_rejected1
-  · exact root_rejected2
-  · exact root_rejected3
-  · exact root_rejected4
-  · exact root_rejected5
+  revert k
+  refine Fin.cases root_rejected0 ?_
+  refine Fin.cases root_rejected1 ?_
+  refine Fin.cases root_rejected2 ?_
+  refine Fin.cases root_rejected3 ?_
+  refine Fin.cases root_rejected4 ?_
+  refine Fin.cases root_rejected5 ?_
+  intro i
+  exact Fin.elim0 i
 
 end ElevenSquare.Pending.EncodedSearch
 #print axioms ElevenSquare.Pending.EncodedSearch.all_roots_rejected

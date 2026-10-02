@@ -51,10 +51,11 @@ theorem compatible_of_original (r s : Fin 220)
   have h1 : label r.val 1 ≠ label s.val 1 := hd 1
   have h2 : label r.val 2 ≠ label s.val 2 := hd 2
   have h3 : label r.val 3 ≠ label s.val 3 := hd 3
-  simp [compatible, h0, h1, h2, h3, List.contains, List.elem_eq_mem, hn]
+  simp only [compatible, List.contains_eq_mem, hn, decide_false,
+    Bool.not_false, Bool.and_true]
+  exact decide_eq_true_iff.mpr ⟨h0, h1, h2, h3⟩
 
 end ElevenSquare.Pending.EncodedSearch
 #print axioms ElevenSquare.Pending.EncodedSearch.labels_correct
 #print axioms ElevenSquare.Pending.EncodedSearch.neighbors_sound
 #print axioms ElevenSquare.Pending.EncodedSearch.compatible_of_original
-
