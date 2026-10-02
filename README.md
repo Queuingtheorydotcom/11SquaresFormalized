@@ -35,6 +35,11 @@ arbitrary orientations, legal boundary contact, and disjoint open interiors.
 
 ## Verification
 
+The verifier runs with your account's permissions and is not sandboxed. For
+untrusted inputs, isolate setup, compilation, and artifact inspection before
+running these commands. See [SECURITY.md](SECURITY.md) for the execution model,
+container requirements, and the distinction from Comparator and kernel replay.
+
 Install Git, Python 3.11 or newer, and Lean's `elan` launcher. The project pins
 Lean `v4.34.1` and
 mathlib revision `d13f23b723b8a846827a245b89c10fc7d3f11612`.
@@ -77,7 +82,21 @@ can be resumed using the script's source/object/dependency fingerprints. The
 serial checker prioritizes shared dependencies, records transitive input hashes,
 and audits every included explicit axiom query. Use
 `--jobs N` to give each new Lean process `N` worker threads while retaining serial
-module checks. Matching accepted receipts keep their actual original thread count
+module checks by default. For concurrent independent modules on one node, use
+`--max-parallel N`; `--jobs` sets threads per compiler process. For a node with
+about 200 allocated cores and 1,400 GiB RAM, an initial configuration is:
+
+```sh
+python3 scripts/verify.py --setup --all --keep-going --max-parallel 100 --jobs 2 --memory-percent 85
+```
+
+This is an initial concurrency ceiling, not a measured optimum. The scheduler
+waits for accepted dependencies, checks memory headroom before launching extra
+processes, and retries auxiliary checks alone after memory pressure. Its memory
+guard is advisory rather than an enforced allocation limit. Measure throughput
+and peak memory before increasing concurrency. One verifier owns the checkout;
+no distributed sharding is required. The final axiom audit and result artifacts
+remain part of the same run. Matching accepted receipts keep their actual original thread count
 and fingerprints. Extra threads can require more memory; the default remains one.
 Use
 `--keep-going` to collect independent compatibility failures in one run; it
