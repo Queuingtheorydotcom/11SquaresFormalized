@@ -619,5 +619,14 @@
     "public2_and_export_pending": true,
     "cache_postflights_recorded_actually_complete": true,
     "large_cache_objects_not_rehashed_or_copied_by_publication": true
+  },
+  "final_source_case2122_auxiliary_recheck_review": {
+    "all358_genuine_receipt_bindings_inspected": true,
+    "actual_root_object_rehashed": true,
+    "actual_audit_CHECK_log_task_and_source_bytes_preserved": true,
+    "private_runtime_paths_removed": true,
+    "large_object_bytes_and_source_closure_not_republished": true,
+    "public2_and_export_pending": true,
+    "Lean_jobs_worker_controls": 0
   }
 }

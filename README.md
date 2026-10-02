@@ -19,6 +19,8 @@ remain pending.** This case completion does not claim global optimality or
 fresh completion of those obligations. Earlier counts below describe dated
 source snapshots, including the 172/173 and 159/173 stages.
 
+The [final-source case 2122 recheck](verification/t03-final-case2122-private-recheck-checkpoint-20261002.json) passed the unchanged original checker and exact `certificate_exists` Std3 audit. **358 genuine compiler outputs and receipts** were integrated into the final route; source bytes were unchanged. Publication verified all 358 recorded receipt/closure bindings and the actual root object, without copying the object collection. This is an auxiliary check: the total remains **173/173**, and the two public combined audits and final ZIP are still pending.
+
 The [additional exact-cache checkpoint](verification/t03-case1465-additional-cache-current172-checkpoint-20261002.json)
 adds **9,642 genuine objects /1,894,518,368 bytes**, each bound to the current
 dependency key and existing actual receipt. Recorded copy/original hash checks

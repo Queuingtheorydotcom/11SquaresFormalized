@@ -5214,5 +5214,50 @@
       "additional_compiler_processes_started": 0
     }
   },
-  "case1465_complete_source_closure_republished": false
+  "case1465_complete_source_closure_republished": false,
+  "latest_final_source_case2122_auxiliary_recheck_checkpoint": {
+    "format": "T03-actual-final-source-case2122-private-recheck-v1",
+    "utc": "2026-10-02T10:10:18.095527+00:00",
+    "status": "ACTUAL_CURRENT_FINAL_SOURCE_CASE2122_TARGET_STD3_AND_GENUINE_OUTPUT_INTEGRATION_VERIFIED",
+    "original_fullcase_audits": 173,
+    "upstream_supplied_source_archives": 172,
+    "new_fullcase_increment": 0,
+    "exact_target": "ElevenSquare.Pending.T03.Batch12.Case2122.Forward.Certificate.certificate_exists",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "actual_checker_exit_code": 0,
+    "actual_original_checker_seconds": 829.1396895380021,
+    "actual_axiom_audit_seconds": 9.19,
+    "auxiliary_checker_memory_limit_mb": 3072,
+    "auxiliary_checker_threads": 1,
+    "main_checker_unchanged": true,
+    "final_source_transport_sha256": "67f025f95731d52c372d5e887b8d9bbf7ec55549fcf2c10143b75244a5ebca81",
+    "final_source_transport_bytes": 2250810885,
+    "whole_final_transport_digest_not_rehashed_by_publication": true,
+    "root_source_sha256": "c376914efb9cf5049ebf2157b5ab62bacca0c2056c84d310621839faabb8804d",
+    "root_source_matches_exact_immutable_transport_member_and_private_runtime": true,
+    "root_source_closure_sha256": "03a4eb437f200b2f9e21bb3f4bdfc64e4bebaa6e8edb1299c270dba0cc8c9f8b",
+    "root_genuine_receipt_sha256": "69abb8a6b8779567decf344b38f2f94775aba4c95bec13f110b79501384637e2",
+    "root_actual_object_sha256": "4b3b155c8effa12243c98d5eb347cb9c13daaa56004d06efa6d4edc5b247d2a6",
+    "root_actual_object_independently_rehashed": true,
+    "all358_recorded_genuine_receipt_bytes_and_closure_keys_independently_verified": true,
+    "all358_object_bytes_not_rehashed_by_publication": true,
+    "integrated_genuine_outputs": 358,
+    "already_current_genuine_outputs": 8028,
+    "source_changes_recorded": 0,
+    "actual_log_sha256": "457878e3de72519c97e7f457ea0cb7915aafc02ee504ac944b3523c9bba9abbb",
+    "actual_CHECK_sha256": "faa8a3a8c324472b3e29f5edb91c7b00d47e4c1f853d22828f09141cd6114a4e",
+    "actual_audit_source_sha256": "e92f4f99df7649eb78f7286cd3381761f8a91913986ff0ea6b272424cf146465",
+    "actual_task_sha256": "b6de0983d4bbf4c88cdc71e8d35ff30b07e09efe3650cb84c260504b98a48352",
+    "actual_wrapper_sha256": "1e9ced2c40efefe3d2f8b8c685cfacf272c766c1be11b559413ef68b60da8f5d",
+    "recorded_output_binding_table_sha256": "32c905882cbe0e388ba63f056039121f033d97c7e40b6919324c506174586a0a",
+    "full_checker_log_not_published_due_to_private_runtime_paths": true,
+    "complete_final_source_closure_republished": false,
+    "public_two_combined_target_audits_accepted": false,
+    "final_return_zip_complete": false,
+    "publication_Lean_jobs_worker_queue_source_changes": 0
+  }
 }

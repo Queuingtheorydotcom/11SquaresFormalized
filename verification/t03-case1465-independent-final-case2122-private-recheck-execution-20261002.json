@@ -1,0 +1,19 @@
+{
+  "status": "ACTUAL_CHECKER_ACCEPTED_PRIVATE_CASE2122_RECHECK",
+  "exit_code": 0,
+  "task_sha256": "b6de0983d4bbf4c88cdc71e8d35ff30b07e09efe3650cb84c260504b98a48352",
+  "plan_sha256": "904054859a8a525628b22f78a8e768ad41a9a5e736bdb090a6031e518de22f7b",
+  "transport_sha256": "67f025f95731d52c372d5e887b8d9bbf7ec55549fcf2c10143b75244a5ebca81",
+  "copied_genuine_objects": 8028,
+  "copied_object_bytes": 1171113960,
+  "lean_threads": 1,
+  "lean_memory_limit_mb": 3072,
+  "seconds": 829.1396895380021,
+  "original_objects_modified": 0,
+  "live_checker_receipts_changed": 0,
+  "scope": "One exact original case target with current final sources. Actual axiom logs and output bytes still require inspection before atomic integration into the final checker.",
+  "original_private_record_sha256": "96ebd961526c9cb71a3ff3a2b244abb7cacc6a6370f4aed2225ca3b8449acf59",
+  "original_private_record_bytes": 1036,
+  "publication_scope": "Compact exact accepted auxiliary original case recheck; local runtime paths omitted. No whole final public target audit or case count increment.",
+  "publication_Lean_jobs_worker_controls": 0
+}
