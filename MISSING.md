@@ -50,7 +50,33 @@ useful components, not a complete case exclusion.
 
 ## 3. Complete the returned-exclusion family
 
-Case1465 now has an **actually audited continuous prefix through step40**:
+Upstream supplies **172 case-proof source archives**; **only case 1465 is absent**.
+All 172 supplied original full-case certificates passed actual pinned-checker
+audits with only the standard axioms: **172/173**, with **case 1465 alone remaining**.
+These audits apply to their immutable original source versions.
+
+The [current source-version checkpoint](verification/t03-current172-repaired-source-progress-checkpoint-20261002.json)
+records **16/17 accepted case 1465 route components** at its captured controller
+snapshot. The final required component is PartnerReplayBatch012 (steps 61–64).
+Actual Batch010 and Batch013 target audits are also preserved with exact raw
+CHECK/log, source-root, task and transport bindings. These are historical
+component audits of the sources before the private identifier repair.
+
+A private identifier was renamed from `initialize` to `initializePacking` in
+18 reachable owned files. Original and repaired hashes, exact rename-only byte
+changes and the post-repair source preflight were independently verified;
+numerical data and public target signatures are unchanged. **The repaired
+source tree still requires fresh audits**: the 65-target case 1465 audit and
+two public combined target audits remain pending. Source preflight is not a
+kernel proof or a successful final export. **No final return ZIP is complete.**
+
+Older counts, including 159/173 below, describe dated historical snapshots;
+they do not replace the 172 original-source audits or certify the repaired tree.
+Publication added only compact metadata and exact audit logs, with no new
+source archive, Lean job, worker control or source modification.
+
+
+The earlier source snapshot has an **audited continuous prefix through step 40**:
 Prefix012, corrected ReplayBatch000Retry01 (steps013–016), and
 PartnerReplayBatch001–006 (steps017–040). The unchanged original checker
 accepted all30 named component targets with standard axioms. This adds **no
@@ -76,7 +102,7 @@ and four-step components add no full case certificate. Earlier dated checkpoint
 paragraphs below preserve their historical scope and integration metrics.
 
 
-Current full-certificate integration status is **172/173**, with case 1465 alone remaining. The [accepted case 1393 and geometric Step012 source releases](verification/t03-case1393-and-geometric1465-accepted-source-releases-20261001.json)
+Historical original-source full-certificate audits total **172/173**, with case 1465 alone remaining; the repaired tree requires fresh audits. The [accepted case 1393 and geometric Step012 source releases](verification/t03-case1393-and-geometric1465-accepted-source-releases-20261001.json)
 provide the new full certificate and a separate checked single-step pilot. The
 pilot adds no full case; the current prefix-through40 component checkpoint above
 supersedes the earlier pending component status. Earlier dated
@@ -115,7 +141,7 @@ standalone supplements, with later accepted 1311, 1372 and 1731 checkpoints:
 accepted imported cases1373,1393,1464,1463,1499,1823,1849,1887,1891,2051,2068,2069 and2070. Upstream separately supplies 172 case-proof archives;
 only case1465 is absent there. All 13 prepared import source closures are
 published in the prepared source release, with exact accepted Combined,
-DirectTrees, PrunedTrees and ReboundPrunedTrees source closures for2068/2069/2070,1891,1887,1823,1849,1463,1499,1393,1373 and1464. All supplied full-target audits are complete; local case1465
+DirectTrees, PrunedTrees and ReboundPrunedTrees source closures for2068/2069/2070,1891,1887,1823,1849,1463,1499,1393,1373 and1464. All supplied immutable original-source full-target audits are complete; the repaired source versions still need fresh audits, and local case1465
 remains pending. See T03_PROGRESS.md for exact source/audit bindings.
 The Git source tree contains case2135 directly; the full generated source
 collections are distributed as release assets.

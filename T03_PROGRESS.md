@@ -1,11 +1,31 @@
 # All supplied cases audited and local case 1465 progress
 
 Upstream supplies **172 case-proof source archives**; **only case 1465 is absent**.
-All 172 supplied cases now have completed original-project full-certificate
-audits: **172/173**, with **case 1465 alone remaining**. Public family assembly
-and the final global optimality proof are separate, unfinished obligations.
+All 172 supplied original full-case certificates passed actual pinned-checker
+audits with only the standard axioms: **172/173**, with **case 1465 alone remaining**.
+These audits apply to their immutable original source versions.
 
-Case1465 now has an **actually audited continuous prefix through step40**:
+The [current source-version checkpoint](verification/t03-current172-repaired-source-progress-checkpoint-20261002.json)
+records **16/17 accepted case 1465 route components** at its captured controller
+snapshot. The final required component is PartnerReplayBatch012 (steps 61–64).
+Actual Batch010 and Batch013 target audits are also preserved with exact raw
+CHECK/log, source-root, task and transport bindings. These are historical
+component audits of the sources before the private identifier repair.
+
+A private identifier was renamed from `initialize` to `initializePacking` in
+18 reachable owned files. Original and repaired hashes, exact rename-only byte
+changes and the post-repair source preflight were independently verified;
+numerical data and public target signatures are unchanged. **The repaired
+source tree still requires fresh audits**: the 65-target case 1465 audit and
+two public combined target audits remain pending. Source preflight is not a
+kernel proof or a successful final export. **No final return ZIP is complete.**
+
+Older counts, including 159/173 below, describe dated historical snapshots;
+they do not replace the 172 original-source audits or certify the repaired tree.
+Publication added only compact metadata and exact audit logs, with no new
+source archive, Lean job, worker control or source modification.
+
+The earlier source snapshot has an **audited continuous prefix through step 40**:
 Prefix012, corrected ReplayBatch000Retry01 (steps013–016), and
 PartnerReplayBatch001–006 (steps017–040). The unchanged original checker
 accepted all30 named component targets with standard axioms. This adds **no
@@ -25,7 +45,7 @@ The final composition still waits for all17 required components. No whole-proof
 speedup, full1465 certificate, public-target completion or return ZIP is claimed.
 
 
-**Cases 1373 and 1464's exact original full certificates now pass** the unchanged
+**Cases 1373 and 1464's immutable original full certificates passed** the unchanged
 pinned Lean 4.10.0-rc2 checker, with only `propext`, `Classical.choice` and `Quot.sound`.
 Case 1373: Main **105.04s**, Certificate **38.26s**, full audit **43.85s**.
 Case 1464: Main **103.49s**, Certificate **46.48s**, full audit **52.37s**.
@@ -57,6 +77,11 @@ Exact accepted source/task/pinned environment/checker bytes are preserved.
 Main, earlier releases and live proof work are unchanged. Merged replay, the
 public case-family theorem, global optimality and final return remain unfinished.
 See [MISSING.md](MISSING.md) and [T03_PROGRESS.md](T03_PROGRESS.md).
+
+## Historical proof-progress snapshots
+
+All counts and pending/accepted source statuses in the dated snapshots below
+describe their earlier source versions. The current checkpoint above is authoritative.
 
 ## Earlier accepted-case and geometric-pilot checkpoint
 
@@ -128,7 +153,7 @@ We are reusing these supplied proofs. **169/173** is the separate count of
 completed full-certificate integrations into the original project's contracts.
 Cases **1373, 1393, 1464 and 1465** remain in that integration log.
 
-Case 1465 currently has **175/253** accepted component groups;
+At that earlier checkpoint, case 1465 had **175/253** accepted component groups;
 its full certificate is pending. The byte-identical object-cache trial for
 component 173 passed the unchanged original checker: **113.27 seconds** compiling
 and **31.01 seconds** auditing, with only `propext` and `Quot.sound`.
@@ -619,7 +644,7 @@ checked aggregate counts; it did not recompile those sources. Case1465 is absent
 from that upstream source release. Direct upstream links avoid duplicate uploads.
 
 These are **shared-module audits and source availability**, not completed
-imported cases. Count stays **159/173**. The conditional original-contract
+imported cases. The historical count at this checkpoint was **159/173**. The conditional original-contract
 transport is already audited, but concrete case bounds/correspondence, the
 complete exclusion checker, imported full-case audits, original public family
 targets and final return remain pending. No merged repository replay, new release
@@ -648,7 +673,7 @@ must still provide bounds on its literal cell list, exact equality to the origin
 case mask, and an independently proved `CaseExcluded` statement. The transport
 then produces the original chart/relabel/VerifiedTrace/Terminal certificate.
 No inherited inventory admission is used by the audited target. No imported case
-is accepted here; the count stays **159/173**, with 14 remaining. Imported
+is accepted here; the historical count at this checkpoint was **159/173**, with 14 remaining. Imported
 exclusion-checker proofs, concrete per-case obligations, the full public targets
 and final return remain pending. No fresh merged repository replay is claimed.
 
@@ -690,7 +715,7 @@ There are no new source archive or release assets and no fresh merged replay.
 
 These are reusable-core and packing-bridge audits, **not imported case
 certificates**. The exclusion checker, concrete original-contract case instantiations, public
-family targets and final return remain pending. Count stays **159/173**, with
+family targets and final return remain pending. The historical count at this checkpoint was **159/173**, with
 14 remaining; no workers, queues or canonical sources were changed for this
 publication.
 
@@ -705,7 +730,7 @@ The original supplied checker on **Lean 4.10.0-rc2** actually audited:
 
 Every target reports only `propext`, `Classical.choice` and `Quot.sound`. These
 are **shared-core compatibility audits**, not imported case certificates.
-The local full-case count remains **159/173**, with 14 cases remaining. The
+The local full-case historical count at this checkpoint was **159/173**, with 14 cases remaining. The
 case1849 exclusion checker, concrete contract instantiation, full case/public target
 audits and final return are still pending.
 
@@ -785,7 +810,7 @@ as well as ordinary source transport boundaries. Portable preparation/recording
 tools use explicit workspace paths and conservative worker defaults. They passed
 syntax/help/privacy checks; their live actions were not replayed for publication.
 
-**Full accepted count: 159/173, 14 remaining.** Main, prior release assets,
+**Historical accepted count: 159/173, 14 then remaining.** Main, prior release assets,
 original family targets and final-return requirements are preserved. No compiler,
 proof worker, live queue or service was started, changed or controlled for this
 publication. Memory-repair scripts are outside this compact checkpoint.
@@ -794,7 +819,7 @@ publication. Memory-repair scripts are outside this compact checkpoint.
 
 Case1731's exact original `certificate_exists` has passed the actual full target
 audit: **90.39 seconds**, with only `propext`, `Classical.choice` and `Quot.sound`.
-There are now **159/173** accepted full cases and **14 remaining**. Neither
+At that earlier checkpoint there were **159/173** accepted full cases and **14 remaining**. Neither
 original public family target, the merged repository replay nor the final return
 ZIP is complete. Only case2135 is integrated directly in Git; other complete
 source closures are separate release assets.
@@ -1723,7 +1748,7 @@ The upstream description reports 172 kernel-checked returned cases. That is an
 upstream claim under its own contract, **not an accepted original target audit
 here**. Source import, complete dependency/toolchain compatibility, exact
 concrete original-contract case instantiations and actual case target audits remain pending.
-The local full accepted count stays **159/173**. Neither original family target,
+The local full accepted historical count at this checkpoint was **159/173**. Neither original family target,
 merged repository replay nor final return ZIP is complete.
 
 To avoid more duplicate preparation, thirteen owned local native producers were

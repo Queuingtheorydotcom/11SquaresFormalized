@@ -559,5 +559,21 @@
     "ancestor_object_collection_not_freshly_rehashed": true,
     "Lean_jobs_worker_controls": 0,
     "personal_information_findings": []
+  },
+  "current172_repaired_source_metadata_review": {
+    "historical_original_fullcase_audits": 172,
+    "historical_route_components": 16,
+    "required_route_components": 17,
+    "repaired_files_hash_verified": 18,
+    "exact_private_identifier_byte_replacement_verified": true,
+    "post_repair_source_preflight_hash_bound": true,
+    "new_batch_target_audits": 8,
+    "actual_raw_CHECK_log_pairs": 127,
+    "new_large_source_closures_or_assets": 0,
+    "all_public_paths_private_metadata_removed": true,
+    "new_kernel_proofs_claimed": false,
+    "fresh_fullcase_two_public_targets_and_export_pending": true,
+    "Lean_jobs_worker_controls": 0,
+    "personal_information_findings": []
   }
 }

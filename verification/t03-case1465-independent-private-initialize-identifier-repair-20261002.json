@@ -1,0 +1,164 @@
+{
+  "status": "PRIVATE_INITIALIZATION_IDENTIFIER_RENAMED_REQUIRES_FRESH_SOURCE_AUDITS",
+  "utc": "2026-10-02T03:31:41.519973+00:00",
+  "old_private_name": "initialize",
+  "new_private_name": "initializePacking",
+  "changed_source_files": 18,
+  "files": [
+    {
+      "path": "ElevenSquare/Tasks/T03/Batch01/Case1145/InitialState.lean",
+      "before_sha256": "aca2e0e5117e285abef114a109f49c5983527b3cd2e414679bbe6c9ffc1aa4b4",
+      "after_sha256": "fb2433facc203e96115af42030e496a156f018a3ac24392cacd8ad908357de55",
+      "code_token_occurrences": 1,
+      "numeric_tokens_unchanged": true,
+      "original_source_scanner_now_passes": true
+    },
+    {
+      "path": "ElevenSquare/Tasks/T03/Initialization/RefinedLibrary.lean",
+      "before_sha256": "e6c8e20c350347968e26e4da2f3f5a22afce7ee459051fa46be0fae30b4213a1",
+      "after_sha256": "aa0e5fbba63dab32e784e96db3f90c35ecd04f0c1887123b6501c2b1c3dcc83a",
+      "code_token_occurrences": 2,
+      "numeric_tokens_unchanged": true,
+      "original_source_scanner_now_passes": true
+    },
+    {
+      "path": "ElevenSquare/Tasks/T03/SeedLibrary.lean",
+      "before_sha256": "b67339d0d48fe7c063e3624fd7a8f841318e12f76f26911e5ede5db780e7276b",
+      "after_sha256": "269e248e6018d56e27bf44671f3208253febe27c7ee939efdb07c198fa5aae56",
+      "code_token_occurrences": 1,
+      "numeric_tokens_unchanged": true,
+      "original_source_scanner_now_passes": true
+    },
+    {
+      "path": "ElevenSquare/Tasks/T03/Batch01/Seeds.lean",
+      "before_sha256": "a7db042d0b222d3fa10ac1009036245172dc6509be5f4d9c813907930b8d2ee7",
+      "after_sha256": "5b26f9d43ff8d9b67b4528d14a1ddbcfbaaa2c231ece5b69dab2fed1e7fd253c",
+      "code_token_occurrences": 15,
+      "numeric_tokens_unchanged": true,
+      "original_source_scanner_now_passes": true
+    },
+    {
+      "path": "ElevenSquare/Tasks/T03/Initialization/Library64.lean",
+      "before_sha256": "1fc901cb6a8bdeea4a791492091e31945b007410f556466c8e822ef5c52df0ea",
+      "after_sha256": "c70324f442c7c0e1f559c03b3f58b9ed17def62f1f0bf17e38ed4b2c7d6204b1",
+      "code_token_occurrences": 2,
+      "numeric_tokens_unchanged": true,
+      "original_source_scanner_now_passes": true
+    },
+    {
+      "path": "ElevenSquare/Tasks/T03/Batch12/Seeds.lean",
+      "before_sha256": "0b4eb3a07a97de3899a19e57bbb797127293f33756abfe28e1932cec22a1662b",
+      "after_sha256": "ddcab83d86a220b36401363b6e63bce7d56595aed133c693011869b9f12b5bd0",
+      "code_token_occurrences": 14,
+      "numeric_tokens_unchanged": true,
+      "original_source_scanner_now_passes": true
+    },
+    {
+      "path": "ElevenSquare/Tasks/T03/Initialization/Library08.lean",
+      "before_sha256": "1b0a9e2c272d4891da0db1f01fe621917bd495f943af2d067e9487eafe06c17f",
+      "after_sha256": "6ded44071ca4e02daf70e000066b763d5ae1d9c39e004c65c8f791509e334c4c",
+      "code_token_occurrences": 2,
+      "numeric_tokens_unchanged": true,
+      "original_source_scanner_now_passes": true
+    },
+    {
+      "path": "ElevenSquare/Tasks/T03/Batch02/Seeds.lean",
+      "before_sha256": "9f70441b395bf46a07bd24a28856a2b3cc3c6aa33fee89d8db133bd37262f756",
+      "after_sha256": "07fa1df06be02853595ff4ed24b4dbfc03c17f60043e05806e41881ccf443cf0",
+      "code_token_occurrences": 15,
+      "numeric_tokens_unchanged": true,
+      "original_source_scanner_now_passes": true
+    },
+    {
+      "path": "ElevenSquare/Tasks/T03/Batch05/Seeds.lean",
+      "before_sha256": "ab24d528f432fb340438984bc02e7e902a59921b5e9304d8ae84e0e23be0ca2c",
+      "after_sha256": "d317d6214692bb6c2fc0e3ac7324460e4326cd7c002f82a83553d09823475daf",
+      "code_token_occurrences": 15,
+      "numeric_tokens_unchanged": true,
+      "original_source_scanner_now_passes": true
+    },
+    {
+      "path": "ElevenSquare/Tasks/T03/Initialization/Library32.lean",
+      "before_sha256": "1380dc07558f5dc9aee63ea1c1b563679c94560b630adf299fa6bd1fe26fe753",
+      "after_sha256": "be8851ae6d381e89affe785caf24a6dde86d5e1e6f5c4fdd0b38ca13e9308cb1",
+      "code_token_occurrences": 2,
+      "numeric_tokens_unchanged": true,
+      "original_source_scanner_now_passes": true
+    },
+    {
+      "path": "ElevenSquare/Tasks/T03/Batch06/Seeds.lean",
+      "before_sha256": "c1dda73d1e5f41be5735705d132fabf13e3688666ec8bb835ce762e2a16cbf94",
+      "after_sha256": "f54bbdea95269e6311109ebd136ce2451bc9a22717bd225e34822081e3077320",
+      "code_token_occurrences": 14,
+      "numeric_tokens_unchanged": true,
+      "original_source_scanner_now_passes": true
+    },
+    {
+      "path": "ElevenSquare/Tasks/T03/Batch08/Seeds.lean",
+      "before_sha256": "988763053cf6346241a9f3fdcb360c51be979d5b257d066b5282c0b9298081ce",
+      "after_sha256": "74bc703cc784ee496aada029bcf267e4e582adcb428677b1007c4c2de85c047d",
+      "code_token_occurrences": 14,
+      "numeric_tokens_unchanged": true,
+      "original_source_scanner_now_passes": true
+    },
+    {
+      "path": "ElevenSquare/Tasks/T03/Batch09/Seeds.lean",
+      "before_sha256": "f816ca5cb6278dafe2c1b65b9c46881614522ce322342de94ddcd4edbe526a2a",
+      "after_sha256": "50cf18f504c9f575f5c57af0094e2570840eae3eb3031cb57e8294664813fdd4",
+      "code_token_occurrences": 14,
+      "numeric_tokens_unchanged": true,
+      "original_source_scanner_now_passes": true
+    },
+    {
+      "path": "ElevenSquare/Tasks/T03/Batch10/Seeds.lean",
+      "before_sha256": "b9b24e1be24acb91037302f1ab3a4696a3539c25cbb9a48f0c47ea366e3ec7d9",
+      "after_sha256": "4ff397e7b4336c3eaf889d3ba1a896496f0e05608daa10f96d7d2c8282619225",
+      "code_token_occurrences": 14,
+      "numeric_tokens_unchanged": true,
+      "original_source_scanner_now_passes": true
+    },
+    {
+      "path": "ElevenSquare/Tasks/T03/Batch11/Seeds.lean",
+      "before_sha256": "e9106b4070d2d9717f7406297296a6adc8a53fd5ab53e80932b0763ebfaff858",
+      "after_sha256": "1c69097751e6ee630829387df95c9a2497f3f85cb98e8cc1e26d435878096870",
+      "code_token_occurrences": 14,
+      "numeric_tokens_unchanged": true,
+      "original_source_scanner_now_passes": true
+    },
+    {
+      "path": "ElevenSquare/Tasks/T03/Batch03/Seeds.lean",
+      "before_sha256": "03263f4f7c6ada7ebe361ca9b67c11556dcf8ae1c6aacc725edf308e06f6a592",
+      "after_sha256": "0a0d5320a037477cbb5523dc8b1ccf52949ef4feecc174ecafa0188df7aa769c",
+      "code_token_occurrences": 15,
+      "numeric_tokens_unchanged": true,
+      "original_source_scanner_now_passes": true
+    },
+    {
+      "path": "ElevenSquare/Tasks/T03/Batch07/Seeds.lean",
+      "before_sha256": "3b583936677d86db96bf37d4f93331490ec68a0104bb1f9b0d7b7325d78d698c",
+      "after_sha256": "74d5377e822bdaf2c0176982cec57ca3aa42307d20eeb6c0ffb6a6ac5f7fd6e4",
+      "code_token_occurrences": 14,
+      "numeric_tokens_unchanged": true,
+      "original_source_scanner_now_passes": true
+    },
+    {
+      "path": "ElevenSquare/Tasks/T03/Batch04/Seeds.lean",
+      "before_sha256": "d595ec256a5212c183bbc6a80c49b47c1d1a695ea6d5fa5cc04df6fd22ed02b5",
+      "after_sha256": "eab52ef598e47b74c71ca6daf9ca6e4410696fc6501238c93a9a8ddf67e73470",
+      "code_token_occurrences": 15,
+      "numeric_tokens_unchanged": true,
+      "original_source_scanner_now_passes": true
+    }
+  ],
+  "public_target_signatures_changed": false,
+  "numeric_data_changed": false,
+  "original_exporter_or_protocol_changed": false,
+  "active_immutable_component_transports_changed": false,
+  "old_case_and_component_audits_are_historical_source_evidence": true,
+  "fresh_original_fullcase_and_public_target_audits_required": true,
+  "original_private_record_sha256": "d8a93ff58dcbb6b46fdfa3cd520a7befa2c7513fd9187eac661f0b12e77df398",
+  "all18_original_backup_and_current_source_hashes_independently_verified": true,
+  "only_exact_private_identifier_replacement_independently_verified": true,
+  "source_bytes_not_published": true,
+  "publication_Lean_jobs": 0
+}

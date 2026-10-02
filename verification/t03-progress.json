@@ -1,5 +1,5 @@
 {
-  "status": "UPSTREAM172_SUPPLIED_CASES_ALL_ORIGINAL_AUDITED_172_OF173_ONLY1465_PENDING",
+  "status": "HISTORICAL172_ORIGINAL_CERTIFICATES_AUDITED_REPAIRED_SOURCE_FRESH_AUDITS_PENDING",
   "snapshot_date": "2026-09-30",
   "meaning": "Independent returned compiler audits. This is not a fresh combined replay of the GitHub assembly.",
   "lean_version": "4.10.0-rc2",
@@ -4356,5 +4356,91 @@
       ]
     },
     "all_four_server_asset_digests_sizes_verified": true
+  },
+  "current_repaired_source_checkpoint": {
+    "format": "T03-current172-historical-audits-repaired-sources-pending-v1",
+    "utc": "2026-10-02T03:53:54.679602+00:00",
+    "status": "ALL172_SUPPLIED_ORIGINAL_SOURCES_AUDITED_REPAIRED_SOURCES_REQUIRE_FRESH_AUDITS",
+    "upstream_supplied_source_archives": 172,
+    "upstream_only_missing_case": 1465,
+    "historical_original_fullcase_audits": 172,
+    "required_original_fullcase_certificates": 173,
+    "remaining_original_fullcase": [
+      1465
+    ],
+    "historical_independent_route_components_accepted": 16,
+    "required_route_components": 17,
+    "remaining_route_component": "PartnerReplayBatch012 steps061..064",
+    "new_actual_historical_component_records": [
+      {
+        "batch": 10,
+        "checkpoint": "verification/t03-case1465-independent-partner-replay-batch010-actual-checkpoint-20261002.json",
+        "actual_target_axioms": {
+          "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step053Trace.step_trace": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step054Trace.step_trace": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step055Trace.step_trace": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step056Trace.step_trace": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        "actual_checks": 48,
+        "immutable_original_transport_sha256": "22d535441bc906f2b5c5501887c317b28c4f6ca965febdd015438ccb7a433bb1",
+        "historical_source_version": true
+      },
+      {
+        "batch": 13,
+        "checkpoint": "verification/t03-case1465-independent-partner-replay-batch013-actual-checkpoint-20261002.json",
+        "actual_target_axioms": {
+          "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step065Trace.step_trace": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step066Trace.step_trace": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step067Trace.step_trace": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step068Trace.step_trace": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        "actual_checks": 79,
+        "immutable_original_transport_sha256": "677cd30e7b86c51b31a5c213519ac97bb62de753179f483b3b4915387c9c12e7",
+        "historical_source_version": true
+      }
+    ],
+    "private_identifier_repair": "verification/t03-case1465-independent-private-initialize-identifier-repair-20261002.json",
+    "post_repair_source_preflight": "verification/t03-case1465-independent-final-source-closure-post-identifier-repair-20261002.json",
+    "controller_snapshot": "verification/t03-case1465-independent-certificate-controller-snapshot-20261002.json",
+    "fresh_case1465_65_target_audit_pending": true,
+    "fresh_two_public_combined_target_audits_pending": true,
+    "final_return_zip_complete": false,
+    "whole_case_increment": 0,
+    "new_release_assets": 0,
+    "large_closure_repacked": false,
+    "publication_Lean_jobs_worker_queue_source_controls": 0,
+    "main_and_prior_release_assets_preserved": true
   }
 }

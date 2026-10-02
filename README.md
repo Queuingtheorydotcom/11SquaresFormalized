@@ -1,11 +1,31 @@
 # Eleven-square packing in Lean
 
 Upstream supplies **172 case-proof source archives**; **only case 1465 is absent**.
-All 172 supplied cases now have completed original-project full-certificate
-audits: **172/173**, with **case 1465 alone remaining**. Public family assembly
-and the final global optimality proof are separate, unfinished obligations.
+All 172 supplied original full-case certificates passed actual pinned-checker
+audits with only the standard axioms: **172/173**, with **case 1465 alone remaining**.
+These audits apply to their immutable original source versions.
 
-Case1465 now has an **actually audited continuous prefix through step40**:
+The [current source-version checkpoint](verification/t03-current172-repaired-source-progress-checkpoint-20261002.json)
+records **16/17 accepted case 1465 route components** at its captured controller
+snapshot. The final required component is PartnerReplayBatch012 (steps 61–64).
+Actual Batch010 and Batch013 target audits are also preserved with exact raw
+CHECK/log, source-root, task and transport bindings. These are historical
+component audits of the sources before the private identifier repair.
+
+A private identifier was renamed from `initialize` to `initializePacking` in
+18 reachable owned files. Original and repaired hashes, exact rename-only byte
+changes and the post-repair source preflight were independently verified;
+numerical data and public target signatures are unchanged. **The repaired
+source tree still requires fresh audits**: the 65-target case 1465 audit and
+two public combined target audits remain pending. Source preflight is not a
+kernel proof or a successful final export. **No final return ZIP is complete.**
+
+Older counts, including 159/173 below, describe dated historical snapshots;
+they do not replace the 172 original-source audits or certify the repaired tree.
+Publication added only compact metadata and exact audit logs, with no new
+source archive, Lean job, worker control or source modification.
+
+The earlier source snapshot has an **audited continuous prefix through step 40**:
 Prefix012, corrected ReplayBatch000Retry01 (steps013–016), and
 PartnerReplayBatch001–006 (steps017–040). The unchanged original checker
 accepted all30 named component targets with standard axioms. This adds **no
@@ -25,7 +45,7 @@ The final composition still waits for all17 required components. No whole-proof
 speedup, full1465 certificate, public-target completion or return ZIP is claimed.
 
 
-**Cases 1373 and 1464's exact original full certificates now pass** the unchanged
+**Cases 1373 and 1464's immutable original full certificates passed** the unchanged
 pinned Lean 4.10.0-rc2 checker, with only `propext`, `Classical.choice` and `Quot.sound`.
 Case 1373: Main **105.04s**, Certificate **38.26s**, full audit **43.85s**.
 Case 1464: Main **103.49s**, Certificate **46.48s**, full audit **52.37s**.
@@ -57,6 +77,11 @@ Exact accepted source/task/pinned environment/checker bytes are preserved.
 Main, earlier releases and live proof work are unchanged. Merged replay, the
 public case-family theorem, global optimality and final return remain unfinished.
 See [MISSING.md](MISSING.md) and [T03_PROGRESS.md](T03_PROGRESS.md).
+
+## Historical proof-progress snapshots
+
+All counts and pending/accepted source statuses in the dated snapshots below
+describe their earlier source versions. The current checkpoint above is authoritative.
 
 ## Earlier accepted-case and geometric-pilot checkpoint
 
@@ -128,7 +153,7 @@ We are reusing these supplied proofs. **169/173** is the separate count of
 completed full-certificate integrations into the original project's contracts.
 Cases **1373, 1393, 1464 and 1465** remain in that integration log.
 
-Case 1465 currently has **175/253** accepted component groups;
+At that earlier checkpoint, case 1465 had **175/253** accepted component groups;
 its full certificate is pending. The byte-identical object-cache trial for
 component 173 passed the unchanged original checker: **113.27 seconds** compiling
 and **31.01 seconds** auditing, with only `propext` and `Quot.sound`.
@@ -389,7 +414,7 @@ majority lemma and three field-bridge targets have actual standard-three axiom
 audits. Their [exact audit evidence and 17-module frozen source closure](verification/source-checkpoints/wand125-pinned-exclusion-checker-20261001)
 are published separately from newly imported unaudited `Branch` and case sources.
 This supersedes the earlier shared-checker-pending status. Actual finite case
-probes and imported full-case audits remain pending; count stays **159/173**.
+probes and imported full-case audits remain pending; historical count at this checkpoint was **159/173**.
 
 Cover, box-tree and field-tree compatibility now have four additional accepted
 targets under the original Lean 4.10.0-rc2 checker, all with the standard three
@@ -397,7 +422,7 @@ axioms. Their [exact audit evidence and nine-module source closure](verification
 are frozen separately from mutable pending checker work. Root also verified
 [all 13 available remaining source archives](verification/t03-wand125-all-thirteen-pending-source-archives-checkpoint-20261001.json):
 762 source members / 341,699,241 bytes. Source availability does not add an
-accepted case. Count remains **159/173**; case1465 has no upstream source archive,
+accepted case. The historical count at this checkpoint was **159/173**; case1465 has no upstream source archive,
 and imported full-case audits remain pending.
 
 The conditional original-contract transport now passes the supplied checker on
@@ -417,7 +442,7 @@ standard axioms. The [S11 audit](verification/t03-wand125-pinned-s11-basic-audit
 [geometry audit](verification/t03-wand125-pinned-original-geometry-audit-checkpoint-20261001.json)
 and [small standalone source snapshot](verification/source-checkpoints/wand125-pinned-shared-core-20261001)
 publish their exact accepted versions and checker evidence. No imported case
-is accepted; the full-case count remains **159/173**.
+is accepted; the full-case historical count at this checkpoint was **159/173**.
 
 Shared-core compatibility now has actual **Lean 4.10.0-rc2** audits: the
 original checker accepted `SquarePacking.sq_subset_box_iff`, `lemmaG_box`,
@@ -427,14 +452,14 @@ and [packing audit](verification/t03-wand125-pinned-packing-audit-checkpoint-202
 bind their exact adapted source versions, genuine receipt/object hashes and
 unaltered CHECK/log bytes. This checks shared core only: no imported case has
 been accepted. Concrete per-case checker proofs and contract instantiations
-remain pending; the full-case count stays **159/173**.
+remain pending; the full-case historical count at this checkpoint was **159/173**.
 
 New upstream sources are now available in [wand125's `n11-certs-v1` release](https://github.com/wand125/n11-optimality-lean/releases/tag/n11-certs-v1):
 172 U2R case archives include **13 of our 14 remaining cases**; case1465 is absent.
 Case1849's [source archive](https://github.com/wand125/n11-optimality-lean/releases/download/n11-certs-v1/n11-u2r-C1849.tar.xz)
 and all 54 source members match its archive checksum and manifest. Import,
 concrete original-contract case instantiations and actual case target audits are **pending**;
-the local accepted count remains **159/173**. Thirteen duplicate local native
+the local accepted historical count at this checkpoint was **159/173**. Thirteen duplicate local native
 producers were checkpointed at complete publication boundaries and their queues
 preserved for reuse. Existing Lean checks were allowed to finish normally;
 case1465 continues locally. See [source provenance](verification/t03-wand125-source-release-availability-20261001.json)
@@ -449,7 +474,7 @@ receipt checks; it verifies two dependency groups, with no production timing
 speedup claim or new full certificate. See [experiment evidence](verification/t03-multi-target-audit-experiment-20261001.json)
 and [the first production pair](verification/t03-case1463-production-pair-checkpoint-20261001.json).
 Pairing remains optional; every full case and both public targets still need
-their original audits. The count remains **159/173**.
+their original audits. The historical count at this checkpoint was **159/173**.
 
 Case1731's exact full certificate now passes too: its actual audit took 90.39
 seconds and uses only `propext`, `Classical.choice` and `Quot.sound`. Publication

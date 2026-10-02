@@ -1,0 +1,114 @@
+{
+  "status": "WAITING_FOR_ALL_REAL_TRANSITION_AND_PREFIX_AUDITS",
+  "required_components": 17,
+  "accepted_components": 16,
+  "additional_lean_processes": 0,
+  "whole_case_certificate_increment": 0,
+  "events": [
+    {
+      "status": "WAITING_FOR_ALL_REAL_TRANSITION_AND_PREFIX_AUDITS",
+      "utc": "2026-10-02T00:35:38.278090+00:00"
+    },
+    {
+      "status": "WAITING_FOR_ALL_REAL_TRANSITION_AND_PREFIX_AUDITS",
+      "utc": "2026-10-02T00:35:38.324642+00:00",
+      "accepted": 1,
+      "required": 17
+    },
+    {
+      "status": "WAITING_FOR_ALL_REAL_TRANSITION_AND_PREFIX_AUDITS",
+      "utc": "2026-10-02T00:56:19.716384+00:00",
+      "accepted": 2,
+      "required": 17
+    },
+    {
+      "status": "WAITING_FOR_ALL_REAL_TRANSITION_AND_PREFIX_AUDITS",
+      "utc": "2026-10-02T01:06:50.427541+00:00",
+      "accepted": 3,
+      "required": 17
+    },
+    {
+      "status": "WAITING_FOR_ALL_REAL_TRANSITION_AND_PREFIX_AUDITS",
+      "utc": "2026-10-02T01:11:30.674261+00:00",
+      "accepted": 4,
+      "required": 17
+    },
+    {
+      "status": "WAITING_FOR_ALL_REAL_TRANSITION_AND_PREFIX_AUDITS",
+      "utc": "2026-10-02T01:22:41.362815+00:00",
+      "accepted": 5,
+      "required": 17
+    },
+    {
+      "status": "WAITING_FOR_ALL_REAL_TRANSITION_AND_PREFIX_AUDITS",
+      "utc": "2026-10-02T01:37:13.012140+00:00",
+      "accepted": 6,
+      "required": 17
+    },
+    {
+      "status": "WAITING_FOR_ALL_REAL_TRANSITION_AND_PREFIX_AUDITS",
+      "utc": "2026-10-02T01:42:44.423837+00:00",
+      "accepted": 7,
+      "required": 17
+    },
+    {
+      "status": "WAITING_FOR_ALL_REAL_TRANSITION_AND_PREFIX_AUDITS",
+      "utc": "2026-10-02T01:45:35.109340+00:00",
+      "accepted": 8,
+      "required": 17
+    },
+    {
+      "status": "WAITING_FOR_ALL_REAL_TRANSITION_AND_PREFIX_AUDITS",
+      "utc": "2026-10-02T02:01:17.477248+00:00",
+      "accepted": 9,
+      "required": 17
+    },
+    {
+      "status": "WAITING_FOR_ALL_REAL_TRANSITION_AND_PREFIX_AUDITS",
+      "utc": "2026-10-02T02:18:40.678760+00:00",
+      "accepted": 10,
+      "required": 17
+    },
+    {
+      "status": "WAITING_FOR_ALL_REAL_TRANSITION_AND_PREFIX_AUDITS",
+      "utc": "2026-10-02T02:18:50.741544+00:00",
+      "accepted": 11,
+      "required": 17
+    },
+    {
+      "status": "WAITING_FOR_ALL_REAL_TRANSITION_AND_PREFIX_AUDITS",
+      "utc": "2026-10-02T02:42:25.679120+00:00",
+      "accepted": 12,
+      "required": 17
+    },
+    {
+      "status": "WAITING_FOR_ALL_REAL_TRANSITION_AND_PREFIX_AUDITS",
+      "utc": "2026-10-02T02:47:17.582080+00:00",
+      "accepted": 13,
+      "required": 17
+    },
+    {
+      "status": "WAITING_FOR_ALL_REAL_TRANSITION_AND_PREFIX_AUDITS",
+      "utc": "2026-10-02T02:59:32.293092+00:00",
+      "accepted": 14,
+      "required": 17
+    },
+    {
+      "status": "WAITING_FOR_ALL_REAL_TRANSITION_AND_PREFIX_AUDITS",
+      "utc": "2026-10-02T03:38:44.742616+00:00"
+    },
+    {
+      "status": "WAITING_FOR_ALL_REAL_TRANSITION_AND_PREFIX_AUDITS",
+      "utc": "2026-10-02T03:38:45.083774+00:00",
+      "accepted": 16,
+      "required": 17
+    }
+  ],
+  "private_identifier_repair": "case1465-independent-private-initialize-identifier-repair-20261002.json",
+  "component_checks_are_historical_pre_identifier_repair": true,
+  "original_private_record_sha256": "cad8cc44e28b622ee75a210e2addae9ca824323ccc3ad72ff2b3a9de5a794b16",
+  "publication_snapshot_utc": "2026-10-02T03:53:54.679085+00:00",
+  "is_timestamped_controller_snapshot": true,
+  "fresh_repaired_source_audits_required": true,
+  "publication_controls_or_compilers": 0
+}
