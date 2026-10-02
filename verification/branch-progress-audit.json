@@ -1,0 +1,67 @@
+{
+  "format": "branch-source-review-v1",
+  "reviewed_on": "2026-10-02",
+  "scope": "All eight remote branch heads; source integration review, not full compiler acceptance.",
+  "branches": [
+    {
+      "branch": "main",
+      "commit": "b237948fa44eb8876ed87eeb21329ab5577c833c",
+      "assessment": "Ancestor of the active handoff; its proof sources are already incorporated."
+    },
+    {
+      "branch": "codex/import-wand125-progress",
+      "commit": "e69ba84d950609102795709787ecb1c0e28b9f15",
+      "assessment": "Ancestor of the active handoff; compatibility fixes and family integration are already incorporated."
+    },
+    {
+      "branch": "codex/stronger-computer-handoff-20261002",
+      "commit": "d0b013df13ec8ad8e06e35f4fdf15bb07ff7e1a6",
+      "assessment": "Active base, including the bundled baseline derivation and T06 integration."
+    },
+    {
+      "branch": "wand125/assignments",
+      "commit": "5c22e896377dcba37e9b134be5d905a810e77bd6",
+      "assessment": "Coordination notes only; its historical returned172 and unfinished-U5 statuses predate the selected source integrations."
+    },
+    {
+      "branch": "wand125/interop-families",
+      "commit": "91701bfaf249d2af086d5d8c1d785a799e3c09e4",
+      "assessment": "Ancestor of the active base. Bridge theorem bodies are retained; later imports avoid unnecessary baseline dependencies."
+    },
+    {
+      "branch": "wand125/u5-case438",
+      "commit": "2b539e977c9e5daf2a68cb896c2acc1a21d49e39",
+      "assessment": "All extension proof files, wrapper, generators and U5 manifests are incorporated byte-for-byte. Full native composition replay is pending."
+    },
+    {
+      "branch": "t03-proof-progress-20260930",
+      "commit": "e2b4c27fdac61a12857ff869c76a347f7414b279",
+      "assessment": "Reports all173 original case certificates accepted, including the exact case1465 certificate and64 component targets. The latest commit changes evidence, not production Lean files. The archived composition imports17 modules absent from the ordinary branch tree; the complete standalone source closure was not republished. Both public combined-target audits and the final export remain pending. Preserve this independent fallback and continue the complete upstream route.",
+      "alternative_native_sources": 720,
+      "notable_progress": [
+        "Completed native case2135 at fa21cad.",
+        "Cases1373 and1464 bring the reported historical original-contract audits to172/173 at4489cfb.",
+        "Case1465 prefix through step40 at16cebf4; the latest e2b4c27 checkpoint reports the original full65-target audit accepted. Its complete dependency closure is not yet republished.",
+        "Ordinary kernel-checked reflexivity and integer-polygon helpers are available for selective porting if an actual compatibility or performance need arises."
+      ],
+      "previous_review_commit": "9fa5a5c6836b9bb2f7b39038e22487103b798468",
+      "case1465_composition_sha256": "400c07dfab0f986c08478bf514076ea843fe1be081ac55aa54cd3901990f1e41"
+    },
+    {
+      "branch": "wand125/port-near-434",
+      "commit": "1d3b6483fac6407d5d3fb2b11dfdcf6ff9c214a6",
+      "assessment": "Both LocalAnglePacket and NearStateBridge compatibility fixes are incorporated byte-for-byte. Only proof scripts change; theorem statements and definitions are preserved. The current 77-module bridge and 78-module rectangle closures passed compiler checking and all 47 axiom queries, with independently revalidated current receipts. Complete case438 and global replay remain pending."
+    }
+  ],
+  "selected_sources": {
+    "returned173_upstream": "8126ef4d5ce0ecc967d7223388bac65ee5ffce5e",
+    "case438_extension": "2b539e977c9e5daf2a68cb896c2acc1a21d49e39",
+    "near_state_compatibility": "1d3b6483fac6407d5d3fb2b11dfdcf6ff9c214a6"
+  },
+  "acceptance": {
+    "source_admissions": 0,
+    "full_native_replay": "pending",
+    "global_optimality_proved_by_this_review": false
+  },
+  "integration_decision": "Continue the complete Returned/U5 route and bundled-baseline pilot. Preserve existing native progress; use independent T03 sources selectively if needed. Do not import machine-specific operational records or treat historical reports as fresh acceptance."
+}

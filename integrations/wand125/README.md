@@ -6,12 +6,14 @@ The initial integration compared the native baseline at `b237948` with
 - `main`: `ee96259ef815443587bd168658322efc8bb4b494`;
 - `split`: `41b06d524a7240311d4675ee786f765cea8be507`.
 
-The expanded family source is pinned separately at `split`
-`a8b51d3e0682beb1bf911048bdc8e7fa62329124`; see
-[release provenance and restoration](release/README.md). Baseline and prior
-family source wiring is now active, but full native compiler and axiom validation
-is pending. Two explicit source admissions remain; this is not a claim that all
-other new source has been accepted by Lean.
+The expanded field and prior source is pinned separately at `split`
+`a8b51d3e0682beb1bf911048bdc8e7fa62329124`. The complete returned family uses
+`8126ef4d5ce0ecc967d7223388bac65ee5ffce5e`, and the native case438 extension uses
+`2b539e977c9e5daf2a68cb896c2acc1a21d49e39`; see
+[release provenance and restoration](release/README.md). All former source
+admissions now have proof bodies, and `verification/admissions.json` has an empty
+`sites` list. Full native compiler replay and axiom validation remain pending;
+zero source admissions alone do not establish proof completion.
 
 The integration branch upgrades the project from Lean 4.10.0-rc2 to the latest
 stable release checked on 2026-09-30, **Lean 4.34.1**, with mathlib revision
@@ -49,10 +51,14 @@ The later published release supplies source for 1,904 field, 27 generic, and
 76 prior exclusions. The field and generic families together cover the 1,931
 native baseline indices, and the prior family covers the original 76 prior
 indices. The source wrappers now use those families without changing the public
-native statements. All new complete-family paths remain compiler-unverified.
-Returned-family work is separate; its public admission and case438 capture remain
-open. The upper bound, canonical-case reduction, D4 bridge, and local isolation
-overlap already completed native stages.
+native statements. The [complete returned integration](RETURNED.md) supplies all
+173 returned indices, including case1465, through the same trace contract.
+Case438 capture uses the extended traces in `ElevenSquare/Tasks/T07/Ext/` and the
+generated release unit U5. The U5 branch reports a clean Lean 4.34.1 axiom audit
+of `Ext.role_near_box_state`; the full native composition through
+`Case438Global` and all complete-family dependency paths still await replay.
+The upper bound, canonical-case reduction, D4 bridge, and local isolation overlap
+already completed native stages.
 
 ## How the proofs connect
 
@@ -75,9 +81,16 @@ the pinned toolchain. `ElevenSquare/Interop/Wand125/` supplies the connection:
   conditional on that statement.
 - `Families/BaselineCore.lean`: derives the native baseline contract from explicit
   field and generic family hypotheses, independently of generated certificate data.
-- `Families/Baseline.lean` and `Families/Prior.lean`: apply the published family
-  sources to those bridges. Their complete dependency paths await fresh compiler
-  and axiom validation.
+- `Families/Baseline.lean`, `Families/Prior.lean`, and `Families/Returned.lean`:
+  apply the published family sources to those bridges. Their complete dependency
+  paths await fresh compiler and axiom validation.
+
+The case438 extension preserves strict ownership and closed split coverage.
+`Ext/Case438Global.lean` identifies its copied near outer state with the existing
+native state by `rfl`, then uses the existing `role_near_box_to_case438_certificate`
+bridge. `UnfinishedCapture.lean` now supplies the original
+`Case438NearCertificate` from that result, without changing the physical packing
+or local-rectangle interface.
 
 The final T01 dispatcher uses the complete published baseline family directly.
 The imported-field and completed native group proofs remain available in their
@@ -86,8 +99,8 @@ claims were retired as an unused alternative route and replaced by explicit
 requirement types; they were not proved. All completed native proofs remain.
 The prior wrapper keeps its original baseline premise, while its new source proof
 uses independent imported exclusions. Public packing definitions and theorem
-statements are preserved. Two explicit source admissions remain, alongside the
-unverified new family paths; global optimality is still unfinished.
+statements are preserved. There are no remaining explicit source admissions, but
+global optimality is not yet independently accepted by the full native replay.
 
 Evan Daniel's general packing definitions and lemmas were extracted verbatim
 from the beginning of `Sqpack/S32.lean` into `Sqpack/Packing.lean`; the unrelated
@@ -103,7 +116,8 @@ witnesses are separately pinned and must be checked by the native compiler.
 From the repository root:
 
 ```sh
-# Restore pinned generated field/generic/prior sources; hashes are not Lean proofs.
+# Restore F, FCOMMON, U2G, U2P, U2R, U5 and derived baseline bundles.
+# Source hashes are not Lean proofs.
 python3 scripts/materialize_wand125.py
 
 # Exact source comparison and finite coverage calculation; NOT a Lean proof.
@@ -120,8 +134,17 @@ python3 scripts/verify.py --setup --module ElevenSquare.Interop.Wand125.Geometry
   --module Sqpack.S11Opt.Axioms --module Sqpack.S11Opt.Split.U2P.Branch
 
 # Check the full upgraded local source tree and final public axiom audit.
-python3 scripts/verify.py --all --fresh
+python3 scripts/verify.py --all --fresh --keep-going
+python3 scripts/finalize_verification.py
 ```
+
+The full gate covers every current local `ElevenSquare` and `Sqpack` source,
+including generated originals and derived bundles. It requires current accepted
+receipts and final public axiom reports containing only `propext`,
+`Classical.choice`, and `Quot.sound`; with an empty admission inventory,
+`sorryAx` is rejected everywhere. After final edits and a successful full gate,
+stage intended new files before using `finalize_verification.py --write` to save
+portable evidence. A selected-module result cannot satisfy this gate.
 
 `main/` and `split/` are exact upstream reference snapshots. Their hashes and
 commit identities are in `provenance.json`; the source comparator verifies them.

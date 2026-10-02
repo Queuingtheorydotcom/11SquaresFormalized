@@ -78,7 +78,7 @@ def import_names(code):
 
 def imports(path):
     if path not in _IMPORT_CACHE:
-        _IMPORT_CACHE[path] = import_names(code_only(path.read_text()))
+        _IMPORT_CACHE[path] = import_names(code_only(path.read_text(encoding='utf-8')))
     return _IMPORT_CACHE[path]
 
 
@@ -90,7 +90,7 @@ def check(use_cache=False):
     cache = {}
     if use_cache and cache_path.is_file():
         try:
-            saved = json.loads(cache_path.read_text())
+            saved = json.loads(cache_path.read_text(encoding='utf-8'))
             if saved.get('scanner') == scanner:
                 cache = saved.get('files', {})
         except (ValueError, OSError):
@@ -119,7 +119,7 @@ def check(use_cache=False):
         for dep in imports(p):
             if dep.startswith(('ElevenSquare', 'Sqpack')) and dep not in modules:
                 raise ValueError('Missing local import: ' + dep)
-    expected = json.loads((ROOT / 'verification/admissions.json').read_text())['sites']
+    expected = json.loads((ROOT / 'verification/admissions.json').read_text(encoding='utf-8'))['sites']
     sort = lambda xs: sorted(xs, key=lambda x: (x['path'], x['line']))
     if sort(found) != sort(expected):
         raise ValueError('Admission inventory changed; review and update MISSING.md and admissions.json.')
@@ -135,7 +135,7 @@ def check(use_cache=False):
     if use_cache:
         cache_path.parent.mkdir(exist_ok=True)
         temporary = cache_path.with_name(cache_path.name + f'.{os.getpid()}.tmp')
-        temporary.write_text(json.dumps({'scanner': scanner, 'files': next_cache}))
+        temporary.write_text(json.dumps({'scanner': scanner, 'files': next_cache}), encoding='utf-8')
         temporary.replace(cache_path)
     return {'status': 'SOURCE_ASSEMBLY_PASS', 'local_modules': len(modules),
             'explicit_admissions': len(found), 'global_optimality_proved': False}

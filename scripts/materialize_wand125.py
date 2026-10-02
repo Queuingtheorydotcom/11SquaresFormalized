@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Restore the pinned baseline and prior generated Lean sources for this checkout.
+"""Restore the pinned baseline, prior, and case438 generated Lean sources for this checkout.
 
-Required units are F, FCOMMON, U2G, and U2P. U2R is managed separately.
+Required units are F, FCOMMON, U2G, U2P, U2R, and U5.
 The CLI also derives grouped baseline sources; --raw-only restores just the
 original release files, including into an otherwise empty staging directory.
 Existing matching sources need no archive or network access. Missing assets are
@@ -18,7 +18,7 @@ import tarfile
 
 import fetch_wand125_release as release
 
-REQUIRED_UNITS = ("F", "FCOMMON", "U2G", "U2P")
+REQUIRED_UNITS = ("F", "FCOMMON", "U2G", "U2P", "U2R", "U5")
 DEFAULT_CACHE = release.ROOT / ".verification/wand125/releases"
 
 
@@ -104,7 +104,7 @@ def main(argv=None):
     parser.add_argument("--cache-dir", type=Path, default=DEFAULT_CACHE,
                         help="verified archive cache (default: .verification/wand125/releases)")
     parser.add_argument("--destination", type=Path, default=release.ROOT,
-                        help="destination root containing Sqpack/ (default: this repository)")
+                        help="destination root containing Sqpack/ and ElevenSquare/ (default: this repository)")
     parser.add_argument("--raw-only", action="store_true",
                         help="restore only original release files; skip derived baseline bundles")
     args = parser.parse_args(argv)

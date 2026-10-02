@@ -192,7 +192,7 @@ class SourcePolicyTests(unittest.TestCase):
         self.addCleanup(self.cache_patch.stop)
 
     def write_fixture(self, source, admissions):
-        (self.root / 'ElevenSquare.lean').write_text(source)
+        (self.root / 'ElevenSquare.lean').write_bytes(source.encode('utf-8'))
         (self.root / 'verification/admissions.json').write_text(json.dumps({
             'sites': [{'path': 'ElevenSquare.lean', 'line': line} for line in admissions]}))
 
@@ -241,8 +241,17 @@ class SourcePolicyTests(unittest.TestCase):
     def write_module(self, name, source):
         path = self.root / (name.replace('.', '/') + '.lean')
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(source)
+        path.write_bytes(source.encode('utf-8'))
         return path
+
+    def test_utf8_module_names_match_direct_and_cached_imports(self):
+        self.write_fixture('import Sqpack.ℝ\n-- Unicode source: ℝ\n', [])
+        self.write_module('Sqpack.ℝ', '')
+        path = self.root / 'ElevenSquare.lean'
+        self.assertEqual(check_sources.imports(path), ['Sqpack.ℝ'])
+        check_sources._IMPORT_CACHE.clear()
+        self.assertEqual(check_sources.check(use_cache=True)['status'], 'SOURCE_ASSEMBLY_PASS')
+        self.assertEqual(check_sources.imports(path), ['Sqpack.ℝ'])
 
     def test_indented_transition_dependency_is_extracted_and_scheduled_first(self):
         self.write_fixture('import ElevenSquare.TransitionData\n', [])

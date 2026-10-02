@@ -14,9 +14,9 @@ import sys
 
 import check_sources
 import fetch_wand125_release as release
+from materialize_wand125 import REQUIRED_UNITS
 
 SHARD_COUNT = 16
-REQUIRED_UNITS = ("F", "FCOMMON", "U2G", "U2P")
 FAN_IN_BARRIER = 8
 NAMED_BARRIERS = {"All", "Main", "Final"}
 # Native import count alone would defer shared foundations such as DataPacket
@@ -100,6 +100,11 @@ def make_plan(graph, sizes, generated, source_hashes):
     generated = set(generated)
     if not generated <= graph.keys():
         raise ValueError("Missing generated sources in graph")
+    # Preparation also derives the bundled baseline from authenticated raw
+    # sources. Include those outputs in scheduling; their current source hashes
+    # remain in the graph digest, and ordinary Lean checks remain mandatory.
+    generated.update(module for module in graph
+                     if module.startswith("Sqpack.S11Opt.Bundled."))
     if set(sizes) != graph.keys() or set(source_hashes) != graph.keys():
         raise ValueError("Incomplete source sizes or hashes")
     if any(size < 0 for size in sizes.values()):
@@ -111,11 +116,6 @@ def make_plan(graph, sizes, generated, source_hashes):
     barriers = {module for module in generated
                 if len(graph[module]) >= FAN_IN_BARRIER
                 or module.rsplit(".", 1)[-1] in NAMED_BARRIERS}
-    # The optional returned family is deliberately outside this replay frontier,
-    # including any native wrapper that might import it in a later checkout.
-    barriers.update(module for module in graph
-                    if module == "Sqpack.S11Opt.Split.U2R"
-                    or module.startswith("Sqpack.S11Opt.Split.U2R."))
     deferred, dependency_closures, closure_bytes = set(), {}, {}
     for module in order:
         if module in barriers or any(dependency in deferred for dependency in graph[module]):
@@ -125,7 +125,10 @@ def make_plan(graph, sizes, generated, source_hashes):
         for dependency in graph[module]:
             dependencies.update(dependency_closures[dependency])
         size = sum(sizes[dependency] for dependency in dependencies)
-        if module in native and size > NATIVE_CLOSURE_BYTE_CAP:
+        # U5's authenticated generated leaves live under ElevenSquare. Treat
+        # them like other generated certificates, retaining aggregation barriers
+        # instead of deferring the whole family through the native closure cap.
+        if module in native and module not in generated and size > NATIVE_CLOSURE_BYTE_CAP:
             barriers.add(module)
             deferred.add(module)
             continue

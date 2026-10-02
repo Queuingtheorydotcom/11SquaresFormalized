@@ -11,6 +11,12 @@ This focused audit does not establish full-repository migration acceptance. -/
 #print axioms ElevenSquare.Pending.prior_excluded
 #print axioms ElevenSquare.Pending.returned_certificate_exists
 #print axioms ElevenSquare.Pending.returned_excluded
+#print axioms SquarePacking.S11Opt.Split.returned_excluded
+#print axioms ElevenSquare.Interop.Wand125.returned_certificate
+#print axioms ElevenSquare.Tasks.T07.ext_trace_sound
+#print axioms ElevenSquare.Tasks.T07.Ext.stepB_sound
+#print axioms ElevenSquare.Tasks.T07.Ext.promoteB_sound
+#print axioms ElevenSquare.Tasks.T07.Ext.role_near_box_state
 #print axioms ElevenSquare.Tasks.T07.case438_near_certificate
 #print axioms ElevenSquare.Pending.exact_local_packet_exists
 #print axioms ElevenSquare.Pending.construction_locally_isolated

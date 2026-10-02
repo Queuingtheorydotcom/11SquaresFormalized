@@ -6,6 +6,7 @@ import unittest
 from unittest import mock
 
 import generate_baseline_coverage_bundles as bundles
+from symlink_test_support import symlink_or_skip
 
 
 PROP = "CovF G.Q G.M G.R G.hps1 opts1 0 2 0 2 0 2"
@@ -185,7 +186,7 @@ class CoverageBundlesTests(unittest.TestCase):
         with self.assertRaisesRegex(bundles.BundleError, "stale"):
             bundles.materialize_field(self.root, self.plan())
         stale.unlink()
-        (folder / "Leaves000.lean").symlink_to(self.root / "Sqpack/S11Opt/F04/Data.lean")
+        symlink_or_skip(self, folder / "Leaves000.lean", self.root / "Sqpack/S11Opt/F04/Data.lean")
         with self.assertRaises(ValueError):
             bundles.materialize_field(self.root, self.plan(), write=True)
 

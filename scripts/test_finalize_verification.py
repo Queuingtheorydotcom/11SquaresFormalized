@@ -29,7 +29,7 @@ class FinalizationTests(unittest.TestCase):
             (self.root / name).write_text(text)
         self.make_fixture(BASELINE_PATHS + [PRIOR_PATH, RETURNED_PATH, CAPTURE_PATH])
 
-    def make_fixture(self, admission_paths, *, missing_queries=(), axiom_overrides=None):
+    def make_fixture(self, admission_paths, *, missing_queries=(), axiom_overrides=None, jobs=None):
         sites = [{'path': path, 'line': 1} for path in admission_paths]
         inventory = self.root / 'verification/admissions.json'
         inventory.parent.mkdir(exist_ok=True)
@@ -37,7 +37,7 @@ class FinalizationTests(unittest.TestCase):
         unfinished = admitted_targets(sites)
         targets = PUBLIC_TARGETS - set(missing_queries)
         self.sources = {
-            'ElevenSquare': '-- fixture\n',
+            'ElevenSquare': '-- fixture over ℝ\n',
             'Sqpack': '-- fixture\n',
             'ElevenSquare.Verification': 'import ElevenSquare\nimport Sqpack\n' +
                 ''.join('#print axioms ' + n + '\n' for n in sorted(targets)),
@@ -49,13 +49,13 @@ class FinalizationTests(unittest.TestCase):
         state = self.root / '.verification'; state.mkdir(exist_ok=True)
         for module, text in self.sources.items():
             source = self.root / (module.replace('.', '/') + '.lean')
-            source.parent.mkdir(parents=True, exist_ok=True); source.write_text(text)
+            source.parent.mkdir(parents=True, exist_ok=True); source.write_bytes(text.encode('utf-8'))
             deps = ['ElevenSquare', 'Sqpack'] if module.endswith('.Verification') else []
             fingerprint = {
                 'source': hashlib.sha256(text.encode()).hexdigest(),
                 'local_dependency_objects': {d: object_hashes[d] for d in deps},
                 'compiler': 'Lean (version 4.34.1, fixture)',
-                'arguments': ['-j1', '-M0', '-s65536',
+                'arguments': [f"-j{(jobs or {}).get(module, 1)}", '-M0', '-s65536',
                               '-DautoImplicit=' + ('true' if module == 'Sqpack' else 'false'),
                               '-DmaxHeartbeats=0'],
                 'build_context': context,
@@ -69,7 +69,10 @@ class FinalizationTests(unittest.TestCase):
                 'object_sha256': object_hashes[module]}))
             output = ''.join("'" + n + "' depends on axioms: [" + ', '.join(self.axioms[n]) + "]\n"
                              for n in sorted(targets))
-            (state / (module + '.log')).write_text(output if deps else '')
+            # Lean logs retain UTF-8 diagnostics even when Python's locale is
+            # a Windows code page; their axiom evidence must remain readable.
+            (state / (module + '.log')).write_bytes(
+                ('warning: fixture over ℝ\n' + output if deps else '').encode('utf-8'))
         self.result = {'status': 'PARTIAL_ASSEMBLY_COMPILES' if sites else 'OPTIMALITY_PROVED',
                        'checked_modules': 3, 'global_optimality_proved': not sites, 'axioms': self.axioms}
         self.save_result()
@@ -84,6 +87,44 @@ class FinalizationTests(unittest.TestCase):
         self.assertTrue(audit['full_upgrade_verified'])
         self.assertEqual(audit['checked_modules'], 3)
         self.assertFalse((self.root / 'verification/wand125-upgrade.json').exists())
+
+    def test_mixed_jobs_accept_full_audit_without_rewriting_receipts(self):
+        self.make_fixture([], jobs={'ElevenSquare': 1, 'Sqpack': 4, 'ElevenSquare.Verification': 8})
+        paths = sorted((self.root / '.verification').glob('*.json'))
+        before = {p: p.read_bytes() for p in paths}
+        audit = collect_audit(self.root, self.source_check)
+        self.assertTrue(audit['global_optimality_proved'])
+        self.assertEqual(audit['checked_modules'], 3)
+        self.assertEqual({p: p.read_bytes() for p in paths}, before)
+
+    def test_mixed_jobs_still_require_exact_transitive_input_hashes(self):
+        self.make_fixture([], jobs={'Sqpack': 4, 'ElevenSquare.Verification': 8})
+        path = self.root / '.verification/Sqpack.json'
+        receipt = json.loads(path.read_text(encoding='utf-8'))
+        # Even an otherwise valid different job count changes this input digest;
+        # its dependent's receipt must not be silently relabeled or normalized.
+        receipt['inputs']['arguments'][0] = '-j8'
+        path.write_bytes(json_bytes(receipt))
+        with self.assertRaisesRegex(ValueError, 'Stale source/configuration/dependency receipt'):
+            collect_audit(self.root, self.source_check)
+
+    def test_noncanonical_recorded_flags_reject_full_audit(self):
+        self.make_fixture([], jobs={'Sqpack': 4, 'ElevenSquare.Verification': 8})
+        path = self.root / '.verification/Sqpack.json'
+        receipt = json.loads(path.read_text(encoding='utf-8'))
+        good = receipt['inputs']['arguments'][:]
+        bad = [None, [], good[:-1], good + ['-t999'], good + ['-DElab.async=false'],
+               good + ['-j8'], ['-M0', '-j4', *good[2:]]]
+        bad.extend([flag, *good[1:]] for flag in ('-j0', '-j04', '-j+4', '-j4294967296'))
+        for i, flag in ((1, '-M1'), (2, '-s1024'), (3, '-DautoImplicit=false'),
+                        (4, '-DmaxHeartbeats=1')):
+            bad.append(good[:i] + [flag] + good[i+1:])
+        for arguments in bad:
+            with self.subTest(arguments=arguments):
+                receipt['inputs']['arguments'] = arguments
+                path.write_bytes(json_bytes(receipt))
+                with self.assertRaisesRegex(ValueError, 'Noncanonical compiler arguments'):
+                    collect_audit(self.root, self.source_check)
 
     def test_five_two_and_zero_admission_states_are_accepted(self):
         for paths in (BASELINE_PATHS + [RETURNED_PATH, CAPTURE_PATH],

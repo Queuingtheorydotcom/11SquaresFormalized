@@ -6,6 +6,7 @@ import unittest
 from unittest import mock
 
 import baseline_bundle_assembly as assembly
+from symlink_test_support import symlink_or_skip
 
 
 # Minimal source-shaped fixtures. Proof markers are never compiled or published.
@@ -143,7 +144,7 @@ class AssemblyTests(unittest.TestCase):
         source = self.root / "Sqpack/S11Opt/F04/Final.lean"
         target = self.root / "saved.lean"
         source.rename(target)
-        source.symlink_to(target)
+        symlink_or_skip(self, source, target)
         with self.assertRaisesRegex(ValueError, "symlink"):
             assembly.build_assembly(self.root, [4])
 

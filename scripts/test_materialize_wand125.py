@@ -11,6 +11,7 @@ import unittest
 from unittest import mock
 
 import materialize_wand125 as materializer
+from symlink_test_support import symlink_or_skip
 
 release = materializer.release
 
@@ -72,7 +73,7 @@ class MaterializeTests(unittest.TestCase):
         self.assertEqual(result["lean_sources"], 1)
         self.assertEqual(source.stat().st_ino, inode)
         self.assertEqual([call.args[0] for call in self.read_plan.call_args_list],
-                         ["F", "FCOMMON", "U2G", "U2P"])
+                         ["F", "FCOMMON", "U2G", "U2P", "U2R", "U5"])
         self.assertFalse(self.cache.exists())
 
     def test_corrupt_source_is_rejected_before_any_archive_action(self):
@@ -97,7 +98,7 @@ class MaterializeTests(unittest.TestCase):
         elsewhere.write_bytes(self.body)
         target = self.destination / self.name
         target.parent.mkdir(parents=True)
-        target.symlink_to(elsewhere)
+        symlink_or_skip(self, target, elsewhere)
         with self.assertRaisesRegex(release.ReleaseError, "destination is a symlink"):
             self.run_materializer()
         self.assertEqual(elsewhere.read_bytes(), self.body)
@@ -106,7 +107,7 @@ class MaterializeTests(unittest.TestCase):
         self.destination.mkdir()
         elsewhere = self.root / "elsewhere"
         elsewhere.mkdir()
-        (self.destination / "Sqpack").symlink_to(elsewhere, target_is_directory=True)
+        symlink_or_skip(self, self.destination / "Sqpack", elsewhere, target_is_directory=True)
         with self.assertRaisesRegex(release.ReleaseError, "unsafe destination directory"):
             self.run_materializer()
         self.assertEqual(list(elsewhere.iterdir()), [])
@@ -114,7 +115,7 @@ class MaterializeTests(unittest.TestCase):
     def test_symlink_destination_root_is_rejected(self):
         elsewhere = self.root / "elsewhere"
         elsewhere.mkdir()
-        self.destination.symlink_to(elsewhere, target_is_directory=True)
+        symlink_or_skip(self, self.destination, elsewhere, target_is_directory=True)
         with self.assertRaisesRegex(release.ReleaseError, "destination root is a symlink"):
             self.run_materializer()
         self.assertEqual(list(elsewhere.iterdir()), [])

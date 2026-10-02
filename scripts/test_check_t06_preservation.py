@@ -8,6 +8,7 @@ import unittest
 from unittest.mock import patch
 
 import check_t06_preservation as checker
+from symlink_test_support import symlink_or_skip
 
 
 def shard_fixture(branch=0):
@@ -219,7 +220,7 @@ class SnapshotTests(unittest.TestCase):
             (root / checker.T06).mkdir(parents=True)
             outside = root / 'outside.lean'
             outside.write_bytes(b'-- source\n')
-            (root / checker.SHARDS[0]).symlink_to(outside)
+            symlink_or_skip(self, root / checker.SHARDS[0], outside)
             with self.assertRaisesRegex(ValueError, 'Symlink'):
                 checker.load_current(root)
 

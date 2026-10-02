@@ -19,12 +19,20 @@ import ElevenSquare
 #print axioms ElevenSquare.Pending.baseline_excluded
 #print axioms ElevenSquare.Pending.prior_certificate_exists
 #print axioms ElevenSquare.Pending.prior_excluded
-#print axioms SquarePacking.S11Opt.Split.field_excluded
+#print axioms SquarePacking.S11Opt.Bundled.Split.field_excluded
 #print axioms SquarePacking.S11Opt.Split.generic_excluded
 #print axioms SquarePacking.S11Opt.Split.prior_excluded
 
--- These targets still depend on the explicit remaining admissions.
+-- Integrated returned and case438 paths require clean transitive axiom reports.
 #print axioms ElevenSquare.Pending.returned_certificate_exists
+#print axioms ElevenSquare.Pending.returned_excluded
+#print axioms SquarePacking.S11Opt.Split.returned_excluded
+#print axioms ElevenSquare.Interop.Wand125.returned_certificate
+#print axioms ElevenSquare.Tasks.T07.ext_trace_sound
+#print axioms ElevenSquare.Tasks.T07.Ext.stepB_sound
+#print axioms ElevenSquare.Tasks.T07.Ext.promoteB_sound
+#print axioms ElevenSquare.Tasks.T07.Ext.role_near_box_state
+#print axioms ElevenSquare.Tasks.T07.case438_near_certificate
 #print axioms ElevenSquare.Pending.global_lower_bound
 #print axioms ElevenSquare.optimal_side_lower_bound
 #print axioms ElevenSquare.optimality

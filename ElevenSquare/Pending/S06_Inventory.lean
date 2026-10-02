@@ -1,12 +1,13 @@
 import ElevenSquare.Pending.S06_CasesExact
 import ElevenSquare.Pending.S06_ExclusionPartition
+import ElevenSquare.Pending.S06_Baseline
 import ElevenSquare.Pending.S06_PriorSupport
 import ElevenSquare.Pending.S06_Returned
 import ElevenSquare.Pending.S06_TupleBounds
 import ElevenSquare.Pending.S06_CandidateMasks
 
-/-! UNFINISHED FORMALIZATION OBLIGATIONS. See handoffs/S06_Inventory.md.
-Every `sorry` in this file is an explicit outstanding proof, not verified evidence. -/
+/-! Assemble the complete exclusion families using the exact finite partition.
+Full compiler and axiom acceptance of these dependencies remains to be checked. -/
 
 namespace ElevenSquare.Pending
 noncomputable section
@@ -44,7 +45,7 @@ end ElevenSquare.Pending
 
 #print axioms ElevenSquare.Pending.exclusion_inventory
 
--- These two wrappers still inherit admissions from the skipped large exclusion modules.
+-- Audit the complete exclusion-family composition.
 #print axioms ElevenSquare.Pending.all_noncandidates_excluded
 #print axioms ElevenSquare.Pending.occupied_case_is_candidate
 

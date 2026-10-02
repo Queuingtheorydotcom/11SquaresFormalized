@@ -1,8 +1,10 @@
 import ElevenSquare.Tasks.T03.Exclusion
-import ElevenSquare.Pending.S06_Baseline
+import ElevenSquare.Pending.S06_Exclusion
+import ElevenSquare.Interop.Wand125.Families.Returned
 
-/-! UNFINISHED FORMALIZATION OBLIGATIONS. See handoffs/S06_Returned.md.
-Every `sorry` in this file is an explicit outstanding proof, not verified evidence. -/
+/-! Returned-family source wiring through all 173 published owned-hull proofs.
+The public initialized-terminal-trace contract is unchanged. Full native compiler
+and axiom acceptance of this complete dependency path remains to be checked. -/
 
 namespace ElevenSquare.Pending
 noncomputable section
@@ -13,7 +15,7 @@ theorem returned_certificate_exists (k : Fin 2184) (hk : k.val ∈ returnedIndic
       (∀ P : Packing 11 coverCap, IsCharted P → Occupies P (caseMask k) →
         ∃ perm : Equiv.Perm Owner, StateHolds (relabelPacking P perm) a) ∧
       VerifiedTrace a b ∧ Terminal b := by
-  sorry
+  exact ElevenSquare.Interop.Wand125.returned_certificate k hk
 
 theorem returned_excluded (k : Fin 2184) (hk : k.val ∈ returnedIndices) : Excluded k := by
   obtain ⟨a, b, hroot, htrace, hterminal⟩ := returned_certificate_exists k hk
@@ -23,3 +25,6 @@ theorem returned_excluded (k : Fin 2184) (hk : k.val ∈ returnedIndices) : Excl
 
 end
 end ElevenSquare.Pending
+
+#print axioms ElevenSquare.Pending.returned_certificate_exists
+#print axioms ElevenSquare.Pending.returned_excluded

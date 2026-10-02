@@ -25,6 +25,15 @@ _ADMISSION_TARGETS = {
         'ElevenSquare.Pending.returned_certificate_exists',
     'ElevenSquare/Tasks/T07/UnfinishedCapture.lean': None,
 }
+# Additional component queries in ProofAudit. Keep these tied to their exact
+# inventoried site: a remaining returned admission cannot excuse a capture
+# admission (or vice versa), and neither permits sorryAx in completed families.
+_ADMISSION_COMPONENT_TARGETS = {
+    'ElevenSquare/Pending/S06_Returned.lean': {
+        'ElevenSquare.Pending.returned_excluded'},
+    'ElevenSquare/Tasks/T07/UnfinishedCapture.lean': {
+        'ElevenSquare.Tasks.T07.case438_near_certificate'},
+}
 
 
 def admitted_targets(sites):
@@ -34,6 +43,8 @@ def admitted_targets(sites):
     if unknown:
         raise ValueError('Unknown admission paths: ' + ', '.join(sorted(unknown)))
     targets = {_ADMISSION_TARGETS[path] for path in paths} - {None}
+    for path in paths:
+        targets.update(_ADMISSION_COMPONENT_TARGETS.get(path, set()))
     return targets | (_GLOBAL_TARGETS if paths else set())
 
 
@@ -76,6 +87,38 @@ def input_digest(inputs):
     return hashlib.sha256(json.dumps(inputs, sort_keys=True).encode()).hexdigest()
 
 
+def positive_jobs(value):
+    """Parse a canonical positive thread count supported by Lean's UInt32 CLI."""
+    if not isinstance(value, str) or not re.fullmatch(r'[1-9][0-9]*', value):
+        raise ValueError('jobs must be a positive decimal integer')
+    jobs = int(value)
+    if jobs >= 2**32:
+        raise ValueError('jobs must be less than 2**32')
+    return jobs
+
+
+def lean_arguments(module, jobs=1):
+    """The only accepted proof settings; worker count does not change them."""
+    if type(jobs) is not int or not 0 < jobs < 2**32:
+        raise ValueError('jobs must be a positive UInt32 integer')
+    implicit = 'true' if module == 'Sqpack' or module.startswith('Sqpack.') else 'false'
+    return [f'-j{jobs}', '-M0', '-s65536', '-DautoImplicit=' + implicit, '-DmaxHeartbeats=0']
+
+
+def recorded_arguments(module, arguments):
+    """Reconstruct canonical arguments, rejecting every other recorded flag."""
+    if (not isinstance(arguments, list) or not arguments
+            or not isinstance(arguments[0], str) or not arguments[0].startswith('-j')):
+        raise ValueError('Noncanonical compiler arguments: ' + module)
+    try:
+        expected = lean_arguments(module, positive_jobs(arguments[0][2:]))
+    except ValueError as error:
+        raise ValueError('Noncanonical compiler arguments: ' + module) from error
+    if arguments != expected:
+        raise ValueError('Noncanonical compiler arguments: ' + module)
+    return expected
+
+
 def reusable_inputs(old, current, *, legacy_baseline, checked_at, newest_input):
     if old == current:
         return True
@@ -85,6 +128,25 @@ def reusable_inputs(old, current, *, legacy_baseline, checked_at, newest_input):
     legacy = {k: v for k, v in current.items()
               if k not in {'build_context', 'local_dependency_inputs'}}
     return (legacy_baseline and old == legacy and newest_input <= checked_at)
+
+
+def reusable_fingerprint(module, old, current, *, legacy_baseline, checked_at, newest_input):
+    """Reuse unchanged evidence with its actual worker count, never relabel it.
+
+    Requested jobs apply only to a new compilation. Every other current input
+    still has to match, including transitive dependency fingerprints. The legacy
+    migration retains its existing provenance and timestamp requirements.
+    """
+    if not isinstance(old, dict):
+        return None
+    try:
+        candidate = dict(current, arguments=recorded_arguments(module, old.get('arguments')))
+    except ValueError:
+        return None
+    if reusable_inputs(old, candidate, legacy_baseline=legacy_baseline,
+                       checked_at=checked_at, newest_input=newest_input):
+        return candidate
+    return None
 
 
 def audit_axioms(source_code, output, allowed, unfinished):

@@ -18,7 +18,7 @@ import sys
 sys.dont_write_bytecode = True
 from check_sources import ROOT, check, code_only, imports
 from verify_support import (STANDARD_AXIOMS, admitted_targets, public_audit_status,
-                            audit_axioms, input_digest, priority_order)
+                            audit_axioms, input_digest, priority_order, recorded_arguments)
 
 OUTPUTS = {'verification/wand125-upgrade.json', 'verification/source-check.json', 'MANIFEST.json'}
 
@@ -43,7 +43,7 @@ def json_bytes(value):
 def collect_audit(root, source_check):
     """Verify the complete receipt graph before producing any portable output."""
     state = root / '.verification'
-    result = json.loads((state / 'result.json').read_text())
+    result = json.loads((state / 'result.json').read_text(encoding='utf-8'))
     paths = (sorted((root / 'ElevenSquare').rglob('*.lean')) +
              sorted((root / 'Sqpack').rglob('*.lean')) +
              [root / 'ElevenSquare.lean', root / 'Sqpack.lean'])
@@ -52,7 +52,7 @@ def collect_audit(root, source_check):
             'No successful full-project verifier result; run scripts/verify.py --all.')
     require(result.get('checked_modules') == len(modules),
             'The verifier result does not cover every current local module.')
-    admissions = json.loads((root / 'verification/admissions.json').read_text())['sites']
+    admissions = json.loads((root / 'verification/admissions.json').read_text(encoding='utf-8'))['sites']
     unfinished = admitted_targets(admissions)
     admission_count = len(admissions)
     require(source_check.get('status') == 'SOURCE_ASSEMBLY_PASS'
@@ -61,30 +61,29 @@ def collect_audit(root, source_check):
             'The source check must accept the full tree and exactly the inventoried admissions.')
 
     context = {p: sha(root / p) for p in ['lean-toolchain', 'lakefile.lean', 'lake-manifest.json']}
-    toolchain = (root / 'lean-toolchain').read_text().strip()
+    toolchain = (root / 'lean-toolchain').read_text(encoding='utf-8').strip()
     version = toolchain.rsplit(':v', 1)[-1]
-    manifest = json.loads((root / 'lake-manifest.json').read_text())
+    manifest = json.loads((root / 'lake-manifest.json').read_text(encoding='utf-8'))
     mathlib = next(p['rev'] for p in manifest['packages'] if p['name'] == 'mathlib')
     dependencies = {m: [d for d in imports(p) if d in modules] for m, p in modules.items()}
     order = priority_order(dependencies, {m: p.stat().st_size for m, p in modules.items()})
     source_hashes = {}; object_hashes = {}; input_ids = {}; axioms = {}
     compiler = None
     for m in order:
-        receipt = json.loads((state / (m + '.json')).read_text())
+        receipt = json.loads((state / (m + '.json')).read_text(encoding='utf-8'))
         require(receipt.get('status') == 'accepted', 'Unaccepted module: ' + m)
         recorded = receipt.get('inputs', {})
         if compiler is None:
             compiler = recorded.get('compiler', '')
             parsed = re.search(r'\bversion ([^,]+),', compiler)
             require(parsed is not None and parsed[1] == version, 'Compiler/toolchain mismatch.')
-        implicit = 'true' if m == 'Sqpack' or m.startswith('Sqpack.') else 'false'
         source = modules[m].read_bytes()
         source_hashes[m] = hashlib.sha256(source).hexdigest()
         current = {
             'source': source_hashes[m],
             'local_dependency_objects': {d: object_hashes[d] for d in dependencies[m]},
             'compiler': compiler,
-            'arguments': ['-j1', '-M0', '-s65536', '-DautoImplicit=' + implicit, '-DmaxHeartbeats=0'],
+            'arguments': recorded_arguments(m, recorded.get('arguments')),
             'build_context': context,
             'local_dependency_inputs': {d: input_ids[d] for d in dependencies[m]},
         }
@@ -96,7 +95,7 @@ def collect_audit(root, source_check):
         log = state / (m + '.log')
         require(log.is_file(), 'Missing compiler log: ' + m)
         if b'#print' in source:
-            axioms.update(audit_axioms(code_only(source.decode()), log.read_text(), STANDARD_AXIOMS, unfinished))
+            axioms.update(audit_axioms(code_only(source.decode()), log.read_text(encoding='utf-8'), STANDARD_AXIOMS, unfinished))
     status = public_audit_status(axioms, admission_count)
     require(axioms == result.get('axioms'), 'Verifier result does not match the current axiom logs.')
     require(result.get('status') == status['status']

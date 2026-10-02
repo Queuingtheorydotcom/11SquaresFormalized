@@ -3,6 +3,33 @@
   "commit": "a8b51d3e0682beb1bf911048bdc8e7fa62329124",
   "release_tag": "n11-certs-v1",
   "upstream_toolchain": "leanprover/lean4:v4.33.1",
+  "files_scope": "Original metadata at commit; active metadata changes are recorded separately in active_metadata_overrides. The upstream/ snapshot and upstream_snapshot_sha256 retain their original identity.",
+  "active_metadata_overrides": {
+    "MANIFEST_U2R.sha256": {
+      "repository": "https://github.com/wand125/n11-optimality-lean",
+      "commit": "8126ef4d5ce0ecc967d7223388bac65ee5ffce5e",
+      "upstream_path": "scripts/u2p/MANIFEST_U2R.sha256",
+      "sha256": "ea1451c6000a991915209202167e92b9c024d7bb78aa17a765566f7c730f8610"
+    },
+    "SHA256SUMS_U2R": {
+      "repository": "https://github.com/wand125/n11-optimality-lean",
+      "commit": "8126ef4d5ce0ecc967d7223388bac65ee5ffce5e",
+      "upstream_path": "scripts/u2p/SHA256SUMS_U2R",
+      "sha256": "2bb7fe4f0b35277822a77688d10f268f6ac4fe64fed1cf7c2867ee7929961f9e"
+    },
+    "MANIFEST_U5.sha256": {
+      "source": "Native repository U5 extension",
+      "commit": "2b539e977c9e5daf2a68cb896c2acc1a21d49e39",
+      "source_path": "integrations/wand125/release/MANIFEST_U5.sha256",
+      "sha256": "d847f85960c826204adb6d7d9fa3962d1471960712c6449108e59bbf0dd25642"
+    },
+    "SHA256SUMS_U5": {
+      "source": "Native repository U5 extension",
+      "commit": "2b539e977c9e5daf2a68cb896c2acc1a21d49e39",
+      "source_path": "integrations/wand125/release/SHA256SUMS_U5",
+      "sha256": "6e7134ac089a1f12948be5144e506192f53eef7c1253ab8acfe91434eda5a6eb"
+    }
+  },
   "files": {
     "MANIFEST_F.sha256": {
       "upstream_path": "scripts/field/MANIFEST_F.sha256",
@@ -42,7 +69,13 @@
     }
   },
   "native_replay_complete": false,
-  "missing_returned_case": 1465,
+  "active_source_status": "SOURCE_COMPLETE_REPLAY_PENDING",
+  "explicit_native_admissions": 0,
+  "restored_units": ["F", "FCOMMON", "U2G", "U2P", "U2R", "U5"],
+  "returned_case_count": 173,
+  "missing_returned_case": null,
+  "original_snapshot_missing_returned_case": 1465,
+  "acceptance_requirement": "Complete native Lean 4.34.1 replay, clean transitive axiom reports, and the full supported-source finalize_verification.py gate; source restoration and zero admissions are insufficient.",
   "upstream_snapshot_sha256": {
     ".gitignore": "cc54ed0bd3ddcf80a59b13dff3f57597603cca25f233e849dc56aaa24944451f",
     "LICENSE": "c0dd43e7892932c81335f74a2fdbf1a98f5977bab14c0c4c30e3abcc97c34904",

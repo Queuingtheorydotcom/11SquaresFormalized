@@ -92,13 +92,15 @@ class PlannerTests(unittest.TestCase):
         hashes = {module: "changed" for module in graph}
         self.assertNotEqual(original, ci_plan.make_plan(graph, {"A": 1, "B": 1}, graph, hashes)["graph_sha256"])
 
-    def test_metadata_units_never_include_returned_family(self):
+    def test_metadata_units_match_all_materialized_families(self):
         def fixture(unit):
             return [("archive", "digest", {f"Sqpack/{unit}.lean": "source", "Roots.txt": "auxiliary"})]
         with mock.patch.object(ci_plan.release, "release_plan", side_effect=fixture) as planner:
             result = ci_plan.required_sources()
-        self.assertEqual([call.args[0] for call in planner.call_args_list], ["F", "FCOMMON", "U2G", "U2P"])
-        self.assertEqual(set(result), {"Sqpack.F", "Sqpack.FCOMMON", "Sqpack.U2G", "Sqpack.U2P"})
+        self.assertEqual([call.args[0] for call in planner.call_args_list],
+                         ["F", "FCOMMON", "U2G", "U2P", "U2R", "U5"])
+        self.assertEqual(set(result),
+                         {"Sqpack.F", "Sqpack.FCOMMON", "Sqpack.U2G", "Sqpack.U2P", "Sqpack.U2R", "Sqpack.U5"})
 
     def test_native_frontier_includes_shared_foundations_and_defers_large_aggregates(self):
         graph = {f"ElevenSquare.Data{i}": [] for i in range(8)}
@@ -120,18 +122,70 @@ class PlannerTests(unittest.TestCase):
         self.assertEqual(result["native_candidate_module_count"], 14)
         self.assertEqual(result["eligible_native_module_count"], 12)
 
-    def test_native_wrappers_cannot_pull_generated_barriers_or_returned_family(self):
+    def test_native_wrappers_cannot_pull_generated_barriers(self):
         graph = {"Sqpack.Case.S0": [], "Sqpack.Case.Main": ["Sqpack.Case.S0"],
                  "ElevenSquare.Wrapper": ["Sqpack.Case.Main"],
-                 "Sqpack.S11Opt.Split.U2R.C1.S0": [],
-                 "ElevenSquare.ReturnedWrapper": ["Sqpack.S11Opt.Split.U2R.C1.S0"],
                  "ElevenSquare.Independent": []}
         result = plan(graph, {"Sqpack.Case.S0", "Sqpack.Case.Main"})
         targets = {module for shard in result["shards"] for module in shard["modules"]}
         self.assertEqual(targets, {"Sqpack.Case.S0", "ElevenSquare.Independent"})
-        self.assertEqual(set(result["deferred_native_modules"]),
-                         {"ElevenSquare.Wrapper", "ElevenSquare.ReturnedWrapper"})
+        self.assertEqual(set(result["deferred_native_modules"]), {"ElevenSquare.Wrapper"})
         self.assertFalse(closure(graph, targets) & set(result["barrier_modules"]))
+
+    def test_returned_certificates_are_distributed_but_main_stays_in_final_replay(self):
+        prefix = "Sqpack.S11Opt.Split.U2R.C1."
+        graph = {prefix + "Data": [], prefix + "S0": [prefix + "Data"],
+                 prefix + "Main": [prefix + "S0"],
+                 "ElevenSquare.Returned": [prefix + "Main"]}
+        result = plan(graph, {prefix + name for name in ("Data", "S0", "Main")})
+        targets = {module for shard in result["shards"] for module in shard["modules"]}
+        self.assertEqual(targets, {prefix + "S0"})
+        self.assertEqual(set(result["final_modules"]), {prefix + "Main", "ElevenSquare.Returned"})
+        self.assertEqual(closure(graph, targets) | set(result["final_modules"]), set(graph))
+
+    def test_generated_u5_leaves_bypass_native_cap_but_not_aggregation_barriers(self):
+        prefix = "ElevenSquare.Tasks.T07.Ext.Gen."
+        data = prefix + "P2.Data"
+        leaves = {prefix + f"P2.S{i}" for i in range(8)}
+        graph = {data: []}
+        graph.update({module: [data] for module in leaves})
+        graph[prefix + "P2"] = sorted(leaves)
+        graph["ElevenSquare.Capture"] = [prefix + "P2"]
+        generated = set(graph) - {"ElevenSquare.Capture"}
+        sizes = {module: 1 for module in graph}
+        sizes[data] = 3
+        with mock.patch.object(ci_plan, "NATIVE_CLOSURE_BYTE_CAP", 2):
+            result = plan(graph, generated, sizes)
+        targets = {module for shard in result["shards"] for module in shard["modules"]}
+        self.assertEqual(targets, leaves)
+        self.assertEqual(result["barrier_modules"], [prefix + "P2"])
+        self.assertEqual(set(result["final_modules"]), {prefix + "P2", "ElevenSquare.Capture"})
+        self.assertEqual(closure(graph, targets) | set(result["final_modules"]), set(graph))
+
+    def test_bundles_and_originals_both_remain_in_complete_replay(self):
+        original = "Sqpack.S11Opt.F04."
+        bundled = "Sqpack.S11Opt.Bundled.F04."
+        graph = {original + "Data": [], original + "Cov1": [original + "Data"],
+                 bundled + "Leaves000": [original + "Data"],
+                 bundled + "Leaves001": [original + "Data"],
+                 bundled + "Coverage": [bundled + "Leaves000", bundled + "Leaves001"],
+                 bundled + "Final": [bundled + "Coverage"],
+                 "ElevenSquare.Baseline": [bundled + "Final"]}
+        result = plan(graph, {original + "Data", original + "Cov1"})
+        targets = {module for shard in result["shards"] for module in shard["modules"]}
+        self.assertEqual(targets, {original + "Cov1", bundled + "Coverage"})
+        self.assertEqual(result["generated_module_count"], 6)
+        final = set(result["final_modules"])
+        self.assertEqual(final, {bundled + "Final", "ElevenSquare.Baseline"})
+        covered = closure(graph, targets)
+        self.assertFalse(covered & final)
+        self.assertEqual(covered | final, set(graph))
+
+        changed = {module: "changed" if module == bundled + "Leaves000" else
+                   hashlib.sha256(module.encode()).hexdigest() for module in graph}
+        self.assertNotEqual(result["graph_sha256"], ci_plan.make_plan(
+            graph, {module: 1 for module in graph},
+            {original + "Data", original + "Cov1"}, changed)["graph_sha256"])
 
     def test_source_scan_checks_pins_and_missing_imports(self):
         with tempfile.TemporaryDirectory() as temporary:

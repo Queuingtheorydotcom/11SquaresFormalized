@@ -1,11 +1,10 @@
 # Eleven-square packing in Lean
 
-This repository assembles the completed foundations and the available partial
-formalizations of the optimal eleven-square packing. **Global optimality is
-still unfinished.** Two explicit `sorry` sites remain in source. The newly wired
-baseline and prior families still require full compiler and axiom validation;
-the smaller source admission count is not a claim of verified proof completion.
-See [MISSING.md](MISSING.md).
+This repository assembles a formalization of the optimal eleven-square packing.
+**All former source admissions have proof bodies; full native verification is
+still pending.** The admission inventory is empty. The complete baseline, prior,
+returned, and case438 paths require compiler acceptance and clean transitive
+axiom audits before global optimality can be claimed. See [MISSING.md](MISSING.md).
 
 The target side length is the exact real number
 
@@ -30,12 +29,14 @@ arbitrary orientations, legal boundary contact, and disjoint open interiors.
 | `ElevenSquare/Progress.lean` | Completed baseline groups, case1000 through two steps, and selected global capture helpers. |
 | `ElevenSquare/Pending/` | Public interfaces and the later proof stages, with explicit remaining dependencies. |
 | `ElevenSquare/Tasks/` | Returned certificate data, generic checkers, analytic lemmas, and concrete partial proofs. |
-| `ElevenSquare/Optimality.lean` | Final unconditional theorem statements; their proofs currently inherit the listed admissions. |
-| `ElevenSquare/Verification.lean` | Axiom queries for completed milestones and unfinished public targets. |
+| `ElevenSquare/Optimality.lean` | Final unconditional theorem statements; complete dependency replay remains pending. |
+| `ElevenSquare/ProofAudit.lean` | Focused final-theorem closure and component axiom queries. |
+| `ElevenSquare/Verification.lean` | Public-target and progress-milestone axiom queries. |
 
 ## Verification
 
-Install Git and Lean's `elan` launcher. The project pins Lean `v4.34.1` and
+Install Git, Python 3.11 or newer, and Lean's `elan` launcher. The project pins
+Lean `v4.34.1` and
 mathlib revision `d13f23b723b8a846827a245b89c10fc7d3f11612`.
 Keep `lake-manifest.json`; do not update dependencies while reproducing this
 snapshot.
@@ -64,9 +65,9 @@ queries, use the focused audit:
 python3 scripts/verify.py --module ElevenSquare.ProofAudit --keep-going
 ```
 
-This target is still unfinished while the listed admissions or compiler failures
-remain. A focused result does not establish that every optional legacy module
-builds, and does not satisfy the full-upgrade publication gate.
+This target has not yet earned complete native compiler and axiom acceptance.
+A focused result does not establish that every optional legacy module builds,
+and does not satisfy the full-source publication gate.
 
 For a progress display and saved log, run `bash scripts/check_lean.sh`.
 It checks all modules and continues through independent failures.
@@ -75,6 +76,10 @@ Once dependencies are installed, omit `--setup`. Accepted unchanged modules
 can be resumed using the script's source/object/dependency fingerprints. The
 serial checker prioritizes shared dependencies, records transitive input hashes,
 and audits every included explicit axiom query. Use
+`--jobs N` to give each new Lean process `N` worker threads while retaining serial
+module checks. Matching accepted receipts keep their actual original thread count
+and fingerprints. Extra threads can require more memory; the default remains one.
+Use
 `--keep-going` to collect independent compatibility failures in one run; it
 still rejects any incomplete build. Add
 `--fresh` to rebuild every selected local module. These are substantial exact
@@ -99,21 +104,44 @@ preserve accepted work between runs; an interrupted or incomplete replay remains
 a failed check. This workflow does not publish verification evidence or merge
 the branch. Local verification remains available through the commands above.
 
-The verifier distinguishes clean milestones, which may use only `propext`,
-`Classical.choice`, and `Quot.sound`, from the explicit unfinished targets.
-Success with the two remaining source admissions is **partial assembly success**,
-not a proof of optimality. The newly wired baseline and prior paths must also pass
-fresh compiler and axiom checks. Closing the remaining admissions requires a
-fresh final audit.
+With an empty admission inventory, every queried target may use only `propext`,
+`Classical.choice`, and `Quot.sound`. Source restoration and an admission-free
+source scan do not establish proof acceptance. Before publishing completion,
+finish the full fresh replay and validate its current receipts:
+
+```sh
+python3 scripts/verify.py --all --fresh --keep-going
+python3 scripts/finalize_verification.py
+```
+
+Use the finalizer's `--write` only after all final source and documentation edits
+and the complete replay have passed. A selected-module result cannot satisfy it.
+If the fresh replay is interrupted, resume with
+`python3 scripts/verify.py --all --keep-going`, omitting `--fresh` so matching
+accepted receipts can be reused. The verifier still checks their current source,
+configuration, objects, and transitive dependency fingerprints; finalization
+still requires the complete supported source tree and clean axiom evidence.
 
 ## Upstream proof integration
 
 The source now wires wand125's 1,904 field and 27 generic exclusions into all
-1,931 native baseline indices, and all 76 published prior exclusions into the
-native prior interface. The public packing definitions and theorem statements
-are preserved. The final baseline dispatcher uses the complete imported family
-directly; independent native group proofs remain available as optional progress. **These complete-family dependency paths are compiler-unverified
-until full replay and axiom auditing finish.** See the
+1,931 native baseline indices, all 76 prior exclusions, and all 173 returned
+exclusions, including case1465. The returned family uses the separately pinned
+upstream revision `8126ef4d5ce0ecc967d7223388bac65ee5ffce5e`. The integrated U5
+extended traces supply the case438 certificate from the genuine closed-cell seed
+through the far branches and final near-state inclusion. The public packing
+definitions and theorem statements are preserved.
+
+The complete F04 bundled pilot has now been reproduced: all 23 modules and
+1,771 axiom queries passed, with an axiom map identical to the historical pilot.
+Current source, object, configuration, and dependency receipts were checked;
+the portable result is `verification/wand125-bundled-field04-reproduction.json`.
+The baseline adapter and upstream axiom query now use the bundled field theorem.
+Replay of the complete baseline/prior paths and final-theorem closure is next,
+as described in [NEXT_COMPUTER.md](NEXT_COMPUTER.md).
+Independent native group proofs remain available as optional progress.
+**All complete-family and case438 paths remain compiler-unverified until full
+replay and axiom auditing finish.** See the
 [integration details](integrations/wand125/README.md) and
 [pinned release restoration instructions](integrations/wand125/release/README.md).
 
@@ -136,10 +164,14 @@ remain; the abandoned plan obligations were not proved.
 ## Assembly provenance
 
 The source incorporates the baseline partial return, the checked prior-support
-continuation, the local-packet return, and the global partial handoff. It also
+continuation, the local-packet return, the complete returned-family source wiring,
+and the U5 case438 extension. It also
 preserves the previously integrated fixes to the overlay and D4 bridge from the
-earlier current-work return. Older unreferenced speculative modules are omitted;
-all delivered Lean modules and their local source dependencies are preserved.
+earlier current-work return. The two-file near-state compatibility fix from
+`1d3b648` is also integrated, preserving the existing theorem statements; its
+current dependency closure still needs replay. Older unreferenced speculative
+modules are omitted; all delivered Lean modules and their local source dependencies
+are preserved.
 
 `verification/source-inventory.json` records exact source hashes and which files
 match supplied compiler inventories. `verification/imported-audits.json` retains
@@ -147,11 +179,10 @@ only mathematical declaration names and their reported axiom sets. It is
 historical evidence, not a fresh combined compiler replay. In particular, a
 reported inherited admission may have been removed by another merged return.
 
-The assembly was checked for a complete local import closure, exact admission
-inventory, matching returned source hashes, and personal information. The small
-final composition is checked separately against the existing shared interfaces.
-The entire large numerical certificate collection is supplied for reproducible
-replay rather than claimed freshly rebuilt during packaging.
+Earlier assembly checks and imported compiler inventories are historical
+evidence. The current expanded source requires its own complete import-closure
+check, compiler replay, and axiom audit. The numerical certificate collection is
+supplied through pinned release restoration for that reproducible replay.
 
 Only portable source, pinned public dependency metadata, mathematical audit
 summaries, and fresh documentation are distributed. Original handoff archives,
