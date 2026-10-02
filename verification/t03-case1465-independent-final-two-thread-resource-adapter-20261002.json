@@ -1,0 +1,28 @@
+{
+  "status": "FUTURE_FINAL_COMPILER_THREAD_BUDGET_SET_TO_TWO",
+  "utc": "2026-10-02T10:46:44.986058+00:00",
+  "threads_before": 1,
+  "threads_after": 2,
+  "lean_memory_limit_mb": 8192,
+  "auxiliary_threads": 1,
+  "auxiliary_memory_limit_mb": 4096,
+  "current_compiler_unchanged": true,
+  "source_or_object_changes": 0,
+  "receipt_changes": 0,
+  "proof_jobs_started": 0,
+  "config_before_sha256": "383433ffd0ab83cbcb5e9a3b1d2ae19a7c68b07d6aaac2f9e43837f7b1392bcd",
+  "config_after_sha256": "d225eb01060b774b56e3f8b6ad204095b5ef24b5a48227013158c8677b603d1f",
+  "scope": "Resource configuration only. Three compiler threads total at most, low priority; actual final public target gates unchanged. No measured end-to-end speedup claimed.",
+  "original_private_record_sha256": "e23a776a68746c5d494a5a63aeec45e2dc918210eb06c5f3dc82db88e5c212ef",
+  "original_private_record_bytes": 771,
+  "publication_before_after_config_hashes_independently_verified": true,
+  "changed_operational_fields": [
+    "lean_threads",
+    "global_concurrent_lean_checks",
+    "reason"
+  ],
+  "existing_main_and_one_auxiliary_processes_no_new_jobs": true,
+  "historical_import_view_j1_snapshot_preserved": true,
+  "no_end_to_end_performance_benchmark": true,
+  "publication_Lean_jobs_worker_controls": 0
+}

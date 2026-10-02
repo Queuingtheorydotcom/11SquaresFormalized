@@ -1,0 +1,17 @@
+{
+  "status": "FINAL_CURRENT_GENUINE_IMPORT_VIEW_POSTFLIGHT_PREPARED_AFTER_ACTUAL_PUBLIC2_GATE_NOT_YET_RUN",
+  "report_source_sha256": "204fcd50bb9c3deb1c51fbffa97c20c2563feff3a07e3d57106d5ccc09dcf635",
+  "postflight_helper_source_sha256": "4856ae69161479fa67a4c95a301e13937531341ffe05d0b0035f6e9f6b883fff",
+  "actual_original_checker_exit0_and_clean_public_target_axioms_required_before_postflight": true,
+  "actual_execution_transport_CHECK_wrapper_and_log_bindings_required": true,
+  "selected_current_objects_to_verify": 37116,
+  "selected_logical_bytes_to_verify": 7082132976,
+  "actual_public_targets": [
+    "ElevenSquare.Pending.returned_certificate_exists",
+    "ElevenSquare.Pending.returned_excluded"
+  ],
+  "postflight_actual_success": false,
+  "public2_acceptance_not_claimed": true,
+  "publication_source_inspection_only_no_script_execution": true,
+  "publication_Lean_jobs_worker_controls": 0
+}

@@ -637,5 +637,14 @@
     "large_object_bytes_and_source_closure_not_republished": true,
     "public2_and_export_pending": true,
     "Lean_jobs_worker_controls": 0
+  },
+  "final_source_case2047_auxiliary_recheck_review": {
+    "all227_genuine_receipt_bindings_inspected": true,
+    "actual_root_object_rehashed": true,
+    "actual_audit_CHECK_log_task_and_source_bytes_preserved": true,
+    "private_runtime_paths_removed": true,
+    "large_object_bytes_and_source_closure_not_republished": true,
+    "public2_and_export_pending": true,
+    "Lean_jobs_worker_controls": 0
   }
 }
