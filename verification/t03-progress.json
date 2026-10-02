@@ -4016,5 +4016,345 @@
       "verification/t03-case1465-independent-certificate-composition-preparation-20261002.json",
       "verification/t03-case1465-independent-finite-file-transfer-promotion-20261002.json"
     ]
+  },
+  "case1465_independent_route_through40_checkpoint": {
+    "format": "T03-checked1465-independent-route-through40-source-supplement-v1",
+    "utc": "2026-10-02T01:56:46.810795+00:00",
+    "status": "PREFIX_AND_REPLAY_TRANSITIONS_THROUGH40_ACTUALLY_AUDITED_NOT_FULL_CASE",
+    "original_full_case_certificates": 172,
+    "required_original_cases": 173,
+    "remaining_full_case": [
+      1465
+    ],
+    "upstream_supplied_source_archives": 172,
+    "upstream_only_missing_case": 1465,
+    "whole_case_increment": 0,
+    "actual_component_targets": 30,
+    "prefix012_and_steps013_through040_audited": true,
+    "checked_components": [
+      {
+        "checkpoint": "verification/t03-case1465-independent-prefix012-pilot-actual-checkpoint-20261002.json",
+        "task": "library-case1465-node998-independent-prefix012-pilot-task.json",
+        "transport_sha256": "ee1c8737a5bd7a968fc1a501eb0dad8046f7e1177c5a8bf27e703a8b8de43e03",
+        "root_modules": [
+          "ElevenSquare.Tasks.T03.Batch04.Case1465.IndependentReplay.Prefix012"
+        ],
+        "actual_target_axioms": {
+          "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Prefix012.boundary_binding": [
+            "propext"
+          ],
+          "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Prefix012.trace": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        "checks": 2,
+        "raw_source_members": 11913,
+        "raw_source_bytes": 1031733909
+      },
+      {
+        "checkpoint": "verification/t03-case1465-independent-four-step-batch000-retry01-actual-checkpoint-20261002.json",
+        "task": "library-case1465-node998-independent-replay-batch000-retry01-task.json",
+        "transport_sha256": "fdc9e276324717de09a7fef90df4dd80f713bd52564bcf29df5174772b775307",
+        "root_modules": [
+          "ElevenSquare.Tasks.T03.Batch04.Case1465.IndependentReplay.ReplayBatch000Retry01"
+        ],
+        "actual_target_axioms": {
+          "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step013Trace.step_trace": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step014Trace.step_trace": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step015Trace.step_trace": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step016Trace.step_trace": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        "checks": 2,
+        "raw_source_members": 1717,
+        "raw_source_bytes": 174832350
+      },
+      {
+        "checkpoint": "verification/t03-case1465-independent-partner-replay-batch001-actual-checkpoint-20261002.json",
+        "task": "library-case1465-node998-independent-partner-replay-batch001-task.json",
+        "transport_sha256": "142b46a4e26c1c0d77f43d2b331c9961898d36dcdcb43b2b92d9b1d83e487a2e",
+        "root_modules": [
+          "ElevenSquare.Tasks.T03.Batch04.Case1465.IndependentReplay.PartnerReplayBatch001"
+        ],
+        "actual_target_axioms": {
+          "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step017Trace.step_trace": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step018Trace.step_trace": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step019Trace.step_trace": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step020Trace.step_trace": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        "checks": 11,
+        "raw_source_members": 12689,
+        "raw_source_bytes": 945970184
+      },
+      {
+        "checkpoint": "verification/t03-case1465-independent-partner-replay-batch002-actual-checkpoint-20261002.json",
+        "task": "library-case1465-node998-independent-partner-replay-batch002-task.json",
+        "transport_sha256": "a5dd966f816849d7a4206c394217ffb39346360b641d38e9fa6f39ebcd12ecae",
+        "root_modules": [
+          "ElevenSquare.Tasks.T03.Batch04.Case1465.IndependentReplay.PartnerReplayBatch002"
+        ],
+        "actual_target_axioms": {
+          "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step021Trace.step_trace": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step022Trace.step_trace": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step023Trace.step_trace": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step024Trace.step_trace": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        "checks": 12,
+        "raw_source_members": 6540,
+        "raw_source_bytes": 550715536
+      },
+      {
+        "checkpoint": "verification/t03-case1465-independent-partner-replay-batch003-actual-checkpoint-20261002.json",
+        "task": "library-case1465-node998-independent-partner-replay-batch003-task.json",
+        "transport_sha256": "bac95247932ee5f971c16d91a5c1580d37e9219319dd546e1720780ed596812e",
+        "root_modules": [
+          "ElevenSquare.Tasks.T03.Batch04.Case1465.IndependentReplay.PartnerReplayBatch003"
+        ],
+        "actual_target_axioms": {
+          "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step025Trace.step_trace": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step026Trace.step_trace": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step027Trace.step_trace": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step028Trace.step_trace": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        "checks": 12,
+        "raw_source_members": 8433,
+        "raw_source_bytes": 627533763
+      },
+      {
+        "checkpoint": "verification/t03-case1465-independent-partner-replay-batch004-actual-checkpoint-20261002.json",
+        "task": "library-case1465-node998-independent-partner-replay-batch004-task.json",
+        "transport_sha256": "483ed8cb820fcf819219d8cb1147db362321d91f00fa9dda2447aa2733aa9170",
+        "root_modules": [
+          "ElevenSquare.Tasks.T03.Batch04.Case1465.IndependentReplay.PartnerReplayBatch004"
+        ],
+        "actual_target_axioms": {
+          "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step029Trace.step_trace": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step030Trace.step_trace": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step031Trace.step_trace": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step032Trace.step_trace": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        "checks": 16,
+        "raw_source_members": 8684,
+        "raw_source_bytes": 671275353
+      },
+      {
+        "checkpoint": "verification/t03-case1465-independent-partner-replay-batch005-actual-checkpoint-20261002.json",
+        "task": "library-case1465-node998-independent-partner-replay-batch005-task.json",
+        "transport_sha256": "eb94b1bc84e716f83ba48d3739306edfd6b0fcbfd674ad9ab119c346bf2e57b5",
+        "root_modules": [
+          "ElevenSquare.Tasks.T03.Batch04.Case1465.IndependentReplay.PartnerReplayBatch005"
+        ],
+        "actual_target_axioms": {
+          "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step033Trace.step_trace": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step034Trace.step_trace": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step035Trace.step_trace": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step036Trace.step_trace": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        "checks": 18,
+        "raw_source_members": 7722,
+        "raw_source_bytes": 631418928
+      },
+      {
+        "checkpoint": "verification/t03-case1465-independent-partner-replay-batch006-actual-checkpoint-20261002.json",
+        "task": "library-case1465-node998-independent-partner-replay-batch006-task.json",
+        "transport_sha256": "8570c1eafefc99433c0cd3349edf686b7e9087fc1983719105884e7e4fb1d5c0",
+        "root_modules": [
+          "ElevenSquare.Tasks.T03.Batch04.Case1465.IndependentReplay.PartnerReplayBatch006"
+        ],
+        "actual_target_axioms": {
+          "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step037Trace.step_trace": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step038Trace.step_trace": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step039Trace.step_trace": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step040Trace.step_trace": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        "checks": 11,
+        "raw_source_members": 7574,
+        "raw_source_bytes": 594141562
+      }
+    ],
+    "operational_records": [
+      "verification/t03-case1465-independent-subset-cache-pilot-preparation-and-controls-20261002.json",
+      "verification/t03-case1465-independent-subset-cache-accepted-promotion-20261002.json",
+      "verification/t03-case1465-independent-canonical-alias-trial-cancellation-20261002.json",
+      "verification/t03-case1465-independent-report-subset-evidence-update-20261002.json"
+    ],
+    "source_modules": 141,
+    "route_modules": 78,
+    "source_bytes": 69298233,
+    "complete_standalone_dependency_closure": false,
+    "omitted_dependencies_have_exact_original_transport_member_hashes": true,
+    "all_original_raw_transport_digests_verified": true,
+    "all_included_member_hashes_verified": true,
+    "all_actual_CHECK_log_hashes_and_target_axioms_verified": true,
+    "all_ancestor_source_members_individually_rehashed": false,
+    "full_ancestor_compiler_objects_and_receipts_freshly_rehashed": false,
+    "alias_pilot_cancelled_and_excluded": true,
+    "subset_cache_proof_neutral": true,
+    "no_same_claim_uncached_timing_comparison": true,
+    "whole_case_final_public_targets_return_zip_complete": false,
+    "publication_Lean_jobs_or_worker_controls": 0,
+    "canonical_sources_main_and_prior_assets_unchanged": true,
+    "not_a_standalone_replay_archive": true,
+    "source_zip": "T03-checked-case1465-independent-route-through40-source-supplement.zip",
+    "source_zip_bytes": 24643000,
+    "source_zip_sha256": "4cccda48e58f99e33725af935e737b1dbf5eabd26a09aae19ac346b305f92b42",
+    "all_finished_zip_member_hashes_verified": true,
+    "release": {
+      "id": 401486104,
+      "tag_name": "t03-1465-independent-route-through40-audited-20261002",
+      "target_commitish": "4489cfb272af4d1c3351cfc3e6b9e8f85e3d7ee6",
+      "name": "Audited case1465 independent prefix and transitions through40 (full case pending)",
+      "html_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/tag/t03-1465-independent-route-through40-audited-20261002",
+      "prerelease": true,
+      "draft": false,
+      "assets": [
+        {
+          "id": 604576173,
+          "name": "CHECKPOINT-checked-components-public.json",
+          "size": 12227,
+          "digest": "sha256:3dfa62598068c2d5b63ecf0810c7a83c375bf31cea613124259e4c068295dc34",
+          "state": "uploaded",
+          "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-1465-independent-route-through40-audited-20261002/CHECKPOINT-checked-components-public.json"
+        },
+        {
+          "id": 604576218,
+          "name": "SHA256SUMS",
+          "size": 339,
+          "digest": "sha256:e620329185301fc561f89793d7a1066b8cb38c46dde060ef6eee88ff83aa7978",
+          "state": "uploaded",
+          "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-1465-independent-route-through40-audited-20261002/SHA256SUMS"
+        },
+        {
+          "id": 604576194,
+          "name": "SOURCE-BINDINGS-public.json",
+          "size": 97412,
+          "digest": "sha256:ba4d1dc0b9ec32747f7a019bd10697013ce792d23aa61472055e7e30c838ba03",
+          "state": "uploaded",
+          "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-1465-independent-route-through40-audited-20261002/SOURCE-BINDINGS-public.json"
+        },
+        {
+          "id": 604575104,
+          "name": "T03-checked-case1465-independent-route-through40-source-supplement.zip",
+          "size": 24643000,
+          "digest": "sha256:4cccda48e58f99e33725af935e737b1dbf5eabd26a09aae19ac346b305f92b42",
+          "state": "uploaded",
+          "browser_download_url": "https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/download/t03-1465-independent-route-through40-audited-20261002/T03-checked-case1465-independent-route-through40-source-supplement.zip"
+        }
+      ]
+    },
+    "all_four_server_asset_digests_sizes_verified": true
   }
 }

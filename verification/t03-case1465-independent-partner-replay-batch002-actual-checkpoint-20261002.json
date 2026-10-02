@@ -1,0 +1,315 @@
+{
+  "status": "ACTUAL_REPLAY_COMPONENT_AND_EXACT_TARGET_AXIOM_AUDITS_PASSED",
+  "utc": "2026-10-02T01:09:08.204290+00:00",
+  "task": "library-case1465-node998-independent-partner-replay-batch002-task.json",
+  "task_sha256": "05d26cfa9e42ecba0e692cdb1fdc1376e3f9dddc540d0c1f94ffc1ed767c05a3",
+  "transport_sha256": "a5dd966f816849d7a4206c394217ffb39346360b641d38e9fa6f39ebcd12ecae",
+  "execution": "primary-library-case1465-node998-independent-partner-replay-batch002-task.json",
+  "execution_sha256": "2a476c012c7e2f7f6abe4952dea63de3cce797f3fb59f10e6d16e0ce5ec95182",
+  "wrapper": "primary-library-case1465-node998-independent-partner-replay-batch002-task.log",
+  "wrapper_sha256": "0b313d48aae4e00164f59d4e22423ef606d3c2074b53e53dfe90177ba08e8308",
+  "actual_target_axioms": {
+    "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step021Trace.step_trace": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step022Trace.step_trace": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step023Trace.step_trace": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step024Trace.step_trace": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "checks": [
+    {
+      "actual_check_sha256": "f6ea112d5878f6b6b4191a357ff7d5a1ed0cb3c807ada6e53db5126e95018882",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "check": {
+        "status": "accepted",
+        "source": "ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/Partners/Step021Partner03.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 93.54,
+        "lean_memory_limit_mb": 8192,
+        "lean_threads": 1,
+        "lean_thread_stack_kb": 32768,
+        "lean_main_stack_kb": 65536,
+        "cpu_seconds_limit": 1800,
+        "wall_seconds_limit": 2100,
+        "nice_increment": 0,
+        "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/Partners/Step021Partner03.olean",
+        "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+      },
+      "published_log": "verification/t03-case1465-independent-partner-replay-batch002-actual-checkpoint-20261002-actual-logs/00-lean.log",
+      "published_CHECK": "verification/t03-case1465-independent-partner-replay-batch002-actual-checkpoint-20261002-actual-logs/00-CHECK.json"
+    },
+    {
+      "actual_check_sha256": "12c9e0d2aebebdc6f649181f53849f88b1d9862920187db3f72e49784276902a",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "check": {
+        "status": "accepted",
+        "source": "ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/Partners/Step021Partner04.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 78.93,
+        "lean_memory_limit_mb": 8192,
+        "lean_threads": 1,
+        "lean_thread_stack_kb": 32768,
+        "lean_main_stack_kb": 65536,
+        "cpu_seconds_limit": 1800,
+        "wall_seconds_limit": 2100,
+        "nice_increment": 0,
+        "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/Partners/Step021Partner04.olean",
+        "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+      },
+      "published_log": "verification/t03-case1465-independent-partner-replay-batch002-actual-checkpoint-20261002-actual-logs/01-lean.log",
+      "published_CHECK": "verification/t03-case1465-independent-partner-replay-batch002-actual-checkpoint-20261002-actual-logs/01-CHECK.json"
+    },
+    {
+      "actual_check_sha256": "6dd59d2ab503bdf675e673efabb49f7d169e84df42766f86d370acb848a16795",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "check": {
+        "status": "accepted",
+        "source": "ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/Partners/Step021Partner07.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 50.89,
+        "lean_memory_limit_mb": 8192,
+        "lean_threads": 1,
+        "lean_thread_stack_kb": 32768,
+        "lean_main_stack_kb": 65536,
+        "cpu_seconds_limit": 1800,
+        "wall_seconds_limit": 2100,
+        "nice_increment": 0,
+        "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/Partners/Step021Partner07.olean",
+        "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+      },
+      "published_log": "verification/t03-case1465-independent-partner-replay-batch002-actual-checkpoint-20261002-actual-logs/02-lean.log",
+      "published_CHECK": "verification/t03-case1465-independent-partner-replay-batch002-actual-checkpoint-20261002-actual-logs/02-CHECK.json"
+    },
+    {
+      "actual_check_sha256": "8465465c45f6b5e75dc3fd26f55e0ffcfd105d877a641cc8c806ce2d3ec059a2",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "check": {
+        "status": "accepted",
+        "source": "ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/Partners/Step021Partner09.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 55.59,
+        "lean_memory_limit_mb": 8192,
+        "lean_threads": 1,
+        "lean_thread_stack_kb": 32768,
+        "lean_main_stack_kb": 65536,
+        "cpu_seconds_limit": 1800,
+        "wall_seconds_limit": 2100,
+        "nice_increment": 0,
+        "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/Partners/Step021Partner09.olean",
+        "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+      },
+      "published_log": "verification/t03-case1465-independent-partner-replay-batch002-actual-checkpoint-20261002-actual-logs/03-lean.log",
+      "published_CHECK": "verification/t03-case1465-independent-partner-replay-batch002-actual-checkpoint-20261002-actual-logs/03-CHECK.json"
+    },
+    {
+      "actual_check_sha256": "8c5d7b58fc33983a9fecd6f9b618bdb27d86cd8b6eefc5af8e556c17f869dfcf",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "check": {
+        "status": "accepted",
+        "source": "ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/Partners/Step022Partner03.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 80.69,
+        "lean_memory_limit_mb": 8192,
+        "lean_threads": 1,
+        "lean_thread_stack_kb": 32768,
+        "lean_main_stack_kb": 65536,
+        "cpu_seconds_limit": 1800,
+        "wall_seconds_limit": 2100,
+        "nice_increment": 0,
+        "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/Partners/Step022Partner03.olean",
+        "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+      },
+      "published_log": "verification/t03-case1465-independent-partner-replay-batch002-actual-checkpoint-20261002-actual-logs/04-lean.log",
+      "published_CHECK": "verification/t03-case1465-independent-partner-replay-batch002-actual-checkpoint-20261002-actual-logs/04-CHECK.json"
+    },
+    {
+      "actual_check_sha256": "365810d9f20337cdfbb33537651ff42b423083d8220b69c921c90dc9ae7e9a6d",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "check": {
+        "status": "accepted",
+        "source": "ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/Partners/Step022Partner08.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 60.27,
+        "lean_memory_limit_mb": 8192,
+        "lean_threads": 1,
+        "lean_thread_stack_kb": 32768,
+        "lean_main_stack_kb": 65536,
+        "cpu_seconds_limit": 1800,
+        "wall_seconds_limit": 2100,
+        "nice_increment": 0,
+        "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/Partners/Step022Partner08.olean",
+        "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+      },
+      "published_log": "verification/t03-case1465-independent-partner-replay-batch002-actual-checkpoint-20261002-actual-logs/05-lean.log",
+      "published_CHECK": "verification/t03-case1465-independent-partner-replay-batch002-actual-checkpoint-20261002-actual-logs/05-CHECK.json"
+    },
+    {
+      "actual_check_sha256": "181cd37f90f648cde8514f377bb2f274d0cedb07acd30e4edd98343369598c73",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "check": {
+        "status": "accepted",
+        "source": "ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/Partners/Step023Partner04.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 97.87,
+        "lean_memory_limit_mb": 8192,
+        "lean_threads": 1,
+        "lean_thread_stack_kb": 32768,
+        "lean_main_stack_kb": 65536,
+        "cpu_seconds_limit": 1800,
+        "wall_seconds_limit": 2100,
+        "nice_increment": 0,
+        "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/Partners/Step023Partner04.olean",
+        "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+      },
+      "published_log": "verification/t03-case1465-independent-partner-replay-batch002-actual-checkpoint-20261002-actual-logs/06-lean.log",
+      "published_CHECK": "verification/t03-case1465-independent-partner-replay-batch002-actual-checkpoint-20261002-actual-logs/06-CHECK.json"
+    },
+    {
+      "actual_check_sha256": "a8ea4ab65d598cc931f4ec11e4fcf3bcedd4b2497959bbfe747dd4299a4e811e",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "check": {
+        "status": "accepted",
+        "source": "ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/Partners/Step024Partner01.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 94.12,
+        "lean_memory_limit_mb": 8192,
+        "lean_threads": 1,
+        "lean_thread_stack_kb": 32768,
+        "lean_main_stack_kb": 65536,
+        "cpu_seconds_limit": 1800,
+        "wall_seconds_limit": 2100,
+        "nice_increment": 0,
+        "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/Partners/Step024Partner01.olean",
+        "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+      },
+      "published_log": "verification/t03-case1465-independent-partner-replay-batch002-actual-checkpoint-20261002-actual-logs/07-lean.log",
+      "published_CHECK": "verification/t03-case1465-independent-partner-replay-batch002-actual-checkpoint-20261002-actual-logs/07-CHECK.json"
+    },
+    {
+      "actual_check_sha256": "34c035ba69876f7d836b3fad6f10f26aeb9a2f34ba8cdeb067806d691c65c692",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "check": {
+        "status": "accepted",
+        "source": "ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/Partners/Step024Partner03.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 98.16,
+        "lean_memory_limit_mb": 8192,
+        "lean_threads": 1,
+        "lean_thread_stack_kb": 32768,
+        "lean_main_stack_kb": 65536,
+        "cpu_seconds_limit": 1800,
+        "wall_seconds_limit": 2100,
+        "nice_increment": 0,
+        "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/Partners/Step024Partner03.olean",
+        "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+      },
+      "published_log": "verification/t03-case1465-independent-partner-replay-batch002-actual-checkpoint-20261002-actual-logs/08-lean.log",
+      "published_CHECK": "verification/t03-case1465-independent-partner-replay-batch002-actual-checkpoint-20261002-actual-logs/08-CHECK.json"
+    },
+    {
+      "actual_check_sha256": "3f16d826ea798547e64300a22108dd90993cd21321c4416a64a4b514aef46002",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "check": {
+        "status": "accepted",
+        "source": "ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/Partners/Step024Partner05.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 67.47,
+        "lean_memory_limit_mb": 8192,
+        "lean_threads": 1,
+        "lean_thread_stack_kb": 32768,
+        "lean_main_stack_kb": 65536,
+        "cpu_seconds_limit": 1800,
+        "wall_seconds_limit": 2100,
+        "nice_increment": 0,
+        "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/Partners/Step024Partner05.olean",
+        "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+      },
+      "published_log": "verification/t03-case1465-independent-partner-replay-batch002-actual-checkpoint-20261002-actual-logs/09-lean.log",
+      "published_CHECK": "verification/t03-case1465-independent-partner-replay-batch002-actual-checkpoint-20261002-actual-logs/09-CHECK.json"
+    },
+    {
+      "actual_check_sha256": "35f664dc1e09ca2d03bf615eae1f3d641c5a225b58c22a66366c2da5fbd3c5d5",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "check": {
+        "status": "accepted",
+        "source": "ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/PartnerReplayBatch002.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 404.78,
+        "lean_memory_limit_mb": 8192,
+        "lean_threads": 1,
+        "lean_thread_stack_kb": 32768,
+        "lean_main_stack_kb": 65536,
+        "cpu_seconds_limit": 1800,
+        "wall_seconds_limit": 2100,
+        "nice_increment": 0,
+        "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/PartnerReplayBatch002.olean",
+        "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+      },
+      "published_log": "verification/t03-case1465-independent-partner-replay-batch002-actual-checkpoint-20261002-actual-logs/10-lean.log",
+      "published_CHECK": "verification/t03-case1465-independent-partner-replay-batch002-actual-checkpoint-20261002-actual-logs/10-CHECK.json"
+    },
+    {
+      "actual_check_sha256": "03e82c7f71e9dc5ad197d245fea91c094870ff33f10404c9157bafc29e1c84ac",
+      "actual_log_sha256": "2ccb0b474716e2f57b5b20120992e40825b7af68bfd71aa1d522e502fd37ceef",
+      "check": {
+        "status": "accepted",
+        "source": "verification/HandoffAudit.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 142.7,
+        "lean_memory_limit_mb": 8192,
+        "lean_threads": 1,
+        "lean_thread_stack_kb": 32768,
+        "lean_main_stack_kb": 65536,
+        "cpu_seconds_limit": 1800,
+        "wall_seconds_limit": 2100,
+        "nice_increment": 0,
+        "emitted_olean": null,
+        "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+      },
+      "published_log": "verification/t03-case1465-independent-partner-replay-batch002-actual-checkpoint-20261002-actual-logs/11-lean.log",
+      "published_CHECK": "verification/t03-case1465-independent-partner-replay-batch002-actual-checkpoint-20261002-actual-logs/11-CHECK.json"
+    }
+  ],
+  "original_checker_unchanged": true,
+  "source_synchronization": {
+    "status": "EXACT_NATIVE_SOURCE_AND_PROVISIONAL_GENUINE_RECEIPT_SYNC_COMPLETE",
+    "utc": "2026-10-02T00:41:26.397429+00:00",
+    "archive_sha256": "a5dd966f816849d7a4206c394217ffb39346360b641d38e9fa6f39ebcd12ecae",
+    "verified_members": 6549,
+    "verified_source_bytes": 550729025,
+    "source_files_written": 2955,
+    "source_files_reused": 3594,
+    "obsolete_matching_sources_removed": 8301,
+    "source_sync_seconds": 185.844,
+    "total_seconds": 277.031,
+    "genuine_receipts_copied": 2891,
+    "existing_genuine_receipts_preserved": 3638,
+    "proof_receipts_created": 0,
+    "lean_processes_started": 0,
+    "supplied_checker_still_validates_sources_objects_and_actual_proofs": true
+  },
+  "whole_case_certificate_increment": 0,
+  "maximum_global_lean_workers": 4,
+  "scope": "Actual component proof and named transitive target audits only; not a full case certificate.",
+  "original_private_record_sha256": "6ca9628007517ebd4d7129bd910a83f24ef19a6888b8b05845cc971989cdd016",
+  "all_included_source_members_verified": true,
+  "raw_transport_digest_independently_verified": true,
+  "complete_dependency_closure_in_this_source_supplement": false,
+  "fresh_full_ancestor_receipt_and_object_rehash_performed": false,
+  "source_scope": "Exact checked IndependentReplay modules and small shared helpers; omitted source dependencies are hash-listed. Original checker accepted the named target audits. This supplement is not a standalone whole closure.",
+  "dependency_source_member_bindings_file": "dependency-bindings/03-source-members.json"
+}

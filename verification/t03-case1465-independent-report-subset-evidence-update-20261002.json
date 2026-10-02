@@ -1,0 +1,12 @@
+{
+  "status": "REPORT_SOURCE_UPDATED_FOR_ACTUAL_SUBSET_CACHE_AND_CANCELLED_TRIAL",
+  "utc": "2026-10-02T01:53:09.543777+00:00",
+  "before_sha256": "633376c4b0df4ead84af378285379298d89396a305f74d53f97b71e834098f22",
+  "after_sha256": "063b1fae691ece54132250d2c2ef407dbb12a16c34db90754a67953263c58eba",
+  "backup": "write_verified_report-before-accepted-subset-evidence-20261002.py",
+  "actual_cache_checkpoint": "case1465-independent-partner-replay-batch003-actual-checkpoint-20261002.json",
+  "whole_case_increment": 0,
+  "new_lean_processes": 0,
+  "original_private_record_sha256": "725953a36b4f19ade06b03f903373282d25b5e1f4f877701b4b18597e7105ebe",
+  "publication_scope": "Proof-neutral operational provenance; no new full case and no broad or uncached speedup comparison."
+}

@@ -5,6 +5,26 @@ All 172 supplied cases now have completed original-project full-certificate
 audits: **172/173**, with **case 1465 alone remaining**. Public family assembly
 and the final global optimality proof are separate, unfinished obligations.
 
+Case1465 now has an **actually audited continuous prefix through step40**:
+Prefix012, corrected ReplayBatch000Retry01 (steps013–016), and
+PartnerReplayBatch001–006 (steps017–040). The unchanged original checker
+accepted all30 named component targets with standard axioms. This adds **no
+full case**; case1465's original certificate and final public targets remain
+pending. The [exact component checkpoint](verification/t03-case1465-independent-route-through40-source-release-20261002.json)
+preserves84 actual CHECK/log pairs, accepted task/transport bindings, and a
+[24.6 MB source supplement](https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/tag/t03-1465-independent-route-through40-audited-20261002)
+with78 exact IndependentReplay sources and63 small shared helpers. Its inherited
+dependencies are hash-listed but omitted: **this supplement is not a standalone
+source closure**. No fresh whole-ancestor object rehash or merged replay is claimed.
+
+The accepted subset-cache trial/promotion is proof-neutral and supplies no
+same-claim uncached timing comparison. The redundant alias trial was
+intentionally cancelled (exit130); its last accepted State031 elaboration is
+preserved, but no alias target audit or alias source belongs to the final route.
+The final composition still waits for all17 required components. No whole-proof
+speedup, full1465 certificate, public-target completion or return ZIP is claimed.
+
+
 **Cases 1373 and 1464's exact original full certificates now pass** the unchanged
 pinned Lean 4.10.0-rc2 checker, with only `propext`, `Classical.choice` and `Quot.sound`.
 Case 1373: Main **105.04s**, Certificate **38.26s**, full audit **43.85s**.
@@ -21,8 +41,9 @@ Compact actual case 1465 component audits are also included: Partner01801
 **50.72s compile /25.75s audit**, and steps 013–016 retry batch **206.79s compile
 /57.06s audit**, all named targets using only the three standard axioms. These
 checked components add no full certificate. Their complete source closures are
-not distributed in this metadata checkpoint; later unverified batches and
-case 1465's whole proof remain pending. No whole-proof speedup is claimed.
+not distributed in that earlier metadata checkpoint. The current component
+snapshot above supersedes its earlier pending status through step40; later
+batches and case1465's whole proof remain pending. No whole-proof speedup is claimed.
 
 The remaining case 1465 route now separates numeric states and individual
 geometric steps. Its [route adoption](verification/t03-case1465-independent-replay-route-adoption-20261002.json) preserves the old source/proof

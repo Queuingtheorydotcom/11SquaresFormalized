@@ -1,0 +1,93 @@
+{
+  "status": "ACTUAL_REPLAY_COMPONENT_AND_EXACT_TARGET_AXIOM_AUDITS_PASSED",
+  "utc": "2026-10-02T01:00:27.510600+00:00",
+  "task": "library-case1465-node998-independent-prefix012-pilot-task.json",
+  "task_sha256": "7bf8489f7d5d2fc3f6873b28df75f1505de1d881b9c908f7921158711801a3ee",
+  "transport_sha256": "ee1c8737a5bd7a968fc1a501eb0dad8046f7e1177c5a8bf27e703a8b8de43e03",
+  "execution": "independent-library-case1465-node998-independent-prefix012-pilot-task.json",
+  "execution_sha256": "82ad4b357713f0cb286a49e1650526da54b0230695b65cd40bf5066278d1bf62",
+  "wrapper": "independent-library-case1465-node998-independent-prefix012-pilot-task.log",
+  "wrapper_sha256": "18cfe1a7baf175a005b14f9bd3a8b194f072ac0ad8cadb0e5d659a0bc09674af",
+  "actual_target_axioms": {
+    "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Prefix012.boundary_binding": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Prefix012.trace": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "checks": [
+    {
+      "actual_check_sha256": "1ae16aac928fbbbcec676b6b7ecefe336831dc11bd7ffde081dce090c632fb15",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "check": {
+        "status": "accepted",
+        "source": "ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/Prefix012.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 312.7,
+        "lean_memory_limit_mb": 8192,
+        "lean_threads": 1,
+        "lean_thread_stack_kb": 32768,
+        "lean_main_stack_kb": 65536,
+        "cpu_seconds_limit": 1800,
+        "wall_seconds_limit": 2100,
+        "nice_increment": 0,
+        "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/Prefix012.olean",
+        "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+      },
+      "published_log": "verification/t03-case1465-independent-prefix012-pilot-actual-checkpoint-20261002-actual-logs/00-lean.log",
+      "published_CHECK": "verification/t03-case1465-independent-prefix012-pilot-actual-checkpoint-20261002-actual-logs/00-CHECK.json"
+    },
+    {
+      "actual_check_sha256": "9235d590764c470fc25233552d804c9c427de4267a2dc6ee16e3f99f1d95d762",
+      "actual_log_sha256": "0cfb0cbb738092ef48b5bb77a322947c80f0ff63daa3ec12568006b2fa20afeb",
+      "check": {
+        "status": "accepted",
+        "source": "verification/HandoffAudit.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 298.87,
+        "lean_memory_limit_mb": 8192,
+        "lean_threads": 1,
+        "lean_thread_stack_kb": 32768,
+        "lean_main_stack_kb": 65536,
+        "cpu_seconds_limit": 1800,
+        "wall_seconds_limit": 2100,
+        "nice_increment": 0,
+        "emitted_olean": null,
+        "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+      },
+      "published_log": "verification/t03-case1465-independent-prefix012-pilot-actual-checkpoint-20261002-actual-logs/01-lean.log",
+      "published_CHECK": "verification/t03-case1465-independent-prefix012-pilot-actual-checkpoint-20261002-actual-logs/01-CHECK.json"
+    }
+  ],
+  "original_checker_unchanged": true,
+  "source_synchronization": {
+    "status": "EXACT_NATIVE_SOURCE_AND_PROVISIONAL_GENUINE_RECEIPT_SYNC_COMPLETE",
+    "utc": "2026-10-02T00:37:59.464838+00:00",
+    "archive_sha256": "ee1c8737a5bd7a968fc1a501eb0dad8046f7e1177c5a8bf27e703a8b8de43e03",
+    "verified_members": 11922,
+    "verified_source_bytes": 1031747193,
+    "source_files_written": 10529,
+    "source_files_reused": 1393,
+    "obsolete_matching_sources_removed": 2,
+    "source_sync_seconds": 109.766,
+    "total_seconds": 328.188,
+    "genuine_receipts_copied": 1,
+    "existing_genuine_receipts_preserved": 11911,
+    "proof_receipts_created": 0,
+    "lean_processes_started": 0,
+    "supplied_checker_still_validates_sources_objects_and_actual_proofs": true
+  },
+  "whole_case_certificate_increment": 0,
+  "maximum_global_lean_workers": 4,
+  "scope": "Actual component proof and named transitive target audits only; not a full case certificate.",
+  "original_private_record_sha256": "a4fc98b0cc3242d75a2d4d4351074d03400c073f218d1bf9e2776ffb331fb2c6",
+  "all_included_source_members_verified": true,
+  "raw_transport_digest_independently_verified": true,
+  "complete_dependency_closure_in_this_source_supplement": false,
+  "fresh_full_ancestor_receipt_and_object_rehash_performed": false,
+  "source_scope": "Exact checked IndependentReplay modules and small shared helpers; omitted source dependencies are hash-listed. Original checker accepted the named target audits. This supplement is not a standalone whole closure.",
+  "dependency_source_member_bindings_file": "dependency-bindings/00-source-members.json"
+}

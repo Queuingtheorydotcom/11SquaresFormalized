@@ -50,6 +50,26 @@ useful components, not a complete case exclusion.
 
 ## 3. Complete the returned-exclusion family
 
+Case1465 now has an **actually audited continuous prefix through step40**:
+Prefix012, corrected ReplayBatch000Retry01 (steps013–016), and
+PartnerReplayBatch001–006 (steps017–040). The unchanged original checker
+accepted all30 named component targets with standard axioms. This adds **no
+full case**; case1465's original certificate and final public targets remain
+pending. The [exact component checkpoint](verification/t03-case1465-independent-route-through40-source-release-20261002.json)
+preserves84 actual CHECK/log pairs, accepted task/transport bindings, and a
+[24.6 MB source supplement](https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/tag/t03-1465-independent-route-through40-audited-20261002)
+with78 exact IndependentReplay sources and63 small shared helpers. Its inherited
+dependencies are hash-listed but omitted: **this supplement is not a standalone
+source closure**. No fresh whole-ancestor object rehash or merged replay is claimed.
+
+The accepted subset-cache trial/promotion is proof-neutral and supplies no
+same-claim uncached timing comparison. The redundant alias trial was
+intentionally cancelled (exit130); its last accepted State031 elaboration is
+preserved, but no alias target audit or alias source belongs to the final route.
+The final composition still waits for all17 required components. No whole-proof
+speedup, full1465 certificate, public-target completion or return ZIP is claimed.
+
+
 The [case 1373 exact full certificate and source release](verification/t03-wand125-case1373-accepted-source-release-20261002.json) and case1464 closures add
 two original integrations, now 172/173. The separately audited case 1465 partner
 and four-step components add no full case certificate. Earlier dated checkpoint
@@ -58,18 +78,21 @@ paragraphs below preserve their historical scope and integration metrics.
 
 Current full-certificate integration status is **172/173**, with case 1465 alone remaining. The [accepted case 1393 and geometric Step012 source releases](verification/t03-case1393-and-geometric1465-accepted-source-releases-20261001.json)
 provide the new full certificate and a separate checked single-step pilot. The
-pilot adds no full case; all later replay batches remain pending. Earlier dated
+pilot adds no full case; the current prefix-through40 component checkpoint above
+supersedes the earlier pending component status. Earlier dated
 checkpoint paragraphs below preserve their historical integration metrics.
 
 
 The [accepted numeric-state pilot](verification/t03-case1465-independent-numeric-state-pilot-source-release-20261001.json) preserves 75 numeric definitions
 and checks Step012 state binding, but adds no full case certificate. Its geometric
-transition and whole case audit are still required. Integration remains 169/173.
+transition and whole case audit were required at that earlier checkpoint, which
+recorded169/173. The geometric pilot and later component targets now pass;
+the full1465 certificate remains pending at the current172/173.
 
 
 The refreshed [upstream inventory](verification/t03-wand125-upstream-source-inventory-refresh-20261001.json) supplies
 172 source archives; only case 1465 is absent upstream. This is distinct from
-the original-project integration log, currently 169/173, with cases 1373, 1393,
+the earlier original-project integration log of169/173, with cases1373,1393,
 1464 and 1465 still pending. The [bounded cache checkpoint](verification/t03-inventory-and-bounded-cache-checkpoint-20261001.json)
 is an actual component audit and contributes no additional full certificate.
 
@@ -77,8 +100,9 @@ is an actual component audit and contributes no additional full certificate.
 `ElevenSquare/Pending/S06_Returned.lean:returned_certificate_exists` remains
 admitted for the 173 returned indices. The generic terminal-trace wrapper and
 checked common geometry/checker tools are present. Case2135's complete certificate
-source closure is also included; the other 172 assigned indices still need their
-complete source proofs integrated before the public family theorem can close.
+source closure is also included; the accepted generated collections are
+published as release assets. Their exact sources still need assembly into the
+merged public family theorem, and local1465's full certificate remains pending.
 
 The checkpoints are documented in [T03_PROGRESS.md](T03_PROGRESS.md). The
 [partial T03 release](https://github.com/Queuingtheorydotcom/11SquaresFormalized/releases/tag/t03-audited-151-20260930) supplies a standalone exact source collection

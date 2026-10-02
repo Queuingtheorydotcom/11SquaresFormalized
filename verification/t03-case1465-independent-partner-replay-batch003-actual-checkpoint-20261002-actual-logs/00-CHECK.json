@@ -1,0 +1,15 @@
+{
+  "status": "accepted",
+  "source": "ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/Partners/Step025Partner04.lean",
+  "exit_code": 0,
+  "elapsed_seconds": 65.94,
+  "lean_memory_limit_mb": 8192,
+  "lean_threads": 1,
+  "lean_thread_stack_kb": 32768,
+  "lean_main_stack_kb": 65536,
+  "cpu_seconds_limit": 1800,
+  "wall_seconds_limit": 2100,
+  "nice_increment": 0,
+  "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/Partners/Step025Partner04.olean",
+  "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+}

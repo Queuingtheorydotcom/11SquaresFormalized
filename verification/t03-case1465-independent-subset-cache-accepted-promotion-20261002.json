@@ -1,0 +1,38 @@
+{
+  "status": "ACCEPTED_SUBSET_CACHE_TRIAL_PROMOTED_TO_FINITE_REMAINING_TASKS",
+  "utc": "2026-10-02T01:32:26.484058+00:00",
+  "accepted_task": "library-case1465-node998-independent-partner-replay-batch003-task.json",
+  "accepted_execution": "library-b-library-case1465-node998-independent-partner-replay-batch003-task.json",
+  "accepted_execution_sha256": "d90106062035d0860c41f512c7dab3ff120864e6322f0cd6d5c77dd6730c2825",
+  "accepted_wrapper_sha256": "436486cea03a50ff995ddaab207c8e9566660017c32fbb6fbd392b18ed8a95a5",
+  "objects": 3569,
+  "object_bytes": 1526443312,
+  "all_original_and_copied_object_hashes_validated_before_and_after": true,
+  "actual_all_four_transition_target_audits_passed": true,
+  "subset_tasks": [
+    "library-case1465-node998-independent-partner-replay-batch003-task.json",
+    "library-case1465-node998-independent-partner-replay-batch007-task.json",
+    "library-case1465-node998-independent-partner-replay-batch008-task.json",
+    "library-case1465-node998-independent-partner-replay-batch009-task.json",
+    "library-case1465-node998-independent-partner-replay-batch010-task.json",
+    "library-case1465-node998-independent-partner-replay-batch011-task.json",
+    "library-case1465-node998-independent-partner-replay-batch012-task.json",
+    "library-case1465-node998-independent-partner-replay-batch013-task.json",
+    "library-case1465-node998-independent-partner-replay-batch014-task.json",
+    "library-case1465-node998-independent-partner-replay-batch015-task.json",
+    "library-case1465-node998-canonical-state-alias-pilot073074-task.json"
+  ],
+  "router_sha256": "f6c5c930cb33772d6d8d3bfe58b1946d4efd2335a8a31fab45c0a12aa2f8ea99",
+  "policy_sha256": "7c459feed6365659dbcaebe268872e7595db2d42acea150b0388a409c0795ccd",
+  "existing_active_tasks_unchanged": [
+    4,
+    5,
+    6
+  ],
+  "no_running_compilers_interrupted": true,
+  "additional_compilers_started": 0,
+  "whole_case_increment": 0,
+  "same_claim_uncached_timing_not_available": true,
+  "original_private_record_sha256": "8d492c52b957ad1cf56b49ed369dd2319f24de28fc4bed0357b86261200465a7",
+  "publication_scope": "Proof-neutral operational provenance; no new full case and no broad or uncached speedup comparison."
+}

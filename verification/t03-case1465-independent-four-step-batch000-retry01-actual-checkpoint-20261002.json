@@ -30,10 +30,6 @@
       "Quot.sound"
     ]
   },
-  "original_checker_unchanged": true,
-  "whole_case_certificate_increment": 0,
-  "maximum_global_lean_workers": 4,
-  "scope": "Actual component proof and named transitive target audits only; not a full case certificate.",
   "checks": [
     {
       "actual_check_sha256": "2037a51c76b257bfd9596472af83126149c9488f94c9e2da7e79ae83b76b5988",
@@ -52,7 +48,9 @@
         "nice_increment": 0,
         "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/ReplayBatch000Retry01.olean",
         "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
-      }
+      },
+      "published_log": "verification/t03-case1465-independent-four-step-batch000-retry01-actual-checkpoint-20261002-actual-logs/00-lean.log",
+      "published_CHECK": "verification/t03-case1465-independent-four-step-batch000-retry01-actual-checkpoint-20261002-actual-logs/00-CHECK.json"
     },
     {
       "actual_check_sha256": "721edb13618fcc697a32d795704367385dbdfa0a96416471d494aa70c2fc456f",
@@ -71,9 +69,12 @@
         "nice_increment": 0,
         "emitted_olean": null,
         "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
-      }
+      },
+      "published_log": "verification/t03-case1465-independent-four-step-batch000-retry01-actual-checkpoint-20261002-actual-logs/01-lean.log",
+      "published_CHECK": "verification/t03-case1465-independent-four-step-batch000-retry01-actual-checkpoint-20261002-actual-logs/01-CHECK.json"
     }
   ],
+  "original_checker_unchanged": true,
   "source_synchronization": {
     "status": "EXACT_NATIVE_SOURCE_AND_PROVISIONAL_GENUINE_RECEIPT_SYNC_COMPLETE",
     "utc": "2026-10-02T00:07:40.263295+00:00",
@@ -91,20 +92,14 @@
     "lean_processes_started": 0,
     "supplied_checker_still_validates_sources_objects_and_actual_proofs": true
   },
+  "whole_case_certificate_increment": 0,
+  "maximum_global_lean_workers": 4,
+  "scope": "Actual component proof and named transitive target audits only; not a full case certificate.",
   "original_private_record_sha256": "dc1fca176d168f9e23d786df3a87210c883dd52cabb5db027a4145e672b0848c",
-  "metadata_omissions": [
-    "machine-specific actual/preserved log and source-sync paths"
-  ],
-  "root_source_bindings": [
-    {
-      "module": "ElevenSquare.Tasks.T03.Batch04.Case1465.IndependentReplay.ReplayBatch000Retry01",
-      "source_bytes": 2012356,
-      "source_sha256": "ca31a80c2ab51beaad725c75d055e29647acb87ceee3e7122547ec49c6fbc7fc"
-    }
-  ],
-  "task_snapshot_sha256": "bea042ea47893fb7b79b834e96944e49687fcac915325667c33068d0b5de45df",
-  "publication_verification_scope": "Compact actual task/execution/wrapper/CHECK/log and available root source-member hashes. Complete pilot closures and compiler-object bytes are not rehashed or distributed in this metadata checkpoint.",
-  "complete_pilot_source_closure_published": false,
-  "full_transport_rehashed_for_this_compact_checkpoint": false,
-  "publication_Lean_jobs_worker_controls": 0
+  "all_included_source_members_verified": true,
+  "raw_transport_digest_independently_verified": true,
+  "complete_dependency_closure_in_this_source_supplement": false,
+  "fresh_full_ancestor_receipt_and_object_rehash_performed": false,
+  "source_scope": "Exact checked IndependentReplay modules and small shared helpers; omitted source dependencies are hash-listed. Original checker accepted the named target audits. This supplement is not a standalone whole closure.",
+  "dependency_source_member_bindings_file": "dependency-bindings/01-source-members.json"
 }

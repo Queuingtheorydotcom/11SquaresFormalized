@@ -541,5 +541,23 @@
     "full_case1464_complete_source_modules": 713,
     "all_ten_server_asset_digests_sizes_verified": true,
     "pending_route_records_labeled": true
+  },
+  "case1465_independent_route_through40_review": {
+    "exact_source_modules": 141,
+    "exact_independent_route_modules": 78,
+    "complete_standalone_closure": false,
+    "omitted_dependencies_hash_listed": true,
+    "all_included_source_and_actual_CHECK_logs_checked": true,
+    "raw_transports_digest_checked": 8,
+    "actual_CHECK_log_pairs": 84,
+    "actual_named_component_targets": 30,
+    "full_case_increment": 0,
+    "alias_pilot_cancelled_excluded": true,
+    "proof_neutral_subset_cache": true,
+    "all_four_server_asset_digests_sizes_verified": true,
+    "private_runtime_paths_account_original_transports_cache_objects_receipts_excluded": true,
+    "ancestor_object_collection_not_freshly_rehashed": true,
+    "Lean_jobs_worker_controls": 0,
+    "personal_information_findings": []
   }
 }
