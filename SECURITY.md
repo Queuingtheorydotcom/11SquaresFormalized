@@ -38,8 +38,14 @@ Git checkout. It does not install Docker or fall back to host execution.
 5. Reuse a volume only offline. Daemon-owned labels bind it to the source commit
    and image ID. Existing `all` selects verification only, and existing `prepare`
    is refused, regardless of submission-writable markers. Interrupted preparation
-   requires a new volume name. A private host-owned per-volume lock covers the
-   whole lifecycle, preventing concurrent online/offline stages in one volume.
+   requires a new volume name. A separate empty daemon-owned volume records
+   completed preparation and is never mounted into the proof container. Its
+   labels bind it to a unique workspace instance, commit and image. Verification
+   requires this marker, which is published only after the online container exits
+   successfully. A forcibly killed launcher cannot release an unfinished online
+   workspace into offline verification. Old v1 volumes require a fresh workspace.
+   A private host-owned per-volume lock covers the whole lifecycle. Any leftover
+   container mounting the workspace causes refusal until it is removed.
 6. Reports remain in the volume. The `report` command streams only a fixed,
    size-limited report as data from another offline container; it does not
    extract attacker-controlled archives onto the host.

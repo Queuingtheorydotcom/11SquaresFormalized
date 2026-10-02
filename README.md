@@ -79,6 +79,16 @@ setting, not a measured optimum. Containers share the host kernel, and workspace
 disk use is not capped. A disposable VM and dedicated storage offer a stronger
 boundary. Review these bootstrap scripts before running them on a sensitive host.
 
+The example requests three days of wall time and exports a compact JSON receipt
+to `.verification/completion-JOB_ID.json` after success. On RHEL 9.6, use an
+installed Python 3.11+ explicitly: export `ELEVEN_SQUARE_PYTHON=python3.11` before
+submission. Export `ELEVEN_SQUARE_START_USER_DOCKER=1` only when your site permits
+starting the installed systemd user Docker service on the allocated node; otherwise
+the site's daemon startup must already be in place. The example selects the
+`rootless` Docker context, or `ELEVEN_SQUARE_DOCKER_CONTEXT` if set. For a fresh
+attempt or named resume, set `ELEVEN_SQUARE_VOLUME` before submission. A daemon-owned
+preparation marker and leftover-container checks also protect interrupted launches.
+
 The following raw verifier commands describe operation **inside an independently
 isolated environment**. `scripts/verify.py` itself remains unsandboxed.
 

@@ -2,8 +2,10 @@
 import importlib.util
 import io
 import json
+import os
 from pathlib import Path
 import tarfile
+import subprocess
 import tempfile
 from types import SimpleNamespace
 import unittest
@@ -54,15 +56,23 @@ class ContainerPolicyTests(unittest.TestCase):
     def test_main_resumes_existing_volume_offline_even_with_forged_workspace_markers(self):
         # Host policy does not inspect a writable prepared/snapshot marker.
         commit, image = 'a' * 40, 'sha256:fixture'
-        labels = {launcher.LABEL: 'v1', launcher.LABEL + '.commit': commit,
-                  launcher.LABEL + '.image': image}
+        volume, instance = 'eleven-square-' + commit[:16], 'b' * 32
+        labels = {launcher.LABEL: 'v2', launcher.LABEL + '.commit': commit,
+                  launcher.LABEL + '.image': image, launcher.LABEL + '.instance': instance}
+        ready = {**labels, launcher.LABEL + '.workspace': volume}
+        prepared, orphan = True, False
         def output(command, **_):
             if 'status' in command:
                 return ''
             if 'rev-parse' in command:
                 return commit
+            if 'ps' in command:
+                return 'orphan-container' if orphan else ''
             return image
         def run(command, **_):
+            if launcher.preparation_marker(volume, instance) in command:
+                return SimpleNamespace(returncode=0 if prepared else 1,
+                                       stdout=json.dumps([{'Labels': ready}]))
             return SimpleNamespace(returncode=0,
                 stdout=json.dumps([{'Labels': labels}]) if 'volume' in command else '')
         with tempfile.TemporaryDirectory() as locks, \
@@ -80,6 +90,83 @@ class ContainerPolicyTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'cannot re-enter online'):
                 launcher.main(['prepare'])
             execute.assert_not_called()
+            prepared = False
+            with self.assertRaisesRegex(ValueError, 'trusted completion marker'):
+                launcher.main(['all'])
+            execute.assert_not_called()
+            prepared, orphan = True, True
+            with self.assertRaisesRegex(ValueError, 'previous container'):
+                launcher.main(['all'])
+            execute.assert_not_called()
+
+    def test_preparation_marker_is_bound_to_daemon_metadata_and_volume_instance(self):
+        labels = {launcher.LABEL: 'v2', launcher.LABEL + '.commit': 'commit', launcher.LABEL + '.image': 'image'}
+        expected = {**labels, launcher.LABEL + '.workspace': 'workspace', launcher.LABEL + '.instance': 'instance'}
+        self.assertNotEqual(launcher.preparation_marker('workspace', 'instance'),
+                            launcher.preparation_marker('workspace', 'replacement-instance'))
+        for actual in ({}, {**expected, launcher.LABEL + '.instance': 'other'}, expected):
+            with self.subTest(actual=actual), patch.object(launcher.subprocess, 'run',
+                    return_value=SimpleNamespace(returncode=0, stdout=json.dumps([{'Labels': actual}]))):
+                if actual == expected:
+                    launcher.require_prepared('workspace', 'instance', labels)
+                else:
+                    with self.assertRaisesRegex(ValueError, 'trusted completion marker'):
+                        launcher.require_prepared('workspace', 'instance', labels)
+
+    def test_failed_online_preparation_does_not_publish_completion(self):
+        args = options()
+        args.stage, args.memory_percent = 'all', 85
+        archive = Mock()
+        archive.returncode = 0
+        def run(command, **_):
+            return SimpleNamespace(returncode=1 if 'volume' in command and 'inspect' in command else 0)
+        def output(command, **_):
+            return '' if 'ps' in command else 'fixture'
+        with patch.object(launcher, 'context', return_value=b'recipe'), \
+             patch.object(launcher.subprocess, 'run', side_effect=run), \
+             patch.object(launcher.subprocess, 'Popen', return_value=archive), \
+             patch.object(launcher, 'output', side_effect=output), \
+             patch.object(launcher, 'execute_container', side_effect=[None, KeyboardInterrupt()]), \
+             patch.object(launcher, 'mark_prepared') as mark:
+            with self.assertRaises(KeyboardInterrupt):
+                launcher.lifecycle(args, 'a' * 40, 'workspace')
+            mark.assert_not_called()
+
+    def test_fresh_verification_waits_for_successful_preparation_marker(self):
+        args = options()
+        args.stage, args.memory_percent = 'all', 85
+        instance, commit, image = 'b' * 32, 'a' * 40, 'fixture'
+        marker = launcher.preparation_marker('workspace', instance)
+        labels = {}
+        events = []
+        archive = Mock(returncode=0)
+        def output(command, **_):
+            if 'ps' in command:
+                return ''
+            if marker in command and 'create' in command:
+                events.append('marker')
+                for index, word in enumerate(command):
+                    if word == '--label':
+                        key, value = command[index + 1].split('=', 1)
+                        labels[key] = value
+            return image
+        def run(command, **_):
+            if marker in command:
+                return SimpleNamespace(returncode=0 if labels else 1, stdout=json.dumps([{'Labels': labels}]))
+            return SimpleNamespace(returncode=1 if 'volume' in command and 'inspect' in command else 0)
+        def execute(command, **_):
+            stage = next(word for word in command if word in ('seed', 'prepare', 'verify'))
+            events.append(stage)
+            if stage == 'verify':
+                self.assertEqual(events[:3], ['seed', 'prepare', 'marker'])
+        with patch.object(launcher, 'context', return_value=b'recipe'), \
+             patch.object(launcher.subprocess, 'run', side_effect=run), \
+             patch.object(launcher.subprocess, 'Popen', return_value=archive), \
+             patch.object(launcher, 'output', side_effect=output), \
+             patch.object(launcher, 'execute_container', side_effect=execute), \
+             patch.object(launcher.uuid, 'uuid4', return_value=SimpleNamespace(hex=instance)):
+            launcher.lifecycle(args, commit, 'workspace')
+        self.assertEqual(events, ['seed', 'prepare', 'marker', 'verify'])
 
     def test_volume_lock_prevents_overlapping_lifecycles_and_releases_on_failure(self):
         with tempfile.TemporaryDirectory() as folder:
@@ -195,6 +282,47 @@ class ProbeTests(unittest.TestCase):
                 else:
                     with self.assertRaises((RuntimeError, ValueError)):
                         runner.probe()
+
+
+class SlurmScriptTests(unittest.TestCase):
+    def test_selected_python_named_volume_and_receipt_only_after_success(self):
+        # Exercise the real shell flow with inert executables, never Docker/Lean.
+        script = launcher.ROOT / 'scripts/run_single_node_verification.sbatch'
+        for exit_code in (0, 42):
+            with self.subTest(exit_code=exit_code), tempfile.TemporaryDirectory() as folder:
+                root = Path(folder)
+                (root / '.verification').mkdir()
+                binary = root / 'bin'
+                binary.mkdir()
+                python = binary / 'python3.11'
+                python.write_text(
+                    '#!/usr/bin/env python3\nimport json, os, sys\n'
+                    'if "-c" in sys.argv: sys.exit(0)\n'
+                    'with open(os.environ["FAKE_LOG"], "a") as log: log.write(json.dumps(sys.argv) + "\\n")\n'
+                    'if "all" in sys.argv: sys.exit(int(os.environ["FAKE_COMPILE_EXIT"]))\n'
+                    'print(json.dumps({"fixture_receipt": True}))\n')
+                srun = binary / 'srun'
+                srun.write_text('#!/bin/sh\nshift 2\nexec "$@"\n')
+                for executable in (python, srun):
+                    executable.chmod(0o755)
+                environment = {**os.environ, 'PATH': str(binary) + ':' + os.environ['PATH'],
+                               'SLURM_SUBMIT_DIR': str(root), 'SLURM_JOB_ID': '123',
+                               'SLURM_CPUS_PER_TASK': '200', 'ELEVEN_SQUARE_PYTHON': 'python3.11',
+                               'ELEVEN_SQUARE_VOLUME': 'private-volume',
+                               'ELEVEN_SQUARE_START_USER_DOCKER': '0',
+                               'FAKE_LOG': str(root / 'commands.jsonl'),
+                               'FAKE_COMPILE_EXIT': str(exit_code)}
+                result = subprocess.run(['bash', str(script)], env=environment, capture_output=True, text=True)
+                self.assertEqual(result.returncode, exit_code, result.stderr)
+                commands = [json.loads(line) for line in (root / 'commands.jsonl').read_text().splitlines()]
+                self.assertEqual(len(commands), 2 if exit_code == 0 else 1)
+                for command in commands:
+                    self.assertIn('-I', command)
+                    self.assertEqual(command[command.index('--volume') + 1], 'private-volume')
+                receipt = root / '.verification/completion-123.json'
+                self.assertEqual(receipt.exists(), exit_code == 0)
+                if exit_code == 0:
+                    self.assertEqual(json.loads(receipt.read_text()), {'fixture_receipt': True})
 
 
 class SnapshotTests(unittest.TestCase):

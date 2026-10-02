@@ -133,6 +133,27 @@ def stages_for(stage, existing):
     return [stage]
 
 
+def preparation_marker(volume, instance):
+    # A separate empty daemon-owned volume, never mounted into a container.
+    return 'eleven-square-ready-' + hashlib.sha256((volume + ':' + instance).encode()).hexdigest()[:32]
+
+
+def mark_prepared(volume, instance, labels):
+    command = ['docker', 'volume', 'create']
+    for key, value in {**labels, LABEL + '.workspace': volume, LABEL + '.instance': instance}.items():
+        command.extend(['--label', key + '=' + value])
+    output([*command, preparation_marker(volume, instance)])
+
+
+def require_prepared(volume, instance, labels):
+    found = subprocess.run(['docker', 'volume', 'inspect', preparation_marker(volume, instance)],
+                           capture_output=True, text=True)
+    expected = {**labels, LABEL + '.workspace': volume, LABEL + '.instance': instance}
+    actual = (json.loads(found.stdout)[0].get('Labels') or {}) if found.returncode == 0 else {}
+    if any(actual.get(key) != value for key, value in expected.items()):
+        raise ValueError('Online preparation has no trusted completion marker; use a new volume name')
+
+
 def execute_container(command, **kwargs):
     """Kill this container and its detached children if the launcher is stopped."""
     name = 'eleven-square-run-' + uuid.uuid4().hex
@@ -192,12 +213,13 @@ def lifecycle(args, commit, volume):
         subprocess.run(['docker', 'build', '-t', tag, '-'], input=raw, check=True)
     image = output(['docker', 'image', 'inspect', '--format={{.Id}}', tag])
     found = subprocess.run(['docker', 'volume', 'inspect', volume], capture_output=True, text=True)
-    labels = {LABEL: 'v1', LABEL + '.commit': commit, LABEL + '.image': image}
+    labels = {LABEL: 'v2', LABEL + '.commit': commit, LABEL + '.image': image}
     if found.returncode:
         if args.stage not in ('all', 'prepare'):
             raise ValueError('No prepared volume exists; run prepare or all first')
+        instance = uuid.uuid4().hex
         command = ['docker', 'volume', 'create']
-        for key, value in labels.items():
+        for key, value in {**labels, LABEL + '.instance': instance}.items():
             command.extend(['--label', key + '=' + value])
         output([*command, volume])
         seeded = False
@@ -205,8 +227,15 @@ def lifecycle(args, commit, volume):
         actual = json.loads(found.stdout)[0].get('Labels') or {}
         if any(actual.get(k) != v for k, v in labels.items()):
             raise ValueError('Volume belongs to a different snapshot or image; use a new volume name')
+        instance = actual.get(LABEL + '.instance', '')
+        if not re.fullmatch('[0-9a-f]{32}', instance):
+            raise ValueError('Volume lacks a trusted instance identity; use a new volume name')
         seeded = True
     stages = stages_for(args.stage, seeded)
+    if output(['docker', 'ps', '--all', '--filter=volume=' + volume, '--format={{.ID}}']):
+        raise ValueError('A previous container still owns this volume; stop/remove it before resuming')
+    if seeded and 'verify' in stages:
+        require_prepared(volume, instance, labels)
     print('Private Docker volume: ' + volume + '; image: ' + image, file=sys.stderr, flush=True)
     with tempfile.TemporaryDirectory(prefix='eleven-square-host-canary-') as directory:
         canary = Path(directory) / ('private-' + uuid.uuid4().hex)
@@ -231,7 +260,11 @@ def lifecycle(args, commit, volume):
                 raise RuntimeError('Source snapshot export failed; use a new volume name')
         if 'prepare' in stages:
             launch('prepare')
+            # Publish only after Docker confirms the online container has exited.
+            # SIGKILL cannot release an unfinished volume into offline execution.
+            mark_prepared(volume, instance, labels)
         if 'verify' in stages:
+            require_prepared(volume, instance, labels)
             launch('verify', ['--max-parallel', str(args.max_parallel), '--jobs', str(args.jobs),
                              '--memory-percent', str(args.memory_percent)])
         if args.stage == 'probe':
