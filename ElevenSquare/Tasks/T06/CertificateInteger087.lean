@@ -483,108 +483,96 @@ theorem branchDot087_32 (n : Fin 42 → ℕ) :
 def branchSparseDots087 : Fin 33 → (Fin 42 → ℕ) → ℤ :=
   ![sparseDot00, sparseDot01, sparseDot02, sparseDot03, sparseDot04, sparseDot05, sparseDot06, sparseDot07, sparseDot08, sparseDot09, sparseDot10, sparseDot11, sparseDot35, sparseDot36, sparseDot41, sparseDot38, sparseDot39, sparseDot17, sparseDot18, sparseDot19, sparseDot55, sparseDot21, sparseDot22, sparseDot47, sparseDot24, sparseDot25, sparseDot56, sparseDot27, sparseDot28, sparseDot49, sparseDot30, sparseDot31, sparseDot43]
 
+/-- Keep the finite case proof independent of the large arithmetic expressions. -/
+private theorem branchDots087_cases (P : Fin 33 → Prop)
+    (h0 : P 0)
+    (h1 : P 1)
+    (h2 : P 2)
+    (h3 : P 3)
+    (h4 : P 4)
+    (h5 : P 5)
+    (h6 : P 6)
+    (h7 : P 7)
+    (h8 : P 8)
+    (h9 : P 9)
+    (h10 : P 10)
+    (h11 : P 11)
+    (h12 : P 12)
+    (h13 : P 13)
+    (h14 : P 14)
+    (h15 : P 15)
+    (h16 : P 16)
+    (h17 : P 17)
+    (h18 : P 18)
+    (h19 : P 19)
+    (h20 : P 20)
+    (h21 : P 21)
+    (h22 : P 22)
+    (h23 : P 23)
+    (h24 : P 24)
+    (h25 : P 25)
+    (h26 : P 26)
+    (h27 : P 27)
+    (h28 : P 28)
+    (h29 : P 29)
+    (h30 : P 30)
+    (h31 : P 31)
+    (h32 : P 32)
+    (k : Fin 33) : P k := by
+  revert k
+  refine Fin.cases h0 ?_
+  refine Fin.cases h1 ?_
+  refine Fin.cases h2 ?_
+  refine Fin.cases h3 ?_
+  refine Fin.cases h4 ?_
+  refine Fin.cases h5 ?_
+  refine Fin.cases h6 ?_
+  refine Fin.cases h7 ?_
+  refine Fin.cases h8 ?_
+  refine Fin.cases h9 ?_
+  refine Fin.cases h10 ?_
+  refine Fin.cases h11 ?_
+  refine Fin.cases h12 ?_
+  refine Fin.cases h13 ?_
+  refine Fin.cases h14 ?_
+  refine Fin.cases h15 ?_
+  refine Fin.cases h16 ?_
+  refine Fin.cases h17 ?_
+  refine Fin.cases h18 ?_
+  refine Fin.cases h19 ?_
+  refine Fin.cases h20 ?_
+  refine Fin.cases h21 ?_
+  refine Fin.cases h22 ?_
+  refine Fin.cases h23 ?_
+  refine Fin.cases h24 ?_
+  refine Fin.cases h25 ?_
+  refine Fin.cases h26 ?_
+  refine Fin.cases h27 ?_
+  refine Fin.cases h28 ?_
+  refine Fin.cases h29 ?_
+  refine Fin.cases h30 ?_
+  refine Fin.cases h31 ?_
+  refine Fin.cases h32 ?_
+  intro i
+  exact Fin.elim0 i
+
 theorem branchDots087 (n : Fin 42 → ℕ) (k : Fin 33) :
     (∑ i : Fin 42, (n i : ℤ) * roundedGradients (branchRows 87 i) k) = branchSparseDots087 k n := by
-  fin_cases k
-  · calc
-      _ = sparseDot00 n := branchDot087_0 n
-      _ = _ := rfl
-  · calc
-      _ = sparseDot01 n := branchDot087_1 n
-      _ = _ := rfl
-  · calc
-      _ = sparseDot02 n := branchDot087_2 n
-      _ = _ := rfl
-  · calc
-      _ = sparseDot03 n := branchDot087_3 n
-      _ = _ := rfl
-  · calc
-      _ = sparseDot04 n := branchDot087_4 n
-      _ = _ := rfl
-  · calc
-      _ = sparseDot05 n := branchDot087_5 n
-      _ = _ := rfl
-  · calc
-      _ = sparseDot06 n := branchDot087_6 n
-      _ = _ := rfl
-  · calc
-      _ = sparseDot07 n := branchDot087_7 n
-      _ = _ := rfl
-  · calc
-      _ = sparseDot08 n := branchDot087_8 n
-      _ = _ := rfl
-  · calc
-      _ = sparseDot09 n := branchDot087_9 n
-      _ = _ := rfl
-  · calc
-      _ = sparseDot10 n := branchDot087_10 n
-      _ = _ := rfl
-  · calc
-      _ = sparseDot11 n := branchDot087_11 n
-      _ = _ := rfl
-  · calc
-      _ = sparseDot35 n := branchDot087_12 n
-      _ = _ := rfl
-  · calc
-      _ = sparseDot36 n := branchDot087_13 n
-      _ = _ := rfl
-  · calc
-      _ = sparseDot41 n := branchDot087_14 n
-      _ = _ := rfl
-  · calc
-      _ = sparseDot38 n := branchDot087_15 n
-      _ = _ := rfl
-  · calc
-      _ = sparseDot39 n := branchDot087_16 n
-      _ = _ := rfl
-  · calc
-      _ = sparseDot17 n := branchDot087_17 n
-      _ = _ := rfl
-  · calc
-      _ = sparseDot18 n := branchDot087_18 n
-      _ = _ := rfl
-  · calc
-      _ = sparseDot19 n := branchDot087_19 n
-      _ = _ := rfl
-  · calc
-      _ = sparseDot55 n := branchDot087_20 n
-      _ = _ := rfl
-  · calc
-      _ = sparseDot21 n := branchDot087_21 n
-      _ = _ := rfl
-  · calc
-      _ = sparseDot22 n := branchDot087_22 n
-      _ = _ := rfl
-  · calc
-      _ = sparseDot47 n := branchDot087_23 n
-      _ = _ := rfl
-  · calc
-      _ = sparseDot24 n := branchDot087_24 n
-      _ = _ := rfl
-  · calc
-      _ = sparseDot25 n := branchDot087_25 n
-      _ = _ := rfl
-  · calc
-      _ = sparseDot56 n := branchDot087_26 n
-      _ = _ := rfl
-  · calc
-      _ = sparseDot27 n := branchDot087_27 n
-      _ = _ := rfl
-  · calc
-      _ = sparseDot28 n := branchDot087_28 n
-      _ = _ := rfl
-  · calc
-      _ = sparseDot49 n := branchDot087_29 n
-      _ = _ := rfl
-  · calc
-      _ = sparseDot30 n := branchDot087_30 n
-      _ = _ := rfl
-  · calc
-      _ = sparseDot31 n := branchDot087_31 n
-      _ = _ := rfl
-  · calc
-      _ = sparseDot43 n := branchDot087_32 n
-      _ = _ := rfl
+  exact branchDots087_cases
+    (fun j => (∑ i : Fin 42, (n i : ℤ) * roundedGradients (branchRows 87 i) j) =
+      branchSparseDots087 j n)
+    (branchDot087_0 n) (branchDot087_1 n) (branchDot087_2 n)
+    (branchDot087_3 n) (branchDot087_4 n) (branchDot087_5 n)
+    (branchDot087_6 n) (branchDot087_7 n) (branchDot087_8 n)
+    (branchDot087_9 n) (branchDot087_10 n) (branchDot087_11 n)
+    (branchDot087_12 n) (branchDot087_13 n) (branchDot087_14 n)
+    (branchDot087_15 n) (branchDot087_16 n) (branchDot087_17 n)
+    (branchDot087_18 n) (branchDot087_19 n) (branchDot087_20 n)
+    (branchDot087_21 n) (branchDot087_22 n) (branchDot087_23 n)
+    (branchDot087_24 n) (branchDot087_25 n) (branchDot087_26 n)
+    (branchDot087_27 n) (branchDot087_28 n) (branchDot087_29 n)
+    (branchDot087_30 n) (branchDot087_31 n) (branchDot087_32 n)
+    k
 
 def branchIntegerCurvature087 : Fin 42 → ℕ := ![5144483, 5144483, 5144483, 5144483, 3112095, 3112095, 3112095, 3112095, 5144483, 5144483, 2286437, 2286437, 2286437, 2286437, 4064777, 4064777, 2286437, 2286437, 9519013, 34962020, 106147352, 100287661, 30814247, 240392540, 39659306, 39659306, 26751322, 26751322, 42331420, 42331420, 33780595, 79795748, 101981296, 101981296, 79086693, 79086693, 106371291, 106371291, 48290998, 48290998, 289103692, 289103692]
 

@@ -30,7 +30,7 @@ theorem finalNear_center_role10 (p : Point) (hp : InFinalNearCenter (10 : Fin 11
       focusedRadii (coordinate (10 : Owner) (1 : Fin 3)) := by
   have hbox : inRect (nearBox10.lx : ℝ) (nearBox10.hx : ℝ)
       (nearBox10.ly : ℝ) (nearBox10.hy : ℝ) p := by
-    simpa only [nearFieldBox] using finalNear_center_field_enclosure (10 : Fin 11) p hp
+    simpa [nearFieldBox] using finalNear_center_field_enclosure (10 : Fin 11) p hp
   rcases nearCenterBox10_numeric with ⟨hxl, hxr, hyl, hyr⟩
   exact ⟨field_rectangle_local_x hbox nearCenter100_bounds hxl hxr,
     field_rectangle_local_y hbox nearCenter101_bounds hyl hyr⟩

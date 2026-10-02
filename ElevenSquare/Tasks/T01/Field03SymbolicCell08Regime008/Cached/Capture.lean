@@ -1,3 +1,4 @@
+import ElevenSquare.Tasks.T01.Field03SymbolicCell08Regime000.SourceBridge
 import ElevenSquare.Tasks.T01.Field03SymbolicCell08Regime008.Cached.Cover
 import ElevenSquare.Tasks.T01.Field03SymbolicCell08Regime008.TargetCheck
 import ElevenSquare.Tasks.T01.Handoff.PlanAPI.SymbolicCachedFieldRow
@@ -25,7 +26,8 @@ theorem capture_from_packing (P : Packing 11 coverCap)
     rw [row_targetPolygons_eq]
     exact cover_checked
   apply symbolic_cached_field_row_majority P i 8 baselineField03Sites t
-    (1795/4096) (1001/2048) rowCertificate cache signNode000 cache_checked (by rfl) hcover
+    (1795/4096) (1001/2048) rowCertificate cache signNode000 cache_checked
+    ElevenSquare.Tasks.T01.Field03SymbolicCell08Regime000.source_eq_scaled_slab hcover
     row_targets_checked hlt htu ha hcell
   · intro polygon hmem hcontains
     have heq : polygon = target00 := by

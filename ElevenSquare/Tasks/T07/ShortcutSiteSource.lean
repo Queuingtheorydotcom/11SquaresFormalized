@@ -28,7 +28,8 @@ theorem sourceFirstSite_eq_scaled (i : Owner) :
     sourceFirstSite i =
       (seedFieldScale * (physicalSite (ownerCell i)).1,
        seedFieldScale * (physicalSite (ownerCell i)).2) := by
-  fin_cases i <;> rfl
+  fin_cases i <;> norm_num [sourceFirstSite, seedFieldScale, physicalSite,
+    ownerCell, seedCap, seedSite]
 
 theorem sourceFirstSite_cast (i : Owner) :
     realPoint (sourceFirstSite i) =

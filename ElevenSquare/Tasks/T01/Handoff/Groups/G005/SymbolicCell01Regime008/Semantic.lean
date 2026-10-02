@@ -1,3 +1,4 @@
+import ElevenSquare.Tasks.T01.Handoff.Groups.G005.SymbolicCell01Regime000.SourceBridge
 import ElevenSquare.Tasks.T01.Handoff.Groups.G005.SymbolicCell01Regime008.Data
 import ElevenSquare.Tasks.T01.Handoff.Groups.G005.SymbolicCell01Semantics.Class02.MedianAggregate
 import ElevenSquare.Tasks.T01.Handoff.Groups.G005.SymbolicCell01Semantics.FeatureB
@@ -19,7 +20,9 @@ def rowCertificate : SymbolicFeatureRowCertificate 2 where
     .blocker target02 SymbolicCell01Semantics.blockPoint half]
   cover := node000
 
-theorem source_eq : source = symbolicWallScaledSlab (1 : Fin 16) := by rfl
+theorem source_eq : source = symbolicWallScaledSlab (1 : Fin 16) := by
+  simpa only [source, SymbolicCell01Regime000.source] using
+    SymbolicCell01Regime000.source_eq_scaled_slab
 
 theorem targetPolygons_eq :
     rowCertificate.targets.map SymbolicFeatureTarget.polygon = targets := by rfl
@@ -101,7 +104,7 @@ theorem window_capture_of_cover
   obtain ⟨feature, hfeat⟩ := symbolic_feature_row_choice_of_cover
     P (owners 1) 1 featureFamily featureThreshold t left right
     rowCertificate (by simpa [rowCertificate] using source_eq)
-    (by simpa only [rowCertificate, targetPolygons_eq] using hcover)
+    (by simpa only [targetPolygons_eq] using hcover)
     targetChecks hlt htu ha hcell (majority_target _ t ha hlt htu)
     (by
       intro p hp

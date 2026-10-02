@@ -220,11 +220,11 @@ theorem step5_row55_witness_inside (q : UnitSquare)
   · calc
       |-dx*c+dy*s| / fieldScale < (fieldScale/2)/fieldScale :=
         div_lt_div_of_pos_right hx hscl
-      _ = 1/2 := by field_simp [fieldScale_ne_zero]; ring
+      _ = 1/2 := by field_simp [fieldScale_ne_zero]
   · calc
       |dx*s+dy*c| / fieldScale < (fieldScale/2)/fieldScale :=
         div_lt_div_of_pos_right hy hscl
-      _ = 1/2 := by field_simp [fieldScale_ne_zero]; ring
+      _ = 1/2 := by field_simp [fieldScale_ne_zero]
 
 end
 end ElevenSquare.Tasks.T07

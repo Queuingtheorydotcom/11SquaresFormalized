@@ -1,12 +1,12 @@
 import ElevenSquare.Tasks.T01.Field03SymbolicCell08Regime004.Cover
-import ElevenSquare.Tasks.T01.Handoff.PlanAPI.SymbolicCoverSlab
+import ElevenSquare.Tasks.T01.Field03SymbolicCell08Regime000.SourceBridge
 
 namespace ElevenSquare.Tasks.T01.Field03SymbolicCell08Regime004
 open ElevenSquare.Tasks.T01.Handoff.PlanAPI
 noncomputable section
 
 theorem source_eq : source = symbolicWallScaledSlab (8 : Fin 16) := by
-  rfl
+  exact ElevenSquare.Tasks.T01.Field03SymbolicCell08Regime000.source_eq_scaled_slab
 
 theorem wall_cover_checked : node000.Check
     (symbolicWallScaledSlab (8 : Fin 16)) targets (203/1024) (679/2048) := by

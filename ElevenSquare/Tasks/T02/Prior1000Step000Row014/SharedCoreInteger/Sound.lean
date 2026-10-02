@@ -17,8 +17,8 @@ theorem row_retained {S : ℝ} (P : Packing 11 S) (s : PoseState)
       coverage_checked hf _ hq with hk | hb
   · obtain ⟨r, hr, hcontains⟩ := hk
     have he : r = retainedRow := by
-      simpa only [RowPruningCertificate.keptRows, certificate, List.map_cons,
-        List.map_nil, List.mem_singleton] using hr
+      simpa only [RowPruningCertificate.keptRows, certificate, inputRow, retainedRow,
+        List.map_cons, List.map_nil, List.mem_singleton] using hr
     exact he ▸ hcontains
   · obtain ⟨j, hij, Q, hcore, hforbidden⟩ := hb
     obtain ⟨p, hpi, hpj⟩ := forbidden_center_implies_overlap _ _ _ _ (hs.2 j) hcore hforbidden

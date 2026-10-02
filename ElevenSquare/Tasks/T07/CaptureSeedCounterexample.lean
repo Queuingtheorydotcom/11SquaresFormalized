@@ -52,9 +52,6 @@ theorem firstRootOwned0_not_uniform :
   have hy := h.2
   norm_num [OpenSquare, localY, dot, perp, seedCounterSquare,
     firstRootOwned0, realPoint, fieldScale, coverCap] at hy
-  rw [abs_of_nonneg (show (0 : ℝ) ≤
-    1818433372522358765282554553 / 2984375000000000000000000000 by norm_num)] at hy
-  norm_num at hy
 
 end
 end ElevenSquare.Tasks.T07

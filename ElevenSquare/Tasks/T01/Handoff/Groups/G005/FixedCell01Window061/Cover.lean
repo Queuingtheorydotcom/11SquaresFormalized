@@ -41,7 +41,7 @@ theorem node000_checked : node000.Check nodeSource000 targets := by
   exact node008_checked
 
 theorem cover_checked : node000.Check source targets := by
-  simpa [nodeSource000] using node000_checked
+  simpa only [nodeSource000, source] using node000_checked
 
 end
 end ElevenSquare.Tasks.T01.Handoff.Groups.G005.FixedCell01Window061
