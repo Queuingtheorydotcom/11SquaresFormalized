@@ -1,0 +1,62 @@
+{
+  "stage": "FINITE_QUEUE_COMPLETED",
+  "utc": "2026-10-02T11:46:57.609977+00:00",
+  "cases": [
+    1950,
+    1810,
+    1476,
+    2049,
+    1478,
+    1783
+  ],
+  "completed": [
+    {
+      "case": 1950,
+      "integrated": 68,
+      "deferred_active_modules": []
+    },
+    {
+      "case": 1810,
+      "integrated": 64,
+      "deferred_active_modules": []
+    },
+    {
+      "case": 1476,
+      "integrated": 55,
+      "deferred_active_modules": []
+    },
+    {
+      "case": 2049,
+      "integrated": 52,
+      "deferred_active_modules": []
+    },
+    {
+      "case": 1478,
+      "integrated": 50,
+      "deferred_active_modules": []
+    },
+    {
+      "case": 1783,
+      "integrated": 42,
+      "deferred_active_modules": []
+    }
+  ],
+  "skipped": [],
+  "maximum_auxiliary_lean_processes": 1,
+  "auxiliary_lean_threads": 1,
+  "auxiliary_memory_limit_mb": 4096,
+  "original_case_count": 173,
+  "original_private_record_sha256": "e853ffe24ab950c8396dfd821564bdbcbb4b90f34cd342cdfaf2669eb428ca98",
+  "original_private_record_bytes": 915,
+  "integrated_outputs_total": 331,
+  "prior_accepted_rechecks_checkpoint": "verification/t03-final-current-source-rechecks1889-1950-1810-checkpoint-20261002.json",
+  "prior_accepted_rechecks_checkpoint_sha256": "0f2276f3f4150f4631aa29a99aeab6a48ba9beb6b378bedf095f4222c11e2f05",
+  "new_four_rechecks_checkpoint": "verification/t03-final-small-queue-completed-rechecks-checkpoint-20261002.json",
+  "original_fullcase_audits": 173,
+  "remaining_original_cases": 0,
+  "new_fullcase_increment": 0,
+  "deferred_case1731_recheck_acceptance_not_claimed": true,
+  "public_two_target_audits_accepted": false,
+  "final_return_zip_complete": false,
+  "publication_Lean_jobs_worker_queue_source_changes": 0
+}
