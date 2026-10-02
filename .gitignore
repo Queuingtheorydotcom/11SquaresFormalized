@@ -9,6 +9,7 @@ __pycache__/
 # Already tracked sources remain tracked; check_sources.py still audits these.
 /Sqpack/S11Opt/F[0-5][0-9]/
 /Sqpack/S11Opt/Own/
+/Sqpack/S11Opt/Bundled/
 /Sqpack/S11Opt/FieldAll.lean
 /Sqpack/S11Opt/Split/U2G/C*/
 /Sqpack/S11Opt/Split/U2P/C*/

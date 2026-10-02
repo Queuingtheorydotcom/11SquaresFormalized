@@ -41,6 +41,21 @@ access. Missing assets are verified and installed one at a time, avoiding a
 temporary extraction of an entire multi-gigabyte unit. A differing source or a
 symlink is rejected; local changes are never overwritten.
 
+After restoration, the command derives `Sqpack/S11Opt/Bundled/` from the
+authenticated originals. The same step runs before source discovery in
+`verify.py --setup`. F01–F58's 2,007 coverage modules become 559 independent
+leaf bundles and 58 aggregators; the 134 shared ownership modules become three
+independent leaf bundles. Original declaration bodies and numeric data are
+preserved. Fresh namespaces, original-statement type checks, and axiom queries
+keep the derived proofs independently auditable. F00 remains unchanged.
+
+Derived sources and provenance manifests are ignored by Git and require about
+1.6 GiB in addition to the originals and compiler objects. Source generation
+does not establish Lean acceptance. Existing different generated files are
+rejected, including stale generation manifests; inspect those differences before
+regenerating. Use `--raw-only` to restore just the original release files into a
+staging directory without the repository's tracked assembly sources.
+
 For an existing local archive collection or a separate destination:
 
 ```sh
@@ -108,6 +123,7 @@ Loader regressions run without Lean or network access:
 ```sh
 python3 scripts/test_fetch_wand125_release.py
 python3 scripts/test_materialize_wand125.py
+python3 -m unittest discover -s scripts -p 'test_*bundle*.py'
 ```
 
 Only actual completed native compiler results may be published as acceptance

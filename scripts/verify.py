@@ -24,8 +24,9 @@ ap.add_argument('--plan', action='store_true', help='Print dependency order with
 ap.add_argument('--module', action='append', default=[], help='Check only this module and its dependencies (repeatable).')
 args = ap.parse_args()
 if args.setup and not args.plan:
-    from materialize_wand125 import materialize
+    from materialize_wand125 import materialize, materialize_bundled_baseline
     materialize()
+    materialize_bundled_baseline()
 print(json.dumps(check(use_cache=not args.fresh)), flush=True)
 admissions = json.loads((ROOT / 'verification/admissions.json').read_text())['sites']
 try:
