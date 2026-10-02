@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Plan 16 generated and native certificate replay shards without running Lean.
+"""Plan generated and native certificate replay shards without running Lean.
 
 The final job must still run verify.py --all: final_modules is an inventory,
 not a substitute for the verifier's public axiom audit. Source bytes estimate
@@ -17,12 +17,27 @@ import fetch_wand125_release as release
 from materialize_wand125 import REQUIRED_UNITS
 
 SHARD_COUNT = 16
+MAX_SHARD_COUNT = 64
 FAN_IN_BARRIER = 8
 NAMED_BARRIERS = {"All", "Main", "Final"}
 # Native import count alone would defer shared foundations such as DataPacket
 # and every certificate using them. A closure cap instead limits how much native
 # work one target can gather while preserving those shared foundations.
 NATIVE_CLOSURE_BYTE_CAP = 4 * 1024 * 1024
+
+
+def checked_shard_count(value):
+    """Reject invalid API counts before allocating shards or reading the graph."""
+    if type(value) is not int or not 1 <= value <= MAX_SHARD_COUNT:
+        raise ValueError(f"shard_count must be an integer from 1 through {MAX_SHARD_COUNT}")
+    return value
+
+
+def shard_count_argument(value):
+    try:
+        return checked_shard_count(int(value))
+    except ValueError as error:
+        raise argparse.ArgumentTypeError(str(error)) from error
 
 
 def required_sources():
@@ -94,8 +109,9 @@ def dependency_order(graph):
     return order
 
 
-def make_plan(graph, sizes, generated, source_hashes):
+def make_plan(graph, sizes, generated, source_hashes, *, shard_count=SHARD_COUNT):
     """Choose maximal safe targets, then balance their dependency closures."""
+    shard_count = checked_shard_count(shard_count)
     graph = {module: sorted(set(dependencies)) for module, dependencies in graph.items()}
     generated = set(generated)
     if not generated <= graph.keys():
@@ -146,7 +162,7 @@ def make_plan(graph, sizes, generated, source_hashes):
     closures = {target: dependency_closures[target] for target in targets}
     weights = {target: closure_bytes[target] for target in targets}
     shards = [{"index": index, "modules": [], "estimated_source_bytes": 0}
-              for index in range(SHARD_COUNT)]
+              for index in range(shard_count)]
     shard_closures = [set() for _ in shards]
     for target in sorted(targets, key=lambda module: (-weights[module], module)):
         shard = min(shards, key=lambda item: (item["estimated_source_bytes"], item["index"]))
@@ -163,11 +179,11 @@ def make_plan(graph, sizes, generated, source_hashes):
     graph_record = {"modules": [[module, graph[module], sizes[module], source_hashes[module]]
                                 for module in sorted(graph)],
                     "generated": sorted(generated),
-                    "policy": {"shards": SHARD_COUNT, "generated_fan_in": FAN_IN_BARRIER,
+                    "policy": {"shards": shard_count, "generated_fan_in": FAN_IN_BARRIER,
                                "generated_names": sorted(NAMED_BARRIERS),
                                "native_closure_bytes": NATIVE_CLOSURE_BYTE_CAP}}
     graph_digest = hashlib.sha256(json.dumps(graph_record, separators=(",", ":")).encode()).hexdigest()
-    return {"schema_version": 1, "shard_count": SHARD_COUNT,
+    return {"schema_version": 1, "shard_count": shard_count,
             "graph_sha256": graph_digest, "generated_module_count": len(generated),
             "candidate_module_count": len(candidates),
             "native_candidate_module_count": len(native),
@@ -181,17 +197,19 @@ def make_plan(graph, sizes, generated, source_hashes):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--shards", type=shard_count_argument, default=SHARD_COUNT,
+                        help=f"Number of replay shards, 1 through {MAX_SHARD_COUNT} (default: {SHARD_COUNT}).")
     parser.add_argument("--output", type=Path,
                         default=check_sources.ROOT / ".verification/ci-plan.json")
     args = parser.parse_args(argv)
     try:
         expected = required_sources()
         graph, sizes, hashes = read_graph(check_sources.ROOT, expected)
-        plan = make_plan(graph, sizes, expected, hashes)
+        plan = make_plan(graph, sizes, expected, hashes, shard_count=args.shards)
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(json.dumps(plan, indent=2) + "\n")
         targets = sum(len(shard["modules"]) for shard in plan["shards"])
-        print(f"Planned {targets} targets in {SHARD_COUNT} shards; "
+        print(f"Planned {targets} targets in {args.shards} shards; "
               f"{len(plan['final_modules'])} modules remain for final replay: {args.output}")
         return 0
     except (OSError, ValueError) as error:

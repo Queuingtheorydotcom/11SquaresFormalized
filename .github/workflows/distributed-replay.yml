@@ -1,0 +1,242 @@
+name: Explicit distributed Windows replay
+
+# Explicit launch requests only. Ordinary source/tooling pushes do not run this.
+# A launch marker must bind the exact committed 18-worker plan. Pilot is one
+# cloud worker; fleet is a separate explicit request. No active marker is added
+# by the tooling. The collector alone performs the full final audit.
+on:
+  push:
+    branches: [codex/stronger-computer-handoff-20261002]
+    paths: [.github/distributed-launch.json]
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: One cloud pilot or all sixteen cloud workers
+        type: choice
+        options: [pilot, fleet]
+        default: pilot
+        required: true
+      plan_sha256:
+        description: SHA256 of the exact committed verification/distributed-plan.json
+        type: string
+        required: true
+      previous_run_id:
+        description: Optional earlier run containing this worker's sanitized checkpoint
+        type: string
+        default: ''
+        required: false
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: explicit-distributed-windows-replay
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  request:
+    if: ${{ github.event.repository.private == false }}
+    runs-on: windows-2025
+    timeout-minutes: 10
+    outputs:
+      matrix: ${{ steps.request.outputs.matrix }}
+      previous_run_id: ${{ steps.request.outputs.previous_run_id }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+          set-safe-directory: false
+      - name: Validate explicit request and exact shared plan
+        id: request
+        env:
+          LAUNCH_EVENT: ${{ github.event_name }}
+          LAUNCH_MODE: ${{ inputs.mode }}
+          LAUNCH_PLAN_SHA256: ${{ inputs.plan_sha256 }}
+          LAUNCH_PREVIOUS_RUN_ID: ${{ inputs.previous_run_id }}
+        run: |
+          @'
+          # BEGIN_GATE_PY
+          import hashlib, json, os, re, sys, traceback
+          from pathlib import Path
+
+          def unique_object(pairs):
+              result = {}
+              for key, value in pairs:
+                  if key in result:
+                      raise ValueError('Duplicate request key')
+                  result[key] = value
+              return result
+
+          def validate_request(request, plan_bytes):
+              if type(request) is not dict or set(request) != {'mode', 'plan_sha256', 'previous_run_id'}:
+                  raise ValueError('Wrong launch request schema')
+              if request['mode'] not in ('pilot', 'fleet'):
+                  raise ValueError('Unknown launch mode')
+              digest = request['plan_sha256']
+              if not isinstance(digest, str) or re.fullmatch('[0-9a-f]{64}', digest) is None:
+                  raise ValueError('Invalid plan digest')
+              if hashlib.sha256(plan_bytes).hexdigest() != digest:
+                  raise ValueError('Launch request does not match the committed plan')
+              previous = request['previous_run_id']
+              if previous is not None and (not isinstance(previous, str) or re.fullmatch('[1-9][0-9]{0,19}', previous) is None):
+                  raise ValueError('Invalid previous run identifier')
+              plan = json.loads(plan_bytes, object_pairs_hook=unique_object)
+              if plan.get('shard_count') != 18 or plan.get('platform') != 'windows-x86_64':
+                  raise ValueError('An eighteen-worker Windows plan is required')
+              return {'worker': [2] if request['mode'] == 'pilot' else list(range(2, 18))}, previous
+
+          def main():
+              try:
+                  event = os.environ.get('LAUNCH_EVENT')
+                  if event == 'push':
+                      request = json.loads(Path('.github/distributed-launch.json').read_bytes(), object_pairs_hook=unique_object)
+                  elif event == 'workflow_dispatch':
+                      request = {'mode': os.environ.get('LAUNCH_MODE'),
+                                 'plan_sha256': os.environ.get('LAUNCH_PLAN_SHA256'),
+                                 'previous_run_id': os.environ.get('LAUNCH_PREVIOUS_RUN_ID') or None}
+                  else:
+                      raise ValueError('Unsupported launch event')
+                  raw = Path('verification/distributed-plan.json').read_bytes()
+                  matrix, previous = validate_request(request, raw)
+                  sys.path.insert(0, 'scripts')
+                  from distributed_worker import validate_structure
+                  validate_structure(json.loads(raw))
+                  with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as output:
+                      output.write('matrix=' + json.dumps(matrix, separators=(',', ':')) + '\n')
+                      output.write('previous_run_id=' + (previous or '') + '\n')
+                  print('Explicit launch request validated; cloud workers: ' + str(len(matrix['worker'])))
+                  return 0
+              except BaseException:
+                  state = Path('.verification/distributed')
+                  state.mkdir(parents=True, exist_ok=True)
+                  (state / 'launch.log').write_text(traceback.format_exc(), encoding='utf-8')
+                  print('LAUNCH_REFUSED: missing, malformed, or mismatched explicit request. No workers started.')
+                  return 1
+
+          if __name__ == '__main__':
+              raise SystemExit(main())
+          # END_GATE_PY
+          '@ | python -B -
+          exit $LASTEXITCODE
+
+  workers:
+    needs: request
+    if: ${{ github.event.repository.private == false && needs.request.result == 'success' }}
+    runs-on: windows-2025
+    timeout-minutes: 360
+    strategy:
+      fail-fast: false
+      max-parallel: 16
+      matrix: ${{ fromJSON(needs.request.outputs.matrix) }}
+    env:
+      DISTRIBUTED_WORKER: ${{ matrix.worker }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+          set-safe-directory: false
+      - name: Prepare a short hosted-only workspace with enough free space
+        run: |
+          if ($env:GITHUB_ACTIONS -cne 'true' -or $env:RUNNER_ENVIRONMENT -cne 'github-hosted' -or $env:RUNNER_OS -cne 'Windows') {
+              Write-Output 'HOSTED_SETUP_REFUSED: this workspace copy is for disposable hosted Windows runners only.'
+              exit 1
+          }
+          $destination = 'C:\FORMALIZATION_CONTAINER'
+          if (Test-Path -LiteralPath $destination) {
+              Write-Output 'HOSTED_SETUP_REFUSED: the dedicated destination already exists.'
+              exit 1
+          }
+          if ([IO.DriveInfo]::new('C:\').AvailableFreeSpace -lt 34359738368) {
+              Write-Output 'HOSTED_SETUP_REFUSED: at least 32 GiB of free system-drive space is required before downloads.'
+              exit 1
+          }
+          try {
+              New-Item -ItemType Directory -Force -Path '.verification/distributed' | Out-Null
+              Copy-Item -LiteralPath $env:GITHUB_WORKSPACE -Destination $destination -Recurse -Force *>> .verification/distributed/bootstrap.log
+              if (-not (Test-Path -LiteralPath (Join-Path $destination '.git'))) { throw 'Copied checkout metadata missing.' }
+          } catch {
+              Write-Output 'HOSTED_SETUP_REFUSED: checkout copy failed; the original workspace is retained.'
+              exit 1
+          }
+          Write-Output 'Hosted workspace copy prepared; original checkout retained.'
+      - name: Explicitly restore pinned Windows prerequisites
+        timeout-minutes: 55
+        working-directory: C:\FORMALIZATION_CONTAINER
+        run: ./scripts/distributed_setup.ps1 -Install
+      - name: Restore only this worker's earlier sanitized archive
+        if: ${{ needs.request.outputs.previous_run_id != '' }}
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: distributed-worker-${{ matrix.worker }}
+          path: C:\FORMALIZATION_CONTAINER\.verification\distributed\incoming
+          github-token: ${{ github.token }}
+          run-id: ${{ needs.request.outputs.previous_run_id }}
+      - name: Validate imported checkpoint identity before reuse
+        if: ${{ needs.request.outputs.previous_run_id != '' }}
+        working-directory: C:\FORMALIZATION_CONTAINER
+        run: |
+          . ./scripts/distributed_env.ps1
+          $python = Resolve-DistributedPython
+          $archive = '.verification/distributed/incoming/worker-{0:D2}.tar.gz' -f [int]$env:DISTRIBUTED_WORKER
+          $files = @(Get-ChildItem -LiteralPath '.verification/distributed/incoming' -File -Recurse)
+          if ($files.Count -ne 1 -or -not (Test-Path -LiteralPath $archive -PathType Leaf) -or (Get-Item -LiteralPath $archive).Length -gt 536870912) {
+              Write-Output 'CHECKPOINT_REFUSED: expected one bounded sanitized worker archive.'
+              exit 1
+          }
+          & $python -B -u scripts/distributed_worker.py import --plan verification/distributed-plan.json --archive $archive *> .verification/distributed/import.log
+          $code = $LASTEXITCODE
+          Write-Output ('Checkpoint import finished with status ' + $code + '; only validated matching evidence is reusable.')
+          exit $code
+      - name: Check this worker's dependency closure within the time budget
+        id: replay
+        continue-on-error: true
+        working-directory: C:\FORMALIZATION_CONTAINER
+        run: |
+          . ./scripts/distributed_env.ps1
+          $python = Resolve-DistributedPython
+          & $python -B -u scripts/distributed_worker.py run --plan verification/distributed-plan.json --worker $env:DISTRIBUTED_WORKER --max-parallel 1 --memory-percent 95 --budget-seconds 14400 *> .verification/distributed/cloud-worker.log
+          $code = $LASTEXITCODE
+          "exit_code=$code" >> $env:GITHUB_OUTPUT
+          Write-Output ('Worker checkpoint status: ' + $code + '. This is not a full-project proof result.')
+          exit $code
+      - name: Export only a sanitized bounded checkpoint
+        id: checkpoint
+        if: ${{ !cancelled() && steps.replay.outcome != 'skipped' }}
+        working-directory: C:\FORMALIZATION_CONTAINER
+        run: |
+          . ./scripts/distributed_env.ps1
+          $python = Resolve-DistributedPython
+          $archive = '.verification/distributed/worker-{0:D2}.tar.gz' -f [int]$env:DISTRIBUTED_WORKER
+          & $python -B -u scripts/distributed_worker.py export --plan verification/distributed-plan.json --worker $env:DISTRIBUTED_WORKER --output $archive *> .verification/distributed/export.log
+          if ($LASTEXITCODE -ne 0) { Write-Output 'EXPORT_REFUSED: no archive will be uploaded.'; exit 1 }
+          if (-not (Test-Path -LiteralPath $archive -PathType Leaf) -or (Get-Item -LiteralPath $archive).Length -gt 536870912) {
+              Write-Output 'EXPORT_REFUSED: missing or oversized checkpoint.'
+              exit 1
+          }
+          "archive=C:/FORMALIZATION_CONTAINER/$archive" >> $env:GITHUB_OUTPUT
+          Write-Output 'Sanitized worker checkpoint ready; archive is at most 512 MiB.'
+      - name: Retain only the named sanitized archive for one day
+        if: ${{ !cancelled() && steps.checkpoint.outcome == 'success' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: distributed-worker-${{ matrix.worker }}
+          path: ${{ steps.checkpoint.outputs.archive }}
+          if-no-files-found: error
+          retention-days: 1
+          compression-level: 0
+          include-hidden-files: true # Exact sanitized archive path only; never raw state/logs.
+      - name: Keep unfinished workers visibly incomplete
+        if: ${{ !cancelled() && steps.replay.outcome != 'skipped' }}
+        env:
+          WORKER_EXIT_CODE: ${{ steps.replay.outputs.exit_code }}
+        run: |
+          if ($env:WORKER_EXIT_CODE -ne '0') {
+              Write-Output 'WORKER_INCOMPLETE: any uploaded archive is resumable partial evidence.'
+              exit 1
+          }
+          Write-Output 'WORKER_CLOSURE_CHECKED: collector machine 0 still must run the full replay and strict final audit.'

@@ -1,5 +1,7 @@
 """Synthetic-graph CI planner regressions; no Lean, downloads, or repo scans."""
 import hashlib
+import io
+import json
 from pathlib import Path
 import tempfile
 import unittest
@@ -8,10 +10,11 @@ from unittest import mock
 import ci_plan
 
 
-def plan(graph, generated=None, sizes=None):
+def plan(graph, generated=None, sizes=None, *, shard_count=ci_plan.SHARD_COUNT):
     sizes = sizes or {module: 1 for module in graph}
     hashes = {module: hashlib.sha256(module.encode()).hexdigest() for module in graph}
-    return ci_plan.make_plan(graph, sizes, graph if generated is None else generated, hashes)
+    return ci_plan.make_plan(graph, sizes, graph if generated is None else generated, hashes,
+                             shard_count=shard_count)
 
 
 def closure(graph, targets):
@@ -35,6 +38,77 @@ class PlannerTests(unittest.TestCase):
         self.assertEqual(result["shards"][0]["modules"], ["Leaf17"])
         self.assertEqual(result["shards"][1]["modules"], ["Leaf00", "Leaf15"])
         self.assertEqual(result["shards"][2]["modules"], ["Leaf01", "Leaf16"])
+
+    def test_default_and_explicit_16_preserve_entire_legacy_plan_and_policy_digest(self):
+        graph = {f"Leaf{i:02d}": [] for i in range(18)}
+        sizes = {module: 1 for module in graph}
+        sizes["Leaf17"] = 100
+        hashes = {module: hashlib.sha256(module.encode()).hexdigest() for module in graph}
+        legacy_default = ci_plan.make_plan(graph, sizes, graph, hashes)
+        self.assertEqual(legacy_default, plan(graph, sizes=sizes, shard_count=16))
+        # Captured from the unchanged 16-shard planner before parameterization.
+        self.assertEqual(legacy_default["graph_sha256"],
+                         "3b73e6ec9a8cf6fe09792e4f513da3bb35a8348f98083191dd3b7b4c88cbe36e")
+        serialized = json.dumps(legacy_default, sort_keys=True, separators=(",", ":")).encode()
+        self.assertEqual(hashlib.sha256(serialized).hexdigest(),
+                         "f5b844f27e6b58994a439eefeb08324d7af1cadde82940babc0a80ec8e761fb1")
+        self.assertNotEqual(legacy_default["graph_sha256"],
+                            plan(graph, sizes=sizes, shard_count=18)["graph_sha256"])
+
+    def test_18_shards_have_unique_targets_balanced_closures_and_exhaustive_union(self):
+        leaves = {f"Leaf{i:02d}" for i in range(54)}
+        graph = {"Base": []}
+        graph.update({module: ["Base"] for module in sorted(leaves)})
+        graph.update({"Family.Main": sorted(leaves),
+                      "ElevenSquare.Verification": ["Family.Main"], "Unrelated": []})
+        generated = {"Base", "Family.Main"} | leaves
+        sizes = {module: 1 for module in graph}
+        sizes["Base"] = 100
+        result = plan(graph, generated, sizes, shard_count=18)
+        targets = [module for shard in result["shards"] for module in shard["modules"]]
+        covered = closure(graph, targets)
+        final = set(result["final_modules"])
+        self.assertEqual(result["shard_count"], 18)
+        self.assertEqual([shard["index"] for shard in result["shards"]], list(range(18)))
+        self.assertEqual(set(targets), leaves)
+        self.assertEqual(len(targets), len(set(targets)))
+        self.assertEqual(final, {"Family.Main", "ElevenSquare.Verification", "Unrelated"})
+        self.assertFalse(covered & final)
+        self.assertEqual(covered | final, set(graph))
+        self.assertTrue(all(shard["estimated_source_bytes"] == 103 for shard in result["shards"]))
+        for shard in result["shards"]:
+            self.assertEqual(shard["estimated_source_bytes"],
+                             sum(sizes[module] for module in closure(graph, shard["modules"])))
+        reversed_graph = {module: list(reversed(graph[module])) for module in reversed(graph)}
+        self.assertEqual(result, plan(reversed_graph, generated, sizes, shard_count=18))
+
+    def test_invalid_shard_counts_fail_closed_and_boundaries_are_supported(self):
+        for count in (0, -1, 65, True, False, 18.0, "18", None):
+            with self.subTest(count=count), self.assertRaisesRegex(ValueError, "shard_count"):
+                plan({"A": []}, shard_count=count)
+        for count in (1, 64):
+            with self.subTest(count=count):
+                result = plan({"A": []}, shard_count=count)
+                self.assertEqual(len(result["shards"]), count)
+                self.assertEqual([module for shard in result["shards"] for module in shard["modules"]], ["A"])
+
+    def test_cli_accepts_18_and_rejects_invalid_counts_before_source_reads(self):
+        graph = {"A": []}
+        with tempfile.TemporaryDirectory() as temporary:
+            output = Path(temporary) / "plan.json"
+            with mock.patch.object(ci_plan, "required_sources", return_value={"A": "source"}), \
+                 mock.patch.object(ci_plan, "read_graph", return_value=(graph, {"A": 1}, {"A": "source"})), \
+                 mock.patch("sys.stdout", new_callable=io.StringIO):
+                self.assertEqual(ci_plan.main(["--shards", "18", "--output", str(output)]), 0)
+            self.assertEqual(json.loads(output.read_text())["shard_count"], 18)
+        for count in ("0", "-1", "65", "18.5", "True", "not-an-integer"):
+            with self.subTest(count=count), \
+                 mock.patch.object(ci_plan, "required_sources") as sources, \
+                 mock.patch("sys.stderr", new_callable=io.StringIO), \
+                 self.assertRaises(SystemExit) as raised:
+                ci_plan.main(["--shards", count])
+            self.assertEqual(raised.exception.code, 2)
+            sources.assert_not_called()
 
     def test_order_independence_and_stable_digest(self):
         graph = {"Base": [], "A": ["Base"], "B": ["Base"], "C": ["A", "B"]}

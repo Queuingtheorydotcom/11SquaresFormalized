@@ -35,6 +35,96 @@ arbitrary orientations, legal boundary contact, and disjoint open interiors.
 
 ## Verification
 
+On this prepared Windows checkout, double-click `RUN_FORMALIZATION.cmd` to run
+the complete resumable verification and final audit. The launcher reuses valid
+checkpoints, selects parallel checking only when a matched benchmark is faster,
+and limits additional compiler processes according to memory headroom. It does
+not upload anything. Re-run the same launcher after an interruption or repair.
+Private diagnostics and the latest run pointer are saved under
+`.verification/run/latest.json`; each run has its own logs and `summary.txt`.
+Per-module compiler logs and receipts remain under `.verification/`.
+
+### Two Windows machines and sixteen hosted workers
+
+The shared `verification/distributed-plan.json` assigns worker 0 to machine-1,
+worker 1 to machine-2, and workers 2 through 17 to GitHub's Windows runners.
+All participants must use this exact plan, source snapshot, pinned Windows
+compiler binary, and recorded per-module thread counts. Linux objects cannot
+be substituted. Shared dependencies may be checked by more than one worker.
+
+On a second Windows checkout, install Git and Python 3.11 or newer, then run
+this explicit prerequisite restoration from the repository directory:
+
+```cmd
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts\distributed_setup.ps1 -Install
+```
+
+This stores downloaded tools, temporary files, and diagnostics inside the
+checkout. Setup refuses to run while another verifier holds the checkout locks.
+After setup, run `RUN_MACHINE_1.cmd` on machine-1 or `RUN_MACHINE_2.cmd` on
+machine-2. The first uses at most two simultaneous module checks; the second
+starts conservatively with one. Both use a 95% memory guard. These launchers
+neither upload files nor start hosted workers.
+
+Before switching from the complete local launcher, request a graceful stop
+with `type nul > .verification\run\stop-requested` in Command Prompt and wait
+for that run to finish its active checks. Do not run both launchers together.
+To stop a distributed worker, create `.verification/distributed/stop-worker-00`
+or `stop-worker-01`, respectively. Re-running its launcher clears that worker's
+stop request and resumes matching accepted checkpoints.
+
+Private run pointers are `.verification/distributed/latest-worker-00.json`
+and `latest-worker-01.json`. Their named directories contain the compiler logs,
+runner log, and status. Launcher errors are retained in
+`.verification/distributed/launcher-error.log`; setup errors are in `setup.log`.
+Keep each computer awake until its worker stops. A worker checkpoint is never
+reported as a completed formalization.
+
+When a worker is idle, create its sanitized checkpoint in PowerShell:
+
+```powershell
+. ./scripts/distributed_env.ps1
+$workerPython = Resolve-DistributedPython
+& $workerPython -B scripts/distributed_worker.py export --worker 1
+```
+
+Use `--worker 0` on machine-1. Transfer only the resulting
+`.verification/distributed/worker-01.tar.gz` (or `worker-00.tar.gz`), never raw
+logs, the `.verification` directory, or personal tool installations. Archives
+have normalized metadata, privacy-screened objects, whitelisted receipts, and
+axiom evidence. Each archive is capped at 512 MiB; an oversized export fails
+without replacing an earlier archive.
+
+Place received archives in machine-1's `.verification/distributed/incoming/`.
+Use only archives produced by this verifier at the agreed revision on the
+participating machines or the approved Actions run. Matching hashes establish
+integrity and compatibility; they do not authenticate who ran the compiler.
+With all local verifiers idle, import each archive and eventually run the full
+collector check from the same scoped PowerShell session:
+
+```powershell
+& $workerPython -B scripts/distributed_worker.py import --archive .verification/distributed/incoming/worker-01.tar.gz
+& $workerPython -B scripts/distributed_worker.py final --max-parallel 2
+```
+
+Import validates the complete archive before publication and preserves backups
+of any explicitly interrupted evidence it replaces. Accepted conflicting
+evidence is refused. The collector reuses only current matching evidence,
+checks all remaining modules, and runs the unchanged strict dependency and
+axiom audit. Only its `OPTIMALITY_PROVED` status establishes completion.
+Changes to source or configuration require an explicitly regenerated common
+plan; do not independently regenerate it on each machine.
+
+The separate `Explicit distributed Windows replay` workflow starts only from
+an approved launch request. A change to `.github/distributed-launch.json` on
+the designated handoff branch binds a pilot or fleet request to the exact
+plan digest; ordinary tooling pushes do not launch it. The pilot runs one
+hosted worker. Launching all sixteen requires a separate fleet request.
+Hosted setup checks for sufficient disk space before downloading prerequisites.
+Only sanitized archives are uploaded, with one-day retention and a maximum
+of 512 MiB per worker (8 GiB for sixteen). Artifact storage can incur charges.
+No launch request or GitHub upload is implied by local setup or verification.
+
 Install Git, Python 3.11 or newer, and Lean's `elan` launcher. The project pins
 Lean `v4.34.1` and
 mathlib revision `d13f23b723b8a846827a245b89c10fc7d3f11612`.
@@ -74,8 +164,10 @@ It checks all modules and continues through independent failures.
 
 Once dependencies are installed, omit `--setup`. Accepted unchanged modules
 can be resumed using the script's source/object/dependency fingerprints. The
-serial checker prioritizes shared dependencies, records transitive input hashes,
-and audits every included explicit axiom query. Use
+checker prioritizes shared dependencies, records transitive input hashes,
+and audits every included explicit axiom query. Optional `--max-parallel N`
+coordinates independent modules under one checkout lock; `--memory-percent 95`
+guards additional starts and retries memory-constrained work alone. Use
 `--jobs N` to give each new Lean process `N` worker threads while retaining serial
 module checks. Matching accepted receipts keep their actual original thread count
 and fingerprints. Extra threads can require more memory; the default remains one.
@@ -107,10 +199,11 @@ the branch. Local verification remains available through the commands above.
 With an empty admission inventory, every queried target may use only `propext`,
 `Classical.choice`, and `Quot.sound`. Source restoration and an admission-free
 source scan do not establish proof acceptance. Before publishing completion,
-finish the full fresh replay and validate its current receipts:
+finish the full replay and validate every current receipt. Unchanged local
+checkpoints are reused only after their fingerprints and compiled objects match:
 
 ```sh
-python3 scripts/verify.py --all --fresh --keep-going
+python3 scripts/verify.py --all --keep-going
 python3 scripts/finalize_verification.py
 ```
 
