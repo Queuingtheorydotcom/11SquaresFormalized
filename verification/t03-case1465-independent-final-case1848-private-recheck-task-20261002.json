@@ -1,0 +1,20 @@
+{
+  "id": "T03_FinalCase1848AuxiliaryRecheck",
+  "modules": [
+    "ElevenSquare.Tasks.T03.Batch09.Case1848.Forward.Certificate"
+  ],
+  "axiom_targets": [
+    "ElevenSquare.Pending.T03.Batch09.Case1848.Forward.Certificate.certificate_exists"
+  ],
+  "open_deliverables": [],
+  "owned_files": [
+    "ElevenSquare/Pending/S06_Returned.lean"
+  ],
+  "helper_prefix": "ElevenSquare/Tasks/T03/",
+  "release_id": "eleven-square-assembly-v4-20260928",
+  "base_snapshot_sha256": "fb5482f323ccc68177596fd1ab041c3a2d91f590c9512f28a44d068b783a852c",
+  "original_private_record_sha256": "4c4626c5e4922417d807fcf19fcfc3ea0d168858fd81b49d04255ab1f0cc9d8a",
+  "original_private_record_bytes": 537,
+  "publication_Lean_jobs_worker_controls": 0,
+  "publication_scope": "Actual exact auxiliary original-case recheck and recorded integration; private runtime paths and bulk output binding tables omitted. No case count or final public target acceptance increment."
+}

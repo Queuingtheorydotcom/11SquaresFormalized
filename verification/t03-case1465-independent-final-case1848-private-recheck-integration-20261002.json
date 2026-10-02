@@ -1,0 +1,27 @@
+{
+  "status": "ACTUAL_ACCEPTED_PRIVATE_CASE1848_OUTPUTS_ATOMICALLY_INTEGRATED",
+  "utc": "2026-10-02T11:11:10.915320+00:00",
+  "actual_execution_sha256": "a014f22b8a83eea1133f9f42a07c68e29745a21c339580622f5d6953ada28392",
+  "actual_wrapper_sha256": "397314005b66c9afc634fa3a51b72c90033255685322342ef827321c57a3717e",
+  "actual_check_sha256": "bccf5d22e3c1fd32726966fda65094b52931edcbe8c8d32d012e4945b81d96ce",
+  "actual_axiom_log_sha256": "22228b7e7fa7493da48a397ee3342e9c5268c7d7cbde7ab3d874cc6420c4d433",
+  "target": "ElevenSquare.Pending.T03.Batch09.Case1848.Forward.Certificate.certificate_exists",
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "integrated": 123,
+  "already_current": 4356,
+  "deferred_active_modules": [],
+  "seconds": 3.831363004996092,
+  "source_changes": 0,
+  "proof_jobs_started": 0,
+  "scope": "Actual current-source compiler outputs and genuine receipts only. The unchanged full checker will still validate source/object hashes and its two exact public targets.",
+  "original_private_record_sha256": "f93e88e612c3ed3ac7a22bc2d1d888373f7690ea1202a3149da766b2a5036297",
+  "original_private_record_bytes": 62030,
+  "publication_Lean_jobs_worker_controls": 0,
+  "publication_scope": "Actual exact auxiliary original-case recheck and recorded integration; private runtime paths and bulk output binding tables omitted. No case count or final public target acceptance increment.",
+  "omitted_output_binding_table_sha256": "038caa0aee4a09f0398f05161ed4a335e84bb5f022b73b79a8a0cf36575869bf",
+  "all_recorded_genuine_receipt_hashes_and_closure_keys_independently_verified": true
+}
