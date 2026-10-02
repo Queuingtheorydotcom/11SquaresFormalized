@@ -77,6 +77,8 @@ The [final-source case 2047 recheck](verification/t03-final-case2047-private-rec
 
 The [three final-source rechecks](verification/t03-final-three-current-source-rechecks-checkpoint-20261002.json) for cases **2048, 1885 and 1848** each passed the exact original certificate Std3 audit at one thread with a 4 GiB limit. Their **148, 163 and 123 genuine outputs** were integrated with unchanged sources. Publication verified every recorded receipt/closure binding and each actual integrated root object; bulk tables and caches are omitted. These auxiliary checks do not increase the **173/173** case count. The two public combined audits and the exact exporter ZIP remain pending.
 
+**All 173 original cases are audited; no original case remains unfinished.** The [same-final-source rechecks](verification/t03-final-current-source-rechecks1840-2125-checkpoint-20261002.json) for cases **1840 and 2125** also passed their exact original certificate Std3 audits at one thread with a 4 GiB limit. Their **134 and 122 genuine outputs** were integrated with unchanged sources. Every recorded receipt/closure binding and each actual integrated root object was verified; bulk tables and caches are omitted. These are final-route compatibility rechecks, with no case-count increment. Only the two public combined audits and exact exporter ZIP remain pending.
+
 The [additional exact-cache checkpoint](verification/t03-case1465-additional-cache-current172-checkpoint-20261002.json)
 adds **9,642 genuine objects /1,894,518,368 bytes**, each bound to the current
 dependency key and existing actual receipt. Recorded copy/original hash checks

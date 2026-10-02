@@ -655,5 +655,14 @@
     "private_runtime_paths_omitted": true,
     "public2_export_pending": true,
     "Lean_jobs_worker_controls": 0
+  },
+  "current_source_rechecks1840_2125_review": {
+    "all256_recorded_genuine_receipt_hashes_and_keys_checked": true,
+    "actual_integrated_main_root_objects_checked": 2,
+    "actual_CHECK_log_task_audit_and_Certificate_sources_preserved": true,
+    "bulk_output_binding_tables_and_cache_bytes_omitted": true,
+    "private_runtime_paths_omitted": true,
+    "public2_export_pending": true,
+    "Lean_jobs_worker_controls": 0
   }
 }
