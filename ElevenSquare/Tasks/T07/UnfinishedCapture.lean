@@ -1,4 +1,3 @@
-import ElevenSquare.Tasks.T07.GlobalComposition
 import ElevenSquare.Tasks.T07.Ext.Case438Global
 
 namespace ElevenSquare.Tasks.T07

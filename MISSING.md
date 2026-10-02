@@ -96,6 +96,37 @@ Earlier counterexamples to direct promotion from mere closed-cell occupancy and
 simple rowwise near inclusion remain valid obstructions to those shortcuts.
 The new extension supplies explicit traces and checked inclusion instead.
 
+## Independent case438 capture audit
+
+The physical `Case438NearCertificate` contract and role-order/near-state handoff
+now live below the global composition. Their declaration statements are unchanged.
+The role-order proof now states its definitional permutation reduction explicitly
+for Lean 4.34; the other moved proof bodies are unchanged. `RoleAssignment` no longer imports the D4 reduction;
+`Ext/Case438Global` and `UnfinishedCapture` no longer import complete exclusion
+families through `ConditionalGlobal` or `GlobalComposition`. The global lower
+bound still imports and uses the original complete D4 reduction explicitly.
+
+After normal pinned source restoration, check the geometric handoff or the
+complete U5 capture independently:
+
+```sh
+python3 scripts/verify.py --module ElevenSquare.Tasks.T07.RoleNearCertificateAudit
+python3 scripts/verify.py --module ElevenSquare.Tasks.T07.Case438CaptureAudit
+```
+
+The geometric handoff has passed a Linux Lean 4.34.1 replay of **110 local
+modules and 102 axiom queries**, all using only the standard axioms. Current
+source, object, configuration and transitive input bindings were independently
+revalidated; see
+[`verification/case438-role-near-handoff-reproduction.json`](verification/case438-role-near-handoff-reproduction.json).
+This result covers the geometric handoff, not the generated U5 capture or global
+optimality.
+
+These focused closures contain no baseline, prior, returned exclusion family
+or T06 exact-packet proof. Capture still requires all genuine U5 trace sources
+and their kernel checks. The complete global theorem and full-source finalizer
+retain their original dependencies and acceptance requirements.
+
 ## Completed stages to preserve
 
 - Exact construction, geometric foundations, closed-cell cover, and finite case

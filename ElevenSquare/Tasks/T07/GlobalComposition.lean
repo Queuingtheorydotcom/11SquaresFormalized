@@ -1,3 +1,4 @@
+import ElevenSquare.Tasks.T07.Case438Certificate
 import ElevenSquare.Tasks.T07.D4Transport
 import ElevenSquare.Tasks.T07.LocalRigidity
 
@@ -8,17 +9,6 @@ physical square in the focused local chart. -/
 namespace ElevenSquare.Tasks.T07
 open ElevenSquare.Pending
 noncomputable section
-
-def Case438NearCertificate : Prop :=
-  ∀ (S : ℝ) (Q : Packing 11 coverCap),
-    S ≤ T →
-    Occupies Q (caseMask ⟨438, by omega⟩) →
-    CenteredPacking Q S →
-    ∃ R : Packing 11 T, CenteredPacking R S ∧
-      ∃ h : Displacement, InRectangle focusedRadii h ∧
-        ∀ i,
-          (R.squares i).center = perturbedCenter constructionSquare h i ∧
-          (R.squares i).axis = perturbedAxis constructionSquare h i
 
 theorem global_lower_bound_of_case438_certificate
     (hcertificate : Case438NearCertificate)

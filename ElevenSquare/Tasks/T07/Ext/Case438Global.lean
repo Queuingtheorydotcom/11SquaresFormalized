@@ -1,5 +1,5 @@
 import ElevenSquare.Tasks.T07.Ext.Case438
-import ElevenSquare.Tasks.T07.ConditionalGlobal
+import ElevenSquare.Tasks.T07.RoleNearCertificate
 
 /-! `RoleNearBoxCertificate` and `Case438NearCertificate` from `role_near_box_state`. -/
 namespace ElevenSquare.Tasks.T07.Ext

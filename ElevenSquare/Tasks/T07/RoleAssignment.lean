@@ -1,4 +1,6 @@
-import ElevenSquare.Tasks.T07.D4Transport
+import ElevenSquare.Cover
+import ElevenSquare.Tasks.T07.CoordinateBridge
+import ElevenSquare.Pending.S06_CandidateMasks
 import ElevenSquare.Tasks.T07.RoleAssignmentFinite
 
 /-! Exact correspondence between the eleven trace owners (in increasing cell
