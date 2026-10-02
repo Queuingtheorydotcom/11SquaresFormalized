@@ -1,5 +1,6 @@
 import ElevenSquare.Foundations
 import ElevenSquare.Tasks.T07.UnfinishedCapture
+import ElevenSquare.Tasks.T07.GlobalComposition
 
 namespace ElevenSquare.Pending
 noncomputable section

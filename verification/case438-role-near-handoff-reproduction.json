@@ -1,0 +1,1158 @@
+{
+  "status": "SCOPED_GEOMETRIC_HANDOFF_NATIVE_COMPILER_AND_AXIOM_ACCEPTANCE",
+  "checked_at_utc": "2026-10-02T15:55:28.797110+00:00",
+  "lean_toolchain": "leanprover/lean4:v4.34.1",
+  "mathlib_revision": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+  "target": "ElevenSquare.Tasks.T07.RoleNearCertificateAudit",
+  "checked_modules": 110,
+  "selected_query_count": 102,
+  "axioms": {
+    "ElevenSquare.Pending.SeparationGeometry.dot_neg_right": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.SeparationGeometry.radius_neg": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.SeparationGeometry.edge_normal_neg": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.SeparationGeometry.edge_radius": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.SeparationGeometry.separation_reversed": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.SeparationGeometry.separated_points": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.SeparationGeometry.edge_normal_flags": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.SeparationGeometry.closed_affine_point": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.SeparationGeometry.separator_owner": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.SeparationGeometry.halfplane_feature_flags": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.SeparationGeometry.separator_feature": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.perturbedCorner_closed": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.feasible_wall_gaps": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.SATCoordinates.cross_perp": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.SATCoordinates.both_perp": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.SATCoordinates.relative_unit": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.SATCoordinates.vector_basis": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.SATCoordinates.localX_affine": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.SATCoordinates.localY_affine": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.SATCoordinates.localX_change": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.SATCoordinates.localY_change": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.SATCoordinates.half_abs_lt": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.SATRadii.radius_a": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.SATRadii.radius_perp_a": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.SATRadii.radius_b": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.SATRadii.radius_perp_b": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.SATRadii.radius_four": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.OrderedData.adjacent_sound": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.OrderedData.Block.append": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.OrderedData.ordered_nodup": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.OrderedData.Block.card": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.rowsCheck_sound": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.Block.append": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.verified_step_sound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.verified_trace_sound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.terminal_contradiction": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.SATIntervals.between_four": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.SATIntervals.between_three": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.SATIntervals.positive_y_intervals": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.SATPositive.positive_overlap": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.SATPositive.nonnegative_overlap": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.SATSigned.flip_s": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.SATSigned.flip_c": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.SATSigned.nonneg_c_overlap": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.SATSigned.overlap": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.SATOverlap.actual_overlap": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.SATNecessity.necessary": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.separating_axis_necessary": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.feature_from_normal": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.feasible_pair_feature": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block30": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block31": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block32": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block33": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block34": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block0": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block1": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block2": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block3": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block4": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block5": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block6": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block7": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block8": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block9": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block25": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block26": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block27": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block28": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block29": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block10": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block11": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block12": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block13": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block14": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block15": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block16": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block17": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block18": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block19": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block20": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block21": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block22": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block23": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block24": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.recorded_case_tuple_bounds": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.CandidateLookup.lookup_left": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.CandidateLookup.lookup_right": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.CandidateLookup.tuple_1659": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.CandidateLookup.tuple_1462": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.CandidateLookup.tuple_999": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.CandidateLookup.tuple_438": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.candidate_mask_438": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.candidate_mask_999": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.candidate_mask_1462": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.candidate_mask_1659": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.recorded_candidate_masks": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Tasks.T07.occupied_has_role_order": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Tasks.T07.chart_role_order": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Tasks.T07.role_site_trace_to_box_certificate": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Tasks.T07.role_near_box_to_case438_certificate": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Tasks.T07.role_final_near_to_case438_certificate": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "configuration_sha256": {
+    "lean-toolchain": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+    "lakefile.lean": "4d454e7edfaf096378a8f68a3bd5f5b074c3d25399c3bc13e1b88ee84df3da45",
+    "lake-manifest.json": "120e40965dd632c94746b59767715975b8c172383f784da8707373f58d320a82"
+  },
+  "modules": {
+    "ElevenSquare.Geometry": {
+      "source_sha256": "fa8ff2c666453b56f04b22c164ef063cbd46dc85fb4afd7ed6fbb01b7c4f641a",
+      "object_sha256": "0fa349d3557b434781a332a7c02e79a176e6b07091ab161b3cbeea3733e356b0",
+      "input_sha256": "4989cb8b02aabef1c72fe6dc9649bed2cfbfc07271ff3788c936b020fc3afdb6",
+      "actual_log_sha256": "e2d89252fd232845eea38f89054af268a6ef10afc4187229074bfea3a6a3b293"
+    },
+    "ElevenSquare.BasicGeometry": {
+      "source_sha256": "1b4757436e5718908e0047c360847a8c13bdc54a288833761be9abcf8d5b598e",
+      "object_sha256": "355d4556f6907cf8a43cb843cf21aa9320b7db5cbfc2c18fabc8e9d8e36c3b6c",
+      "input_sha256": "c2eb34850f642b22d574d2593cf100982658546d7c4c186602f39d683f5478c0",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Orientation": {
+      "source_sha256": "24a413aa65a0de88d11d29dae30e5b3c61f07f8c192760d3e283560120bca216",
+      "object_sha256": "333aa0392758fd818268d9d3d91496a4a8b5eab2015400aade6425538f8aab99",
+      "input_sha256": "71c27fc8db8223d093408589cbcdc4f38ba1908bb87c6e567c425a33fbb314dc",
+      "actual_log_sha256": "3c77c7c1f757e8b4e7d34c1200655694d93494b8ce3bd7edc2f5b78f9bc1a114"
+    },
+    "ElevenSquare.CoverData": {
+      "source_sha256": "d3ed474b9f3b8c88ffffcfa1c1005b98be709dd5443198088e94e659a299906d",
+      "object_sha256": "87c96e7816b9cb9959712f59683c208f17fc1eba570a917c835cc76a7fce1023",
+      "input_sha256": "08db2f98ea5c72f529b4ff45d4ea290b4685ddd258d0c75a6e7f0d163b0d573e",
+      "actual_log_sha256": "a7a5119aa7764d54cef8a4ea17d1095c751482c4c6f2f1f36e4ef66b971f7d2d"
+    },
+    "ElevenSquare.Endpoint": {
+      "source_sha256": "bd6449426acfcc115cc89d4dc3aa7d091e461a1ecb298407d6cf7ff6d15b75dd",
+      "object_sha256": "b88a7f3777ff5645b9258b482092363a0b34683ca2e6dba480757e914128df3e",
+      "input_sha256": "cc9abab31a82a4a70d27458bae0fca2be347f042f9ea6202eef95195f3a29a0b",
+      "actual_log_sha256": "035b4845f41da8880021a8eb9877b9ac7ab8acf10f1beffc1751577afd2dde6e"
+    },
+    "ElevenSquare.EndpointBounds": {
+      "source_sha256": "57d807dd9bd102a307536fc22256ad2da62d5b129cb521b955d3a11da7034d9a",
+      "object_sha256": "5721b47018283d6682a34d2669b45bba2fe4f0bfbc0fb44917f83f3089e4e7b8",
+      "input_sha256": "73fb0388753b2ca378f3d7a8458a1ebd7ee870ffc044298ab1fd7d12cb7ab097",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.CoordinateBridge": {
+      "source_sha256": "2c237880e9c03c25c4370ab400c72009db8db9b5536f757a6f2a3cc9cc5a53be",
+      "object_sha256": "566b84412b423e5413033b4e65be6518a3cc51add0b38f8b67c8991220f06593",
+      "input_sha256": "97ce71b88896e5cd5a41d898b4c8e63e7df1bf225490a07a89b31f1a923a9cb0",
+      "actual_log_sha256": "f5d47cb92cf17ac9b51af07bb7d438804608672983978435bd900b63ae087034"
+    },
+    "ElevenSquare.Pending.GeometryTypes": {
+      "source_sha256": "a7bf5e2a537e0b81a7d874c35c769f605b61da9e3fef28feb07390736690502a",
+      "object_sha256": "6a7caf0321c668be159ef9f63762142b83b90bd045d0b620aef15ae95be997f8",
+      "input_sha256": "329be698b4d26a08df963eb4414d1f87645498675e78fd7c5bca45669095473e",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Pending.Types": {
+      "source_sha256": "7eb85ed7ccaa38282e6f074873c26af7c36a7f650d4d25cf7b55df535c5d420f",
+      "object_sha256": "4e8e746a04353d76fa7c994dc92ff564e1e4d4773a0e73d45708adc32987a2b9",
+      "input_sha256": "6c82729cfd109cc4ef92ceab3a6c123d03899e2fba65a720ae31426055adea8d",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Pending.S06_Data": {
+      "source_sha256": "95384cd8f89c4f412ab37f470768f63f49de6c2cf1fa97b97c3465058ed373bd",
+      "object_sha256": "7c5917cf5d52dcdc35caec6ad7072801ae396b1bb2b0a81b85d43b851555a9fc",
+      "input_sha256": "2f4112c297c81e910491b50a95625db2e9e5ff0a9f997b6674ab907d17dc74db",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Pending.OrderedData": {
+      "source_sha256": "8694661905a891e132b37e56c90b9d09555bc490646ec0bd1f64b85e49877497",
+      "object_sha256": "ab0ac2a3e27fd8e0309cbaa105e4210593b75d9f24c237cd27f244f24ca9f852",
+      "input_sha256": "d35a99d7d4b9280baa209dbc7e447a9fbe3f4d58a6ed18dac3facbae6187ed27",
+      "actual_log_sha256": "7830d7a914ee41b09b157a7b09295db273ef90e1b2fd0570c9eb12f198169d8d"
+    },
+    "ElevenSquare.Pending.S06_TupleBoundsSupport": {
+      "source_sha256": "0eddab56daa13229ca842f83a2d6eb0e8aefdbddfc4e22d2de0328f7393bcb13",
+      "object_sha256": "175c4ba9f677776ec27f5c42193bbf2adaacff2dcb9affdb309696de264a6205",
+      "input_sha256": "97cae1f99924628160154074241242d0a74c922d363d35112a714dec3960fb7b",
+      "actual_log_sha256": "94fb77c136db097cfe90b7069e808530466be96779157ac038d2623476aa37bf"
+    },
+    "ElevenSquare.Pending.S06_TupleBoundsChunks0": {
+      "source_sha256": "4d9c87bc046bfc3d8b72c3009b27df1234c73236e0dc157f709f7010cc1e0070",
+      "object_sha256": "80ecba3db587c2adb68d9355cbf375601ac9ee4d13b425cc254b004389f51b7b",
+      "input_sha256": "92d0a8d1343376c275cacc530566a8ff8d5a02fb7cd0ed94dd4fc77fa0ed5598",
+      "actual_log_sha256": "d0b4bba53a507d14c009a6d189fb18b9bb8e52227492b05ee07f3aaaacab8680"
+    },
+    "ElevenSquare.Pending.S06_TupleBoundsChunks1": {
+      "source_sha256": "e220407e54ddadd54609d32fef8e1649ed595f4fd9da8ca4b3f24514121b8323",
+      "object_sha256": "fead099c89a4e8c703bcd903b2fbf5ea20ea38ebf17b1beb25393d4788a98d7e",
+      "input_sha256": "01225c18a7e6430e94dd6c42be1376214a8b086823b298b623530b5f4894689f",
+      "actual_log_sha256": "55ff818c9a1a99b67bcf8096ecf3c36fdc1505e285b6dca01cb983dd1b233618"
+    },
+    "ElevenSquare.Pending.S06_TupleBoundsChunks2": {
+      "source_sha256": "3e2dfffba0a60f2849096f9c0195c51498952fe5fedc99929fa9445e766debd2",
+      "object_sha256": "e40bb19fde696302cfddcc8ff30f8e8410fb36852637130849dcd726b8d0f7df",
+      "input_sha256": "f60610e4b2ae5980ebd849a18cf1e27a8e04e05eef91bd3c7bab46fc048b4f3c",
+      "actual_log_sha256": "e944610dda0977cb1e86bb851c88c862d955d410508b52e17ae6c1d830dff196"
+    },
+    "ElevenSquare.Pending.S06_TupleBoundsChunks3": {
+      "source_sha256": "af1669818a6e6d78ba83c438726765c5a8b3b0196bd5b8bb21dae753f1829a40",
+      "object_sha256": "2012d356e178b7f258c21fd2c066869549f0bc207c10244cbc2aa9bb0042e083",
+      "input_sha256": "5c3a9de434a0ae33445d8af575df84aca73c87efea314cd4d5ff9922b833c4e5",
+      "actual_log_sha256": "b5287685c593fb5856981d8fe649ef6fedd99cff958b0460fdf3d9f5c1e8529c"
+    },
+    "ElevenSquare.Pending.S06_TupleBoundsChunks4": {
+      "source_sha256": "cc4376482ab89aca1fbec38f380253d430b674330f172400b4d9ab53d128a8df",
+      "object_sha256": "d5af61aad1a72e30e2b0d6ddc756f7c506c5ee9243033552f5d484bb08b4e2d2",
+      "input_sha256": "04fece504ab8941dffa87ebe0b3cb775942cfa5ee1da9f76fbb4a7d3eb585243",
+      "actual_log_sha256": "2de73e8a0cd4ebe2f8535e15bf66be21e62778203b8dc72d71d73a1211062e6e"
+    },
+    "ElevenSquare.Pending.S06_TupleBoundsChunks5": {
+      "source_sha256": "d928e5f54a9b580e929a02fd0858bf5816683cce5571df0e64bb00eb458c0cc3",
+      "object_sha256": "788200c12d95afff5e274e8ae6b89e91e9140efbbbe0640901ca4a7c929b6e17",
+      "input_sha256": "a553c547065a402f0a4fae0e6a62196effc145f2d0f6e0b3d600168738ce9eb3",
+      "actual_log_sha256": "823904695a80586752c24579ac1ca41622ef02ff8959c36c2ec573eea465d664"
+    },
+    "ElevenSquare.Pending.S06_TupleBoundsChunks6": {
+      "source_sha256": "9ebeb0fddab1c49331fb8351684ab96b59906da8fe70428a7f151d93556f0eaa",
+      "object_sha256": "d30d3c6ed352469e7d798612b652653cffcb9b44d4f86e51f4674f24ea4e637d",
+      "input_sha256": "9426199ee44159a33100331bce5d75df2fdf029a4292ecf72d7335eff0440768",
+      "actual_log_sha256": "a8cab9daba69b4dd7fcfc5612fb45e96d971cec2955054c64fc188bfe23d0af9"
+    },
+    "ElevenSquare.Pending.S06_TupleBounds": {
+      "source_sha256": "ae9437174948777ef4b4461377a68031d39f21006c83934ba32baae0aefca265",
+      "object_sha256": "09c4d434fc68d2670164e48f365de5373b6c39767580caa31160b58eb9fd9ee0",
+      "input_sha256": "0837b714a6dc73ad6b5b4e362c53ba868b8a67068edc9b2fb390227193e4235c",
+      "actual_log_sha256": "5a470bce0f6981a1d7596bbe1a34f9eb855a0d1652af536faa77b06a04b574c0"
+    },
+    "ElevenSquare.Pending.S06_CandidateLookupSupport": {
+      "source_sha256": "e0562627d187868604ee1f694604bb73b58448090361ca7f0fd1b403802fb56f",
+      "object_sha256": "9494a6441b95dad0858c8188c2b9a2b065744e40fd224903cd5d771e683afae1",
+      "input_sha256": "66a3c180e755d4c7e6790c101a8518688ee99b323586508d9b8b915b061e0a4d",
+      "actual_log_sha256": "261c628508df01d650743d53b6b185a5dc66f5929c55d9042037b70997e62c89"
+    },
+    "ElevenSquare.Pending.S06_CandidateLookup438": {
+      "source_sha256": "cb1aa47d3967ce1e52f4feffebb7cce1a7e6cee723d735865c6f33423229e807",
+      "object_sha256": "16a5801a8115daf8e9f9c3091746705fb5ea8946b2033ce4cc5c32955a016d45",
+      "input_sha256": "d120850a8e95f9e7f68a3d4e6f4f7b476545182280a1cfb1fe03f23c7be9ed64",
+      "actual_log_sha256": "90935b7c94c78af333fa41f5981362c61b2fc7920462d9e70666bb5c83dc9335"
+    },
+    "ElevenSquare.Pending.S06_CandidateLookup999": {
+      "source_sha256": "7d437cf3b6fc872600c51670d4a072e496d8df44fd04615e567ffdf80776883a",
+      "object_sha256": "09d58e150ac2e922ed21ec59ace767e65b0b4472f4945cdb06faf23dbd5a5774",
+      "input_sha256": "ed8305e6bccc501c55cef2a6003d0b06e50a3dd34576eff76226a66f8847dab4",
+      "actual_log_sha256": "f791b9df2e9baeb07ecb9912446807532c3b35a7dc129ae3a17d33a88fb9c968"
+    },
+    "ElevenSquare.Pending.S06_CandidateLookup1462": {
+      "source_sha256": "1888b7f96ebae7c37a49339c1d910452d83394191301118cd56f7bc975c29e8d",
+      "object_sha256": "fe69735fa8f516cbb27eb005f1fc6471f770e337e6fef68253656adfd35bd494",
+      "input_sha256": "a79e5316b690cbce7fb1757c01373ebb122124f4cefaf48a59186d2271633bc4",
+      "actual_log_sha256": "8e167eb3c45735e26839baee07c5a5bb2339404c06578c7d989b36cf986b6de9"
+    },
+    "ElevenSquare.Pending.S06_CandidateLookup1659": {
+      "source_sha256": "5e1d37cd1ee3149fa8e7e8cf8678ddc45e510f4f76c741c63990d09a89dc12af",
+      "object_sha256": "82450d4d555a58fa1c97a4d2ee8812e3340aa7fe93ea54829494c6ee17a51d4d",
+      "input_sha256": "2e4c8b97d8da2b422d35f44b64e48ec1790a516e000dc254961f24bf5d89032d",
+      "actual_log_sha256": "1949cf51a1416e0fec8e9df06b0ff15ed5b0d14952f2368eae5d27ecd5f7057d"
+    },
+    "ElevenSquare.Pending.S06_CandidateMasks": {
+      "source_sha256": "46eae4b9511d95f09a24ca3c6105b2d030bc0fe8ec82f242f962288ac58c155e",
+      "object_sha256": "a704c1570f6d30f33d4d42448a4d258f290f3ae887473bf0e8a6a8b193b692f6",
+      "input_sha256": "3039ed7a23de72eb2d4beab84c7f4c12135285934ac27a395d92f324c1a4eb4b",
+      "actual_log_sha256": "d775baf91951ad62a11e8282eadd1e72e2016ace4383e8e19d2f2e80d186d799"
+    },
+    "ElevenSquare.Tasks.T07.RoleAssignmentFinite": {
+      "source_sha256": "dfe98d17f5abda428af87ab8f92f5c4b5d4a274835f7e54303c00344f43f0cbe",
+      "object_sha256": "f0d9cf676c24783d403ce8a1881e86e80dcc2ee71103765531eb935d991bd15e",
+      "input_sha256": "38123cdd552419905b30fd97759ab6cb5b5663896f2318969f2dd194d51cefe9",
+      "actual_log_sha256": "d3319bde2a1abb9112c5ec52bfe819bd7972d32f84dde2674de138b119df9bf3"
+    },
+    "ElevenSquare.Tasks.T07.RoleAssignment": {
+      "source_sha256": "78e5c70dd724087b10bbaefa7c8fac4b19962b66bcf216ad0efdda33b48d9c79",
+      "object_sha256": "df11cd145285de406217c576371f6743062cac1ebe29e1ac3182db0dc6798fbd",
+      "input_sha256": "fb579889ae2d845ccc0dcbb01740c0f0780e12e343ba83f05ce80a47fc60f58f",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.ConstructionData": {
+      "source_sha256": "8b08581cdcd9eaa50f2fe386b598a72281a44c661bdfb19e424f590ee6344846",
+      "object_sha256": "5847aec5df4860f129b52b6dff266932227a322bb7bd4d88ea5ebef7243fd88a",
+      "input_sha256": "309ce5e35744de3282079e968fe19f35f330ebd36dce51a7d107024d710cf32c",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Pending.S08_GapDefinitions": {
+      "source_sha256": "6bac933b3b3ccf455d8b6e3598408ba4a78048dc05162a002b85c7668bd4f187",
+      "object_sha256": "e9328e8d494155780102aba7c44f9a7bf2b2304590456feae5df7790e563ca58",
+      "input_sha256": "6589a4adeb5ec13c533d41ca72008c9530ec73816feb3fa72b4c661a7f9882de",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.GeometryAngles": {
+      "source_sha256": "442ff55126cda7cd1d2c676acfdb48355244081dc1ffe9f65df15e7cf02e4b7b",
+      "object_sha256": "b3d569104bd36f6a4ad122dd6310ac1e98116523068b0ab334addf71c72fcc5b",
+      "input_sha256": "966c641bddc4a832b4c1dea2790a98f570fa87f26200f06bc52dafbaaa89e8cc",
+      "actual_log_sha256": "fe9125c8c1007d031e7bdcb012fe760262adef9251a3fff2653138cbeecab098"
+    },
+    "ElevenSquare.Tasks.T07.GeometryRoleOrder": {
+      "source_sha256": "2bfdcbdb82152e4af89736e33d9d8e55d5cec275c5291725315b6387065c9c74",
+      "object_sha256": "595fdf3d1cb334ff6b4528fed3509956e15a763067a882ad5ff66107013a9b5d",
+      "input_sha256": "cc7c7ad0c379f0b15d252e8268661793785639058cdc220e378fec90e492c372",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.NearHull": {
+      "source_sha256": "98ae48eceaf25cbf6edeb29c67d8a7d893b9d4e204d46b5c134b852bbf183bfd",
+      "object_sha256": "56063250900d87067b11503be2a929cd2d9a6b0aeb33f3a38641805ff4aa9304",
+      "input_sha256": "b2ad692709082f80c530652b970fcaf844c050df0da462177b0b8788543c70a9",
+      "actual_log_sha256": "56131a9550a90a6b60ce41f38cb696bc971ab7d014a2804b15c8e7181365d35d"
+    },
+    "ElevenSquare.Tasks.T07.NearSource": {
+      "source_sha256": "e3b87fc4f34846a4076c83dc909ed9362962bd139fbfb985c414ece6732443a7",
+      "object_sha256": "3e01a58512eb1d87a8320b6fa3b8ed83ac26911077c5ddeaf11ce936eca4fda2",
+      "input_sha256": "48f6df2eb3746980fb1bc92a29a4b30ac4ca4513c517ea95d0994a00c123b38f",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.NearSourceData0": {
+      "source_sha256": "e4b352749233c977184606bea6276e4e07d468740434e8f56429440776bf30df",
+      "object_sha256": "247697b6db8fdb94007d525f2fd4697decfd02b94c4176d828b071d43a04041a",
+      "input_sha256": "dbd71afad0ab591b12cf1a5cc8348f5f5eecab96e30ffae5387d2f145a968862",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.NearSourceData1": {
+      "source_sha256": "5e110064ace855f0805cdb18c99faaeb5aeb7f0b1cec0d20e647ccc071d87abf",
+      "object_sha256": "78144712a190c802c9bbb0daac36fbcc59f9fc740b756a56e5343bba52ce7e1c",
+      "input_sha256": "5f952a849f560d8558025e4dc8e8e8e6ebb0f982110a50b9f0fdba19bddbabe5",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.NearSourceData2": {
+      "source_sha256": "790e4837e5aafb73ad1ebbce3b656f5ce43436acdc2a5977d5572bbc0cdbcfc8",
+      "object_sha256": "10621f6041268b4778bfb01909524d49fee3a2a9d25975db2242d14b3a6467b3",
+      "input_sha256": "db2834e1e6f46f6b0a9e3726d24a3d3cb496f8c9615a74bb1332e8bb1df102f7",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.NearSourceData3": {
+      "source_sha256": "3e8dfa805c8716dfe103373c31dde9a3a96f6419a67a047917afe3a3a1db39ab",
+      "object_sha256": "0edbc9b5c4e3a5e8cc49102d0fecd8dbf3a593e1181957955c61c66a5be3cdf8",
+      "input_sha256": "8ce86cd0b35630a169da173d6836f0e5d4f7724715556d1a70e2b3837879f8d1",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.NearSourceData4": {
+      "source_sha256": "8689567ad1a1b075d5eb8cb60d16be991e80f007e4cef6a210f45c1fcd93a249",
+      "object_sha256": "b1c98dd67ef9e245f06d1a25fcea9f764f30ee4d9e187cb19b990abb64d80fb2",
+      "input_sha256": "2618abad50fd272022806701cf6a9b6748acd6d42be9a14a99a7bb6b37e0a169",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.NearSourceData5": {
+      "source_sha256": "9bf70790e1248bbc3a2f2a65218e6fd3877df0190e5c2bf43de34b56f94b7511",
+      "object_sha256": "27cbb6db9e8231adc4e4d96a22ffc5481f3abf6cfe94a2cb83fde9a8cef3be09",
+      "input_sha256": "4a5da7cfd15c73f82638ecf6a10f26cca998172199e8aa1d43dbb1a318759b0f",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.NearSourceData6": {
+      "source_sha256": "ac5b899baaa523ca233f8275154db92502c8b4cc24cb3c7cd064750d7ff3f56b",
+      "object_sha256": "da4b32164035f5a508a12db5cc2327f57a7e2f77f9f737debb380b8104b0d45d",
+      "input_sha256": "c42679148323444c9e3af893055bc7b7445feaf8c63f9934d515cac4431b026e",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.NearSourceData7": {
+      "source_sha256": "cb05c12ab04cd82e5b223755b746def0424fb7f15db80e02a9e0a89f564c1e79",
+      "object_sha256": "4a32fad6281dccc551e4f3efeafcd5d55a89423ebca3200feb55e5ff18311160",
+      "input_sha256": "bf00856bfee7722611effd01df477362c824a9b654b2f7ec6b79105accd0b012",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.NearSourceData8": {
+      "source_sha256": "8f8ff5096d19ee38fd434719195bfe50ff84ab8efa90d1e69455f787f7963567",
+      "object_sha256": "326a62989e9a3cef263cf0ea8fbe42be3b8214fe928d6763edaf8c162e2be509",
+      "input_sha256": "4760f02acaa0527ccfe207da8b74a35999a30d56758b03151689e90b237260b0",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.NearSourceData9": {
+      "source_sha256": "bfd9131d6774f8f29d310d09bd317f697b6fb32a91fba8b1e40d8510258312b0",
+      "object_sha256": "9b5b53e935a22af599cc8774d89fb847a444614a355138b1d187b8f6a422f30d",
+      "input_sha256": "82f91a4f32a17c0e686a38cc7aaded47407cc565a2b3f3fba7ad3451ad7cddd9",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.NearSourceData10": {
+      "source_sha256": "f54a82a778a77e425ceadf40f39fdaad8ebef9a67e2594ddb9d394582ec2776b",
+      "object_sha256": "7618019e4f4ab22c4eee0008c746346df154d28e0ab1411a88ba54f7d5f50959",
+      "input_sha256": "700a526ed1e26a31a16a92b3082d5c6f09a662bf5924a841074205ea6eb0d36f",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.NearFinalPacket": {
+      "source_sha256": "7c66634e01cd54c430ec1b51404d69a5104a3fc2cd504beb27435fd58bc76cd6",
+      "object_sha256": "d6e06709d8fa0c074afe2ca52161c5505952ae2bf6d84cc61685e55d89a9341f",
+      "input_sha256": "e36ae53af657eade183e279d3601a3047127b866d586308a2583ad741518bb28",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Pending.S08_GapGradient": {
+      "source_sha256": "2074d4f87a6ea02c3bbad724d4301f61b5ff6df35b2f519301ba4651cf81a9f6",
+      "object_sha256": "156066520843022701af069b4d02d59fbf4fcf279c378e3651c399b1e748daf1",
+      "input_sha256": "a83e3a803964ed0d667f0edbb51c43001e54ff5e821fee30a00e2783222b0cf5",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Pending.S08_SeparationGeometry": {
+      "source_sha256": "b2419ef8f3b5b2e846b42506d37461167371bb10f02e8d08bb42cfcd7091313c",
+      "object_sha256": "7821352fc4766748e0aacbc504da3f751bfd9eea7a989275c6c9f07c6eda99f8",
+      "input_sha256": "fc02f6d4ae7fee35e9f9d0688dde1d86b923954f59a1279f7a45f42e24f398d5",
+      "actual_log_sha256": "716cbe1d48184bb486c192ec167f3b10e13b639aa4e67181375166f9d409548b"
+    },
+    "ElevenSquare.Pending.S08_GapCorners": {
+      "source_sha256": "ffcada24eb4b0dab248144c6a30e8f395232c6fba427b974238de987916e94ae",
+      "object_sha256": "df770cd145da7505e2dd42c23720e9ab39a819ee5b4f96a488021515db562a66",
+      "input_sha256": "bbbeddb6d7de961455b5af0e2d76394f8f08b4ab017832be8b3ef7dd26f012b6",
+      "actual_log_sha256": "8bd19239701d4c7f20e763555810605dacf2336006b9cc371457bc0eed389ada"
+    },
+    "ElevenSquare.Pending.S08_GapWalls": {
+      "source_sha256": "9d0adf65557aaeadb81b4b80957e83eb4935f8180d417c18708cf48be16c8ef8",
+      "object_sha256": "e24a9158df1070971ecf6ea22cf39c97a3aecee80555b13dfd23eb5e4db9f1c5",
+      "input_sha256": "a6c4e72c9fdc6df1986799add86a1840ae67b3e9cf053a1a44a51e32b1e2abc3",
+      "actual_log_sha256": "a9bc6b718ec3aafce749cbd71973a3fb4340fbedd87cb461483db0ee4d2ebb28"
+    },
+    "ElevenSquare.Pending.S08_SATCoordinates": {
+      "source_sha256": "fcb45f6e73c0cfb0e2bfebb00a1c361540a14eb36ecf582badad20b29a386b0b",
+      "object_sha256": "53e47fc4f5b1db1e312ca844e916a22a7f8333e37d49e2d535c5716ae0314e49",
+      "input_sha256": "39aa3498e44757a52c426b4f88a9f43d1cd544e303c1220fa27c73e96c297d74",
+      "actual_log_sha256": "fa99f3bd9814bd02c8f3263b20588e3b5d36a19d7438bbb707b110d668a5087d"
+    },
+    "ElevenSquare.Pending.S08_SATRadii": {
+      "source_sha256": "e588b9155e431eddcdb1373b851207a6e875b1813152bfc401983ac7139d14ce",
+      "object_sha256": "f436daf1b8ac7d83174b631812f5ff23d743ef8d048e00e91feca0d745f52133",
+      "input_sha256": "0347ee20a81d3933dba8b6f2c6a37a831fde3a1abdc95f84b463665285de598c",
+      "actual_log_sha256": "117e7626bdeadaada2f62100f6b8a379575a745386782d373af54fe96c9585cb"
+    },
+    "ElevenSquare.Pending.S08_SATIntervals": {
+      "source_sha256": "9c1cfc7de59ec8263135e88b3ef5b037b3e5f60ea4b0ce51284258fac886cb9d",
+      "object_sha256": "693ced13963b406f0f95a90c0827abd326e254872f1e8fa0cd99f16a12350894",
+      "input_sha256": "f554d897e09a019d7f66a3b418c85442685c9840487932165bc9335879bdd74f",
+      "actual_log_sha256": "db987da4faa9690277f4e15d2b47e0585a5023b858fff8db788081cb57d9a7cf"
+    },
+    "ElevenSquare.Pending.S08_SATPositive": {
+      "source_sha256": "e51cb3830ae06dc7b90026d808c420f88f2299f55cf2d9ffa5d7244f67c20db3",
+      "object_sha256": "247d32e200943bc944a2f5e23276a8a1b3222f96ba1895d11e27596dceb779ba",
+      "input_sha256": "51124037afedf28bb58aea9e9774f884d74a794c75f75d8a2cbd85ef3a966144",
+      "actual_log_sha256": "d5126d7dccebdf0419dcb24864773fb0a3ce585ab02a8e1833c81a671f8f7e3a"
+    },
+    "ElevenSquare.Pending.S08_SATSigned": {
+      "source_sha256": "6e188f1e8adaf941d20bf5d42f90634e13bce916b078b57a7b04d853ab455708",
+      "object_sha256": "dc32611f5fcb0a12e7aca522c6b932a603736b706e7794e3514d7bdb58745d44",
+      "input_sha256": "bff11e48afd068f77caa8d6608727f5e6bbc21613f1468d745c0def154df0785",
+      "actual_log_sha256": "cd74cd7098a3faf8d7889c562f21f71beffb11057c929ef82924858d4adf21f2"
+    },
+    "ElevenSquare.Pending.S08_SATOverlap": {
+      "source_sha256": "5cc287ca3d9585e2d9eb5ee252e1d420fd32fa5a4c602733dce25decb6003ce1",
+      "object_sha256": "5af87b2d7b5e9b278faf979005d09ba5bea818651ed56055d51ecfe3861478fb",
+      "input_sha256": "4a0bade5782a123358dc9d8012100e1969d16dc3de57233064438a56b7f278d0",
+      "actual_log_sha256": "407987476addefafd637c74d42dbe710cdfda47dcba3963b742b6fe3433adf40"
+    },
+    "ElevenSquare.Pending.S08_SATNecessityCore": {
+      "source_sha256": "a7207d4c6f74f05bd15bc475635cb8a89d83e2b6f9a08190193e411fe75601f1",
+      "object_sha256": "874ba78a390bc2a9162c84fb575ba3c9b562ef0ae1a53666076ac0e482897762",
+      "input_sha256": "98520c7e7176c46cf8da1045cd58994d015e71a90daaa6d2060caf6a6c2ab54f",
+      "actual_log_sha256": "5ee35c84274056f8840de35f366fdb106518a5176d419bb566ee5101d51f04f2"
+    },
+    "ElevenSquare.Pending.S08_SATNecessity": {
+      "source_sha256": "92d5fd59062a256ec15f5c82aa17264bbc9b9e59364e1056f0cc680c77bea2f1",
+      "object_sha256": "fb85fb7ecf34b19b68b2213fcddaf29a5969937aa475a36ac73c379f6794fb6c",
+      "input_sha256": "1fa804f809d77f5718cf80cf2d595c3d1ee7ec25b2509ae82a846f81dcba0fd0",
+      "actual_log_sha256": "c2b4bd61dd3db3516fd36f414cff3cd5e97477cee7391b4fbab519e6a028e0d7"
+    },
+    "ElevenSquare.Pending.S08_GapFeatures": {
+      "source_sha256": "94f64d90f0d51ca0deea16f86aaade7e659de32f2cae31723de84c65889c8876",
+      "object_sha256": "07a167aee9cb1dde2dbacfa5c1cfd4abc12ba5971ff78205f72478a9f5f26566",
+      "input_sha256": "8bdb8c29c92057c7a8742cc4acef218e5ac467086d0d545bf2ef46bc648fb168",
+      "actual_log_sha256": "b531db22d5086206ee4458f7e808943b39d9239759486eb6950e81179974db12"
+    },
+    "ElevenSquare.Pending.S08_GapFunctions": {
+      "source_sha256": "44c6d96edbe45ce19d1aa6b53a1421af4a04e48f442545d20e19d40ba56aab3d",
+      "object_sha256": "46f9e53379ad24d282b40e2a3f3819b79b855309569d8985759e5d049b245be1",
+      "input_sha256": "66f14d020e238c809ed76fb1d7a30d787d00a845d6c4c2cbebbf7f02d8336307",
+      "actual_log_sha256": "b69ae77dfa79bdc0fb6f77fb68af2ed4c11c32928a3fc4bcd138b1427109dadb"
+    },
+    "ElevenSquare.Pending.S08_Packet": {
+      "source_sha256": "17be5c204a7404890349070d9c88028e72c7de2bbc3911fcde4eb41ce9892ee5",
+      "object_sha256": "208b3634bf3e5aa4727ad0c50c46e2f6eb3b2bb1527bfb118abddaa2cf11e5d5",
+      "input_sha256": "158e9a696901e5c1c2bc5d4ff1d237b69a1eedd05851df0588ff734a9d4136a6",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.LocalRadii": {
+      "source_sha256": "ec3b970a06e22747bdb9969f3c10a64f81d8176e7b4d4e8601da3fea550b7c42",
+      "object_sha256": "1708e54119f7b61b08c535351766efc0512dc27b983651eed3d9d33ef05ac45e",
+      "input_sha256": "8be40098b4fcdfb9f5c58fd6639e076288b8da0a473759a53dea47ec37d48dac",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.LocalPolynomial": {
+      "source_sha256": "208cd755920132b5fa8594802b3d34b1bd97764b54757d802891fd2af5206828",
+      "object_sha256": "7ca243504ef6f5e0401eb06fff2bd52d1f7c6de9d3d7e213b95ea3bc34500146",
+      "input_sha256": "5c18c52aa51b6090fc0199f5bea5182c9551aca2f0359fd398d1853c9865e659",
+      "actual_log_sha256": "36cbc79aaa6c03ee44eecf4149bc9f71a47e55b7f2ad8b8ae7a5110a6aadb8cc"
+    },
+    "ElevenSquare.Tasks.T07.NearAlgebra": {
+      "source_sha256": "ad9a87c256b1611263b0f73e8ea840de476151af5e2f791a180c815a7c7e0124",
+      "object_sha256": "d25494129676b4566b95a1426f0ccf594ff4cf2ff89b14e25ce8fea6efbcc41c",
+      "input_sha256": "dcb72b417e304cc6f26c1606548cf7bdc95a0a6a471cd5bc602650a994bde942",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.NearCentersData0": {
+      "source_sha256": "5ba95aa9a63257965e133f2d2d01691a82cf0ec879f314bad9ca6955566af20a",
+      "object_sha256": "fbdcebc5785de889ff219943081fbc8de3e38396f6f1dad9cd0d899d1b4d90eb",
+      "input_sha256": "6f6d0a70519e92848b9349672a1a13134b34063776d759ab20196164122c39dd",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.NearFieldBridge": {
+      "source_sha256": "7e18ee0f470dd184ef9c4f67cf00e912bbd2cd7692124f88408a0593bb9561bb",
+      "object_sha256": "7c88188ad4471e681fca20b6c9f2904340cabd7e0d68839374098ef04b857c21",
+      "input_sha256": "24a605d69abbdfb81b2ed865c0a43f95ea58c286706ed01fabc2afd923d4647e",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.NearCenterBoxData0": {
+      "source_sha256": "27724c796a4b5ffbceecc56461e6e877f5ab5432fb642891f59fa8f0ab0829a9",
+      "object_sha256": "10af4fdb707e6c57b936d2bc115fedb9cdfd66bc6a694d27249138447fef6e19",
+      "input_sha256": "b4e31cfdd9a6211f4f02087a984bd4aa7fe84de203448e61102f08e2cd4dff6f",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.NearCentersData1": {
+      "source_sha256": "8a908373e0f6c8c374adfe6bea43c9e0cccd7b1637a78ef723fc3ff5b4b33737",
+      "object_sha256": "27ce451eca5c5169a636db195ce7690e0373cafdaa8a4005351fe77ca072383d",
+      "input_sha256": "08e0084cd842f9176f05147a5447a4c29f29ba11a3b62d8d0441128bb42378de",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.NearCenterBoxData1": {
+      "source_sha256": "98f7f5a38dd31f60cc2215a7000b49a9f4465088a6cfeb6727ba30d529d2b9c4",
+      "object_sha256": "ab21fe531e9dbe8798f8f09be2b751c77e63e5359f06461e25a56ff873a7047f",
+      "input_sha256": "73616ff93a26b7a2d2685e980090403f24f42ac860c269708fd3dfae698c6a36",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.NearCentersData2": {
+      "source_sha256": "0b5da09aec077c5e821b572a67de4238c6b950cd7ab99b0ea052c2d3c0c90842",
+      "object_sha256": "59e337b0eef80909ed55b0f04f19cf2203dbc350cef6e4aaf03808d35e50c19b",
+      "input_sha256": "f1514e1d5da14b1bd414d394de4b985cd6ae5e6c0a56c874bc7706251b528745",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.NearCenterBoxData2": {
+      "source_sha256": "b2945808ad4d6170b8ec17622f4a3f9cb950bbf5f63bbb94e8bdcb7e62201a99",
+      "object_sha256": "1c105d758c5952dafa977c57c208a9812df20476615177a1d4509a92e27d3ed2",
+      "input_sha256": "ff978738b56f29d68e2b49b7733928a42d1d91de979b60ba8ad11e8c11e36b0a",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.NearCentersData3": {
+      "source_sha256": "d9229d3025ba6139a92504f6b92825aad200623fe36e36b7cdac03fd0315862b",
+      "object_sha256": "e71c9e39819231de554c8be358ad6f98d8cb1d3680db27a9ba5b514e9736bfc7",
+      "input_sha256": "f7f86dcd94eba435713368b6069f6537fd72d78406077bbf1b01b687cfff6c08",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.NearCenterBoxData3": {
+      "source_sha256": "968adc3cb898616176fd39e605020dd1bd24976c15bbb9285769aa50769f92fe",
+      "object_sha256": "725340a6df5d77b6e9d5bbf99ae3c1f090aabee1c562bbf9ea159e1f7e147fa8",
+      "input_sha256": "00df5638d41f8e9ef24763e09ed6f4fd598dc6ffcf82b5769596fa54dae81f45",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.NearCentersData4": {
+      "source_sha256": "c5f547aea32eeba79e3676150e2e28c82253ae30484a2219a23adec6ed8d898e",
+      "object_sha256": "38b9cb8bf3985a919c8cc481fdc62d2c587c0579e0b29e6c1c01e502f9803d37",
+      "input_sha256": "2762bc27bfc5aa65b85109259759c1f2d6e41e26fa8f0c639519eeadc7646bff",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.NearCenterBoxData4": {
+      "source_sha256": "78a6ad661845a6bcd4abb110bda79570cf7b7c1b56f9393b7ca549d29a8bf178",
+      "object_sha256": "f5eeaa439989095f135e0e162197f07835537dc92f3e83270ba92d7760258780",
+      "input_sha256": "04fb682d362a451ddb7c5df8421246e2d7a7e6a6bda5c97ccb5eb77bb843ed92",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.NearCentersData5": {
+      "source_sha256": "4c53ae5f0132958cdd7ea97639ea7581bf4e0bdf237724315ca3547ba849b330",
+      "object_sha256": "62bc0ce11305d4e53782a5de5a1067e1510dcdfca1b497da8278ce73f049ecec",
+      "input_sha256": "408c835b7f452f218d0910d695e0f85cfa1015e9bf652883be001174ca736ac7",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.NearCenterBoxData5": {
+      "source_sha256": "a5910e1165f4aa42c054dd6724f50c621c6a4f857f8967e5d8cf1086a6566367",
+      "object_sha256": "83dbf9168bb1fe907bc7fe9ccc15ed04ff432886e66ffc09f0c08b338e36fefe",
+      "input_sha256": "50ea4759669442e1752e1761d6ee36c3304a9ba7cb100e7cd24d849c162e08c9",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.NearCentersData6": {
+      "source_sha256": "68bdd47b1f4641250190cecad6f59567c02daf0ea6a96958f995285fe92cfd10",
+      "object_sha256": "57e57c95fc568274402aa6c489fddff28416222fc86139ecf2be0635a84521bd",
+      "input_sha256": "880b202f1832b960df1c06edc8bc318f518bdbcecf477e06b3e80a870f722362",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.NearCenterBoxData6": {
+      "source_sha256": "119ec680d807098cd84f151dd7b97545a8acdc0448e0f7ec42123b683ce78c65",
+      "object_sha256": "d1117e2276bb40215049865bde639ba1203324035db3d8bfd1a9eb7010269c50",
+      "input_sha256": "0b18e77d1ae48ec94ed1037593233e486fd76b6473eac178412bd0b2fff04194",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.NearCentersData7": {
+      "source_sha256": "bfce16bf0aeb18b832339e3455fced21812d9e36c8505e22536dc041a3d7e180",
+      "object_sha256": "3c38f5ad184e2510749adc7602c2022cb36fcf0d1bc2ebb3af334ce01f45e36f",
+      "input_sha256": "afb8fa71a6d3021cecabbb2011fc59a608f28ba287291cd9b5702006c91a43b6",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.NearCenterBoxData7": {
+      "source_sha256": "1806e7461f910100da516a24b406dd518c8926c313aa657a4c5d1fca735c89b8",
+      "object_sha256": "76ed385f25333de214b4d6c7cadf13b03ba5a1d0bc2b0fcd2904fe6ce1586934",
+      "input_sha256": "f866c8a7945160bfb74d385073b18edaad4092b4fe0cd227415c6fa5ba8a6597",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.NearCentersData8": {
+      "source_sha256": "6f405123dbbfa6c23fcd7efaf2d3911ec3e52b7c424b2e3f64f8b56e08b55788",
+      "object_sha256": "24bb1186e9d8fa76f96db92989ce3e5b1c61a1a798ed72526c08a1d26fcf4d78",
+      "input_sha256": "85c7146547b21bbe2cdfe8d481df071b7d7ba50864e636916fa0601254579dfa",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.NearCenterBoxData8": {
+      "source_sha256": "9479607a3ad38f2be6e0e2540310ae390afe7ac2eade51f46487ed66b2738212",
+      "object_sha256": "e80c9e2a0db6ce61ce9deae264ba5e1460492640096b9f0551dfc272845fd547",
+      "input_sha256": "7780e2fe97fbc8c6631a40e1c3264ab7c4f6a76343b75d38f5275216c53fdb93",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.NearCentersData9": {
+      "source_sha256": "083f7d41adffd9b84329e0d075a40082894818bdb4e25db6fc831d9a108e6165",
+      "object_sha256": "2a2f0ab27a66231fa3d5c67986ac1cadf494b0a1d5dbc5833cce16e13f76e8ee",
+      "input_sha256": "788ed8c86b8e84b390242ce7fab73fd1094bf4b53c9a859fabc5a1e4469c8e98",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.NearCenterBoxData9": {
+      "source_sha256": "a5d3501f42dbf4d9481f533f434f3754320a866bd62422726ad687e304f1ab37",
+      "object_sha256": "db6a4c1e84ecc55356b74620cad54d9b916e1e0c059fc4d6490eef7db796b85b",
+      "input_sha256": "625a0a06bacfe8a528d5abc3e822d7caea1a9498739857753f6218fdda662c47",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.NearCentersData10": {
+      "source_sha256": "243f08796f446e8eb5f64017486305074a07c9b654899872d01f35a9985f387b",
+      "object_sha256": "e55c9ade6f383b8b24313779a3e44b29975736779af0949b7a1ba79c77a2f652",
+      "input_sha256": "d9944fe41d4f7894c0b2c09b7e59cd699ddb08f8ccf1c6308d3e237273847da7",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.NearCenterBoxData10": {
+      "source_sha256": "a33639fa0935e591c109d213b716dd0bad0f3bb1e05319021bf90acd592b1a89",
+      "object_sha256": "ea663af07f6a0bf1e3c8350b13030f29b0da73a30fab2c79c6f3c0c7851355b2",
+      "input_sha256": "943a6a3f16df4e826409fafd84f272abfe82f508b2862783e24d9850782f598c",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.NearCenterPacket": {
+      "source_sha256": "8575f59f74e820f03e8fa8c7daac6f9788665e880c8e24c0adfefe2867fdb3fe",
+      "object_sha256": "325d2922c111494d1932a56169921f641d875c9b84fd6b2adb2a8c4c6ca14704",
+      "input_sha256": "9a7802dee9808a0c302cc41c4a0c34e4e070cb391c8b0548a0aeae7ffbb56f8b",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Construction": {
+      "source_sha256": "dcb174ee36368483a68a97cfd692740072bbd40b0b81f4e3a7e9372a34d41dd9",
+      "object_sha256": "63511bde235016536fa7d949daaf0c8c39734cb022653d4d6f653495f2cdd4a3",
+      "input_sha256": "99647d385dfe706d4267ae1045ae2bf6abf81b453c6f739059b19564824f3899",
+      "actual_log_sha256": "56aec26b2095c52d44629a6776d4c47ca23a87decbf2cad0a37453387c25b1b9"
+    },
+    "ElevenSquare.Tasks.T07.LocalAngles": {
+      "source_sha256": "3201d0cde9a209670642b1a6816be09370e885dabe51c1a0833f6817c5e93769",
+      "object_sha256": "03d4ad6f15bbc25b715f647888b89b4c6e41d2448f3b4a9e05d310ed38edf2c2",
+      "input_sha256": "103a09fccc4c6ff50601ea1e9ee53b35ecd100a680967c8f405a4c7596db7881",
+      "actual_log_sha256": "53889483ce6193f42381a5a4113eaff9f1189e99504f5197a79df71e461b1bc7"
+    },
+    "ElevenSquare.Tasks.T07.LocalAnglePacket": {
+      "source_sha256": "ce419d0619565dade50ae3fa1c8ba658520c122c4042eb34941137377058bb42",
+      "object_sha256": "1243c039c3867d901783de01bb01feedc132269f684ef3634926e64516b98bab",
+      "input_sha256": "32e630a853af8d0c4280abd0f0b5edc316ecf311858ed510714bdee1858c4da6",
+      "actual_log_sha256": "64c794d3fee68002cebd3d209e86912e93f13afbdb787882c14e59c714defe3f"
+    },
+    "ElevenSquare.Tasks.T07.GeometryCaptureInterface": {
+      "source_sha256": "1538eb479b3b27d788db81f7cdd8207e2c184994d8770b2bcbfa295a8a0e8de6",
+      "object_sha256": "dbf9b9644da9efc999236bae95c9b9767bf11af45a79c901d5feca2c6dd58332",
+      "input_sha256": "c4c78ec8b03adbebfa4959a4ecf65a7e82073b5c5d9eec67da6651fb9e647cf2",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.NearCaptureRectangle": {
+      "source_sha256": "9cb148320d6bc0fa929825d15f9c4d189551e6985c4b99909f7072d5f82fef6a",
+      "object_sha256": "828ceb9a2609fda51aefec040665771764f6ae9e883f5ddcff80515af54a5334",
+      "input_sha256": "15f59a29e05132548c58046284a152c1da06be05a147a3efb57996040ba1e9e6",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Pending.S05_Minkowski": {
+      "source_sha256": "849dce205c5a5fef7627236e276636280f9af34f43ca45787f320f61aed1dfa2",
+      "object_sha256": "840002813efbc900ece6e59793df6b2423a8a477b3b9c5cbee1f7f0a91e9718a",
+      "input_sha256": "ce98aa26c1c51b7a4819dab22b04eed2e7607fe40a8b1ab9998e3b79bd5d2161",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Pending.S05_OwnedHull": {
+      "source_sha256": "14825725fe2e16d2bcd3f0ff4493a90b2d515e956db572ecfa27dafc81fbcbc8",
+      "object_sha256": "7bdc55320b158a08bc2da2da2fea7b1a53e89e9f200aaa0595d831a8661cd3a3",
+      "input_sha256": "c1b2e28852a68231f26c3d57e024a19f9a92ddfa9060ab69d4c773aa1165bc34",
+      "actual_log_sha256": "9320e7f0360e04533a3ce6f9e682a662d3b9bd1d4222d263fbaa6d989c14f1e9"
+    },
+    "ElevenSquare.Pending.S05_Trace": {
+      "source_sha256": "cb4a012b65a3e0cfdcb351d4c38f8f3aaeea0b946b40b63a3be89ee00bb2fd1e",
+      "object_sha256": "6a740c0db5fe0edcb5713984afe86b826f9f9e86066d4402f7f7a9e6c98ad14e",
+      "input_sha256": "dc07905cad060767395f38f79cdec7046bf1e9bb7ded11761bddca1f8550caf8",
+      "actual_log_sha256": "67a2c85f2e8716d73eeb41fca07a67b4e74d73824695c98b8ba91d4c29550fc4"
+    },
+    "ElevenSquare.Tasks.T07.NearStateBridge": {
+      "source_sha256": "df673f06b82b1af842e34e4a6b0cb9c7a60dc5bd399d131a87527f6f5eea4882",
+      "object_sha256": "fef04742f8a3538404a7ff86f242b727d7135be5f39e6f4b86f6e820b3568530",
+      "input_sha256": "3568e4513c6df8c44c48a33227c3be47b1f3fdf89c04a5bed8d96af3f83f211f",
+      "actual_log_sha256": "0dea26c2f7e1b68e5f20266d3864eafeb4a27d0df110ec2df277487dc6f68032"
+    },
+    "ElevenSquare.Tasks.T07.NearStateRectangle": {
+      "source_sha256": "09ce1d330a1bf356756166334a8812eb15a80150f7129fbb193742be0d6b05a4",
+      "object_sha256": "64da4e31664730b6a63074943748eb975d5431c7b99be0363586e89f0891b06f",
+      "input_sha256": "0eb0d9b64dc1c7d420094d332e74e09d82ac67b3f0ec55b2143a274497830f83",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.CoverChecks": {
+      "source_sha256": "cfb1ac4a0bbd79e078519e7d9df2e04892458a87cc309a6aa520a0cff2e4e68d",
+      "object_sha256": "8f0a8191dd28e388e137e2b159809b5f5a73db2553d44da04e3789bc92ffbd67",
+      "input_sha256": "df7265720e205616f7a9ad64e293d90c502217bce03ad15a6c55eaba2d29ed91",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.GeneratedCover0": {
+      "source_sha256": "4936cc6f454137d9509976002e3c719de0dd28441e99ae8fbd0343ab7c2fba99",
+      "object_sha256": "30401a2dc37c5d776ac6fa1ef2761097d3c437118c0770180da8dc5139ca7943",
+      "input_sha256": "18cdc6ef32b17f3b16167ae41856bbc399d9d65d1113ae1b3d8a341faceaac10",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.GeneratedCover1": {
+      "source_sha256": "e72e09742bd6a4d17a8152f6b69c9cdb94933d15829193e88ec52ba85c6c6d27",
+      "object_sha256": "eea995e9979595f5ce816d2d2f3eff98e0b479802cd32eb4ee62ea2a5ea52d2f",
+      "input_sha256": "20a87c11491024b1af954ab4cbd2853306b3233d30d665e6d8e387afb480408d",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.GeneratedCover2": {
+      "source_sha256": "f9d6ccc5aa2ae6c16140dcf8d474f869448c83d965a7644f16fb59b3d2c020b5",
+      "object_sha256": "5cb8ef9cff4d404f064ea8aa042d2c38884f83f34be4c4a510184ddf9884330a",
+      "input_sha256": "a65240d009b61697142e07114c57755c0a6ed71c198666bc31be733642f248a4",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.GeneratedCover3": {
+      "source_sha256": "973ed8e31b101004f93e72347411e153c6283022219cfcc5d5846ee1f65a9f0f",
+      "object_sha256": "97ea79e3025b6bd8086b99bb6854b1729bf7b600a080632215794937f7077290",
+      "input_sha256": "6c76ab2cc569100c6f8b282453fa9691afabf9f2e3ab44e5be99afe032421156",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Cover": {
+      "source_sha256": "4ff01683f57f0bde3f2d91d5bacefc63710abe7c3c4cb0a3786d69b557d1e73a",
+      "object_sha256": "f647789c08856a9c83388ec28f1629d5e5b9f76476b4d35e4be9ceaccec16ef1",
+      "input_sha256": "5f166963396a1a20d0961b326e9210624495dd2b7890a55e98e19ca0ade0d7e0",
+      "actual_log_sha256": "002d7ac97c90ee86f4a02f0b78e6547e27e281c759199fe89419078047a4a08a"
+    },
+    "ElevenSquare.Tasks.T07.CaptureRoot": {
+      "source_sha256": "ecf83b396addb30be7ddf7bcfe99ff062075b5eebbf471e5f18d9a8c92f3b52b",
+      "object_sha256": "233f86cece6d6b21b734e7e651e5bcadf514a0fe663583fa69eb6b91b12a00dd",
+      "input_sha256": "f24b64afbf2e8bf48d674543e2bb51068d7f6d2cb59a8c1e05c9e4bb3ab129aa",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.CaptureSeedGeometry": {
+      "source_sha256": "063bcbdf725a106289a4181cf813cb9d432f3612d39e4be911d833b70c4453c7",
+      "object_sha256": "f84bdc06e1141a974f00ae93367eaac1c758dcb9c92f901878d0ce880184dabb",
+      "input_sha256": "a477001ca5dfa022831bc2c2e903cdb6b84600e0b5fa48f72bc1e6082bed6b6d",
+      "actual_log_sha256": "e2621dae606e3c99bbf9fd06db28d3415af04321fede056719eb5ba04aa569c7"
+    },
+    "ElevenSquare.Tasks.T07.ShortcutSiteCore": {
+      "source_sha256": "742cf2d3eafa1e1c5a8ca4f84deb534678a0ece9b044d804eb0263a35efec410",
+      "object_sha256": "7c18d637f061a9e76035fc142c91f408c292cd0c66aba1cc570b620f1c7ba4af",
+      "input_sha256": "c3f45c569ab156e38fd07840daf0d173972e4647d71465dd3370286aa7623926",
+      "actual_log_sha256": "488cdb637d7184047b6e4d06a881566f7427ae63985c3f837b3386855439cfca"
+    },
+    "ElevenSquare.Tasks.T07.Case438Certificate": {
+      "source_sha256": "136b8837c467096eb211c28797e15f12d0b36a88c19549d298cbe8c8246ec236",
+      "object_sha256": "3187839c6e29b070b99fed73eed5c1af08b26657f556fef0bb304b97eea5b828",
+      "input_sha256": "81f29c536e38306e8a78407120ca040bdb59c6542b9ad8aee2a11590eca676d6",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.RoleNearCertificate": {
+      "source_sha256": "e4c9bbb5e236f49e923538633df3f497887dfad7e0f9ce2d45e1b4d34370a662",
+      "object_sha256": "8dc24f51e09ac880ca2b7d5ee6c74a2ef7fa44e88800b8403ea21e24cfb5c1f9",
+      "input_sha256": "a74580959b2ff67135c17ddfa54b578dcad1e283e51fba69fcc3f9bd5e56d186",
+      "actual_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ElevenSquare.Tasks.T07.RoleNearCertificateAudit": {
+      "source_sha256": "f020d41c12d1532aaac89c4b1d346f0fac6e0c7557e87c004366a52d94f2b690",
+      "object_sha256": "27119d6a541afb9ea11d1e49c30ed4998e76007b72b6dd4c1ddde9ff3cda3928",
+      "input_sha256": "e31335d3e57fc00fc17b0f0641e5f012c1b21949764446b0649cd69a241bf23b",
+      "actual_log_sha256": "fc6e2fdb67f94e050f62ea8f2cfbb2df643b4e92d84304b1eca2087d3dc774e5"
+    }
+  },
+  "ordinary_kernel_checks_only": true,
+  "source_object_and_transitive_input_postflight_passed": true,
+  "exact_compiler_arguments": [
+    "-j1",
+    "-M0",
+    "-s65536",
+    "-DautoImplicit=false",
+    "-DmaxHeartbeats=0"
+  ],
+  "external_resource_budget": {
+    "cpu_cores": 1,
+    "memory_gib": 4
+  },
+  "full_case438_capture_accepted_by_this_record": false,
+  "global_optimality_proved": false,
+  "scope": "Independent role-order, closed near-state and physical case438 certificate handoff. Genuine U5 traces and the global composition require their own completed audits."
+}
