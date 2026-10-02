@@ -1,0 +1,15 @@
+{
+  "status": "accepted",
+  "source": "ElevenSquare/Tasks/T03/Certificates/PartnerCover198049dfe2baee651875c895Part010.lean",
+  "exit_code": 0,
+  "elapsed_seconds": 19.21,
+  "lean_memory_limit_mb": 8192,
+  "lean_threads": 1,
+  "lean_thread_stack_kb": 32768,
+  "lean_main_stack_kb": 65536,
+  "cpu_seconds_limit": 1800,
+  "wall_seconds_limit": 2100,
+  "nice_increment": 0,
+  "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/Certificates/PartnerCover198049dfe2baee651875c895Part010.olean",
+  "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+}

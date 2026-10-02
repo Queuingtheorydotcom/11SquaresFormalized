@@ -4,11 +4,14 @@ Upstream supplies **172 case-proof source archives**; **only case 1465 is absent
 All 172 supplied original full-case certificates passed actual pinned-checker
 audits with only the standard axioms: **172/173**, with **case 1465 alone remaining**.
 These audits apply to their immutable original source versions.
+The [172-audit reconciliation](verification/t03-case1465-independent-original-172-audit-count-reconciliation-20261002.json)
+binds every distinct exact target, actual audit log and printed audit source;
+only case 1465 is missing.
 
 The [current source-version checkpoint](verification/t03-current172-repaired-source-progress-checkpoint-20261002.json)
-records **16/17 accepted case 1465 route components** at its captured controller
-snapshot. The final required component is PartnerReplayBatch012 (steps 61–64).
-Actual Batch010 and Batch013 target audits are also preserved with exact raw
+records **17/17 accepted case 1465 route components** at its captured controller
+snapshot, including the final PartnerReplayBatch012 (steps 61–64).
+Actual Batch010, Batch012 and Batch013 target audits are preserved with exact raw
 CHECK/log, source-root, task and transport bindings. These are historical
 component audits of the sources before the private identifier repair.
 

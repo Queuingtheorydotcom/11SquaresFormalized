@@ -1,0 +1,2077 @@
+{
+  "status": "ALL_172_RECORDED_ORIGINAL_FULL_CASE_TARGET_AUDITS_REINSPECTED",
+  "utc": "2026-10-02T03:56:22.488388+00:00",
+  "actual_original_full_case_certificates": 172,
+  "required_cases": 173,
+  "missing_case_certificates": [
+    1465
+  ],
+  "result_sha256": "5b9d623dce280bb8f4f3fd062671b25fab4442b919045c669bee8d30483c8b11",
+  "audits": [
+    {
+      "case": 1145,
+      "target": "ElevenSquare.Pending.T03.Batch01.Case1145.Certificate.certificate_exists",
+      "audit": "Resumed-case1145-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "c272907d5071cc99da97a3d94ddda050ddd8644707c0a52e4b07841083c14232",
+      "audit_source_sha256": "5457cc87d92888d591b9a9d086aef64785eabc1c778e565f4dfe4e3cb02cc8bd"
+    },
+    {
+      "case": 2132,
+      "target": "ElevenSquare.Pending.T03.Batch12.Case2132.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2132-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "23be176875911d18d5f950a4018bc820737a285a499193bd9e063891cf91c5af",
+      "audit_source_sha256": "09133e89a5fbbd7baddf4b8c98709159631391f3679279324215a68a4397334a"
+    },
+    {
+      "case": 1156,
+      "target": "ElevenSquare.Pending.T03.Batch01.Case1156.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1156-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "b31a90faa370c61667d0c6229a3a42dfe3000a6aa7336c16ed76de7a8aa96e50",
+      "audit_source_sha256": "a3c5d562b000cf52e0d87db414558633454440acadca894de58fcc7bbfff6820"
+    },
+    {
+      "case": 1261,
+      "target": "ElevenSquare.Pending.T03.Batch01.Case1261.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1261-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "97c637d6c561e95a32f0cf17091df62f9f28a4785c23a83bca5f3ad214cd1d70",
+      "audit_source_sha256": "18456802917f077a4e88f344d897a2867194e8b232734e7e9d05f075f94c7e92"
+    },
+    {
+      "case": 1269,
+      "target": "ElevenSquare.Pending.T03.Batch02.Case1269.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1269-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "82e9e15491dfc16559f76fdd63a31f02aac1ef58f535f018539fbc443a6c5fd7",
+      "audit_source_sha256": "9984708dfb6fd46ae1c302885427bd4bafbfcd0b772dc6031e85b01483a1f02c"
+    },
+    {
+      "case": 1595,
+      "target": "ElevenSquare.Pending.T03.Batch05.Case1595.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1595-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "d2160b1d3f937efab92478116f79b9a181cd239a6d81d9a31988a92757850641",
+      "audit_source_sha256": "0efccf9df073e5e2b546cac38ab15f8c4cf42dc636c0f4d61a00932fd060ec36"
+    },
+    {
+      "case": 1628,
+      "target": "ElevenSquare.Pending.T03.Batch06.Case1628.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1628-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "dfb11bd8bb6f2b7e71b194c7b3ef060beb2849231103ee5c782fc0475a095e32",
+      "audit_source_sha256": "7d1c650be3707f315e945411273712511f8c21e7ba3a96348e930aced211930f"
+    },
+    {
+      "case": 1648,
+      "target": "ElevenSquare.Pending.T03.Batch06.Case1648.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1648-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "d3ae4aababc76a3a551315e74778782cea1ef6b5814d4706c4af1564e94335d6",
+      "audit_source_sha256": "da771c2ba0dc39b0b366c8f5c037c8e8b2dde59a531d89446b0cebc4c07168aa"
+    },
+    {
+      "case": 1774,
+      "target": "ElevenSquare.Pending.T03.Batch08.Case1774.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1774-handoff-retry-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "6473e7d6d3dbc2e97629bd152a1d486a1969576b1a3f5a2c1314a2c6b6cb5c83",
+      "audit_source_sha256": "4ed5f53eed85df2718ff68852e1f8be6b4450cbe230d144e02c91813920862d6"
+    },
+    {
+      "case": 1821,
+      "target": "ElevenSquare.Pending.T03.Batch08.Case1821.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1821-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "0590b6b66fd1c9fcc162e616d6fb896e909c623e689cdcac2c8e4ac6ce6f17f2",
+      "audit_source_sha256": "58644df653d6149995a7b6d39ea063867aea2f45ec22531b18ff224e7eca4db6"
+    },
+    {
+      "case": 1831,
+      "target": "ElevenSquare.Pending.T03.Batch08.Case1831.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1831-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "71e0d3e4bc45dffd00318e4a39bdf97474132343112707a6ac710a6ef467dab6",
+      "audit_source_sha256": "177295f9a7c7089a422bc3ce7195e02851152abbd79f2a9269a55ed3379adadd"
+    },
+    {
+      "case": 1950,
+      "target": "ElevenSquare.Pending.T03.Batch09.Case1950.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1950-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "b16cff9107b1ba946edff514781f330f266ea1a7fa3e1af26caeee98ddd46a88",
+      "audit_source_sha256": "3f1cf19399f9f50e3f5f797545155580a2bda7d6653863631fde6dbb0f29b768"
+    },
+    {
+      "case": 2052,
+      "target": "ElevenSquare.Pending.T03.Batch10.Case2052.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2052-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "351ece0819e1c2b5f5559c3a0c48e3010d203f933c42216ad28cb554d545e1fd",
+      "audit_source_sha256": "ff9b872e537efda09a49064c1a6d86aece92c30cdb87c47b25f4e97b6362edae"
+    },
+    {
+      "case": 2074,
+      "target": "ElevenSquare.Pending.T03.Batch11.Case2074.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2074-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "2d5fde2a8d86c9362048dfacf5dabc8088bf29d1fe20b70f2856babbf645a094",
+      "audit_source_sha256": "430cdf14d003dc5f41b270906def4769f9a3814ee192c67b4916785f45076fdf"
+    },
+    {
+      "case": 2097,
+      "target": "ElevenSquare.Pending.T03.Batch11.Case2097.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2097-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "9ec77efdef7c2ffa601560a6566967b2da87c542b552a72fc855317e1c058ba9",
+      "audit_source_sha256": "dba9fb3cd63658e3228f8137e9a261f3019906567492ec307a5643be80d9a1b9"
+    },
+    {
+      "case": 2129,
+      "target": "ElevenSquare.Pending.T03.Batch12.Case2129.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2129-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "7e0bc12b68be340357ffa83161c4f79ad49d162fd2932fc58bab4ba02321661c",
+      "audit_source_sha256": "32a7bf85b2d194fad5aa827789a6e80a5d0e041e10b0bb37ef63f8a154cc107f"
+    },
+    {
+      "case": 2133,
+      "target": "ElevenSquare.Pending.T03.Batch12.Case2133.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2133-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "df2ce08500774c6d2ab6b8cc87d64814a0c1066eba9447bf10019f8a6a357901",
+      "audit_source_sha256": "c1d9f4efca0d50a844102d53b128c887ba02408306e591e6b3dbc7c77bcaefa5"
+    },
+    {
+      "case": 2135,
+      "target": "ElevenSquare.Pending.T03.Batch12.Case2135.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2135-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "3439d81731f32f78d069343644e57fd7802afce049e530286ddefa6dae4f3bf4",
+      "audit_source_sha256": "3acf7ea09b42824957a0bfc51a7aded30ae8a2e0a11fb33e9eba257122dfd0cc"
+    },
+    {
+      "case": 1315,
+      "target": "ElevenSquare.Pending.T03.Batch02.Case1315.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1315-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "9dec91f8c16df8f608e01023254ecaad9b49e9c56b4b77ecfdbdc37b4feda052",
+      "audit_source_sha256": "827e9effee9b33117ac5121f88c84318eaf50939b82b877d57ef741f3fced95d"
+    },
+    {
+      "case": 1372,
+      "target": "ElevenSquare.Pending.T03.Batch03.Case1372.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1372-coordinate-binding-retry02-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "131f8d67301b691b8ebf8740c2d2699b1e9a6480552d4b076dee5cbe4400dccc",
+      "audit_source_sha256": "2f08dc1cb63c11f65bfe91af3594920fa5f12eb33c87a321ba719ed008a4a703"
+    },
+    {
+      "case": 1646,
+      "target": "ElevenSquare.Pending.T03.Batch06.Case1646.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1646-packed-namespaced-retry01-retry-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "aa85b7149ace61c1a3566333b36410e27762508cce89e9aab30bee5df4850232",
+      "audit_source_sha256": "2f1ee8e9994a546b353a2434e042f547d586eeb94c7ebf7d9441c197bf1a35dc"
+    },
+    {
+      "case": 1673,
+      "target": "ElevenSquare.Pending.T03.Batch07.Case1673.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1673-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "a483537c1462d8ebc4fe7514eef95127bfe3c2a4e72f1d7ee4a25e62f44907a5",
+      "audit_source_sha256": "be759205e0213b6a6fac7c35c92b3e05b92c662ccf38cdde2af9f24db14b6131"
+    },
+    {
+      "case": 1691,
+      "target": "ElevenSquare.Pending.T03.Batch07.Case1691.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1691-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "39f4a0f5992514fe76b03ddf0245ddab12abd1cb561e2a823ffa6f220cb3a9ae",
+      "audit_source_sha256": "1018e0b518618ab8e4a25ee8529fcd4f8d266bb44e73d15e9e1521d9c4b130db"
+    },
+    {
+      "case": 1824,
+      "target": "ElevenSquare.Pending.T03.Batch08.Case1824.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1824-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "794c922fe8742d9c8666902b54f02cd6fcf3afd19dc904c7c78b7833a528cc21",
+      "audit_source_sha256": "b165e80b06f643abf9d5eb236c7820897f93282d37036db8f01775d8a767aba0"
+    },
+    {
+      "case": 1842,
+      "target": "ElevenSquare.Pending.T03.Batch08.Case1842.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1842-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "29671bbede082ec617f6c886ac440471fd7c6d6cca9b818ceab42040a8eeb89f",
+      "audit_source_sha256": "12b514d77c2bd39d0a0e7ed7e4433aa208904199805bff47b566b5b90df20f1a"
+    },
+    {
+      "case": 1866,
+      "target": "ElevenSquare.Pending.T03.Batch09.Case1866.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1866-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "ff5bc818b77c0cf4a09e7fc56f4c4964c75e3298a5d9c0d5a56cd739594900c3",
+      "audit_source_sha256": "654b5725cf161cf3ba2429e1a44e7a76a25e526286be746a2193eaea1d6fbf79"
+    },
+    {
+      "case": 2050,
+      "target": "ElevenSquare.Pending.T03.Batch10.Case2050.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2050-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "a79a3f3e94ea005d55d4d4f05b710f5b733419c744e87c77ad00e02c51d74f4c",
+      "audit_source_sha256": "bcff40077d191d78e35d58151e9d951c7a14b9f560bb12d754dab41c5fd6dcae"
+    },
+    {
+      "case": 2088,
+      "target": "ElevenSquare.Pending.T03.Batch11.Case2088.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2088-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "ca40e1d1d8a95f1f8edb8f563bb1fafd4d7557d79d0c2281f7536803fd294bec",
+      "audit_source_sha256": "642fc88a82acef9b58f3831cab86b59284abdd4baa0104c776644662e86c3d18"
+    },
+    {
+      "case": 2122,
+      "target": "ElevenSquare.Pending.T03.Batch12.Case2122.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2122-output-write-retry-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "457878e3de72519c97e7f457ea0cb7915aafc02ee504ac944b3523c9bba9abbb",
+      "audit_source_sha256": "e92f4f99df7649eb78f7286cd3381761f8a91913986ff0ea6b272424cf146465"
+    },
+    {
+      "case": 1258,
+      "target": "ElevenSquare.Pending.T03.Batch01.Case1258.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1258-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "9c6cda92c453633886c0bd061806d0982f8c402da636a941ac32258c3d37b0c5",
+      "audit_source_sha256": "aede193b6de2cee01fa6fd834824c1b635b7e0d6a207a45db9a849d0a0c8232f"
+    },
+    {
+      "case": 1492,
+      "target": "ElevenSquare.Pending.T03.Batch05.Case1492.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1492-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "2fcf8964fd3522070fc2f24950a0bbfc1e3cbe2ba43d547faac1e7bbb56437e4",
+      "audit_source_sha256": "6d0ddfa6276224218b20c8b171f7e49bd40a258559bc3075eb5bca7688e2e71f"
+    },
+    {
+      "case": 1650,
+      "target": "ElevenSquare.Pending.T03.Batch06.Case1650.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1650-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "5a7ac9fcbc124f331238ed4e1e08421e31fd56c947633b97fc8f68d30f62715f",
+      "audit_source_sha256": "ca1dd313813ee212c22aab190e36aae1d6567b8869c8757021bf33cf6ccad896"
+    },
+    {
+      "case": 1651,
+      "target": "ElevenSquare.Pending.T03.Batch06.Case1651.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1651-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "b548324b5968c16c9ca09f1f647169679039a7e1d69ee856be31938e1946e658",
+      "audit_source_sha256": "3eccc904ccf8c2c853b86d0d2ad10fe3dcb897f2755d53e9694cca5220b848dc"
+    },
+    {
+      "case": 1805,
+      "target": "ElevenSquare.Pending.T03.Batch08.Case1805.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1805-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "5f1c76393760e44d9a74459fa4f883244741ad695a4c401606bbc63050a338c3",
+      "audit_source_sha256": "4694c7dfbce61792e1358dd5d0a27f4ef4b7a22d565f90f9fe538ef5ccb7cc15"
+    },
+    {
+      "case": 1822,
+      "target": "ElevenSquare.Pending.T03.Batch08.Case1822.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1822-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "aa98b0613cdc0c8f151c202581a8bcb6d2e0c3de959791905205b3617bc7d3fb",
+      "audit_source_sha256": "d53699fb6ce7ff5a73f4bbc8ba970a9db2786dbc0764c5f187a0a4f850252de0"
+    },
+    {
+      "case": 2057,
+      "target": "ElevenSquare.Pending.T03.Batch10.Case2057.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2057-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "5891a4622f26dcd008789898ef63b31f1d68f23ffba0fba848cbd6fe98f8dea9",
+      "audit_source_sha256": "f0f57630fff4885c8804b670f869f236b3e5b696183db997bc67d5f839cd63c5"
+    },
+    {
+      "case": 2114,
+      "target": "ElevenSquare.Pending.T03.Batch12.Case2114.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2114-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "01c237289ef8980482056b782c16d49c263cc04c588ec8181d5a8dfbb195c88d",
+      "audit_source_sha256": "63dd1bc4fb13d6fcd85923a49ec68a217036df8bb91e8df110051d534266747f"
+    },
+    {
+      "case": 1235,
+      "target": "ElevenSquare.Pending.T03.Batch01.Case1235.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1235-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "986e76f28f5ae0773d57d23ece765280edb5b72210c02dc9b7a41be1f0a725ba",
+      "audit_source_sha256": "410bbef0afa3cbc5a2be2303cb3dc39068a2c19d651558bdcd9a3e3fff7a54fa"
+    },
+    {
+      "case": 1384,
+      "target": "ElevenSquare.Pending.T03.Batch03.Case1384.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1384-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "528a93a3a0a85df439a075688b0970a15ca3076e1077319d4f028aeb8d0c4e2b",
+      "audit_source_sha256": "69ec97f6e9fcf549058e4f3460a5875f5dfb2f9b07ad91433533103d27db5085"
+    },
+    {
+      "case": 1674,
+      "target": "ElevenSquare.Pending.T03.Batch07.Case1674.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1674-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "ddab1b53146382e722b9f21e2b807a15eb9a7e42bd2bd2d0e010801c67975859",
+      "audit_source_sha256": "9dd62d441e6c7fd3762652ce6743f8ffd4b169656b1364b4af2e13596fc8f3fd"
+    },
+    {
+      "case": 2102,
+      "target": "ElevenSquare.Pending.T03.Batch12.Case2102.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2102-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "e8c8fbebd171af29cce0164f2c16129a05f3c558b754b88ffa54eadf7b22a262",
+      "audit_source_sha256": "ccd0b22c56cc8abb8718d5a8d9519110427917d269885b5c425592a961cc7624"
+    },
+    {
+      "case": 1248,
+      "target": "ElevenSquare.Pending.T03.Batch01.Case1248.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1248-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "2e114fb88583e3844d0fe599d146e370d23ce4fbac09f1e5ef652c364097afdf",
+      "audit_source_sha256": "02d3b75568ffb3b22712f9cfafcd31a1b337476e9aa397fcf12846dc1a1f666e"
+    },
+    {
+      "case": 2076,
+      "target": "ElevenSquare.Pending.T03.Batch11.Case2076.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2076-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "65a51780cc50d533782631f989f7f0982649892f9a0bbbd856a59d9e71aab451",
+      "audit_source_sha256": "c99f088e8f9df587811bafbee412941199082d279a9f37821dcbb782aa1a93ad"
+    },
+    {
+      "case": 2103,
+      "target": "ElevenSquare.Pending.T03.Batch12.Case2103.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2103-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "18a2a1c7d1256b590460b49513cf2794c81effd476ed44629b9bec9d1e0e83ed",
+      "audit_source_sha256": "315562bca7150607a1d6f3ed35112e51a2b183811ea28739187d351d50ec2301"
+    },
+    {
+      "case": 2112,
+      "target": "ElevenSquare.Pending.T03.Batch12.Case2112.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2112-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "3ee8fc4b88b298e1fa7cb6d7b5c19c388c31a55e48ec1b1635a02436ae146a2b",
+      "audit_source_sha256": "8b73e951bd2ae265b800ac58771a70a96b6a749cfbe6c4b46e75a5ab8a0f0ff4"
+    },
+    {
+      "case": 1347,
+      "target": "ElevenSquare.Pending.T03.Batch02.Case1347.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1347-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "19f26edfdb31e791d8f6a95c141240d1f5d90907a7d2a8135399962061ff524c",
+      "audit_source_sha256": "f7ef115623b940ff6144dee025bc679141bba00d8014075f161e4c732f29effc"
+    },
+    {
+      "case": 1467,
+      "target": "ElevenSquare.Pending.T03.Batch04.Case1467.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1467-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "7d7354cfa881ff3be055464c7c82593e797b7d3c13624d675b098cd1fce1e7d1",
+      "audit_source_sha256": "d6c00775b9ae6ee22a7353251bc2334f0f5881d0a4af5c39388762fd1c13e6b2"
+    },
+    {
+      "case": 1645,
+      "target": "ElevenSquare.Pending.T03.Batch06.Case1645.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1645-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "7126821335e88e32c353785dc6813f102eaf077122b6c757d4fc221dc4238308",
+      "audit_source_sha256": "7822f235a57790b7d693d442357616c388efd23b8bf4f294ea4800b21291ebe2"
+    },
+    {
+      "case": 2084,
+      "target": "ElevenSquare.Pending.T03.Batch11.Case2084.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2084-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "c42a19b2f97c287ce46904c9e22c1dd9131ecd94af8ae3745d1b268eb6a52c36",
+      "audit_source_sha256": "1ce5ba6d2a5684401634ac6ec05cedb9affdb6302f8ebf66cc69e670d996cbb8"
+    },
+    {
+      "case": 1257,
+      "target": "ElevenSquare.Pending.T03.Batch01.Case1257.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1257-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "dd923e187d38aa69fa50c4e191428b986d4fc8ef23e66c4e8d08d001744ee178",
+      "audit_source_sha256": "efc314d5ebaf1ef990ca639de4231aa64893a855b374dd87513d89bedfcce5b1"
+    },
+    {
+      "case": 1424,
+      "target": "ElevenSquare.Pending.T03.Batch03.Case1424.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1424-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "1a34610dd56cf1fe621be98fc7787182f031292096d6cf9f3f1e9e7d5bec758b",
+      "audit_source_sha256": "49ca19449a4a3b3ce93e247d9ded789cee8614926894d72efab8feeb59795fa4"
+    },
+    {
+      "case": 1621,
+      "target": "ElevenSquare.Pending.T03.Batch06.Case1621.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1621-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "cce3fcb8ede759627e352105249c79711bedd4c54c83d634632b538055c388e0",
+      "audit_source_sha256": "804f5d26922151106d4eacd9f729e3e5bce105c2f762ccea6f710e083354ba4d"
+    },
+    {
+      "case": 2119,
+      "target": "ElevenSquare.Pending.T03.Batch12.Case2119.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2119-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "307b6acb85a142e1b0f6a059e8b3f4e230130062ef3111386cff828d4acb682f",
+      "audit_source_sha256": "b6bb9c96af6e2e40e02acc701c1d322aa848026aef727d0f40811c1250749477"
+    },
+    {
+      "case": 1249,
+      "target": "ElevenSquare.Pending.T03.Batch01.Case1249.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1249-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "98d8a88f63413c1ce50ec50bf3a7305003af38d86fc8f083b6871df60fdd76ae",
+      "audit_source_sha256": "c7d15238bbd6401e79b0bf39498b84caa0b85e399df566b06a0957d75db8aaff"
+    },
+    {
+      "case": 1268,
+      "target": "ElevenSquare.Pending.T03.Batch01.Case1268.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1268-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "cf710205fa70d28c7d74d5fb52b2090d39a324156cfa11d21c368098c3909c6c",
+      "audit_source_sha256": "3bb24b938e280de5b191467187a2aa4e2e43c1b9ac6b10762ebcbf65fc0222d9"
+    },
+    {
+      "case": 1270,
+      "target": "ElevenSquare.Pending.T03.Batch02.Case1270.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1270-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "36b46e6db5219a3beb49a812c2e64d4f2706746374e9a3adad830cab4eec3967",
+      "audit_source_sha256": "e847f9d14d13d2b13f4fd9a24082ce6f38d3dad66cec1a1799afb8fa9015cbbc"
+    },
+    {
+      "case": 1311,
+      "target": "ElevenSquare.Pending.T03.Batch02.Case1311.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1311-coordinate-binding-retry-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "980c2384445a92ffc3e779dd29c4626c89f4f03211e364c7c68ce9d6377f6471",
+      "audit_source_sha256": "571f32572546d4ee92036879f13161dfe9d379ca4883b1a0dd7b268065d105f7"
+    },
+    {
+      "case": 1312,
+      "target": "ElevenSquare.Pending.T03.Batch02.Case1312.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1312-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "62219fd99586019d2c62a5db04ae8d5b5531a62b156a5e32abcfcf7274a7d869",
+      "audit_source_sha256": "0b00bef4ffda95a5e112c082a1ce08880d0a712fcd9e58217e5c5382c73239d3"
+    },
+    {
+      "case": 1335,
+      "target": "ElevenSquare.Pending.T03.Batch02.Case1335.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1335-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "972e08f1a28e0326fb62e3adabf1453ee25da35c659ca9becdb5acbb85c671d6",
+      "audit_source_sha256": "058e22373c5342b18c1a577e58af5cbeccff5813dd02e265b45e179d72a3597c"
+    },
+    {
+      "case": 1341,
+      "target": "ElevenSquare.Pending.T03.Batch02.Case1341.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1341-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "c33560c577bef7f2dfab59f4977ba81dc31b1f97649095dd5b73b29e15b28c4f",
+      "audit_source_sha256": "70b054af1bdfcc9fa43110453b49af3201195fc0453d234d16c6dbdd5d4eba8c"
+    },
+    {
+      "case": 1342,
+      "target": "ElevenSquare.Pending.T03.Batch02.Case1342.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1342-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "9654138474a58071ccb2a90ac386fa7e5a579e72b79ffe442dcf2bb6a03d5f9f",
+      "audit_source_sha256": "7d0c6484194f7330663640e59cd39752450dd3cc9e88ba10368e0c09f90924f9"
+    },
+    {
+      "case": 1371,
+      "target": "ElevenSquare.Pending.T03.Batch03.Case1371.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1371-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "80f38a3ea65d5d6428aaecc61ede72c8ec789321d80f7f0dad8d7b8b54aea62c",
+      "audit_source_sha256": "8c686a08fd2cc6bf371a45d7c95b0fef3c45de7625ad90e31474f7a4ce95d462"
+    },
+    {
+      "case": 1374,
+      "target": "ElevenSquare.Pending.T03.Batch03.Case1374.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1374-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "c91dbf460e1eb6a358a14d6f4492f3f0d52435b67311bcdd18561c9a62b44d17",
+      "audit_source_sha256": "fb67f0664ee33bbe583c36004236f1e273a8ed72305db6c92106d06819b131bd"
+    },
+    {
+      "case": 1411,
+      "target": "ElevenSquare.Pending.T03.Batch03.Case1411.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1411-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "b5dba9c105c8823f2a3eb54ba6020c86c386a59bcb43b1c3e5e237b13d20d8e9",
+      "audit_source_sha256": "773fd313fcf0a34a6939da2ae94af790f8ff1d52a43e1c03f626e66278a03c76"
+    },
+    {
+      "case": 1430,
+      "target": "ElevenSquare.Pending.T03.Batch03.Case1430.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1430-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "4be58fa337950a74005055b4c10f3dad116b74ff841895046cbe0dcf6bd96d4d",
+      "audit_source_sha256": "7e78653d5c5537dc4a20e1a5f200acd02f58519ce2340beaa7f6cfdf3d4709f1"
+    },
+    {
+      "case": 1433,
+      "target": "ElevenSquare.Pending.T03.Batch04.Case1433.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1433-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "6fea44128dacdc0ff80d6f90cf90442ab297d0528e563cc77cd2619ea4aabd8b",
+      "audit_source_sha256": "18f409dd801d9c02cff393c4ff79ba870e79bf05cc9110bec42b0e6738ded995"
+    },
+    {
+      "case": 1437,
+      "target": "ElevenSquare.Pending.T03.Batch04.Case1437.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1437-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "626c7926f77d82ffc162048717b05fa170c0c0861cc78677d367aded44ed3453",
+      "audit_source_sha256": "6e59a3828a83790659e79d71fe8046f17c92a0d899747b92cb2eff825a426130"
+    },
+    {
+      "case": 1450,
+      "target": "ElevenSquare.Pending.T03.Batch04.Case1450.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1450-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "151993f7ad0555427943382fdaae7df90da8952c6fb418450930d4b9c1151fa4",
+      "audit_source_sha256": "7ac7b98b9a0fb9b201c26a62a4feafac6247446cd5343b93901bfa48ae6dc4a9"
+    },
+    {
+      "case": 1487,
+      "target": "ElevenSquare.Pending.T03.Batch05.Case1487.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1487-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "3cc24c356b1d621ac3b90b9e26261a1bf6c2d920d55f0e91ca26f33ad43b85b4",
+      "audit_source_sha256": "7db9bc4282c59f79e119ab6a9ba8738e943babcf889c0bddbbfe83c7cca6c06d"
+    },
+    {
+      "case": 1582,
+      "target": "ElevenSquare.Pending.T03.Batch05.Case1582.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1582-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "4c73035bb0c991bd4c71c2034c49a151e66bbd72ad34f3e4273444a71b2e2f93",
+      "audit_source_sha256": "d183038cee1413322a743a99f78a4a02448fdd8662e35dc6a611b15b88d82651"
+    },
+    {
+      "case": 1637,
+      "target": "ElevenSquare.Pending.T03.Batch06.Case1637.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1637-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "b4c63acc521524aabb66fb69d2e393448b44c9dc8fc167f79b9e1a2da524c8ec",
+      "audit_source_sha256": "a112eed7da463cc772ec7f8f42a6778c6dd933678eb59bbe6ef18b63627189c9"
+    },
+    {
+      "case": 1640,
+      "target": "ElevenSquare.Pending.T03.Batch06.Case1640.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1640-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "62809e0a5f5dc58e8a5b8d5b4e73a036f630cd2b3489a640ca0186a0a4a9af2c",
+      "audit_source_sha256": "c709d59e7908cf5ca54845514a39469f467e6534149098f7b3cec85043d433e1"
+    },
+    {
+      "case": 1695,
+      "target": "ElevenSquare.Pending.T03.Batch07.Case1695.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1695-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "9ec52e1e48ee95667a0583f52c2d701e9a14615ebb5537e121e546e421473dc2",
+      "audit_source_sha256": "169accbc4605771b2ec7b0aa7b32fd064eafdbf1a392fdec6ce9b19a6754ca48"
+    },
+    {
+      "case": 1696,
+      "target": "ElevenSquare.Pending.T03.Batch07.Case1696.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1696-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "1a47c0769f2b9427f48a1d549e226fc454cb0b59e6ec92e8e2d455e8927e82d8",
+      "audit_source_sha256": "489b1396eeaff8e3b4b99edf267670aa635fbe96a1753fe9d3473270e426cd6e"
+    },
+    {
+      "case": 1716,
+      "target": "ElevenSquare.Pending.T03.Batch07.Case1716.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1716-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "39031512be1c8a644f984e57106befadc54c293769706469c262d297a9747082",
+      "audit_source_sha256": "bf51745b4491697d450da06432a2bd05c3df68d52c26209e48b93884ca268507"
+    },
+    {
+      "case": 1728,
+      "target": "ElevenSquare.Pending.T03.Batch07.Case1728.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1728-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "b64424442a250807fa3289c07b51cfa80eb4c07a1ea08d58b02b8dc1a165053f",
+      "audit_source_sha256": "1d6b256e87b1303279eeb6b78280f5cc5888d689fd1009f32d82746a5142a949"
+    },
+    {
+      "case": 1840,
+      "target": "ElevenSquare.Pending.T03.Batch08.Case1840.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1840-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "cb1e7f3c9ddaceb2346d87ff82dbec26ca22b1e7d22f7f9d2b93646a0667a77c",
+      "audit_source_sha256": "c237adf62f64baf0acd0dcb27e242bf014aa71a84fa5ce2e00663900a3edc07b"
+    },
+    {
+      "case": 1871,
+      "target": "ElevenSquare.Pending.T03.Batch09.Case1871.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1871-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "2c6cc8e9e2709be488fa8a6a700f7a1f51a637e58302d8b87b12c3fc09efe1d7",
+      "audit_source_sha256": "031201bf3c9f7ea444e8c66f24ccbbbbadcd602085675514992c5ca403e2937c"
+    },
+    {
+      "case": 1875,
+      "target": "ElevenSquare.Pending.T03.Batch09.Case1875.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1875-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "7e0f5087eecad7618dbd0d9e2e73f3cbdcf14f1f6571f6b0153021241bb0dc15",
+      "audit_source_sha256": "9d0a4a7232a50a1bf20febe3fb6556adab9b28353f628c0b27c83f0383b52e30"
+    },
+    {
+      "case": 2047,
+      "target": "ElevenSquare.Pending.T03.Batch10.Case2047.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2047-log-collision-retry-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "bb40d2f14f51a7b66d6a6cef0afd377d2db7636d1c04d362d83271008d3fe8d8",
+      "audit_source_sha256": "f20342b4eb4a0421812fc89f65b1c792cb9d4f6456fe2f2c2b67273f5513ed2c"
+    },
+    {
+      "case": 2048,
+      "target": "ElevenSquare.Pending.T03.Batch10.Case2048.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2048-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "307085a4596fe8c69ce4e5d97b3cde85a8483ec0b129d4557abfc9d10030801b",
+      "audit_source_sha256": "13371294912d8a538acf6bb0a16ddd49a78c17914698e48f39753c2bcc901b0d"
+    },
+    {
+      "case": 2070,
+      "target": "ElevenSquare.Pending.T03.Batch10.Case2070.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2070-wand125-import-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "e8a85b984097c0c2e7462cca91a242e4a7d77a4e4ebed6248edbe75a9778565c",
+      "audit_source_sha256": "84ac084323def30d2adb443aedd72df51d11130701db2d81f0794b49ed287f93"
+    },
+    {
+      "case": 2073,
+      "target": "ElevenSquare.Pending.T03.Batch11.Case2073.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2073-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "a13ae3b02d9ee545554c5b32038768ea7dafe997538a78ce5b88e7495491faef",
+      "audit_source_sha256": "dc03d110a799b9c713419c433c5610c784f495a6b6434959c09e37503fc13dc1"
+    },
+    {
+      "case": 2075,
+      "target": "ElevenSquare.Pending.T03.Batch11.Case2075.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2075-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "8104e4fe91150a6c3e0a48397bd4206d93a9e82166f8a209e70ebf8382e93365",
+      "audit_source_sha256": "95ca1329952ac71e55a02232cde8b7f8336c9cfaa9e94620a36d1528a6ca538a"
+    },
+    {
+      "case": 2078,
+      "target": "ElevenSquare.Pending.T03.Batch11.Case2078.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2078-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "c462644bf2f9000159355524c465207bf7e1fc8938a7a624127d60ad130dad3e",
+      "audit_source_sha256": "23cce2d318313b4724bd035745d92374e18efd073057c1c8eaa6432a46a4e7a1"
+    },
+    {
+      "case": 2094,
+      "target": "ElevenSquare.Pending.T03.Batch11.Case2094.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2094-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "96e925fc9dc70aaa9d378613182c0cf8980da932e26b9a1d15d493df129ca541",
+      "audit_source_sha256": "7e3af0702d3fbebbe40ea189adc3fd9e3f7c5309d3f81521579e1c772aeb07b4"
+    },
+    {
+      "case": 2116,
+      "target": "ElevenSquare.Pending.T03.Batch12.Case2116.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2116-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "bfe3a95dcc1614fabd068832d5440e24ecfe36eba835d5ce3204ec1383b4eae7",
+      "audit_source_sha256": "0f0a602ed011cbfec42d69492bfbe1d96261704aa5fef26c5fe4f369fd666f45"
+    },
+    {
+      "case": 2125,
+      "target": "ElevenSquare.Pending.T03.Batch12.Case2125.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2125-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "9145359f093b25e8f1fd4dc0acffbfc6c2dc12ca1ead4d8634cfd0ba3f670564",
+      "audit_source_sha256": "ecd4d30dc182bd136957e2bb7cd0db6f258ae3ddc01ac27b763c8e49e2a53ddf"
+    },
+    {
+      "case": 1259,
+      "target": "ElevenSquare.Pending.T03.Batch01.Case1259.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1259-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "b1ec008b29fca7b2235221c8841b24a41be5a1d28f3cc8190362c915929781cd",
+      "audit_source_sha256": "fabcfcf99fbbe0b43ce259cad340bf5260d3d81d89117fbc98d6d83a4070d07d"
+    },
+    {
+      "case": 1262,
+      "target": "ElevenSquare.Pending.T03.Batch01.Case1262.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1262-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "cb19144acd4f11d81afd82aa0a631a8b62775736a2f4a4389125d62aa6ae4635",
+      "audit_source_sha256": "c2279a3384388f39710c7bf667ef1f1743f14b7c59af0e075b7fa0d554920ea9"
+    },
+    {
+      "case": 1266,
+      "target": "ElevenSquare.Pending.T03.Batch01.Case1266.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1266-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "18451e969a05637bf87212c71718239b14bea7e1320174641bda88c3291d9bdc",
+      "audit_source_sha256": "582ae45f2414f49092e53e5a8493cb9a2cf639c98d1928e01fb22b235b10b07a"
+    },
+    {
+      "case": 1281,
+      "target": "ElevenSquare.Pending.T03.Batch02.Case1281.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1281-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "e89fb0e1ef59f0d913404a2dfce4dacbd4f6986a56a9140b854f9c24c52c78db",
+      "audit_source_sha256": "818da548e7dcf50843ebf2c1b83ada9c30b3a5c946105711b17fa1d40e99a2de"
+    },
+    {
+      "case": 1303,
+      "target": "ElevenSquare.Pending.T03.Batch02.Case1303.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1303-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "046417e02eb98478fff86b0dc8f0bca11ba55b81ac3886fc64635e350c40d1e2",
+      "audit_source_sha256": "2f19d96cb4aac38077e415c9d640091a85821daba44f8ea6978103d17924b61e"
+    },
+    {
+      "case": 1365,
+      "target": "ElevenSquare.Pending.T03.Batch03.Case1365.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1365-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "444d36dcca335f2c14bcb961eda22842207457c1aa5a8c5df81274217898a35f",
+      "audit_source_sha256": "5bec31324b231d1ce0afcb4a4ce75d438d1988eb2092cce0b1d01537fcad729f"
+    },
+    {
+      "case": 1393,
+      "target": "ElevenSquare.Pending.T03.Batch03.Case1393.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1393-wand125-import-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "4568c624a3397a22ce30a3f1cc4939586f18121b5dbcd2f1ee1e529b585233f5",
+      "audit_source_sha256": "ff95131aa853fe7cc26a4f3123725ba70d66748803602214b2a358b7bcb184c4"
+    },
+    {
+      "case": 1417,
+      "target": "ElevenSquare.Pending.T03.Batch03.Case1417.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1417-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "04ead670a97adfda3f40f6b952ead144e567c00bbb059f294d8f6787629b4a07",
+      "audit_source_sha256": "2dd15e46c0b1791c375bf12bf4823c727c0ae80e6ae0cdc2b043c6059f5ab538"
+    },
+    {
+      "case": 1436,
+      "target": "ElevenSquare.Pending.T03.Batch04.Case1436.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1436-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "29f6254da9cb1e29a94c54eb3ceb65203350061f4967f71ebb6e1d836f39a027",
+      "audit_source_sha256": "b930b37d8c6778d082a8b8446d1a3b33daede905119e5c61d88388c659307177"
+    },
+    {
+      "case": 1438,
+      "target": "ElevenSquare.Pending.T03.Batch04.Case1438.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1438-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "5b42492a043285db92c860c830cfa3bc6d7fc897cd8996a8d2cc3e7cc531b1c0",
+      "audit_source_sha256": "329b8f78080bdfb9f22846bfb3fd1f2c432f8426c3ecf3665d9e1d570852ce75"
+    },
+    {
+      "case": 1439,
+      "target": "ElevenSquare.Pending.T03.Batch04.Case1439.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1439-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "e3a9df9a803854fc6ba82bb74004ed3801e970d7c1d7bc69b3873d3147f714b9",
+      "audit_source_sha256": "d1aee36234a0fa7f82912ad4fbd415c6e57b6d6e3405ff2544839b5d13c4ae63"
+    },
+    {
+      "case": 1449,
+      "target": "ElevenSquare.Pending.T03.Batch04.Case1449.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1449-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "acecaa3a940bea98aaae93ec6a2b7469390a512bcb08b1441227797d39551248",
+      "audit_source_sha256": "9a2e2ef2ceb1cefd57cd9173226dc823448bc6ec210c01e1229626bd0cf73ee5"
+    },
+    {
+      "case": 1463,
+      "target": "ElevenSquare.Pending.T03.Batch04.Case1463.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1463-wand125-import-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "7f0c506d9b9836ec1634a203b9ef794f2f6bf89845b1c359b9e0d78e59e0d29e",
+      "audit_source_sha256": "8bdd5de208e6e579186deaf3889e4554e839ff8b541ed4bf5ff8d90865bf3c24"
+    },
+    {
+      "case": 1476,
+      "target": "ElevenSquare.Pending.T03.Batch04.Case1476.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1476-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "03da130c70832542930379c71a316bd63f1a9e938a8b09b881ac23a1c129054b",
+      "audit_source_sha256": "aad449aee7e55fbf84b497b295348f7e6461b1229dd997549b6500f4fcd6380a"
+    },
+    {
+      "case": 1490,
+      "target": "ElevenSquare.Pending.T03.Batch05.Case1490.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1490-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "ac65252da13ac140151bd0f09bc37d72a3a69c4cc110d6ef6f6f3a8034feaa46",
+      "audit_source_sha256": "424050602943f791f0bbc1f3836fb15d9e88fc2fa76980acf642968d524066ab"
+    },
+    {
+      "case": 1499,
+      "target": "ElevenSquare.Pending.T03.Batch05.Case1499.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1499-wand125-import-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "a304a9dc1f688dc6a2a6155f85b580d56f88d3fafde12d5e2a4a082525d15d47",
+      "audit_source_sha256": "c610588ff01069d96ecf46776303bf078106e8c9a223bcfbbdd1febc17f98164"
+    },
+    {
+      "case": 1530,
+      "target": "ElevenSquare.Pending.T03.Batch05.Case1530.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1530-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "66e8175234f34abdc74d8b660d24f06175423241455969e06afe131a94649d20",
+      "audit_source_sha256": "5451a820d2da9cbb960a7049a0d52c3a5fd4d6af9a0aae828758ec548a0a1b73"
+    },
+    {
+      "case": 1539,
+      "target": "ElevenSquare.Pending.T03.Batch05.Case1539.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1539-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "0f44567d2c80d7c458f4e288a2c4733c6f1a0db2b541130e1fa1b0a2fb0ac50c",
+      "audit_source_sha256": "4c96756bf13514f04fc7d22a612f1a18d3a49964791942f56192106952f4969d"
+    },
+    {
+      "case": 1554,
+      "target": "ElevenSquare.Pending.T03.Batch05.Case1554.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1554-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "0fce09d37f3ed060fb9187be56f89af456aa7dd99a53cbe4673e98e8acecebb7",
+      "audit_source_sha256": "66606b33bc2bf8b7936df2b8e8e295c705d5c350eb2776b848a9974fdf8f76cf"
+    },
+    {
+      "case": 1567,
+      "target": "ElevenSquare.Pending.T03.Batch05.Case1567.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1567-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "bb66dc5d9955772690071e24387fe3d68549f8367ac77027048e8d079dd21c89",
+      "audit_source_sha256": "304fd71d651e4cab93b855801183e0f669cb32ea4122c48ce6592182b74144d2"
+    },
+    {
+      "case": 1594,
+      "target": "ElevenSquare.Pending.T03.Batch05.Case1594.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1594-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "ab770fb61aebf04fb91d1de9af1cd83468c5f4175f6d8fef406ec4000e019abc",
+      "audit_source_sha256": "4cb79e711aca5d43e20048bd055be42050609b4a8b3ac912f5605613cdb3653a"
+    },
+    {
+      "case": 1597,
+      "target": "ElevenSquare.Pending.T03.Batch05.Case1597.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1597-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "5e50649c0144b386a26ae18ea8e18c91f3daaa39fc99fd7b12e06b403273f535",
+      "audit_source_sha256": "75e6879e7fe1672a97aabb263d17cba8e3c51d1e983466522c49d0dc9041bd47"
+    },
+    {
+      "case": 1644,
+      "target": "ElevenSquare.Pending.T03.Batch06.Case1644.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1644-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "cd63bb05229e30ed26de3fbeead36ed0fec4e3394b6ff6d36624e7765361c6c0",
+      "audit_source_sha256": "a28fcf84924c3f80f9a7625ff293742d831269aa789d95cc7fae48b6b24c1b4c"
+    },
+    {
+      "case": 1686,
+      "target": "ElevenSquare.Pending.T03.Batch07.Case1686.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1686-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "9defe5a4e02c19ea7c399b020ed71598a2e9ce173681831f737fdc8022302155",
+      "audit_source_sha256": "3eee01c48b6fde6bb899d67339d16464f3bf1d844ca36c1b6a3cb67668dd2858"
+    },
+    {
+      "case": 1688,
+      "target": "ElevenSquare.Pending.T03.Batch07.Case1688.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1688-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "7c8f767bf25c405c30c91befbedb7b3cae664dae927183bf7d0167a9d41b5a1c",
+      "audit_source_sha256": "bfed74563530d76de02407131153df83fcfb67127ed4244f886402adf351bc86"
+    },
+    {
+      "case": 1693,
+      "target": "ElevenSquare.Pending.T03.Batch07.Case1693.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1693-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "d59b77a2db50858aa7b1711d77bd0b9ccc31244f62df45ebc81138da2a1c909e",
+      "audit_source_sha256": "424b54d82901f4b94dff012858c392f6147afbc0cdaed4913d69cb0c8373ce5d"
+    },
+    {
+      "case": 1722,
+      "target": "ElevenSquare.Pending.T03.Batch07.Case1722.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1722-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "73a6e52b8d132be84bd23cce8a73d33b7de30aaedd5f6e7b13cb819125bda663",
+      "audit_source_sha256": "62cdce54866c38fb82dcc5dce2226ddd6fef805ff313c43ce055d6b497ceb90f"
+    },
+    {
+      "case": 1731,
+      "target": "ElevenSquare.Pending.T03.Batch08.Case1731.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1731-coordinate-binding-retry01-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "fc702371c8d122a3da4896ec692f8fbc9fe2fdb4ecc527fe405d172f1edcf168",
+      "audit_source_sha256": "cddfd90a65641c9daac0cfab30aee9409ff07ef169c65510a1526ece7518160b"
+    },
+    {
+      "case": 1783,
+      "target": "ElevenSquare.Pending.T03.Batch08.Case1783.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1783-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "62e7991cb79bef40fb19d80273c0b56827b5ab8751946f8c7ea146e9ad185991",
+      "audit_source_sha256": "83aeddfae3e860b59a97102906696c4d48a0889a315ee0231495d1501261d9ac"
+    },
+    {
+      "case": 1810,
+      "target": "ElevenSquare.Pending.T03.Batch08.Case1810.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1810-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "26479aebeb055321ee53cd022c7c0885b2ad5c74baccf104de828e84759bc1c7",
+      "audit_source_sha256": "12151c23ffb1aa20796dadfc45510de36b6a59abbb0e64ed5c3c6afa2e012d42"
+    },
+    {
+      "case": 1823,
+      "target": "ElevenSquare.Pending.T03.Batch08.Case1823.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1823-wand125-import-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "ed7b9508af3f4d3fdaf33f4a8efa79c5f39b8f0be1c5040e93f94be63aab5eab",
+      "audit_source_sha256": "0f8b0aeb34974e521aa61c1e9207be23d3cfcb257c5ca5df2df0d1bb0c48a0cb"
+    },
+    {
+      "case": 1848,
+      "target": "ElevenSquare.Pending.T03.Batch09.Case1848.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1848-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "22228b7e7fa7493da48a397ee3342e9c5268c7d7cbde7ab3d874cc6420c4d433",
+      "audit_source_sha256": "8a77d3a059fa65bb7577c2431af7df820a1f72029121c7be091c6730868fec94"
+    },
+    {
+      "case": 1850,
+      "target": "ElevenSquare.Pending.T03.Batch09.Case1850.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1850-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "495410a672a041fba0825aefec7cf2f0a9c04d2d66252906f1da7cdd0f51d1e2",
+      "audit_source_sha256": "9b5d2ff52895ac5e2ae5fd57934b8659a0626ac1ccdfe4555779506ad090acc3"
+    },
+    {
+      "case": 1887,
+      "target": "ElevenSquare.Pending.T03.Batch09.Case1887.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1887-wand125-import-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "5c6e228370899611ff943192bd74b0c96fdd0c17e799e620a0a9093217400469",
+      "audit_source_sha256": "6c54bd8f00f8ff80fe119f4ae5cb2a62c4cccc3630fd007c25d2d273bc5c53ff"
+    },
+    {
+      "case": 2049,
+      "target": "ElevenSquare.Pending.T03.Batch10.Case2049.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2049-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "70b0a8997b28cc4d32d3af5c6aa35d33dc118318ac761fa5e35fda227a4dbde1",
+      "audit_source_sha256": "c7a7364a92f7af8f356f81184173adaf0a4accb7d8da821b43d06dc6777fad79"
+    },
+    {
+      "case": 2053,
+      "target": "ElevenSquare.Pending.T03.Batch10.Case2053.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2053-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "0dfe79561a2b87311c585048cdd4648bbe7f16c0c98da07f5d7f50bc4056be5f",
+      "audit_source_sha256": "32cc97bbae97431100f92b26e7f567cf9af9f76e335eef54424ee2cf7d3b10bf"
+    },
+    {
+      "case": 2071,
+      "target": "ElevenSquare.Pending.T03.Batch11.Case2071.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2071-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "f47413488bd6c2ad87206a4c1da02411681377b1447567f0806aafddfb30d84e",
+      "audit_source_sha256": "1e4734a07dbac26bf5ca76faab5515f4437e270d23fa07ffc2b508e6b8a6fb82"
+    },
+    {
+      "case": 2091,
+      "target": "ElevenSquare.Pending.T03.Batch11.Case2091.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2091-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "598f24c5964b4ff9e27fddb5bd7908c0437742f4481450a4be633d4128d354a8",
+      "audit_source_sha256": "d5e3f6f0536a2c6fac528ecf9c4f665f22703fe18932c28775702e8d9135fe7c"
+    },
+    {
+      "case": 2098,
+      "target": "ElevenSquare.Pending.T03.Batch11.Case2098.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2098-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "00cfe71e07d82b510cc9d00d354317fc5755f55517d49c3146170bd0a7fb9df1",
+      "audit_source_sha256": "e98aff055b60153008ce10ec2b5215a27f4a6a3ebe65e9cf5bd4af4489f1b31e"
+    },
+    {
+      "case": 2111,
+      "target": "ElevenSquare.Pending.T03.Batch12.Case2111.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2111-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "bc99113d1e3d118a1c32ef08411ffd082fb95211410cff51bf37661bad25c1f1",
+      "audit_source_sha256": "159bc11030f5371fa699085287e00c7e18283e8058355ad45693d1e68734733b"
+    },
+    {
+      "case": 2130,
+      "target": "ElevenSquare.Pending.T03.Batch12.Case2130.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2130-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "4ae70cb7dc8137c8555d6e41e19a5b0d2f9f9879ab4aa005514aa518ab355e06",
+      "audit_source_sha256": "f942b753c950c2c615762cc33a017b96b9019f811d3ad9f04ff59f49ed202701"
+    },
+    {
+      "case": 1775,
+      "target": "ElevenSquare.Pending.T03.Batch08.Case1775.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1775-early-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "192d4fd4f779a4932fbd44b6781d7bcb3adf30e8a80fecfcd4cfe63aa52c5acc",
+      "audit_source_sha256": "68ee03aeb287d05a92dc287cde165359278ed85a5e2e6a2df12d265b870257b4"
+    },
+    {
+      "case": 1264,
+      "target": "ElevenSquare.Pending.T03.Batch01.Case1264.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1264-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "fada47c8181e6c2b2a210c434cec97c144624d8b66d65284aae31a9dba9865ad",
+      "audit_source_sha256": "a44687c62fee5bb7e0c042fedd5f4dbeb47df171e3ef21083196cf396c447359"
+    },
+    {
+      "case": 1265,
+      "target": "ElevenSquare.Pending.T03.Batch01.Case1265.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1265-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "8872e73d3b3fca0cdc29ae8882f0f3f4fdb18add30a430cc3a2301e02bb0da1b",
+      "audit_source_sha256": "02784355c6d4cfd07c1fbc064a7ea6345de910619ddca1a21369c6a8e63f3b86"
+    },
+    {
+      "case": 1267,
+      "target": "ElevenSquare.Pending.T03.Batch01.Case1267.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1267-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "e272c7fc2e01336a0beb39a676a862937643d34afae1eec674a5820008fa236b",
+      "audit_source_sha256": "2e7d60f671535e7f3b721594b53be8539214995fc3bb2f9446749e48da5ef223"
+    },
+    {
+      "case": 1271,
+      "target": "ElevenSquare.Pending.T03.Batch02.Case1271.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1271-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "6eba1a46fc220190d3864b5dd0e243a5c6d406b32d089a33ddd6e7b9690dbeb3",
+      "audit_source_sha256": "3b01a5a8bb8466e9706a704beb8a5c542404c5b7ee8ae79d123596e6c82df26d"
+    },
+    {
+      "case": 1310,
+      "target": "ElevenSquare.Pending.T03.Batch02.Case1310.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1310-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "6f30596568d4e1869b0a99de5a635596cfc4eaabcdf485a848b60a0ae9f07909",
+      "audit_source_sha256": "7a92709b9a41286e4ab55f2b7d426a9314750530b04e1039dcf256881fa37e7e"
+    },
+    {
+      "case": 1333,
+      "target": "ElevenSquare.Pending.T03.Batch02.Case1333.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1333-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "3f8ff9baa2ad6293d3afc32f1cc383bbeaf96e79f4b9a59c5511d17e73f260aa",
+      "audit_source_sha256": "9ec62d73fee2c40e3059fce877f09e78732c25d0d231770a818cf5e182ccb8ef"
+    },
+    {
+      "case": 1343,
+      "target": "ElevenSquare.Pending.T03.Batch02.Case1343.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1343-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "0683b349d6d56eadc5bb320ddc83b52f2c4c1604b347b6c674c93fc393a2a13a",
+      "audit_source_sha256": "ea037ac8744aa247ef4843350718e6015c183e657ba1d1b5faf61118ebc4fa96"
+    },
+    {
+      "case": 1373,
+      "target": "ElevenSquare.Pending.T03.Batch03.Case1373.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1373-wand125-import-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "a097ff09cd2c3da95bf3fd3894c5b1b1f08a08432517e4a1b96e0c4c375f61c3",
+      "audit_source_sha256": "983d5f366f7d556fc3afcd50fd0dcb175023446abaede241ab02c01c6e3b7412"
+    },
+    {
+      "case": 1416,
+      "target": "ElevenSquare.Pending.T03.Batch03.Case1416.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1416-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "287c3f812c130e597080ca24d0b6fb7f883fe45722858159de6796c4e56ccf47",
+      "audit_source_sha256": "9363b90c27fa20ce4030591dc10a8555fc57078ed7b91603dcbb36b9955af8fe"
+    },
+    {
+      "case": 1420,
+      "target": "ElevenSquare.Pending.T03.Batch03.Case1420.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1420-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "95a426bb26155f88798747122af231059d65cde052622cb2d85380138312115f",
+      "audit_source_sha256": "c49faa9e9ea926907a7445ad129ea5971ec8956410f80c57e820c5287de286fd"
+    },
+    {
+      "case": 1422,
+      "target": "ElevenSquare.Pending.T03.Batch03.Case1422.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1422-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "f2a0a7835258d1eb787b9bc24b513ca9d10e04adbb9afc0ac11997d7b8141106",
+      "audit_source_sha256": "34d10e76a57736d51f075e3d4eb50d30286f3070961b3e0e0a299f6cd9860090"
+    },
+    {
+      "case": 1429,
+      "target": "ElevenSquare.Pending.T03.Batch03.Case1429.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1429-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "971971646a2111dbed853630397b71fe28fde007f523884a432dd053de43e961",
+      "audit_source_sha256": "bace7194ccc449a8d323120ed79686a93c62ebf8c5f4ccd87125ace151c60897"
+    },
+    {
+      "case": 1441,
+      "target": "ElevenSquare.Pending.T03.Batch04.Case1441.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1441-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "d68d3d292e9e0bfc8eb6cf96244e2fa1e1ccf5b2e24970e206700d61fd84c3b2",
+      "audit_source_sha256": "21f51f5f93c0f2da50a6888971e707569e0a375c87e0922792ee0e4d87a19d48"
+    },
+    {
+      "case": 1464,
+      "target": "ElevenSquare.Pending.T03.Batch04.Case1464.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1464-wand125-import-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "9f86ec3afc0905524f51b2a170068f081e668988fba210c256e7f5a826fef7fa",
+      "audit_source_sha256": "cad7fb208387e8a7237ffd6e6550c2a27f2c6561770507e2c8763a3d0e1ad426"
+    },
+    {
+      "case": 1478,
+      "target": "ElevenSquare.Pending.T03.Batch04.Case1478.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1478-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "e567df541901fb3e41feae4a5123bbeef82ae4007c76c9d9e04a2ca7a23fe9fd",
+      "audit_source_sha256": "23854a4cdb6cb56fe6af39a0db702f67f614fcf3b4b4472c72125bd20203489a"
+    },
+    {
+      "case": 1484,
+      "target": "ElevenSquare.Pending.T03.Batch04.Case1484.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1484-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "01e9531b9cb1d6d29b9dd2378eb1a764f3d6d5538162ed6713b7683a4118cb64",
+      "audit_source_sha256": "3391611363dc12953fa5129fca96e4193c0d3459246ed572c69882e0cf1ed3ad"
+    },
+    {
+      "case": 1491,
+      "target": "ElevenSquare.Pending.T03.Batch05.Case1491.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1491-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "a00c4051de2b8514913f7d286d605fb29fe8373f56e4d48f3d1869aba0bb190c",
+      "audit_source_sha256": "1520e58bda7410fad5f3907d4ace8c1fb805c82b7e7d5ccec7fb1c4e938f5b2d"
+    },
+    {
+      "case": 1538,
+      "target": "ElevenSquare.Pending.T03.Batch05.Case1538.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1538-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "0fbfa574dd331fd9f82e5c106573e1841eb21e96ef3be6716a684d262c25ad3f",
+      "audit_source_sha256": "d56304c6746904fd467661527c08ed847ddb52fb8eb9627c76f951feba665237"
+    },
+    {
+      "case": 1574,
+      "target": "ElevenSquare.Pending.T03.Batch05.Case1574.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1574-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "1e2e8693342793a9d89021d797eeaf06a423106fdcd4685c9de2148976df15cc",
+      "audit_source_sha256": "6f2d1baee0be12e339b86a7e93ca4b5c03ba3105c93c3f744f4813cb01f4cf07"
+    },
+    {
+      "case": 1632,
+      "target": "ElevenSquare.Pending.T03.Batch06.Case1632.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1632-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "b753b161588e44d28c42372239a369213ac4caf0ea2835722ebf9f1eb152bd17",
+      "audit_source_sha256": "53277871ddaf6f9d697d505416c6f42bebe863ef2745fc126d27b829f7a5d3de"
+    },
+    {
+      "case": 1636,
+      "target": "ElevenSquare.Pending.T03.Batch06.Case1636.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1636-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "cbc7f9aa6c33f327451b804e896f6568ab172eca275b08b141f101aa0bc15946",
+      "audit_source_sha256": "baecba807c59ab7920325aa1f55d3e697ae2113091d8b14c40771dc15355ffe3"
+    },
+    {
+      "case": 1641,
+      "target": "ElevenSquare.Pending.T03.Batch06.Case1641.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1641-handoff-retry-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "bfc22841d6e3ace67a8d73641492b7d691645e562e4202251c4df6406ab336d2",
+      "audit_source_sha256": "d3616f2292ef8bfae42bb311907dcfb822587cdd8a284605fdf2e7aeb482c205"
+    },
+    {
+      "case": 1642,
+      "target": "ElevenSquare.Pending.T03.Batch06.Case1642.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1642-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "173ee7e1120984c04e47733cb420f7ed14074859c7a5597b6cdc36e7f4c52a47",
+      "audit_source_sha256": "04c03cf9b21ed141dccd4bbbcdfbd58d1590683b9302ef52212fdeec40ea204e"
+    },
+    {
+      "case": 1680,
+      "target": "ElevenSquare.Pending.T03.Batch07.Case1680.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1680-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "ca98b84f4e6ed4a10d7017c097ca0320f956b5c44581c3cdab6a3d9347edb62a",
+      "audit_source_sha256": "2b6689f8010e7b7e4767bfbd0bca932d87464190c3dacf07b6b3d8d59764a17a"
+    },
+    {
+      "case": 1694,
+      "target": "ElevenSquare.Pending.T03.Batch07.Case1694.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1694-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "91f6553ac569e87e4c69025f1f96c992f8a7bbebf0f5af12bfe317b0b0b86082",
+      "audit_source_sha256": "e5d8ca2bcb07e5cb6a35637b3dcdd6febd67acf622a52199fa2ae5483476da0d"
+    },
+    {
+      "case": 1729,
+      "target": "ElevenSquare.Pending.T03.Batch07.Case1729.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1729-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "9b14c0a7654d7eca19244b005295dec07fdb5e1d43390fe80568e4aa337c4a44",
+      "audit_source_sha256": "865c2b04f95508edefec4e3112041023e2dcd68ad7d7119842195f4a8971ae9f"
+    },
+    {
+      "case": 1769,
+      "target": "ElevenSquare.Pending.T03.Batch08.Case1769.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1769-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "9f538a8039f40d8ed873698b5670cced959339e065870fca264026289be959f7",
+      "audit_source_sha256": "983d8ee324007a5a6401b98601bebb7e3f407919550201e74ec7efe6fb907b93"
+    },
+    {
+      "case": 1847,
+      "target": "ElevenSquare.Pending.T03.Batch09.Case1847.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1847-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "54216f70dfefab2d7c662139974e7a041b390d107acba29325d7800883bb80fb",
+      "audit_source_sha256": "4739a710ef0456286ace5078e9bbb68f4ef9e4eae2fcccea3415b71ce8dad262"
+    },
+    {
+      "case": 1849,
+      "target": "ElevenSquare.Pending.T03.Batch09.Case1849.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1849-wand125-import-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "75df8231d5ac8eed40a1a3cd768534656ccebe45049e79967fe380d56a4808a2",
+      "audit_source_sha256": "8ad4bf8c464f758c9888c12113ab0f2a91faa6e91fb686c091c249dd72d034cf"
+    },
+    {
+      "case": 1864,
+      "target": "ElevenSquare.Pending.T03.Batch09.Case1864.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1864-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "28311535fc22237304ca724845e2fae4a8ca8798c9f086aed84f3a47212b96cf",
+      "audit_source_sha256": "c1061704aa8bf0731042bbd47d0da79b8644a55f4915e404cb8e1a03dcb76140"
+    },
+    {
+      "case": 1882,
+      "target": "ElevenSquare.Pending.T03.Batch09.Case1882.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1882-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "9128fd9593806953ec0c802d26d4de87c00df13046191933deda30c37371111a",
+      "audit_source_sha256": "c5308b5019db8723720770b9d45d7e4a90b65efc0078bc5f0f29c1aa00202ebe"
+    },
+    {
+      "case": 1885,
+      "target": "ElevenSquare.Pending.T03.Batch09.Case1885.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1885-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "0e92105afe3d46f3cbb2d0034de108d653053024e2a0cf290b2fe141f639eb9e",
+      "audit_source_sha256": "033e20ba75af35ea02a85cb1a0ea124bc925ad6fc90241dce7f12693cb85856b"
+    },
+    {
+      "case": 1889,
+      "target": "ElevenSquare.Pending.T03.Batch09.Case1889.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1889-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "954f9faf6c18ff5ce0f57043a1d9816ab7800b85a158dd51809b253fff0c958f",
+      "audit_source_sha256": "f830547e9061db156c89204e1334aa95323781e5ea178eca50699b20fc0a9a58"
+    },
+    {
+      "case": 1891,
+      "target": "ElevenSquare.Pending.T03.Batch09.Case1891.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1891-wand125-import-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "233afc38aaae19bd57dcebf2c8b191006064d3183cbab930f38b5b65c18a9a30",
+      "audit_source_sha256": "e845940ff526e53082a29f5f938d547b1ef9742e7c7d4ddb159093ae02c32d52"
+    },
+    {
+      "case": 1955,
+      "target": "ElevenSquare.Pending.T03.Batch10.Case1955.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case1955-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "a56911dc91415804940257e1cf84b841d4004aa324bf5c34ca98ad32069b3c1f",
+      "audit_source_sha256": "516206d104270c7dd9076399f044238b45e86e5f451bd045861bb4e8cd16f69b"
+    },
+    {
+      "case": 2051,
+      "target": "ElevenSquare.Pending.T03.Batch10.Case2051.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2051-wand125-import-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "47d690902db51e79615a46597934b6954e3c4e3b0bdce99d3d513d85e12dbea8",
+      "audit_source_sha256": "3429a70d9106d7ebcbbc6d1770f50871cd795f78cf04cda00f54f02d34d49ff4"
+    },
+    {
+      "case": 2055,
+      "target": "ElevenSquare.Pending.T03.Batch10.Case2055.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2055-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "1c1ed34061bbbaed0cd639da53f1333e869aa8f5f8c5f7f08d2c530b2a45adea",
+      "audit_source_sha256": "9d2e847bb9135c42acac936f88a176ff89c4fcbf459a656a599cc5f2b2bf0b9f"
+    },
+    {
+      "case": 2056,
+      "target": "ElevenSquare.Pending.T03.Batch10.Case2056.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2056-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "468a4afa36844f2c1bbbcbe256e3cd6d001dcd47fc6d5dc7897f84e56c915da2",
+      "audit_source_sha256": "6ce50363d1b370627828114cc0dc0badfde87d05258a5d97d599ed126569061b"
+    },
+    {
+      "case": 2068,
+      "target": "ElevenSquare.Pending.T03.Batch10.Case2068.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2068-wand125-import-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "fb4d956cc53a859016f615c0b4adbca1f0ebab1678e3806bb188240e4b6e9c33",
+      "audit_source_sha256": "8be910a10d8d95c55012458424c769e1801a360ec016cbaf47198130db4166e3"
+    },
+    {
+      "case": 2069,
+      "target": "ElevenSquare.Pending.T03.Batch10.Case2069.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2069-wand125-import-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "6c09fe46fe18b45c265fafab7d082c34376056d153a14f67d4785da86c1f67be",
+      "audit_source_sha256": "298f3d65b845e88a37275be2fc28c831105de2af82170e21dcd1dd3695f68f8e"
+    },
+    {
+      "case": 2072,
+      "target": "ElevenSquare.Pending.T03.Batch11.Case2072.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2072-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "b25f64c2cc681ed7473da22bd47e2555b739525cdf1efc51f9ac33870b59a8dd",
+      "audit_source_sha256": "ad786e879af31f644ae64d1426e99b3d1cf02dbec6068c58afc94e25e57111c3"
+    },
+    {
+      "case": 2077,
+      "target": "ElevenSquare.Pending.T03.Batch11.Case2077.Forward.Certificate.certificate_exists",
+      "audit": "Resumed-forward-case2077-assembly-task",
+      "actual_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "audit_log_sha256": "5efda51e2e1ba7a7c5beaebf3c9f9f9e2fb4f01732d825efd950f91b3e88d6a6",
+      "audit_source_sha256": "93950cb41f5c02a8cb2b024621b95a28e1cc131cc302e94879f0185110c5813f"
+    }
+  ],
+  "scope": "Historical original-source full-case named target audits. The18-file private initialization identifier repair requires fresh repaired-source fullcase and combined public target audits; this record does not claim those pending checks passed."
+}

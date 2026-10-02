@@ -1,6 +1,6 @@
 {
   "format": "T03-current172-historical-audits-repaired-sources-pending-v1",
-  "utc": "2026-10-02T03:53:54.679602+00:00",
+  "utc": "2026-10-02T03:59:55.094145+00:00",
   "status": "ALL172_SUPPLIED_ORIGINAL_SOURCES_AUDITED_REPAIRED_SOURCES_REQUIRE_FRESH_AUDITS",
   "upstream_supplied_source_archives": 172,
   "upstream_only_missing_case": 1465,
@@ -9,9 +9,9 @@
   "remaining_original_fullcase": [
     1465
   ],
-  "historical_independent_route_components_accepted": 16,
+  "historical_independent_route_components_accepted": 17,
   "required_route_components": 17,
-  "remaining_route_component": "PartnerReplayBatch012 steps061..064",
+  "remaining_route_component": "none; repaired fullcase still pending",
   "new_actual_historical_component_records": [
     {
       "batch": 10,
@@ -70,6 +70,35 @@
       "actual_checks": 79,
       "immutable_original_transport_sha256": "677cd30e7b86c51b31a5c213519ac97bb62de753179f483b3b4915387c9c12e7",
       "historical_source_version": true
+    },
+    {
+      "batch": 12,
+      "checkpoint": "verification/t03-case1465-independent-partner-replay-batch012-actual-checkpoint-20261002.json",
+      "actual_target_axioms": {
+        "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step061Trace.step_trace": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step062Trace.step_trace": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step063Trace.step_trace": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "ElevenSquare.Pending.T03.Batch04.Case1465.Forward.IndependentReplay.Step064Trace.step_trace": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "actual_checks": 26,
+      "immutable_original_transport_sha256": "356a212a54b5182ee8f13623d42823d9cabb93879837d6636d46f6d35d602e40",
+      "historical_source_version": true
     }
   ],
   "private_identifier_repair": "verification/t03-case1465-independent-private-initialize-identifier-repair-20261002.json",
@@ -82,5 +111,10 @@
   "new_release_assets": 0,
   "large_closure_repacked": false,
   "publication_Lean_jobs_worker_queue_source_controls": 0,
-  "main_and_prior_release_assets_preserved": true
+  "main_and_prior_release_assets_preserved": true,
+  "all172_historical_audit_reconciliation": "verification/t03-case1465-independent-original-172-audit-count-reconciliation-20261002.json",
+  "all172_reconciliation_original_record_sha256": "9f13e58b1259a5ecd4b355e4e19eec2cf233a044dd410661b6bd1db46cdf3e41",
+  "all172_actual_named_target_logs_and_print_sources_independently_rechecked": true,
+  "repaired_fullcase_task_sha256": "1fd34550fc7acc4e3f36c4abd049bf6cfdf9a2240a72602b44a5364c238943b9",
+  "repaired_fullcase_axiom_targets": 65
 }
