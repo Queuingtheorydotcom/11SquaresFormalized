@@ -35,10 +35,52 @@ arbitrary orientations, legal boundary contact, and disjoint open interiors.
 
 ## Verification
 
-The verifier runs with your account's permissions and is not sandboxed. For
-untrusted inputs, isolate setup, compilation, and artifact inspection before
-running these commands. See [SECURITY.md](SECURITY.md) for the execution model,
-container requirements, and the distinction from Comparator and kernel replay.
+For untrusted inputs, use the reviewed host launcher, which automatically builds
+and runs an isolated image through **local rootless Docker**. Python 3.11+, Git,
+and an installed, cluster-approved Docker daemon with cgroup v2 and the systemd
+cgroup driver are required on the host. The launcher installs Lean and other
+proof dependencies inside its private volume; no host Lean or pip packages are
+needed. Commit all intended changes first; the launcher verifies a clean HEAD
+snapshot. For the 200-core, 1,400-GiB node:
+
+```sh
+python3 -I scripts/verify_container.py all --cpus 200 --memory 1300g --max-parallel 100 --jobs 2 --memory-percent 85
+```
+
+Preparation uses networking once, on a newly created volume, and executes only
+the reviewed bootstrap and pinned official dependencies. Repository Python,
+Lake configuration and Lean code execute only in the subsequent offline stage.
+There are no host bind mounts or daemon sockets. Restrictions are probed before
+each stage; a missing restriction is a failure, with no host execution fallback.
+See [SECURITY.md](SECURITY.md) for the trust boundary and remaining limitations.
+The Docker runtime has not yet been tested on the target cluster.
+
+Rerunning `all` with the same snapshot resumes **offline**. A failed preparation
+requires a fresh name, supplied with `--volume eleven-square-attempt2`; reuse
+that name for later resumes and reports. The persistent private volume contains
+all restored sources, dependencies, logs and objects. Export only a fixed report:
+
+```sh
+python3 -I scripts/verify_container.py report --report completion.json > ../completion.json
+```
+
+On Slurm, create the log directory before submission:
+
+```sh
+mkdir -p .verification
+sbatch --account YOUR_ACCOUNT --partition YOUR_PARTITION scripts/run_single_node_verification.sbatch
+```
+
+The example runs the Docker launcher automatically. The site must permit rootless
+Docker and account for its daemon/containers within the job allocation. A CPU
+affinity restriction and explicit container limits supplement the Slurm request;
+they do not configure site accounting. The concurrency ceiling is an initial
+setting, not a measured optimum. Containers share the host kernel, and workspace
+disk use is not capped. A disposable VM and dedicated storage offer a stronger
+boundary. Review these bootstrap scripts before running them on a sensitive host.
+
+The following raw verifier commands describe operation **inside an independently
+isolated environment**. `scripts/verify.py` itself remains unsandboxed.
 
 Install Git, Python 3.11 or newer, and Lean's `elan` launcher. The project pins
 Lean `v4.34.1` and
