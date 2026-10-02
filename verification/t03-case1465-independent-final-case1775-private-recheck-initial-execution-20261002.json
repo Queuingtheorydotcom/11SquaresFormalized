@@ -1,0 +1,20 @@
+{
+  "status": "PRIVATE_RECHECK_FAILED_NO_SHARED_OBJECTS_OR_RECEIPTS_CHANGED",
+  "exit_code": 1,
+  "task_sha256": "6c306c69108ca39ebb6d21ccdb8374dda94db9a364fbf98dc0ad1b861e9c9a1f",
+  "plan_sha256": "bfe3b77c0f33d9fbb16ff595ec294344d39f62f1da7b2189e03f44f9347d530e",
+  "transport_sha256": "67f025f95731d52c372d5e887b8d9bbf7ec55549fcf2c10143b75244a5ebca81",
+  "copied_genuine_objects": 15708,
+  "copied_object_bytes": 1782104640,
+  "reused_private_objects": 662,
+  "lean_threads": 1,
+  "lean_memory_limit_mb": 3072,
+  "seconds": 573.1553049710055,
+  "original_objects_modified": 0,
+  "live_checker_receipts_changed": 0,
+  "scope": "One exact original case target, unchanged final sources, reused private workspace. Actual axiom logs require inspection before integration.",
+  "original_private_record_sha256": "323a9b0f596fe8a26c36472a7a0c31c9506245bd47bda1c52490c5294612a379",
+  "original_private_record_bytes": 1053,
+  "publication_scope": "Compact exact accepted auxiliary original case recheck; local runtime paths omitted. No whole final public target audit or case count increment.",
+  "publication_Lean_jobs_worker_controls": 0
+}

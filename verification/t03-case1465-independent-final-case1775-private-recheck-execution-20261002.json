@@ -1,0 +1,23 @@
+{
+  "status": "ACTUAL_CHECKER_ACCEPTED_PRIVATE_CASE1775_RECHECK",
+  "exit_code": 0,
+  "task_sha256": "6c306c69108ca39ebb6d21ccdb8374dda94db9a364fbf98dc0ad1b861e9c9a1f",
+  "plan_sha256": "bfe3b77c0f33d9fbb16ff595ec294344d39f62f1da7b2189e03f44f9347d530e",
+  "transport_sha256": "67f025f95731d52c372d5e887b8d9bbf7ec55549fcf2c10143b75244a5ebca81",
+  "copied_genuine_objects": 15708,
+  "copied_object_bytes": 1782104640,
+  "reused_private_objects": 662,
+  "lean_threads": 1,
+  "lean_memory_limit_mb": 4096,
+  "seconds": 242.93882109000697,
+  "original_objects_modified": 0,
+  "live_checker_receipts_changed": 0,
+  "scope": "Exact same task, final sources and original checker; only auxiliary compiler memory budget increased from3GiB to4GiB after an actual failure. Completed genuine receipts reused. No live checker receipt or original object changed.",
+  "actual_initial_failure_execution_sha256": "323a9b0f596fe8a26c36472a7a0c31c9506245bd47bda1c52490c5294612a379",
+  "actual_initial_failure_log_sha256": "ddad13c754e664f122bf9ef3a53e4850490a9e5804dd5fc570b8216f28e11031",
+  "utc": "2026-10-02T10:30:26.329627+00:00",
+  "original_private_record_sha256": "b7b076eaa55eadd1aca3aa2daf569183129d0d4ef32d7c2c0c9fdfe3f738a7cb",
+  "original_private_record_bytes": 1396,
+  "publication_scope": "Compact exact accepted auxiliary original case recheck; local runtime paths omitted. No whole final public target audit or case count increment.",
+  "publication_Lean_jobs_worker_controls": 0
+}

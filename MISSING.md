@@ -71,6 +71,8 @@ source snapshots, including the 172/173 and 159/173 stages.
 
 The [final-source case 2122 recheck](verification/t03-final-case2122-private-recheck-checkpoint-20261002.json) passed the unchanged original checker and exact `certificate_exists` Std3 audit. **358 genuine compiler outputs and receipts** were integrated into the final route; source bytes were unchanged. Publication verified all 358 recorded receipt/closure bindings and the actual root object, without copying the object collection. This is an auxiliary check: the total remains **173/173**, and the two public combined audits and final ZIP are still pending.
 
+The [final-source case 1775 recheck](verification/t03-final-case1775-private-recheck-checkpoint-20261002.json) preserved an actual Step197 memory failure at3GiB, followed by the same immutable-source/task retry at4GiB and a clean exact `certificate_exists` Std3 audit. **270 genuine outputs and receipts** were integrated; sources and the main checker were unchanged. The [current genuine import view](verification/t03-case1465-independent-final-current-genuine-import-view-20261002.json) selects **37,116 existing objects /7,082,132,976 logical bytes** by exact current source keys and genuine main receipt/object hashes. It changes future input paths with no bulk copies or proof jobs; no measured end-to-end speedup is claimed. The total remains **173/173**; the two public combined audits and exact final ZIP remain pending.
+
 The [additional exact-cache checkpoint](verification/t03-case1465-additional-cache-current172-checkpoint-20261002.json)
 adds **9,642 genuine objects /1,894,518,368 bytes**, each bound to the current
 dependency key and existing actual receipt. Recorded copy/original hash checks
