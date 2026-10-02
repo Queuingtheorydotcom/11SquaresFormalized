@@ -699,5 +699,15 @@
     "main_retry_phase_timestamped_not_final_acceptance": true,
     "public2_ZIP_pending": true,
     "publication_proof_cache_process_changes": 0
+  },
+  "case1731_current_source_auxiliary_recheck_review": {
+    "all_recorded_genuine_receipt_hashes_and_keys_checked": true,
+    "recorded_binding_count": 56,
+    "actual_integrated_main_root_objects_checked": 1,
+    "actual_CHECK_log_task_audit_and_Certificate_sources_preserved": true,
+    "bulk_output_binding_tables_and_cache_bytes_omitted": true,
+    "private_runtime_paths_omitted": true,
+    "public2_export_pending": true,
+    "Lean_jobs_worker_controls": 0
   }
 }

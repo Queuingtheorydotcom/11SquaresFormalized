@@ -1,0 +1,27 @@
+{
+  "stage": "STOPPED_MAIN_CHECKER_FINISHED_AFTER_PRIVATE_ACCEPTANCE",
+  "utc": "2026-10-02T14:26:07.975524+00:00",
+  "cases": [
+    1731
+  ],
+  "completed": [],
+  "skipped": [],
+  "maximum_auxiliary_lean_processes": 1,
+  "auxiliary_lean_threads": 1,
+  "auxiliary_memory_limit_mb": 4096,
+  "original_case_count": 173,
+  "case": 1731,
+  "original_private_record_sha256": "7f30a409b55974946894147b67cb42cb30a5d26a76bba4085d7447944a9ee3f5",
+  "original_private_record_bytes": 353,
+  "scope": "Historical stopped guard after actual private target acceptance; a separately identity-guarded merger subsequently integrated the accepted outputs without rerunning the proof.",
+  "accepted_recheck_execution_sha256": "0508951bf184dd8d502eac3824ccae251c92c8fda3a56ff00fde1b757a1fbbaa",
+  "later_actual_integration_sha256": "2d24912f16baa74722bb7868dd4a59d0e64801e8cd078efc47c96b5b3e970f38",
+  "later_actual_integration_utc": "2026-10-02T14:31:35.546659+00:00",
+  "later_actual_integrated_outputs": 56,
+  "original_merger_and_queue_stop_preserved": true,
+  "current_guarded_merger_source_sha256": "e6d8965b5fcd5b9548d8bc413e4157f6e79f4d6e10f60d13fc45e6eb9e123f39",
+  "actual_guarded_merge_controller_log_sha256": "4a749f815105ce1d6279afaad5ab10bb01f29ff74b8971d74b3b0b3163c22cd0",
+  "tooling_syntax_parsed_only_not_run_by_publication": true,
+  "new_case_increment": 0,
+  "public_two_targets_and_final_ZIP_not_claimed_complete": true
+}
