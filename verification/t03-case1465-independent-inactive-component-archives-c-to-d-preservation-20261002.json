@@ -1,0 +1,135 @@
+{
+  "status": "ALL_17_INACTIVE_ACCEPTED_COMPONENT_TRANSPORTS_PRESERVED_ON_D",
+  "utc": "2026-10-02T04:22:33.360352+00:00",
+  "active_wholecase_archive_untouched": true,
+  "original_user_packet_archives_untouched": true,
+  "records": [
+    {
+      "bytes": 247418571,
+      "sha256": "ee1c8737a5bd7a968fc1a501eb0dad8046f7e1177c5a8bf27e703a8b8de43e03",
+      "actual_component_checkpoint": "case1465-independent-final-component-library-case1465-node998-independent-prefix012-pilot-task-actual-checkpoint-20261002.json",
+      "exact_bytes_verified_before_removing_c_copy": true,
+      "c_copy_removed": true
+    },
+    {
+      "bytes": 44703492,
+      "sha256": "fdc9e276324717de09a7fef90df4dd80f713bd52564bcf29df5174772b775307",
+      "actual_component_checkpoint": "case1465-independent-final-component-library-case1465-node998-independent-replay-batch000-retry01-task-actual-checkpoint-20261002.json",
+      "exact_bytes_verified_before_removing_c_copy": true,
+      "c_copy_removed": true
+    },
+    {
+      "bytes": 233336891,
+      "sha256": "142b46a4e26c1c0d77f43d2b331c9961898d36dcdcb43b2b92d9b1d83e487a2e",
+      "actual_component_checkpoint": "case1465-independent-final-component-library-case1465-node998-independent-partner-replay-batch001-task-actual-checkpoint-20261002.json",
+      "exact_bytes_verified_before_removing_c_copy": true,
+      "c_copy_removed": true
+    },
+    {
+      "bytes": 122168573,
+      "sha256": "a5dd966f816849d7a4206c394217ffb39346360b641d38e9fa6f39ebcd12ecae",
+      "actual_component_checkpoint": "case1465-independent-final-component-library-case1465-node998-independent-partner-replay-batch002-task-actual-checkpoint-20261002.json",
+      "exact_bytes_verified_before_removing_c_copy": true,
+      "c_copy_removed": true
+    },
+    {
+      "bytes": 137558546,
+      "sha256": "bac95247932ee5f971c16d91a5c1580d37e9219319dd546e1720780ed596812e",
+      "actual_component_checkpoint": "case1465-independent-final-component-library-case1465-node998-independent-partner-replay-batch003-task-actual-checkpoint-20261002.json",
+      "exact_bytes_verified_before_removing_c_copy": true,
+      "c_copy_removed": true
+    },
+    {
+      "bytes": 147338580,
+      "sha256": "483ed8cb820fcf819219d8cb1147db362321d91f00fa9dda2447aa2733aa9170",
+      "actual_component_checkpoint": "case1465-independent-final-component-library-case1465-node998-independent-partner-replay-batch004-task-actual-checkpoint-20261002.json",
+      "exact_bytes_verified_before_removing_c_copy": true,
+      "c_copy_removed": true
+    },
+    {
+      "bytes": 138317547,
+      "sha256": "eb94b1bc84e716f83ba48d3739306edfd6b0fcbfd674ad9ab119c346bf2e57b5",
+      "actual_component_checkpoint": "case1465-independent-final-component-library-case1465-node998-independent-partner-replay-batch005-task-actual-checkpoint-20261002.json",
+      "exact_bytes_verified_before_removing_c_copy": true,
+      "c_copy_removed": true
+    },
+    {
+      "bytes": 129667220,
+      "sha256": "8570c1eafefc99433c0cd3349edf686b7e9087fc1983719105884e7e4fb1d5c0",
+      "actual_component_checkpoint": "case1465-independent-final-component-library-case1465-node998-independent-partner-replay-batch006-task-actual-checkpoint-20261002.json",
+      "exact_bytes_verified_before_removing_c_copy": true,
+      "c_copy_removed": true
+    },
+    {
+      "bytes": 129116411,
+      "sha256": "77b7b72155b3e0e8d8934c2635c1fd91a285b2a1776f985c84644ee7704f9639",
+      "actual_component_checkpoint": "case1465-independent-final-component-library-case1465-node998-independent-partner-replay-batch007-task-actual-checkpoint-20261002.json",
+      "exact_bytes_verified_before_removing_c_copy": true,
+      "c_copy_removed": true
+    },
+    {
+      "bytes": 244426788,
+      "sha256": "007943fab4a9f118cff353b2cc1322afed6d172ba2b1dbfb6a13cc8f3ee93201",
+      "actual_component_checkpoint": "case1465-independent-final-component-library-case1465-node998-independent-partner-replay-batch008-task-actual-checkpoint-20261002.json",
+      "exact_bytes_verified_before_removing_c_copy": true,
+      "c_copy_removed": true
+    },
+    {
+      "bytes": 242970325,
+      "sha256": "008badcf8a2a1f9b939eed5e1124217dd26fe6e383dc66e3a6aba68e0eac2ae5",
+      "actual_component_checkpoint": "case1465-independent-final-component-library-case1465-node998-independent-partner-replay-batch009-task-actual-checkpoint-20261002.json",
+      "exact_bytes_verified_before_removing_c_copy": true,
+      "c_copy_removed": true
+    },
+    {
+      "bytes": 243658293,
+      "sha256": "22d535441bc906f2b5c5501887c317b28c4f6ca965febdd015438ccb7a433bb1",
+      "actual_component_checkpoint": "case1465-independent-final-component-library-case1465-node998-independent-partner-replay-batch010-task-actual-checkpoint-20261002.json",
+      "exact_bytes_verified_before_removing_c_copy": true,
+      "c_copy_removed": true
+    },
+    {
+      "bytes": 242582065,
+      "sha256": "1265d48da33cbbdc265719cb1649460f3ebdb93e13af5f9ad53b8fb0ab6f4cd2",
+      "actual_component_checkpoint": "case1465-independent-final-component-library-case1465-node998-independent-partner-replay-batch011-task-actual-checkpoint-20261002.json",
+      "exact_bytes_verified_before_removing_c_copy": true,
+      "c_copy_removed": true
+    },
+    {
+      "bytes": 242527967,
+      "sha256": "356a212a54b5182ee8f13623d42823d9cabb93879837d6636d46f6d35d602e40",
+      "actual_component_checkpoint": "case1465-independent-final-component-library-case1465-node998-independent-partner-replay-batch012-task-actual-checkpoint-20261002.json",
+      "exact_bytes_verified_before_removing_c_copy": true,
+      "c_copy_removed": true
+    },
+    {
+      "bytes": 107747767,
+      "sha256": "677cd30e7b86c51b31a5c213519ac97bb62de753179f483b3b4915387c9c12e7",
+      "actual_component_checkpoint": "case1465-independent-final-component-library-case1465-node998-independent-partner-replay-batch013-task-actual-checkpoint-20261002.json",
+      "exact_bytes_verified_before_removing_c_copy": true,
+      "c_copy_removed": true
+    },
+    {
+      "bytes": 106968165,
+      "sha256": "10eb3dbfb850dba68c363f030424f98952e1408a6e0bf8ca0f74770f7757d600",
+      "actual_component_checkpoint": "case1465-independent-final-component-library-case1465-node998-independent-partner-replay-batch014-task-actual-checkpoint-20261002.json",
+      "exact_bytes_verified_before_removing_c_copy": true,
+      "c_copy_removed": true
+    },
+    {
+      "bytes": 106817561,
+      "sha256": "1d926d321c592febce5c9042e83bc6b7a67fcc477d9b1e74771914982a21e024",
+      "actual_component_checkpoint": "case1465-independent-final-component-library-case1465-node998-independent-partner-replay-batch015-task-actual-checkpoint-20261002.json",
+      "exact_bytes_verified_before_removing_c_copy": true,
+      "c_copy_removed": true
+    }
+  ],
+  "total_bytes": 2867324762,
+  "source_or_proof_contract_changes": 0,
+  "preserved_archive_presence_and_sizes_independently_verified": true,
+  "full_archives_not_rehashed_or_repacked_by_publication": true,
+  "original_private_record_sha256": "db4096fd05240d143e45f9adc056930d8615c555e47d3c275e62817c3a99e195",
+  "whole_case_increment": 0,
+  "publication_scope": "Compact exact-record hash and explicit binding validation only. Cache objects/large source collections excluded; fresh fullcase/public audits and export pending.",
+  "publication_Lean_jobs_or_worker_controls": 0
+}

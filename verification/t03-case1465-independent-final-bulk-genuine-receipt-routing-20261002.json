@@ -1,0 +1,37 @@
+{
+  "status": "EXACT_TWO_FINAL_TASKS_ADOPT_EXISTING_TESTED_PROVISIONAL_GENUINE_RECEIPT_BATCH_TRANSFER",
+  "utc": "2026-10-02T04:12:40.263843+00:00",
+  "adapter": "run_independent_probe.py",
+  "before_sha256": "dfa194c931cc6e3476473b30375d38159248db37c2fd4ada183d9d6102da1f9b",
+  "after_sha256": "a057a411ef607bb044633bfd433b14e73ac1a587570ddf0eb183ff93027783f5",
+  "finite_policy": "bulk-provisional-main-receipt-sync-finite-final-targets-20261002.json",
+  "finite_policy_sha256": "b6004c1e46fbd0916f4c289ce31f129b861694e73e2995e60f354231191e09b8",
+  "finite_policy_contents": {
+    "status": "FINITE_EXISTING_GENUINE_RECEIPT_BATCH_TRANSFER_ONLY",
+    "allowed_task_semantic_sha256": {
+      "forward-case1465-packed-namespaced-independent-replay-assembly-task.json": "bf130eae957657a2706616eac33e3519f63464dd6451ccbc90a8d6869bd8841c",
+      "final-returned-target-task.json": "cb272e5c2321e5d7ad10b76ae91c8e77c8c409c679e1ed33e21a00999fc7c957"
+    },
+    "proof_acceptance_authority": "Unchanged supplied source/object hash validation and actual named axiom audits",
+    "new_proof_receipts_created": 0,
+    "source_checkers_or_native_receipt_helpers_changed": false
+  },
+  "unchanged_tested_helpers_sha256": {
+    "sync_native_runtime_sources_bulk_receipts.py": "5224f4c3494683ffd387cc6df6bfe09f930d361fd84c66c4a7554fbac44ac112",
+    "bulk_provisional_main_receipts.py": "e6992b5fb9d94250b0d149e4627e868ece6cd38e496b32871f7768af8c57ce74"
+  },
+  "existing_benchmark_sha256": "95a03f399f5c2b32163743c727c9c2612d93d13e2c6f133c3e3dca9a5cd121b9",
+  "original_scripts_sha256": {
+    "protocol.py": "d23ff16125cfa9cc44429e28cf03783963aa0b34ae4034866bdbe001b5d7840a",
+    "make_return.py": "8dbed0f19528ddaf5457bfe50ff38d26af873d3ab9988ad2ce3bf118670b6003"
+  },
+  "lean_sources_changed": 0,
+  "supplied_checkers_changed": 0,
+  "hot_object_cache_policy_changed": false,
+  "running_case_worker_restarted": false,
+  "scope": "Only future adapter invocations use the finite new branch. Current wholecase source synchronization remains live and untouched. Existing actual helper comparison/negative controls justify the byte-copy method; no fresh theorem or runtime speedup is claimed by this routing record.",
+  "original_private_record_sha256": "680bcbcb847d6ed7ba57c4520b596281789007b93b42b73108cd478434af35d4",
+  "whole_case_increment": 0,
+  "publication_scope": "Compact exact-record hash and explicit binding validation only. Cache objects/large source collections excluded; fresh fullcase/public audits and export pending.",
+  "publication_Lean_jobs_or_worker_controls": 0
+}

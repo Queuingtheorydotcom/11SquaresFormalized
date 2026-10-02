@@ -1,0 +1,143 @@
+{
+  "status": "ACTUAL_4GiB_PACKED_PREFIX_COMPILATION_MEMORY_LIMIT_FAILURE_PRESERVED",
+  "utc": "2026-10-02T04:37:53.475835+00:00",
+  "task": "forward-case1465-packed-namespaced-independent-replay-assembly-task.json",
+  "transport_sha256": "08a5811f0edc95213a717bcfc7000bfbdda78e8d6cb492a700a3c670b748081e",
+  "actual_execution_sha256": "4beca727515f08e173541c6986838eb4d5705207796c1e581d5bb37fcf970cc3",
+  "actual_wrapper_sha256": "0a8c215266945fcc33e257fc52b8995e8d13f27ff45f8958815b8ec4d42fbe5d",
+  "checks": [
+    {
+      "check": {
+        "status": "accepted",
+        "source": "ElevenSquare/Tasks/T03/SeedLibrary.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 32.14,
+        "lean_memory_limit_mb": 4096,
+        "lean_threads": 1,
+        "lean_thread_stack_kb": 32768,
+        "lean_main_stack_kb": 65536,
+        "cpu_seconds_limit": 1800,
+        "wall_seconds_limit": 2100,
+        "nice_increment": 0,
+        "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/SeedLibrary.olean",
+        "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+      },
+      "check_sha256": "15c6970dc05db4a2ff2c0678c117fbb87acdb4514288c8cf55f51863f559ab6f",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_CHECK": "verification/t03-case1465-memory-failure-actual-logs/00-CHECK.json",
+      "published_log": "verification/t03-case1465-memory-failure-actual-logs/00-lean.log"
+    },
+    {
+      "check": {
+        "status": "accepted",
+        "source": "ElevenSquare/Tasks/T03/Initialization/Library64.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 28.22,
+        "lean_memory_limit_mb": 4096,
+        "lean_threads": 1,
+        "lean_thread_stack_kb": 32768,
+        "lean_main_stack_kb": 65536,
+        "cpu_seconds_limit": 1800,
+        "wall_seconds_limit": 2100,
+        "nice_increment": 0,
+        "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/Initialization/Library64.olean",
+        "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+      },
+      "check_sha256": "e82bb4f8ff256448d18f2a22917bbd8e62eab06dcd321409c197e66d004feeae",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_CHECK": "verification/t03-case1465-memory-failure-actual-logs/01-CHECK.json",
+      "published_log": "verification/t03-case1465-memory-failure-actual-logs/01-lean.log"
+    },
+    {
+      "check": {
+        "status": "accepted",
+        "source": "ElevenSquare/Tasks/T03/Batch04/Seeds.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 32.86,
+        "lean_memory_limit_mb": 4096,
+        "lean_threads": 1,
+        "lean_thread_stack_kb": 32768,
+        "lean_main_stack_kb": 65536,
+        "cpu_seconds_limit": 1800,
+        "wall_seconds_limit": 2100,
+        "nice_increment": 0,
+        "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/Batch04/Seeds.olean",
+        "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+      },
+      "check_sha256": "45be549a025d004c3386579d304bcc33a9141f4b322c82b71f3bed81df8e126d",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_CHECK": "verification/t03-case1465-memory-failure-actual-logs/02-CHECK.json",
+      "published_log": "verification/t03-case1465-memory-failure-actual-logs/02-lean.log"
+    },
+    {
+      "check": {
+        "status": "accepted",
+        "source": "ElevenSquare/Tasks/T03/Batch04/Seed1465.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 27.13,
+        "lean_memory_limit_mb": 4096,
+        "lean_threads": 1,
+        "lean_thread_stack_kb": 32768,
+        "lean_main_stack_kb": 65536,
+        "cpu_seconds_limit": 1800,
+        "wall_seconds_limit": 2100,
+        "nice_increment": 0,
+        "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/Batch04/Seed1465.olean",
+        "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+      },
+      "check_sha256": "5f230a307086a0531269697a8ffd81f61c74a948392c0896133b0d75b26fd9e2",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_CHECK": "verification/t03-case1465-memory-failure-actual-logs/03-CHECK.json",
+      "published_log": "verification/t03-case1465-memory-failure-actual-logs/03-lean.log"
+    },
+    {
+      "check": {
+        "status": "accepted",
+        "source": "ElevenSquare/Tasks/T03/Batch04/Case1465/Forward/InitialState.lean",
+        "exit_code": 0,
+        "elapsed_seconds": 32.26,
+        "lean_memory_limit_mb": 4096,
+        "lean_threads": 1,
+        "lean_thread_stack_kb": 32768,
+        "lean_main_stack_kb": 65536,
+        "cpu_seconds_limit": 1800,
+        "wall_seconds_limit": 2100,
+        "nice_increment": 0,
+        "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/Batch04/Case1465/Forward/InitialState.olean",
+        "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+      },
+      "check_sha256": "348e204d1587e730595573475501b7d07b2ff51328b772e5641e9aed0827b9d5",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_CHECK": "verification/t03-case1465-memory-failure-actual-logs/04-CHECK.json",
+      "published_log": "verification/t03-case1465-memory-failure-actual-logs/04-lean.log"
+    },
+    {
+      "check": {
+        "status": "failed_or_resource_limited",
+        "source": "ElevenSquare/Tasks/T03/Batch04/Case1465/PackedNamespaced/Chunk159.lean",
+        "exit_code": 1,
+        "elapsed_seconds": 422.24,
+        "lean_memory_limit_mb": 4096,
+        "lean_threads": 1,
+        "lean_thread_stack_kb": 32768,
+        "lean_main_stack_kb": 65536,
+        "cpu_seconds_limit": 1800,
+        "wall_seconds_limit": 2100,
+        "nice_increment": 0,
+        "emitted_olean": null,
+        "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+      },
+      "check_sha256": "6ec9a7f66e3d9ec51e3086bfe1313340200c24d10ae8127f3bccc7965de49792",
+      "log_sha256": "0f8fcb2ce35b4b2c3bf8091f9b4630de6b53f2d2a4a0556e8511e64608bfae66",
+      "published_CHECK": "verification/t03-case1465-memory-failure-actual-logs/05-CHECK.json",
+      "published_log": "verification/t03-case1465-memory-failure-actual-logs/05-lean.log"
+    }
+  ],
+  "full_case_target_accepted": false,
+  "component_targets_previously_accepted": 64,
+  "proof_sources_modified": false,
+  "original_private_record_sha256": "797101791a2494a865d7cd43cede436692097fae7bf7b4a4d6993b5bdbed9ee1",
+  "whole_case_increment": 0,
+  "publication_scope": "Compact exact-record hash and explicit binding validation only. Cache objects/large source collections excluded; fresh fullcase/public audits and export pending.",
+  "publication_Lean_jobs_or_worker_controls": 0
+}

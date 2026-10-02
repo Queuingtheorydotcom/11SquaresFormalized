@@ -1,0 +1,20 @@
+{
+  "status": "REDUNDANT_CUSTOM_STAGING_TOKEN_SCAN_DEFERRED_TO_UNCHANGED_MANDATORY_ORIGINAL_EXPORTER",
+  "utc": "2026-10-02T04:05:42.644957+00:00",
+  "script": "stage_verified_return.py",
+  "before_sha256": "412eaa6f5ec8da1579df158230d2ced6ddbc09186eb2ea78d7fe56ece2469e4f",
+  "after_sha256": "4a1f9f3c7719ba41d6dc992ed90a62e510738896eea115acc4078539c240a4d3",
+  "original_script_hashes": {
+    "protocol.py": "d23ff16125cfa9cc44429e28cf03783963aa0b34ae4034866bdbe001b5d7840a",
+    "make_return.py": "8dbed0f19528ddaf5457bfe50ff38d26af873d3ab9988ad2ce3bf118670b6003"
+  },
+  "lean_sources_changed": 0,
+  "proof_checkers_changed": 0,
+  "source_ownership_hash_size_and_target_scaffold_guards_preserved": true,
+  "original_exporter_and_read_return_token_scans_both_still_mandatory": true,
+  "scope": "Preparation efficiency only. Staging reports export pending; no source or theorem acceptance is inferred from removal of this duplicate pre-export scan. Actual runtime speedup is not benchmarked.",
+  "original_private_record_sha256": "da303b5bc68788f09bd58212485c0dc1e3b1d55d3caf6d0936392253ebb60d27",
+  "whole_case_increment": 0,
+  "publication_scope": "Compact exact-record hash and explicit binding validation only. Cache objects/large source collections excluded; fresh fullcase/public audits and export pending.",
+  "publication_Lean_jobs_or_worker_controls": 0
+}

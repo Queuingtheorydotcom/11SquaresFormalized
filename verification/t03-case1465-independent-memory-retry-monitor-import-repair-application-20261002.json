@@ -1,0 +1,10 @@
+{
+  "status": "LIGHTWEIGHT_PROOF_MONITOR_IMPORT_REPAIR_ADOPTED",
+  "utc": "2026-10-02T05:44:02.214061+00:00",
+  "controller_status": "EXACT_ORIGINAL_FULL_CERTIFICATE_MEMORY_RETRY_QUEUED_NOT_YET_ACCEPTED",
+  "compiler_or_source_or_receipt_changes": 0,
+  "original_private_record_sha256": "86c58cb4c36ac82824a74397ace9ca4cf412090dd154f0b5d461461403654ed4",
+  "proof_acceptance_increment": 0,
+  "publication_Lean_jobs_or_worker_controls": 0,
+  "scope_is_monitor_or_postflight_preparation_not_theorem_acceptance": true
+}

@@ -58,6 +58,31 @@ The [172-audit reconciliation](verification/t03-case1465-independent-original-17
 binds every distinct exact target, actual audit log and printed audit source;
 only case 1465 is missing.
 
+The [current memory-retry checkpoint](verification/t03-case1465-memory-retry-current172-checkpoint-20261002.json)
+preserves a real 4 GiB memory failure in Chunk159, followed by an unchanged-source
+retry at 8 GiB with one Lean thread. Chunk159 then passed elaboration in
+**374.98 seconds**; Chunk179, Prefix012 and ReplayBatch000Retry01 also have real
+accepted elaboration CHECK/log records. These checks do not complete the
+65-target full-case axiom audit or either public combined target.
+
+The input-path optimization selects **11,841 genuine, exactly closure-compatible
+objects** and excludes **nine changed closures**. Recorded original/cache byte
+validation, catalog/configuration hashes and metadata counts are bound; publication
+did not rehash or distribute the 3.42 GB object collection. Subsequent checker
+invocations use byte-identical eligible objects and original paths for uncached
+or newly emitted objects. No source, compiler or receipt bytes were changed.
+The actual full-case audit and cache postflight are still required; no same-claim
+whole-proof speedup is claimed.
+
+The final ext4 source workspace was prepared and checked with an eight-file byte
+sample; **its future proof route remains untested**. Deferred duplicate staging
+scans retain the mandatory original exporter validation. Finite bulk transfer
+uses existing genuine receipts, and 17 inactive component transports were
+preserved by exact recorded hashes. The cache postflight gate is preparatory;
+the monitor's missing `re` import was repaired without restarting the proof
+checker. None of these operational records adds a theorem or a completed ZIP.
+
+
 The [current source-version checkpoint](verification/t03-current172-repaired-source-progress-checkpoint-20261002.json)
 records **17/17 accepted case 1465 route components** at its captured controller
 snapshot, including the final PartnerReplayBatch012 (steps 61–64).

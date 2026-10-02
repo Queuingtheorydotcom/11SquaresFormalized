@@ -1,0 +1,49 @@
+{
+  "status": "FUTURE_COMPILER_INPUT_PATH_USES_BYTE_IDENTICAL_GENUINE_OBJECTS_WITH_EXACT_CURRENT_SOURCE_KEYS",
+  "utc": "2026-10-02T05:34:38.285619+00:00",
+  "task": "forward-case1465-packed-namespaced-independent-replay-memory-retry01-assembly-task.json",
+  "eligible_objects": 11841,
+  "cached_object_bytes": 3418898720,
+  "excluded_changed_source_closures": 9,
+  "source_or_compiler_or_receipt_changes": 0,
+  "config_before_sha256": "14e09d7a69998acffd327d5b0ca6730b74e67e7c29c7e2fc6cb3fd6fe11fda60",
+  "config_after_sha256": "92e4e20ef93e1f0b68da43ea53311861c60a2b5d42f31ec39d1b9f8ad121e708",
+  "configuration_backup": "case1465-independent-memory-retry-low-resource-before-exact-live-cache-20261002.json",
+  "eligibility": "case1465-independent-memory-retry-exact-current-closure-cache-eligibility-20261002.json",
+  "eligibility_sha256": "26c3ca76966eb71505a366afbacc77a5f1a9e156b58cab1fb63183132b8aa274",
+  "original_object_preflight": {
+    "status": "ORIGINAL_GENUINE_OBJECT_BYTES_MATCH_CACHE_CATALOG",
+    "checked_objects": 11841,
+    "checked_bytes": 3418898720,
+    "mismatches": [],
+    "elapsed_seconds": 8.546999999962281,
+    "proof_receipts_created": 0,
+    "compiler_processes_started": 0
+  },
+  "seconds": 119.558,
+  "scope": "Current compiler process retains its original environment. Subsequent unchanged bounded-checker invocations read the new input path. Uncached and newly emitted objects keep original runtime paths; actual fullcase65-target audit and postflight hash validation remain required.",
+  "namespace_view": {
+    "cached_hardlinks": 11841,
+    "original_runtime_fallback_links": 9669,
+    "exact_project_members": 21510,
+    "namespace_link_manifest_sha256": "befbe52d8300c69e172b5c6e04f24b3fa51565facd1065832f0f7b5e0d3c93ae",
+    "retired_completed_disposable_views": [
+      "library-case1465-node998-independent-partner-replay-batch012-task"
+    ],
+    "compiler_processes_started": 0,
+    "proof_receipts_created": 0
+  },
+  "fallback_count_independently_verified": true,
+  "config_before_after_hashes_independently_verified": true,
+  "changed_future_config_field_names": [
+    "runtime_exact_current_closure_genuine_cache",
+    "runtime_lean_environment"
+  ],
+  "original_object_preflight_is_recorded_root_validation_not_repeated_cache_rehash": true,
+  "current_compiler_environment_retained": true,
+  "fullcase_audit_and_object_postflight_still_required": true,
+  "original_private_record_sha256": "d7e5c814c7726847afb3481761173b90f722cf7aafe44742ec879acfd5527b61",
+  "whole_case_increment": 0,
+  "publication_scope": "Compact exact-record hash and explicit binding validation only. Cache objects/large source collections excluded; fresh fullcase/public audits and export pending.",
+  "publication_Lean_jobs_or_worker_controls": 0
+}

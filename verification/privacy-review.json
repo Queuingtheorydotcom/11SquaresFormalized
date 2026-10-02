@@ -576,5 +576,21 @@
     "Lean_jobs_worker_controls": 0,
     "personal_information_findings": [],
     "all172_historical_named_target_logs_and_print_sources_rechecked": true
+  },
+  "case1465_memory_retry_metadata_review": {
+    "original_record_hash_bindings": 12,
+    "exact_original_failed_CHECK_logs": 6,
+    "accepted_retry_elaboration_CHECK_logs": 4,
+    "old_and_retry_archive_digests_verified": true,
+    "old_new_source_task_and_environment_manifests_identical": true,
+    "cache_eligibility_counts_totals_catalog_hashes_and_binding_shapes_checked": true,
+    "cache_objects_not_rehashed_or_copied": true,
+    "private_paths_process_ids_and_large_object_tables_omitted": true,
+    "ext4_future_proof_route_untested": true,
+    "original_export_validation_and_full65_public2_audits_postflight_pending": true,
+    "new_assets": 0,
+    "new_theorems_or_fullcase_increments": 0,
+    "Lean_jobs_worker_controls": 0,
+    "personal_information_findings": []
   }
 }

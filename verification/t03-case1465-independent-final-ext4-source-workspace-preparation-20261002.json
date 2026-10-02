@@ -1,0 +1,28 @@
+{
+  "status": "FRESH_TASK_OWNED_EXT4_SOURCE_VOLUME_MOUNTED_AND_BYTE_SAMPLE_VALIDATED",
+  "utc": "2026-10-02T04:44:43.305696+00:00",
+  "image_logical_bytes": 17179869184,
+  "original_source_bytes_unchanged": true,
+  "supplied_checker_files_changed": false,
+  "proof_records_created": 0,
+  "lean_processes_started": 0,
+  "sample_sources": 8,
+  "sample_source_bytes": 66979,
+  "rounds": [
+    {
+      "drvfs_source_seconds": 0.30126,
+      "ext4_source_seconds": 0.00138
+    },
+    {
+      "ext4_source_seconds": 0.001415,
+      "drvfs_source_seconds": 0.29932
+    }
+  ],
+  "scope": "Filesystem byte/read comparison only. Final original target proof checks are still required; no wholeproof speedup is claimed. This fresh regular-file volume is stored on D and does not modify an existing disk or existing filesystem.",
+  "proof_route_untested": true,
+  "filesystem_sample_is_not_a_Lean_proof_or_wholeproof_speedup": true,
+  "original_private_record_sha256": "f531ad1f54cbc327a8f4d49d86c7005f72339170b7fa4531faa0af47619e6f55",
+  "whole_case_increment": 0,
+  "publication_scope": "Compact exact-record hash and explicit binding validation only. Cache objects/large source collections excluded; fresh fullcase/public audits and export pending.",
+  "publication_Lean_jobs_or_worker_controls": 0
+}

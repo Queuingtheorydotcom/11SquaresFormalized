@@ -116,5 +116,7 @@
   "all172_reconciliation_original_record_sha256": "9f13e58b1259a5ecd4b355e4e19eec2cf233a044dd410661b6bd1db46cdf3e41",
   "all172_actual_named_target_logs_and_print_sources_independently_rechecked": true,
   "repaired_fullcase_task_sha256": "1fd34550fc7acc4e3f36c4abd049bf6cfdf9a2240a72602b44a5364c238943b9",
-  "repaired_fullcase_axiom_targets": 65
+  "repaired_fullcase_axiom_targets": 65,
+  "latest_memory_retry_checkpoint": "verification/t03-case1465-memory-retry-current172-checkpoint-20261002.json",
+  "source_version_and_fresh_audit_status_remain_pending": true
 }

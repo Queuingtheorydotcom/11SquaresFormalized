@@ -1,0 +1,14 @@
+{
+  "status": "FINAL_REPORT_REQUIRES_ACTUAL_FULLCASE_65_TARGET_CACHE_POSTFLIGHT",
+  "utc": "2026-10-02T05:41:39.622884+00:00",
+  "helper": "verify_exact_live_cache_postflight_20261002.py",
+  "helper_sha256": "1272bf4f5d37de9a96d22e5bf458aab211caa3a6122ff957c947cd067fb9109e",
+  "report_before_sha256": "84ab814455126e977cb7736d03c99d8a42f0279e60d0df11786abab2e834deed",
+  "report_after_sha256": "f6c514f6c2f4960be91bbf59f5a30f67d9c98efc59546dcca29a414f84f13d11",
+  "original_checker_or_exporter_changes": 0,
+  "scope": "Preparation only; postflight executes from the final report after actual full-case and original public audits pass.",
+  "original_private_record_sha256": "64bf0e15ed6d5fa91002facacb652c3fb48b7a4d35a456503f836895a972e4d8",
+  "proof_acceptance_increment": 0,
+  "publication_Lean_jobs_or_worker_controls": 0,
+  "scope_is_monitor_or_postflight_preparation_not_theorem_acceptance": true
+}

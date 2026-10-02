@@ -4476,5 +4476,182 @@
     "all172_actual_named_target_logs_and_print_sources_independently_rechecked": true,
     "repaired_fullcase_task_sha256": "1fd34550fc7acc4e3f36c4abd049bf6cfdf9a2240a72602b44a5364c238943b9",
     "repaired_fullcase_axiom_targets": 65
+  },
+  "case1465_memory_retry_and_future_routing_checkpoint": {
+    "format": "T03-case1465-memory-retry-and-future-routing-metadata-v1",
+    "utc": "2026-10-02T05:45:41.682713+00:00",
+    "status": "ORIGINAL172_CASE_AUDITS_HISTORICAL_MEMORY_RETRY_ELABORATION_ACTIVE_FULL65_AND_PUBLIC2_PENDING",
+    "historical_original_fullcase_audits": 172,
+    "required_cases": 173,
+    "remaining_original_fullcase": [
+      1465
+    ],
+    "historical_route_components": 17,
+    "required_route_components": 17,
+    "fullcase_increment": 0,
+    "original_4GiB_Chunk159_memory_failure_actual": true,
+    "original_4GiB_failure_seconds": 422.24,
+    "retry_8GiB_single_thread_Chunk159_actual_seconds": 374.98,
+    "retry_elaboration": [
+      {
+        "check": {
+          "status": "accepted",
+          "source": "ElevenSquare/Tasks/T03/Batch04/Case1465/PackedNamespaced/Chunk159.lean",
+          "exit_code": 0,
+          "elapsed_seconds": 374.98,
+          "lean_memory_limit_mb": 8192,
+          "lean_threads": 1,
+          "lean_thread_stack_kb": 32768,
+          "lean_main_stack_kb": 65536,
+          "cpu_seconds_limit": 1800,
+          "wall_seconds_limit": 2100,
+          "nice_increment": 0,
+          "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/Batch04/Case1465/PackedNamespaced/Chunk159.olean",
+          "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+        },
+        "check_sha256": "8c3d97f19cf24c5b6e50fa74fb594ccf407270c31b68cf136a44a6c5d12a3b50",
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "published_CHECK": "verification/t03-case1465-memory-retry-elaboration/Chunk159-CHECK.json",
+        "published_log": "verification/t03-case1465-memory-retry-elaboration/Chunk159-lean.log",
+        "meaning": "Accepted elaboration only; no fresh full-case target axiom acceptance."
+      },
+      {
+        "check": {
+          "status": "accepted",
+          "source": "ElevenSquare/Tasks/T03/Batch04/Case1465/PackedNamespaced/Chunk179.lean",
+          "exit_code": 0,
+          "elapsed_seconds": 55.02,
+          "lean_memory_limit_mb": 8192,
+          "lean_threads": 1,
+          "lean_thread_stack_kb": 32768,
+          "lean_main_stack_kb": 65536,
+          "cpu_seconds_limit": 1800,
+          "wall_seconds_limit": 2100,
+          "nice_increment": 0,
+          "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/Batch04/Case1465/PackedNamespaced/Chunk179.olean",
+          "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+        },
+        "check_sha256": "0f619dfc599f97a3d5cb087c676b9ce4e82a955e1d132b6e9758e01ed9e893e7",
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "published_CHECK": "verification/t03-case1465-memory-retry-elaboration/Chunk179-CHECK.json",
+        "published_log": "verification/t03-case1465-memory-retry-elaboration/Chunk179-lean.log",
+        "meaning": "Accepted elaboration only; no fresh full-case target axiom acceptance."
+      },
+      {
+        "check": {
+          "status": "accepted",
+          "source": "ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/Prefix012.lean",
+          "exit_code": 0,
+          "elapsed_seconds": 22.3,
+          "lean_memory_limit_mb": 8192,
+          "lean_threads": 1,
+          "lean_thread_stack_kb": 32768,
+          "lean_main_stack_kb": 65536,
+          "cpu_seconds_limit": 1800,
+          "wall_seconds_limit": 2100,
+          "nice_increment": 0,
+          "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/Prefix012.olean",
+          "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+        },
+        "check_sha256": "8d9b9a7f00c411b0119e3282add60bf374adf669ea555c45061b8e103763f121",
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "published_CHECK": "verification/t03-case1465-memory-retry-elaboration/Prefix012-CHECK.json",
+        "published_log": "verification/t03-case1465-memory-retry-elaboration/Prefix012-lean.log",
+        "meaning": "Accepted elaboration only; no fresh full-case target axiom acceptance."
+      },
+      {
+        "check": {
+          "status": "accepted",
+          "source": "ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/ReplayBatch000Retry01.lean",
+          "exit_code": 0,
+          "elapsed_seconds": 114.68,
+          "lean_memory_limit_mb": 8192,
+          "lean_threads": 1,
+          "lean_thread_stack_kb": 32768,
+          "lean_main_stack_kb": 65536,
+          "cpu_seconds_limit": 1800,
+          "wall_seconds_limit": 2100,
+          "nice_increment": 0,
+          "emitted_olean": ".lake/build/lib/ElevenSquare/Tasks/T03/Batch04/Case1465/IndependentReplay/ReplayBatch000Retry01.olean",
+          "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+        },
+        "check_sha256": "c3ca5198ce9b8ed3c28b199e36c801b54ff5f168b17cd9ff47b26f295f58eda9",
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "published_CHECK": "verification/t03-case1465-memory-retry-elaboration/ReplayBatch000Retry01-CHECK.json",
+        "published_log": "verification/t03-case1465-memory-retry-elaboration/ReplayBatch000Retry01-lean.log",
+        "meaning": "Accepted elaboration only; no fresh full-case target axiom acceptance."
+      }
+    ],
+    "eligible_exact_closure_cache_objects": 11841,
+    "recorded_original_and_cache_object_bytes": 3418898720,
+    "changed_closures_excluded": 9,
+    "cache_object_collection_not_rehashed_by_publication": true,
+    "source_compiler_receipt_bytes_changed": 0,
+    "current_running_compiler_environment_unchanged": true,
+    "future_input_path_metadata_changed_only": true,
+    "future_ext4_final_source_route_proof_untested": true,
+    "final_staging_bulk_receipt_routing_preparatory": true,
+    "source_contracts_original_checker_and_exporter_unchanged": true,
+    "original_exporter_validation_still_mandatory": true,
+    "inactive_component_archives_preserved": 17,
+    "full65_case1465_target_audit_accepted": false,
+    "public_two_combined_target_audits_accepted": false,
+    "final_zip_complete": false,
+    "no_same_claim_wholeproof_timing_or_speedup_claim": true,
+    "records": [
+      {
+        "checkpoint": "verification/t03-case1465-independent-original-fullcase-memory-failure-20261002.json",
+        "original_private_record_sha256": "797101791a2494a865d7cd43cede436692097fae7bf7b4a4d6993b5bdbed9ee1"
+      },
+      {
+        "checkpoint": "verification/t03-case1465-independent-fullcase-memory-retry01-preparation-20261002.json",
+        "original_private_record_sha256": "0799748433efe060666e694f2380266786bd3a8373d6380289c8b087fb581796"
+      },
+      {
+        "checkpoint": "verification/t03-case1465-independent-memory-retry-exact-current-closure-cache-eligibility-20261002.json",
+        "original_private_record_sha256": "26c3ca76966eb71505a366afbacc77a5f1a9e156b58cab1fb63183132b8aa274"
+      },
+      {
+        "checkpoint": "verification/t03-case1465-independent-memory-retry-exact-live-cache-application-20261002.json",
+        "original_private_record_sha256": "d7e5c814c7726847afb3481761173b90f722cf7aafe44742ec879acfd5527b61"
+      },
+      {
+        "checkpoint": "verification/t03-case1465-independent-final-ext4-source-workspace-preparation-20261002.json",
+        "original_private_record_sha256": "f531ad1f54cbc327a8f4d49d86c7005f72339170b7fa4531faa0af47619e6f55"
+      },
+      {
+        "checkpoint": "verification/t03-case1465-independent-final-ext4-source-runtime-selection-20261002.json",
+        "original_private_record_sha256": "a66d23078c21179359fd3386b198d1b13c59799add9a63cffeee1999c2d1d7bc"
+      },
+      {
+        "checkpoint": "verification/t03-case1465-independent-final-staging-duplicate-scan-reduction-20261002.json",
+        "original_private_record_sha256": "da303b5bc68788f09bd58212485c0dc1e3b1d55d3caf6d0936392253ebb60d27"
+      },
+      {
+        "checkpoint": "verification/t03-case1465-independent-final-bulk-genuine-receipt-routing-20261002.json",
+        "original_private_record_sha256": "680bcbcb847d6ed7ba57c4520b596281789007b93b42b73108cd478434af35d4"
+      },
+      {
+        "checkpoint": "verification/t03-case1465-independent-inactive-component-archives-c-to-d-preservation-20261002.json",
+        "original_private_record_sha256": "db4096fd05240d143e45f9adc056930d8615c555e47d3c275e62817c3a99e195"
+      },
+      {
+        "checkpoint": "verification/t03-case1465-independent-memory-retry-cache-postflight-gate-preparation-20261002.json",
+        "original_private_record_sha256": "64bf0e15ed6d5fa91002facacb652c3fb48b7a4d35a456503f836895a972e4d8"
+      },
+      {
+        "checkpoint": "verification/t03-case1465-independent-memory-retry-monitor-import-repair-preparation-20261002.json",
+        "original_private_record_sha256": "ff22c849045a382cbdebf15b56b19073ba8417ff433840fae09cb8a4ce07a995"
+      },
+      {
+        "checkpoint": "verification/t03-case1465-independent-memory-retry-monitor-import-repair-application-20261002.json",
+        "original_private_record_sha256": "86c58cb4c36ac82824a74397ace9ca4cf412090dd154f0b5d461461403654ed4"
+      }
+    ],
+    "new_release_assets": 0,
+    "large_closure_repacked": false,
+    "publication_Lean_jobs_worker_queue_source_changes": 0,
+    "final_cache_postflight_gate_prepared_not_run": true,
+    "lightweight_monitor_regex_import_repair_proof_neutral": true
   }
 }

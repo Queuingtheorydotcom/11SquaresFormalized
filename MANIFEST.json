@@ -42828,18 +42828,18 @@
     },
     {
       "path": "MISSING.md",
-      "bytes": 12799,
-      "sha256": "8a42f1b0ad4b7bedcb841c119602d6d1a24b9cb365bce091e04dcefabfd318bf"
+      "bytes": 14432,
+      "sha256": "27653760a26825e8bf46aa250dfea776ddafd6f0517ee2250a7e70efd213590c"
     },
     {
       "path": "README.md",
-      "bytes": 42892,
-      "sha256": "08f5add1cd668ad873360e8a741c6cb171f1c7879f6e96e3b8706f6831bcca92"
+      "bytes": 44525,
+      "sha256": "3215a36bf121c16c0babe46e4584e5d9d1e5c54aa574b5a2bf5dec51a38a4451"
     },
     {
       "path": "T03_PROGRESS.md",
-      "bytes": 119685,
-      "sha256": "c745a20f664c072be12a5c9f0b1a2bf7dee86a545e03fd41540be72e869a7ac9"
+      "bytes": 121318,
+      "sha256": "345b6d10ecd1c1cf1d8487235bc1e976f1feeb2115207e78a5d91b76824625d3"
     },
     {
       "path": "lake-manifest.json",
@@ -43098,8 +43098,8 @@
     },
     {
       "path": "verification/privacy-review.json",
-      "bytes": 27275,
-      "sha256": "f5680de930ab99d8bc8dc08ee63014ed6591feb186eeb9228e0a079b6a6cbe64"
+      "bytes": 28060,
+      "sha256": "b633ad4db4eb0d58494349924a3c52c9675eaeda5a98f2fa04c50a44c9207f65"
     },
     {
       "path": "verification/source-check.json",
@@ -47457,9 +47457,29 @@
       "sha256": "03eb9247e383b3900c4da6ceabb5346c761daae5721dcd2c14c64f7a0cb6d111"
     },
     {
+      "path": "verification/t03-case1465-independent-final-bulk-genuine-receipt-routing-20261002.json",
+      "bytes": 2570,
+      "sha256": "1bc67d28a9aa5a3662f3ab6ad87fd30bf84c85ed1a523e9f117c61605e1033c3"
+    },
+    {
+      "path": "verification/t03-case1465-independent-final-ext4-source-runtime-selection-20261002.json",
+      "bytes": 1549,
+      "sha256": "944724406ba5eddd079361b2b76db1d986cdd52d4bc007cf16fc24b482d606c0"
+    },
+    {
+      "path": "verification/t03-case1465-independent-final-ext4-source-workspace-preparation-20261002.json",
+      "bytes": 1291,
+      "sha256": "1b2bb0d413cfdf8262306e81fdf66d8ea512040828b659c3a3541210c6553f7c"
+    },
+    {
       "path": "verification/t03-case1465-independent-final-source-closure-post-identifier-repair-20261002.json",
       "bytes": 1864,
       "sha256": "d7b8aa6fcd1b47518820b56134f22dd8c1518d23366de18851c6988f7542341d"
+    },
+    {
+      "path": "verification/t03-case1465-independent-final-staging-duplicate-scan-reduction-20261002.json",
+      "bytes": 1366,
+      "sha256": "f02cd7456a5b83f0e5e03593670f711c48dcba1e6d32d0d0663f929b63e361d8"
     },
     {
       "path": "verification/t03-case1465-independent-finite-file-transfer-promotion-20261002.json",
@@ -47515,6 +47535,41 @@
       "path": "verification/t03-case1465-independent-four-step-batch000-retry01-actual-checkpoint-20261002.json",
       "bytes": 5330,
       "sha256": "d8c18179422ad5a4f88f861c0b74051cd9f044f5367ad64c049490a7c09d2b58"
+    },
+    {
+      "path": "verification/t03-case1465-independent-fullcase-memory-retry01-preparation-20261002.json",
+      "bytes": 6882,
+      "sha256": "122eb08245f2990433a5d82b4c5941af06e08ef57afe55c2cf65ab26ec9909f6"
+    },
+    {
+      "path": "verification/t03-case1465-independent-inactive-component-archives-c-to-d-preservation-20261002.json",
+      "bytes": 7369,
+      "sha256": "3980b43e31f02f051937fe6cc899845291f23243c03591fbecccad8bafb574f6"
+    },
+    {
+      "path": "verification/t03-case1465-independent-memory-retry-cache-postflight-gate-preparation-20261002.json",
+      "bytes": 904,
+      "sha256": "157f346a646bc8d7ac940f4d20e3009379df8bcb5242c166deab41834db53bcc"
+    },
+    {
+      "path": "verification/t03-case1465-independent-memory-retry-exact-current-closure-cache-eligibility-20261002.json",
+      "bytes": 1925,
+      "sha256": "5717fe0efedde921fb6ec8f391eca6bb4c50491295e58cac02d3e18994f0bf0f"
+    },
+    {
+      "path": "verification/t03-case1465-independent-memory-retry-exact-live-cache-application-20261002.json",
+      "bytes": 2775,
+      "sha256": "1ef22e8ca22c91706d96d983a69107f4c078d9548249fa59c4a8d027d2ceb9d9"
+    },
+    {
+      "path": "verification/t03-case1465-independent-memory-retry-monitor-import-repair-application-20261002.json",
+      "bytes": 517,
+      "sha256": "544d64f42a4fabdac2d202a7f921c218861cc5896f240cc8e38b2a89485240d4"
+    },
+    {
+      "path": "verification/t03-case1465-independent-memory-retry-monitor-import-repair-preparation-20261002.json",
+      "bytes": 959,
+      "sha256": "ec85b38b828be15770b09d65d842d23ea9cd43fe6d5092d7f6724b01b5d0e024"
     },
     {
       "path": "verification/t03-case1465-independent-numeric-state-pilot-00-actual-CHECK.json",
@@ -47575,6 +47630,11 @@
       "path": "verification/t03-case1465-independent-original-172-audit-count-reconciliation-20261002.json",
       "bytes": 85950,
       "sha256": "9f13e58b1259a5ecd4b355e4e19eec2cf233a044dd410661b6bd1db46cdf3e41"
+    },
+    {
+      "path": "verification/t03-case1465-independent-original-fullcase-memory-failure-20261002.json",
+      "bytes": 7006,
+      "sha256": "fca62a47ac79a312d8c1ff009b31c533bd9c1a138e9928021eba61554ddddb6f"
     },
     {
       "path": "verification/t03-case1465-independent-partner-replay-batch001-actual-checkpoint-20261002-actual-logs/00-CHECK.json",
@@ -50037,6 +50097,111 @@
       "sha256": "a349f60ece0c35be311b7b0ae6ef482faeb39edf304602cc780b7fa9c8a72150"
     },
     {
+      "path": "verification/t03-case1465-memory-failure-actual-logs/00-CHECK.json",
+      "bytes": 509,
+      "sha256": "15c6970dc05db4a2ff2c0678c117fbb87acdb4514288c8cf55f51863f559ab6f"
+    },
+    {
+      "path": "verification/t03-case1465-memory-failure-actual-logs/00-lean.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "verification/t03-case1465-memory-failure-actual-logs/01-CHECK.json",
+      "bytes": 535,
+      "sha256": "e82bb4f8ff256448d18f2a22917bbd8e62eab06dcd321409c197e66d004feeae"
+    },
+    {
+      "path": "verification/t03-case1465-memory-failure-actual-logs/01-lean.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "verification/t03-case1465-memory-failure-actual-logs/02-CHECK.json",
+      "bytes": 513,
+      "sha256": "45be549a025d004c3386579d304bcc33a9141f4b322c82b71f3bed81df8e126d"
+    },
+    {
+      "path": "verification/t03-case1465-memory-failure-actual-logs/02-lean.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "verification/t03-case1465-memory-failure-actual-logs/03-CHECK.json",
+      "bytes": 519,
+      "sha256": "5f230a307086a0531269697a8ffd81f61c74a948392c0896133b0d75b26fd9e2"
+    },
+    {
+      "path": "verification/t03-case1465-memory-failure-actual-logs/03-lean.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "verification/t03-case1465-memory-failure-actual-logs/04-CHECK.json",
+      "bytes": 561,
+      "sha256": "348e204d1587e730595573475501b7d07b2ff51328b772e5641e9aed0827b9d5"
+    },
+    {
+      "path": "verification/t03-case1465-memory-failure-actual-logs/04-lean.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "verification/t03-case1465-memory-failure-actual-logs/05-CHECK.json",
+      "bytes": 505,
+      "sha256": "6ec9a7f66e3d9ec51e3086bfe1313340200c24d10ae8127f3bccc7965de49792"
+    },
+    {
+      "path": "verification/t03-case1465-memory-failure-actual-logs/05-lean.log",
+      "bytes": 115,
+      "sha256": "0f8fcb2ce35b4b2c3bf8091f9b4630de6b53f2d2a4a0556e8511e64608bfae66"
+    },
+    {
+      "path": "verification/t03-case1465-memory-retry-current172-checkpoint-20261002.json",
+      "bytes": 9227,
+      "sha256": "83e0a8639a60f2e81ee404d142cba253cd08f83ca1efd96834a93596a8ee2766"
+    },
+    {
+      "path": "verification/t03-case1465-memory-retry-elaboration/Chunk159-CHECK.json",
+      "bytes": 572,
+      "sha256": "8c3d97f19cf24c5b6e50fa74fb594ccf407270c31b68cf136a44a6c5d12a3b50"
+    },
+    {
+      "path": "verification/t03-case1465-memory-retry-elaboration/Chunk159-lean.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "verification/t03-case1465-memory-retry-elaboration/Chunk179-CHECK.json",
+      "bytes": 571,
+      "sha256": "0f619dfc599f97a3d5cb087c676b9ce4e82a955e1d132b6e9758e01ed9e893e7"
+    },
+    {
+      "path": "verification/t03-case1465-memory-retry-elaboration/Chunk179-lean.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "verification/t03-case1465-memory-retry-elaboration/Prefix012-CHECK.json",
+      "bytes": 574,
+      "sha256": "8d9b9a7f00c411b0119e3282add60bf374adf669ea555c45061b8e103763f121"
+    },
+    {
+      "path": "verification/t03-case1465-memory-retry-elaboration/Prefix012-lean.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "verification/t03-case1465-memory-retry-elaboration/ReplayBatch000Retry01-CHECK.json",
+      "bytes": 600,
+      "sha256": "c3ca5198ce9b8ed3c28b199e36c801b54ff5f168b17cd9ff47b26f295f58eda9"
+    },
+    {
+      "path": "verification/t03-case1465-memory-retry-elaboration/ReplayBatch000Retry01-lean.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
       "path": "verification/t03-case1465-operational-retry.json",
       "bytes": 8083,
       "sha256": "4cc5ecd979e04eea8a9a012b70d0a7bfcad645e5c86b4710f7502b6e3df66bb8"
@@ -50138,8 +50303,8 @@
     },
     {
       "path": "verification/t03-current172-repaired-source-progress-checkpoint-20261002.json",
-      "bytes": 5250,
-      "sha256": "2b6ffa453d988ffa704bbd89b74be204a677f70c063475e3a64bbdab26e2f650"
+      "bytes": 5428,
+      "sha256": "671a0aa44e2a19e518963c9d076bd839f148aeb02c052d7630404e6ea863f3fa"
     },
     {
       "path": "verification/t03-equality-efficiency-continuation.json",
@@ -50323,8 +50488,8 @@
     },
     {
       "path": "verification/t03-progress.json",
-      "bytes": 177070,
-      "sha256": "3024519f676092aad1764813c066b0579f76d89cd41db339e2da03ecf7054ea7"
+      "bytes": 186707,
+      "sha256": "424bcb1cfc7f7ebb21715cb586ebb4bc37e2f11a64b8df18add990df9508e2fa"
     },
     {
       "path": "verification/t03-ready-archive-prefilter-checkpoint-20261001.json",

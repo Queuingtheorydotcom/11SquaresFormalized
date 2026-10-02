@@ -1,0 +1,15 @@
+{
+  "status": "PROOF_MONITOR_MISSING_REGEX_IMPORT_REPAIR_PREPARED",
+  "utc": "2026-10-02T05:43:26.544028+00:00",
+  "old_monitor": "finish_independent_case1465_certificate_memory_retry_v3.py",
+  "old_monitor_sha256": "2d37c45d93682fa7d1b5714f20c424c332f62fa1e94654f68c78d1a20925e2da",
+  "new_monitor": "finish_independent_case1465_certificate_memory_retry_v4.py",
+  "new_monitor_sha256": "0f21c43bf783e21ca8549a55fb6f3accc0d985dd1c7c65bc8b932d52c1ab0582",
+  "missing_dependency": "re",
+  "compiler_or_source_or_receipt_changes": 0,
+  "scope": "Only the lightweight Windows completion watcher is replaced; the running actual original handoff checker and proof compiler continue uninterrupted.",
+  "original_private_record_sha256": "ff22c849045a382cbdebf15b56b19073ba8417ff433840fae09cb8a4ce07a995",
+  "proof_acceptance_increment": 0,
+  "publication_Lean_jobs_or_worker_controls": 0,
+  "scope_is_monitor_or_postflight_preparation_not_theorem_acceptance": true
+}
