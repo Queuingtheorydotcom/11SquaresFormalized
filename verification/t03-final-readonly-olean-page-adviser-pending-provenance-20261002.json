@@ -1,0 +1,34 @@
+{
+  "status": "PREPARATORY_READONLY_OBJECT_PAGE_ADVISER_AND_RESUME_CONTROLLER_NOT_ACCEPTED",
+  "observed_record_utc": "2026-10-02T13:37:14.594423+00:00",
+  "original_observed_running_record_sha256": "7622a4536dc807db559d4e2467a2980589f1830e089eb14a5fb2230b420793a0",
+  "original_observed_running_record_bytes": 15094,
+  "scope": "A dated running-state observation for operational provenance only, not a completed diagnostic or proof audit. Mutable running event table and private process identities are omitted.",
+  "operation": "MADV_PAGEOUT=21",
+  "readonly_private_file_backed_olean_mappings_only": true,
+  "source_object_receipt_bytes_changed_recorded": 0,
+  "compiler_configuration_changes_recorded": 0,
+  "proof_jobs_started_stopped_or_signalled_recorded": 0,
+  "diagnostic_accepted": false,
+  "main_retry_started_or_accepted_by_publication": false,
+  "resume_controller_prepared_not_run_by_publication": true,
+  "no_end_to_end_speedup_claim": true,
+  "source_tools": [
+    {
+      "original_private_source_name": "manage_final_readonly_olean_pages_20261002.py",
+      "original_private_source_sha256": "25d5bbba40d8a4c6b96aa9dc42f8e6c90bb0faa0cda33cff0afee395388854c1",
+      "source_bytes": 6321,
+      "syntax_parsed_only": true,
+      "executed_by_publication": false,
+      "publication_copy_or_port_not_created": true
+    },
+    {
+      "original_private_source_name": "resume_verified_return_after_batch04_memory_20261002.py",
+      "original_private_source_sha256": "55c5375d33870a1d0dd54d88b70474612361c73c99e3b52ab237ff5c80df3b9f",
+      "source_bytes": 11278,
+      "syntax_parsed_only": true,
+      "executed_by_publication": false,
+      "publication_copy_or_port_not_created": true
+    }
+  ]
+}

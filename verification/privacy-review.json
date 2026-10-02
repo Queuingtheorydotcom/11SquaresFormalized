@@ -682,5 +682,13 @@
     "private_runtime_paths_omitted": true,
     "public2_export_pending": true,
     "Lean_jobs_worker_controls": 0
+  },
+  "final_batch04_actual_memory_failure_review": {
+    "actual_failed_CHECK_log_source_bytes_preserved": true,
+    "private_full_wrapper_execution_paths_and_environment_omitted_with_original_hashes": true,
+    "running_adviser_event_table_not_published_as_completed_evidence": true,
+    "tool_sources_AST_parsed_only_not_run_or_ported": true,
+    "final_public2_and_ZIP_pending": true,
+    "source_and_proof_jobs_changes": 0
   }
 }

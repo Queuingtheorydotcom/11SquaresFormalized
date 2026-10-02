@@ -4,6 +4,8 @@ Upstream supplies **172 case-proof source archives**; case 1465 was its sole
 omission and is now proved locally. **All 173 original full-case certificates
 have actual named-target audits: 173/173, no original case remains.**
 
+**Final delivery is blocked by an [actual assembly import-memory failure](verification/t03-final-batch04-import-memory-failure-checkpoint-20261002.json).** The original final checker stopped at `Assembly/Batch04.lean` on **2026-10-02 at 13:12 UTC**, reaching its **8 GiB memory limit** with two threads. A separate diagnostic using the exact same sixteen imports and only `True.intro` also failed at that limit. The actual failed CHECK/log/source bytes are preserved. This leaves **all 173/173 original case audits intact**, with unchanged proof sources and no missing original cases. A [read-only object-page adviser diagnostic and resume controller](verification/t03-final-readonly-olean-page-adviser-pending-provenance-20261002.json) are pending operational work; neither is an accepted solution here. The **two public combined target audits and exact return ZIP remain incomplete**.
+
 The [accepted case 1465 full audit](verification/t03-case1465-original-full65-accepted-checkpoint-20261002.json)
 passed the unchanged pinned Lean 4.10.0-rc2 checker at 8 GiB with one thread.
 All **65 exact targets**—64 route component targets and the original

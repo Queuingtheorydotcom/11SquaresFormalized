@@ -1,0 +1,33 @@
+{
+  "task": "final-returned-target-task.json",
+  "exit_code": 1,
+  "transport_sha256": "67f025f95731d52c372d5e887b8d9bbf7ec55549fcf2c10143b75244a5ebca81",
+  "supplied_handoff_checker_unchanged": true,
+  "original_private_execution_sha256": "ad571757527e927f5c7704d4a9654785917cadc2f80aaebd273d66483f46a291",
+  "original_private_execution_bytes": 8191,
+  "launch_configuration_threads": 1,
+  "actual_failed_Batch04_CHECK_threads": 2,
+  "lean_memory_limit_mb": 8192,
+  "launch_configuration_is_historical_actual_module_CHECK_is_authoritative": true,
+  "runtime_compiler_sha256": "c2059c8da4034467e5f391cfd07b81c4a7b32a7e04ff7e50c7c385993cd77010",
+  "private_environment_paths_and_metadata_omitted": true,
+  "actual_terminal_module_failure": {
+    "name": "Batch04",
+    "status": "ACTUAL_ORIGINAL_CHECKER_MEMORY_LIMIT_FAILURE",
+    "source": "ElevenSquare/Tasks/T03/Assembly/Batch04.lean",
+    "checker_exit_code": 1,
+    "lean_memory_limit_mb": 8192,
+    "actual_lean_threads": 2,
+    "elapsed_seconds": 265.83,
+    "actual_CHECK_sha256": "642f292f4d98eeccf9dd7891e1de12112b1626837b3473a42122d2d9e19c9155",
+    "actual_lean_log_sha256": "7ccde955845e2227d64a6e2273c17d0f44b371a09221a12af567d20159977b2f",
+    "actual_source_sha256": "e1416007287656607ecb5f48e2978bd31ef8fb53824ddcffa20cd75b2e201981",
+    "original_wrapper_sha256": "0154c29904bcb8930ec6fb1e441072e5cf6071cda3defa499aa9125386435559",
+    "original_wrapper_bytes": 1324119,
+    "wrapper_record_and_actual_raw_CHECK_match": true,
+    "actual_published_CHECK_log_source": "verification/t03-final-batch04-memory-failure-Batch04-20261002",
+    "axiom_audit_accepted": false,
+    "source_snapshot_complete_standalone_closure": false
+  },
+  "actual_public_two_targets_accepted": false
+}

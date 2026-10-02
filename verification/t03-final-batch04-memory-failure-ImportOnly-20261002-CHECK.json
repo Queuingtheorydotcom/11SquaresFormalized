@@ -1,0 +1,15 @@
+{
+  "status": "failed_or_resource_limited",
+  "source": "verification/Batch04ImportOnlyDiagnostic.lean",
+  "exit_code": 1,
+  "elapsed_seconds": 125.24,
+  "lean_memory_limit_mb": 8192,
+  "lean_threads": 2,
+  "lean_thread_stack_kb": 32768,
+  "lean_main_stack_kb": 65536,
+  "cpu_seconds_limit": 7200,
+  "wall_seconds_limit": 10800,
+  "nice_increment": 0,
+  "emitted_olean": null,
+  "meaning": "Elaboration check only; inspect axioms and admissions before marking a proof complete."
+}

@@ -42828,18 +42828,18 @@
     },
     {
       "path": "MISSING.md",
-      "bytes": 21904,
-      "sha256": "d625c4de219c6e4db632bc711b751527a856216d669134f54087812c6f95e76e"
+      "bytes": 22792,
+      "sha256": "e2ce68989c30a2c3f56d6aeafcb5ec79c5e46769f47c10137d7f41b4cfbe22e6"
     },
     {
       "path": "README.md",
-      "bytes": 51997,
-      "sha256": "94bec22ccbedc72d994ec96d17d421995ac1c00bd45ca2cf195886ab606f77dd"
+      "bytes": 52885,
+      "sha256": "75d19ea3c67b67a34858764983cc55a48bb892967a59b2be8d755086f7732267"
     },
     {
       "path": "T03_PROGRESS.md",
-      "bytes": 128790,
-      "sha256": "9ff2d526f6c5d5af022026f51e379fcbc2328b4128f7dd11439335f9ce139be6"
+      "bytes": 129678,
+      "sha256": "f7661c8cd3dd74cade9166fe696c762fe816e35ae6165287d1e33d328a264704"
     },
     {
       "path": "lake-manifest.json",
@@ -43098,8 +43098,8 @@
     },
     {
       "path": "verification/privacy-review.json",
-      "bytes": 32327,
-      "sha256": "b9c396d53832c28a6b036682d52f39bb346a113344ad08f580b96cd9123ef8b9"
+      "bytes": 32756,
+      "sha256": "7d8caaca9e663df3ad7625935638ba6be3eb097baaca9269a1481c987f9f3165"
     },
     {
       "path": "verification/source-check.json",
@@ -50742,6 +50742,41 @@
       "sha256": "509a650e34764aad2f1021e0428e3bc7d7c3e2769e9fd2b2ca2ce8e73791b475"
     },
     {
+      "path": "verification/t03-final-batch04-import-memory-failure-checkpoint-20261002.json",
+      "bytes": 4461,
+      "sha256": "fb1e931a8a607c7b09ac193ffbbe4dd1e033e1f4f6cb0011782bdc7f58a5fa75"
+    },
+    {
+      "path": "verification/t03-final-batch04-memory-failure-Batch04-20261002-CHECK.json",
+      "bytes": 480,
+      "sha256": "642f292f4d98eeccf9dd7891e1de12112b1626837b3473a42122d2d9e19c9155"
+    },
+    {
+      "path": "verification/t03-final-batch04-memory-failure-Batch04-20261002.lean",
+      "bytes": 3018,
+      "sha256": "e1416007287656607ecb5f48e2978bd31ef8fb53824ddcffa20cd75b2e201981"
+    },
+    {
+      "path": "verification/t03-final-batch04-memory-failure-Batch04-20261002.log",
+      "bytes": 128,
+      "sha256": "7ccde955845e2227d64a6e2273c17d0f44b371a09221a12af567d20159977b2f"
+    },
+    {
+      "path": "verification/t03-final-batch04-memory-failure-ImportOnly-20261002-CHECK.json",
+      "bytes": 481,
+      "sha256": "df928b4cc5ad9d13f4042ee9aaab8b5ac9ab1b243ee4c90819787d3f1a5908ea"
+    },
+    {
+      "path": "verification/t03-final-batch04-memory-failure-ImportOnly-20261002.lean",
+      "bytes": 1181,
+      "sha256": "4d5bb88eaa59c51d92e470cb87c9f3b3affea957366d23e8af80c15fd1608026"
+    },
+    {
+      "path": "verification/t03-final-batch04-memory-failure-ImportOnly-20261002.log",
+      "bytes": 128,
+      "sha256": "7ccde955845e2227d64a6e2273c17d0f44b371a09221a12af567d20159977b2f"
+    },
+    {
       "path": "verification/t03-final-bounded-auxiliary-queue-completed-checkpoint-20261002.json",
       "bytes": 1737,
       "sha256": "1c548b6216eccf6242d212f7f856be79c7536aa300d6a8cf5c81dc9cd5e87fc6"
@@ -51227,6 +51262,16 @@
       "sha256": "0f2276f3f4150f4631aa29a99aeab6a48ba9beb6b378bedf095f4222c11e2f05"
     },
     {
+      "path": "verification/t03-final-readonly-olean-page-adviser-pending-provenance-20261002.json",
+      "bytes": 1714,
+      "sha256": "5b0fdc17a516f0ad55cc5a90af89c29acd9ad24d3456fc28ef17f5184e5768c9"
+    },
+    {
+      "path": "verification/t03-final-returned-target-failed-execution-checkpoint-20261002.json",
+      "bytes": 1745,
+      "sha256": "1a7bb185744555359acc95ed9873e332b3ca04108d760f3ca2300492605cb370"
+    },
+    {
       "path": "verification/t03-final-small-queue-completed-rechecks-checkpoint-20261002.json",
       "bytes": 12095,
       "sha256": "e8411e05f8775495bda28af7a77f82976ddd95d939d4767e4b2989435bf4076f"
@@ -51403,8 +51448,8 @@
     },
     {
       "path": "verification/t03-progress.json",
-      "bytes": 265536,
-      "sha256": "bce7c0cc4fb3d21df38edbd98d9f8e0afe26d0516f9a7fa7ed02fd091e5feeb6"
+      "bytes": 270201,
+      "sha256": "65c3e7f49cbfcd06eb90bf7aa361c8edb6b3633b4e631bd586c3de38c1aab48a"
     },
     {
       "path": "verification/t03-ready-archive-prefilter-checkpoint-20261001.json",
