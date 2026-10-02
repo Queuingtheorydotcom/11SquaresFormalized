@@ -1,0 +1,32 @@
+{
+  "status": "TIMESTAMPED_SEQUENTIAL_AUXILIARY_COMPATIBILITY_RECHECK_QUEUE_SNAPSHOT_NOT_A_CASE_COMPLETION_CLAIM",
+  "source_record_sha256": "c82df64e4ab1723a9af5652d35bdad2ab22d065fa9332ea2ddf977794051aed1",
+  "source_record_bytes": 583,
+  "snapshot_utc": "2026-10-02T11:38:23.325614+00:00",
+  "stage": "RUNNING_PRIVATE_RECHECK",
+  "active_compatibility_recheck_case": 1476,
+  "planned_compatibility_recheck_cases": [
+    1950,
+    1810,
+    1476,
+    2049,
+    1478,
+    1783
+  ],
+  "recorded_queue_completed_case_ids": [
+    1950,
+    1810
+  ],
+  "maximum_auxiliary_lean_processes": 1,
+  "auxiliary_threads": 1,
+  "auxiliary_memory_limit_mb": 4096,
+  "original_cases_already_audited": 173,
+  "remaining_original_cases": 0,
+  "only_fully_audited_integrated_cases_published": [
+    1889,
+    1950,
+    1810
+  ],
+  "no_pending_case_acceptance_or_count_increment": true,
+  "publication_queue_process_or_source_controls": 0
+}

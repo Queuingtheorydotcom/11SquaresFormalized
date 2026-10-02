@@ -1,0 +1,16 @@
+{
+  "target": "ElevenSquare.Pending.T03.Batch09.Case1950.Forward.Certificate.certificate_exists",
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "audit_source": "import ElevenSquare.Tasks.T03.Batch09.Case1950.Forward.Certificate\n#print axioms ElevenSquare.Pending.T03.Batch09.Case1950.Forward.Certificate.certificate_exists\n",
+  "audit_source_sha256": "3f1cf19399f9f50e3f5f797545155580a2bda7d6653863631fde6dbb0f29b768",
+  "actual_check_sha256": "3ed2dbc1453d1e1c9f74768a1d707eda1c6b17eaf8f001c8b38990e9aaf9bb8a",
+  "actual_axiom_log_sha256": "b16cff9107b1ba946edff514781f330f266ea1a7fa3e1af26caeee98ddd46a88",
+  "original_private_record_sha256": "7ecc7dc87717ff2292365695ae5d7ab72d661e94b34b9731a0d0006c7c1bc724",
+  "original_private_record_bytes": 643,
+  "publication_Lean_jobs_worker_controls": 0,
+  "publication_scope": "Actual exact auxiliary original-case recheck and recorded integration; private runtime paths and bulk output binding tables omitted. No case count or final public target acceptance increment."
+}
