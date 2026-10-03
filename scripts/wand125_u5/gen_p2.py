@@ -13,10 +13,11 @@ polygons become the new rows, and the compressed kernel is promoted.  Each round
 is emitted as eleven steps, one owner at a time; the owned hulls only grow, so a
 later owner's step uses at least the hulls the archive used.
 
-Writes <out dir>/P2/Init.lean, the step files, P2.lean, and p2_state.pkl (the
+Writes <out dir>/P2/Init.lean, the step files, P2.lean, and p2_state.json (the
 final rows, references and owned hulls, read by gen_tree.py).
 """
-import json, os, pickle, sys
+import json, os, sys
+from state_io import load_state, save_state
 from fractions import Fraction as F
 from geom import hull, vertices
 from gen_step import OWNER, cs, wall_halves, coreVB
@@ -166,15 +167,13 @@ def main(jdir, out, per=40):
     ckpt = os.environ.get('U5_CKPT')
     start = int(os.environ.get('U5_P2_FROM', '0'))
     if ckpt and start:
-        with open(os.path.join(ckpt, f"{name}_{start - 1}.pkl"), 'rb') as f:
-            ch.rows, ch.refs, ch.owned = pickle.load(f)
+        ch.rows, ch.refs, ch.owned = load_state(os.path.join(ckpt, f"{name}_{start - 1}.json"))
     n = len(steps)
     stop = int(os.environ.get('U5_P2_TO', n))
     for k in range(start, stop):
         ch.step(k, out)
         if ckpt:
-            with open(os.path.join(ckpt, f"{name}_{k}.pkl"), 'wb') as f:
-                pickle.dump((ch.rows, ch.refs, ch.owned), f)
+            save_state(os.path.join(ckpt, f"{name}_{k}.json"), (ch.rows, ch.refs, ch.owned))
     if stop < n:
         return
     mod = f"ElevenSquare.Tasks.T07.Ext.Gen.{name}"
@@ -187,8 +186,7 @@ def main(jdir, out, per=40):
     T.append(f"  exact {expr}\n")
     T.append(f"end {base}\n")
     open(os.path.join(out, f"{name}.lean"), "w").write("\n".join(T))
-    with open(os.path.join(out, "p2_state.pkl"), 'wb') as f:
-        pickle.dump((ch.rows, ch.refs, ch.owned), f)
+    save_state(os.path.join(out, "p2_state.json"), (ch.rows, ch.refs, ch.owned))
 
 
 if __name__ == "__main__":

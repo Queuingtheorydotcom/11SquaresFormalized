@@ -2,7 +2,7 @@
 
     python3 gen_all.py states <json dir> <work dir> <out dir>
         Replays every node without certificates (cheap) and saves the state
-        before every step as <work dir>/<Name>_<k>.pkl, plus the node files
+        before every step as <work dir>/<Name>_<k>.json, plus the node files
         (Init.lean, <Name>.lean) and the list of jobs <work dir>/jobs.txt.
     python3 gen_all.py step <json dir> <work dir> <out dir> <Name> <k>
         Emits the certificates of one step from its saved state.
@@ -13,7 +13,8 @@ Every step depends only on the state before it, so the jobs can run in any
 order, e.g. `xargs -P 30` over jobs.txt.  The emitted files are the same as a
 sequential run of gen_p2.py and gen_tree.py with U5_P2STATE.
 """
-import json, os, pickle, sys
+import json, os, sys
+from state_io import load_state as load, save_state as save
 from fractions import Fraction as F
 from gen_chain import Chain, HDR, NS
 from gen_node import Node, canon
@@ -48,16 +49,6 @@ def chain(node, name, state):
     return ch
 
 
-def save(path, obj):
-    with open(path, 'wb') as f:
-        pickle.dump(obj, f)
-
-
-def load(path):
-    with open(path, 'rb') as f:
-        return pickle.load(f)
-
-
 def write(path, lines):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     open(path, "w").write("\n".join(lines))
@@ -86,7 +77,7 @@ def replay(ch, node, name, work, jobs):
     n = len(node['steps'])
     last = None
     for k in range(n):
-        save(os.path.join(work, f"{name}_{k}.pkl"), (ch.rows, ch.refs, ch.owned))
+        save(os.path.join(work, f"{name}_{k}.json"), (ch.rows, ch.refs, ch.owned))
         jobs.append(f"{name} {k}")
         last = ch.step_quiet(k)
     print(f"== {name}: {n} steps", file=sys.stderr, flush=True)
@@ -144,7 +135,7 @@ def states(jdir, work, out):
         final_file(out, name, n, last[0] if node.get('contradiction') else None)
         finals[name] = (ch.rows, ch.refs, ch.owned)
         steps_of[name] = n
-        save(os.path.join(work, f"{name}_final.pkl"), finals[name])
+        save(os.path.join(work, f"{name}_final.json"), finals[name])
     open(os.path.join(work, "jobs.txt"), "w").write("\n".join(jobs) + "\n")
     print(f"{len(jobs)} jobs", file=sys.stderr)
 
@@ -152,13 +143,13 @@ def states(jdir, work, out):
 def step(jdir, work, out, name, k):
     k = int(k)
     node = load_node(jdir, name)
-    ch = chain(node, name, load(os.path.join(work, f"{name}_{k}.pkl")))
+    ch = chain(node, name, load(os.path.join(work, f"{name}_{k}.json")))
     ch.step(k, out)
 
 
 def near(root, work, out):
     import gen_near
-    gen_near.main(root, os.path.join(work, "Near_final.pkl"), out)
+    gen_near.main(root, os.path.join(work, "Near_final.json"), out)
 
 
 if __name__ == "__main__":

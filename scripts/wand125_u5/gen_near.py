@@ -1,13 +1,14 @@
 """Certificates that the final near state lies in the frozen near packet (untrusted).
 
-    python3 gen_near.py <repo root> <Near_state.pkl> <out dir>
+    python3 gen_near.py <repo root> <Near_state.json> <out dir>
 
 Reads the near rows and field boxes from the packet's Lean sources, and writes
 <out dir>/NearConn.lean: for every owner a list of `NRow` (the index of a near
 row whose angle interval contains the state row, and Farkas multipliers for the
 four box half-planes) with the theorem that its rows lie in the rows of the near outer state.
 """
-import os, pickle, re, sys
+import os, re, sys
+from state_io import load_state
 from fractions import Fraction as F
 from geom import vertices, implies_mu
 from gen_step import q, lst
@@ -40,8 +41,7 @@ def packet(root):
 
 def main(root, state, out):
     boxes, nrows = packet(root)
-    with open(state, 'rb') as f:
-        srows, _, _ = pickle.load(f)
+    srows, _, _ = load_state(state)
     L = ["import ElevenSquare.Tasks.T07.Ext.Gen.Near\nimport ElevenSquare.Tasks.T07.Ext.Near\n",
          f"namespace {NS}.NearConn", HDR]
     for i in range(11):

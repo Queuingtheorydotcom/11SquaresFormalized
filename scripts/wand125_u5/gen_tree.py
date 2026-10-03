@@ -8,7 +8,8 @@ functions (or `cutAngleBelow` on the far side of an angular split), exactly as
 the composition `ext_near_of_far` consumes them.
 """
 import json
-import pickle, sys, os
+import sys, os
+from state_io import load_state, save_state
 from fractions import Fraction as F
 from geom import hull, halfplanes
 from gen_step import OWNER, q, qp, half, lst
@@ -77,7 +78,7 @@ def root_state(p2, first_step, B):
 
 def main(jdir, out, *only):
     states = {}
-    # U5_P2STATE=<p2_state.pkl from gen_p2.py> starts the root at the phase-2 chain
+    # U5_P2STATE=<p2_state.json from gen_p2.py> starts the root at the phase-2 chain
     p2_state = os.environ.get('U5_P2STATE')
     for name, fn, parent, cut in TREE:
         node = json.load(open(os.path.join(jdir, fn)))
@@ -85,8 +86,7 @@ def main(jdir, out, *only):
         if parent is None:
             rows, refs, owned = root_state(json.load(open(os.path.join(jdir, "p2.json"))), node['steps'][0], B)
             if p2_state:
-                with open(p2_state, 'rb') as f:
-                    prows, prefs, powned = pickle.load(f)
+                prows, prefs, powned = load_state(p2_state)
                 assert all(prows[o] == rows[o] for o in range(11)), 'phase-2 rows differ from the root rows'
                 assert all(prefs[o] == refs[o] for o in range(11)), 'phase-2 references differ'
                 assert all(set(powned[o]) == set(owned[o]) for o in range(11)), 'phase-2 hulls differ'
@@ -131,16 +131,14 @@ def main(jdir, out, *only):
         frm = os.environ.get('U5_FROM', '')
         if ckpt and frm.startswith(name + ':'):
             start = int(frm.split(':')[1])
-            with open(os.path.join(ckpt, f"{name}_{start - 1}.pkl"), 'rb') as f:
-                ch.rows, ch.refs, ch.owned = pickle.load(f)
+            ch.rows, ch.refs, ch.owned = load_state(os.path.join(ckpt, f"{name}_{start - 1}.json"))
         for k in range(start, n):
             if emit:
                 last = ch.step(k, out)
             else:
                 last = ch.step_quiet(k)
             if ckpt:
-                with open(os.path.join(ckpt, f"{name}_{k}.pkl"), 'wb') as f:
-                    pickle.dump((ch.rows, ch.refs, ch.owned), f)
+                save_state(os.path.join(ckpt, f"{name}_{k}.json"), (ch.rows, ch.refs, ch.owned))
         if emit:
             mod = f"ElevenSquare.Tasks.T07.Ext.Gen.{name}"
             base = f"{NS}.{name}"
@@ -158,8 +156,7 @@ def main(jdir, out, *only):
             T.append(f"end {base}\n")
             open(os.path.join(out, f"{name}.lean"), "w").write("\n".join(T))
         states[name] = (ch.rows, ch.refs, ch.owned)
-        with open(os.path.join(out, f"{name}_state.pkl"), 'wb') as f:
-            pickle.dump(states[name], f)
+        save_state(os.path.join(out, f"{name}_state.json"), states[name])
         print(f"== {name} done", file=sys.stderr)
 
 

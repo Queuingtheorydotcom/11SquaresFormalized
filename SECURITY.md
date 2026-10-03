@@ -22,3 +22,12 @@ persistent checkout to retain those checkpoints.
 See [LEAN_VERIFICATION_RUNBOOK.md](LEAN_VERIFICATION_RUNBOOK.md) for the supported
 setup, launch and recovery procedure. No container runtime is required or
 provided by this workflow.
+
+The optional `scripts/wand125_u5` certificate generators load and save validated
+JSON states with exact rational numbers, rather than executable pickle objects.
+Their checkpoint and final-state filenames now end in `.json`. Regenerate old
+`.pkl` states from the original JSON archives; there is no pickle compatibility
+loader. Update `U5_P2STATE` to the new `p2_state.json` path when using those
+generators. The Slurm verifier does not invoke them, and its `.verification/`
+receipts and `.lake/` resume data use the existing format. Archive `node_id` text
+is escaped before being placed in generated Lean comments.
