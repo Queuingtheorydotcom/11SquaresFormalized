@@ -1,0 +1,112 @@
+{
+  "scope": "Historical scoped compiler receipts; source equality does not certify the composed checkpoint or all changed dependencies.",
+  "global_optimality_proved": false,
+  "components": [
+    {
+      "module": "ElevenSquare.Simplified.LocalCommonIsolation",
+      "status": "accepted",
+      "elapsed_seconds": 7.68,
+      "source_sha256": "9b4993c678d264c38a223098e0f9902dbb1c6a14206bfb21fe86227708e1bede",
+      "compiler": "Lean (version 4.34.1, x86_64-unknown-linux-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+      "checkpoint_source_matches": true,
+      "recorded_axiom_queries": [
+        [
+          "ElevenSquare.Simplified.LocalCommon.packing_common_rows",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "ElevenSquare.Simplified.LocalCommon.construction_locally_isolated",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ]
+      ]
+    },
+    {
+      "module": "ElevenSquare.Simplified.FourCollisionBridge",
+      "status": "accepted",
+      "elapsed_seconds": 1.65,
+      "source_sha256": "1527a82f70e69b5f63c1557332431e92dc991b4203b37fb62c0cb4d5c29c3f9a",
+      "compiler": "Lean (version 4.34.1, x86_64-unknown-linux-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+      "checkpoint_source_matches": false,
+      "recorded_axiom_queries": [
+        [
+          "ElevenSquare.Simplified.FourCollision.not_all_other_raw",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "ElevenSquare.Simplified.FourCollision.force_case438",
+          "propext, Classical.choice, Quot.sound"
+        ]
+      ]
+    },
+    {
+      "module": "Sqpack.S11Opt.Simplified.Reduced2135.Main",
+      "status": "accepted",
+      "elapsed_seconds": 11.61,
+      "source_sha256": "213957f323683286452f8555e271f2ceab155a72c9920a794e6591a909a1710a",
+      "compiler": "Lean (version 4.34.1, x86_64-unknown-linux-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+      "checkpoint_source_matches": false,
+      "recorded_axiom_queries": [
+        [
+          "SquarePacking.S11Opt.Simplified.Reduced2135.excluded",
+          "propext, Classical.choice, Quot.sound"
+        ]
+      ]
+    },
+    {
+      "module": "Sqpack.S11Opt.Simplified.CorrelatedF05Pilot",
+      "status": "accepted",
+      "elapsed_seconds": 2.08,
+      "source_sha256": "9a0f40339e45fae61357d0236bcaaa2a2726cd1314fdccfa3a550205d2904dc0",
+      "compiler": "Lean (version 4.34.1, x86_64-unknown-linux-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+      "checkpoint_source_matches": false,
+      "recorded_axiom_queries": [
+        [
+          "SquarePacking.S11Opt.Simplified.CorrelatedF05Pilot.covered",
+          "propext, Classical.choice, Quot.sound"
+        ]
+      ]
+    },
+    {
+      "module": "Sqpack.S11Opt.Simplified.ComplementaryF25Pilot",
+      "status": "accepted",
+      "elapsed_seconds": 2.79,
+      "source_sha256": "e43a06088a36144ccca150947627dc9a25eb05a52c08e846ec55fd65a64673d3",
+      "compiler": "Lean (version 4.34.1, x86_64-unknown-linux-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+      "checkpoint_source_matches": false,
+      "recorded_axiom_queries": [
+        [
+          "SquarePacking.S11Opt.Simplified.ComplementaryF25Pilot.covered",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ]
+      ]
+    },
+    {
+      "module": "Sqpack.S11Opt.Simplified.OwnedTrace",
+      "status": "accepted",
+      "elapsed_seconds": 1.87,
+      "source_sha256": "96d62477d0605bf0f1f286fde8d0f1fca61ff564befd6a20acf7183fe688ac2f",
+      "compiler": "Lean (version 4.34.1, x86_64-unknown-linux-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+      "checkpoint_source_matches": true,
+      "recorded_axiom_queries": [
+        [
+          "SquarePacking.S11Opt.Simplified.OwnedTrace.check_sound",
+          "propext, Classical.choice, Quot.sound"
+        ]
+      ]
+    },
+    {
+      "module": "Sqpack.S11Opt.Simplified.ConditionalOwnedTrace",
+      "status": "accepted",
+      "elapsed_seconds": 3.26,
+      "source_sha256": "a1a83bff617124388cba000a220a9ad31f4321bd08f61517db92e504baee7c62",
+      "compiler": "Lean (version 4.34.1, x86_64-unknown-linux-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+      "checkpoint_source_matches": true,
+      "recorded_axiom_queries": [
+        [
+          "SquarePacking.S11Opt.Simplified.ConditionalOwnedTrace.check_sound",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ]
+      ]
+    }
+  ]
+}

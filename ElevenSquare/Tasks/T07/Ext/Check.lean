@@ -652,6 +652,8 @@ inductive CTree
   | empty (mu : List ℚ)
   | keep (m : ℕ) (mus : List (List ℚ))
   | forbid (j : ℕ) (T : Tri)
+  /-- Use one convex Minkowski polygon, avoiding its artificial triangulation. -/
+  | forbidHull (j : ℕ) (corners : List (ℕ × ℕ)) (mus : List (List ℚ))
   | collide (k : ℕ) (mus : List (List ℚ))
   | split (l : Halfplane) (le ge : CTree)
 
@@ -673,6 +675,11 @@ def CTree.check (C : Ctx) : Polygon → CTree → Bool
       subsetB P (C.rs.getD m ⟨0, 0, []⟩).centers mus &&
       decide ((C.rs.getD m ⟨0, 0, []⟩).lo ≤ C.a) && decide (C.b ≤ (C.rs.getD m ⟨0, 0, []⟩).hi)
   | P, .forbid j T => decide (j < 11) && decide (j ≠ C.i.val) && T.check (ownedOf C.s j) C.core P
+  | P, .forbidHull j corners mus =>
+      decide (j < 11) && decide (j ≠ C.i.val) &&
+      (corners.all fun ab => decide (ab.1 < (ownedOf C.s j).length ∧ ab.2 < C.core.length)) &&
+      convexF (diffs (ownedOf C.s j) C.core corners) &&
+      subsetB P (edgesF (diffs (ownedOf C.s j) C.core corners)) mus
   | P, .collide k mus => decide (k < C.regs.length) &&
       convexZF (C.regs.getD k ⟨0, [], []⟩).verts &&
         subsetB P (edgesF ((C.regs.getD k ⟨0, [], []⟩).verts.map toQ)) mus
@@ -710,6 +717,16 @@ theorem CTree.sound (C : Ctx) {q : UnitSquare} {t : ℝ} (ht0 : 0 ≤ t) (ht1 : 
     refine ⟨⟨j, hj⟩, fun e => hji (by rw [e]), ?_⟩
     have := Tri.sound hT hp
     simpa [ownedOf, hj] using this
+  | .forbidHull j corners mus, P, h, hp => by
+    simp only [CTree.check, Bool.and_eq_true, decide_eq_true_eq,
+      List.all_eq_true] at h
+    obtain ⟨⟨⟨⟨hj, hji⟩, hcorners⟩, hconv⟩, hsub⟩ := h
+    have hh := edgesF_subset_hull hconv (subsetB_sound hsub hp)
+    obtain ⟨a, ha', b, hb', heq⟩ := diffs_hull hcorners hh
+    right; left
+    refine ⟨⟨j, hj⟩, fun e => hji (by rw [e]), a, ?_, b, ?_, heq⟩
+    · simpa [ownedOf, hj, rationalHull, vpts] using ha'
+    · simpa [corePts, vpts] using hb'
   | .collide k mus, P, h, hp => by
     simp only [CTree.check, Bool.and_eq_true, decide_eq_true_eq] at h
     obtain ⟨⟨hk, hcv⟩, hsub⟩ := h

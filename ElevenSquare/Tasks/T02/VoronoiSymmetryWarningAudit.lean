@@ -1,2 +1,0 @@
-import ElevenSquare.Tasks.T02.VoronoiSymmetryWarning
-#print axioms ElevenSquare.Tasks.T02.closed_cells_not_naive_quarter_turn

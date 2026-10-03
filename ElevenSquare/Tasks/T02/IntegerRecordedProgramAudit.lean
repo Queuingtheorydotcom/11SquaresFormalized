@@ -1,9 +1,0 @@
-import ElevenSquare.Tasks.T02.IntegerRecordedProgram
-
-#print axioms ElevenSquare.Tasks.T02.integer_rows_sound
-#print axioms ElevenSquare.Tasks.T02.integer_recorded_instruction_sound
-#print axioms ElevenSquare.Tasks.T02.integer_recorded_program_sound
-#print axioms ElevenSquare.Tasks.T02.integer_recorded_program_run_append
-#print axioms ElevenSquare.Tasks.T02.integer_recorded_program_check_append
-#print axioms ElevenSquare.Tasks.T02.checked_integer_recorded_program_refutes
-#print axioms ElevenSquare.Tasks.T02.certificate_from_integer_recorded_program

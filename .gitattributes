@@ -1,3 +1,2 @@
-# Pinned source and metadata hashes require the same text bytes on every OS.
-# Automatic detection leaves binary files untouched.
 * text=auto eol=lf
+*.part* -text

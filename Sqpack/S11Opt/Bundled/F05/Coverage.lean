@@ -1,0 +1,172 @@
+import Sqpack.S11Opt.Bundled.F05.Leaves000
+import Sqpack.S11Opt.Bundled.F05.Leaves001
+import Sqpack.S11Opt.Bundled.F05.Leaves002
+
+namespace SquarePacking.S11Opt.Bundled.F05
+section
+open SquarePacking.S11Opt.F05
+open FieldTree
+
+theorem cov0g1 : CovF G.Q G.M G.R G.hps0 opts0 2146542118 2162803800 2146542118 2179065483 0 32768 :=
+  CovF.splitY 2162803800 cov0p4_1 cov0p5_1
+
+theorem cov0g2 : CovF G.Q G.M G.R G.hps0 opts0 2146542118 2179065483 2146542118 2179065483 0 32768 :=
+  CovF.splitX 2162803800 cov0g1 cov0p6_1
+
+theorem cov0g3 : CovF G.Q G.M G.R G.hps0 opts0 2146542118 2179065483 2146542118 2179065483 0 65536 :=
+  CovF.splitU 32768 cov0g2 cov0p7_1
+
+theorem cov0g4 : CovF G.Q G.M G.R G.hps0 opts0 2146542118 2179065483 2146542118 2211588849 0 65536 :=
+  CovF.splitY 2179065483 cov0g3 cov0p8_1
+
+theorem cov0g5 : CovF G.Q G.M G.R G.hps0 opts0 2146542118 2211588849 2146542118 2211588849 0 65536 :=
+  CovF.splitX 2179065483 cov0g4 cov0p9_1
+
+theorem cov0g6 : CovF G.Q G.M G.R G.hps0 opts0 2146542118 2211588849 2146542118 2211588849 0 131072 :=
+  CovF.splitU 65536 cov0g5 cov0p10_1
+
+theorem cov0g7 : CovF G.Q G.M G.R G.hps0 opts0 2146542118 2211588849 2081495388 2211588849 0 131072 :=
+  CovF.splitY 2146542118 cov0p3_1 cov0g6
+
+theorem cov0g8 : CovF G.Q G.M G.R G.hps0 opts0 2081495388 2211588849 2081495388 2211588849 0 131072 :=
+  CovF.splitX 2146542118 cov0p2_1 cov0g7
+
+theorem cov0g9 : CovF G.Q G.M G.R G.hps0 opts0 2081495388 2211588849 2081495388 2211588849 0 262144 :=
+  CovF.splitU 131072 cov0g8 cov0p11_1
+
+theorem cov0g10 : CovF G.Q G.M G.R G.hps0 opts0 2081495388 2211588849 2211588849 2341682311 0 131072 :=
+  CovF.splitY 2276635580 cov0p12_1 cov0p13_1
+
+theorem cov0g11 : CovF G.Q G.M G.R G.hps0 opts0 2081495388 2211588849 2211588849 2341682311 0 262144 :=
+  CovF.splitU 131072 cov0g10 cov0p14_1
+
+theorem cov0g12 : CovF G.Q G.M G.R G.hps0 opts0 2081495388 2211588849 2081495388 2341682311 0 262144 :=
+  CovF.splitY 2211588849 cov0g9 cov0g11
+
+theorem cov0g13 : CovF G.Q G.M G.R G.hps0 opts0 2081495388 2341682311 2081495388 2341682311 0 262144 :=
+  CovF.splitX 2211588849 cov0g12 cov0p15_1
+
+theorem cov0g14 : CovF G.Q G.M G.R G.hps0 opts0 2081495388 2341682311 2081495388 2341682311 0 524288 :=
+  CovF.splitU 262144 cov0g13 cov0p16_1
+
+theorem cov0g15 : CovF G.Q G.M G.R G.hps0 opts0 2081495388 2341682311 2341682311 2601869235 0 262144 :=
+  CovF.splitY 2471775773 cov0p17_1 cov0p18_1
+
+theorem cov0g16 : CovF G.Q G.M G.R G.hps0 opts0 2081495388 2341682311 2341682311 2601869235 0 524288 :=
+  CovF.splitU 262144 cov0g15 cov0p19_1
+
+theorem cov0g17 : CovF G.Q G.M G.R G.hps0 opts0 2081495388 2341682311 2081495388 2601869235 0 524288 :=
+  CovF.splitY 2341682311 cov0g14 cov0g16
+
+theorem cov0g18 : CovF G.Q G.M G.R G.hps0 opts0 2081495388 2601869235 2081495388 2601869235 0 524288 :=
+  CovF.splitX 2341682311 cov0g17 cov0p20_1
+
+theorem cov0g19 : CovF G.Q G.M G.R G.hps0 opts0 2081495388 2601869235 2081495388 2601869235 0 1048576 :=
+  CovF.splitU 524288 cov0g18 cov0p21_1
+
+theorem cov0g20 : CovF G.Q G.M G.R G.hps0 opts0 2081495388 2601869235 2081495388 3122243082 0 1048576 :=
+  CovF.splitY 2601869235 cov0g19 cov0p22_1
+
+theorem cov0g21 : CovF G.Q G.M G.R G.hps0 opts0 2081495388 3122243082 2081495388 3122243082 0 1048576 :=
+  CovF.splitX 2601869235 cov0g20 cov0p23_1
+
+theorem cov0g22 : CovF G.Q G.M G.R G.hps0 opts0 2081495388 3122243082 2081495388 3122243082 0 2097152 :=
+  CovF.splitU 1048576 cov0g21 cov0p24_1
+
+theorem cov0g23 : CovF G.Q G.M G.R G.hps0 opts0 2081495388 3122243082 2081495388 4162990776 0 2097152 :=
+  CovF.splitY 3122243082 cov0g22 cov0p25_1
+
+theorem cov0g24 : CovF G.Q G.M G.R G.hps0 opts0 2081495388 4162990776 2081495388 4162990776 0 2097152 :=
+  CovF.splitX 3122243082 cov0g23 cov0p26_1
+
+theorem cov0g25 : CovF G.Q G.M G.R G.hps0 opts0 2081495388 4162990776 2081495388 4162990776 0 4194304 :=
+  CovF.splitU 2097152 cov0g24 cov0p27_1
+
+theorem cov0g26 : CovF G.Q G.M G.R G.hps0 opts0 2081495388 4162990776 0 4162990776 0 4194304 :=
+  CovF.splitY 2081495388 cov0p1_1 cov0g25
+
+theorem cov0g27 : CovF G.Q G.M G.R G.hps0 opts0 0 4162990776 0 4162990776 0 4194304 :=
+  CovF.splitX 2081495388 cov0p0_1 cov0g26
+
+theorem cov0g28 : CovF G.Q G.M G.R G.hps0 opts0 0 4162990776 0 4162990776 0 8388608 :=
+  CovF.splitU 4194304 cov0g27 cov0p28_1
+
+theorem cov0g29 : CovF G.Q G.M G.R G.hps0 opts0 0 4162990776 0 8325981552 0 8388608 :=
+  CovF.splitY 4162990776 cov0g28 cov0p29_1
+
+theorem cov0g30 : CovF G.Q G.M G.R G.hps0 opts0 0 8325981552 0 8325981552 0 8388608 :=
+  CovF.splitX 4162990776 cov0g29 cov0p30_1
+
+theorem cov0g31 : CovF G.Q G.M G.R G.hps0 opts0 2081495388 3122243082 2081495388 4162990776 14680064 16777216 :=
+  CovF.splitY 3122243082 cov0p35_1 cov0p36_1
+
+theorem cov0g32 : CovF G.Q G.M G.R G.hps0 opts0 2081495388 4162990776 2081495388 4162990776 14680064 16777216 :=
+  CovF.splitX 3122243082 cov0g31 cov0p37_1
+
+theorem cov0g33 : CovF G.Q G.M G.R G.hps0 opts0 2081495388 4162990776 2081495388 4162990776 12582912 16777216 :=
+  CovF.splitU 14680064 cov0p34_1 cov0g32
+
+theorem cov0g34 : CovF G.Q G.M G.R G.hps0 opts0 2081495388 4162990776 0 4162990776 12582912 16777216 :=
+  CovF.splitY 2081495388 cov0p33_1 cov0g33
+
+theorem cov0g35 : CovF G.Q G.M G.R G.hps0 opts0 0 4162990776 0 4162990776 12582912 16777216 :=
+  CovF.splitX 2081495388 cov0p32_1 cov0g34
+
+theorem cov0g36 : CovF G.Q G.M G.R G.hps0 opts0 0 4162990776 0 4162990776 8388608 16777216 :=
+  CovF.splitU 12582912 cov0p31_1 cov0g35
+
+theorem cov0g37 : CovF G.Q G.M G.R G.hps0 opts0 2081495388 3122243082 4162990776 6244486164 14680064 16777216 :=
+  CovF.splitY 5203738470 cov0p41_1 cov0p42_1
+
+theorem cov0g38 : CovF G.Q G.M G.R G.hps0 opts0 2081495388 4162990776 4162990776 6244486164 14680064 16777216 :=
+  CovF.splitX 3122243082 cov0g37 cov0p43_1
+
+theorem cov0g39 : CovF G.Q G.M G.R G.hps0 opts0 2081495388 4162990776 4162990776 6244486164 12582912 16777216 :=
+  CovF.splitU 14680064 cov0p40_1 cov0g38
+
+theorem cov0g40 : CovF G.Q G.M G.R G.hps0 opts0 2081495388 4162990776 4162990776 8325981552 12582912 16777216 :=
+  CovF.splitY 6244486164 cov0g39 cov0p44_1
+
+theorem cov0g41 : CovF G.Q G.M G.R G.hps0 opts0 0 4162990776 4162990776 8325981552 12582912 16777216 :=
+  CovF.splitX 2081495388 cov0p39_1 cov0g40
+
+theorem cov0g42 : CovF G.Q G.M G.R G.hps0 opts0 0 4162990776 4162990776 8325981552 8388608 16777216 :=
+  CovF.splitU 12582912 cov0p38_1 cov0g41
+
+theorem cov0g43 : CovF G.Q G.M G.R G.hps0 opts0 0 4162990776 0 8325981552 8388608 16777216 :=
+  CovF.splitY 4162990776 cov0g36 cov0g42
+
+theorem cov0g44 : CovF G.Q G.M G.R G.hps0 opts0 0 8325981552 0 8325981552 8388608 16777216 :=
+  CovF.splitX 4162990776 cov0g43 cov0p45_1
+
+theorem cov0g45 : CovF G.Q G.M G.R G.hps0 opts0 0 8325981552 0 8325981552 0 16777216 :=
+  CovF.splitU 8388608 cov0g30 cov0g44
+
+theorem cov0g46 : CovF G.Q G.M G.R G.hps0 opts0 0 8325981552 0 16651963104 0 16777216 :=
+  CovF.splitY 8325981552 cov0g45 cov0p46_1
+
+theorem cov0g47 : CovF G.Q G.M G.R G.hps0 opts0 0 16651963104 0 16651963104 0 16777216 :=
+  CovF.splitX 8325981552 cov0g46 cov0p47_1
+
+end
+end SquarePacking.S11Opt.Bundled.F05
+
+namespace SquarePacking.S11Opt.Bundled.F05
+section
+open SquarePacking.S11Opt.F05
+open FieldTree
+
+
+end
+end SquarePacking.S11Opt.Bundled.F05
+
+namespace SquarePacking.S11Opt.Bundled.F05
+section
+open SquarePacking.S11Opt.F05
+open FieldTree
+
+
+end
+end SquarePacking.S11Opt.Bundled.F05
+
+#print axioms SquarePacking.S11Opt.Bundled.F05.cov0g47
