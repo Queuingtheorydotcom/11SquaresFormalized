@@ -1,0 +1,130 @@
+{
+  "base_commit": "c82cff63e48b2d3f2da60cb998bbab48e557c012",
+  "change": "Replace eight large Bernstein coefficients by five small-coefficient nonnegative terms; prove positivity on [0,2/5] and preserve the existing [9/25,37/100] theorem.",
+  "compile_arguments": [
+    "-j1",
+    "-M0",
+    "-s65536",
+    "-DautoImplicit=false",
+    "-DmaxHeartbeats=0"
+  ],
+  "compiler": "Lean (version 4.34.1, arm64-apple-darwin24.6.0, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+  "configuration_and_verifier_sha256": {
+    "lake-manifest.json": "120e40965dd632c94746b59767715975b8c172383f784da8707373f58d320a82",
+    "lakefile.lean": "4d454e7edfaf096378a8f68a3bd5f5b074c3d25399c3bc13e1b88ee84df3da45",
+    "lean-toolchain": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+    "scripts/check_sources.py": "be0090228dc75e91fb83d07981d2915c1e8f48f9e6f471c441cf58b0487a0118",
+    "scripts/verify.py": "952b50b3494bd86087861ad6c20b41ae0007cef6ed8354c42f5e5fb793b84b42",
+    "scripts/verify_support.py": "a452d1898c5e84e2a014c8ddfc14408b3362adb48ec53b119d8bbc7a789df70e"
+  },
+  "date": "2026-10-03",
+  "full_checkout_preflight": "Blocked by unrelated generated sources not restored on this Mac; first missing import Sqpack.S11Opt.Bundled.Split.UField. No full-project source-check success is claimed.",
+  "full_project_replayed": false,
+  "original_endpoint_definitions_and_public_statement_preserved": true,
+  "pinned_dependencies": [
+    {
+      "name": "mathlib",
+      "revision": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+      "tracked_checkout_clean": true
+    },
+    {
+      "name": "plausible",
+      "revision": "118aa17ee84656b8bd727fef7c458ee8c833385c",
+      "tracked_checkout_clean": true
+    },
+    {
+      "name": "LeanSearchClient",
+      "revision": "ddf04cf3949fa556442341e87d47f9f6e6074707",
+      "tracked_checkout_clean": true
+    },
+    {
+      "name": "importGraph",
+      "revision": "e928b72544873815af278d38681b31c0293588e3",
+      "tracked_checkout_clean": true
+    },
+    {
+      "name": "proofwidgets",
+      "revision": "106ff4fafc74ef4ac99d81dbf3ab399118f497a5",
+      "tracked_checkout_clean": true
+    },
+    {
+      "name": "aesop",
+      "revision": "355695d523e41d0554926416cba2a2b3544fbbc9",
+      "tracked_checkout_clean": true
+    },
+    {
+      "name": "Qq",
+      "revision": "6a489d9af5d0c47e5b259e2e8bcdfc1811b5a259",
+      "tracked_checkout_clean": true
+    },
+    {
+      "name": "batteries",
+      "revision": "f2effa3d803fda822b1f97b806c47cf2adfbcbc2",
+      "tracked_checkout_clean": true
+    },
+    {
+      "name": "Cli",
+      "revision": "e92c9f15fdfacc8536f31cfb3b7ad26c3c8cd204",
+      "tracked_checkout_clean": true
+    }
+  ],
+  "remaining_report_simplifications": "Companion source ZIP required for existing replacement modules, patches, exact cover certificates, and generators. Partial mathematical proposals still need their stated Lean bridges.",
+  "report_section": "D1: endpoint derivative decomposition",
+  "reproduce_after_source_restoration": "python3 scripts/verify.py --module ElevenSquare.Simplified.EndpointAudit",
+  "scope": "Two-module endpoint audit; not a full project or global optimality replay.",
+  "selected_result": {
+    "axioms": {
+      "ElevenSquare.T_pos": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ElevenSquare.endpointDerivative_decomposition": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ElevenSquare.endpointDerivative_pos": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ElevenSquare.endpointDerivative_pos_broad": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ElevenSquare.endpointPolynomial_strictMono": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ElevenSquare.endpoint_root_exists": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ElevenSquare.u_polynomial": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ElevenSquare.u_unique": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "checked_modules": 2,
+    "status": "SELECTED_MODULES_COMPILE",
+    "targets": [
+      "ElevenSquare.Simplified.EndpointAudit"
+    ]
+  },
+  "source_sha256": {
+    "ElevenSquare/Endpoint.lean": "262297a0cd59a0d2539d238985f9cafc8b629d9a45a3fc7fd239a675fba3e24b",
+    "ElevenSquare/Simplified/EndpointAudit.lean": "9c67169839164f14d6f16e396e524a2271e943048efdf637c2e1363494696f82"
+  },
+  "status": "ENDPOINT_SIMPLIFICATION_KERNEL_CHECKED",
+  "validation_method": "Unchanged official serial verifier in an isolated copy of the exact two-module source closure, sharing pinned external dependency cache. All source, configuration, and verifier files matched the integrated checkout byte-for-byte."
+}
