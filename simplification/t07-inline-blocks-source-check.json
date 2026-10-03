@@ -1,0 +1,2304 @@
+{
+  "method": "Inline the same width-eight kernel checks into the shared interval_cases proof; remove unused per-block declarations; step_ok and every final trace statement unchanged.",
+  "files": [
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Far13/S0.lean",
+      "blocks_preserved": 12,
+      "lines_removed": 48
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Far13/S1.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Far13/S10.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Far13/S11.lean",
+      "blocks_preserved": 10,
+      "lines_removed": 40
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Far13/S12.lean",
+      "blocks_preserved": 6,
+      "lines_removed": 24
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Far13/S13.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Far13/S14.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Far13/S15.lean",
+      "blocks_preserved": 8,
+      "lines_removed": 32
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Far13/S16.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Far13/S17.lean",
+      "blocks_preserved": 8,
+      "lines_removed": 32
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Far13/S18.lean",
+      "blocks_preserved": 6,
+      "lines_removed": 24
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Far13/S19.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Far13/S2.lean",
+      "blocks_preserved": 8,
+      "lines_removed": 32
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Far13/S20.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Far13/S21.lean",
+      "blocks_preserved": 6,
+      "lines_removed": 24
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Far13/S22.lean",
+      "blocks_preserved": 10,
+      "lines_removed": 40
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Far13/S23.lean",
+      "blocks_preserved": 5,
+      "lines_removed": 20
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Far13/S3.lean",
+      "blocks_preserved": 6,
+      "lines_removed": 24
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Far13/S4.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Far13/S5.lean",
+      "blocks_preserved": 8,
+      "lines_removed": 32
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Far13/S6.lean",
+      "blocks_preserved": 8,
+      "lines_removed": 32
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Far13/S7.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Far13/S8.lean",
+      "blocks_preserved": 14,
+      "lines_removed": 56
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Far13/S9.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Far15/S0.lean",
+      "blocks_preserved": 19,
+      "lines_removed": 76
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Far15/S1.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Far15/S2.lean",
+      "blocks_preserved": 10,
+      "lines_removed": 40
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Far15/S3.lean",
+      "blocks_preserved": 15,
+      "lines_removed": 60
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Far15/S4.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Far15/S5.lean",
+      "blocks_preserved": 11,
+      "lines_removed": 44
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Far15/S6.lean",
+      "blocks_preserved": 8,
+      "lines_removed": 32
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Far15/S7.lean",
+      "blocks_preserved": 10,
+      "lines_removed": 40
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S0.lean",
+      "blocks_preserved": 4,
+      "lines_removed": 16
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S1.lean",
+      "blocks_preserved": 5,
+      "lines_removed": 20
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S10.lean",
+      "blocks_preserved": 5,
+      "lines_removed": 20
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S100.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S101.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S102.lean",
+      "blocks_preserved": 1,
+      "lines_removed": 4
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S103.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S104.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S105.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S106.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S107.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S108.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S109.lean",
+      "blocks_preserved": 3,
+      "lines_removed": 12
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S11.lean",
+      "blocks_preserved": 6,
+      "lines_removed": 24
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S110.lean",
+      "blocks_preserved": 3,
+      "lines_removed": 12
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S111.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S112.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S113.lean",
+      "blocks_preserved": 1,
+      "lines_removed": 4
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S114.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S115.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S116.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S117.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S118.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S119.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S12.lean",
+      "blocks_preserved": 4,
+      "lines_removed": 16
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S120.lean",
+      "blocks_preserved": 3,
+      "lines_removed": 12
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S13.lean",
+      "blocks_preserved": 5,
+      "lines_removed": 20
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S14.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S15.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S16.lean",
+      "blocks_preserved": 5,
+      "lines_removed": 20
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S17.lean",
+      "blocks_preserved": 4,
+      "lines_removed": 16
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S18.lean",
+      "blocks_preserved": 4,
+      "lines_removed": 16
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S19.lean",
+      "blocks_preserved": 6,
+      "lines_removed": 24
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S2.lean",
+      "blocks_preserved": 4,
+      "lines_removed": 16
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S20.lean",
+      "blocks_preserved": 5,
+      "lines_removed": 20
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S21.lean",
+      "blocks_preserved": 5,
+      "lines_removed": 20
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S22.lean",
+      "blocks_preserved": 5,
+      "lines_removed": 20
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S23.lean",
+      "blocks_preserved": 4,
+      "lines_removed": 16
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S24.lean",
+      "blocks_preserved": 3,
+      "lines_removed": 12
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S25.lean",
+      "blocks_preserved": 1,
+      "lines_removed": 4
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S26.lean",
+      "blocks_preserved": 5,
+      "lines_removed": 20
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S27.lean",
+      "blocks_preserved": 3,
+      "lines_removed": 12
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S28.lean",
+      "blocks_preserved": 3,
+      "lines_removed": 12
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S29.lean",
+      "blocks_preserved": 3,
+      "lines_removed": 12
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S3.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S30.lean",
+      "blocks_preserved": 5,
+      "lines_removed": 20
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S31.lean",
+      "blocks_preserved": 4,
+      "lines_removed": 16
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S32.lean",
+      "blocks_preserved": 4,
+      "lines_removed": 16
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S33.lean",
+      "blocks_preserved": 4,
+      "lines_removed": 16
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S34.lean",
+      "blocks_preserved": 3,
+      "lines_removed": 12
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S35.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S36.lean",
+      "blocks_preserved": 1,
+      "lines_removed": 4
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S37.lean",
+      "blocks_preserved": 3,
+      "lines_removed": 12
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S38.lean",
+      "blocks_preserved": 3,
+      "lines_removed": 12
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S39.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S4.lean",
+      "blocks_preserved": 5,
+      "lines_removed": 20
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S40.lean",
+      "blocks_preserved": 3,
+      "lines_removed": 12
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S41.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S42.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S43.lean",
+      "blocks_preserved": 4,
+      "lines_removed": 16
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S44.lean",
+      "blocks_preserved": 3,
+      "lines_removed": 12
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S45.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S46.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S47.lean",
+      "blocks_preserved": 1,
+      "lines_removed": 4
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S48.lean",
+      "blocks_preserved": 3,
+      "lines_removed": 12
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S49.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S5.lean",
+      "blocks_preserved": 6,
+      "lines_removed": 24
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S50.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S51.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S52.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S53.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S54.lean",
+      "blocks_preserved": 3,
+      "lines_removed": 12
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S55.lean",
+      "blocks_preserved": 3,
+      "lines_removed": 12
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S56.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S57.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S58.lean",
+      "blocks_preserved": 1,
+      "lines_removed": 4
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S59.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S6.lean",
+      "blocks_preserved": 4,
+      "lines_removed": 16
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S60.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S61.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S62.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S63.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S64.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S65.lean",
+      "blocks_preserved": 3,
+      "lines_removed": 12
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S66.lean",
+      "blocks_preserved": 3,
+      "lines_removed": 12
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S67.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S68.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S69.lean",
+      "blocks_preserved": 1,
+      "lines_removed": 4
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S7.lean",
+      "blocks_preserved": 4,
+      "lines_removed": 16
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S70.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S71.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S72.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S73.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S74.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S75.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S76.lean",
+      "blocks_preserved": 3,
+      "lines_removed": 12
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S77.lean",
+      "blocks_preserved": 3,
+      "lines_removed": 12
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S78.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S79.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S8.lean",
+      "blocks_preserved": 6,
+      "lines_removed": 24
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S80.lean",
+      "blocks_preserved": 1,
+      "lines_removed": 4
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S81.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S82.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S83.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S84.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S85.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S86.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S87.lean",
+      "blocks_preserved": 3,
+      "lines_removed": 12
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S88.lean",
+      "blocks_preserved": 3,
+      "lines_removed": 12
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S89.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S9.lean",
+      "blocks_preserved": 5,
+      "lines_removed": 20
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S90.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S91.lean",
+      "blocks_preserved": 1,
+      "lines_removed": 4
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S92.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S93.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S94.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S95.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S96.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S97.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S98.lean",
+      "blocks_preserved": 3,
+      "lines_removed": 12
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near/S99.lean",
+      "blocks_preserved": 3,
+      "lines_removed": 12
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S0.lean",
+      "blocks_preserved": 13,
+      "lines_removed": 52
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S1.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S10.lean",
+      "blocks_preserved": 8,
+      "lines_removed": 32
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S11.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S12.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S13.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S14.lean",
+      "blocks_preserved": 10,
+      "lines_removed": 40
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S15.lean",
+      "blocks_preserved": 12,
+      "lines_removed": 48
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S16.lean",
+      "blocks_preserved": 13,
+      "lines_removed": 52
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S17.lean",
+      "blocks_preserved": 8,
+      "lines_removed": 32
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S18.lean",
+      "blocks_preserved": 8,
+      "lines_removed": 32
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S19.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S2.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S20.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S21.lean",
+      "blocks_preserved": 8,
+      "lines_removed": 32
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S22.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S23.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S24.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S25.lean",
+      "blocks_preserved": 10,
+      "lines_removed": 40
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S26.lean",
+      "blocks_preserved": 12,
+      "lines_removed": 48
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S27.lean",
+      "blocks_preserved": 13,
+      "lines_removed": 52
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S28.lean",
+      "blocks_preserved": 8,
+      "lines_removed": 32
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S29.lean",
+      "blocks_preserved": 8,
+      "lines_removed": 32
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S3.lean",
+      "blocks_preserved": 10,
+      "lines_removed": 40
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S30.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S31.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S32.lean",
+      "blocks_preserved": 8,
+      "lines_removed": 32
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S33.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S34.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S35.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S36.lean",
+      "blocks_preserved": 10,
+      "lines_removed": 40
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S37.lean",
+      "blocks_preserved": 12,
+      "lines_removed": 48
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S38.lean",
+      "blocks_preserved": 13,
+      "lines_removed": 52
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S39.lean",
+      "blocks_preserved": 8,
+      "lines_removed": 32
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S4.lean",
+      "blocks_preserved": 12,
+      "lines_removed": 48
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S40.lean",
+      "blocks_preserved": 8,
+      "lines_removed": 32
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S41.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S42.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S43.lean",
+      "blocks_preserved": 8,
+      "lines_removed": 32
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S5.lean",
+      "blocks_preserved": 14,
+      "lines_removed": 56
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S6.lean",
+      "blocks_preserved": 8,
+      "lines_removed": 32
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S7.lean",
+      "blocks_preserved": 8,
+      "lines_removed": 32
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S8.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Near13/S9.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S0.lean",
+      "blocks_preserved": 1,
+      "lines_removed": 4
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S1.lean",
+      "blocks_preserved": 1,
+      "lines_removed": 4
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S10.lean",
+      "blocks_preserved": 1,
+      "lines_removed": 4
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S100.lean",
+      "blocks_preserved": 6,
+      "lines_removed": 24
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S101.lean",
+      "blocks_preserved": 8,
+      "lines_removed": 32
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S102.lean",
+      "blocks_preserved": 6,
+      "lines_removed": 24
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S103.lean",
+      "blocks_preserved": 10,
+      "lines_removed": 40
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S104.lean",
+      "blocks_preserved": 17,
+      "lines_removed": 68
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S105.lean",
+      "blocks_preserved": 10,
+      "lines_removed": 40
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S106.lean",
+      "blocks_preserved": 8,
+      "lines_removed": 32
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S107.lean",
+      "blocks_preserved": 17,
+      "lines_removed": 68
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S108.lean",
+      "blocks_preserved": 18,
+      "lines_removed": 72
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S109.lean",
+      "blocks_preserved": 14,
+      "lines_removed": 56
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S11.lean",
+      "blocks_preserved": 13,
+      "lines_removed": 52
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S110.lean",
+      "blocks_preserved": 6,
+      "lines_removed": 24
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S111.lean",
+      "blocks_preserved": 5,
+      "lines_removed": 20
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S112.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S113.lean",
+      "blocks_preserved": 6,
+      "lines_removed": 24
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S114.lean",
+      "blocks_preserved": 10,
+      "lines_removed": 40
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S115.lean",
+      "blocks_preserved": 16,
+      "lines_removed": 64
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S116.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S117.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S118.lean",
+      "blocks_preserved": 13,
+      "lines_removed": 52
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S119.lean",
+      "blocks_preserved": 18,
+      "lines_removed": 72
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S12.lean",
+      "blocks_preserved": 15,
+      "lines_removed": 60
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S120.lean",
+      "blocks_preserved": 13,
+      "lines_removed": 52
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S121.lean",
+      "blocks_preserved": 5,
+      "lines_removed": 20
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S122.lean",
+      "blocks_preserved": 5,
+      "lines_removed": 20
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S123.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S124.lean",
+      "blocks_preserved": 5,
+      "lines_removed": 20
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S125.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S126.lean",
+      "blocks_preserved": 15,
+      "lines_removed": 60
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S127.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S128.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S129.lean",
+      "blocks_preserved": 11,
+      "lines_removed": 44
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S13.lean",
+      "blocks_preserved": 10,
+      "lines_removed": 40
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S130.lean",
+      "blocks_preserved": 18,
+      "lines_removed": 72
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S131.lean",
+      "blocks_preserved": 12,
+      "lines_removed": 48
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S132.lean",
+      "blocks_preserved": 5,
+      "lines_removed": 20
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S133.lean",
+      "blocks_preserved": 5,
+      "lines_removed": 20
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S134.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S135.lean",
+      "blocks_preserved": 5,
+      "lines_removed": 20
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S136.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S137.lean",
+      "blocks_preserved": 15,
+      "lines_removed": 60
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S138.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S139.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S14.lean",
+      "blocks_preserved": 14,
+      "lines_removed": 56
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S140.lean",
+      "blocks_preserved": 10,
+      "lines_removed": 40
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S141.lean",
+      "blocks_preserved": 18,
+      "lines_removed": 72
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S142.lean",
+      "blocks_preserved": 12,
+      "lines_removed": 48
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S143.lean",
+      "blocks_preserved": 10,
+      "lines_removed": 40
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S144.lean",
+      "blocks_preserved": 10,
+      "lines_removed": 40
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S145.lean",
+      "blocks_preserved": 14,
+      "lines_removed": 56
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S146.lean",
+      "blocks_preserved": 10,
+      "lines_removed": 40
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S147.lean",
+      "blocks_preserved": 18,
+      "lines_removed": 72
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S148.lean",
+      "blocks_preserved": 29,
+      "lines_removed": 116
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S149.lean",
+      "blocks_preserved": 17,
+      "lines_removed": 68
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S15.lean",
+      "blocks_preserved": 12,
+      "lines_removed": 48
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S150.lean",
+      "blocks_preserved": 13,
+      "lines_removed": 52
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S151.lean",
+      "blocks_preserved": 18,
+      "lines_removed": 72
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S152.lean",
+      "blocks_preserved": 35,
+      "lines_removed": 140
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S153.lean",
+      "blocks_preserved": 23,
+      "lines_removed": 92
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S154.lean",
+      "blocks_preserved": 10,
+      "lines_removed": 40
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S155.lean",
+      "blocks_preserved": 10,
+      "lines_removed": 40
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S156.lean",
+      "blocks_preserved": 13,
+      "lines_removed": 52
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S157.lean",
+      "blocks_preserved": 10,
+      "lines_removed": 40
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S158.lean",
+      "blocks_preserved": 18,
+      "lines_removed": 72
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S159.lean",
+      "blocks_preserved": 28,
+      "lines_removed": 112
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S16.lean",
+      "blocks_preserved": 12,
+      "lines_removed": 48
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S160.lean",
+      "blocks_preserved": 16,
+      "lines_removed": 64
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S161.lean",
+      "blocks_preserved": 13,
+      "lines_removed": 52
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S162.lean",
+      "blocks_preserved": 17,
+      "lines_removed": 68
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S163.lean",
+      "blocks_preserved": 32,
+      "lines_removed": 128
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S164.lean",
+      "blocks_preserved": 23,
+      "lines_removed": 92
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S17.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S18.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S19.lean",
+      "blocks_preserved": 12,
+      "lines_removed": 48
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S2.lean",
+      "blocks_preserved": 1,
+      "lines_removed": 4
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S20.lean",
+      "blocks_preserved": 10,
+      "lines_removed": 40
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S21.lean",
+      "blocks_preserved": 13,
+      "lines_removed": 52
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S22.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S23.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S24.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S25.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S26.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S27.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S28.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S29.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S3.lean",
+      "blocks_preserved": 1,
+      "lines_removed": 4
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S30.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S31.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S32.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S33.lean",
+      "blocks_preserved": 8,
+      "lines_removed": 32
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S34.lean",
+      "blocks_preserved": 8,
+      "lines_removed": 32
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S35.lean",
+      "blocks_preserved": 5,
+      "lines_removed": 20
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S36.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S37.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S38.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S39.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S4.lean",
+      "blocks_preserved": 1,
+      "lines_removed": 4
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S40.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S41.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S42.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S43.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S44.lean",
+      "blocks_preserved": 5,
+      "lines_removed": 20
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S45.lean",
+      "blocks_preserved": 4,
+      "lines_removed": 16
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S46.lean",
+      "blocks_preserved": 4,
+      "lines_removed": 16
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S47.lean",
+      "blocks_preserved": 8,
+      "lines_removed": 32
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S48.lean",
+      "blocks_preserved": 8,
+      "lines_removed": 32
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S49.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S5.lean",
+      "blocks_preserved": 1,
+      "lines_removed": 4
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S50.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S51.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S52.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S53.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S54.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S55.lean",
+      "blocks_preserved": 3,
+      "lines_removed": 12
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S56.lean",
+      "blocks_preserved": 3,
+      "lines_removed": 12
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S57.lean",
+      "blocks_preserved": 4,
+      "lines_removed": 16
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S58.lean",
+      "blocks_preserved": 4,
+      "lines_removed": 16
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S59.lean",
+      "blocks_preserved": 5,
+      "lines_removed": 20
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S6.lean",
+      "blocks_preserved": 1,
+      "lines_removed": 4
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S60.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S61.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S62.lean",
+      "blocks_preserved": 4,
+      "lines_removed": 16
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S63.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S64.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S65.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S66.lean",
+      "blocks_preserved": 3,
+      "lines_removed": 12
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S67.lean",
+      "blocks_preserved": 3,
+      "lines_removed": 12
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S68.lean",
+      "blocks_preserved": 4,
+      "lines_removed": 16
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S69.lean",
+      "blocks_preserved": 4,
+      "lines_removed": 16
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S7.lean",
+      "blocks_preserved": 1,
+      "lines_removed": 4
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S70.lean",
+      "blocks_preserved": 5,
+      "lines_removed": 20
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S71.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S72.lean",
+      "blocks_preserved": 6,
+      "lines_removed": 24
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S73.lean",
+      "blocks_preserved": 4,
+      "lines_removed": 16
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S74.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S75.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S76.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S77.lean",
+      "blocks_preserved": 3,
+      "lines_removed": 12
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S78.lean",
+      "blocks_preserved": 3,
+      "lines_removed": 12
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S79.lean",
+      "blocks_preserved": 4,
+      "lines_removed": 16
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S8.lean",
+      "blocks_preserved": 1,
+      "lines_removed": 4
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S80.lean",
+      "blocks_preserved": 4,
+      "lines_removed": 16
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S81.lean",
+      "blocks_preserved": 5,
+      "lines_removed": 20
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S82.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S83.lean",
+      "blocks_preserved": 6,
+      "lines_removed": 24
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S84.lean",
+      "blocks_preserved": 4,
+      "lines_removed": 16
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S85.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S86.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S87.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S88.lean",
+      "blocks_preserved": 3,
+      "lines_removed": 12
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S89.lean",
+      "blocks_preserved": 3,
+      "lines_removed": 12
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S9.lean",
+      "blocks_preserved": 1,
+      "lines_removed": 4
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S90.lean",
+      "blocks_preserved": 4,
+      "lines_removed": 16
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S91.lean",
+      "blocks_preserved": 4,
+      "lines_removed": 16
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S92.lean",
+      "blocks_preserved": 5,
+      "lines_removed": 20
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S93.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S94.lean",
+      "blocks_preserved": 6,
+      "lines_removed": 24
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S95.lean",
+      "blocks_preserved": 4,
+      "lines_removed": 16
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S96.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S97.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S98.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S99.lean",
+      "blocks_preserved": 6,
+      "lines_removed": 24
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R1/S0.lean",
+      "blocks_preserved": 19,
+      "lines_removed": 76
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R1/S1.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R1/S2.lean",
+      "blocks_preserved": 10,
+      "lines_removed": 40
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R1/S3.lean",
+      "blocks_preserved": 15,
+      "lines_removed": 60
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R1/S4.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R1/S5.lean",
+      "blocks_preserved": 11,
+      "lines_removed": 44
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R1/S6.lean",
+      "blocks_preserved": 8,
+      "lines_removed": 32
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R1/S7.lean",
+      "blocks_preserved": 10,
+      "lines_removed": 40
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R10/S0.lean",
+      "blocks_preserved": 6,
+      "lines_removed": 24
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R10/S1.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R10/S10.lean",
+      "blocks_preserved": 8,
+      "lines_removed": 32
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R10/S11.lean",
+      "blocks_preserved": 6,
+      "lines_removed": 24
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R10/S2.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R10/S3.lean",
+      "blocks_preserved": 10,
+      "lines_removed": 40
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R10/S4.lean",
+      "blocks_preserved": 12,
+      "lines_removed": 48
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R10/S5.lean",
+      "blocks_preserved": 14,
+      "lines_removed": 56
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R10/S6.lean",
+      "blocks_preserved": 8,
+      "lines_removed": 32
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R10/S7.lean",
+      "blocks_preserved": 8,
+      "lines_removed": 32
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R10/S8.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R10/S9.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R11/S0.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R11/S1.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R11/S2.lean",
+      "blocks_preserved": 10,
+      "lines_removed": 40
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R11/S3.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R11/S4.lean",
+      "blocks_preserved": 12,
+      "lines_removed": 48
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R11/S5.lean",
+      "blocks_preserved": 13,
+      "lines_removed": 52
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R110/S0.lean",
+      "blocks_preserved": 3,
+      "lines_removed": 12
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R110/S1.lean",
+      "blocks_preserved": 8,
+      "lines_removed": 32
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R110/S10.lean",
+      "blocks_preserved": 8,
+      "lines_removed": 32
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R110/S2.lean",
+      "blocks_preserved": 8,
+      "lines_removed": 32
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R110/S3.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R110/S4.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R110/S5.lean",
+      "blocks_preserved": 5,
+      "lines_removed": 20
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R110/S6.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R110/S7.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R110/S8.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R110/S9.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S0.lean",
+      "blocks_preserved": 8,
+      "lines_removed": 32
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S1.lean",
+      "blocks_preserved": 8,
+      "lines_removed": 32
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S10.lean",
+      "blocks_preserved": 8,
+      "lines_removed": 32
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S11.lean",
+      "blocks_preserved": 6,
+      "lines_removed": 24
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S12.lean",
+      "blocks_preserved": 5,
+      "lines_removed": 20
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S13.lean",
+      "blocks_preserved": 8,
+      "lines_removed": 32
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S14.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S15.lean",
+      "blocks_preserved": 3,
+      "lines_removed": 12
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S16.lean",
+      "blocks_preserved": 4,
+      "lines_removed": 16
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S17.lean",
+      "blocks_preserved": 6,
+      "lines_removed": 24
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S18.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S19.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S2.lean",
+      "blocks_preserved": 8,
+      "lines_removed": 32
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S20.lean",
+      "blocks_preserved": 6,
+      "lines_removed": 24
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S21.lean",
+      "blocks_preserved": 5,
+      "lines_removed": 20
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S22.lean",
+      "blocks_preserved": 4,
+      "lines_removed": 16
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S23.lean",
+      "blocks_preserved": 5,
+      "lines_removed": 20
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S24.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S25.lean",
+      "blocks_preserved": 6,
+      "lines_removed": 24
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S26.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S27.lean",
+      "blocks_preserved": 4,
+      "lines_removed": 16
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S28.lean",
+      "blocks_preserved": 6,
+      "lines_removed": 24
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S29.lean",
+      "blocks_preserved": 6,
+      "lines_removed": 24
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S3.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S30.lean",
+      "blocks_preserved": 5,
+      "lines_removed": 20
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S31.lean",
+      "blocks_preserved": 5,
+      "lines_removed": 20
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S32.lean",
+      "blocks_preserved": 5,
+      "lines_removed": 20
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S33.lean",
+      "blocks_preserved": 4,
+      "lines_removed": 16
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S34.lean",
+      "blocks_preserved": 5,
+      "lines_removed": 20
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S35.lean",
+      "blocks_preserved": 5,
+      "lines_removed": 20
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S36.lean",
+      "blocks_preserved": 6,
+      "lines_removed": 24
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S37.lean",
+      "blocks_preserved": 2,
+      "lines_removed": 8
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S38.lean",
+      "blocks_preserved": 4,
+      "lines_removed": 16
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S39.lean",
+      "blocks_preserved": 6,
+      "lines_removed": 24
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S4.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S40.lean",
+      "blocks_preserved": 6,
+      "lines_removed": 24
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S41.lean",
+      "blocks_preserved": 5,
+      "lines_removed": 20
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S42.lean",
+      "blocks_preserved": 4,
+      "lines_removed": 16
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S43.lean",
+      "blocks_preserved": 5,
+      "lines_removed": 20
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S44.lean",
+      "blocks_preserved": 4,
+      "lines_removed": 16
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S45.lean",
+      "blocks_preserved": 4,
+      "lines_removed": 16
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S46.lean",
+      "blocks_preserved": 5,
+      "lines_removed": 20
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S5.lean",
+      "blocks_preserved": 5,
+      "lines_removed": 20
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S6.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S7.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S8.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/R111/S9.lean",
+      "blocks_preserved": 7,
+      "lines_removed": 28
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Root240/S0.lean",
+      "blocks_preserved": 22,
+      "lines_removed": 88
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Root240/S1.lean",
+      "blocks_preserved": 12,
+      "lines_removed": 48
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Root240/S10.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Root240/S11.lean",
+      "blocks_preserved": 21,
+      "lines_removed": 84
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Root240/S12.lean",
+      "blocks_preserved": 10,
+      "lines_removed": 40
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Root240/S2.lean",
+      "blocks_preserved": 15,
+      "lines_removed": 60
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Root240/S3.lean",
+      "blocks_preserved": 30,
+      "lines_removed": 120
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Root240/S4.lean",
+      "blocks_preserved": 13,
+      "lines_removed": 52
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Root240/S5.lean",
+      "blocks_preserved": 16,
+      "lines_removed": 64
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Root240/S6.lean",
+      "blocks_preserved": 9,
+      "lines_removed": 36
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Root240/S7.lean",
+      "blocks_preserved": 28,
+      "lines_removed": 112
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Root240/S8.lean",
+      "blocks_preserved": 18,
+      "lines_removed": 72
+    },
+    {
+      "path": "ElevenSquare/Tasks/T07/Ext/Gen/Root240/S9.lean",
+      "blocks_preserved": 10,
+      "lines_removed": 40
+    }
+  ],
+  "total_blocks": 3303,
+  "total_lines_removed": 13212,
+  "status": "SOURCE_TRANSFORMATION_AUDIT_NOT_LEAN_ACCEPTANCE",
+  "kernel_replay_performed": false
+}

@@ -42,4 +42,95 @@ def labelPrefix6 : Array (Fin 4 → Fin 16) := labelPrefix5 ++ recordedOverlayLa
 theorem label_prefix_size6 : labelPrefix6.size = 220 := by
   rw [labelPrefix6, Array.size_append, label_prefix_size5, label_chunk_size6]
 theorem label_array_eq_prefix : recordedOverlayLabels = labelPrefix6 := rfl
+
+/-- Resolve a whole label chunk once, sharing the append proof across its entries. -/
+theorem label_lookup_chunk0 (i : ℕ) (lo : 0 ≤ i) (hi : i < 32) :
+    recordedOverlayLabels[i]! = recordedOverlayLabelsChunk0[i - 0]! := by
+  rw [label_array_eq_prefix]
+  rw [labelPrefix6, lookup_left labelPrefix5 recordedOverlayLabelsChunk6 i
+    (by rw [label_prefix_size5]; omega)]
+  rw [labelPrefix5, lookup_left labelPrefix4 recordedOverlayLabelsChunk5 i
+    (by rw [label_prefix_size4]; omega)]
+  rw [labelPrefix4, lookup_left labelPrefix3 recordedOverlayLabelsChunk4 i
+    (by rw [label_prefix_size3]; omega)]
+  rw [labelPrefix3, lookup_left labelPrefix2 recordedOverlayLabelsChunk3 i
+    (by rw [label_prefix_size2]; omega)]
+  rw [labelPrefix2, lookup_left labelPrefix1 recordedOverlayLabelsChunk2 i
+    (by rw [label_prefix_size1]; omega)]
+  rw [labelPrefix1, lookup_left labelPrefix0 recordedOverlayLabelsChunk1 i
+    (by rw [label_prefix_size0]; omega)]
+  simp only [labelPrefix0, Nat.sub_zero]
+
+theorem label_lookup_chunk1 (i : ℕ) (lo : 32 ≤ i) (hi : i < 64) :
+    recordedOverlayLabels[i]! = recordedOverlayLabelsChunk1[i - 32]! := by
+  rw [label_array_eq_prefix]
+  rw [labelPrefix6, lookup_left labelPrefix5 recordedOverlayLabelsChunk6 i
+    (by rw [label_prefix_size5]; omega)]
+  rw [labelPrefix5, lookup_left labelPrefix4 recordedOverlayLabelsChunk5 i
+    (by rw [label_prefix_size4]; omega)]
+  rw [labelPrefix4, lookup_left labelPrefix3 recordedOverlayLabelsChunk4 i
+    (by rw [label_prefix_size3]; omega)]
+  rw [labelPrefix3, lookup_left labelPrefix2 recordedOverlayLabelsChunk3 i
+    (by rw [label_prefix_size2]; omega)]
+  rw [labelPrefix2, lookup_left labelPrefix1 recordedOverlayLabelsChunk2 i
+    (by rw [label_prefix_size1]; omega)]
+  rw [labelPrefix1, lookup_right labelPrefix0 recordedOverlayLabelsChunk1 i
+    (by rw [label_prefix_size0]; exact lo)
+    (by rw [label_prefix_size0, label_chunk_size1]; omega), label_prefix_size0]
+
+theorem label_lookup_chunk2 (i : ℕ) (lo : 64 ≤ i) (hi : i < 96) :
+    recordedOverlayLabels[i]! = recordedOverlayLabelsChunk2[i - 64]! := by
+  rw [label_array_eq_prefix]
+  rw [labelPrefix6, lookup_left labelPrefix5 recordedOverlayLabelsChunk6 i
+    (by rw [label_prefix_size5]; omega)]
+  rw [labelPrefix5, lookup_left labelPrefix4 recordedOverlayLabelsChunk5 i
+    (by rw [label_prefix_size4]; omega)]
+  rw [labelPrefix4, lookup_left labelPrefix3 recordedOverlayLabelsChunk4 i
+    (by rw [label_prefix_size3]; omega)]
+  rw [labelPrefix3, lookup_left labelPrefix2 recordedOverlayLabelsChunk3 i
+    (by rw [label_prefix_size2]; omega)]
+  rw [labelPrefix2, lookup_right labelPrefix1 recordedOverlayLabelsChunk2 i
+    (by rw [label_prefix_size1]; exact lo)
+    (by rw [label_prefix_size1, label_chunk_size2]; omega), label_prefix_size1]
+
+theorem label_lookup_chunk3 (i : ℕ) (lo : 96 ≤ i) (hi : i < 128) :
+    recordedOverlayLabels[i]! = recordedOverlayLabelsChunk3[i - 96]! := by
+  rw [label_array_eq_prefix]
+  rw [labelPrefix6, lookup_left labelPrefix5 recordedOverlayLabelsChunk6 i
+    (by rw [label_prefix_size5]; omega)]
+  rw [labelPrefix5, lookup_left labelPrefix4 recordedOverlayLabelsChunk5 i
+    (by rw [label_prefix_size4]; omega)]
+  rw [labelPrefix4, lookup_left labelPrefix3 recordedOverlayLabelsChunk4 i
+    (by rw [label_prefix_size3]; omega)]
+  rw [labelPrefix3, lookup_right labelPrefix2 recordedOverlayLabelsChunk3 i
+    (by rw [label_prefix_size2]; exact lo)
+    (by rw [label_prefix_size2, label_chunk_size3]; omega), label_prefix_size2]
+
+theorem label_lookup_chunk4 (i : ℕ) (lo : 128 ≤ i) (hi : i < 160) :
+    recordedOverlayLabels[i]! = recordedOverlayLabelsChunk4[i - 128]! := by
+  rw [label_array_eq_prefix]
+  rw [labelPrefix6, lookup_left labelPrefix5 recordedOverlayLabelsChunk6 i
+    (by rw [label_prefix_size5]; omega)]
+  rw [labelPrefix5, lookup_left labelPrefix4 recordedOverlayLabelsChunk5 i
+    (by rw [label_prefix_size4]; omega)]
+  rw [labelPrefix4, lookup_right labelPrefix3 recordedOverlayLabelsChunk4 i
+    (by rw [label_prefix_size3]; exact lo)
+    (by rw [label_prefix_size3, label_chunk_size4]; omega), label_prefix_size3]
+
+theorem label_lookup_chunk5 (i : ℕ) (lo : 160 ≤ i) (hi : i < 192) :
+    recordedOverlayLabels[i]! = recordedOverlayLabelsChunk5[i - 160]! := by
+  rw [label_array_eq_prefix]
+  rw [labelPrefix6, lookup_left labelPrefix5 recordedOverlayLabelsChunk6 i
+    (by rw [label_prefix_size5]; omega)]
+  rw [labelPrefix5, lookup_right labelPrefix4 recordedOverlayLabelsChunk5 i
+    (by rw [label_prefix_size4]; exact lo)
+    (by rw [label_prefix_size4, label_chunk_size5]; omega), label_prefix_size4]
+
+theorem label_lookup_chunk6 (i : ℕ) (lo : 192 ≤ i) (hi : i < 220) :
+    recordedOverlayLabels[i]! = recordedOverlayLabelsChunk6[i - 192]! := by
+  rw [label_array_eq_prefix]
+  rw [labelPrefix6, lookup_right labelPrefix5 recordedOverlayLabelsChunk6 i
+    (by rw [label_prefix_size5]; exact lo)
+    (by rw [label_prefix_size5, label_chunk_size6]; omega), label_prefix_size5]
+
 end ElevenSquare.Pending.EncodedSearch

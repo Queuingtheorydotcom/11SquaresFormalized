@@ -1,5 +1,7 @@
 # PC continuation: recovered eleven-square simplification
 
+> Historical handoff for the imported `dac90e2f` checkpoint. The current branch is `codex/simplification-unverified-20261003`, with 394,204 reachable lines and further unverified simplifications. Use [PC_RESUME.md](PC_RESUME.md) for current commands and status. The following original counts and acceptance notes describe the earlier bundle.
+
 This branch starts from `c82cff63e48b2d3f2da60cb998bbab48e557c012` and preserves a complete, hash-bound candidate source closure for `ElevenSquare.Optimality`.
 
 **494,346 physical Lean lines, 7,514 local modules, zero missing local imports. Full assembled Lean acceptance is pending.** The 2,681,349-line original theorem closure is the comparison baseline. The earlier ~504,000 figure was an intermediate source proposal. The bounded stage-context pass brings this delivered checkpoint below 500,000; it preserves each theorem statement and proof body, rather than removing geometric obligations.

@@ -53,214 +53,94 @@ theorem row03_alias0_coordinate_02 : gapGradient T constructionSquare (Gap.wall 
     _ = polynomialGradient 3 2 := rfl
 
 theorem row03_alias0_coordinate_03 : gapGradient T constructionSquare (Gap.wall 0 1 2) 3 = polynomialGradient 3 3 := by
-  calc
-    gapGradient T constructionSquare (Gap.wall 0 1 2) 3 = wallGradientFormula constructionSquare 0 1 2 3 := gapGradient_wall T constructionSquare 0 1 2 3
-    _ = 0 := wallGradientFormula_zero constructionSquare 0 1 2 3 (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 3 3 := rfl
+  apply wallGradient_polynomial_zero <;> decide
 
 theorem row03_alias0_coordinate_04 : gapGradient T constructionSquare (Gap.wall 0 1 2) 4 = polynomialGradient 3 4 := by
-  calc
-    gapGradient T constructionSquare (Gap.wall 0 1 2) 4 = wallGradientFormula constructionSquare 0 1 2 4 := gapGradient_wall T constructionSquare 0 1 2 4
-    _ = 0 := wallGradientFormula_zero constructionSquare 0 1 2 4 (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 3 4 := rfl
+  apply wallGradient_polynomial_zero <;> decide
 
 theorem row03_alias0_coordinate_05 : gapGradient T constructionSquare (Gap.wall 0 1 2) 5 = polynomialGradient 3 5 := by
-  calc
-    gapGradient T constructionSquare (Gap.wall 0 1 2) 5 = wallGradientFormula constructionSquare 0 1 2 5 := gapGradient_wall T constructionSquare 0 1 2 5
-    _ = 0 := wallGradientFormula_zero constructionSquare 0 1 2 5 (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 3 5 := rfl
+  apply wallGradient_polynomial_zero <;> decide
 
 theorem row03_alias0_coordinate_06 : gapGradient T constructionSquare (Gap.wall 0 1 2) 6 = polynomialGradient 3 6 := by
-  calc
-    gapGradient T constructionSquare (Gap.wall 0 1 2) 6 = wallGradientFormula constructionSquare 0 1 2 6 := gapGradient_wall T constructionSquare 0 1 2 6
-    _ = 0 := wallGradientFormula_zero constructionSquare 0 1 2 6 (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 3 6 := rfl
+  apply wallGradient_polynomial_zero <;> decide
 
 theorem row03_alias0_coordinate_07 : gapGradient T constructionSquare (Gap.wall 0 1 2) 7 = polynomialGradient 3 7 := by
-  calc
-    gapGradient T constructionSquare (Gap.wall 0 1 2) 7 = wallGradientFormula constructionSquare 0 1 2 7 := gapGradient_wall T constructionSquare 0 1 2 7
-    _ = 0 := wallGradientFormula_zero constructionSquare 0 1 2 7 (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 3 7 := rfl
+  apply wallGradient_polynomial_zero <;> decide
 
 theorem row03_alias0_coordinate_08 : gapGradient T constructionSquare (Gap.wall 0 1 2) 8 = polynomialGradient 3 8 := by
-  calc
-    gapGradient T constructionSquare (Gap.wall 0 1 2) 8 = wallGradientFormula constructionSquare 0 1 2 8 := gapGradient_wall T constructionSquare 0 1 2 8
-    _ = 0 := wallGradientFormula_zero constructionSquare 0 1 2 8 (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 3 8 := rfl
+  apply wallGradient_polynomial_zero <;> decide
 
 theorem row03_alias0_coordinate_09 : gapGradient T constructionSquare (Gap.wall 0 1 2) 9 = polynomialGradient 3 9 := by
-  calc
-    gapGradient T constructionSquare (Gap.wall 0 1 2) 9 = wallGradientFormula constructionSquare 0 1 2 9 := gapGradient_wall T constructionSquare 0 1 2 9
-    _ = 0 := wallGradientFormula_zero constructionSquare 0 1 2 9 (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 3 9 := rfl
+  apply wallGradient_polynomial_zero <;> decide
 
 theorem row03_alias0_coordinate_10 : gapGradient T constructionSquare (Gap.wall 0 1 2) 10 = polynomialGradient 3 10 := by
-  calc
-    gapGradient T constructionSquare (Gap.wall 0 1 2) 10 = wallGradientFormula constructionSquare 0 1 2 10 := gapGradient_wall T constructionSquare 0 1 2 10
-    _ = 0 := wallGradientFormula_zero constructionSquare 0 1 2 10 (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 3 10 := rfl
+  apply wallGradient_polynomial_zero <;> decide
 
 theorem row03_alias0_coordinate_11 : gapGradient T constructionSquare (Gap.wall 0 1 2) 11 = polynomialGradient 3 11 := by
-  calc
-    gapGradient T constructionSquare (Gap.wall 0 1 2) 11 = wallGradientFormula constructionSquare 0 1 2 11 := gapGradient_wall T constructionSquare 0 1 2 11
-    _ = 0 := wallGradientFormula_zero constructionSquare 0 1 2 11 (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 3 11 := rfl
+  apply wallGradient_polynomial_zero <;> decide
 
 theorem row03_alias0_coordinate_12 : gapGradient T constructionSquare (Gap.wall 0 1 2) 12 = polynomialGradient 3 12 := by
-  calc
-    gapGradient T constructionSquare (Gap.wall 0 1 2) 12 = wallGradientFormula constructionSquare 0 1 2 12 := gapGradient_wall T constructionSquare 0 1 2 12
-    _ = 0 := wallGradientFormula_zero constructionSquare 0 1 2 12 (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 3 12 := rfl
+  apply wallGradient_polynomial_zero <;> decide
 
 theorem row03_alias0_coordinate_13 : gapGradient T constructionSquare (Gap.wall 0 1 2) 13 = polynomialGradient 3 13 := by
-  calc
-    gapGradient T constructionSquare (Gap.wall 0 1 2) 13 = wallGradientFormula constructionSquare 0 1 2 13 := gapGradient_wall T constructionSquare 0 1 2 13
-    _ = 0 := wallGradientFormula_zero constructionSquare 0 1 2 13 (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 3 13 := rfl
+  apply wallGradient_polynomial_zero <;> decide
 
 theorem row03_alias0_coordinate_14 : gapGradient T constructionSquare (Gap.wall 0 1 2) 14 = polynomialGradient 3 14 := by
-  calc
-    gapGradient T constructionSquare (Gap.wall 0 1 2) 14 = wallGradientFormula constructionSquare 0 1 2 14 := gapGradient_wall T constructionSquare 0 1 2 14
-    _ = 0 := wallGradientFormula_zero constructionSquare 0 1 2 14 (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 3 14 := rfl
+  apply wallGradient_polynomial_zero <;> decide
 
 theorem row03_alias0_coordinate_15 : gapGradient T constructionSquare (Gap.wall 0 1 2) 15 = polynomialGradient 3 15 := by
-  calc
-    gapGradient T constructionSquare (Gap.wall 0 1 2) 15 = wallGradientFormula constructionSquare 0 1 2 15 := gapGradient_wall T constructionSquare 0 1 2 15
-    _ = 0 := wallGradientFormula_zero constructionSquare 0 1 2 15 (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 3 15 := rfl
+  apply wallGradient_polynomial_zero <;> decide
 
 theorem row03_alias0_coordinate_16 : gapGradient T constructionSquare (Gap.wall 0 1 2) 16 = polynomialGradient 3 16 := by
-  calc
-    gapGradient T constructionSquare (Gap.wall 0 1 2) 16 = wallGradientFormula constructionSquare 0 1 2 16 := gapGradient_wall T constructionSquare 0 1 2 16
-    _ = 0 := wallGradientFormula_zero constructionSquare 0 1 2 16 (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 3 16 := rfl
+  apply wallGradient_polynomial_zero <;> decide
 
 theorem row03_alias0_coordinate_17 : gapGradient T constructionSquare (Gap.wall 0 1 2) 17 = polynomialGradient 3 17 := by
-  calc
-    gapGradient T constructionSquare (Gap.wall 0 1 2) 17 = wallGradientFormula constructionSquare 0 1 2 17 := gapGradient_wall T constructionSquare 0 1 2 17
-    _ = 0 := wallGradientFormula_zero constructionSquare 0 1 2 17 (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 3 17 := rfl
+  apply wallGradient_polynomial_zero <;> decide
 
 theorem row03_alias0_coordinate_18 : gapGradient T constructionSquare (Gap.wall 0 1 2) 18 = polynomialGradient 3 18 := by
-  calc
-    gapGradient T constructionSquare (Gap.wall 0 1 2) 18 = wallGradientFormula constructionSquare 0 1 2 18 := gapGradient_wall T constructionSquare 0 1 2 18
-    _ = 0 := wallGradientFormula_zero constructionSquare 0 1 2 18 (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 3 18 := rfl
+  apply wallGradient_polynomial_zero <;> decide
 
 theorem row03_alias0_coordinate_19 : gapGradient T constructionSquare (Gap.wall 0 1 2) 19 = polynomialGradient 3 19 := by
-  calc
-    gapGradient T constructionSquare (Gap.wall 0 1 2) 19 = wallGradientFormula constructionSquare 0 1 2 19 := gapGradient_wall T constructionSquare 0 1 2 19
-    _ = 0 := wallGradientFormula_zero constructionSquare 0 1 2 19 (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 3 19 := rfl
+  apply wallGradient_polynomial_zero <;> decide
 
 theorem row03_alias0_coordinate_20 : gapGradient T constructionSquare (Gap.wall 0 1 2) 20 = polynomialGradient 3 20 := by
-  calc
-    gapGradient T constructionSquare (Gap.wall 0 1 2) 20 = wallGradientFormula constructionSquare 0 1 2 20 := gapGradient_wall T constructionSquare 0 1 2 20
-    _ = 0 := wallGradientFormula_zero constructionSquare 0 1 2 20 (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 3 20 := rfl
+  apply wallGradient_polynomial_zero <;> decide
 
 theorem row03_alias0_coordinate_21 : gapGradient T constructionSquare (Gap.wall 0 1 2) 21 = polynomialGradient 3 21 := by
-  calc
-    gapGradient T constructionSquare (Gap.wall 0 1 2) 21 = wallGradientFormula constructionSquare 0 1 2 21 := gapGradient_wall T constructionSquare 0 1 2 21
-    _ = 0 := wallGradientFormula_zero constructionSquare 0 1 2 21 (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 3 21 := rfl
+  apply wallGradient_polynomial_zero <;> decide
 
 theorem row03_alias0_coordinate_22 : gapGradient T constructionSquare (Gap.wall 0 1 2) 22 = polynomialGradient 3 22 := by
-  calc
-    gapGradient T constructionSquare (Gap.wall 0 1 2) 22 = wallGradientFormula constructionSquare 0 1 2 22 := gapGradient_wall T constructionSquare 0 1 2 22
-    _ = 0 := wallGradientFormula_zero constructionSquare 0 1 2 22 (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 3 22 := rfl
+  apply wallGradient_polynomial_zero <;> decide
 
 theorem row03_alias0_coordinate_23 : gapGradient T constructionSquare (Gap.wall 0 1 2) 23 = polynomialGradient 3 23 := by
-  calc
-    gapGradient T constructionSquare (Gap.wall 0 1 2) 23 = wallGradientFormula constructionSquare 0 1 2 23 := gapGradient_wall T constructionSquare 0 1 2 23
-    _ = 0 := wallGradientFormula_zero constructionSquare 0 1 2 23 (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 3 23 := rfl
+  apply wallGradient_polynomial_zero <;> decide
 
 theorem row03_alias0_coordinate_24 : gapGradient T constructionSquare (Gap.wall 0 1 2) 24 = polynomialGradient 3 24 := by
-  calc
-    gapGradient T constructionSquare (Gap.wall 0 1 2) 24 = wallGradientFormula constructionSquare 0 1 2 24 := gapGradient_wall T constructionSquare 0 1 2 24
-    _ = 0 := wallGradientFormula_zero constructionSquare 0 1 2 24 (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 3 24 := rfl
+  apply wallGradient_polynomial_zero <;> decide
 
 theorem row03_alias0_coordinate_25 : gapGradient T constructionSquare (Gap.wall 0 1 2) 25 = polynomialGradient 3 25 := by
-  calc
-    gapGradient T constructionSquare (Gap.wall 0 1 2) 25 = wallGradientFormula constructionSquare 0 1 2 25 := gapGradient_wall T constructionSquare 0 1 2 25
-    _ = 0 := wallGradientFormula_zero constructionSquare 0 1 2 25 (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 3 25 := rfl
+  apply wallGradient_polynomial_zero <;> decide
 
 theorem row03_alias0_coordinate_26 : gapGradient T constructionSquare (Gap.wall 0 1 2) 26 = polynomialGradient 3 26 := by
-  calc
-    gapGradient T constructionSquare (Gap.wall 0 1 2) 26 = wallGradientFormula constructionSquare 0 1 2 26 := gapGradient_wall T constructionSquare 0 1 2 26
-    _ = 0 := wallGradientFormula_zero constructionSquare 0 1 2 26 (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 3 26 := rfl
+  apply wallGradient_polynomial_zero <;> decide
 
 theorem row03_alias0_coordinate_27 : gapGradient T constructionSquare (Gap.wall 0 1 2) 27 = polynomialGradient 3 27 := by
-  calc
-    gapGradient T constructionSquare (Gap.wall 0 1 2) 27 = wallGradientFormula constructionSquare 0 1 2 27 := gapGradient_wall T constructionSquare 0 1 2 27
-    _ = 0 := wallGradientFormula_zero constructionSquare 0 1 2 27 (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 3 27 := rfl
+  apply wallGradient_polynomial_zero <;> decide
 
 theorem row03_alias0_coordinate_28 : gapGradient T constructionSquare (Gap.wall 0 1 2) 28 = polynomialGradient 3 28 := by
-  calc
-    gapGradient T constructionSquare (Gap.wall 0 1 2) 28 = wallGradientFormula constructionSquare 0 1 2 28 := gapGradient_wall T constructionSquare 0 1 2 28
-    _ = 0 := wallGradientFormula_zero constructionSquare 0 1 2 28 (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 3 28 := rfl
+  apply wallGradient_polynomial_zero <;> decide
 
 theorem row03_alias0_coordinate_29 : gapGradient T constructionSquare (Gap.wall 0 1 2) 29 = polynomialGradient 3 29 := by
-  calc
-    gapGradient T constructionSquare (Gap.wall 0 1 2) 29 = wallGradientFormula constructionSquare 0 1 2 29 := gapGradient_wall T constructionSquare 0 1 2 29
-    _ = 0 := wallGradientFormula_zero constructionSquare 0 1 2 29 (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 3 29 := rfl
+  apply wallGradient_polynomial_zero <;> decide
 
 theorem row03_alias0_coordinate_30 : gapGradient T constructionSquare (Gap.wall 0 1 2) 30 = polynomialGradient 3 30 := by
-  calc
-    gapGradient T constructionSquare (Gap.wall 0 1 2) 30 = wallGradientFormula constructionSquare 0 1 2 30 := gapGradient_wall T constructionSquare 0 1 2 30
-    _ = 0 := wallGradientFormula_zero constructionSquare 0 1 2 30 (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 3 30 := rfl
+  apply wallGradient_polynomial_zero <;> decide
 
 theorem row03_alias0_coordinate_31 : gapGradient T constructionSquare (Gap.wall 0 1 2) 31 = polynomialGradient 3 31 := by
-  calc
-    gapGradient T constructionSquare (Gap.wall 0 1 2) 31 = wallGradientFormula constructionSquare 0 1 2 31 := gapGradient_wall T constructionSquare 0 1 2 31
-    _ = 0 := wallGradientFormula_zero constructionSquare 0 1 2 31 (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 3 31 := rfl
+  apply wallGradient_polynomial_zero <;> decide
 
 theorem row03_alias0_coordinate_32 : gapGradient T constructionSquare (Gap.wall 0 1 2) 32 = polynomialGradient 3 32 := by
-  calc
-    gapGradient T constructionSquare (Gap.wall 0 1 2) 32 = wallGradientFormula constructionSquare 0 1 2 32 := gapGradient_wall T constructionSquare 0 1 2 32
-    _ = 0 := wallGradientFormula_zero constructionSquare 0 1 2 32 (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 3 32 := rfl
+  apply wallGradient_polynomial_zero <;> decide
 
 theorem row03_alias0_gradient : gapGradient T constructionSquare (Gap.wall 0 1 2) = polynomialGradient 3 := by
   funext j

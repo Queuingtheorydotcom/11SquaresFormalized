@@ -1,0 +1,17 @@
+{
+  "path": "Sqpack/S11Opt/Bundled/Own/Mem.lean",
+  "public_singleton_lemmas": 134,
+  "all_public_lemma_statements_preserved": 135,
+  "axiom_queries_preserved": 135,
+  "lines_before": 1630,
+  "lines_after": 840,
+  "lines_saved": 790,
+  "bytes_before": 88586,
+  "bytes_after": 54943,
+  "exact_reverse_reconstruction": true,
+  "old_sha256": "5c61cd512d2e5137bb13e898b0aa02996792c70b3f68d24a19f42d5916630c72",
+  "new_sha256": "f7d4aa62539c382d2b09c18a56fe6d52a3f69c162ad44f43ecb75e58ca665fd5",
+  "lean_replay": "NOT_RUN",
+  "status": "SOURCE_TRANSFORMATION_AUDIT_NOT_LEAN_ACCEPTANCE",
+  "kernel_replay_performed": false
+}

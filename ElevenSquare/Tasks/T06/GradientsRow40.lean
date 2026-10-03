@@ -94,193 +94,85 @@ theorem row40_alias0_coordinate_32 : gapGradient T constructionSquare (Gap.pair 
     _ = polynomialGradient 40 32 := rfl
 
 theorem row40_alias0_coordinate_00 : gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 0 = polynomialGradient 40 0 := by
-  calc
-    gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 0 = pairGradientFormula constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 0 := gapGradient_pair T constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 0
-    _ = 0 := pairGradientFormula_zero constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 0 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 40 0 := rfl
+  apply pairGradient_polynomial_zero <;> decide
 
 theorem row40_alias0_coordinate_01 : gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 1 = polynomialGradient 40 1 := by
-  calc
-    gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 1 = pairGradientFormula constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 1 := gapGradient_pair T constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 1
-    _ = 0 := pairGradientFormula_zero constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 1 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 40 1 := rfl
+  apply pairGradient_polynomial_zero <;> decide
 
 theorem row40_alias0_coordinate_02 : gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 2 = polynomialGradient 40 2 := by
-  calc
-    gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 2 = pairGradientFormula constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 2 := gapGradient_pair T constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 2
-    _ = 0 := pairGradientFormula_zero constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 2 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 40 2 := rfl
+  apply pairGradient_polynomial_zero <;> decide
 
 theorem row40_alias0_coordinate_03 : gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 3 = polynomialGradient 40 3 := by
-  calc
-    gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 3 = pairGradientFormula constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 3 := gapGradient_pair T constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 3
-    _ = 0 := pairGradientFormula_zero constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 3 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 40 3 := rfl
+  apply pairGradient_polynomial_zero <;> decide
 
 theorem row40_alias0_coordinate_04 : gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 4 = polynomialGradient 40 4 := by
-  calc
-    gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 4 = pairGradientFormula constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 4 := gapGradient_pair T constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 4
-    _ = 0 := pairGradientFormula_zero constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 4 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 40 4 := rfl
+  apply pairGradient_polynomial_zero <;> decide
 
 theorem row40_alias0_coordinate_05 : gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 5 = polynomialGradient 40 5 := by
-  calc
-    gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 5 = pairGradientFormula constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 5 := gapGradient_pair T constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 5
-    _ = 0 := pairGradientFormula_zero constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 5 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 40 5 := rfl
+  apply pairGradient_polynomial_zero <;> decide
 
 theorem row40_alias0_coordinate_06 : gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 6 = polynomialGradient 40 6 := by
-  calc
-    gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 6 = pairGradientFormula constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 6 := gapGradient_pair T constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 6
-    _ = 0 := pairGradientFormula_zero constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 6 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 40 6 := rfl
+  apply pairGradient_polynomial_zero <;> decide
 
 theorem row40_alias0_coordinate_07 : gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 7 = polynomialGradient 40 7 := by
-  calc
-    gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 7 = pairGradientFormula constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 7 := gapGradient_pair T constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 7
-    _ = 0 := pairGradientFormula_zero constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 7 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 40 7 := rfl
+  apply pairGradient_polynomial_zero <;> decide
 
 theorem row40_alias0_coordinate_08 : gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 8 = polynomialGradient 40 8 := by
-  calc
-    gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 8 = pairGradientFormula constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 8 := gapGradient_pair T constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 8
-    _ = 0 := pairGradientFormula_zero constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 8 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 40 8 := rfl
+  apply pairGradient_polynomial_zero <;> decide
 
 theorem row40_alias0_coordinate_09 : gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 9 = polynomialGradient 40 9 := by
-  calc
-    gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 9 = pairGradientFormula constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 9 := gapGradient_pair T constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 9
-    _ = 0 := pairGradientFormula_zero constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 9 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 40 9 := rfl
+  apply pairGradient_polynomial_zero <;> decide
 
 theorem row40_alias0_coordinate_10 : gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 10 = polynomialGradient 40 10 := by
-  calc
-    gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 10 = pairGradientFormula constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 10 := gapGradient_pair T constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 10
-    _ = 0 := pairGradientFormula_zero constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 10 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 40 10 := rfl
+  apply pairGradient_polynomial_zero <;> decide
 
 theorem row40_alias0_coordinate_11 : gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 11 = polynomialGradient 40 11 := by
-  calc
-    gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 11 = pairGradientFormula constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 11 := gapGradient_pair T constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 11
-    _ = 0 := pairGradientFormula_zero constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 11 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 40 11 := rfl
+  apply pairGradient_polynomial_zero <;> decide
 
 theorem row40_alias0_coordinate_12 : gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 12 = polynomialGradient 40 12 := by
-  calc
-    gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 12 = pairGradientFormula constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 12 := gapGradient_pair T constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 12
-    _ = 0 := pairGradientFormula_zero constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 12 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 40 12 := rfl
+  apply pairGradient_polynomial_zero <;> decide
 
 theorem row40_alias0_coordinate_13 : gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 13 = polynomialGradient 40 13 := by
-  calc
-    gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 13 = pairGradientFormula constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 13 := gapGradient_pair T constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 13
-    _ = 0 := pairGradientFormula_zero constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 13 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 40 13 := rfl
+  apply pairGradient_polynomial_zero <;> decide
 
 theorem row40_alias0_coordinate_14 : gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 14 = polynomialGradient 40 14 := by
-  calc
-    gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 14 = pairGradientFormula constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 14 := gapGradient_pair T constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 14
-    _ = 0 := pairGradientFormula_zero constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 14 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 40 14 := rfl
+  apply pairGradient_polynomial_zero <;> decide
 
 theorem row40_alias0_coordinate_15 : gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 15 = polynomialGradient 40 15 := by
-  calc
-    gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 15 = pairGradientFormula constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 15 := gapGradient_pair T constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 15
-    _ = 0 := pairGradientFormula_zero constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 15 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 40 15 := rfl
+  apply pairGradient_polynomial_zero <;> decide
 
 theorem row40_alias0_coordinate_16 : gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 16 = polynomialGradient 40 16 := by
-  calc
-    gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 16 = pairGradientFormula constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 16 := gapGradient_pair T constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 16
-    _ = 0 := pairGradientFormula_zero constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 16 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 40 16 := rfl
+  apply pairGradient_polynomial_zero <;> decide
 
 theorem row40_alias0_coordinate_17 : gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 17 = polynomialGradient 40 17 := by
-  calc
-    gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 17 = pairGradientFormula constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 17 := gapGradient_pair T constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 17
-    _ = 0 := pairGradientFormula_zero constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 17 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 40 17 := rfl
+  apply pairGradient_polynomial_zero <;> decide
 
 theorem row40_alias0_coordinate_18 : gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 18 = polynomialGradient 40 18 := by
-  calc
-    gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 18 = pairGradientFormula constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 18 := gapGradient_pair T constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 18
-    _ = 0 := pairGradientFormula_zero constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 18 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 40 18 := rfl
+  apply pairGradient_polynomial_zero <;> decide
 
 theorem row40_alias0_coordinate_19 : gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 19 = polynomialGradient 40 19 := by
-  calc
-    gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 19 = pairGradientFormula constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 19 := gapGradient_pair T constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 19
-    _ = 0 := pairGradientFormula_zero constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 19 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 40 19 := rfl
+  apply pairGradient_polynomial_zero <;> decide
 
 theorem row40_alias0_coordinate_20 : gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 20 = polynomialGradient 40 20 := by
-  calc
-    gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 20 = pairGradientFormula constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 20 := gapGradient_pair T constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 20
-    _ = 0 := pairGradientFormula_zero constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 20 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 40 20 := rfl
+  apply pairGradient_polynomial_zero <;> decide
 
 theorem row40_alias0_coordinate_21 : gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 21 = polynomialGradient 40 21 := by
-  calc
-    gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 21 = pairGradientFormula constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 21 := gapGradient_pair T constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 21
-    _ = 0 := pairGradientFormula_zero constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 21 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 40 21 := rfl
+  apply pairGradient_polynomial_zero <;> decide
 
 theorem row40_alias0_coordinate_22 : gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 22 = polynomialGradient 40 22 := by
-  calc
-    gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 22 = pairGradientFormula constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 22 := gapGradient_pair T constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 22
-    _ = 0 := pairGradientFormula_zero constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 22 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 40 22 := rfl
+  apply pairGradient_polynomial_zero <;> decide
 
 theorem row40_alias0_coordinate_23 : gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 23 = polynomialGradient 40 23 := by
-  calc
-    gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 23 = pairGradientFormula constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 23 := gapGradient_pair T constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 23
-    _ = 0 := pairGradientFormula_zero constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 23 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 40 23 := rfl
+  apply pairGradient_polynomial_zero <;> decide
 
 theorem row40_alias0_coordinate_24 : gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 24 = polynomialGradient 40 24 := by
-  calc
-    gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 24 = pairGradientFormula constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 24 := gapGradient_pair T constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 24
-    _ = 0 := pairGradientFormula_zero constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 24 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 40 24 := rfl
+  apply pairGradient_polynomial_zero <;> decide
 
 theorem row40_alias0_coordinate_25 : gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 25 = polynomialGradient 40 25 := by
-  calc
-    gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 25 = pairGradientFormula constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 25 := gapGradient_pair T constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 25
-    _ = 0 := pairGradientFormula_zero constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 25 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 40 25 := rfl
+  apply pairGradient_polynomial_zero <;> decide
 
 theorem row40_alias0_coordinate_26 : gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 26 = polynomialGradient 40 26 := by
-  calc
-    gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) 26 = pairGradientFormula constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 26 := gapGradient_pair T constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 26
-    _ = 0 := pairGradientFormula_zero constructionSquare ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0 26 (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    _ = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := (polyEval_zero u).symm
-    _ = polynomialGradient 40 26 := rfl
+  apply pairGradient_polynomial_zero <;> decide
 
 theorem row40_alias0_gradient : gapGradient T constructionSquare (Gap.pair ({ owner := 9, other := 10, distinct := by decide, perpendicular := false, reverse := false }) 0) = polynomialGradient 40 := by
   funext j
