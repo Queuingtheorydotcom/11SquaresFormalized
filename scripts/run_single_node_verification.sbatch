@@ -7,41 +7,69 @@
 #SBATCH --time=3-00:00:00
 #SBATCH --output=.verification/slurm-%j.log
 
-# Submit from the prepared repository directory. Set your site's account and
-# high-memory partition using sbatch options. Resource requests and wall time
-# are examples, not predictions of completion time.
-# Requires a cluster-approved rootless Docker daemon with cgroup v2/systemd.
-# The reviewed host launcher sends a clean source snapshot to private Docker
-# volumes. Repository code executes only in the offline container phase.
+# Submit from a persistent repository checkout; create .verification beforehand.
+# Account, partition, allocation size and wall time are site-specific examples.
+# Python, Lake and Lean run directly under the submitting user's permissions.
 set -euo pipefail
 cd "${SLURM_SUBMIT_DIR:?Submit from the repository directory}"
-# RHEL 9's default python3 may be 3.9. Select an installed 3.11+ interpreter
-# using ELEVEN_SQUARE_PYTHON=python3.11 (or your site's absolute module path).
 proof_python="${ELEVEN_SQUARE_PYTHON:-python3}"
-"$proof_python" -I -c 'import sys; sys.exit(0 if sys.version_info >= (3, 11) else "Host Python 3.11+ is required")'
+"$proof_python" -c 'import sys; sys.exit(0 if sys.version_info >= (3, 11) else "Python 3.11+ is required; set ELEVEN_SQUARE_PYTHON")'
+export PATH="${ELAN_HOME:-$HOME/.elan}/bin:$PATH"
+mkdir -p .verification
 
-# An administrator must have approved/accounted for this user daemon on the
-# compute node. Opt in to starting the already installed systemd user service;
-# this does not install Docker or configure Slurm cgroup delegation.
-if [[ "${ELEVEN_SQUARE_START_USER_DOCKER:-0}" == 1 ]]; then
-  export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/run/user/$(id -u)}"
-  export DBUS_SESSION_BUS_ADDRESS="${DBUS_SESSION_BUS_ADDRESS:-unix:path=$XDG_RUNTIME_DIR/bus}"
-  systemctl --user start docker
+stop_file=".verification/STOP"
+if [[ -e "$stop_file" ]]; then
+  printf 'Remove %s before resuming verification.\n' "$stop_file" >&2
+  exit 2
 fi
-export DOCKER_CONTEXT="${ELEVEN_SQUARE_DOCKER_CONTEXT:-rootless}"
-unset DOCKER_HOST
-volume_options=()
-if [[ -n "${ELEVEN_SQUARE_VOLUME:-}" ]]; then
-  volume_options=(--volume "$ELEVEN_SQUARE_VOLUME")
-fi
-srun --ntasks=1 --cpu-bind=none "$proof_python" -I scripts/verify_container.py all \
-  --cpus "${SLURM_CPUS_PER_TASK:-200}" --memory 1300g \
-  --max-parallel 100 --jobs 2 --memory-percent 85 "${volume_options[@]}"
+setup_options=()
+case "${ELEVEN_SQUARE_SETUP:-1}" in
+  1) setup_options=(--setup) ;;
+  0) ;;
+  *) printf 'ELEVEN_SQUARE_SETUP must be 0 or 1.\n' >&2; exit 2 ;;
+esac
 
-# Print a small untrusted-data receipt to the Slurm log. All reports/objects
-# remain in the private volume; no repository scripts are executed on the host.
+srun --ntasks=1 --cpu-bind=none "$proof_python" -u scripts/verify.py \
+  "${setup_options[@]}" --all --keep-going \
+  --max-parallel "${ELEVEN_SQUARE_MAX_PARALLEL:-100}" \
+  --jobs "${ELEVEN_SQUARE_JOBS:-2}" \
+  --memory-percent "${ELEVEN_SQUARE_MEMORY_PERCENT:-85}" \
+  --stop-file "$stop_file"
+
+"$proof_python" -B scripts/finalize_verification.py --write
+
+# A job-specific receipt avoids confusing an older success with this attempt.
 receipt=".verification/completion-${SLURM_JOB_ID:?}.json"
-"$proof_python" -I scripts/verify_container.py report --report completion.json \
-  "${volume_options[@]}" > "$receipt.tmp"
-mv -- "$receipt.tmp" "$receipt"
-printf 'Compact receipt: %s\n' "$receipt"
+"$proof_python" -B - "$receipt" <<'PY'
+import hashlib
+import json
+import sys
+from pathlib import Path
+
+result = json.loads(Path('.verification/result.json').read_text())
+audit = json.loads(Path('verification/wand125-upgrade.json').read_text())
+required = (
+    result.get('status') == 'OPTIMALITY_PROVED',
+    result.get('global_optimality_proved') is True,
+    audit.get('status') == 'OPTIMALITY_PROVED',
+    audit.get('global_optimality_proved') is True,
+    audit.get('full_upgrade_verified') is True,
+    audit.get('explicit_native_admissions') == 0,
+    audit.get('checked_modules') == result.get('checked_modules'),
+)
+if not all(required):
+    raise SystemExit('Verification did not establish full optimality.')
+completion = {
+    'status': 'OPTIMALITY_PROVED',
+    'global_optimality_proved': True,
+    'full_upgrade_verified': True,
+    'checked_modules': audit['checked_modules'],
+    'lean_toolchain': audit['lean_toolchain'],
+    'mathlib_revision': audit['mathlib_revision'],
+    'audit_sha256': hashlib.sha256(Path('verification/wand125-upgrade.json').read_bytes()).hexdigest(),
+    'manifest_sha256': hashlib.sha256(Path('MANIFEST.json').read_bytes()).hexdigest(),
+}
+Path(sys.argv[1]).write_text(json.dumps(completion, indent=2) + '\n')
+print(f"COMPLETE: optimality verified; {audit['checked_modules']} local modules checked.")
+print('Compact receipt: ' + sys.argv[1])
+PY

@@ -35,163 +35,78 @@ arbitrary orientations, legal boundary contact, and disjoint open interiors.
 
 ## Verification
 
-For untrusted inputs, use the reviewed host launcher, which automatically builds
-and runs an isolated image through **local rootless Docker**. Python 3.11+, Git,
-and an installed, cluster-approved Docker daemon with cgroup v2 and the systemd
-cgroup driver are required on the host. The launcher installs Lean and other
-proof dependencies inside its private volume; no host Lean or pip packages are
-needed. Commit all intended changes first; the launcher verifies a clean HEAD
-snapshot. For the 200-core, 1,400-GiB node:
+See [the step-by-step RHEL 9.6 / Slurm guide](LEAN_VERIFICATION_RUNBOOK.md)
+for setup from a fresh account, submission, monitoring, resuming, and outputs.
+Verification runs directly under your account. See [SECURITY.md](SECURITY.md)
+for the execution boundary. Python 3.11+, Git, curl and Lean's `elan` launcher
+are required; there are no third-party Python packages. Lean `v4.34.1` and
+mathlib `d13f23b723b8a846827a245b89c10fc7d3f11612` are pinned.
+Keep `lean-toolchain` and `lake-manifest.json`; do not run `lake update`.
 
-```sh
-python3 -I scripts/verify_container.py all --cpus 200 --memory 1300g --max-parallel 100 --jobs 2 --memory-percent 85
-```
-
-Preparation uses networking once, on a newly created volume, and executes only
-the reviewed bootstrap and pinned official dependencies. Repository Python,
-Lake configuration and Lean code execute only in the subsequent offline stage.
-There are no host bind mounts or daemon sockets. Restrictions are probed before
-each stage; a missing restriction is a failure, with no host execution fallback.
-See [SECURITY.md](SECURITY.md) for the trust boundary and remaining limitations.
-The Docker runtime has not yet been tested on the target cluster.
-
-Rerunning `all` with the same snapshot resumes **offline**. A failed preparation
-requires a fresh name, supplied with `--volume eleven-square-attempt2`; reuse
-that name for later resumes and reports. The persistent private volume contains
-all restored sources, dependencies, logs and objects. Export only a fixed report:
-
-```sh
-python3 -I scripts/verify_container.py report --report completion.json > ../completion.json
-```
-
-On Slurm, create the log directory before submission:
+For a node with approximately 200 allocated CPUs and 1,400 GiB RAM:
 
 ```sh
 mkdir -p .verification
+export ELEVEN_SQUARE_PYTHON=python3.11
 sbatch --account YOUR_ACCOUNT --partition YOUR_PARTITION scripts/run_single_node_verification.sbatch
 ```
 
-The example runs the Docker launcher automatically. The site must permit rootless
-Docker and account for its daemon/containers within the job allocation. A CPU
-affinity restriction and explicit container limits supplement the Slurm request;
-they do not configure site accounting. The concurrency ceiling is an initial
-setting, not a measured optimum. Containers share the host kernel, and workspace
-disk use is not capped. A disposable VM and dedicated storage offer a stronger
-boundary. Review these bootstrap scripts before running them on a sensitive host.
+The supplied job requests 200 CPUs, 1,300 GiB RAM and three days. It restores
+pinned generated sources, installs the pinned Lean toolchain and dependency
+cache, checks all local modules with up to 100 concurrent compiler processes
+and two threads per new process, audits axioms, and finalizes evidence only
+after full success. These resource settings are initial choices, not measured
+requirements. The verifier's memory guard is advisory. Override concurrency
+with `ELEVEN_SQUARE_MAX_PARALLEL`, `ELEVEN_SQUARE_JOBS` and
+`ELEVEN_SQUARE_MEMORY_PERCENT`; adjust them if requesting a smaller allocation.
 
-The example requests three days of wall time and exports a compact JSON receipt
-to `.verification/completion-JOB_ID.json` after success. On RHEL 9.6, use an
-installed Python 3.11+ explicitly: export `ELEVEN_SQUARE_PYTHON=python3.11` before
-submission. Export `ELEVEN_SQUARE_START_USER_DOCKER=1` only when your site permits
-starting the installed systemd user Docker service on the allocated node; otherwise
-the site's daemon startup must already be in place. The example selects the
-`rootless` Docker context, or `ELEVEN_SQUARE_DOCKER_CONTEXT` if set. For a fresh
-attempt or named resume, set `ELEVEN_SQUARE_VOLUME` before submission. A daemon-owned
-preparation marker and leftover-container checks also protect interrupted launches.
-
-The following raw verifier commands describe operation **inside an independently
-isolated environment**. `scripts/verify.py` itself remains unsandboxed.
-
-Install Git, Python 3.11 or newer, and Lean's `elan` launcher. The project pins
-Lean `v4.34.1` and
-mathlib revision `d13f23b723b8a846827a245b89c10fc7d3f11612`.
-Keep `lake-manifest.json`; do not update dependencies while reproducing this
-snapshot.
-
-Restore the pinned generated certificate sources, set up the public dependencies,
-then compile the main dependency chain serially and inspect its target axioms:
+Outside Slurm, the equivalent replay command is:
 
 ```sh
-python3 scripts/verify.py --setup
+python3.11 -u scripts/verify.py --setup --all --keep-going --max-parallel 100 --jobs 2 --memory-percent 85
 ```
 
-`--setup` restores the pinned generated sources before checking imports. To
-restore only those sources, use `python3 scripts/materialize_wand125.py`;
-matching existing files require no download.
+`--setup` both prepares dependencies and starts verification. To restore only
+original sources and derived baseline bundles, use
+`python3.11 scripts/materialize_wand125.py`.
 
-For every included source module, including progress outside the main chain:
+Progress appears as `[module-position/total] started|accepted|cached|failed|blocked`
+lines. Parallel completions can arrive out of order; the position is not a
+completed-module count. There is no graphical progress bar or reliable time
+estimate. Compiler diagnostics are saved in `.verification/MODULE.log`.
 
-```sh
-python3 scripts/verify.py --setup --all
-```
+Accepted modules are saved with source, object, compiler, configuration and
+transitive local dependency fingerprints. To resume after interruption, retain
+the same checkout including `.verification/` and `.lake/`, then resubmit with
+`ELEVEN_SQUARE_SETUP=0` once setup has completed. Do not use `--fresh` on resume.
+Unfinished modules restart from their beginnings; Lean does not checkpoint
+within an individual module. The job uses `--stop-file .verification/STOP`:
+create that file to stop launching new checks and finish active checks, then
+remove it before resubmitting. A hard allocation cutoff still loses active
+module work. Only one verifier may own a checkout at a time.
 
-To check only the final theorem's dependency closure and its component axiom
-queries, use the focused audit:
+For a serial replay, use `python3.11 scripts/verify.py --setup --all --keep-going`.
+The optional `scripts/check_lean.sh` serial wrapper requires a Python 3.11+
+`python3` on PATH and saves a combined log. `--module ElevenSquare.ProofAudit`
+checks only the final theorem's closure; selected-module acceptance does not
+satisfy the full-source publication gate. `--plan` prints dependency order
+without running Lean, and `scripts/check_sources.py` performs a source-only check.
 
-```sh
-python3 scripts/verify.py --module ElevenSquare.ProofAudit --keep-going
-```
+Successful full verification writes `.verification/result.json`. The job then
+runs `scripts/finalize_verification.py --write`, validates current receipts and
+axiom logs, updates `verification/wand125-upgrade.json`,
+`verification/source-check.json` and `MANIFEST.json`, and writes a compact
+`.verification/completion-JOB_ID.json`. That receipt must report
+`OPTIMALITY_PROVED`, with `global_optimality_proved` and
+`full_upgrade_verified` true. It summarizes the audit and its hashes; it is not
+a standalone proof certificate. The step-by-step guide includes a
+machine-readable completion check and instructions for compilation failures.
 
-This target has not yet earned complete native compiler and axiom acceptance.
-A focused result does not establish that every optional legacy module builds,
-and does not satisfy the full-source publication gate.
-
-For a progress display and saved log, run `bash scripts/check_lean.sh`.
-It checks all modules and continues through independent failures.
-
-Once dependencies are installed, omit `--setup`. Accepted unchanged modules
-can be resumed using the script's source/object/dependency fingerprints. The
-serial checker prioritizes shared dependencies, records transitive input hashes,
-and audits every included explicit axiom query. Use
-`--jobs N` to give each new Lean process `N` worker threads while retaining serial
-module checks by default. For concurrent independent modules on one node, use
-`--max-parallel N`; `--jobs` sets threads per compiler process. For a node with
-about 200 allocated cores and 1,400 GiB RAM, an initial configuration is:
-
-```sh
-python3 scripts/verify.py --setup --all --keep-going --max-parallel 100 --jobs 2 --memory-percent 85
-```
-
-This is an initial concurrency ceiling, not a measured optimum. The scheduler
-waits for accepted dependencies, checks memory headroom before launching extra
-processes, and retries auxiliary checks alone after memory pressure. Its memory
-guard is advisory rather than an enforced allocation limit. Measure throughput
-and peak memory before increasing concurrency. One verifier owns the checkout;
-no distributed sharding is required. The final axiom audit and result artifacts
-remain part of the same run. Matching accepted receipts keep their actual original thread count
-and fingerprints. Extra threads can require more memory; the default remains one.
-Use
-`--keep-going` to collect independent compatibility failures in one run; it
-still rejects any incomplete build. Add
-`--fresh` to rebuild every selected local module. These are substantial exact
-certificate checks and can take a long time. They use ordinary Lean checking;
-no packing search or external algebra system is required.
-
-A source-only check, requiring only Python3, is:
-
-```sh
-python3 scripts/check_sources.py
-```
-
-`--plan` on the verifier prints the compilation order without running Lean.
-Build logs and objects remain in ignored `.verification/` and `.lake/` folders.
-The normal Lake entry point is also available via `lake build`.
-
-An optional, manually triggered `Bounded wand125 replay` GitHub Actions workflow
-is available. Integration checks currently run locally; pushing the branch does
-not start this workflow. Sixteen public standard runners check independent module groups, then
-a final job runs the same full verifier and completion audit. Bounded caches
-preserve accepted work between runs; an interrupted or incomplete replay remains
-a failed check. This workflow does not publish verification evidence or merge
-the branch. Local verification remains available through the commands above.
-
-With an empty admission inventory, every queried target may use only `propext`,
-`Classical.choice`, and `Quot.sound`. Source restoration and an admission-free
-source scan do not establish proof acceptance. Before publishing completion,
-finish the full fresh replay and validate its current receipts:
-
-```sh
-python3 scripts/verify.py --all --fresh --keep-going
-python3 scripts/finalize_verification.py
-```
-
-Use the finalizer's `--write` only after all final source and documentation edits
-and the complete replay have passed. A selected-module result cannot satisfy it.
-If the fresh replay is interrupted, resume with
-`python3 scripts/verify.py --all --keep-going`, omitting `--fresh` so matching
-accepted receipts can be reused. The verifier still checks their current source,
-configuration, objects, and transitive dependency fingerprints; finalization
-still requires the complete supported source tree and clean axiom evidence.
+An optional manually triggered `Bounded wand125 replay` GitHub Actions workflow
+also exists. Pushing does not trigger it. Full native verification remains
+pending until a complete replay and the finalizer pass. An admission-free
+source scan alone does not establish proof acceptance. Use `--fresh` only when
+intentionally discarding accepted local checkpoints for a new replay.
 
 ## Upstream proof integration
 
