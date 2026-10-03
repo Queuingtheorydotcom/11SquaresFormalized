@@ -41,8 +41,12 @@ After restoring the pinned sources, run the repository's serial checker:
 python3 scripts/verify.py --module ElevenSquare.Pending.S06_Returned --keep-going
 ```
 
-The adapter and public wrapper include explicit axiom queries. Their complete
-dependency replay must pass on the pinned Lean 4.34.1 toolchain with only
-`propext`, `Classical.choice`, and `Quot.sound`. This source integration has not
-yet earned that native acceptance. Full optimality additionally requires the
+The adapter and public wrapper include explicit axiom queries. An
+[independent Returned/native replay](../../verification/returned173-20261003/README.md)
+at assembly commit `1dae90961450215ee5e507b30632361a5d126dfc` passed on
+2026-10-03: all 173 cases including case1465, 5,616 dependency-closure modules,
+and 177 actual axiom queries with only `propext`, `Classical.choice`, and
+`Quot.sound`. The report distinguishes exact-fingerprint dependency reuse from
+fresh checks and documents its scoped source preflight. This acceptance is for
+that exact Returned/native path; full optimality additionally requires the
 remaining dependency closures and final public axiom audits.
