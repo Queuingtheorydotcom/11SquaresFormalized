@@ -1,6 +1,9 @@
 # Resume the unverified simplification checkpoint
 
-Branch: `codex/simplification-unverified-20261003`.
+Branch: `codex/simplification-verifier-20261003`, copied from
+`codex/simplification-unverified-20261003` at `34e6b035` and merged with the
+parallel verification branch. See [LEAN_VERIFICATION_RUNBOOK.md](LEAN_VERIFICATION_RUNBOOK.md)
+for the current Slurm launch and resume procedure.
 
 This is a source candidate, not a verified full proof. Work stopped at the user's request before full replay. Main and the T03 progress branch were not changed. The imported bundle commit is `dac90e2f02d4afe8482096e13b9dcf546d871fde`, based on `c82cff63e48b2d3f2da60cb998bbab48e557c012`.
 
@@ -29,7 +32,7 @@ With Git, Python 3, and elan installed, use an existing clone:
 
 ```sh
 git fetch origin
-git switch --track origin/codex/simplification-unverified-20261003
+git switch --track origin/codex/simplification-verifier-20261003
 lake exe cache get
 python3 scripts/check_sources.py
 python3 scripts/verify.py --all --jobs 1 --keep-going
@@ -38,13 +41,13 @@ python3 scripts/verify.py --all --jobs 1 --keep-going
 If the local branch already exists, switch to it normally. On Windows use `python` or `py` instead of `python3`. For a fresh clone:
 
 ```sh
-git clone --branch codex/simplification-unverified-20261003 https://github.com/Queuingtheorydotcom/11SquaresFormalized.git
+git clone --branch codex/simplification-verifier-20261003 https://github.com/Queuingtheorydotcom/11SquaresFormalized.git
 cd 11SquaresFormalized
 ```
 
-The pinned toolchain is Lean **4.34.1** and Mathlib is **d13f23b723b8a846827a245b89c10fc7d3f11612**. Keep `lean-toolchain` and `lake-manifest.json`. **Do not run `verify.py --setup` or `materialize_wand125.py` on this branch**: they restore the older generated source layout.
+The pinned toolchain is Lean **4.34.1** and Mathlib is **d13f23b723b8a846827a245b89c10fc7d3f11612**. Keep `lean-toolchain` and `lake-manifest.json`. On this merged branch, `verify.py --setup` installs only the toolchain and dependency cache and preserves the tracked simplified sources. **Do not run `materialize_wand125.py` here**: it targets the older generated source layout.
 
-The verifier compiles modules serially; `--jobs` controls Lean worker threads within each module. Start with one. Ctrl-C stops the current run; rerun the same command to reuse matching accepted receipts. Check `.verification/incomplete-result.json` and module logs for failures. Compilation may still require substantial RAM and time.
+The verifier runs serially by default; `--max-parallel` enables independent module checks and `--jobs` controls worker threads within each new Lean process. The Slurm launcher enables parallel checks. Ctrl-C stops the current run; rerun the same command to reuse matching accepted receipts. Check `.verification/incomplete-result.json` and module logs for failures. Compilation may still require substantial RAM and time.
 
 After the entire `--all` replay succeeds, validate the final current-source receipts and axiom reports:
 
