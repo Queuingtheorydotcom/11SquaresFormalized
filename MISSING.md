@@ -2,7 +2,9 @@
 
 Current `ElevenSquare.Optimality` closure: **365,392 lines in 4,257 modules**, down from 394,204 lines / 6,326 modules. The census and manifest are refreshed. The 300,000-line target remains unfinished. Read [PC_RESUME.md](PC_RESUME.md) first.
 
-**The complete assembled theorem remains unverified.** The selected S0/S1 replay was stopped cleanly because of low disk space and heavy swapping. Dependencies through `S1D` passed; `S0` was not accepted and `S1` was not attempted. The full `ElevenSquare.Verification` target has not been run on this checkpoint. Source audits pass, but no complete merged-stage kernel acceptance is claimed. Do not resume Lean on this Mac; use the larger computer.
+The active certificate-data pass removes **34,739,375 bytes** (zero weight tails and unused collision cores) with the original checker. Its source inverse audit and S135 fixture pass; all 459 transformed stages still need the full replay. The separately proved determinant checker remains an inactive pilot. Its repeated S135 test is about 30% faster in median CPU time, which is not a whole-build result. The next rollout must validate support pairs and preserve literal fallback for degenerate pairs; see [the data report](simplification/T07_DATA_PROFILE_20261003.md).
+
+**The complete assembled theorem remains unverified.** The selected S0/S1 replay was stopped cleanly because of low disk space and heavy swapping. Dependencies through `S1D` passed; `S0` was not accepted and `S1` was not attempted. The full `ElevenSquare.Verification` target has not been run on this checkpoint. Source audits pass, but no complete merged-stage kernel acceptance is claimed. Do not resume the full history replay on this Mac; use the larger computer. Later bounded fixture checks do not replace that replay.
 
 Run the final target and public axiom audit with:
 

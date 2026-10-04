@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 from collections import Counter, defaultdict
+from functools import lru_cache
 import hashlib
 import json
 from pathlib import Path
@@ -34,6 +35,28 @@ def digest(text):
 def metrics(text):
     return {'sha256': digest(text), 'bytes': len(text.encode('utf-8')),
             'lines': text.count('\n') + bool(text and not text.endswith('\n'))}
+
+
+@lru_cache(maxsize=None)
+def later_certificate_edits(root):
+    """Keep the original bundling receipt immutable across later data trimming."""
+    receipt = Path(root) / 'simplification/t07-certificate-trimming.json'
+    if not receipt.exists():
+        return {}
+    return {entry['file']: entry for entry in json.loads(receipt.read_text())['files']}
+
+
+def source_before_certificate_trimming(path, root=ROOT):
+    text = path.read_text()
+    entry = later_certificate_edits(str(root)).get(path.relative_to(root).as_posix())
+    if entry is None:
+        return text
+    from trim_t07_zero_tails import restore_source
+    # Pending receipts also support resuming an interrupted application. The
+    # separate trimming audit requires every final file to match its output.
+    if digest(text) == entry['before_sha256']:
+        return text
+    return restore_source(text, entry)
 
 
 def split_source(text):
@@ -239,7 +262,7 @@ def reconstruct_inputs(root, ledger=None, modules=None):
         if requested is not None and not requested & members:
             continue
         stage = entry['stage']
-        merged = path(stage).read_text()
+        merged = source_before_certificate_trimming(path(stage), root)
         assert metrics(merged) == entry['after'], 'Stale merged stage: ' + stage
         assert import_names(code_only(merged)) == entry['imports'], 'Changed stage imports: ' + stage
         cursor = len(''.join('import ' + dep + '\n' for dep in entry['imports']) + '\n')
@@ -269,7 +292,7 @@ def check_saved_report(report=None):
     moved, declaration_count, before_hashes = set(), 0, {}
     for entry in report['files']:
         stage = entry['stage']
-        merged = paths[stage].read_text()
+        merged = source_before_certificate_trimming(paths[stage])
         texts = reconstruct_inputs(ROOT, {'files': [entry]})
         reconstructed = {p.removesuffix('.lean').replace('/', '.'): text for p, text in texts.items()}
         for segment in entry['segments']:
@@ -297,6 +320,8 @@ def check_saved_report(report=None):
     return {'status': 'SOURCE_ROUNDTRIP_PASS_NOT_LEAN_ACCEPTANCE',
             'stages': len(report['files']), 'reexports': len(moved),
             'public_declaration_blocks_preserved': declaration_count,
+            'later_certificate_trimmed_stages': len(later_certificate_edits(str(ROOT))),
+            'audit_scope': 'Bundling ancestry; recorded later certificate edits are inverted first.',
             'target_closure_modules': len(closure),
             'global_import_graph_matches_recorded_snapshot': graph['graph_sha256'] == report['after_graph']['graph_sha256'],
             'kernel_replay_performed': False}

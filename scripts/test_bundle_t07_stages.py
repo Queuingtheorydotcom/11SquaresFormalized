@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 """Guard public declarations and dependency boundaries in T07 stage bundling."""
 import unittest
+import json
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
-from bundle_t07_stages import merge_stage, reconstruct_inputs, split_source
+from bundle_t07_stages import (merge_stage, reconstruct_inputs, split_source,
+                              source_before_certificate_trimming)
+from trim_t07_zero_tails import transform_source
 
 
 STAGE = 'ElevenSquare.Tasks.T07.Ext.Gen.P2.S1'
@@ -181,6 +184,25 @@ class T07StageBundleTests(unittest.TestCase):
             path.write_text(changed)
             with self.assertRaisesRegex(AssertionError, 'Stale merged stage'):
                 reconstruct_inputs(root, ledger)
+
+    def test_later_data_trimming_preserves_original_bundle_audit(self):
+        original = ('def cert0 : List Sub := '
+                    '[⟨0, 1, [], 0, [], [], [], (.keep 0 [[(1), (0), (0)]])⟩]\n')
+        candidate, receipt = transform_source(original)
+        self.assertNotEqual(candidate, original)
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            path = root / 'Stage.lean'
+            receipt['file'] = 'Stage.lean'
+            folder = root / 'simplification'
+            folder.mkdir()
+            (folder / 't07-certificate-trimming.json').write_text(
+                json.dumps({'files': [receipt]}))
+            path.write_text(candidate)
+            self.assertEqual(source_before_certificate_trimming(path, root), original)
+            path.write_text(candidate.replace('(1)', '(2)'))
+            with self.assertRaises(ValueError):
+                source_before_certificate_trimming(path, root)
 
 
 if __name__ == '__main__':

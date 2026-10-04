@@ -6,11 +6,13 @@ Branch: `codex/simplification-unverified-20261003`.
 
 ## Current size and scope
 
-The refreshed `ElevenSquare.Optimality` census contains **365,392 physical Lean lines, 4,257 local modules and 1,085,849,057 bytes**. It includes every reached local certificate source and excludes pinned Lean/Mathlib dependencies. No missing local imports, import cycles or symlinked sources were found. File hashes and import edges are recorded in `simplification/checkpoint-census.json` and `simplification/source-manifest.json`.
+The refreshed `ElevenSquare.Optimality` census contains **365,392 physical Lean lines, 4,257 local modules and 1,051,109,682 bytes**. It includes every reached local certificate source and excludes pinned Lean/Mathlib dependencies. No missing local imports, import cycles or symlinked sources were found. File hashes and import edges are recorded in `simplification/checkpoint-census.json` and `simplification/source-manifest.json`.
 
-The prior checkpoint contained 394,204 lines in 6,326 modules: this pass removes **28,812 lines and 2,069 reachable modules**. Module bundling accounts for **2,032** of the removed modules: 1,301 T07 modules and 731 Sqpack modules. Additional dependency pruning accounts for the remaining net reduction. **The 300,000-line target remains unfinished.** The source still contains roughly 1.09 GB of exact data.
+The prior checkpoint contained 394,204 lines in 6,326 modules: the structural simplifications remove **28,812 lines and 2,069 reachable modules**. Module bundling accounts for **2,032** of the removed modules: 1,301 T07 modules and 731 Sqpack modules. Additional dependency pruning accounts for the remaining net reduction. **The 300,000-line target remains unfinished.** Subsequent certificate trimming removes another **34,739,375 bytes**, leaving roughly 1.05 GB of active source.
 
 ## Implemented source reductions
+
+- Across 459 T07 stages, remove 5,964,331 trailing zero Farkas weights and clear 20,152 collision-core lists where the collision-region list is empty. The existing checker and all packing conclusions remain unchanged. `simplification/t07-certificate-trimming.json` retains exact inverse edits; the older bundling audit first inverts this layer. The frozen S135 pruning fixture passes, but this is not a corpus replay.
 
 - Conditional coverage uses indexed triangle/target tables across 267 cases, retaining 6,688 triangle entries and 6,421 target entries and checking 20,343 consumer references. This saves 14,991 lines; removing 652 redundant root aliases saves another 1,304 while preserving public statements and proof bodies.
 - T07's 842 certificate shards and 459 auxiliary proof modules are bundled into their 459 stage modules. All 26,033 moved public declaration blocks are preserved. Sqpack bypasses intermediate import facades and combines selected small modules with their sole consumer, removing another 731 modules from the active closure. Old import paths remain compatibility reexports. The ledgers reconstruct exact predecessor source bytes.
@@ -21,6 +23,8 @@ The prior checkpoint contained 394,204 lines in 6,326 modules: this pass removes
 Module bundling avoids **2,032 compiler launches in a cold final-theorem replay**. It does not remove certificate data or finite checks. Retained compatibility and historical modules still run under `--all`, so that broader audit does not receive this startup reduction.
 
 ## Excluded experiments and timing limits
+
+The new `DirectSupport` and `DirectTree` modules are optional and are not imported by the active theorem. Lean accepted their soundness proofs with only the three permitted standard axioms. Their S135 benchmark retains the same `ExtStep` conclusion: two mirrored comparisons measured median CPU time of 51.775641 seconds for the original and 36.3148995 for direct support checking with unused-core removal. This is a 29.9% component improvement, not a full-build estimate. The active zero-tail/unused-core pass uses the original checker; its separate single-trial scout was 42.135205 CPU seconds versus 49.700244 originally. See `simplification/T07_DATA_PROFILE_20261003.md` for reproducible commands and remaining rollout work.
 
 The active proof uses **original literal T07 witness data**. Compact witness recipes were removed after the complete S135 scout measured **54.126 CPU seconds for literals versus 132.407 for compact recipes**. These are single observations, not a general speed ratio or a full-proof benchmark. Only S137's experimental certificate/consumer inputs were restored; all module mergers remain. Its older compact-certificate acceptance is marked historical, and the bundling ledger preserves the exclusion history.
 
@@ -57,6 +61,7 @@ python3 scripts/simplify_indexed_stages.py --check
 python3 scripts/simplify_stage_aliases.py --check
 python3 scripts/bundle_t07_stages.py --check
 python3 scripts/flatten_stage_bundles.py --check
+python3 scripts/trim_t07_zero_tails.py --check simplification/t07-certificate-trimming.json
 ```
 
 ## Optional entire-repository audit
@@ -74,6 +79,6 @@ The finalizer requires that broader `--all` result. After it succeeds, `python3 
 
 Focused checks cover selected cones, collision bounds, shared adapters and helpers. The selected `P2.S0` / `P2.S1` replay was deliberately stopped with exit 130 when free disk space fell to approximately 123 MiB and the machine was swapping heavily. Both verifier and Lean processes were confirmed stopped; free space recovered to approximately 1.6 GiB.
 
-Dependencies through `P2.S1D` passed. **`P2.S0` was not accepted, and `P2.S1` was not attempted. No complete merged-stage kernel pass is claimed.** All checkpoint source audits pass, but they and the S135 fixture results do not replace the unrun final target. **Do not restart Lean checks on this Mac in this state; continue on the larger computer.**
+Dependencies through `P2.S1D` passed. **`P2.S0` was not accepted, and `P2.S1` was not attempted. No complete merged-stage kernel pass is claimed.** All checkpoint source audits pass, but they and the S135 fixture results do not replace the unrun final target. **Do not restart the full history replay on this Mac in this state; continue on the larger computer.** The later bounded certificate fixtures are separate evidence.
 
 Run the final-target command, fix any failures, and inspect its public axiom result before claiming the proof complete. If source changes, refresh the census with `python3 scripts/simplification_census.py --write`. Preserve the packing model, final statements, strict owned interiors, legal touching and closed split boundaries. Keep this checkpoint on its branch until the final-theorem replay and axiom audit pass.
