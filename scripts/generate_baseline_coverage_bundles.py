@@ -19,7 +19,10 @@ import tempfile
 import fetch_wand125_release as release
 
 BUDGET = 4 * 1024 * 1024
-FORMAT_VERSION = 1
+FORMAT_VERSION = 2
+# Exact previous generator at checkpoint e5200e0e. Used only to reconstruct
+# authenticated old manifests during the one-way kernel -> native migration.
+LEGACY_GENERATOR_SHA256 = "4d11f1c0f3308c9b563e110c19acda44dd4e2daf437099b4135a9d451330712e"
 NAME = r"cov[0-9]+(?:p[0-9]+_[0-9]+|g[0-9]+|_[0-9]+)"
 DECL = re.compile(
     rf"theorem (?P<name>{NAME}) : (?P<proposition>CovF G\.Q G\.M G\.R "
@@ -187,7 +190,7 @@ def field_plan(root, field, pinned, budget=BUDGET):
             "aggregators": tuple(s for s in sources if not s.leaf), "budget": budget}
 
 
-def render_module(root, plan, sources, imports):
+def render_module(root, plan, sources, imports, *, native=True):
     label = plan["field"]
     original = f"SquarePacking.S11Opt.{label}"
     bundled = f"SquarePacking.S11Opt.Bundled.{label}"
@@ -197,7 +200,12 @@ def render_module(root, plan, sources, imports):
         raw = authenticated_bytes(root, source.path, source.sha256)
         chunks.append((f"namespace {bundled}\nsection\n"
                        f"open {original}\nopen FieldTree\n").encode())
-        chunks.append(raw[source.body_start:source.body_end])
+        body = raw[source.body_start:source.body_end]
+        if native and source.leaf:
+            # parse_source authenticated this entire body against the narrow
+            # SOUND/SPLIT grammar. Only SOUND has this numeric proof argument.
+            body = body.replace(b"(by decide +kernel)", b"(by native_decide)")
+        chunks.append(body)
         chunks.append(f"end\nend {bundled}\n\n".encode())
         declarations.extend(source.declarations)
     if declarations:
@@ -210,7 +218,7 @@ def render_module(root, plan, sources, imports):
     return b"".join(chunks)
 
 
-def lean_outputs(root, plan):
+def lean_outputs(root, plan, *, native=True):
     prefix = f"Sqpack/S11Opt/Bundled/{plan['field']}/"
     module_prefix = prefix.replace("/", ".")
     mapping = {}
@@ -219,16 +227,16 @@ def lean_outputs(root, plan):
         for source in sources:
             mapping[source.module] = module_prefix + name
         yield prefix + name + ".lean", render_module(root, plan, sources,
-                                                     [plan["data"][:-5].replace("/", ".")])
+                                                     [plan["data"][:-5].replace("/", ".")], native=native)
     imports = sorted({mapping[d] for s in plan["aggregators"] for d in s.imports})
     if not imports:
         raise BundleError(f"no coverage aggregator imports: {plan['field']}")
-    yield prefix + "Coverage.lean", render_module(root, plan, plan["aggregators"], imports)
+    yield prefix + "Coverage.lean", render_module(root, plan, plan["aggregators"], imports, native=native)
 
 
-def source_manifest(plan, outputs):
-    return {"format_version": FORMAT_VERSION, "status": "SOURCE_ONLY_NOT_COMPILED",
-            "generator_sha256": release.sha256_file(Path(__file__)),
+def source_manifest(plan, outputs, native_certificates=None, *, legacy=False):
+    result = {"format_version": 1 if legacy else FORMAT_VERSION, "status": "SOURCE_ONLY_NOT_COMPILED",
+            "generator_sha256": LEGACY_GENERATOR_SHA256 if legacy else release.sha256_file(Path(__file__)),
             "upstream_ref": release.PINNED_REF,
             "pinned_manifest_sha256": release.METADATA_HASHES["MANIFEST_F.sha256"],
             "field": plan["field"], "packing_input_byte_budget": plan["budget"],
@@ -247,10 +255,46 @@ def source_manifest(plan, outputs):
                                           for d in s.declarations]} for s in plan["sources"]],
             "batches": [[s.path for s in batch] for batch in plan["batches"]],
             "outputs": outputs}
+    if not legacy:
+        result["construction"] = result["construction"].replace(
+            "Copy namespace-interior bytes verbatim ",
+            "Copy namespace-interior bytes, changing only soundDec certificate arguments "
+            "from decide +kernel to native_decide, ")
+        result["native_certificates"] = native_certificates or {}
+    return result
 
 
-def _publish_one(root, name, raw, expected):
-    if not release.check_target(root, name, expected):
+def native_inventory(plan, name, raw):
+    """Inventory exact rendered numeric sites, never infer them from a filename."""
+    declarations = {}
+    text = raw.decode("ascii")
+    for match in DECL.finditer(text):
+        count = match["proof"].count("native_decide")
+        if count:
+            expected = SOUND.fullmatch(match["proof"].replace("native_decide", "decide +kernel"))
+            if count != 1 or expected is None:
+                raise BundleError(f"unexpected native certificate: {name}:{match['name']}")
+            declarations[f"SquarePacking.S11Opt.Bundled.{plan['field']}.{match['name']}"] = count
+    if text.count("native_decide") != sum(declarations.values()):
+        raise BundleError(f"unscoped native certificate: {name}")
+    return {"sha256": digest(raw), "declarations": declarations} if declarations else None
+
+
+def output_state(root, name, expected, legacy=None):
+    """Return new/current/legacy; symlinks and every unrecognized edit fail."""
+    try:
+        return "new" if release.check_target(root, name, expected) else "current"
+    except release.ReleaseError:
+        if legacy is None:
+            raise
+        if release.check_target(root, name, legacy):
+            raise BundleError(f"output changed during migration preflight: {name}")
+        return "legacy"
+
+
+def _publish_one(root, name, raw, expected, legacy=None):
+    state = output_state(root, name, expected, legacy)
+    if state == "current":
         return False
     target = root / name
     target.parent.mkdir(parents=True, exist_ok=True)
@@ -259,6 +303,15 @@ def _publish_one(root, name, raw, expected):
         try:
             temp.write(raw)
             temp.close()
+            if state == "legacy":
+                # Recheck immediately before replacing a recognized old output.
+                state = output_state(root, name, expected, legacy)
+                if state == "current":
+                    return False
+                if state != "legacy":
+                    raise BundleError(f"legacy output disappeared: {name}")
+                os.replace(temporary, target)
+                return True
             try:
                 os.link(temporary, target)  # Exclusive publish; never replace a file.
             except FileExistsError:
@@ -270,7 +323,7 @@ def _publish_one(root, name, raw, expected):
     return True
 
 
-def publish_outputs(root, outputs):
+def publish_outputs(root, outputs, *, legacy_outputs=None):
     """Publish a small helper output map under Bundled, preflighting every collision."""
     root = Path(root)
     if root.is_symlink():
@@ -281,20 +334,35 @@ def publish_outputs(root, outputs):
         if not name.startswith("Sqpack/S11Opt/Bundled/"):
             raise BundleError(f"output outside derived Bundled directory: {name}")
         expected[name] = digest(raw)
-    pending = [name for name in expected if release.check_target(root, name, expected[name])]
+    legacy = {name: digest(raw) for name, raw in (legacy_outputs or {}).items()}
+    if not legacy.keys() <= expected.keys():
+        raise BundleError("legacy output without a current output")
+    pending = [name for name in expected
+               if output_state(root, name, expected[name], legacy.get(name)) != "current"]
     release.require_space(root, sum(len(outputs[name]) for name in pending))
-    created = [name for name in expected if _publish_one(root, name, outputs[name], expected[name])]
+    created = [name for name in expected
+               if _publish_one(root, name, outputs[name], expected[name], legacy.get(name))]
     return {"created_files": len(created), "created_bytes": sum(len(outputs[name]) for name in created)}
 
 
 def materialize_field(root, plan, write=False):
-    """Preflight every collision; write new files only, with resumable atomic creation."""
+    """Create or migrate exact generated outputs; unknown edits are rejected."""
     authenticated_bytes(root, plan["data"], plan["data_sha256"])
-    outputs = []
+    outputs, legacy_outputs, native = [], [], {}
     for name, raw in lean_outputs(root, plan):
         outputs.append({"path": name, "sha256": digest(raw), "bytes": len(raw)})
+        # The renderer changes only this exact tactic token in authenticated
+        # SOUND arguments; reversing it reconstructs the old output bytewise.
+        old = raw.replace(b"native_decide", b"decide +kernel")
+        legacy_outputs.append({"path": name, "sha256": digest(old), "bytes": len(old)})
+        inventory = native_inventory(plan, name, raw)
+        if inventory:
+            native[name] = inventory
     manifest_name = f"Sqpack/S11Opt/Bundled/{plan['field']}/source-manifest.json"
-    manifest = (json.dumps(source_manifest(plan, outputs), indent=2) + "\n").encode()
+    manifest = (json.dumps(source_manifest(plan, outputs, native), indent=2) + "\n").encode()
+    old_manifest = (json.dumps(source_manifest(plan, legacy_outputs, legacy=True), indent=2) + "\n").encode()
+    legacy = {row["path"]: row["sha256"] for row in legacy_outputs}
+    legacy[manifest_name] = digest(old_manifest)
     expected = outputs + [{"path": manifest_name, "sha256": digest(manifest), "bytes": len(manifest)}]
     folder = root / Path(manifest_name).parent
     if folder.exists():
@@ -302,7 +370,8 @@ def materialize_field(root, plan, write=False):
         for existing in folder.glob("Leaves*.lean"):
             if existing.name not in wanted:
                 raise BundleError(f"stale generated leaf bundle: {existing}")
-    pending = [e for e in expected if release.check_target(root, e["path"], e["sha256"])]
+    pending = [e for e in expected
+               if output_state(root, e["path"], e["sha256"], legacy[e["path"]]) != "current"]
     if write:
         release.require_space(root, sum(e["bytes"] for e in pending))
         by_name = {e["path"]: e for e in expected}
@@ -313,14 +382,16 @@ def materialize_field(root, plan, write=False):
             row = by_name[name]
             if digest(raw) != row["sha256"]:
                 raise BundleError(f"non-deterministic generated output: {name}")
-            _publish_one(root, name, raw, row["sha256"])
+            _publish_one(root, name, raw, row["sha256"], legacy[name])
     return {"field": plan["field"], "status": "SOURCES_WRITTEN" if write else "DRY_RUN",
             "source_modules": len(plan["sources"]), "leaf_bundles": len(plan["batches"]),
             "declarations": sum(len(s.declarations) for s in plan["sources"]),
             "output_modules": len(outputs), "output_bytes": sum(e["bytes"] for e in expected),
             "new_bytes": sum(e["bytes"] for e in pending),
             "oversize_singletons": sum(s.leaf and s.size > plan["budget"] for s in plan["sources"]),
-            "aggregate": outputs[-1]["path"], "outputs": outputs, "compiler_run": False}
+            "aggregate": outputs[-1]["path"], "outputs": outputs,
+            "legacy_manifest_sha256": digest(old_manifest),
+            "native_certificates": native, "compiler_run": False}
 
 
 def generate(root=release.ROOT, fields=None, *, write=False, budget=BUDGET):
@@ -343,7 +414,7 @@ def main(argv=None):
     parser.add_argument("--field", type=int, action="append", help="field number 1--58; repeatable (default: all)")
     parser.add_argument("--root", type=Path, default=release.ROOT, help="checkout containing pinned source files")
     action = parser.add_mutually_exclusive_group()
-    action.add_argument("--write", action="store_true", help="create derived files; never overwrite differing files")
+    action.add_argument("--write", action="store_true", help="create derived files or migrate exact old generated files")
     action.add_argument("--dry-run", action="store_true", help="authenticate and report without writing (default)")
     args = parser.parse_args(argv)
     try:

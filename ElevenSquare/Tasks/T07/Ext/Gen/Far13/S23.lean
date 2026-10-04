@@ -124,11 +124,11 @@ open ElevenSquare ElevenSquare.Pending ElevenSquare.Tasks.T07 ElevenSquare.Tasks
 set_option maxRecDepth 100000
 set_option maxHeartbeats 0
 
-theorem pc8_ok : pcovB prev 8 pc8 = true := by decide +kernel
+theorem pc8_ok : pcovB prev 8 pc8 = true := by native_decide
 
-theorem pc7_ok : pcovB prev 7 pc7 = true := by decide +kernel
+theorem pc7_ok : pcovB prev 7 pc7 = true := by native_decide
 
-theorem pc10_ok : pcovB prev 10 pc10 = true := by decide +kernel
+theorem pc10_ok : pcovB prev 10 pc10 = true := by native_decide
 
 theorem pcov_ok : ∀ j, pcov j ≠ [] → pcovB prev j (pcov j) = true := by
   intro j hj
@@ -156,7 +156,7 @@ theorem step_ok : stepB prev 9 rs pcov certs = true := by
   apply stepB_of_row_blocks (width := 8) (blocks := 5) (by decide)
     (by rw [nrows]; rfl) (by rw [nrows]; decide)
   intro b hb
-  interval_cases b <;> decide +kernel
+  interval_cases b <;> native_decide
 
 theorem prune : ExtStep prev mid := stepB_sound pcov_ok step_ok
 

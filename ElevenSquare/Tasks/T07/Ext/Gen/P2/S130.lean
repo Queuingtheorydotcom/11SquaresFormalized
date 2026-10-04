@@ -743,11 +743,11 @@ theorem step_ok : stepB prev 10 rs pcov certs = true := by
   apply stepB_of_row_blocks (width := 8) (blocks := 18) (by decide)
     (by rw [nrows]; rfl) (by rw [nrows]; decide)
   intro b hb
-  interval_cases b <;> decide +kernel
+  interval_cases b <;> native_decide
 
 theorem prune : ExtStep prev mid := stepB_sound pcov_ok step_ok
 
-theorem promote_ok : promoteB mid 10 kern prs combs = true := by decide +kernel
+theorem promote_ok : promoteB mid 10 kern prs combs = true := by native_decide
 
 theorem trace : ExtTrace prev next :=
   ExtTrace.cons prune (ExtTrace.cons (ExtStep.base (promoteB_sound promote_ok)) (ExtTrace.refl _))

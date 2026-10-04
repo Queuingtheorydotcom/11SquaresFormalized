@@ -48,14 +48,32 @@ def admitted_targets(sites):
     return targets | (_GLOBAL_TARGETS if paths else set())
 
 
+def native_axiom_owner(name):
+    """Recognize Lean 4.34's per-declaration native_decide axiom names only."""
+    match = re.fullmatch(r'(.+)\._native\.native_decide\.ax_[0-9]+_[0-9]+', name)
+    return match[1] if match else None
+
+
+def native_trust_status(axioms, *, has_native_sources=False):
+    """Report the trust actually inherited by audited declarations."""
+    native = sorted({axiom for values in axioms.values() for axiom in values
+                     if native_axiom_owner(axiom) is not None})
+    return {'trust_model': ('lean_kernel_and_native_compiler'
+                            if native or has_native_sources else 'lean_kernel'),
+            'native_certificate_axioms': native}
+
+
 def public_audit_status(axioms, admission_count):
     """Require every public query even after its permission for sorryAx closes."""
     missing = PUBLIC_TARGETS - axioms.keys()
     if missing:
         raise ValueError('Missing final public target axiom queries: ' + ', '.join(sorted(missing)))
     proved = admission_count == 0 and not any('sorryAx' in values for values in axioms.values())
-    return {'status': 'OPTIMALITY_PROVED' if proved else 'PARTIAL_ASSEMBLY_COMPILES',
-            'global_optimality_proved': proved}
+    trust = native_trust_status(axioms)
+    status = ('OPTIMALITY_PROVED_WITH_NATIVE_CERTIFICATES'
+              if trust['native_certificate_axioms'] else 'OPTIMALITY_PROVED')
+    return {'status': status if proved else 'PARTIAL_ASSEMBLY_COMPILES',
+            'global_optimality_proved': proved, **trust}
 
 
 def priority_order(dependencies, sizes, final='ElevenSquare.Verification'):
@@ -149,7 +167,7 @@ def reusable_fingerprint(module, old, current, *, legacy_baseline, checked_at, n
     return None
 
 
-def audit_axioms(source_code, output, allowed, unfinished):
+def audit_axioms(source_code, output, allowed, unfinished, native_declarations=frozenset()):
     queries = re.findall(r'^\s*#print\s+axioms\s+(\S+)', source_code, re.M)
     printed = re.findall(
         r"^'([^']+)' (?:depends on axioms: \[([^]]*)\]|(does not depend on any axioms))",
@@ -162,7 +180,11 @@ def audit_axioms(source_code, output, allowed, unfinished):
         if name != query and not name.endswith('.' + query):
             raise ValueError('Missing axiom output: ' + query)
         axioms = {a.strip() for a in axioms.split(',') if a.strip()}
-        extra = axioms - allowed - ({'sorryAx'} if name in unfinished else set())
+        # Each native axiom must belong to an exact declaration recorded in the
+        # reviewed source manifest. No wildcard namespace or generic native
+        # oracle is accepted, and native computation never permits sorryAx.
+        approved_native = {a for a in axioms if native_axiom_owner(a) in native_declarations}
+        extra = axioms - allowed - approved_native - ({'sorryAx'} if name in unfinished else set())
         if extra:
             raise ValueError('Unapproved axioms in ' + name + ': ' + str(sorted(extra)))
         seen[name] = sorted(axioms)

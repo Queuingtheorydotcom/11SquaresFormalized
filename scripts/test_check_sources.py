@@ -1,5 +1,6 @@
 """Lexical source-audit regressions; no Lean process or repository scan."""
 import itertools
+import hashlib
 import json
 from pathlib import Path
 import random
@@ -300,6 +301,54 @@ class SourcePolicyTests(unittest.TestCase):
                          ['ElevenSquare.Dependency'])
         updated = json.loads(cache_path.read_text())
         self.assertEqual(updated['files']['ElevenSquare.lean']['imports'], ['ElevenSquare.Dependency'])
+
+    def write_native_fixture(self):
+        self.write_fixture('import Sqpack.Certificate\n', [])
+        source = ('namespace Certificate\n'
+                  'theorem coverage : (1 : Nat) + 1 = 2 := by native_decide\n'
+                  'end Certificate\n')
+        self.write_module('Sqpack.Certificate', source)
+        manifest = {'format_version': 1, 'files': {'Sqpack/Certificate.lean': {
+            'sha256': hashlib.sha256(source.encode()).hexdigest(),
+            'declarations': {'Certificate.coverage': 1}}}}
+        path = self.root / 'verification/native-certificates.json'
+        path.write_text(json.dumps(manifest))
+        return path, manifest
+
+    def test_native_sources_are_counted_separately_from_admissions(self):
+        self.write_native_fixture()
+        result = check_sources.check(use_cache=True)
+        self.assertEqual(result['native_certificate_declarations'], 1)
+        self.assertEqual(result['explicit_admissions'], 0)
+
+    def test_cached_source_scan_cannot_reuse_revoked_native_permission(self):
+        path, _ = self.write_native_fixture()
+        check_sources.check(use_cache=True)
+        path.unlink()
+        with self.assertRaisesRegex(ValueError, 'Forbidden local proof form'):
+            check_sources.check(use_cache=True)
+
+    def test_cached_source_scan_revalidates_changed_native_manifest(self):
+        path, manifest = self.write_native_fixture()
+        check_sources.check(use_cache=True)
+        manifest['files']['Sqpack/Certificate.lean']['sha256'] = '0' * 64
+        path.write_text(json.dumps(manifest))
+        with self.assertRaisesRegex(ValueError, 'source hash mismatch'):
+            check_sources.check(use_cache=True)
+
+    def test_native_permission_does_not_allow_other_proof_admissions(self):
+        path, manifest = self.write_native_fixture()
+        source_path = self.root / 'Sqpack/Certificate.lean'
+        source_path.write_text(source_path.read_text() + '\naxiom bad : False\n')
+        manifest['files']['Sqpack/Certificate.lean']['sha256'] = hashlib.sha256(source_path.read_bytes()).hexdigest()
+        path.write_text(json.dumps(manifest))
+        with self.assertRaisesRegex(ValueError, 'Forbidden local proof form.*axiom'):
+            check_sources.check()
+
+    def test_native_option_spelling_is_not_an_inventory_bypass(self):
+        self.write_fixture('example : True := by decide +native\n', [])
+        with self.assertRaisesRegex(ValueError, 'Uninventoried native evaluation spelling'):
+            check_sources.check()
 
 
 if __name__ == '__main__':

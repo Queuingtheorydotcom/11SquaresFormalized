@@ -188,11 +188,11 @@ open ElevenSquare ElevenSquare.Pending ElevenSquare.Tasks.T07 ElevenSquare.Tasks
 set_option maxRecDepth 100000
 set_option maxHeartbeats 0
 
-theorem pc2_ok : pcovB prev 2 pc2 = true := by decide +kernel
+theorem pc2_ok : pcovB prev 2 pc2 = true := by native_decide
 
-theorem pc8_ok : pcovB prev 8 pc8 = true := by decide +kernel
+theorem pc8_ok : pcovB prev 8 pc8 = true := by native_decide
 
-theorem pc9_ok : pcovB prev 9 pc9 = true := by decide +kernel
+theorem pc9_ok : pcovB prev 9 pc9 = true := by native_decide
 
 theorem pcov_ok : ∀ j, pcov j ≠ [] → pcovB prev j (pcov j) = true := by
   intro j hj
@@ -220,11 +220,11 @@ theorem step_ok : stepB prev 10 rs pcov certs = true := by
   apply stepB_of_row_blocks (width := 8) (blocks := 6) (by decide)
     (by rw [nrows]; rfl) (by rw [nrows]; decide)
   intro b hb
-  interval_cases b <;> decide +kernel
+  interval_cases b <;> native_decide
 
 theorem prune : ExtStep prev mid := stepB_sound pcov_ok step_ok
 
-theorem promote_ok : promoteB mid 10 kern prs combs = true := by decide +kernel
+theorem promote_ok : promoteB mid 10 kern prs combs = true := by native_decide
 
 theorem trace : ExtTrace prev next :=
   ExtTrace.cons prune (ExtTrace.cons (ExtStep.base (promoteB_sound promote_ok)) (ExtTrace.refl _))

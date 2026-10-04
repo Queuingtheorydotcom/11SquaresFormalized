@@ -1,6 +1,23 @@
 # Resume the unverified simplification checkpoint
 
-Branch: `codex/simplification-unverified-20261003`.
+Branch: `codex/native-numerical-certificates-20261004`.
+
+This is one project. Its generated numerical certificate proofs now use
+`native_decide`, while geometry, soundness proofs, and assembly use ordinary
+Lean proofs. Continue with `python3 scripts/verify.py --jobs 1`. No separate
+numerical project or manual proof assumptions are needed. The axiom audit
+permits only the exact native declaration owners in the source inventory.
+The final theorem inherits compiler trust from these numerical results.
+
+Expect `OPTIMALITY_PROVED_WITH_NATIVE_CERTIFICATES` after a successful full
+replay with zero admissions. No full replay or speedup has yet been measured
+for this change. `checking MODULE` now identifies active work; `cached MODULE`
+means that module has already been reused successfully. Existing unchanged
+receipts remain reusable; changed sources and their dependents are rechecked.
+
+The measurements and older source manifests below describe the preceding
+checkpoint. New source hashes and inverse hashes are in
+`verification/native-certificates.json`.
 
 **This is a source candidate, not a verified full proof.** The full `ElevenSquare.Verification` target has not been run on this checkpoint. The imported bundle commit is `dac90e2f02d4afe8482096e13b9dcf546d871fde`, based on `c82cff63e48b2d3f2da60cb998bbab48e557c012`.
 
@@ -46,7 +63,7 @@ lake exe cache get
 python3 scripts/verify.py --jobs 1
 ```
 
-This checks **`ElevenSquare.Verification` and its dependency closure, including the final public axiom audit**. Require `OPTIMALITY_PROVED`, zero admissions and only the permitted standard axioms. No `--all` step is required for that final-theorem check. Historical reports under `verification/` or `simplification/accepted-components.json` do not certify current source.
+This checks **`ElevenSquare.Verification` and its dependency closure, including the final public axiom audit**. Require `OPTIMALITY_PROVED_WITH_NATIVE_CERTIFICATES`, zero admissions and only the standard axioms plus the exact inventoried numerical native axioms. The result must disclose compiler trust. No `--all` step is required for that final-theorem check. Historical reports under `verification/` or `simplification/accepted-components.json` do not certify current source.
 
 The verifier compiles modules serially; `--jobs` controls worker threads inside each Lean process. Ctrl-C stops a run. Rerun the same command to reuse matching accepted receipts; changed sources or dependencies require new checks. Inspect `.verification/incomplete-result.json` and the named module logs after failures. A fresh clone does not include local compiled objects or machine-local receipts. On Windows use `python` or `py` instead of `python3`.
 

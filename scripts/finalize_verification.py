@@ -17,6 +17,8 @@ import sys
 
 sys.dont_write_bytecode = True
 from check_sources import ROOT, check, code_only, imports
+from native_certificates import (load_native_manifest, native_declarations,
+                                 validate_native_source)
 from verify_support import (STANDARD_AXIOMS, admitted_targets, public_audit_status,
                             audit_axioms, input_digest, priority_order, recorded_arguments)
 
@@ -48,13 +50,19 @@ def collect_audit(root, source_check):
              sorted((root / 'Sqpack').rglob('*.lean')) +
              [root / 'ElevenSquare.lean', root / 'Sqpack.lean'])
     modules = {'.'.join(p.relative_to(root).with_suffix('').parts): p for p in paths}
-    require(result.get('status') in {'PARTIAL_ASSEMBLY_COMPILES', 'OPTIMALITY_PROVED'},
+    require(result.get('status') in {'PARTIAL_ASSEMBLY_COMPILES', 'OPTIMALITY_PROVED',
+                                    'OPTIMALITY_PROVED_WITH_NATIVE_CERTIFICATES'},
             'No successful full-project verifier result; run scripts/verify.py --all.')
     require(result.get('checked_modules') == len(modules),
             'The verifier result does not cover every current local module.')
     admissions = json.loads((root / 'verification/admissions.json').read_text(encoding='utf-8'))['sites']
     unfinished = admitted_targets(admissions)
     admission_count = len(admissions)
+    native_manifest = load_native_manifest(root)
+    approved_native = native_declarations(native_manifest)
+    native_paths = set(native_manifest.get('files', {}))
+    require(native_paths <= {p.relative_to(root).as_posix() for p in paths},
+            'Missing inventoried native certificate sources.')
     require(source_check.get('status') == 'SOURCE_ASSEMBLY_PASS'
             and source_check.get('local_modules') == len(modules)
             and source_check.get('explicit_admissions') == admission_count,
@@ -78,6 +86,9 @@ def collect_audit(root, source_check):
             parsed = re.search(r'\bversion ([^,]+),', compiler)
             require(parsed is not None and parsed[1] == version, 'Compiler/toolchain mismatch.')
         source = modules[m].read_bytes()
+        # Revalidate permissions against actual source bytes. The finalizer must
+        # not accept a caller-provided source-check summary as a native audit.
+        validate_native_source(modules[m].relative_to(root).as_posix(), source, native_manifest)
         source_hashes[m] = hashlib.sha256(source).hexdigest()
         current = {
             'source': source_hashes[m],
@@ -95,18 +106,27 @@ def collect_audit(root, source_check):
         log = state / (m + '.log')
         require(log.is_file(), 'Missing compiler log: ' + m)
         if b'#print' in source:
-            axioms.update(audit_axioms(code_only(source.decode()), log.read_text(encoding='utf-8'), STANDARD_AXIOMS, unfinished))
+            axioms.update(audit_axioms(code_only(source.decode()), log.read_text(encoding='utf-8'),
+                                      STANDARD_AXIOMS, unfinished, approved_native))
     status = public_audit_status(axioms, admission_count)
     require(axioms == result.get('axioms'), 'Verifier result does not match the current axiom logs.')
     require(result.get('status') == status['status']
             and result.get('global_optimality_proved') is status['global_optimality_proved'],
             'Verifier proof status does not match the current admission inventory and axiom logs.')
+    # Historical kernel-only receipts remain usable. Native results must carry
+    # the complete explicit trust declaration, never a historical clean label.
+    if status['native_certificate_axioms']:
+        require(result.get('trust_model') == status['trust_model'] and
+                result.get('native_certificate_axioms') == status['native_certificate_axioms'],
+                'Verifier native trust disclosure does not match the current axiom logs.')
     return {
         **status,
         'scope': f'All local ElevenSquare and Sqpack modules; {admission_count} inventoried admissions remain.',
         'checked_modules': len(modules), 'lean_toolchain': toolchain, 'mathlib_revision': mathlib,
         'full_upgrade_verified': True,
         'explicit_native_admissions': admission_count,
+        'native_certificate_manifest_sha256': hashlib.sha256(
+            json.dumps(native_manifest, sort_keys=True).encode()).hexdigest(),
         'build_context_sha256': context, 'source_sha256': dict(sorted(source_hashes.items())),
         'axioms': dict(sorted(axioms.items())),
     }

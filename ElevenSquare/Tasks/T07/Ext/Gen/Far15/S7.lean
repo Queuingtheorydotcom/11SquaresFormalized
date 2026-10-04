@@ -318,7 +318,7 @@ theorem step_ok : stepB prev 2 rs pcov certs = true := by
   apply stepB_of_row_blocks (width := 8) (blocks := 10) (by decide)
     (by rw [nrows]; rfl) (by rw [nrows]; decide)
   intro b hb
-  interval_cases b <;> decide +kernel
+  interval_cases b <;> native_decide
 
 theorem prune : ExtStep prev mid := stepB_sound pcov_ok step_ok
 

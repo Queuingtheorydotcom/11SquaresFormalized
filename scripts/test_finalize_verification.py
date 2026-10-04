@@ -6,7 +6,7 @@ import tempfile
 import unittest
 
 from finalize_verification import collect_audit, json_bytes, sha
-from verify_support import PUBLIC_TARGETS, admitted_targets, input_digest
+from verify_support import PUBLIC_TARGETS, admitted_targets, input_digest, public_audit_status
 
 
 BASELINE_PATHS = ['ElevenSquare/Tasks/T01/Handoff/' + name + '.lean'
@@ -29,7 +29,8 @@ class FinalizationTests(unittest.TestCase):
             (self.root / name).write_text(text)
         self.make_fixture(BASELINE_PATHS + [PRIOR_PATH, RETURNED_PATH, CAPTURE_PATH])
 
-    def make_fixture(self, admission_paths, *, missing_queries=(), axiom_overrides=None, jobs=None):
+    def make_fixture(self, admission_paths, *, missing_queries=(), axiom_overrides=None, jobs=None,
+                     native=False):
         sites = [{'path': path, 'line': 1} for path in admission_paths]
         inventory = self.root / 'verification/admissions.json'
         inventory.parent.mkdir(exist_ok=True)
@@ -42,8 +43,19 @@ class FinalizationTests(unittest.TestCase):
             'ElevenSquare.Verification': 'import ElevenSquare\nimport Sqpack\n' +
                 ''.join('#print axioms ' + n + '\n' for n in sorted(targets)),
         }
+        if native:
+            self.sources['ElevenSquare.Verification'] += ('namespace Certificate\n'
+                'theorem coverage : (1 : Nat) + 1 = 2 := by native_decide\n'
+                'end Certificate\n')
         self.axioms = {n: ['sorryAx'] if n in unfinished else ['propext'] for n in sorted(targets)}
         self.axioms.update(axiom_overrides or {})
+        if native:
+            self.axioms = {n: ['Certificate.coverage._native.native_decide.ax_1_1']
+                           for n in sorted(targets)}
+            native_manifest = {'format_version': 1, 'files': {'ElevenSquare/Verification.lean': {
+                'sha256': hashlib.sha256(self.sources['ElevenSquare.Verification'].encode()).hexdigest(),
+                'declarations': {'Certificate.coverage': 1}}}}
+            (self.root / 'verification/native-certificates.json').write_bytes(json_bytes(native_manifest))
         context = {p: sha(self.root / p) for p in ['lean-toolchain', 'lakefile.lean', 'lake-manifest.json']}
         object_hashes = {}; inputs = {}
         state = self.root / '.verification'; state.mkdir(exist_ok=True)
@@ -75,6 +87,8 @@ class FinalizationTests(unittest.TestCase):
                 ('warning: fixture over ℝ\n' + output if deps else '').encode('utf-8'))
         self.result = {'status': 'PARTIAL_ASSEMBLY_COMPILES' if sites else 'OPTIMALITY_PROVED',
                        'checked_modules': 3, 'global_optimality_proved': not sites, 'axioms': self.axioms}
+        if native:
+            self.result.update(public_audit_status(self.axioms, len(sites)))
         self.save_result()
         self.source_check = {'status': 'SOURCE_ASSEMBLY_PASS', 'local_modules': 3,
                              'explicit_admissions': len(sites)}
@@ -87,6 +101,38 @@ class FinalizationTests(unittest.TestCase):
         self.assertTrue(audit['full_upgrade_verified'])
         self.assertEqual(audit['checked_modules'], 3)
         self.assertFalse((self.root / 'verification/wand125-upgrade.json').exists())
+
+    def test_native_evidence_retains_explicit_compiler_trust(self):
+        self.make_fixture([], native=True)
+        audit = collect_audit(self.root, self.source_check)
+        self.assertEqual(audit['status'], 'OPTIMALITY_PROVED_WITH_NATIVE_CERTIFICATES')
+        self.assertEqual(audit['trust_model'], 'lean_kernel_and_native_compiler')
+        self.assertEqual(audit['native_certificate_axioms'],
+                         ['Certificate.coverage._native.native_decide.ax_1_1'])
+        self.assertTrue(audit['global_optimality_proved'])
+
+    def test_native_evidence_cannot_be_relabelled_kernel_only(self):
+        self.make_fixture([], native=True)
+        self.result['status'] = 'OPTIMALITY_PROVED'
+        self.save_result()
+        with self.assertRaisesRegex(ValueError, 'Verifier proof status'):
+            collect_audit(self.root, self.source_check)
+
+    def test_native_evidence_requires_matching_trust_disclosure(self):
+        self.make_fixture([], native=True)
+        self.result['trust_model'] = 'lean_kernel'
+        self.save_result()
+        with self.assertRaisesRegex(ValueError, 'Verifier native trust disclosure'):
+            collect_audit(self.root, self.source_check)
+
+    def test_native_manifest_cannot_silently_change_source_permissions(self):
+        self.make_fixture([], native=True)
+        path = self.root / 'verification/native-certificates.json'
+        manifest = json.loads(path.read_text())
+        manifest['files']['ElevenSquare/Verification.lean']['sha256'] = '0' * 64
+        path.write_bytes(json_bytes(manifest))
+        with self.assertRaisesRegex(ValueError, 'hash|Hash|SHA|sha256'):
+            collect_audit(self.root, self.source_check)
 
     def test_mixed_jobs_accept_full_audit_without_rewriting_receipts(self):
         self.make_fixture([], jobs={'ElevenSquare': 1, 'Sqpack': 4, 'ElevenSquare.Verification': 8})

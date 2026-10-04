@@ -16,9 +16,10 @@ for stream in (sys.stdout, sys.stderr):
     stream.reconfigure(encoding='utf-8')
 import time
 from check_sources import ROOT, check, code_only, imports
+from native_certificates import load_native_manifest, native_declarations
 from verify_support import (STANDARD_AXIOMS, admitted_targets, public_audit_status,
                             priority_order, input_digest, reusable_fingerprint, audit_axioms,
-                            positive_jobs, lean_arguments)
+                            positive_jobs, lean_arguments, native_trust_status)
 
 ap = argparse.ArgumentParser(description=__doc__)
 ap.add_argument('--setup', action='store_true', help='Restore pinned generated sources, toolchain, and dependency cache.')
@@ -35,6 +36,8 @@ if args.setup and not args.plan:
     materialize()
     materialize_bundled_baseline()
 print(json.dumps(check(use_cache=not args.fresh)), flush=True)
+native_manifest = load_native_manifest(ROOT)
+approved_native = native_declarations(native_manifest)
 admissions = json.loads((ROOT / 'verification/admissions.json').read_text(encoding='utf-8'))['sites']
 try:
     unfinished = admitted_targets(admissions)
@@ -160,6 +163,7 @@ for index, m in enumerate(order):
         accepted += 1; continue
     tmp = target.with_name(target.name + '.checking')
     started = time.monotonic()
+    print(f'[{index+1}/{len(order)}] checking {m}', flush=True)
     try:
         # Lean writes UTF-8 bytes directly; never transcode its evidence logs.
         with log.open('wb') as stream:
@@ -198,7 +202,8 @@ def audit(module):
         return {}
     try:
         return audit_axioms(code_only(source),
-                            (state / (module + '.log')).read_text(encoding='utf-8'), STANDARD_AXIOMS, unfinished)
+                            (state / (module + '.log')).read_text(encoding='utf-8'),
+                            STANDARD_AXIOMS, unfinished, approved_native)
     except ValueError as error:
         raise SystemExit(module + ': ' + str(error)) from error
 
@@ -207,8 +212,12 @@ for m in order:
     axioms.update(audit(m))
 
 if args.module:
+    selected_native = sorted(rel for rel in native_manifest['files']
+                             if '.'.join(Path(rel).with_suffix('').parts) in selected)
     result = {'status': 'SELECTED_MODULES_COMPILE', 'checked_modules': accepted,
-              'targets': args.module, 'axioms': axioms}
+              'targets': args.module, 'axioms': axioms,
+              'native_certificate_sources': selected_native,
+              **native_trust_status(axioms, has_native_sources=bool(selected_native))}
     (state / 'selected-result.json').write_text(json.dumps(result, indent=2)+'\n', encoding='utf-8')
     print(json.dumps(result, indent=2))
     raise SystemExit(0)
@@ -222,6 +231,10 @@ result = dict(status, checked_modules=accepted,
 (state / 'result.json').write_text(json.dumps(result,indent=2)+'\n', encoding='utf-8')
 print(json.dumps(result,indent=2))
 if result['global_optimality_proved']:
-    print('Global optimality verified with no inventoried admissions and clean public axiom audits.')
+    if result['trust_model'] == 'lean_kernel_and_native_compiler':
+        print('Global optimality verified with compiled numerical certificates; '
+              'the recorded native evaluations additionally trust the Lean compiler. No admissions remain.')
+    else:
+        print('Global optimality verified with no inventoried admissions and clean public axiom audits.')
 else:
     print('Partial assembly accepted. See MISSING.md for the remaining proof obligations.')

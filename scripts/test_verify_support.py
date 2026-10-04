@@ -4,7 +4,8 @@ import unittest
 from verify_support import (PUBLIC_TARGETS, STANDARD_AXIOMS, admitted_targets,
                             public_audit_status, audit_axioms, input_digest,
                             priority_order, reusable_inputs, positive_jobs,
-                            lean_arguments, recorded_arguments, reusable_fingerprint)
+                            lean_arguments, recorded_arguments, reusable_fingerprint,
+                            native_trust_status)
 
 
 class VerificationSupportTests(unittest.TestCase):
@@ -75,9 +76,11 @@ class VerificationSupportTests(unittest.TestCase):
     def test_public_queries_stay_required_with_zero_admissions(self):
         clean = {name: ['propext'] for name in PUBLIC_TARGETS}
         self.assertEqual(public_audit_status(clean, 0),
-                         {'status': 'OPTIMALITY_PROVED', 'global_optimality_proved': True})
+                         {'status': 'OPTIMALITY_PROVED', 'global_optimality_proved': True,
+                          'trust_model': 'lean_kernel', 'native_certificate_axioms': []})
         self.assertEqual(public_audit_status(clean, 2),
-                         {'status': 'PARTIAL_ASSEMBLY_COMPILES', 'global_optimality_proved': False})
+                         {'status': 'PARTIAL_ASSEMBLY_COMPILES', 'global_optimality_proved': False,
+                          'trust_model': 'lean_kernel', 'native_certificate_axioms': []})
         for target in PUBLIC_TARGETS:
             with self.subTest(target=target):
                 with self.assertRaisesRegex(ValueError, 'Missing final public target'):
@@ -88,6 +91,41 @@ class VerificationSupportTests(unittest.TestCase):
         axioms = {name: [] for name in PUBLIC_TARGETS}
         axioms['ElevenSquare.optimality'] = ['sorryAx']
         self.assertFalse(public_audit_status(axioms, 0)['global_optimality_proved'])
+
+    def test_native_axioms_require_exact_approved_owner_and_suffix(self):
+        declaration = 'Certificate.coverage'
+        source = '#print axioms ElevenSquare.optimality'
+        native = declaration + '._native.native_decide.ax_1_1'
+        output = "'ElevenSquare.optimality' depends on axioms: [propext, " + native + ']'
+        expected = {'ElevenSquare.optimality': sorted(['propext', native])}
+        self.assertEqual(audit_axioms(source, output, STANDARD_AXIOMS, set(), {declaration}), expected)
+        with self.assertRaisesRegex(ValueError, 'Unapproved'):
+            audit_axioms(source, output, STANDARD_AXIOMS, set())
+        for other in ('Certificate.coverageExtra._native.native_decide.ax_1_1',
+                      'Certificate.coverage._native.bv_decide.ax_1_1',
+                      'Certificate.coverage._native.native_decide.ax_1_1.extra',
+                      'Certificate.coverage._native.native_decide.ax_one',
+                      'Lean.ofReduceBool', 'Lean.trustCompiler', 'sorryAx'):
+            with self.subTest(axiom=other), self.assertRaisesRegex(ValueError, 'Unapproved'):
+                audit_axioms(source, output.replace(native, other), STANDARD_AXIOMS, set(), {declaration})
+
+    def test_native_public_result_discloses_compiler_trust(self):
+        native = 'Certificate.coverage._native.native_decide.ax_1_1'
+        axioms = {name: [native, 'propext'] for name in PUBLIC_TARGETS}
+        result = public_audit_status(axioms, 0)
+        self.assertEqual(result['status'], 'OPTIMALITY_PROVED_WITH_NATIVE_CERTIFICATES')
+        self.assertEqual(result['trust_model'], 'lean_kernel_and_native_compiler')
+        self.assertEqual(result['native_certificate_axioms'], [native])
+        self.assertTrue(result['global_optimality_proved'])
+        axioms['ElevenSquare.optimality'].append('sorryAx')
+        result = public_audit_status(axioms, 0)
+        self.assertEqual(result['status'], 'PARTIAL_ASSEMBLY_COMPILES')
+        self.assertFalse(result['global_optimality_proved'])
+
+    def test_selected_native_source_without_queries_is_not_labelled_kernel_only(self):
+        result = native_trust_status({}, has_native_sources=True)
+        self.assertEqual(result['trust_model'], 'lean_kernel_and_native_compiler')
+        self.assertEqual(result['native_certificate_axioms'], [])
 
     def test_shared_interfaces_first_and_audit_last(self):
         deps = {'Data': [], 'Shared': [], 'A': ['Shared'], 'B': ['Shared'],

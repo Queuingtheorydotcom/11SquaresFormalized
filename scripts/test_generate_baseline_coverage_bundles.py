@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Offline byte-preservation, grammar, dependency and publication regressions."""
 from pathlib import Path
+import json
 import tempfile
 import unittest
 from unittest import mock
@@ -53,17 +54,78 @@ class CoverageBundlesTests(unittest.TestCase):
     def parse(self, raw):
         return bundles.parse_source("Sqpack/S11Opt/F04/Cov1P0.lean", raw, bundles.digest(raw))
 
-    def test_verbatim_declarations_and_original_type_examples(self):
+    def test_only_numerical_arguments_change_and_original_type_examples(self):
         plan = self.plan()
         outputs = dict(bundles.lean_outputs(self.root, plan))
         leaf = outputs["Sqpack/S11Opt/Bundled/F04/Leaves000.lean"]
         for name in ("cov1p0_1", "cov1p1_1"):
-            self.assertEqual(leaf.count(declaration(name).encode()), 1)
+            expected = declaration(name).replace("decide +kernel", "native_decide").encode()
+            self.assertEqual(leaf.count(expected), 1)
             self.assertIn((f"example : {PROP} :=\n  SquarePacking.S11Opt.Bundled.F04.{name}").encode(), leaf)
             self.assertIn(f"#print axioms SquarePacking.S11Opt.Bundled.F04.{name}".encode(), leaf)
         self.assertEqual(leaf.count(b"soundDec"), 2)
         self.assertEqual(leaf.count(b"section\nopen SquarePacking.S11Opt.F04"), 2)
         self.assertEqual((self.root / "Sqpack/S11Opt/F04/Cov1P0.lean").read_bytes(), self.leaf0)
+        self.assertNotIn(b"native_decide", outputs["Sqpack/S11Opt/Bundled/F04/Coverage.lean"])
+        self.assertIn(b"CovF.splitX 1 cov1p0_1 cov1p1_1", outputs["Sqpack/S11Opt/Bundled/F04/Coverage.lean"])
+        old = dict(bundles.lean_outputs(self.root, plan, native=False))
+        for name, raw in outputs.items():
+            self.assertEqual(raw.replace(b"native_decide", b"decide +kernel"), old[name])
+
+    def test_native_manifest_has_exact_file_hash_and_qualified_sites(self):
+        plan = self.plan()
+        report = bundles.materialize_field(self.root, plan, write=True)
+        manifest_path = self.root / "Sqpack/S11Opt/Bundled/F04/source-manifest.json"
+        manifest = json.loads(manifest_path.read_text())
+        name = "Sqpack/S11Opt/Bundled/F04/Leaves000.lean"
+        self.assertEqual(manifest["native_certificates"], {
+            name: {"sha256": bundles.digest((self.root / name).read_bytes()),
+                   "declarations": {"SquarePacking.S11Opt.Bundled.F04.cov1p0_1": 1,
+                                    "SquarePacking.S11Opt.Bundled.F04.cov1p1_1": 1}}})
+        self.assertEqual(report["native_certificates"], manifest["native_certificates"])
+
+    def install_legacy_outputs(self, plan):
+        rows = []
+        for name, raw in bundles.lean_outputs(self.root, plan, native=False):
+            path = self.root / name
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(raw)
+            rows.append({"path": name, "sha256": bundles.digest(raw), "bytes": len(raw)})
+        old_manifest = bundles.source_manifest(plan, rows, legacy=True)
+        path = self.root / "Sqpack/S11Opt/Bundled/F04/source-manifest.json"
+        path.write_text(json.dumps(old_manifest, indent=2) + "\n")
+
+    def test_exact_legacy_outputs_migrate_without_changing_raw_inputs(self):
+        plan = self.plan()
+        self.install_legacy_outputs(plan)
+        report = bundles.materialize_field(self.root, plan, write=True)
+        self.assertGreater(report["new_bytes"], 0)
+        self.assertEqual(bundles.materialize_field(self.root, plan, write=True)["new_bytes"], 0)
+        for path, sha in self.pinned.items():
+            self.assertEqual(bundles.digest((self.root / path).read_bytes()), sha)
+
+    def test_unknown_legacy_edit_rejected_before_any_migration(self):
+        plan = self.plan()
+        self.install_legacy_outputs(plan)
+        leaf = self.root / "Sqpack/S11Opt/Bundled/F04/Leaves000.lean"
+        original = leaf.read_bytes()
+        manifest = self.root / "Sqpack/S11Opt/Bundled/F04/source-manifest.json"
+        manifest.write_bytes(manifest.read_bytes() + b" ")
+        with self.assertRaises(ValueError):
+            bundles.materialize_field(self.root, plan, write=True)
+        self.assertEqual(leaf.read_bytes(), original)
+
+    def test_edited_legacy_leaf_rejected(self):
+        plan = self.plan()
+        self.install_legacy_outputs(plan)
+        leaf = self.root / "Sqpack/S11Opt/Bundled/F04/Leaves000.lean"
+        leaf.write_bytes(leaf.read_bytes() + b"-- user edit\n")
+        with self.assertRaises(ValueError):
+            bundles.materialize_field(self.root, plan, write=True)
+
+    def test_native_inventory_rejects_unscoped_tactic(self):
+        with self.assertRaisesRegex(bundles.BundleError, "unscoped"):
+            bundles.native_inventory(self.plan(), "fixture", b"example : True := by native_decide\n")
 
     def test_independent_batches_and_real_dependency_imports(self):
         # The unreferenced leaf must not become an import of Coverage or other leaf batches.

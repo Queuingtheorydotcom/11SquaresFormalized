@@ -37,7 +37,25 @@ class BundledSetupTests(unittest.TestCase):
         p = root / "Sqpack/S11Opt/Bundled/F04/source-manifest.json"
         p.parent.mkdir(parents=True, exist_ok=True)
         p.write_text('{"fixture": true}\n')
-        return [{"field": "F04", "output_modules": 2, "declarations": 12}]
+        return [{"field": "F04", "output_modules": 2, "declarations": 12,
+                 "legacy_manifest_sha256": "a" * 64}]
+
+    def test_recognized_old_top_manifest_migrates(self):
+        materializer.materialize_bundled_baseline(self.root)
+        path = self.root / "Sqpack/S11Opt/Bundled/source-manifest.json"
+        manifest = json.loads(path.read_text())
+        manifest["generator_sha256"]["generate_baseline_coverage_bundles.py"] = coverage.LEGACY_GENERATOR_SHA256
+        manifest["generator_sha256"]["materialize_wand125.py"] = materializer.LEGACY_MATERIALIZER_SHA256
+        manifest["coverage_manifests"] = {"Sqpack/S11Opt/Bundled/F04/source-manifest.json": "a" * 64}
+        path.write_text(json.dumps(manifest, indent=2) + "\n")
+        self.assertEqual(materializer.materialize_bundled_baseline(self.root)["created_files"], 1)
+
+    def test_unknown_top_manifest_edit_is_rejected(self):
+        materializer.materialize_bundled_baseline(self.root)
+        path = self.root / "Sqpack/S11Opt/Bundled/source-manifest.json"
+        path.write_bytes(path.read_bytes() + b" ")
+        with self.assertRaises(ValueError):
+            materializer.materialize_bundled_baseline(self.root)
 
     def test_setup_publishes_both_helpers_and_is_resumable(self):
         first = materializer.materialize_bundled_baseline(self.root)

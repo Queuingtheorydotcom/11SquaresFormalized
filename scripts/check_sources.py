@@ -6,6 +6,7 @@ import hashlib
 import json
 import os
 import re
+from native_certificates import load_native_manifest, validate_native_source
 
 ROOT = Path(__file__).resolve().parents[1]
 _IMPORT_CACHE = {}
@@ -86,7 +87,12 @@ def check(use_cache=False):
     # The standalone audit and --fresh always rescan. Resumed compilations may
     # reuse lexical results only when both the scanner and source bytes match.
     cache_path = ROOT / '.verification/source-scan.json'
-    scanner = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
+    native_manifest = load_native_manifest(ROOT)
+    # Native permissions are source-bound. A policy change must also invalidate
+    # a cached lexical scan even when no Lean source changed.
+    scanner = hashlib.sha256(Path(__file__).read_bytes() +
+        Path(__file__).with_name('native_certificates.py').read_bytes() +
+        json.dumps(native_manifest, sort_keys=True).encode()).hexdigest()
     cache = {}
     if use_cache and cache_path.is_file():
         try:
@@ -106,11 +112,13 @@ def check(use_cache=False):
         info = cache.get(rel, {})
         if info.get('sha256') != digest:
             code = code_only(data.decode())
-            for word in ['axiom', 'admit', 'native_decide', 'sorryAx']:
+            for word in ['axiom', 'admit', 'sorryAx']:
                 if word in code and re.search(r'\b' + word + r'\b', code):
                     raise ValueError('Forbidden local proof form in ' + rel + ': ' + word)
+            native = validate_native_source(rel, data, native_manifest)
             info = {'sha256': digest,
                     'imports': import_names(code),
+                    'native_declarations': native,
                     'admissions': [code.count('\n', 0, m.start()) + 1
                                    for m in re.finditer(r'\bsorry\b', code)] if 'sorry' in code else []}
         _IMPORT_CACHE[p] = info['imports']
@@ -120,6 +128,10 @@ def check(use_cache=False):
             if dep.startswith(('ElevenSquare', 'Sqpack')) and dep not in modules:
                 raise ValueError('Missing local import: ' + dep)
     expected = json.loads((ROOT / 'verification/admissions.json').read_text(encoding='utf-8'))['sites']
+    missing_native = set(native_manifest.get('files', {})) - set(next_cache)
+    if missing_native:
+        raise ValueError('Missing inventoried native certificate sources: ' +
+                         ', '.join(sorted(missing_native)))
     sort = lambda xs: sorted(xs, key=lambda x: (x['path'], x['line']))
     if sort(found) != sort(expected):
         raise ValueError('Admission inventory changed; review and update MISSING.md and admissions.json.')
@@ -138,7 +150,10 @@ def check(use_cache=False):
         temporary.write_text(json.dumps({'scanner': scanner, 'files': next_cache}), encoding='utf-8')
         temporary.replace(cache_path)
     return {'status': 'SOURCE_ASSEMBLY_PASS', 'local_modules': len(modules),
-            'explicit_admissions': len(found), 'global_optimality_proved': False}
+            'explicit_admissions': len(found),
+            'native_certificate_declarations': sum(len(info.get('native_declarations', []))
+                                                   for info in next_cache.values()),
+            'global_optimality_proved': False}
 
 
 if __name__ == '__main__':
