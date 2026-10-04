@@ -1,0 +1,90 @@
+{
+  "all_other_state_entries_unread": true,
+  "blocks": 5,
+  "cert_count": 38,
+  "common_suffix_sha256": "120b98dde45d97109f6ac40affbe7ce020d3d25c8a678446b7da2f8cb02fa9f8",
+  "compact_exact_reconstruction": {
+    "leaves_literal": 17,
+    "leaves_reconstructed": 132,
+    "support_1": 213,
+    "support_2": 832,
+    "vectors_reconstructed": 1045
+  },
+  "context_prefix_sha256": "858a17bce5bb00914ab5543e79afcc27b0871a35957aceabc9231f801796dfff",
+  "context_sources": {
+    "ElevenSquare/Simplified/U5RowBlocks.lean": "c3efe41fef41b95654cd7844c222f34fa64258f2b8e1ec1ee7abf9e34777ad9a",
+    "ElevenSquare/Tasks/T07/Ext/CTreeChain.lean": "598ea8af91be40613514fc50b3f25127dea938c747f1e54a4ae5ab36b2aadbf7",
+    "ElevenSquare/Tasks/T07/Ext/Check.lean": "aaa92ed160ded1784aaf6f3da0a1b54d1e2bc137a3781c1414399ef335fb1fd4",
+    "ElevenSquare/Tasks/T07/Ext/CompactWitness.lean": "a3b8ebfa62a3904170db2a4e7ee60ca2bd7e4cc98b58c1e1e5176e79945f06eb",
+    "ElevenSquare/Tasks/T07/Ext/Gen/P2/S124C.lean": "8d601eecc66c6ae43875523993a1871dada7cf2140d67cd4283a272bcf682841",
+    "ElevenSquare/Tasks/T07/Ext/Gen/P2/S124D.lean": "27b19b022edae1d15770812836449513a9849edb181baec7ec89286843891949",
+    "ElevenSquare/Tasks/T07/Ext/Gen/P2/S125C.lean": "1934c4d7a1fdbf58338e47ed3a2b10b1fc86d3099e5a44398185bd7ec200f414",
+    "ElevenSquare/Tasks/T07/Ext/Gen/P2/S125D.lean": "42ecd16ad38d47440e5b3a09498e32d2d28e6ac978660701e00543f06d857223",
+    "ElevenSquare/Tasks/T07/Ext/Gen/P2/S126C.lean": "a3d21b5f79336a15950a63390406998f926e095ace0458734578a9e625a4cf6c",
+    "ElevenSquare/Tasks/T07/Ext/Gen/P2/S126D.lean": "5fa768b7136ccd1dcb1b48a4ea4718a6eebb2f8fbddcd85af135a38607d8a471",
+    "ElevenSquare/Tasks/T07/Ext/Gen/P2/S127C.lean": "b44d7f1430e9b871605754a581a9beb6f1f1c00a962f200dcad22a4a5f6e930b",
+    "ElevenSquare/Tasks/T07/Ext/Gen/P2/S127D.lean": "db3f700e66830126d68bf662044edc1f7a71698a92db4da791bb09c28f4d4e53",
+    "ElevenSquare/Tasks/T07/Ext/Gen/P2/S128C.lean": "4eb2a4c24cd6ed2bc9aaa294ee095f97c96b398857effd5b2abf8c1c54fd180c",
+    "ElevenSquare/Tasks/T07/Ext/Gen/P2/S128D.lean": "6aba811f2906a8557b5fab333c368e7bc2e81239a8cd479d873c0fc875d0dbc8",
+    "ElevenSquare/Tasks/T07/Ext/Gen/P2/S129C.lean": "2421a62a97c8b3bcebb4a07837f05a56ad45b51f52beafdf782959dc2b557783",
+    "ElevenSquare/Tasks/T07/Ext/Gen/P2/S129D.lean": "6505b59c087071fa7bb019c034dc840d9d36e17e5989ad4c17dae96e95c680ec",
+    "ElevenSquare/Tasks/T07/Ext/Gen/P2/S130C.lean": "2dbbf4ee87c374a09dae4b0511b5a9076208ba825d0f69b850fff47f55ae2f1f",
+    "ElevenSquare/Tasks/T07/Ext/Gen/P2/S130D.lean": "eb9538c6e48e8b83aba35926ceac34c30d4a02858f1e437aef2c86bca9de447d",
+    "ElevenSquare/Tasks/T07/Ext/Gen/P2/S131C.lean": "f06b870531e165790c8abc2eb80af90aac18a95c6614e7cdbc9dc63dee12d566",
+    "ElevenSquare/Tasks/T07/Ext/Gen/P2/S131D.lean": "0ca65b086e395991097582683ff20f4fd8883dee023356bdaa2f486d56dae965",
+    "ElevenSquare/Tasks/T07/Ext/Gen/P2/S132C.lean": "0c3da9769665e03b85d8792ad70cbfdf23218cf4248d783637685b77156eda52",
+    "ElevenSquare/Tasks/T07/Ext/Gen/P2/S132D.lean": "841ce51405dc77e77010388b4494c995090e54c2b5d197e93d4fc80205fd27ae",
+    "ElevenSquare/Tasks/T07/Ext/Gen/P2/S133C.lean": "eba2ce71d578fe8c644d945eb60ac62024217e4f4ba47b75781cc92d43a2e0b1",
+    "ElevenSquare/Tasks/T07/Ext/Gen/P2/S133D.lean": "60a7f3c15d9c9a4fe308410ada1addac20d2214988cc611656c743c93d091100",
+    "ElevenSquare/Tasks/T07/Ext/Gen/P2/S134C.lean": "ede6a0d7ca75241724781d9c9f41d1af40b2d9ec252aeeecb6a2364667372dec",
+    "ElevenSquare/Tasks/T07/Ext/Gen/P2/S134D.lean": "1f34c17ca0f8d273c1309a0fd4e138065e711abf2995dd9377f731b0f3d938a3",
+    "ElevenSquare/Tasks/T07/Ext/Gen/P2/S135.lean": "325a92e0704152ef4518e05415d1a948056906bd5af9805dc6aafd68d6bf65b9",
+    "ElevenSquare/Tasks/T07/Ext/Gen/P2/S135C.lean": "9732feae8669cca24cd7a0dfbcb9dc8d21ef2160656a374bfb253e3efad4c0e3",
+    "ElevenSquare/Tasks/T07/Ext/Gen/P2/S135C0.lean": "e79ab5c61f60dadbcf993cf6853e6b78b6b91f5e2d5a8b846cf2f8fab4f642fd",
+    "ElevenSquare/Tasks/T07/Ext/Gen/P2/S135D.lean": "9496398535678812af8894d9ad28b643f2da0f3258496585755ddf5cb75e3cb7",
+    "ElevenSquare/Tasks/T07/Ext/Poly.lean": "b6d66f3aa2453c29d1460e9752954d1ca2a525d73534f035ac3babd9ead369d0",
+    "ElevenSquare/Tasks/T07/Ext/RuntimeCheck.lean": "ac8fa62714ab0cf8b1af55c98b5bb4a805d7fce8e566fc80ceb6c3dfa44d5f44"
+  },
+  "fixtures": {
+    "Compact": {
+      "bytes": 408970,
+      "lines": 268,
+      "path": "simplification/benchmarks/t07/stage/T07StageS135Compact.lean",
+      "sha256": "0d1666545229ec9fd5e0c980cacae3df4d83e7a924c015b0a856b270241f6e19"
+    },
+    "Literal": {
+      "bytes": 678405,
+      "lines": 268,
+      "path": "simplification/benchmarks/t07/stage/T07StageS135Literal.lean",
+      "sha256": "650bf2183f770d311ffe7d64014aa6d9af2893979f686660700d0a56deb052f4"
+    }
+  },
+  "input_row_count": 38,
+  "input_rows_source": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S124C.lean",
+  "kernel_acceptance": false,
+  "leaf_counts": {
+    "chain": 73,
+    "forbid": 17,
+    "forbidHull": 59,
+    "keep": 73
+  },
+  "lean_run": false,
+  "original_provenance_sha256": "fd4c1517e72519bc3b92aed5009870fa275925742485eac0bcc7eed676fd0cef",
+  "output_row_count": 74,
+  "owned_hull_sources": {
+    "0": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S124C.lean",
+    "6": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S134C.lean"
+  },
+  "owner": 0,
+  "pcov": "identically empty",
+  "region_lists": "all empty",
+  "schema": 1,
+  "scope": "complete P2/S135 pruning step only, excludes promote_ok and state-history replay",
+  "subrow_count": 76,
+  "transformer_sha256": "abb968cc215b422fbf6692c1ce83e39bd7384510bb194e2a0361fb4e2a533aa4",
+  "used_owned_hulls": [
+    0,
+    6
+  ],
+  "width": 8
+}

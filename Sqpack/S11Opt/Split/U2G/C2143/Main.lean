@@ -1,13 +1,12 @@
 import Sqpack.S11Opt.Simplified.OwnedTrace
 import Sqpack.S11Opt.Simplified.CoverageMonotone
 import Sqpack.S11Opt.Split.U2G.C2143.Data
-import Sqpack.S11Opt.Simplified.StageBundles.U2R.C2135.B001
-import Sqpack.S11Opt.Simplified.StageBundles.U2P.C2174.B000
-import Sqpack.S11Opt.Simplified.StageBundles.U2R.C2135.B006
+import Sqpack.S11Opt.Simplified.StageBundles.U2R.C2135.SharedStages000
+import Sqpack.S11Opt.Simplified.StageBundles.U2P.C2174.SharedStages000
+import Sqpack.S11Opt.Simplified.StageBundles.U2R.C2135.SharedStages001
 import Sqpack.S11Opt.Split.U2R.C2047.S4
 import Sqpack.S11Opt.Split.U2R.C2047.S6
-import Sqpack.S11Opt.Simplified.StageBundles.U2G.C2143.B000
-import Sqpack.S11Opt.Simplified.StageBundles.U2G.C2143.B001
+import Sqpack.S11Opt.Simplified.StageBundles.U2G.C2143.SharedStages000
 import Sqpack.S11Opt.Split.U2G.C2143.S13
 
 namespace SquarePacking.S11Opt.Split.U2G.C2143
@@ -18,28 +17,28 @@ set_option maxHeartbeats 0
 
 /-- The original geometric promotions, interpreted by one ownership induction. -/
 private def ownedTraceProgram : List Promotion := [
-  ⟨1, tris0, tgt0,
+  ⟨1, (traceTriangles 0), (traceTargets 0),
     (CovF.weaken SquarePacking.S11Opt.Split.U2R.C2135.cov0 (by decide +kernel))⟩,
-  ⟨2, tris1, tgt1,
+  ⟨2, (traceTriangles 1), (traceTargets 1),
     (CovF.weaken SquarePacking.S11Opt.Split.U2R.C2135.cov1 (by decide +kernel))⟩,
-  ⟨4, tris2, tgt2,
+  ⟨4, (traceTriangles 2), (traceTargets 2),
     (CovF.weaken SquarePacking.S11Opt.Split.U2P.C2174.cov2 (by decide +kernel))⟩,
-  ⟨5, tris3, tgt3,
+  ⟨5, (traceTriangles 3), (traceTargets 3),
     (CovF.weaken SquarePacking.S11Opt.Split.U2R.C2047.cov4 (by decide +kernel))⟩,
-  ⟨6, tris4, tgt4, cov4⟩,
-  ⟨7, tris5, tgt5, cov5⟩,
-  ⟨8, tris6, tgt6,
+  ⟨6, (traceTriangles 4), (traceTargets 4), cov4⟩,
+  ⟨7, (traceTriangles 5), (traceTargets 5), cov5⟩,
+  ⟨8, (traceTriangles 6), (traceTargets 6),
     (CovF.weaken SquarePacking.S11Opt.Split.U2R.C2047.cov6 (by decide +kernel))⟩,
-  ⟨9, tris7, tgt7, cov7⟩,
-  ⟨10, tris8, tgt8, cov8⟩,
-  ⟨1, tris9, tgt9, cov9⟩,
-  ⟨2, tris10, tgt10, cov10⟩,
-  ⟨4, tris11, tgt11, cov11⟩,
-  ⟨5, tris12, tgt12, cov12⟩
+  ⟨9, (traceTriangles 7), (traceTargets 7), cov7⟩,
+  ⟨10, (traceTriangles 8), (traceTargets 8), cov8⟩,
+  ⟨1, (traceTriangles 9), (traceTargets 9), cov9⟩,
+  ⟨2, (traceTriangles 10), (traceTargets 10), cov10⟩,
+  ⟨4, (traceTriangles 11), (traceTargets 11), cov11⟩,
+  ⟨5, (traceTriangles 12), (traceTargets 12), cov12⟩
 ]
 
 private def ownedTraceTerminal : Terminal :=
-  ⟨6, tris13, cov13⟩
+  ⟨6, (traceTriangles 13), cov13⟩
 
 lemma hJ : J = maskAt 2143 := by decide +kernel
 

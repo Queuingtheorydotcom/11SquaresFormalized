@@ -1,10 +1,9 @@
 import Sqpack.S11Opt.Simplified.OwnedTrace
 import Sqpack.S11Opt.Simplified.CoverageMonotone
 import Sqpack.S11Opt.Split.U2R.C1864.Data
-import Sqpack.S11Opt.Simplified.StageBundles.U2P.C221.B000
-import Sqpack.S11Opt.Simplified.StageBundles.U2P.C2178.B001
-import Sqpack.S11Opt.Simplified.StageBundles.U2R.C1621.B002
-import Sqpack.S11Opt.Simplified.StageBundles.U2R.C1621.B001
+import Sqpack.S11Opt.Simplified.StageBundles.U2P.C221.SharedStages000
+import Sqpack.S11Opt.Simplified.StageBundles.U2P.C2178.SharedStages000
+import Sqpack.S11Opt.Simplified.StageBundles.U2R.C1621.SharedStages000
 import Sqpack.S11Opt.Split.U2R.C1871.S9
 import Sqpack.S11Opt.Split.U2R.C1864.S4
 import Sqpack.S11Opt.Split.U2R.C1864.S5
@@ -28,36 +27,36 @@ set_option maxHeartbeats 0
 
 /-- The original geometric promotions, interpreted by one ownership induction. -/
 private def ownedTraceProgram : List Promotion := [
-  ⟨0, tris0, tgt0,
+  ⟨0, (traceTriangles 0), (traceTargets 0),
     (CovF.weaken SquarePacking.S11Opt.Split.U2P.C221.cov0 (by decide +kernel))⟩,
-  ⟨2, tris1, tgt1,
+  ⟨2, (traceTriangles 1), (traceTargets 1),
     (CovF.weaken SquarePacking.S11Opt.Split.U2P.C2178.cov0 (by decide +kernel))⟩,
-  ⟨4, tris2, tgt2,
+  ⟨4, (traceTriangles 2), (traceTargets 2),
     (CovF.weaken SquarePacking.S11Opt.Split.U2R.C1621.cov3 (by decide +kernel))⟩,
-  ⟨5, tris3, tgt3,
+  ⟨5, (traceTriangles 3), (traceTargets 3),
     (CovF.weaken SquarePacking.S11Opt.Split.U2R.C1621.cov4 (by decide +kernel))⟩,
-  ⟨6, tris4, tgt4, cov4⟩,
-  ⟨7, tris5, tgt5, cov5⟩,
-  ⟨8, tris6, tgt6,
+  ⟨6, (traceTriangles 4), (traceTargets 4), cov4⟩,
+  ⟨7, (traceTriangles 5), (traceTargets 5), cov5⟩,
+  ⟨8, (traceTriangles 6), (traceTargets 6),
     (CovF.weaken SquarePacking.S11Opt.Split.U2R.C1621.cov7 (by decide +kernel))⟩,
-  ⟨9, tris7, tgt7, cov7⟩,
-  ⟨10, tris8, tgt8, cov8⟩,
-  ⟨11, tris9, tgt9, cov9⟩,
-  ⟨13, tris10, tgt10,
+  ⟨9, (traceTriangles 7), (traceTargets 7), cov7⟩,
+  ⟨10, (traceTriangles 8), (traceTargets 8), cov8⟩,
+  ⟨11, (traceTriangles 9), (traceTargets 9), cov9⟩,
+  ⟨13, (traceTriangles 10), (traceTargets 10),
     (CovF.weaken SquarePacking.S11Opt.Split.U2R.C1871.cov9 (by decide +kernel))⟩,
-  ⟨0, tris11, tgt11,
+  ⟨0, (traceTriangles 11), (traceTargets 11),
     (CovF.weaken SquarePacking.S11Opt.Split.U2R.C1621.cov10 (by decide +kernel))⟩,
-  ⟨2, tris12, tgt12, cov12⟩,
-  ⟨4, tris13, tgt13, cov13⟩,
-  ⟨5, tris14, tgt14, cov14⟩,
-  ⟨6, tris15, tgt15, cov15⟩,
-  ⟨8, tris16, tgt16, cov16⟩,
-  ⟨9, tris17, tgt17, cov17⟩,
-  ⟨10, tris18, tgt18, cov18⟩
+  ⟨2, (traceTriangles 12), (traceTargets 12), cov12⟩,
+  ⟨4, (traceTriangles 13), (traceTargets 13), cov13⟩,
+  ⟨5, (traceTriangles 14), (traceTargets 14), cov14⟩,
+  ⟨6, (traceTriangles 15), (traceTargets 15), cov15⟩,
+  ⟨8, (traceTriangles 16), (traceTargets 16), cov16⟩,
+  ⟨9, (traceTriangles 17), (traceTargets 17), cov17⟩,
+  ⟨10, (traceTriangles 18), (traceTargets 18), cov18⟩
 ]
 
 private def ownedTraceTerminal : Terminal :=
-  ⟨13, tris19, cov19⟩
+  ⟨13, (traceTriangles 19), cov19⟩
 
 lemma hJ : J = maskAt 1864 := by decide +kernel
 

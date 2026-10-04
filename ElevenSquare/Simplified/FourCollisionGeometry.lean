@@ -1,79 +1,234 @@
-import ElevenSquare.Pending.S07_OverlayReverseRow13
-import ElevenSquare.Pending.S07_OverlayReverseRow26
-import ElevenSquare.Pending.S07_OverlayReverseRow47
-import ElevenSquare.Pending.S07_OverlayReverseRow92
-import ElevenSquare.Pending.S07_OverlayReverseRow127
-import ElevenSquare.Pending.S07_OverlayReverseRow172
-import ElevenSquare.Pending.S07_OverlayReverseRow193
-import ElevenSquare.Pending.S07_OverlayReverseRow206
-import ElevenSquare.Pending.S07_GridChecks
-import ElevenSquare.Tasks.T04.LabelLookup
+import ElevenSquare.Tasks.T04.Completeness.Support
 import ElevenSquare.Simplified.FourCollisionFinite
 
-/-! Four symmetry-related overlay collisions replace1,572distance certificates.
-We reuse only their eight exact closed polygon certificates and strict distance
-checks. Every other overlay remains a label tuple, without a hull proof. -/
+/-! Four exact collision bounds from closed-cell halfplanes. Each overlay is
+enclosed in a small rational rectangle by nonnegative combinations of two
+original halfplanes. This keeps all boundary ties and avoids reconstructing
+eight polygon hulls or enumerating distances between their vertices. -/
 namespace ElevenSquare.Simplified.FourCollision
-open ElevenSquare.Pending
-open ElevenSquare.Pending.GridDistance
-open ElevenSquare.Pending.OverlayVertexChecks
+open ElevenSquare.Pending ElevenSquare.Pending.T04Completeness
 noncomputable section
+
+private structure BoundCertificate where
+  firstView : Fin 4
+  firstPlane : Fin 20
+  secondView : Fin 4
+  secondPlane : Fin 20
+  firstWeight : ℕ
+  secondWeight : ℕ
+  scale : ℕ
+
+private def BoundCertificate.combined (c : BoundCertificate) (r : Fin 220) : IntegerPlane :=
+  (sourcePlane c.firstView (overlayLabels r c.firstView) c.firstPlane).combine
+    (sourcePlane c.secondView (overlayLabels r c.secondView) c.secondPlane)
+    c.firstWeight c.secondWeight
+
+private def BoundCertificate.check (c : BoundCertificate) (r : Fin 220)
+    (target : IntegerPlane) : Bool :=
+  let l := c.combined r
+  decide (0 < c.scale ∧ l.a = c.scale * target.a ∧
+    l.b = c.scale * target.b ∧ l.c ≤ c.scale * target.c)
+
+private theorem bound_sound (r : Fin 220) (p : Point)
+    (hp : ∀ g, ClosedCell (overlayLabels r g) (view g p))
+    (target : IntegerPlane) (c : BoundCertificate) (hc : c.check r target = true) :
+    target.rational.contains p := by
+  have checked := of_decide_eq_true hc
+  have hs : (c.combined r).rational.contains p :=
+    IntegerPlane.combine_sound _ _ c.firstWeight c.secondWeight
+      (by exact_mod_cast Nat.zero_le c.firstWeight)
+      (by exact_mod_cast Nat.zero_le c.secondWeight) p
+      (sourcePlane_sound _ _ _ p (hp c.firstView))
+      (sourcePlane_sound _ _ _ p (hp c.secondView))
+  have hscale : (0 : ℝ) < c.scale := by exact_mod_cast checked.1
+  have ha : ((c.combined r).a : ℝ) = (c.scale : ℝ) * target.a := by
+    exact_mod_cast checked.2.1
+  have hb : ((c.combined r).b : ℝ) = (c.scale : ℝ) * target.b := by
+    exact_mod_cast checked.2.2.1
+  have hh : ((c.combined r).c : ℝ) ≤ (c.scale : ℝ) * target.c := by
+    exact_mod_cast checked.2.2.2
+  change ((c.combined r).a : ℝ) * p.1 + ((c.combined r).b : ℝ) * p.2 ≤
+    ((c.combined r).c : ℝ) at hs
+  rw [ha, hb] at hs
+  change (target.a : ℝ) * p.1 + (target.b : ℝ) * p.2 ≤ (target.c : ℝ)
+  apply (mul_le_mul_iff_right₀ hscale).mp
+  nlinarith only [hs, hh]
+
+private theorem square_le_of_bounds {z d : ℝ} (hlo : -d ≤ z) (hhi : z ≤ d) :
+    z^2 ≤ d^2 := by
+  have hprod := mul_nonneg (sub_nonneg.mpr hhi) (show 0 ≤ d + z by linarith)
+  nlinarith only [hprod]
+
+private theorem collision_of_deltas (p q : Point) {dx dy : ℝ}
+    (hxlo : -dx ≤ p.1 - q.1) (hxhi : p.1 - q.1 ≤ dx)
+    (hylo : -dy ≤ p.2 - q.2) (hyhi : p.2 - q.2 ≤ dy)
+    (hbudget : dx^2 + dy^2 ≤ 221/2500) :
+    (coverCap - 1)^2 * normSq (p - q) < 1 := by
+  have hx := square_le_of_bounds hxlo hxhi
+  have hy := square_le_of_bounds hylo hyhi
+  have hn : normSq (p - q) ≤ 221/2500 := by
+    dsimp [normSq, dot]
+    nlinarith only [hx, hy, hbudget]
+  calc
+    (coverCap - 1)^2 * normSq (p - q) ≤ (coverCap - 1)^2 * (221/2500) :=
+      mul_le_mul_of_nonneg_left hn (sq_nonneg _)
+    _ < 1 := by norm_num [coverCap]
+
+private theorem box_13 (p : Point)
+    (hp : ∀ g, ClosedCell (overlayLabels 13 g) (view g p)) :
+    (23 / 50 : ℝ) ≤ p.1 ∧ p.1 ≤ 27 / 50 ∧
+      (0 : ℝ) ≤ p.2 ∧ p.2 ≤ 11 / 100 := by
+  have h0 := bound_sound 13 p hp ⟨-50, 0, -23⟩ ⟨0, 2, 2, 11, 48252000000, 1, 42255200000⟩ (by decide +kernel)
+  have h1 := bound_sound 13 p hp ⟨50, 0, 27⟩ ⟨0, 2, 3, 12, 48252000000, 1, 42255200000⟩ (by decide +kernel)
+  have h2 := bound_sound 13 p hp ⟨0, -1, 0⟩ ⟨0, 0, 0, 2, 0, 1, 1⟩ (by decide +kernel)
+  have h3 := bound_sound 13 p hp ⟨0, 100, 11⟩ ⟨0, 6, 1, 6, 1, 1, 14920480000⟩ (by decide +kernel)
+  norm_num [IntegerPlane.rational, Halfplane.contains] at h0 h1 h2 h3
+  constructor
+  · linarith
+  constructor
+  · linarith
+  constructor <;> linarith
+
+private theorem box_26 (p : Point)
+    (hp : ∀ g, ClosedCell (overlayLabels 26 g) (view g p)) :
+    (11 / 25 : ℝ) ≤ p.1 ∧ p.1 ≤ 14 / 25 ∧
+      (23 / 100 : ℝ) ≤ p.2 ∧ p.2 ≤ 7 / 25 := by
+  have h0 := bound_sound 26 p hp ⟨-25, 0, -11⟩ ⟨0, 9, 1, 6, 1, 1, 167978240000⟩ (by decide +kernel)
+  have h1 := bound_sound 26 p hp ⟨25, 0, 14⟩ ⟨2, 14, 3, 8, 11629, 285, 991888293760000⟩ (by decide +kernel)
+  have h2 := bound_sound 26 p hp ⟨0, -100, -23⟩ ⟨0, 9, 2, 15, 367197, 524932, 5871399860880000⟩ (by decide +kernel)
+  have h3 := bound_sound 26 p hp ⟨0, 25, 7⟩ ⟨0, 10, 3, 8, 367197, 3271, 32305779735360000⟩ (by decide +kernel)
+  norm_num [IntegerPlane.rational, Halfplane.contains] at h0 h1 h2 h3
+  constructor
+  · linarith
+  constructor
+  · linarith
+  constructor <;> linarith
+
+private theorem box_92 (p : Point)
+    (hp : ∀ g, ClosedCell (overlayLabels 92 g) (view g p)) :
+    (18 / 25 : ℝ) ≤ p.1 ∧ p.1 ≤ 77 / 100 ∧
+      (11 / 25 : ℝ) ≤ p.2 ∧ p.2 ≤ 14 / 25 := by
+  have h0 := bound_sound 92 p hp ⟨-25, 0, -18⟩ ⟨1, 8, 2, 13, 3271, 367197, 32305779735360000⟩ (by decide +kernel)
+  have h1 := bound_sound 92 p hp ⟨100, 0, 77⟩ ⟨0, 15, 2, 14, 524932, 367197, 5871399860880000⟩ (by decide +kernel)
+  have h2 := bound_sound 92 p hp ⟨0, -25, -11⟩ ⟨2, 14, 3, 17, 1, 1, 167978240000⟩ (by decide +kernel)
+  have h3 := bound_sound 92 p hp ⟨0, 25, 14⟩ ⟨0, 14, 1, 8, 11629, 285, 991888293760000⟩ (by decide +kernel)
+  norm_num [IntegerPlane.rational, Halfplane.contains] at h0 h1 h2 h3
+  constructor
+  · linarith
+  constructor
+  · linarith
+  constructor <;> linarith
+
+private theorem box_172 (p : Point)
+    (hp : ∀ g, ClosedCell (overlayLabels 172 g) (view g p)) :
+    (89 / 100 : ℝ) ≤ p.1 ∧ p.1 ≤ 1 ∧
+      (23 / 50 : ℝ) ≤ p.2 ∧ p.2 ≤ 27 / 50 := by
+  have h0 := bound_sound 172 p hp ⟨-100, 0, -89⟩ ⟨2, 17, 3, 17, 1, 1, 14920480000⟩ (by decide +kernel)
+  have h1 := bound_sound 172 p hp ⟨1, 0, 1⟩ ⟨0, 1, 0, 2, 1, 0, 1⟩ (by decide +kernel)
+  have h2 := bound_sound 172 p hp ⟨0, -50, -23⟩ ⟨0, 1, 0, 11, 48252000000, 1, 42255200000⟩ (by decide +kernel)
+  have h3 := bound_sound 172 p hp ⟨0, 50, 27⟩ ⟨0, 1, 1, 12, 48252000000, 1, 42255200000⟩ (by decide +kernel)
+  norm_num [IntegerPlane.rational, Halfplane.contains] at h0 h1 h2 h3
+  constructor
+  · linarith
+  constructor
+  · linarith
+  constructor <;> linarith
+
+private theorem box_193 (p : Point)
+    (hp : ∀ g, ClosedCell (overlayLabels 193 g) (view g p)) :
+    (11 / 25 : ℝ) ≤ p.1 ∧ p.1 ≤ 14 / 25 ∧
+      (18 / 25 : ℝ) ≤ p.2 ∧ p.2 ≤ 77 / 100 := by
+  have h0 := bound_sound 193 p hp ⟨-25, 0, -11⟩ ⟨2, 9, 3, 15, 11629, 285, 991888293760000⟩ (by decide +kernel)
+  have h1 := bound_sound 193 p hp ⟨25, 0, 14⟩ ⟨0, 14, 1, 17, 1, 1, 167978240000⟩ (by decide +kernel)
+  have h2 := bound_sound 193 p hp ⟨0, -25, -18⟩ ⟨0, 13, 2, 12, 160993, 3271, 14016585389920000⟩ (by decide +kernel)
+  have h3 := bound_sound 193 p hp ⟨0, 100, 77⟩ ⟨0, 14, 2, 8, 367197, 524932, 5871399860880000⟩ (by decide +kernel)
+  norm_num [IntegerPlane.rational, Halfplane.contains] at h0 h1 h2 h3
+  constructor
+  · linarith
+  constructor
+  · linarith
+  constructor <;> linarith
+
+private theorem box_206 (p : Point)
+    (hp : ∀ g, ClosedCell (overlayLabels 206 g) (view g p)) :
+    (23 / 50 : ℝ) ≤ p.1 ∧ p.1 ≤ 27 / 50 ∧
+      (89 / 100 : ℝ) ≤ p.2 ∧ p.2 ≤ 1 := by
+  have h0 := bound_sound 206 p hp ⟨-50, 0, -23⟩ ⟨0, 3, 3, 11, 48252000000, 1, 42255200000⟩ (by decide +kernel)
+  have h1 := bound_sound 206 p hp ⟨50, 0, 27⟩ ⟨0, 3, 2, 12, 48252000000, 1, 42255200000⟩ (by decide +kernel)
+  have h2 := bound_sound 206 p hp ⟨0, -100, -89⟩ ⟨0, 17, 1, 17, 1, 1, 14920480000⟩ (by decide +kernel)
+  have h3 := bound_sound 206 p hp ⟨0, 1, 1⟩ ⟨0, 0, 0, 3, 0, 1, 1⟩ (by decide +kernel)
+  norm_num [IntegerPlane.rational, Halfplane.contains] at h0 h1 h2 h3
+  constructor
+  · linarith
+  constructor
+  · linarith
+  constructor <;> linarith
+
+private theorem box_47 (p : Point)
+    (hp : ∀ g, ClosedCell (overlayLabels 47 g) (view g p)) :
+    (0 : ℝ) ≤ p.1 ∧ p.1 ≤ 11 / 100 ∧
+      (23 / 50 : ℝ) ≤ p.2 ∧ p.2 ≤ 27 / 50 := by
+  have h0 := bound_sound 47 p hp ⟨-1, 0, 0⟩ ⟨0, 0, 0, 2, 1, 0, 1⟩ (by decide +kernel)
+  have h1 := bound_sound 47 p hp ⟨100, 0, 11⟩ ⟨2, 6, 3, 6, 1, 1, 14920480000⟩ (by decide +kernel)
+  have h2 := bound_sound 47 p hp ⟨0, -50, -23⟩ ⟨0, 0, 1, 11, 48252000000, 1, 42255200000⟩ (by decide +kernel)
+  have h3 := bound_sound 47 p hp ⟨0, 50, 27⟩ ⟨0, 0, 0, 12, 48252000000, 1, 42255200000⟩ (by decide +kernel)
+  norm_num [IntegerPlane.rational, Halfplane.contains] at h0 h1 h2 h3
+  constructor
+  · linarith
+  constructor
+  · linarith
+  constructor <;> linarith
+
+private theorem box_127 (p : Point)
+    (hp : ∀ g, ClosedCell (overlayLabels 127 g) (view g p)) :
+    (23 / 100 : ℝ) ≤ p.1 ∧ p.1 ≤ 7 / 25 ∧
+      (11 / 25 : ℝ) ≤ p.2 ∧ p.2 ≤ 14 / 25 := by
+  have h0 := bound_sound 127 p hp ⟨-100, 0, -23⟩ ⟨0, 8, 2, 9, 524932, 367197, 5871399860880000⟩ (by decide +kernel)
+  have h1 := bound_sound 127 p hp ⟨25, 0, 7⟩ ⟨2, 5, 2, 10, 3271, 520839, 46113976329760000⟩ (by decide +kernel)
+  have h2 := bound_sound 127 p hp ⟨0, -25, -11⟩ ⟨0, 9, 1, 15, 11629, 285, 991888293760000⟩ (by decide +kernel)
+  have h3 := bound_sound 127 p hp ⟨0, 25, 14⟩ ⟨2, 9, 3, 6, 1, 1, 167978240000⟩ (by decide +kernel)
+  norm_num [IntegerPlane.rational, Halfplane.contains] at h0 h1 h2 h3
+  constructor
+  · linarith
+  constructor
+  · linarith
+  constructor <;> linarith
 
 theorem distance_13_26 (p q : Point)
     (hp : ∀ g, ClosedCell (overlayLabels 13 g) (view g p))
     (hq : ∀ g, ClosedCell (overlayLabels 26 g) (view g q)) :
     (coverCap - 1)^2 * normSq (p - q) < 1 := by
-  have hp' := overlay_in_hull13 p
-    (by simpa only [T04LabelLookup.label_row13] using hp)
-  have hq' := overlay_in_hull26 q
-    (by simpa only [T04LabelLookup.label_row26] using hq)
-  exact hulls_strict rationalRow13 rationalRow26
-    (rows_bound _ _ gridRow13 gridRow26
-      (rowCheck_sound _ _ (by decide +kernel))
-      (rowCheck_sound _ _ (by decide +kernel))
-      (pairCheck_sound _ _ (by decide))) p hp' q hq'
+  obtain ⟨hpx0, hpx1, hpy0, hpy1⟩ := box_13 p hp
+  obtain ⟨hqx0, hqx1, hqy0, hqy1⟩ := box_26 q hq
+  exact collision_of_deltas p q (dx := 1/10) (dy := 7/25)
+    (by linarith) (by linarith) (by linarith) (by linarith) (by norm_num)
 
 theorem distance_92_172 (p q : Point)
     (hp : ∀ g, ClosedCell (overlayLabels 92 g) (view g p))
     (hq : ∀ g, ClosedCell (overlayLabels 172 g) (view g q)) :
     (coverCap - 1)^2 * normSq (p - q) < 1 := by
-  have hp' := overlay_in_hull92 p
-    (by simpa only [T04LabelLookup.label_row92] using hp)
-  have hq' := overlay_in_hull172 q
-    (by simpa only [T04LabelLookup.label_row172] using hq)
-  exact hulls_strict rationalRow92 rationalRow172
-    (rows_bound _ _ gridRow92 gridRow172
-      (rowCheck_sound _ _ (by decide +kernel))
-      (rowCheck_sound _ _ (by decide +kernel))
-      (pairCheck_sound _ _ (by decide))) p hp' q hq'
+  obtain ⟨hpx0, hpx1, hpy0, hpy1⟩ := box_92 p hp
+  obtain ⟨hqx0, hqx1, hqy0, hqy1⟩ := box_172 q hq
+  exact collision_of_deltas p q (dx := 7/25) (dy := 1/10)
+    (by linarith) (by linarith) (by linarith) (by linarith) (by norm_num)
 
 theorem distance_193_206 (p q : Point)
     (hp : ∀ g, ClosedCell (overlayLabels 193 g) (view g p))
     (hq : ∀ g, ClosedCell (overlayLabels 206 g) (view g q)) :
     (coverCap - 1)^2 * normSq (p - q) < 1 := by
-  have hp' := overlay_in_hull193 p
-    (by simpa only [T04LabelLookup.label_row193] using hp)
-  have hq' := overlay_in_hull206 q
-    (by simpa only [T04LabelLookup.label_row206] using hq)
-  exact hulls_strict rationalRow193 rationalRow206
-    (rows_bound _ _ gridRow193 gridRow206
-      (rowCheck_sound _ _ (by decide +kernel))
-      (rowCheck_sound _ _ (by decide +kernel))
-      (pairCheck_sound _ _ (by decide))) p hp' q hq'
+  obtain ⟨hpx0, hpx1, hpy0, hpy1⟩ := box_193 p hp
+  obtain ⟨hqx0, hqx1, hqy0, hqy1⟩ := box_206 q hq
+  exact collision_of_deltas p q (dx := 1/10) (dy := 7/25)
+    (by linarith) (by linarith) (by linarith) (by linarith) (by norm_num)
 
 theorem distance_47_127 (p q : Point)
     (hp : ∀ g, ClosedCell (overlayLabels 47 g) (view g p))
     (hq : ∀ g, ClosedCell (overlayLabels 127 g) (view g q)) :
     (coverCap - 1)^2 * normSq (p - q) < 1 := by
-  have hp' := overlay_in_hull47 p
-    (by simpa only [T04LabelLookup.label_row47] using hp)
-  have hq' := overlay_in_hull127 q
-    (by simpa only [T04LabelLookup.label_row127] using hq)
-  exact hulls_strict rationalRow47 rationalRow127
-    (rows_bound _ _ gridRow47 gridRow127
-      (rowCheck_sound _ _ (by decide +kernel))
-      (rowCheck_sound _ _ (by decide +kernel))
-      (pairCheck_sound _ _ (by decide))) p hp' q hq'
+  obtain ⟨hpx0, hpx1, hpy0, hpy1⟩ := box_47 p hp
+  obtain ⟨hqx0, hqx1, hqy0, hqy1⟩ := box_127 q hq
+  exact collision_of_deltas p q (dx := 7/25) (dy := 1/10)
+    (by linarith) (by linarith) (by linarith) (by linarith) (by norm_num)
 
 theorem blocked_distance (r s : Fin 220) (p q : Point)
     (hr : ∀ g, ClosedCell (overlayLabels r g) (view g p))

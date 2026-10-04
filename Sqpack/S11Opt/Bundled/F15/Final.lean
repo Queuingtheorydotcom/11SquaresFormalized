@@ -1,6 +1,6 @@
 import Sqpack.S11Opt.Bundled.F15.Coverage
 import Sqpack.S11Opt.Bundled.Own.Mem
-import Sqpack.S11Opt.FieldGen
+import Sqpack.S11Opt.Simplified.BundledAdapters
 
 namespace SquarePacking.S11Opt.Bundled.F15
 open SquarePacking.S11Opt.F15
@@ -10,50 +10,26 @@ open FieldTree
 lemma cover5 {c : ℝ × ℝ} {θ : ℝ} (hin : sq c θ 1 ⊆ box Ux) (hc : InCellU 5 c) :
     (∃ S ∈ optSets5, ∀ a ∈ S, AtomSat G.Q (ScSq G.sc c θ) (atoms.getD a [])) ∨
       ∃ e ∈ used5, ptQ G.Q e.2 ∈ ScSq G.sc c θ := by
-  obtain ⟨o, ho, hg⟩ := bridge G.Q_pos G.R_pos cov5p0_1 G.sc_pos G.sc_lt G.UM hin (G.cellHP5 hc)
-  simp only [opts5, List.mem_append, List.mem_map] at ho
-  rcases ho with ⟨S, hS, rfl⟩ | ⟨e, he, rfl⟩
-  · exact Or.inl ⟨S, hS, fun a ha g hg' => hg g (List.mem_flatMap.mpr ⟨a, ha, hg'⟩)⟩
-  · obtain ⟨p, hp, hm⟩ := hg _ (List.mem_singleton_self _)
-    simp only [List.mem_singleton] at hp
-    subst hp
-    exact Or.inr ⟨e, he, hm⟩
+  exact field_option_cases (atoms := atoms) (sets := optSets5)
+    (used := used5) (bridge G.Q_pos G.R_pos cov5p0_1 G.sc_pos G.sc_lt G.UM hin (G.cellHP5 hc))
 
 lemma cover6 {c : ℝ × ℝ} {θ : ℝ} (hin : sq c θ 1 ⊆ box Ux) (hc : InCellU 6 c) :
     (∃ S ∈ optSets6, ∀ a ∈ S, AtomSat G.Q (ScSq G.sc c θ) (atoms.getD a [])) ∨
       ∃ e ∈ used6, ptQ G.Q e.2 ∈ ScSq G.sc c θ := by
-  obtain ⟨o, ho, hg⟩ := bridge G.Q_pos G.R_pos cov6p0_1 G.sc_pos G.sc_lt G.UM hin (G.cellHP6 hc)
-  simp only [opts6, List.mem_append, List.mem_map] at ho
-  rcases ho with ⟨S, hS, rfl⟩ | ⟨e, he, rfl⟩
-  · exact Or.inl ⟨S, hS, fun a ha g hg' => hg g (List.mem_flatMap.mpr ⟨a, ha, hg'⟩)⟩
-  · obtain ⟨p, hp, hm⟩ := hg _ (List.mem_singleton_self _)
-    simp only [List.mem_singleton] at hp
-    subst hp
-    exact Or.inr ⟨e, he, hm⟩
+  exact field_option_cases (atoms := atoms) (sets := optSets6)
+    (used := used6) (bridge G.Q_pos G.R_pos cov6p0_1 G.sc_pos G.sc_lt G.UM hin (G.cellHP6 hc))
 
 lemma cover7 {c : ℝ × ℝ} {θ : ℝ} (hin : sq c θ 1 ⊆ box Ux) (hc : InCellU 7 c) :
     (∃ S ∈ optSets7, ∀ a ∈ S, AtomSat G.Q (ScSq G.sc c θ) (atoms.getD a [])) ∨
       ∃ e ∈ used7, ptQ G.Q e.2 ∈ ScSq G.sc c θ := by
-  obtain ⟨o, ho, hg⟩ := bridge G.Q_pos G.R_pos cov7p0_1 G.sc_pos G.sc_lt G.UM hin (G.cellHP7 hc)
-  simp only [opts7, List.mem_append, List.mem_map] at ho
-  rcases ho with ⟨S, hS, rfl⟩ | ⟨e, he, rfl⟩
-  · exact Or.inl ⟨S, hS, fun a ha g hg' => hg g (List.mem_flatMap.mpr ⟨a, ha, hg'⟩)⟩
-  · obtain ⟨p, hp, hm⟩ := hg _ (List.mem_singleton_self _)
-    simp only [List.mem_singleton] at hp
-    subst hp
-    exact Or.inr ⟨e, he, hm⟩
+  exact field_option_cases (atoms := atoms) (sets := optSets7)
+    (used := used7) (bridge G.Q_pos G.R_pos cov7p0_1 G.sc_pos G.sc_lt G.UM hin (G.cellHP7 hc))
 
 lemma cover10 {c : ℝ × ℝ} {θ : ℝ} (hin : sq c θ 1 ⊆ box Ux) (hc : InCellU 10 c) :
     (∃ S ∈ optSets10, ∀ a ∈ S, AtomSat G.Q (ScSq G.sc c θ) (atoms.getD a [])) ∨
       ∃ e ∈ used10, ptQ G.Q e.2 ∈ ScSq G.sc c θ := by
-  obtain ⟨o, ho, hg⟩ := bridge G.Q_pos G.R_pos cov10p0_1 G.sc_pos G.sc_lt G.UM hin (G.cellHP10 hc)
-  simp only [opts10, List.mem_append, List.mem_map] at ho
-  rcases ho with ⟨S, hS, rfl⟩ | ⟨e, he, rfl⟩
-  · exact Or.inl ⟨S, hS, fun a ha g hg' => hg g (List.mem_flatMap.mpr ⟨a, ha, hg'⟩)⟩
-  · obtain ⟨p, hp, hm⟩ := hg _ (List.mem_singleton_self _)
-    simp only [List.mem_singleton] at hp
-    subst hp
-    exact Or.inr ⟨e, he, hm⟩
+  exact field_option_cases (atoms := atoms) (sets := optSets10)
+    (used := used10) (bridge G.Q_pos G.R_pos cov10p0_1 G.sc_pos G.sc_lt G.UM hin (G.cellHP10 hc))
 
 lemma hcov : ∀ k ∈ pos, ∀ (c : ℝ × ℝ) (θ : ℝ), sq c θ 1 ⊆ box Ux → InCellU k c →
     (∃ S ∈ optSets k, ∀ a ∈ S, AtomSat G.Q (ScSq G.sc c θ) (atoms.getD a [])) ∨
@@ -81,20 +57,16 @@ lemma cap0 {A B : Set (ℝ × ℝ)} (hAc : Convex ℝ A) (hAo : IsOpen A) (hBc :
 lemma cap1 {A B : Set (ℝ × ℝ)} (hAc : Convex ℝ A) (hAo : IsOpen A) (hBc : Convex ℝ B)
     (hBo : IsOpen B) (hAB : Disjoint A B) (hA : AtomSat G.Q A (atoms.getD 1 []))
     (hB : AtomSat G.Q B (atoms.getD 1 [])) : False := by
-  have hb := baryAll_spec (sites := sites1) (subs := subs1)
-    (groups := atoms.getD 1 []) (barys := barys1) (by decide +kernel)
-  exact maj_capacity (Q := G.Q) (k := 2) (sites := sites1) (subs := subs1)
-    (by decide +kernel) (by decide +kernel)
-    hb.1 hb.2 hAc hAo hBc hBo hAB hA hB
+  exact checked_maj_capacity (k := 2) (sites := sites1) (subs := subs1)
+    (barys := barys1) (by decide +kernel) (by decide +kernel) (by decide +kernel)
+    hAc hAo hBc hBo hAB hA hB
 
 lemma cap2 {A B : Set (ℝ × ℝ)} (hAc : Convex ℝ A) (hAo : IsOpen A) (hBc : Convex ℝ B)
     (hBo : IsOpen B) (hAB : Disjoint A B) (hA : AtomSat G.Q A (atoms.getD 2 []))
     (hB : AtomSat G.Q B (atoms.getD 2 [])) : False := by
-  have hb := baryAll_spec (sites := sites2) (subs := subs2)
-    (groups := atoms.getD 2 []) (barys := barys2) (by decide +kernel)
-  exact maj_capacity (Q := G.Q) (k := 3) (sites := sites2) (subs := subs2)
-    (by decide +kernel) (by decide +kernel)
-    hb.1 hb.2 hAc hAo hBc hBo hAB hA hB
+  exact checked_maj_capacity (k := 3) (sites := sites2) (subs := subs2)
+    (barys := barys2) (by decide +kernel) (by decide +kernel) (by decide +kernel)
+    hAc hAo hBc hBo hAB hA hB
 
 lemma hcap : ∀ a < atoms.length, ∀ {A B : Set (ℝ × ℝ)}, Convex ℝ A → IsOpen A → Convex ℝ B →
     IsOpen B → Disjoint A B → AtomSat G.Q A (atoms.getD a []) → AtomSat G.Q B (atoms.getD a []) →

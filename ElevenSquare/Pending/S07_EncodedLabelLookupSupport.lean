@@ -1,4 +1,4 @@
-import ElevenSquare.Pending.S07_EncodedSemanticSupport
+import ElevenSquare.Pending.S07_EncodedLabelSemanticSupport
 namespace ElevenSquare.Pending.EncodedSearch
 
 

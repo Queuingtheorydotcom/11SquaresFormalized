@@ -31,405 +31,54 @@ private theorem branch_options : ∀ (b : Fin 128) (g : Fin 5),
     (branchRows b (firstPosition g)=firstB g ∧
       branchRows b (secondPosition g)=secondB g) := by decide
 
-private theorem common_lower_00 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
+/-- The thirty rows independent of the parallel-contact owner choice. -/
+private theorem common_fixed_lower (j : Fin 30) (b : Fin 128) (τ : ℝ)
+    (h : Fin 33 → ℝ)
     (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
       dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 0 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 0)) h := by
-  have hj := hrows (fixedPosition 0)
-  rw [branch_fixed b 0,fixed_curvature 0] at hj
+    -(τ^2*(curvatureQ (fixedIndex j) : ℝ)/2) ≤
+      dot (polynomialGradient (rowIndex (fixedIndex j))) h := by
+  have hj := hrows (fixedPosition j)
+  rw [branch_fixed b j, fixed_curvature j] at hj
   exact hj
 
-private theorem common_lower_01 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
-    (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
-      dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 1 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 1)) h := by
-  have hj := hrows (fixedPosition 1)
-  rw [branch_fixed b 1,fixed_curvature 1] at hj
-  exact hj
+private def parallelIndex (j : Fin 10) : Fin 40 := ⟨30 + j.val, by omega⟩
+private def parallelGroup (j : Fin 10) : Fin 5 := ⟨j.val / 2, by omega⟩
+private def parallelCombo (j : Fin 10) (s : Fin 2) : Fin 20 :=
+  ⟨2 * j.val + s.val, by omega⟩
 
-private theorem common_lower_02 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
-    (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
-      dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 2 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 2)) h := by
-  have hj := hrows (fixedPosition 2)
-  rw [branch_fixed b 2,fixed_curvature 2] at hj
-  exact hj
+/-- Each parallel contact contributes two common rows. Each of those rows
+has one convex certificate for each of the two possible owners. -/
+private theorem parallel_wiring : ∀ (j : Fin 10) (s : Fin 2),
+    comboFirst (parallelCombo j s) =
+      (if s = 0 then firstA (parallelGroup j) else firstB (parallelGroup j)) ∧
+    comboSecond (parallelCombo j s) =
+      (if s = 0 then secondA (parallelGroup j) else secondB (parallelGroup j)) ∧
+    comboTarget (parallelCombo j s) = rowIndex (parallelIndex j) ∧
+    comboCurvature (parallelCombo j s) = curvatureQ (parallelIndex j) := by
+  decide +kernel
 
-private theorem common_lower_03 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
+private theorem common_parallel_lower (j : Fin 10) (b : Fin 128) (τ : ℝ)
+    (h : Fin 33 → ℝ)
     (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
       dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 3 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 3)) h := by
-  have hj := hrows (fixedPosition 3)
-  rw [branch_fixed b 3,fixed_curvature 3] at hj
-  exact hj
-
-private theorem common_lower_04 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
-    (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
-      dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 4 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 4)) h := by
-  have hj := hrows (fixedPosition 4)
-  rw [branch_fixed b 4,fixed_curvature 4] at hj
-  exact hj
-
-private theorem common_lower_05 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
-    (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
-      dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 5 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 5)) h := by
-  have hj := hrows (fixedPosition 5)
-  rw [branch_fixed b 5,fixed_curvature 5] at hj
-  exact hj
-
-private theorem common_lower_06 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
-    (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
-      dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 6 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 6)) h := by
-  have hj := hrows (fixedPosition 6)
-  rw [branch_fixed b 6,fixed_curvature 6] at hj
-  exact hj
-
-private theorem common_lower_07 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
-    (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
-      dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 7 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 7)) h := by
-  have hj := hrows (fixedPosition 7)
-  rw [branch_fixed b 7,fixed_curvature 7] at hj
-  exact hj
-
-private theorem common_lower_08 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
-    (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
-      dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 8 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 8)) h := by
-  have hj := hrows (fixedPosition 8)
-  rw [branch_fixed b 8,fixed_curvature 8] at hj
-  exact hj
-
-private theorem common_lower_09 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
-    (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
-      dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 9 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 9)) h := by
-  have hj := hrows (fixedPosition 9)
-  rw [branch_fixed b 9,fixed_curvature 9] at hj
-  exact hj
-
-private theorem common_lower_10 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
-    (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
-      dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 10 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 10)) h := by
-  have hj := hrows (fixedPosition 10)
-  rw [branch_fixed b 10,fixed_curvature 10] at hj
-  exact hj
-
-private theorem common_lower_11 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
-    (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
-      dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 11 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 11)) h := by
-  have hj := hrows (fixedPosition 11)
-  rw [branch_fixed b 11,fixed_curvature 11] at hj
-  exact hj
-
-private theorem common_lower_12 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
-    (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
-      dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 12 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 12)) h := by
-  have hj := hrows (fixedPosition 12)
-  rw [branch_fixed b 12,fixed_curvature 12] at hj
-  exact hj
-
-private theorem common_lower_13 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
-    (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
-      dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 13 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 13)) h := by
-  have hj := hrows (fixedPosition 13)
-  rw [branch_fixed b 13,fixed_curvature 13] at hj
-  exact hj
-
-private theorem common_lower_14 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
-    (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
-      dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 14 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 14)) h := by
-  have hj := hrows (fixedPosition 14)
-  rw [branch_fixed b 14,fixed_curvature 14] at hj
-  exact hj
-
-private theorem common_lower_15 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
-    (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
-      dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 15 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 15)) h := by
-  have hj := hrows (fixedPosition 15)
-  rw [branch_fixed b 15,fixed_curvature 15] at hj
-  exact hj
-
-private theorem common_lower_16 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
-    (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
-      dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 16 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 16)) h := by
-  have hj := hrows (fixedPosition 16)
-  rw [branch_fixed b 16,fixed_curvature 16] at hj
-  exact hj
-
-private theorem common_lower_17 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
-    (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
-      dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 17 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 17)) h := by
-  have hj := hrows (fixedPosition 17)
-  rw [branch_fixed b 17,fixed_curvature 17] at hj
-  exact hj
-
-private theorem common_lower_18 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
-    (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
-      dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 18 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 18)) h := by
-  have hj := hrows (fixedPosition 18)
-  rw [branch_fixed b 18,fixed_curvature 18] at hj
-  exact hj
-
-private theorem common_lower_19 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
-    (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
-      dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 19 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 19)) h := by
-  have hj := hrows (fixedPosition 19)
-  rw [branch_fixed b 19,fixed_curvature 19] at hj
-  exact hj
-
-private theorem common_lower_20 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
-    (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
-      dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 20 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 20)) h := by
-  have hj := hrows (fixedPosition 20)
-  rw [branch_fixed b 20,fixed_curvature 20] at hj
-  exact hj
-
-private theorem common_lower_21 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
-    (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
-      dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 21 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 21)) h := by
-  have hj := hrows (fixedPosition 21)
-  rw [branch_fixed b 21,fixed_curvature 21] at hj
-  exact hj
-
-private theorem common_lower_22 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
-    (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
-      dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 22 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 22)) h := by
-  have hj := hrows (fixedPosition 22)
-  rw [branch_fixed b 22,fixed_curvature 22] at hj
-  exact hj
-
-private theorem common_lower_23 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
-    (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
-      dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 23 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 23)) h := by
-  have hj := hrows (fixedPosition 23)
-  rw [branch_fixed b 23,fixed_curvature 23] at hj
-  exact hj
-
-private theorem common_lower_24 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
-    (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
-      dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 24 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 24)) h := by
-  have hj := hrows (fixedPosition 24)
-  rw [branch_fixed b 24,fixed_curvature 24] at hj
-  exact hj
-
-private theorem common_lower_25 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
-    (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
-      dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 25 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 25)) h := by
-  have hj := hrows (fixedPosition 25)
-  rw [branch_fixed b 25,fixed_curvature 25] at hj
-  exact hj
-
-private theorem common_lower_26 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
-    (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
-      dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 26 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 26)) h := by
-  have hj := hrows (fixedPosition 26)
-  rw [branch_fixed b 26,fixed_curvature 26] at hj
-  exact hj
-
-private theorem common_lower_27 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
-    (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
-      dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 27 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 27)) h := by
-  have hj := hrows (fixedPosition 27)
-  rw [branch_fixed b 27,fixed_curvature 27] at hj
-  exact hj
-
-private theorem common_lower_28 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
-    (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
-      dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 28 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 28)) h := by
-  have hj := hrows (fixedPosition 28)
-  rw [branch_fixed b 28,fixed_curvature 28] at hj
-  exact hj
-
-private theorem common_lower_29 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
-    (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
-      dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 29 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 29)) h := by
-  have hj := hrows (fixedPosition 29)
-  rw [branch_fixed b 29,fixed_curvature 29] at hj
-  exact hj
-
-private theorem common_lower_30 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
-    (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
-      dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 30 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 30)) h := by
-  rcases branch_options b 0 with ⟨ha,hb⟩ | ⟨ha,hb⟩
-  · have h0 := hrows (firstPosition 0)
-    have h1 := hrows (secondPosition 0)
-    rw [ha] at h0
-    rw [hb] at h1
-    exact combo_lower 0 τ h h0 h1
-  · have h0 := hrows (firstPosition 0)
-    have h1 := hrows (secondPosition 0)
-    rw [ha] at h0
-    rw [hb] at h1
-    exact combo_lower 1 τ h h0 h1
-
-private theorem common_lower_31 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
-    (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
-      dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 31 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 31)) h := by
-  rcases branch_options b 0 with ⟨ha,hb⟩ | ⟨ha,hb⟩
-  · have h0 := hrows (firstPosition 0)
-    have h1 := hrows (secondPosition 0)
-    rw [ha] at h0
-    rw [hb] at h1
-    exact combo_lower 2 τ h h0 h1
-  · have h0 := hrows (firstPosition 0)
-    have h1 := hrows (secondPosition 0)
-    rw [ha] at h0
-    rw [hb] at h1
-    exact combo_lower 3 τ h h0 h1
-
-private theorem common_lower_32 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
-    (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
-      dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 32 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 32)) h := by
-  rcases branch_options b 1 with ⟨ha,hb⟩ | ⟨ha,hb⟩
-  · have h0 := hrows (firstPosition 1)
-    have h1 := hrows (secondPosition 1)
-    rw [ha] at h0
-    rw [hb] at h1
-    exact combo_lower 4 τ h h0 h1
-  · have h0 := hrows (firstPosition 1)
-    have h1 := hrows (secondPosition 1)
-    rw [ha] at h0
-    rw [hb] at h1
-    exact combo_lower 5 τ h h0 h1
-
-private theorem common_lower_33 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
-    (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
-      dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 33 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 33)) h := by
-  rcases branch_options b 1 with ⟨ha,hb⟩ | ⟨ha,hb⟩
-  · have h0 := hrows (firstPosition 1)
-    have h1 := hrows (secondPosition 1)
-    rw [ha] at h0
-    rw [hb] at h1
-    exact combo_lower 6 τ h h0 h1
-  · have h0 := hrows (firstPosition 1)
-    have h1 := hrows (secondPosition 1)
-    rw [ha] at h0
-    rw [hb] at h1
-    exact combo_lower 7 τ h h0 h1
-
-private theorem common_lower_34 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
-    (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
-      dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 34 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 34)) h := by
-  rcases branch_options b 2 with ⟨ha,hb⟩ | ⟨ha,hb⟩
-  · have h0 := hrows (firstPosition 2)
-    have h1 := hrows (secondPosition 2)
-    rw [ha] at h0
-    rw [hb] at h1
-    exact combo_lower 8 τ h h0 h1
-  · have h0 := hrows (firstPosition 2)
-    have h1 := hrows (secondPosition 2)
-    rw [ha] at h0
-    rw [hb] at h1
-    exact combo_lower 9 τ h h0 h1
-
-private theorem common_lower_35 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
-    (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
-      dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 35 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 35)) h := by
-  rcases branch_options b 2 with ⟨ha,hb⟩ | ⟨ha,hb⟩
-  · have h0 := hrows (firstPosition 2)
-    have h1 := hrows (secondPosition 2)
-    rw [ha] at h0
-    rw [hb] at h1
-    exact combo_lower 10 τ h h0 h1
-  · have h0 := hrows (firstPosition 2)
-    have h1 := hrows (secondPosition 2)
-    rw [ha] at h0
-    rw [hb] at h1
-    exact combo_lower 11 τ h h0 h1
-
-private theorem common_lower_36 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
-    (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
-      dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 36 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 36)) h := by
-  rcases branch_options b 3 with ⟨ha,hb⟩ | ⟨ha,hb⟩
-  · have h0 := hrows (firstPosition 3)
-    have h1 := hrows (secondPosition 3)
-    rw [ha] at h0
-    rw [hb] at h1
-    exact combo_lower 12 τ h h0 h1
-  · have h0 := hrows (firstPosition 3)
-    have h1 := hrows (secondPosition 3)
-    rw [ha] at h0
-    rw [hb] at h1
-    exact combo_lower 13 τ h h0 h1
-
-private theorem common_lower_37 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
-    (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
-      dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 37 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 37)) h := by
-  rcases branch_options b 3 with ⟨ha,hb⟩ | ⟨ha,hb⟩
-  · have h0 := hrows (firstPosition 3)
-    have h1 := hrows (secondPosition 3)
-    rw [ha] at h0
-    rw [hb] at h1
-    exact combo_lower 14 τ h h0 h1
-  · have h0 := hrows (firstPosition 3)
-    have h1 := hrows (secondPosition 3)
-    rw [ha] at h0
-    rw [hb] at h1
-    exact combo_lower 15 τ h h0 h1
-
-private theorem common_lower_38 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
-    (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
-      dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 38 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 38)) h := by
-  rcases branch_options b 4 with ⟨ha,hb⟩ | ⟨ha,hb⟩
-  · have h0 := hrows (firstPosition 4)
-    have h1 := hrows (secondPosition 4)
-    rw [ha] at h0
-    rw [hb] at h1
-    exact combo_lower 16 τ h h0 h1
-  · have h0 := hrows (firstPosition 4)
-    have h1 := hrows (secondPosition 4)
-    rw [ha] at h0
-    rw [hb] at h1
-    exact combo_lower 17 τ h h0 h1
-
-private theorem common_lower_39 (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
-    (hrows : ∀ i : Fin 42, -(τ^2*(rowCurvatures (branchRows b i) : ℝ)/2) ≤
-      dot (polynomialGradient (branchRows b i)) h) :
-    -(τ^2*(curvatureQ 39 : ℝ)/2) ≤ dot (polynomialGradient (rowIndex 39)) h := by
-  rcases branch_options b 4 with ⟨ha,hb⟩ | ⟨ha,hb⟩
-  · have h0 := hrows (firstPosition 4)
-    have h1 := hrows (secondPosition 4)
-    rw [ha] at h0
-    rw [hb] at h1
-    exact combo_lower 18 τ h h0 h1
-  · have h0 := hrows (firstPosition 4)
-    have h1 := hrows (secondPosition 4)
-    rw [ha] at h0
-    rw [hb] at h1
-    exact combo_lower 19 τ h h0 h1
+    -(τ^2*(curvatureQ (parallelIndex j) : ℝ)/2) ≤
+      dot (polynomialGradient (rowIndex (parallelIndex j))) h := by
+  rcases branch_options b (parallelGroup j) with ⟨ha, hb⟩ | ⟨ha, hb⟩
+  · have hc := combo_lower (parallelCombo j 0) τ h
+    rcases parallel_wiring j 0 with ⟨hf, hs, ht, hk⟩
+    rw [hf, hs, ht, hk] at hc
+    simp only [if_true] at hc
+    exact hc
+      (by simpa only [ha] using hrows (firstPosition (parallelGroup j)))
+      (by simpa only [hb] using hrows (secondPosition (parallelGroup j)))
+  · have hc := combo_lower (parallelCombo j 1) τ h
+    rcases parallel_wiring j 1 with ⟨hf, hs, ht, hk⟩
+    rw [hf, hs, ht, hk] at hc
+    simp only [show (1 : Fin 2) ≠ 0 by decide, if_false] at hc
+    exact hc
+      (by simpa only [ha] using hrows (firstPosition (parallelGroup j)))
+      (by simpa only [hb] using hrows (secondPosition (parallelGroup j)))
 
 /-- Every original branch implies the same forty necessary rows. -/
 theorem common_rows (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
@@ -438,48 +87,14 @@ theorem common_rows (b : Fin 128) (τ : ℝ) (h : Fin 33 → ℝ)
     ∀ j : Fin 40, -(τ^2*(curvatureQ j : ℝ)/2) ≤
       dot (polynomialGradient (rowIndex j)) h := by
   intro j
-  fin_cases j
-  · exact common_lower_00 b τ h hrows
-  · exact common_lower_01 b τ h hrows
-  · exact common_lower_02 b τ h hrows
-  · exact common_lower_03 b τ h hrows
-  · exact common_lower_04 b τ h hrows
-  · exact common_lower_05 b τ h hrows
-  · exact common_lower_06 b τ h hrows
-  · exact common_lower_07 b τ h hrows
-  · exact common_lower_08 b τ h hrows
-  · exact common_lower_09 b τ h hrows
-  · exact common_lower_10 b τ h hrows
-  · exact common_lower_11 b τ h hrows
-  · exact common_lower_12 b τ h hrows
-  · exact common_lower_13 b τ h hrows
-  · exact common_lower_14 b τ h hrows
-  · exact common_lower_15 b τ h hrows
-  · exact common_lower_16 b τ h hrows
-  · exact common_lower_17 b τ h hrows
-  · exact common_lower_18 b τ h hrows
-  · exact common_lower_19 b τ h hrows
-  · exact common_lower_20 b τ h hrows
-  · exact common_lower_21 b τ h hrows
-  · exact common_lower_22 b τ h hrows
-  · exact common_lower_23 b τ h hrows
-  · exact common_lower_24 b τ h hrows
-  · exact common_lower_25 b τ h hrows
-  · exact common_lower_26 b τ h hrows
-  · exact common_lower_27 b τ h hrows
-  · exact common_lower_28 b τ h hrows
-  · exact common_lower_29 b τ h hrows
-  · exact common_lower_30 b τ h hrows
-  · exact common_lower_31 b τ h hrows
-  · exact common_lower_32 b τ h hrows
-  · exact common_lower_33 b τ h hrows
-  · exact common_lower_34 b τ h hrows
-  · exact common_lower_35 b τ h hrows
-  · exact common_lower_36 b τ h hrows
-  · exact common_lower_37 b τ h hrows
-  · exact common_lower_38 b τ h hrows
-  · exact common_lower_39 b τ h hrows
-
+  by_cases hj : j.val < 30
+  · exact common_fixed_lower ⟨j.val, hj⟩ b τ h hrows
+  · let k : Fin 10 := ⟨j.val - 30, by omega⟩
+    have hk : parallelIndex k = j := by
+      apply Fin.ext
+      dsimp [parallelIndex, k]
+      omega
+    simpa only [hk] using common_parallel_lower k b τ h hrows
 
 end
 end ElevenSquare.Simplified.LocalCommon

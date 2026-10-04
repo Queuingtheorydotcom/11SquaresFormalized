@@ -1,5 +1,5 @@
 import ElevenSquare.Cover
-import ElevenSquare.Pending.S07_Data
+import ElevenSquare.Pending.S07_LabelData
 
 namespace ElevenSquare.Pending.T05Transport
 noncomputable section

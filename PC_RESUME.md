@@ -2,65 +2,78 @@
 
 Branch: `codex/simplification-unverified-20261003`.
 
-This is a source candidate, not a verified full proof. Work stopped at the user's request before full replay. Main and the T03 progress branch were not changed. The imported bundle commit is `dac90e2f02d4afe8482096e13b9dcf546d871fde`, based on `c82cff63e48b2d3f2da60cb998bbab48e557c012`.
+**This is a source candidate, not a verified full proof.** The full `ElevenSquare.Verification` target has not been run on this checkpoint. The imported bundle commit is `dac90e2f02d4afe8482096e13b9dcf546d871fde`, based on `c82cff63e48b2d3f2da60cb998bbab48e557c012`.
 
-## Exact current size and scope
+## Current size and scope
 
-The reachable closure of `ElevenSquare.Optimality` contains **394,204 physical Lean lines, 6,326 local modules, and 1,087,162,218 bytes**. All local certificate sources are counted; Lean and Mathlib are excluded. The independent census found zero missing local imports, zero import cycles, and zero symlinked source files. See `simplification/checkpoint-census.json` for file hashes and import edges.
+The refreshed `ElevenSquare.Optimality` census contains **365,392 physical Lean lines, 4,257 local modules and 1,085,849,057 bytes**. It includes every reached local certificate source and excludes pinned Lean/Mathlib dependencies. No missing local imports, import cycles or symlinked sources were found. File hashes and import edges are recorded in `simplification/checkpoint-census.json` and `simplification/source-manifest.json`.
 
-The imported checkpoint had 494,346 lines. This pass removes 100,142 reachable lines. **The 300,000-line goal remains unfinished.** Most exact numerical witness data remains, so the byte count is still about 1.09 GB. A smaller line count does not imply a faster kernel replay.
+The prior checkpoint contained 394,204 lines in 6,326 modules: this pass removes **28,812 lines and 2,069 reachable modules**. Module bundling accounts for **2,032** of the removed modules: 1,301 T07 modules and 731 Sqpack modules. Additional dependency pruning accounts for the remaining net reduction. **The 300,000-line target remains unfinished.** The source still contains roughly 1.09 GB of exact data.
 
-## Completed source changes
+## Implemented source reductions
 
-- Conditional coverage: shared bounded module contexts and removed 4,186 redundant intermediate aliases. Public coverage propositions retain their original certificate proofs; an exact source reconstruction audit passed.
-- T07: shared `CTreeChain.build` reconstructs repeated binary split spines. All 22,931 transformed trees were expanded and compared with the original constructor tokens, including numerical witnesses and branch directions. The original tree checker remains in use.
-- T07 stage proofs: removed repeated declarations around 3,303 width-eight checks; the same finite goals are now generated within each stage proof. This has not been replayed and may change elaboration memory use.
-- T06: shared support lemmas for 1,734 zero-coordinate gradients and a common endpoint-polynomial reduction for 908 identities.
-- Pending inventory: reused existing named tables rather than repeating literal tables; shared label lookup lemmas replace repeated append traversals.
-- Ownership: one private singleton bridge replaces 134 repeated proofs, preserving all public statements and axiom queries.
-- Endpoint: carried forward the previously focused-checked small-coefficient derivative decomposition from commit `1051254`.
-- Restored `ElevenSquare.Verification` with axiom queries for the certificate families, global bound, and both final public theorems.
+- Conditional coverage uses indexed triangle/target tables across 267 cases, retaining 6,688 triangle entries and 6,421 target entries and checking 20,343 consumer references. This saves 14,991 lines; removing 652 redundant root aliases saves another 1,304 while preserving public statements and proof bodies.
+- T07's 842 certificate shards and 459 auxiliary proof modules are bundled into their 459 stage modules. All 26,033 moved public declaration blocks are preserved. Sqpack bypasses intermediate import facades and combines selected small modules with their sole consumer, removing another 731 modules from the active closure. Old import paths remain compatibility reexports. The ledgers reconstruct exact predecessor source bytes.
+- Four collision bounds use rational coordinate boxes and a shared distance argument. Label/view/mask data is separated from historical geometry, removing unused dependencies.
+- The common local cone shares fixed-row and parallel-row arguments, retaining its 40 rows and 66 dual certificates. Bundled field proofs share option and majority arguments, retaining 187 cover calls and 147 majority certificates.
+- T07 shares repeated tree spines and generates the original width-eight finite goals within stage proofs. Source audits cover 22,931 transformed trees and 3,303 regrouped checking blocks. T06, inventory, singleton ownership and endpoint helpers retain the earlier shared arguments.
 
-Source audits establish preservation properties, not Lean acceptance. New helper elaboration, regrouped modules, and all changed concrete certificates require replay.
+Module bundling avoids **2,032 compiler launches in a cold final-theorem replay**. It does not remove certificate data or finite checks. Retained compatibility and historical modules still run under `--all`, so that broader audit does not receive this startup reduction.
 
-## Run on the larger computer
+## Excluded experiments and timing limits
 
-With Git, Python 3, and elan installed, use an existing clone:
+The active proof uses **original literal T07 witness data**. Compact witness recipes were removed after the complete S135 scout measured **54.126 CPU seconds for literals versus 132.407 for compact recipes**. These are single observations, not a general speed ratio or a full-proof benchmark. Only S137's experimental certificate/consumer inputs were restored; all module mergers remain. Its older compact-certificate acceptance is marked historical, and the bundling ledger preserves the exclusion history.
 
-```sh
-git fetch origin
-git switch --track origin/codex/simplification-unverified-20261003
-lake exe cache get
-python3 scripts/check_sources.py
-python3 scripts/verify.py --all --jobs 1 --keep-going
-```
+All four conditions in the full S135 pruning benchmark fixtures passed Lean. This is fixture evidence, not acceptance of the assembled production stage. Runtime-checker equality/soundness helpers and the LCM helper have focused Lean acceptance. The **LCM runtime comparison was not run**; its optional `--lcm-only` benchmark path is prepared for the larger computer. The prototype is **not enabled in the active proof**. There is no supported 2–3 hour full-build estimate. Do not enable experimental routes merely because their helpers compile.
 
-If the local branch already exists, switch to it normally. On Windows use `python` or `py` instead of `python3`. For a fresh clone:
+## Check on the larger computer
+
+Install Git, Python 3 and elan. For a fresh clone:
 
 ```sh
 git clone --branch codex/simplification-unverified-20261003 https://github.com/Queuingtheorydotcom/11SquaresFormalized.git
 cd 11SquaresFormalized
 ```
 
-The pinned toolchain is Lean **4.34.1** and Mathlib is **d13f23b723b8a846827a245b89c10fc7d3f11612**. Keep `lean-toolchain` and `lake-manifest.json`. **Do not run `verify.py --setup` or `materialize_wand125.py` on this branch**: they restore the older generated source layout.
-
-The verifier compiles modules serially; `--jobs` controls Lean worker threads within each module. Start with one. Ctrl-C stops the current run; rerun the same command to reuse matching accepted receipts. Check `.verification/incomplete-result.json` and module logs for failures. Compilation may still require substantial RAM and time.
-
-After the entire `--all` replay succeeds, validate the final current-source receipts and axiom reports:
+For an existing clone, fetch and switch to this branch while preserving local changes. Keep the pinned **Lean 4.34.1** toolchain and Mathlib revision **d13f23b723b8a846827a245b89c10fc7d3f11612**. Restore the dependency cache, then run the main verification command:
 
 ```sh
+lake exe cache get
+python3 scripts/verify.py --jobs 1
+```
+
+This checks **`ElevenSquare.Verification` and its dependency closure, including the final public axiom audit**. Require `OPTIMALITY_PROVED`, zero admissions and only the permitted standard axioms. No `--all` step is required for that final-theorem check. Historical reports under `verification/` or `simplification/accepted-components.json` do not certify current source.
+
+The verifier compiles modules serially; `--jobs` controls worker threads inside each Lean process. Ctrl-C stops a run. Rerun the same command to reuse matching accepted receipts; changed sources or dependencies require new checks. Inspect `.verification/incomplete-result.json` and the named module logs after failures. A fresh clone does not include local compiled objects or machine-local receipts. On Windows use `python` or `py` instead of `python3`.
+
+**Do not run `verify.py --setup` or `materialize_wand125.py` on this branch:** they restore the older generated source layout.
+
+For optional source-preservation checks:
+
+```sh
+python3 scripts/check_sources.py
+python3 scripts/simplification_census.py
+python3 scripts/simplify_indexed_stages.py --check
+python3 scripts/simplify_stage_aliases.py --check
+python3 scripts/bundle_t07_stages.py --check
+python3 scripts/flatten_stage_bundles.py --check
+```
+
+## Optional entire-repository audit
+
+To additionally check every retained auxiliary, historical and compatibility module, use:
+
+```sh
+python3 scripts/verify.py --all --jobs 1
 python3 scripts/finalize_verification.py
 ```
 
-Require `OPTIMALITY_PROVED`, zero admissions, and only the permitted standard axioms. Historical files under `verification/` and `simplification/accepted-components.json` do not certify this new checkpoint. Do not merge to main merely because source audits pass.
+The finalizer requires that broader `--all` result. After it succeeds, `python3 scripts/finalize_verification.py --write` records portable whole-repository evidence. This optional audit does **not** benefit from the 2,032 removed theorem-closure startups, because the compatibility files still exist.
 
-## What ran on the Mac
+## What remains
 
-Before this latest source pass, the selected-field dispatcher and inventory classifier completed a focused replay: 83 modules and 20 standard-only axiom queries. A subsequent full replay stopped on request after 359 modules; the assembled theorem was never reached. Those earlier receipts do not certify subsequently changed files. All proof compiler processes were stopped before handoff; machine-local objects and logs are excluded from Git.
+Focused checks cover selected cones, collision bounds, shared adapters and helpers. The selected `P2.S0` / `P2.S1` replay was deliberately stopped with exit 130 when free disk space fell to approximately 123 MiB and the machine was swapping heavily. Both verifier and Lean processes were confirmed stopped; free space recovered to approximately 1.6 GiB.
 
-## Next simplification work
+Dependencies through `P2.S1D` passed. **`P2.S0` was not accepted, and `P2.S1` was not attempted. No complete merged-stage kernel pass is claimed.** All checkpoint source audits pass, but they and the S135 fixture results do not replace the unrun final target. **Do not restart Lean checks on this Mac in this state; continue on the larger computer.**
 
-1. Diagnose any Lean failures in this checkpoint before building more abstraction on it.
-2. Consider indexed stage data: an unapplied source-preservation dry run projected a further 16,593-line reduction across 267 cases, but it was deliberately excluded when work paused.
-3. Explore exact reconstruction of T07 rational witnesses from supporting facet indices and geometry. A read-only Python pilot on the original `P2/S137C0` reconstructed all 3,618 multiplier vectors and matched 163 of 187 split planes to existing row edges. No corresponding Lean builder or additional line reduction is implemented or claimed here.
-4. Recount the actual final theorem closure after each change. Preserve the packing model, final theorem statements, strict owned interiors, legal touching, and closed split boundaries. Do not replace proof checking with an external oracle.
+Run the final-target command, fix any failures, and inspect its public axiom result before claiming the proof complete. If source changes, refresh the census with `python3 scripts/simplification_census.py --write`. Preserve the packing model, final statements, strict owned interiors, legal touching and closed split boundaries. Keep this checkpoint on its branch until the final-theorem replay and axiom audit pass.

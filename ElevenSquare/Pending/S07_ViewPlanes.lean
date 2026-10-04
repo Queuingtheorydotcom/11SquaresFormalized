@@ -1,5 +1,5 @@
 import ElevenSquare.Pending.S07_CellPolygon
-import ElevenSquare.Pending.S07_Data
+import ElevenSquare.Pending.S07_LabelData
 
 /-! Pull back closed halfplanes under the exact four affine view maps.
 This does not assume that the view maps permute Voronoi cell indices. -/

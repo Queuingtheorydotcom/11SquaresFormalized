@@ -1,0 +1,176 @@
+{
+  "description": "Source-bound finite T07 runtime fixtures; unused context entries are empty placeholders.",
+  "fixtures": [
+    {
+      "certificate": "cert36[0]",
+      "context_sources": {
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S109C.lean": "24d9135eb3b1644a74f5306db64881e6f3172ecd90c362f9e786b26db29141f0",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S109D.lean": "ddb32cb868690d67c287b601c618b74ec4286adf91c634c1aae88f3527e01db7",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S110C.lean": "e1c894539ca682de50e22ea8d385ba67b0aabb162fc36c4601fc4799b3440c34",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S110D.lean": "6509e6cd721e42499f5826c48d56181257deb01fa6b6c64e8d58e0853f6670d9",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S111C.lean": "a14860762090975f6286511a80971ce04b707e3bdfff0a4592586fb217260f59",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S111D.lean": "1a28adc427935715bc0b0b3290ce86fadb9e764e388d366afe005b67492944f5",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S112C.lean": "122b8409b084b2f83eec4cece677cb1fec6f9e936c0dd6618b77383820bb57ab",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S112D.lean": "1d08300b926db12d482ff2da086f10d535caac0f1a4a84d373d420fef2a48d1d",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S113C.lean": "770379ddb42388cda48a2765778dae3cf4e444002d554c13a4f1ed4baff914f6",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S113D.lean": "d025d6fba68f7318096506667ac14dedce394c20c93b6cc1f6cf84d8adb3b59a",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S114C.lean": "b265b609779d8cad3897cbe9a35150c718a222515bd97aa05f6643d7db6337a0",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S114D.lean": "b4feee34dae13b549c1dfb9cb628d811af03b7af7148fecfbb4af497c49d9fa1",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S115C.lean": "be31daaecedaf8a54da6f9bd64f89da262fc8fcdb0824c1fe4487e9ceda14a3c",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S115D.lean": "c6e15e73ed929b2f341dca4bbe3cbbd325763f08d9822328f7949c77d9641aea",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S116C.lean": "7abb5e6dfa6581b6aa5e5415bf85b8ea8f649ec3cf9b708b9a94c587f7b278ff",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S116D.lean": "df72f528635a21d5506882474b3a2d529e976ab45639ab8f0d33cbc944b8ed4f",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S117C.lean": "eb59dab4a0f0576006ea2eb042aa7c927a8ffcb7a125d0d5a44ef5055e776240",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S117D.lean": "45082858226e97c2c3597a996bb341a60e22353af06ec98c911812fa02ef1f91",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S118C.lean": "dd02d82813d574fcc95b6c594402beba7ea2b5a5562e2d956e1b4a904c541004",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S118D.lean": "b408aab7d10f76a5d7d558ca9b693e903a30252a3e5fe0d6a39a90a7d8b8c051",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S119C.lean": "16a48cb7373691599454640da5759909197ceb09c7498c5a12af596d657a3a52",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S119D.lean": "b3e0cfa5f06fc29b7f6b62f8638bb05e9eeb3eebd3e5673cf03da97f51b3e945",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S120C.lean": "b560721ed8a1c4535f7f5377f120c9e1f20639431254646b04da3bda4ba243a4",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S120C0.lean": "1f99364c46f749b2a466fbbbda13fc3a28a6859f8b06734da92968de36b2028c",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S120D.lean": "0c517779472ddef687e7ee7591fdeb897b7268219863bf5e8130782f65433356"
+      },
+      "counts": {
+        "leaves_reconstructed": 2,
+        "support_1": 5,
+        "support_2": 14,
+        "vectors_reconstructed": 19
+      },
+      "expected_check": "{value}.check state 1 outputRows (fun _ => []) inputRow = true",
+      "module": "T07WitnessBenchSmall",
+      "namespace": "ElevenSquare.Tasks.T07.Ext.T07WitnessBench.Small",
+      "output_file": "simplification/benchmarks/t07/T07WitnessBenchSmall.lean",
+      "output_rows_length": 95,
+      "output_sha256": "e75a51281fe7cf07b889b8cb1d5f94a9482c6f1d98f9d0ce6d3a82bf2f30b74f",
+      "owner": 1,
+      "source_file": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S120C0.lean",
+      "source_sha256": "1f99364c46f749b2a466fbbbda13fc3a28a6859f8b06734da92968de36b2028c",
+      "source_statement": "P2.S120.cert36[0]",
+      "tag": "Small",
+      "tree_nodes": 3,
+      "used_output_rows": [
+        36
+      ],
+      "used_owners": [
+        1,
+        9
+      ]
+    },
+    {
+      "certificate": "cert66[0]",
+      "context_sources": {
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S130C.lean": "2dbbf4ee87c374a09dae4b0511b5a9076208ba825d0f69b850fff47f55ae2f1f",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S130D.lean": "eb9538c6e48e8b83aba35926ceac34c30d4a02858f1e437aef2c86bca9de447d",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S131C.lean": "f06b870531e165790c8abc2eb80af90aac18a95c6614e7cdbc9dc63dee12d566",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S131D.lean": "0ca65b086e395991097582683ff20f4fd8883dee023356bdaa2f486d56dae965",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S132C.lean": "0c3da9769665e03b85d8792ad70cbfdf23218cf4248d783637685b77156eda52",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S132D.lean": "841ce51405dc77e77010388b4494c995090e54c2b5d197e93d4fc80205fd27ae",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S133C.lean": "eba2ce71d578fe8c644d945eb60ac62024217e4f4ba47b75781cc92d43a2e0b1",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S133D.lean": "60a7f3c15d9c9a4fe308410ada1addac20d2214988cc611656c743c93d091100",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S134C.lean": "ede6a0d7ca75241724781d9c9f41d1af40b2d9ec252aeeecb6a2364667372dec",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S134D.lean": "1f34c17ca0f8d273c1309a0fd4e138065e711abf2995dd9377f731b0f3d938a3",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S135C.lean": "9732feae8669cca24cd7a0dfbcb9dc8d21ef2160656a374bfb253e3efad4c0e3",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S135D.lean": "9496398535678812af8894d9ad28b643f2da0f3258496585755ddf5cb75e3cb7",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S136C.lean": "fad44787a08a7ed00d0cd44db1bbcfb4cb2588b2044d0281f63b074062031310",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S136D.lean": "fc5afe3daa9b6a3ce6ec8e0562de40fa500082619606b10ba7940604803a3cb2",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S137C.lean": "454c40a19eeaea734a870e02e0805354556ce16e87f0002903534da1ed7a04b8",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S137D.lean": "016405a550e413ff44d4ca24f883dec305715a02a8d6b08f802c1ef2b9b92813",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S138C.lean": "b05527e6d97ac24bbe5eae7c7f9336866d2619353ee20990fe6d0a6ab31fef8b",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S138D.lean": "96a7a5416ec54624f331dbcb6174d522944e352feae30f611cb340d13da983eb",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S139C.lean": "7c29d0551d1ff21eb1f84c189935b85f4a0fd5d2c414522f2428b84543c376e2",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S139D.lean": "6d5eac5fcda36dd5fa94d0fd4117736410b420d8e6b8947b1699523d8123b099",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S140C.lean": "af40a93eef7d789da6c0ae0dc31e3b824b0f4ae15167a68366ca03f16b623200",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S140D.lean": "7988deb5aa21a1ed9b8e0b8fba9175178cc081a678d7219af7d9641f6e78aefe",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S141C.lean": "4da06ee30ef9a966b69853ca8b1908a02a17ec5e472ac823fbd19be019abbaa9",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S141C1.lean": "99bb4d23cfa819e437d51ef5936a9c822d1265bf15c5887f07f6eacb99b2213d",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S141D.lean": "bc59e8d10175534348dbcb20a56aa460c8984e3dacf022ff01e02510247e8bd9"
+      },
+      "counts": {
+        "leaves_reconstructed": 4,
+        "support_1": 7,
+        "support_2": 43,
+        "vectors_reconstructed": 50
+      },
+      "expected_check": "{value}.check state 10 outputRows (fun _ => []) inputRow = true",
+      "module": "T07WitnessBenchMedium",
+      "namespace": "ElevenSquare.Tasks.T07.Ext.T07WitnessBench.Medium",
+      "output_file": "simplification/benchmarks/t07/T07WitnessBenchMedium.lean",
+      "output_rows_length": 276,
+      "output_sha256": "e190950683f45a4ee3f4fbed8b33797ce4ce4658a28ddacb4121d909bb8d192c",
+      "owner": 10,
+      "source_file": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S141C1.lean",
+      "source_sha256": "99bb4d23cfa819e437d51ef5936a9c822d1265bf15c5887f07f6eacb99b2213d",
+      "source_statement": "P2.S141.cert66[0]",
+      "tag": "Medium",
+      "tree_nodes": 7,
+      "used_output_rows": [
+        132
+      ],
+      "used_owners": [
+        2,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "certificate": "cert14[0]",
+      "context_sources": {
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S128C.lean": "4eb2a4c24cd6ed2bc9aaa294ee095f97c96b398857effd5b2abf8c1c54fd180c",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S128D.lean": "6aba811f2906a8557b5fab333c368e7bc2e81239a8cd479d873c0fc875d0dbc8",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S129C.lean": "2421a62a97c8b3bcebb4a07837f05a56ad45b51f52beafdf782959dc2b557783",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S129D.lean": "6505b59c087071fa7bb019c034dc840d9d36e17e5989ad4c17dae96e95c680ec",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S130C.lean": "2dbbf4ee87c374a09dae4b0511b5a9076208ba825d0f69b850fff47f55ae2f1f",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S130D.lean": "eb9538c6e48e8b83aba35926ceac34c30d4a02858f1e437aef2c86bca9de447d",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S131C.lean": "f06b870531e165790c8abc2eb80af90aac18a95c6614e7cdbc9dc63dee12d566",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S131D.lean": "0ca65b086e395991097582683ff20f4fd8883dee023356bdaa2f486d56dae965",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S132C.lean": "0c3da9769665e03b85d8792ad70cbfdf23218cf4248d783637685b77156eda52",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S132D.lean": "841ce51405dc77e77010388b4494c995090e54c2b5d197e93d4fc80205fd27ae",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S133C.lean": "eba2ce71d578fe8c644d945eb60ac62024217e4f4ba47b75781cc92d43a2e0b1",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S133D.lean": "60a7f3c15d9c9a4fe308410ada1addac20d2214988cc611656c743c93d091100",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S134C.lean": "ede6a0d7ca75241724781d9c9f41d1af40b2d9ec252aeeecb6a2364667372dec",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S134D.lean": "1f34c17ca0f8d273c1309a0fd4e138065e711abf2995dd9377f731b0f3d938a3",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S135C.lean": "9732feae8669cca24cd7a0dfbcb9dc8d21ef2160656a374bfb253e3efad4c0e3",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S135D.lean": "9496398535678812af8894d9ad28b643f2da0f3258496585755ddf5cb75e3cb7",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S136C.lean": "fad44787a08a7ed00d0cd44db1bbcfb4cb2588b2044d0281f63b074062031310",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S136D.lean": "fc5afe3daa9b6a3ce6ec8e0562de40fa500082619606b10ba7940604803a3cb2",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S137C.lean": "454c40a19eeaea734a870e02e0805354556ce16e87f0002903534da1ed7a04b8",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S137D.lean": "016405a550e413ff44d4ca24f883dec305715a02a8d6b08f802c1ef2b9b92813",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S138C.lean": "b05527e6d97ac24bbe5eae7c7f9336866d2619353ee20990fe6d0a6ab31fef8b",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S138D.lean": "96a7a5416ec54624f331dbcb6174d522944e352feae30f611cb340d13da983eb",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S139C.lean": "7c29d0551d1ff21eb1f84c189935b85f4a0fd5d2c414522f2428b84543c376e2",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S139C0.lean": "9df258fae3f79a36b3373e54115b2139a0e595a9b9ba173ceb9a9a793c6363b9",
+        "ElevenSquare/Tasks/T07/Ext/Gen/P2/S139D.lean": "6d5eac5fcda36dd5fa94d0fd4117736410b420d8e6b8947b1699523d8123b099"
+      },
+      "counts": {
+        "leaves_reconstructed": 6,
+        "support_1": 13,
+        "support_2": 67,
+        "vectors_reconstructed": 80
+      },
+      "expected_check": "{value}.check state 9 outputRows (fun _ => []) inputRow = true",
+      "module": "T07WitnessBenchLarger",
+      "namespace": "ElevenSquare.Tasks.T07.Ext.T07WitnessBench.Larger",
+      "output_file": "simplification/benchmarks/t07/T07WitnessBenchLarger.lean",
+      "output_rows_length": 101,
+      "output_sha256": "018fbcb1637ac52e399796baa7bc384e477d34b1f7d9be926661571b1b74e200",
+      "owner": 9,
+      "source_file": "ElevenSquare/Tasks/T07/Ext/Gen/P2/S139C0.lean",
+      "source_sha256": "9df258fae3f79a36b3373e54115b2139a0e595a9b9ba173ceb9a9a793c6363b9",
+      "source_statement": "P2.S139.cert14[0]",
+      "tag": "Larger",
+      "tree_nodes": 11,
+      "used_output_rows": [
+        28
+      ],
+      "used_owners": [
+        1,
+        6,
+        8,
+        9,
+        10
+      ]
+    }
+  ],
+  "schema": 1
+}
