@@ -11,8 +11,8 @@ The additional 3,079 finite `soundDec` hypotheses in F00, Split, and Bundled/Own
 now follow the same compiler-backed numerical policy. Their exact source
 inverse is authenticated; no numerical values or theorem statements change.
 Bounded compilation checks of the largest selected data initializers pass, but
-neither those tests nor source audits establish that a full replay fits within
-the runner's six-hour limit. Production replay remains necessary.
+neither those tests nor source audits establish completion or whole-build
+runtime on the verification machine. Production replay remains necessary.
 
 The preceding kernel-checking checkpoint's `ElevenSquare.Optimality` closure was **365,392 lines in 4,257 modules**, down from 394,204 lines / 6,326 modules. Those historical figures precede the indexed-table compilation helpers. The 300,000-line target remains unfinished. Read [PC_RESUME.md](PC_RESUME.md) first.
 
