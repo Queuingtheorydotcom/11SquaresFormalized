@@ -52,13 +52,16 @@ def transform(source):
 
 def check_saved_report(report_path=REPORT, root=ROOT):
     """Check current files against the receipt without repeating the rewrite."""
+    from native_certificates import load_native_manifest, restore_kernel_source
     report = json.loads(Path(report_path).read_text())
+    native_manifest = load_native_manifest(root)
     files = report['files']
     assert files and report['exact_public_statements_preserved'] == len(files)
     for name, info in files.items():
         relative = Path(name)
         assert not relative.is_absolute() and '..' not in relative.parts, name
-        source = (Path(root) / relative).read_text()
+        source = restore_kernel_source(name, (Path(root) / relative).read_bytes(),
+                                       native_manifest).decode('utf-8')
         assert sha(source) == info['after_sha256'], f'Stale source hash: {name}'
         assert NS.findall(source) == [info['namespace']], f'Changed namespace: {name}'
         assert info['original_name'] == info['public_name'] + '_1', name

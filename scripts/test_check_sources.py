@@ -336,6 +336,21 @@ class SourcePolicyTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'source hash mismatch'):
             check_sources.check(use_cache=True)
 
+    def test_cached_source_scan_authenticates_native_inverse_hash(self):
+        path, manifest = self.write_native_fixture()
+        source = (self.root / 'Sqpack/Certificate.lean').read_bytes()
+        entry = manifest['files']['Sqpack/Certificate.lean']
+        entry['kernel_sha256'] = hashlib.sha256(
+            source.replace(b'native_decide', b'decide +kernel')).hexdigest()
+        path.write_text(json.dumps(manifest))
+        self.assertEqual(check_sources.check(use_cache=True)['status'], 'SOURCE_ASSEMBLY_PASS')
+        # The source hash still matches; changing the inverse policy must not
+        # reuse the accepted lexical result from the preceding scan.
+        entry['kernel_sha256'] = '0' * 64
+        path.write_text(json.dumps(manifest))
+        with self.assertRaisesRegex(ValueError, 'inverse hash mismatch'):
+            check_sources.check(use_cache=True)
+
     def test_native_permission_does_not_allow_other_proof_admissions(self):
         path, manifest = self.write_native_fixture()
         source_path = self.root / 'Sqpack/Certificate.lean'

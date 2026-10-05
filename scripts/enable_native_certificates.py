@@ -2,8 +2,9 @@
 """Convert only generated numerical certificates; preserve statements and data.
 
 This is a source migration, not a compiler overlay or a second proof project.
-It skips authenticated raw upstream sources. The baseline bundle generator
-handles its own derived sources. Run --write once to update tracked sources.
+Only selected generated proof families are eligible. Every changed file records
+an exact kernel-source inverse hash; source-restoration callers must authenticate
+that inverse before checking older receipts or pinned upstream sources.
 """
 import argparse
 import hashlib
@@ -14,7 +15,11 @@ import re
 from check_sources import ROOT, code_only
 
 
-SQPACK = re.compile(r'Sqpack/S11Opt/(?:Simplified/(?:ReducedConditional|CombinedConditional|StageBundles)/|Bundled/F[0-9]{2}/Leaves[0-9]+\.lean$)')
+SQPACK = re.compile(
+    r'Sqpack/S11Opt/(?:Simplified/(?:ReducedConditional|CombinedConditional|StageBundles)/'
+    r'|Bundled/(?:F[0-9]{2}|Own)/Leaves[0-9]+\.lean$'
+    r'|Split/U(?:2G|2P|2R)/C[0-9]+/(?:Main|S[0-9]+)\.lean$'
+    r'|F00/(?:Cov|Own)[0-9]+\.lean$)')
 T07 = re.compile(r'ElevenSquare/Tasks/T07/Ext/Gen/(?:[^/]+/S[0-9]+|NearConn)\.lean$')
 DECL = re.compile(r'^(?P<private>private )?(?P<kind>theorem|lemma|def|abbrev) (?P<name>[A-Za-z_][A-Za-z_0-9]*)\b')
 SOUND = re.compile(r'^\s*(?:[A-Za-z_][A-Za-z_0-9]*\.)*soundDec\b[^\n]*\(by decide \+kernel\)\s*$')
@@ -77,6 +82,7 @@ def main():
     manifest_path = ROOT / 'verification/native-certificates.json'
     files = json.loads(manifest_path.read_text())['files'] if manifest_path.is_file() else {}
     roots = ['Sqpack/S11Opt/Simplified', 'Sqpack/S11Opt/Bundled',
+             'Sqpack/S11Opt/Split', 'Sqpack/S11Opt/F00',
              'ElevenSquare/Tasks/T07/Ext/Gen']
     for directory in roots:
         for path in sorted((ROOT / directory).rglob('*.lean')):

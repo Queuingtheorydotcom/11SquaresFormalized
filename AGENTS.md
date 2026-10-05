@@ -6,7 +6,10 @@ admissions must be documented rather than counted as completed proofs.
 Use ordinary kernel-checked Lean proofs for geometry, checker soundness, and
 assembly. The user-approved exception is native_decide for the exact generated
 numerical declarations inventoried in verification/native-certificates.json
-and authenticated derived baseline field manifests. Report inherited compiler
+and authenticated derived baseline coverage/ownership manifests. This includes
+the finite soundDec certificate hypotheses in F00, Split, and Bundled/Own;
+their soundness theorems and all geometric arguments remain kernel checked.
+Report inherited compiler
 trust explicitly. Do not introduce custom axioms, additional native sites,
 unsafe proof oracles, or weakened semantics.
 Python may propose finite data, but mathematical correctness requires Lean.

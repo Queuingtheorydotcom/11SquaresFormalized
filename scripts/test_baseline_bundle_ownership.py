@@ -81,7 +81,7 @@ class OwnershipTests(unittest.TestCase):
             with self.assertRaises(own.OwnershipBundleError):
                 self.parse(self.raw[:start] + proof + self.raw[end:])
 
-    def test_leaf_source_body_is_copied_exactly_and_imports_are_independent(self):
+    def test_leaf_changes_only_numerical_tactics_and_imports_are_independent(self):
         plan = self.fixture_plan(budget=1400)
         outputs = dict(own.lean_outputs(self.root, plan))
         leaves = [(p, raw) for p, raw in outputs.items() if "/Leaves" in p]
@@ -93,12 +93,30 @@ class OwnershipTests(unittest.TestCase):
         for source in plan["sources"]:
             original = (self.root / source.path).read_bytes()
             body = original[source.body_start:source.body_end]
-            self.assertEqual(sum(raw.count(body) for _, raw in leaves), 1)
+            self.assertEqual(sum(raw.replace(b"native_decide", b"decide +kernel").count(body)
+                                 for _, raw in leaves), 1)
+        kernel = dict(own.lean_outputs(self.root, plan, native=False))
+        self.assertEqual({p: raw.replace(b"native_decide", b"decide +kernel")
+                          for p, raw in outputs.items()}, kernel)
+        inventory = own.native_inventory(outputs)
+        self.assertEqual(set(inventory), {p for p, _ in leaves})
+        self.assertEqual(sum(sum(entry["declarations"].values())
+                             for entry in inventory.values()), 2)
+        for path, entry in inventory.items():
+            self.assertEqual(entry["sha256"], own.digest(outputs[path]))
+            self.assertEqual(entry["kernel_sha256"], own.digest(kernel[path]))
         mem = outputs[own.OUTPUT + "Mem.lean"]
         self.assertIn(own.ORIGINAL_REG_TYPE.encode(), mem)
         self.assertIn(b"import Sqpack.S11Opt.Own.Data", mem)
         self.assertNotIn(b"import Sqpack.S11Opt.Own.o", mem)
         self.assertNotIn(b"import Sqpack.S11Opt.Own.Mem", mem)
+
+    def test_native_inventory_rejects_unscoped_native_proofs(self):
+        outputs = dict(own.lean_outputs(self.root, self.fixture_plan()))
+        name = next(p for p in outputs if "/Leaves" in p)
+        outputs[name] += b"example : True := by native_decide\n"
+        with self.assertRaises(ValueError):
+            own.native_inventory(outputs)
 
     def test_modified_input_after_planning_is_rejected(self):
         plan = self.fixture_plan()

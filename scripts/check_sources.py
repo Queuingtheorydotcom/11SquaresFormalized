@@ -6,7 +6,8 @@ import hashlib
 import json
 import os
 import re
-from native_certificates import load_native_manifest, validate_native_source
+from native_certificates import (load_native_manifest, validate_native_source,
+                                 restore_kernel_source)
 from native_data_compatibility import load_manifest as load_native_data_manifest, upstream_bytes
 from split_indexed_data import reconstruct_inputs as reconstruct_indexed_data
 
@@ -133,6 +134,10 @@ def check(use_cache=False):
                 if word in code and re.search(r'\b' + word + r'\b', code):
                     raise ValueError('Forbidden local proof form in ' + rel + ': ' + word)
             native = validate_native_source(rel, data, native_manifest)
+            # A recorded pre-migration hash is a checked inverse, not merely
+            # provenance text. Revalidate when sources or policy change.
+            if 'kernel_sha256' in native_manifest['files'].get(rel, {}):
+                restore_kernel_source(rel, data, native_manifest)
             info = {'sha256': digest,
                     'imports': import_names(code),
                     'native_declarations': native,

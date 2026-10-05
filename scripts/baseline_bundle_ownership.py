@@ -1,9 +1,11 @@
-"""Pure, authenticated source-copy bundles for the baseline owned points.
+"""Pure, authenticated numerical-check bundles for the baseline owned points.
 
 No files are written and no compiler is invoked. ``ownership_plan(root)``
 authenticates FCOMMON; ``lean_outputs(root, plan)`` yields (relative path, bytes)
 and ``input_hashes(plan)`` records the consumed inputs. Original Own.Data and
 its registry remain the source of the public membership proposition.
+Only the authenticated soundDec numerical arguments use native_decide; geometric
+split and membership proofs are copied unchanged. No Lean acceptance is claimed.
 """
 from dataclasses import dataclass
 import hashlib
@@ -13,6 +15,8 @@ import re
 import fetch_wand125_release as release
 
 BUDGET = 4 * 1024 * 1024
+# Exact source-copy generator before native ownership numerical checks.
+KERNEL_GENERATOR_SHA256 = "193a4493dd59cb69743b7ca69565ef21521e864cafbbc70f47fcce4e5562c86a"
 ORIGINAL = "SquarePacking.S11Opt.Own"
 BUNDLED = "SquarePacking.S11Opt.Bundled.Own"
 PREFIX = "Sqpack/S11Opt/Own/"
@@ -218,7 +222,7 @@ def input_hashes(plan):
     return dict(sorted(plan["inputs"].items()))
 
 
-def lean_outputs(root, plan):
+def lean_outputs(root, plan, *, native=True):
     """Yield independent leaves and an exact-source Mem consumer; never write."""
     root = Path(root)
     for name, expected in plan["inputs"].items():
@@ -230,7 +234,13 @@ def lean_outputs(root, plan):
         if len(raw) > plan["budget"]:
             raise OwnershipBundleError("ownership output exceeds planned budget")
         imports.append("Sqpack.S11Opt.Bundled.Own." + name)
-        yield OUTPUT + name + ".lean", raw
+        path = OUTPUT + name + ".lean"
+        if native:
+            # Each original body was authenticated and parsed against the
+            # narrow SOUND/SPLIT grammar before this declaration-scoped pass.
+            from enable_native_certificates import convert
+            raw, _ = convert(path, raw)
+        yield path, raw
     original = authenticated_bytes(root, PREFIX + "Mem.lean", plan["inputs"][PREFIX + "Mem.lean"])
     imports += ["Sqpack.S11Opt.Own.Data", "Sqpack.S11Opt.FieldBridge"]
     chunks = [("".join(f"import {m}\n" for m in imports) +
@@ -244,7 +254,22 @@ def lean_outputs(root, plan):
     yield OUTPUT + "Mem.lean", b"".join(chunks)
 
 
-def build_ownership(root, *, budget=BUDGET):
+def native_inventory(outputs):
+    """Authenticate each rendered native body against its exact kernel inverse."""
+    from enable_native_certificates import convert
+    inventory = {}
+    for path, raw in outputs.items():
+        kernel = raw.replace(b"(by native_decide)", b"(by decide +kernel)")
+        converted, declarations = convert(path, kernel)
+        if converted != raw:
+            raise OwnershipBundleError(f"unexpected ownership native proof: {path}")
+        if declarations:
+            inventory[path] = {"sha256": digest(raw), "kernel_sha256": digest(kernel),
+                               "declarations": declarations}
+    return inventory
+
+
+def build_ownership(root, *, budget=BUDGET, native=True):
     """Convenience consumer API: (output bytes by path, input hashes by path)."""
     plan = ownership_plan(root, budget)
-    return dict(lean_outputs(root, plan)), input_hashes(plan)
+    return dict(lean_outputs(root, plan, native=native)), input_hashes(plan)

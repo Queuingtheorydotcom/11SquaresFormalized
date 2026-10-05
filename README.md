@@ -3,11 +3,11 @@
 This branch is **one Lean project with selective native numerical checks**.
 Run `python3 scripts/verify.py --jobs 1` as before. Generated tree-coverage and
 T07 certificate arithmetic use `native_decide`; geometry, checker soundness,
-ownership, and proof assembly retain their ordinary Lean proofs. The public
+ownership soundness, and proof assembly retain their ordinary Lean proofs. The public
 theorem inherits trust in Lean's compiler from the numerical results. This is
 not a kernel-only verification claim, and no new `sorry` is introduced.
 
-There are **7,385 inventoried numerical declarations in 1,062 tracked files**.
+There are **10,464 inventoried numerical declarations in 1,839 tracked files**.
 The exact sources and declaration names are recorded in
 `verification/native-certificates.json`; source hashes prevent native evaluation
 from silently spreading to other proofs. The original certificate values and
@@ -18,12 +18,26 @@ and executable source hashes are recorded in
 `verification/native-data-compatibility.json`. The baseline generator applies the same
 policy when restoring derived coverage bundles.
 
+This includes the 3,079 previously kernel-evaluated `soundDec` numerical
+hypotheses in `F00`, `Split/U2G`, `Split/U2P`, `Split/U2R`, and `Bundled/Own`.
+Only the finite certificate check passed to the existing soundness theorem
+changes to `native_decide`; certificate values, theorem statements, and the
+soundness theorem applications are byte-for-byte preserved. The source audit
+checks the exact inverse against each recorded `kernel_sha256`, including when
+the inventory changes during a resumed build. Historical simplification audits
+authenticate that inverse before checking their original source hashes.
+
 Oversized indexed triangle tables compile their existing stage literals in
 separate private definitions before assembling the same array. This avoids
 compiler recursion limits without changing the numerical witnesses, stage order,
 or public lookup functions. `python3 scripts/split_indexed_data.py --check`
 authenticates the exact inverse against the original indexed-stage source receipt;
 the normal source audit also performs this check. Full Lean replay remains required.
+Bounded isolated Lean 4.34.1 checks passed for the complete split C1311 data and
+the large Root240 `S3C.pc2`, `S0C.pc10`, and `S5C.rs` initializers, with code
+generation enabled and the existing recursion limit. These checks use the exact
+data declarations and matching finite types; they do not replay the geometry,
+and the C1311 check omits `.olean` serialization.
 
 The verifier now prints `checking MODULE` before starting each module; `cached`
 and `accepted` report completed work. Existing unchanged receipts can be reused.
@@ -33,6 +47,16 @@ native axiom dependencies. Full proof replay and whole-build timing remain
 unverified on this branch. Focused infrastructure tests and a Lean 4.34.1
 native-check/ordinary-composition smoke test pass; the smoke test is not a replay
 of the large production certificates.
+The `F50.Leaves023` numerical obligation also passes in an isolated Lean 4.34.1
+reproduction using the unchanged numerical checker and corrected field data;
+the same test with the original data reproduces the `noncomputable opts5` error.
+This focused check does not replace the full module and proof replay.
+Additional isolated native checks pass for the 205,628-digit C1311 `cov4_3`
+certificate and the 211,408-digit bundled ownership certificate
+`t_o6_10045414353_7258430193_1`. Both use unchanged finite checker definitions
+and exact numerical inputs at the production proof recursion limit of 512;
+the C1311 test at that limit uses only the selected stage's data. Geometry and
+the assembled theorem still require the production replay.
 
 On the larger verification machine, `bash scripts/run_verification.sh --jobs 1`
 wraps the complete `verify.py --all` replay and final axiom audit, preserving

@@ -11,12 +11,17 @@ from unittest.mock import patch
 import enable_native_certificates
 from enable_native_certificates import convert
 from native_certificates import (load_native_manifest, native_declarations,
-                                 validate_native_source)
+                                 restore_kernel_source, validate_native_source)
 
 
 SQPACK = 'Sqpack/S11Opt/Simplified/ReducedConditional/U2P/C1383/SharedStages000.lean'
 T07 = 'ElevenSquare/Tasks/T07/Ext/Gen/Frozen/S13538.lean'
 BUNDLED = 'Sqpack/S11Opt/Bundled/F01/C000.lean'
+OWN = 'Sqpack/S11Opt/Bundled/Own/Leaves000.lean'
+RESIDUAL = (OWN, 'Sqpack/S11Opt/F00/Cov1.lean', 'Sqpack/S11Opt/F00/Own36.lean',
+            'Sqpack/S11Opt/Split/U2G/C1658/Main.lean',
+            'Sqpack/S11Opt/Split/U2P/C652/S19.lean',
+            'Sqpack/S11Opt/Split/U2R/C1311/S4.lean')
 
 
 def digest(data):
@@ -70,6 +75,48 @@ class NativeMigrationTests(unittest.TestCase):
         self.assertEqual(declarations, {'Example.cov': 1})
         self.assertEqual(changed.replace(b'native_decide', b'decide +kernel'), source)
         self.assertEqual(convert('Sqpack/S11Opt/Bundled/F01/Main.lean', source), (source, {}))
+
+    def test_residual_families_select_only_sounddec_hypotheses(self):
+        source = (b'namespace Example\ndef points := [(1, 2)]\n'
+                  b'theorem cov : Checked points :=\n'
+                  b'  Tree.soundDec 123456789 (by decide +kernel)\n'
+                  b'theorem geometry : True := by decide +kernel\n'
+                  b'theorem assembly : True :=\n'
+                  b'  CovF.weaken cov (by decide +kernel)\nend Example\n')
+        for path in RESIDUAL:
+            with self.subTest(path=path):
+                changed, declarations = convert(path, source)
+                self.assertEqual(declarations, {'Example.cov': 1})
+                self.assertEqual(changed.replace(b'native_decide', b'decide +kernel'), source)
+                self.assertIn(b'theorem geometry : True := by decide +kernel', changed)
+                self.assertIn(b'CovF.weaken cov (by decide +kernel)', changed)
+        for path in ('Sqpack/S11Opt/F00/Final.lean', 'Sqpack/S11Opt/F00/Data.lean',
+                     'Sqpack/S11Opt/F01/Cov1.lean', 'Sqpack/S11Opt/Bundled/Own/Mem.lean',
+                     'Sqpack/S11Opt/Split/U2P/Rules.lean',
+                     'Sqpack/S11Opt/Split/U2P/C652/Data.lean',
+                     'Sqpack/S11Opt/Split/U2P/C652/Proof.lean',
+                     'Sqpack/S11Opt/Split/U5/C652/S19.lean'):
+            with self.subTest(path=path):
+                self.assertEqual(convert(path, source), (source, {}))
+
+    def test_cli_scans_every_residual_family_and_preserves_exact_inverses(self):
+        source = (b'namespace Example\ntheorem cov : True :=\n'
+                  b'  Tree.soundDec 123 (by decide +kernel)\nend Example\n')
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / 'verification').mkdir()
+            for rel in RESIDUAL:
+                path = root / rel
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes(source)
+            with patch.object(enable_native_certificates, 'ROOT', root), \
+                    patch('sys.argv', ['enable_native_certificates.py', '--write']), \
+                    redirect_stdout(io.StringIO()):
+                enable_native_certificates.main()
+            manifest = load_native_manifest(root)
+            self.assertEqual(set(manifest['files']), set(RESIDUAL))
+            for rel in RESIDUAL:
+                self.assertEqual(restore_kernel_source(rel, (root / rel).read_bytes(), manifest), source)
 
     def test_write_migration_is_idempotent(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -147,6 +194,11 @@ class NativeInventoryTests(unittest.TestCase):
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(json.dumps({'native_certificates': files}))
 
+    def write_ownership_generated(self, files):
+        path = self.root / 'Sqpack/S11Opt/Bundled/source-manifest.json'
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps({'native_certificates': files}))
+
     def test_missing_inventory_means_no_native_permission(self):
         manifest = load_native_manifest(self.root)
         self.assertEqual(native_declarations(manifest), set())
@@ -202,6 +254,40 @@ class NativeInventoryTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, 'Conflicting'):
                     load_native_manifest(self.root)
 
+    def test_invalid_or_conflicting_kernel_inverse_hash_is_rejected(self):
+        data = self.write_source(BUNDLED)
+        for invalid in ('', 'not-a-hash', 'A' * 64, None, 123):
+            with self.subTest(invalid=invalid):
+                self.write_manifest({BUNDLED: dict(entry(data), kernel_sha256=invalid)})
+                with self.assertRaisesRegex(ValueError, 'Invalid native certificate entry'):
+                    load_native_manifest(self.root)
+        self.write_manifest({BUNDLED: dict(entry(data), kernel_sha256='0' * 64)})
+        self.write_generated({BUNDLED: dict(entry(data), kernel_sha256='1' * 64)})
+        with self.assertRaisesRegex(ValueError, 'Conflicting'):
+            load_native_manifest(self.root)
+
+    def test_generated_ownership_inventory_is_limited_to_leaves(self):
+        data = self.write_source(OWN)
+        kernel = data.replace(b'native_decide', b'decide +kernel')
+        self.write_ownership_generated({OWN: entry(data, kernel=kernel)})
+        manifest = load_native_manifest(self.root)
+        self.assertEqual(restore_kernel_source(OWN, data, manifest), kernel)
+        for rel in (BUNDLED, 'Sqpack/S11Opt/Bundled/Own/Mem.lean',
+                    'Sqpack/S11Opt/Bundled/Own/../Leaves000.lean'):
+            self.write_ownership_generated({rel: entry(data)})
+            with self.assertRaisesRegex(ValueError, 'escapes its generated ownership'):
+                load_native_manifest(self.root)
+
+    def test_matching_ownership_inventory_merges_and_conflicts_are_rejected(self):
+        data = self.write_source(OWN)
+        kernel = data.replace(b'native_decide', b'decide +kernel')
+        self.write_manifest({OWN: entry(data, kernel=kernel)})
+        self.write_ownership_generated({OWN: entry(data)})
+        self.assertEqual(load_native_manifest(self.root)['files'][OWN]['kernel_sha256'], digest(kernel))
+        self.write_ownership_generated({OWN: dict(entry(data), kernel_sha256='0' * 64)})
+        with self.assertRaisesRegex(ValueError, 'Conflicting'):
+            load_native_manifest(self.root)
+
     def test_path_escapes_and_noncanonical_paths_are_rejected(self):
         for rel in ('../Sqpack/Outside.lean', '/tmp/Outside.lean',
                     'Sqpack/../Outside.lean', 'Sqpack//Outside.lean',
@@ -220,6 +306,55 @@ class NativeInventoryTests(unittest.TestCase):
         self.write_manifest({SQPACK: entry(b'ignored')})
         with self.assertRaisesRegex(ValueError, 'Missing or nonregular'):
             load_native_manifest(self.root)
+
+
+class NativeInverseTests(unittest.TestCase):
+    def test_exact_inverse_preserves_unicode_comments_strings_and_line_endings(self):
+        source = ('namespace Example\r\n'
+                  '-- ℕ native_decide decide +kernel\r\n'
+                  '/- outer native_decide /- inner native_decide -/ -/\r\n'
+                  'def description := "native_decide decide +kernel"\r\n'
+                  'theorem cov : True :=\r\n'
+                  '  Tree.soundDec 123 (by decide +kernel) -- native_decide\r\n'
+                  'end Example\r\n').encode()
+        changed, declarations = convert(SQPACK, source)
+        manifest = {'files': {SQPACK: entry(changed, declarations, kernel=source)}}
+        self.assertEqual(restore_kernel_source(SQPACK, changed, manifest), source)
+
+    def test_changed_native_bytes_or_changed_literals_are_rejected(self):
+        source = (b'namespace Example\ntheorem cov : True :=\n'
+                  b'  Tree.soundDec 123 (by decide +kernel)\nend Example\n')
+        changed, declarations = convert(SQPACK, source)
+        changed_number = changed.replace(b'123', b'124')
+        manifest = {'files': {SQPACK: entry(changed, declarations, kernel=source)}}
+        with self.assertRaisesRegex(ValueError, 'source hash mismatch'):
+            restore_kernel_source(SQPACK, changed_number, manifest)
+        manifest['files'][SQPACK]['sha256'] = digest(changed_number)
+        with self.assertRaisesRegex(ValueError, 'kernel inverse hash mismatch'):
+            restore_kernel_source(SQPACK, changed_number, manifest)
+
+    def test_missing_derived_inverse_or_incorrect_hash_cannot_authenticate_history(self):
+        changed = b'theorem cov : True := by native_decide\n'
+        manifest = {'files': {SQPACK: entry(changed)}}
+        with self.assertRaisesRegex(ValueError, 'Missing or invalid.*kernel inverse hash'):
+            restore_kernel_source(SQPACK, changed, manifest)
+        manifest['files'][SQPACK]['kernel_sha256'] = '0' * 64
+        with self.assertRaisesRegex(ValueError, 'kernel inverse hash mismatch'):
+            restore_kernel_source(SQPACK, changed, manifest)
+
+    def test_count_validation_precedes_inverse(self):
+        changed = b'theorem cov : True := by native_decide\n'
+        kernel = changed.replace(b'native_decide', b'decide +kernel')
+        manifest = {'files': {SQPACK: entry(changed, {'Example.cov': 2}, kernel=kernel)}}
+        with self.assertRaisesRegex(ValueError, 'occurrence mismatch'):
+            restore_kernel_source(SQPACK, changed, manifest)
+
+    def test_uninventoried_ordinary_sources_pass_through_but_native_is_rejected(self):
+        ordinary = b'-- native_decide\nexample : True := by decide +kernel\n'
+        self.assertEqual(restore_kernel_source(SQPACK, ordinary, {'files': {}}), ordinary)
+        for tactic in (b'native_decide', b'decide +native', b'decide (native := true)'):
+            with self.subTest(tactic=tactic), self.assertRaises(ValueError):
+                restore_kernel_source(SQPACK, b'example : True := by ' + tactic + b'\n', {'files': {}})
 
 
 if __name__ == '__main__':

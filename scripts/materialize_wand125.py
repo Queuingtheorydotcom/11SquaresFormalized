@@ -25,6 +25,8 @@ REQUIRED_UNITS = ("F", "FCOMMON", "U2G", "U2P", "U2R", "U5")
 DEFAULT_CACHE = release.ROOT / ".verification/wand125/releases"
 LEGACY_MATERIALIZER_SHA256 = "194117565b5497da2468cb7bde43435e38692b4d7ae96438f79d539abe8c296a"
 PRIOR_NATIVE_MATERIALIZER_SHA256 = "47b843af635aab26c0f014759934bd64db24b267fd3017d124bf2306df1bac68"
+# Last materializer whose ownership output retained kernel numerical checks.
+KERNEL_OWNERSHIP_MATERIALIZER_SHA256 = "63441123067bc713142fae128adadc479c15b8fee6ad5a89524a5bf0b62561a9"
 
 
 def materialize(destination=release.ROOT, cache_dir=DEFAULT_CACHE, from_dir=None):
@@ -58,16 +60,24 @@ def materialize(destination=release.ROOT, cache_dir=DEFAULT_CACHE, from_dir=None
 def materialize_bundled_baseline(destination=release.ROOT):
     """Derive the checked-source layout; compiler acceptance remains separate."""
     from baseline_bundle_assembly import build_assembly
-    from baseline_bundle_ownership import build_ownership
+    from baseline_bundle_ownership import (KERNEL_GENERATOR_SHA256,
+                                           build_ownership, native_inventory)
     from generate_baseline_coverage_bundles import (
         BUDGET, LEGACY_GENERATOR_SHA256, PRIOR_NATIVE_GENERATOR_SHA256,
-        generate, publish_outputs)
+        generate, output_state, publish_outputs)
 
     root = Path(destination)
     if root.is_symlink():
         raise release.ReleaseError(f"destination root is a symlink: {root}")
     root = root.resolve()
     ownership, ownership_inputs = build_ownership(root)
+    kernel_ownership, kernel_inputs = build_ownership(root, native=False)
+    if ownership.keys() != kernel_ownership.keys() or ownership_inputs != kernel_inputs:
+        raise release.ReleaseError("ownership native migration changed authenticated inputs or paths")
+    ownership_native = native_inventory(ownership)
+    for name, raw in ownership.items():
+        if raw.replace(b"(by native_decide)", b"(by decide +kernel)") != kernel_ownership[name]:
+            raise release.ReleaseError(f"ownership native migration changed other source bytes: {name}")
     assembly, assembly_inputs = build_assembly(
         root, range(1, 59), include_full=True, bundled_ownership=True)
     if ownership.keys() & assembly.keys():
@@ -78,7 +88,9 @@ def materialize_bundled_baseline(destination=release.ROOT):
     outputs = {**ownership, **assembly}
     # Preflight assembly collisions before generating the larger coverage files.
     for name, raw in outputs.items():
-        release.check_target(root, name, hashlib.sha256(raw).hexdigest())
+        previous = kernel_ownership.get(name)
+        output_state(root, name, hashlib.sha256(raw).hexdigest(),
+                     hashlib.sha256(previous).hexdigest() if previous is not None else None)
     coverage = generate(root, write=True)
     generators = ["generate_baseline_coverage_bundles.py", "baseline_bundle_assembly.py",
                   "baseline_bundle_ownership.py", "materialize_wand125.py"]
@@ -94,29 +106,48 @@ def materialize_bundled_baseline(destination=release.ROOT):
             for row in coverage},
         "outputs": {name: {"sha256": hashlib.sha256(raw).hexdigest(), "bytes": len(raw)}
                     for name, raw in sorted(outputs.items())},
+        "native_certificates": ownership_native,
     }
-    outputs["Sqpack/S11Opt/Bundled/source-manifest.json"] = (
+    manifest_name = "Sqpack/S11Opt/Bundled/source-manifest.json"
+    outputs[manifest_name] = (
         json.dumps(manifest, indent=2) + "\n").encode()
-    legacy_manifest = dict(manifest)
-    legacy_manifest["generator_sha256"] = dict(manifest["generator_sha256"], **{
+    # Reconstruct complete, exact predecessor manifests rather than accepting
+    # arbitrary old inventories. Ownership remained kernel-checked in each.
+    kernel_manifest = {key: value for key, value in manifest.items()
+                       if key != "native_certificates"}
+    kernel_manifest["outputs"] = {
+        name: {"sha256": hashlib.sha256(raw).hexdigest(), "bytes": len(raw)}
+        for name, raw in sorted({**kernel_ownership, **assembly}.items())}
+    kernel_manifest["generator_sha256"] = dict(manifest["generator_sha256"], **{
+        "baseline_bundle_ownership.py": KERNEL_GENERATOR_SHA256,
+        "materialize_wand125.py": KERNEL_OWNERSHIP_MATERIALIZER_SHA256})
+    legacy_manifest = dict(kernel_manifest)
+    legacy_manifest["generator_sha256"] = dict(kernel_manifest["generator_sha256"], **{
         "generate_baseline_coverage_bundles.py": LEGACY_GENERATOR_SHA256,
         "materialize_wand125.py": LEGACY_MATERIALIZER_SHA256})
     legacy_manifest["coverage_manifests"] = {
         f"Sqpack/S11Opt/Bundled/{row['field']}/source-manifest.json":
             row["legacy_manifest_sha256"] for row in coverage}
-    legacy_outputs = {"Sqpack/S11Opt/Bundled/source-manifest.json":
-                      (json.dumps(legacy_manifest, indent=2) + "\n").encode()}
-    prior_native_manifest = dict(manifest)
-    prior_native_manifest["generator_sha256"] = dict(manifest["generator_sha256"], **{
+    prior_native_manifest = dict(kernel_manifest)
+    prior_native_manifest["generator_sha256"] = dict(kernel_manifest["generator_sha256"], **{
         "generate_baseline_coverage_bundles.py": PRIOR_NATIVE_GENERATOR_SHA256,
         "materialize_wand125.py": PRIOR_NATIVE_MATERIALIZER_SHA256})
     prior_native_manifest["coverage_manifests"] = {
         f"Sqpack/S11Opt/Bundled/{row['field']}/source-manifest.json":
             row["prior_native_manifest_sha256"] for row in coverage}
-    prior_native_outputs = {"Sqpack/S11Opt/Bundled/source-manifest.json":
-                            (json.dumps(prior_native_manifest, indent=2) + "\n").encode()}
-    result = publish_outputs(root, outputs, legacy_outputs=legacy_outputs,
-                             prior_native_outputs=prior_native_outputs)
+    predecessors = [(json.dumps(old, indent=2) + "\n").encode()
+                    for old in (kernel_manifest, legacy_manifest, prior_native_manifest)]
+    state = output_state(root, manifest_name, hashlib.sha256(outputs[manifest_name]).hexdigest(),
+                         tuple(hashlib.sha256(raw).hexdigest() for raw in predecessors))
+    legacy_outputs = dict(kernel_ownership)
+    if state == "legacy":
+        # The publisher repeats this exact check immediately before replacing;
+        # an intervening edit still fails instead of being overwritten.
+        current = (root / manifest_name).read_bytes()
+        if current not in predecessors:
+            raise release.ReleaseError("ownership manifest changed during migration preflight")
+        legacy_outputs[manifest_name] = current
+    result = publish_outputs(root, outputs, legacy_outputs=legacy_outputs)
     result["coverage_modules"] = sum(row["output_modules"] for row in coverage)
     result["coverage_declarations"] = sum(row["declarations"] for row in coverage)
     print(f"Derived baseline sources ready: {result['coverage_modules']} coverage modules; "

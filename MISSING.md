@@ -7,7 +7,14 @@ compiler trust, which must be reported explicitly. All inventoried source
 changes still need production Lean replay; the successful native smoke tests
 do not establish acceptance of these large certificates.
 
-Current `ElevenSquare.Optimality` closure: **365,392 lines in 4,257 modules**, down from 394,204 lines / 6,326 modules. The census and manifest are refreshed. The 300,000-line target remains unfinished. Read [PC_RESUME.md](PC_RESUME.md) first.
+The additional 3,079 finite `soundDec` hypotheses in F00, Split, and Bundled/Own
+now follow the same compiler-backed numerical policy. Their exact source
+inverse is authenticated; no numerical values or theorem statements change.
+Bounded compilation checks of the largest selected data initializers pass, but
+neither those tests nor source audits establish that a full replay fits within
+the runner's six-hour limit. Production replay remains necessary.
+
+The preceding kernel-checking checkpoint's `ElevenSquare.Optimality` closure was **365,392 lines in 4,257 modules**, down from 394,204 lines / 6,326 modules. Those historical figures precede the indexed-table compilation helpers. The 300,000-line target remains unfinished. Read [PC_RESUME.md](PC_RESUME.md) first.
 
 The active certificate-data pass removes **34,739,375 bytes** (zero weight tails and unused collision cores) with the original checker. Its source inverse audit and S135 fixture pass; all 459 transformed stages still need the full replay. The separately proved determinant checker remains an inactive pilot. Its repeated S135 test is about 30% faster in median CPU time, which is not a whole-build result. The next rollout must validate support pairs and preserve literal fallback for degenerate pairs; see [the data report](simplification/T07_DATA_PROFILE_20261003.md).
 

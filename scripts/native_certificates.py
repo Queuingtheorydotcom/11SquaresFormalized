@@ -12,6 +12,11 @@ import re
 MANIFEST = 'verification/native-certificates.json'
 NATIVE = re.compile(r'\bnative_decide\b')
 NATIVE_OPTION = re.compile(r'\+\s*native\b|\bnative\s*:=\s*true\b')
+SHA256 = re.compile(r'[0-9a-f]{64}')
+
+
+def _valid_hash(value):
+    return isinstance(value, str) and SHA256.fullmatch(value) is not None
 
 
 def _merge_files(files, additions):
@@ -23,7 +28,8 @@ def _merge_files(files, additions):
                 or path.suffix != '.lean' or not rel.startswith(('Sqpack/', 'ElevenSquare/'))):
             raise ValueError('Invalid native certificate path: ' + rel)
         if (not isinstance(entry, dict)
-                or not re.fullmatch(r'[0-9a-f]{64}', entry.get('sha256', ''))
+                or not _valid_hash(entry.get('sha256'))
+                or ('kernel_sha256' in entry and not _valid_hash(entry['kernel_sha256']))
                 or not isinstance(entry.get('declarations'), dict)
                 or not entry['declarations']):
             raise ValueError('Invalid native certificate entry: ' + rel)
@@ -31,9 +37,12 @@ def _merge_files(files, additions):
             if (not re.fullmatch(r'[A-Za-z_][A-Za-z_0-9.]*', name)
                     or type(count) is not int or count <= 0):
                 raise ValueError('Invalid native certificate declaration: ' + str(name))
-        if rel in files and any(files[rel][key] != entry[key]
-                                for key in ('sha256', 'declarations')):
-            raise ValueError('Conflicting native certificate inventory: ' + rel)
+        if rel in files:
+            keys = ['sha256', 'declarations']
+            if 'kernel_sha256' in files[rel] and 'kernel_sha256' in entry:
+                keys.append('kernel_sha256')
+            if any(files[rel][key] != entry[key] for key in keys):
+                raise ValueError('Conflicting native certificate inventory: ' + rel)
         files[rel] = {**entry, **files.get(rel, {})}
 
 
@@ -57,6 +66,15 @@ def load_native_manifest(root):
         prefix = f'Sqpack/S11Opt/Bundled/F{field:02d}/'
         if any(not rel.startswith(prefix) for rel in additions):
             raise ValueError('Native inventory escapes its generated field: ' + str(path))
+        _merge_files(files, additions)
+    path = root / 'Sqpack/S11Opt/Bundled/source-manifest.json'
+    if path.is_file():
+        payload = json.loads(path.read_text(encoding='utf-8'))
+        additions = payload.get('native_certificates', {})
+        if (not isinstance(additions, dict)
+                or any(not re.fullmatch(r'Sqpack/S11Opt/Bundled/Own/Leaves[0-9]+\.lean', rel)
+                       for rel in additions)):
+            raise ValueError('Native inventory escapes its generated ownership leaves: ' + str(path))
         _merge_files(files, additions)
     for rel in files:
         if not (root / rel).is_file() or (root / rel).is_symlink():
@@ -87,3 +105,29 @@ def validate_native_source(relpath, data, manifest):
     if count != sum(entry['declarations'].values()):
         raise ValueError('Native certificate occurrence mismatch: ' + relpath)
     return sorted(entry['declarations'])
+
+
+def restore_kernel_source(relpath, data, manifest):
+    """Authenticate the exact pre-native source without changing comments or strings.
+
+    Uninventoried ordinary sources pass through. An inventoried native source
+    must have an explicit inverse hash; a derived permission alone does not
+    authenticate a historical kernel source.
+    """
+    validate_native_source(relpath, data, manifest)
+    entry = manifest['files'].get(relpath)
+    if entry is None:
+        return data
+    expected = entry.get('kernel_sha256')
+    if not _valid_hash(expected):
+        raise ValueError('Missing or invalid native certificate kernel inverse hash: ' + relpath)
+    from check_sources import code_only
+    original = data.decode('utf-8')
+    # code_only preserves character offsets, including Unicode and newlines.
+    # Replace backwards so longer kernel spellings cannot shift later matches.
+    for match in reversed(list(NATIVE.finditer(code_only(original)))):
+        original = original[:match.start()] + 'decide +kernel' + original[match.end():]
+    restored = original.encode('utf-8')
+    if hashlib.sha256(restored).hexdigest() != expected:
+        raise ValueError('Native certificate kernel inverse hash mismatch: ' + relpath)
+    return restored

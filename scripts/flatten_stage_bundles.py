@@ -143,11 +143,15 @@ def assemble(module, old, donors, expand):
 
 def reconstruct_inputs(root=ROOT, ledger=None):
     """Validated pre-transform sources, keyed by repository-relative path."""
+    from native_certificates import load_native_manifest, restore_kernel_source
     root = Path(root)
     report = json.loads((root / REPORT).read_text()) if ledger is None else ledger
+    native_manifest = load_native_manifest(root)
     originals = {}
     for name, info in report['files'].items():
-        current = (root / name).read_text()
+        # Native conversion follows inlining. Authenticate and undo that exact
+        # later conversion before checking historical hashes or character offsets.
+        current = restore_kernel_source(name, (root / name).read_bytes(), native_manifest).decode('utf-8')
         assert digest(current) == info['after_sha256'], 'Changed transformed file: ' + name
         for segment in info.get('segments', []):
             body = current[segment['start']:segment['end']]

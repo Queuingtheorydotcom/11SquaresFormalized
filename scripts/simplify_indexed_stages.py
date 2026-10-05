@@ -150,23 +150,30 @@ def metadata(before, after, kind, refs):
             'bounded_references': refs}
 
 
-def check_saved_report():
-    report = json.loads(REPORT.read_text())
+def check_saved_report(report_path=REPORT, root=ROOT):
+    from native_certificates import load_native_manifest, restore_kernel_source
+    root = Path(root)
+    report = json.loads(Path(report_path).read_text())
+    native_manifest = load_native_manifest(root)
     # Later import/body inlining retains an exact inverse, rather than claiming
     # that this older receipt directly validates the new physical file layout.
-    inlining = ROOT / 'simplification/stage-bundle-inlining.json'
+    inlining = root / 'simplification/stage-bundle-inlining.json'
     if inlining.exists():
         from flatten_stage_bundles import reconstruct_inputs
-        previous_sources = reconstruct_inputs(ROOT)
+        previous_sources = reconstruct_inputs(root)
     else:
         previous_sources = {}
     # Large table initializers may subsequently be split into private row
     # definitions. Check this historical receipt against their exact inverse.
     from split_indexed_data import reconstruct_inputs as reconstruct_indexed_data
-    previous_sources.update(reconstruct_indexed_data(ROOT))
+    previous_sources.update(reconstruct_indexed_data(root))
     def source_at(name):
-        return previous_sources[name] if name in previous_sources else (ROOT / name).read_text()
-    successor_path = ROOT / 'simplification/stage-root-aliases.json'
+        # Inlining reconstruction already removed the native conversion. Its
+        # returned earlier source must not be authenticated as a current file.
+        if name in previous_sources:
+            return previous_sources[name]
+        return restore_kernel_source(name, (root / name).read_bytes(), native_manifest).decode('utf-8')
+    successor_path = root / 'simplification/stage-root-aliases.json'
     successors = json.loads(successor_path.read_text())['files'] if successor_path.exists() else {}
     for name, info in report['files'].items():
         current_hash = sha(source_at(name))
@@ -183,8 +190,10 @@ def check_saved_report():
         assert len(triangles) == info['triangle_entries']
         assert len(targets) == info['target_entries']
         assert literal_digest(triangles, targets) == info['literal_sha256']
-    print(json.dumps({'status': 'SAVED_SOURCE_RECEIPT_MATCHES', 'lean_verified': False,
-                      'cases': len(report['cases']), 'files': len(report['files'])}))
+    result = {'status': 'SAVED_SOURCE_RECEIPT_MATCHES', 'lean_verified': False,
+              'cases': len(report['cases']), 'files': len(report['files'])}
+    print(json.dumps(result))
+    return result
 
 
 def main():
