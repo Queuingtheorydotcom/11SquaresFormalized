@@ -124,10 +124,15 @@ def restore_kernel_source(relpath, data, manifest):
     from check_sources import code_only
     original = data.decode('utf-8')
     # code_only preserves character offsets, including Unicode and newlines.
-    # Replace backwards so longer kernel spellings cannot shift later matches.
-    for match in reversed(list(NATIVE.finditer(code_only(original)))):
-        original = original[:match.start()] + 'decide +kernel' + original[match.end():]
-    restored = original.encode('utf-8')
+    # Join original spans once: repeated whole-file copies are costly for the
+    # generated modules containing many checks and enormous integer literals.
+    spans = []
+    cursor = 0
+    for match in NATIVE.finditer(code_only(original)):
+        spans.extend((original[cursor:match.start()], 'decide +kernel'))
+        cursor = match.end()
+    spans.append(original[cursor:])
+    restored = ''.join(spans).encode('utf-8')
     if hashlib.sha256(restored).hexdigest() != expected:
         raise ValueError('Native certificate kernel inverse hash mismatch: ' + relpath)
     return restored

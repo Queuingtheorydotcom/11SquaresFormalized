@@ -49,7 +49,7 @@ run_id = datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%SZ')
 run_dir = state / 'runs' / run_id
 run_dir.mkdir(parents=True)
 progress = re.compile(r'\[([0-9]+)/([0-9]+)\] (accepted|cached|blocked|failed) [A-Za-z0-9_.]+\n?\Z')
-checking = re.compile(r'\[([0-9]+)/([0-9]+)\] checking ([A-Za-z0-9_.]+)\n?\Z')
+checking = re.compile(r'\[([0-9]+)/([0-9]+)\] (?:checking|started) ([A-Za-z0-9_.]+)\n?\Z')
 summary = {'status': 'NOT_VERIFIED', 'lean_worker_threads': args.jobs}
 
 
@@ -175,7 +175,7 @@ def bootstrap():
         installer.unlink()
         archive.unlink()
     run(['elan', 'toolchain', 'install', (root / 'lean-toolchain').read_text().strip()], 'bootstrap.log')
-    # Do not call verify.py --setup: it restores superseded generated sources.
+    # The native checkout already contains the generated proof sources.
     run(['lake', 'exe', 'cache', 'get'], 'bootstrap.log')
 
 

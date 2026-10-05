@@ -2,6 +2,12 @@
 
 Branch: `codex/native-numerical-certificates-20261004`.
 
+The parallel verification scripts are merged from `01d45863`. Follow
+[LEAN_VERIFICATION_RUNBOOK.md](LEAN_VERIFICATION_RUNBOOK.md) for the one-day
+Slurm job and resumption. Setup preserves the tracked native sources. Status
+lines use `started`, `accepted` and `cached`; indices are positions in the
+dependency plan, and parallel completions can arrive out of order.
+
 This is one project. Its generated numerical certificate proofs now use
 `native_decide`, while geometry, soundness proofs, and assembly use ordinary
 Lean proofs. Continue with `python3 scripts/verify.py --jobs 1`. No separate

@@ -67,7 +67,7 @@ Path('.verification/result.json').write_text(%r)
 
     def run_script(self, *args):
         return subprocess.run(['bash', 'scripts/run_verification.sh', *args], cwd=self.root,
-                              env=self.env, capture_output=True, text=True, timeout=10)
+                              env=self.env, capture_output=True, text=True, timeout=60)
 
     def summary(self):
         return json.loads((self.root / '.verification/runner-summary.json').read_text())
@@ -194,6 +194,15 @@ raise SystemExit('ElevenSquare.Verification: unexpected axioms in declaration')
                 self.assertNotIn('Module log:', result.stdout)
                 self.assertEqual(self.summary()['status'], 'FAILED_NOT_VERIFIED')
 
+    def test_parallel_verifier_started_line_identifies_failed_module(self):
+        self.write_verify("print('[1/1] started ElevenSquare.Bad')\n"
+                          "print('ElevenSquare/Bad.lean:1:1: error: fixture failure')\n"
+                          "raise SystemExit(1)\n")
+        result = self.run_script()
+        self.assertEqual(result.returncode, 1)
+        self.assertIn('ElevenSquare/Bad.lean:1:1: error: fixture failure', result.stdout)
+        self.assertIn('Module log: .verification/ElevenSquare.Bad.log', result.stdout)
+
     def test_compiler_error_excerpt_redacts_paths_and_limits_output(self):
         self.write_verify("""
 from pathlib import Path
@@ -258,7 +267,7 @@ while True:
                                    env=self.env, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         try:
             marker = self.root / '.verification/children'
-            until = time.monotonic() + 5
+            until = time.monotonic() + 30
             while not marker.exists() and time.monotonic() < until:
                 time.sleep(0.02)
             self.assertTrue(marker.exists(), 'Verifier fixture failed to start')

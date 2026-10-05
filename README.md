@@ -1,6 +1,14 @@
 # Eleven-square simplification: unverified checkpoint
 
 This branch is **one Lean project with selective native numerical checks**.
+For the parallel Slurm replay, use [LEAN_VERIFICATION_RUNBOOK.md](LEAN_VERIFICATION_RUNBOOK.md).
+The merged launcher defaults to 192 CPUs, 96 concurrent module checks and a
+one-day allocation. It retains accepted receipts across allocations and emits
+a compact completion receipt with the native trust model. Setup installs
+dependencies only and preserves the tracked native sources.
+For the source review and precise formalization caveat, see
+[NATIVE_CERTIFICATE_REVIEW.md](NATIVE_CERTIFICATE_REVIEW.md).
+
 Run `python3 scripts/verify.py --jobs 1` as before. Generated tree-coverage and
 T07 certificate arithmetic use `native_decide`; geometry, checker soundness,
 ownership soundness, and proof assembly retain their ordinary Lean proofs. The public
