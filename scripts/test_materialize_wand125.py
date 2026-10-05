@@ -76,6 +76,21 @@ class MaterializeTests(unittest.TestCase):
                          ["F", "FCOMMON", "U2G", "U2P", "U2R", "U5"])
         self.assertFalse(self.cache.exists())
 
+    def test_recognized_computable_data_skips_archives_and_preserves_bytes(self):
+        self.name = "Sqpack/S11Opt/F50/Data.lean"
+        original = b"noncomputable def opts5 : List Nat := [123456789]\n"
+        native = original.replace(b"noncomputable ", b"")
+        expected = hashlib.sha256(original).hexdigest()
+        self.plans["F"] = [("fixture.tar.xz", "0" * 64, {self.name: expected})]
+        path = self.write_source(body=native)
+        inventory = {self.name: {"upstream_sha256": expected,
+                     "sha256": hashlib.sha256(native).hexdigest(), "declarations": ["opts5"]}}
+        with mock.patch.object(release.native_data_compatibility, "load_manifest", return_value=inventory), \
+                mock.patch.object(release, "fetch_release") as fetch:
+            self.assertEqual(self.run_materializer()["fetched_archives"], 0)
+            fetch.assert_not_called()
+        self.assertEqual(path.read_bytes(), native)
+
     def test_corrupt_source_is_rejected_before_any_archive_action(self):
         other = "Sqpack/S11Opt/F01/Data.lean"
         self.entry[2][other] = self.digest

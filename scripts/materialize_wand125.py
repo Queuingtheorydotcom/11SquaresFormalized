@@ -6,7 +6,9 @@ The CLI also derives grouped baseline sources; --raw-only restores just the
 original release files, including into an otherwise empty staging directory.
 Existing matching sources need no archive or network access. Missing assets are
 verified and installed one at a time; rerun the same command after interruption.
-Differing original sources and symlinks are rejected. Derived coverage files
+Exact inventoried computable Data variants are retained on retry; all other
+differing original sources and symlinks are rejected. Fresh raw-only output
+retains the original release bytes. Derived coverage files
 may migrate only from the exact previous authenticated generator output.
 This command does not run Lean or establish proof acceptance.
 """
@@ -22,6 +24,7 @@ import fetch_wand125_release as release
 REQUIRED_UNITS = ("F", "FCOMMON", "U2G", "U2P", "U2R", "U5")
 DEFAULT_CACHE = release.ROOT / ".verification/wand125/releases"
 LEGACY_MATERIALIZER_SHA256 = "194117565b5497da2468cb7bde43435e38692b4d7ae96438f79d539abe8c296a"
+PRIOR_NATIVE_MATERIALIZER_SHA256 = "47b843af635aab26c0f014759934bd64db24b267fd3017d124bf2306df1bac68"
 
 
 def materialize(destination=release.ROOT, cache_dir=DEFAULT_CACHE, from_dir=None):
@@ -57,7 +60,8 @@ def materialize_bundled_baseline(destination=release.ROOT):
     from baseline_bundle_assembly import build_assembly
     from baseline_bundle_ownership import build_ownership
     from generate_baseline_coverage_bundles import (
-        BUDGET, LEGACY_GENERATOR_SHA256, generate, publish_outputs)
+        BUDGET, LEGACY_GENERATOR_SHA256, PRIOR_NATIVE_GENERATOR_SHA256,
+        generate, publish_outputs)
 
     root = Path(destination)
     if root.is_symlink():
@@ -102,7 +106,17 @@ def materialize_bundled_baseline(destination=release.ROOT):
             row["legacy_manifest_sha256"] for row in coverage}
     legacy_outputs = {"Sqpack/S11Opt/Bundled/source-manifest.json":
                       (json.dumps(legacy_manifest, indent=2) + "\n").encode()}
-    result = publish_outputs(root, outputs, legacy_outputs=legacy_outputs)
+    prior_native_manifest = dict(manifest)
+    prior_native_manifest["generator_sha256"] = dict(manifest["generator_sha256"], **{
+        "generate_baseline_coverage_bundles.py": PRIOR_NATIVE_GENERATOR_SHA256,
+        "materialize_wand125.py": PRIOR_NATIVE_MATERIALIZER_SHA256})
+    prior_native_manifest["coverage_manifests"] = {
+        f"Sqpack/S11Opt/Bundled/{row['field']}/source-manifest.json":
+            row["prior_native_manifest_sha256"] for row in coverage}
+    prior_native_outputs = {"Sqpack/S11Opt/Bundled/source-manifest.json":
+                            (json.dumps(prior_native_manifest, indent=2) + "\n").encode()}
+    result = publish_outputs(root, outputs, legacy_outputs=legacy_outputs,
+                             prior_native_outputs=prior_native_outputs)
     result["coverage_modules"] = sum(row["output_modules"] for row in coverage)
     result["coverage_declarations"] = sum(row["declarations"] for row in coverage)
     print(f"Derived baseline sources ready: {result['coverage_modules']} coverage modules; "

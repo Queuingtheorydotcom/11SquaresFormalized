@@ -8,7 +8,8 @@ Examples (no Lean process is run):
 The default destination is .verification/wand125/staged, containing Sqpack/.
 Use --destination . explicitly to materialize into the current checkout. Every
 selected archive and source is verified before any destination file is created.
-Existing identical files are retained; differing files and symlinks are errors.
+Existing identical files and exact inventoried computable Data variants are retained;
+other differing files and symlinks are errors. Fresh files retain upstream bytes.
 The cache retains verified archives. No downloaded checksum file is trusted.
 The auxiliary F00/Roots.txt is also verified but only .lean files are installed.
 """
@@ -24,6 +25,8 @@ import sys
 import tarfile
 import tempfile
 import urllib.request
+
+import native_data_compatibility
 
 ROOT = Path(__file__).resolve().parents[1]
 METADATA = ROOT / "integrations/wand125/release"
@@ -278,8 +281,13 @@ def check_target(destination, name, digest):
     if target.is_symlink():
         raise ReleaseError(f"destination is a symlink: {target}")
     if target.exists():
-        if not target.is_file() or sha256_file(target) != digest:
+        if not target.is_file():
             raise ReleaseError(f"existing destination differs: {target}")
+        if sha256_file(target) != digest:
+            try:
+                native_data_compatibility.upstream_bytes(name, target.read_bytes(), digest)
+            except ValueError as error:
+                raise ReleaseError(f"existing destination differs: {target}") from error
         return False
     return True
 

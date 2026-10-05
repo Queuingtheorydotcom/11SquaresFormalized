@@ -3,7 +3,8 @@
 
 Dry-run is the default and authenticates/parses the selected sources without
 writing files. Example: --field 4; add --write to materialize that field.
-Original sources, Data, F00, Own and public assemblies are never modified.
+Original coverage sources, F00, Own and public assemblies are never modified.
+A write also enables the exact inventoried computable form of finite Data definitions.
 This command does not run Lean or establish proof acceptance.
 """
 import argparse
@@ -17,12 +18,15 @@ import sys
 import tempfile
 
 import fetch_wand125_release as release
+import native_data_compatibility as native_data
 
 BUDGET = 4 * 1024 * 1024
 FORMAT_VERSION = 2
 # Exact previous generator at checkpoint e5200e0e. Used only to reconstruct
 # authenticated old manifests during the one-way kernel -> native migration.
 LEGACY_GENERATOR_SHA256 = "4d11f1c0f3308c9b563e110c19acda44dd4e2daf437099b4135a9d451330712e"
+# Exact first native-certificate generator at checkpoint 6d169334.
+PRIOR_NATIVE_GENERATOR_SHA256 = "5b4b311b0071ec91a1327c9c2a556837a017cb66a738abd54265bec6040b72bc"
 NAME = r"cov[0-9]+(?:p[0-9]+_[0-9]+|g[0-9]+|_[0-9]+)"
 DECL = re.compile(
     rf"theorem (?P<name>{NAME}) : (?P<proposition>CovF G\.Q G\.M G\.R "
@@ -134,9 +138,10 @@ def authenticated_bytes(root, name, expected):
     if release.check_target(root, name, expected):
         raise BundleError(f"missing pinned source: {name}; materialize upstream sources first")
     raw = (root / name).read_bytes()
-    if digest(raw) != expected:
-        raise BundleError(f"source changed while reading: {name}")
-    return raw
+    try:
+        return native_data.upstream_bytes(name, raw, expected)
+    except ValueError as error:
+        raise BundleError(f"source changed while reading: {name}") from error
 
 
 def field_plan(root, field, pinned, budget=BUDGET):
@@ -150,7 +155,8 @@ def field_plan(root, field, pinned, budget=BUDGET):
     data = parent + "Data.lean"
     if data not in pinned:
         raise BundleError(f"Data absent from pinned manifest: {data}")
-    authenticated_bytes(root, data, pinned[data])
+    original_data = authenticated_bytes(root, data, pinned[data])
+    computable_data = native_data.computable_bytes(data, original_data, pinned[data])
     selected = sorted(p for p in pinned if p.startswith(parent + "Cov"))
     if not selected:
         raise BundleError(f"no pinned coverage sources for {label}")
@@ -186,6 +192,7 @@ def field_plan(root, field, pinned, budget=BUDGET):
     if not batches:
         raise BundleError(f"no leaf batches for {label}")
     return {"field": label, "data": data, "data_sha256": pinned[data],
+            "computable_data_sha256": digest(computable_data),
             "sources": sources, "batches": batches,
             "aggregators": tuple(s for s in sources if not s.leaf), "budget": budget}
 
@@ -256,6 +263,8 @@ def source_manifest(plan, outputs, native_certificates=None, *, legacy=False):
             "batches": [[s.path for s in batch] for batch in plan["batches"]],
             "outputs": outputs}
     if not legacy:
+        if plan["computable_data_sha256"] != plan["data_sha256"]:
+            result["data"]["computable_sha256"] = plan["computable_data_sha256"]
         result["construction"] = result["construction"].replace(
             "Copy namespace-interior bytes verbatim ",
             "Copy namespace-interior bytes, changing only soundDec certificate arguments "
@@ -285,11 +294,16 @@ def output_state(root, name, expected, legacy=None):
     try:
         return "new" if release.check_target(root, name, expected) else "current"
     except release.ReleaseError:
-        if legacy is None:
-            raise
-        if release.check_target(root, name, legacy):
-            raise BundleError(f"output changed during migration preflight: {name}")
-        return "legacy"
+        candidates = (legacy,) if isinstance(legacy, str) else (legacy or ())
+        for candidate in candidates:
+            try:
+                missing = release.check_target(root, name, candidate)
+            except release.ReleaseError:
+                continue
+            if missing:
+                raise BundleError(f"output changed during migration preflight: {name}")
+            return "legacy"
+        raise
 
 
 def _publish_one(root, name, raw, expected, legacy=None):
@@ -323,7 +337,7 @@ def _publish_one(root, name, raw, expected, legacy=None):
     return True
 
 
-def publish_outputs(root, outputs, *, legacy_outputs=None):
+def publish_outputs(root, outputs, *, legacy_outputs=None, prior_native_outputs=None):
     """Publish a small helper output map under Bundled, preflighting every collision."""
     root = Path(root)
     if root.is_symlink():
@@ -334,7 +348,10 @@ def publish_outputs(root, outputs, *, legacy_outputs=None):
         if not name.startswith("Sqpack/S11Opt/Bundled/"):
             raise BundleError(f"output outside derived Bundled directory: {name}")
         expected[name] = digest(raw)
-    legacy = {name: digest(raw) for name, raw in (legacy_outputs or {}).items()}
+    legacy = {}
+    for known_outputs in (legacy_outputs, prior_native_outputs):
+        for name, raw in (known_outputs or {}).items():
+            legacy[name] = legacy.get(name, ()) + (digest(raw),)
     if not legacy.keys() <= expected.keys():
         raise BundleError("legacy output without a current output")
     pending = [name for name in expected
@@ -347,7 +364,10 @@ def publish_outputs(root, outputs, *, legacy_outputs=None):
 
 def materialize_field(root, plan, write=False):
     """Create or migrate exact generated outputs; unknown edits are rejected."""
-    authenticated_bytes(root, plan["data"], plan["data_sha256"])
+    original_data = authenticated_bytes(root, plan["data"], plan["data_sha256"])
+    computable_data = native_data.computable_bytes(plan["data"], original_data, plan["data_sha256"])
+    if digest(computable_data) != plan["computable_data_sha256"]:
+        raise BundleError("native data inventory changed after planning")
     outputs, legacy_outputs, native = [], [], {}
     for name, raw in lean_outputs(root, plan):
         outputs.append({"path": name, "sha256": digest(raw), "bytes": len(raw)})
@@ -361,8 +381,12 @@ def materialize_field(root, plan, write=False):
     manifest_name = f"Sqpack/S11Opt/Bundled/{plan['field']}/source-manifest.json"
     manifest = (json.dumps(source_manifest(plan, outputs, native), indent=2) + "\n").encode()
     old_manifest = (json.dumps(source_manifest(plan, legacy_outputs, legacy=True), indent=2) + "\n").encode()
+    prior_native = source_manifest(plan, outputs, native)
+    prior_native["generator_sha256"] = PRIOR_NATIVE_GENERATOR_SHA256
+    prior_native["data"].pop("computable_sha256", None)
+    prior_native_manifest = (json.dumps(prior_native, indent=2) + "\n").encode()
     legacy = {row["path"]: row["sha256"] for row in legacy_outputs}
-    legacy[manifest_name] = digest(old_manifest)
+    legacy[manifest_name] = (digest(old_manifest), digest(prior_native_manifest))
     expected = outputs + [{"path": manifest_name, "sha256": digest(manifest), "bytes": len(manifest)}]
     folder = root / Path(manifest_name).parent
     if folder.exists():
@@ -373,7 +397,10 @@ def materialize_field(root, plan, write=False):
     pending = [e for e in expected
                if output_state(root, e["path"], e["sha256"], legacy[e["path"]]) != "current"]
     if write:
-        release.require_space(root, sum(e["bytes"] for e in pending))
+        release.require_space(root, sum(e["bytes"] for e in pending) + len(computable_data))
+        # Output collisions are checked before the only permitted source rewrite.
+        _publish_one(root, plan["data"], computable_data,
+                     plan["computable_data_sha256"], plan["data_sha256"])
         by_name = {e["path"]: e for e in expected}
         def payloads():
             yield from lean_outputs(root, plan)
@@ -391,6 +418,7 @@ def materialize_field(root, plan, write=False):
             "oversize_singletons": sum(s.leaf and s.size > plan["budget"] for s in plan["sources"]),
             "aggregate": outputs[-1]["path"], "outputs": outputs,
             "legacy_manifest_sha256": digest(old_manifest),
+            "prior_native_manifest_sha256": digest(prior_native_manifest),
             "native_certificates": native, "compiler_run": False}
 
 

@@ -165,6 +165,14 @@ def main():
     require(result_path.is_file(), 'No full-build result exists; complete scripts/verify.py --all first.')
     source_check = check(use_cache=True)
     audit = collect_audit(ROOT, source_check)
+    # Preserve the destination runner's audited, machine-local evidence file.
+    report = ROOT / '.verification/final-audit.json'
+    temporary_report = report.with_name(report.name + f'.{os.getpid()}.tmp')
+    try:
+        temporary_report.write_bytes(json_bytes(audit))
+        temporary_report.replace(report)
+    finally:
+        temporary_report.unlink(missing_ok=True)
     if args.write:
         payloads = publication(ROOT, audit, source_check)
         for rel, data in payloads.items():

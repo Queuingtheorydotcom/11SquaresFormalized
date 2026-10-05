@@ -7,6 +7,7 @@ import json
 import os
 import re
 from native_certificates import load_native_manifest, validate_native_source
+from native_data_compatibility import load_manifest as load_native_data_manifest, upstream_bytes
 
 ROOT = Path(__file__).resolve().parents[1]
 _IMPORT_CACHE = {}
@@ -88,11 +89,23 @@ def check(use_cache=False):
     # reuse lexical results only when both the scanner and source bytes match.
     cache_path = ROOT / '.verification/source-scan.json'
     native_manifest = load_native_manifest(ROOT)
+    native_data = load_native_data_manifest(ROOT)
+    for rel, entry in native_data.items():
+        path = ROOT / rel
+        if (not path.is_file() or any((ROOT / Path(*Path(rel).parts[:i])).is_symlink()
+                                    for i in range(1, len(Path(rel).parts) + 1))):
+            raise ValueError('Missing or nonregular native data source: ' + rel)
+        raw = path.read_bytes()
+        if hashlib.sha256(raw).hexdigest() != entry['sha256']:
+            raise ValueError('Native data source hash mismatch: ' + rel)
+        upstream_bytes(rel, raw, entry['upstream_sha256'], root=ROOT)
     # Native permissions are source-bound. A policy change must also invalidate
     # a cached lexical scan even when no Lean source changed.
     scanner = hashlib.sha256(Path(__file__).read_bytes() +
         Path(__file__).with_name('native_certificates.py').read_bytes() +
-        json.dumps(native_manifest, sort_keys=True).encode()).hexdigest()
+        Path(__file__).with_name('native_data_compatibility.py').read_bytes() +
+        json.dumps(native_manifest, sort_keys=True).encode() +
+        json.dumps(native_data, sort_keys=True).encode()).hexdigest()
     cache = {}
     if use_cache and cache_path.is_file():
         try:

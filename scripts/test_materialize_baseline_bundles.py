@@ -38,7 +38,8 @@ class BundledSetupTests(unittest.TestCase):
         p.parent.mkdir(parents=True, exist_ok=True)
         p.write_text('{"fixture": true}\n')
         return [{"field": "F04", "output_modules": 2, "declarations": 12,
-                 "legacy_manifest_sha256": "a" * 64}]
+                 "legacy_manifest_sha256": "a" * 64,
+                 "prior_native_manifest_sha256": "b" * 64}]
 
     def test_recognized_old_top_manifest_migrates(self):
         materializer.materialize_bundled_baseline(self.root)
@@ -49,6 +50,30 @@ class BundledSetupTests(unittest.TestCase):
         manifest["coverage_manifests"] = {"Sqpack/S11Opt/Bundled/F04/source-manifest.json": "a" * 64}
         path.write_text(json.dumps(manifest, indent=2) + "\n")
         self.assertEqual(materializer.materialize_bundled_baseline(self.root)["created_files"], 1)
+
+    def install_prior_native_top_manifest(self):
+        materializer.materialize_bundled_baseline(self.root)
+        path = self.root / "Sqpack/S11Opt/Bundled/source-manifest.json"
+        manifest = json.loads(path.read_text())
+        manifest["generator_sha256"]["generate_baseline_coverage_bundles.py"] = coverage.PRIOR_NATIVE_GENERATOR_SHA256
+        manifest["generator_sha256"]["materialize_wand125.py"] = materializer.PRIOR_NATIVE_MATERIALIZER_SHA256
+        manifest["coverage_manifests"] = {"Sqpack/S11Opt/Bundled/F04/source-manifest.json": "b" * 64}
+        path.write_text(json.dumps(manifest, indent=2) + "\n")
+        return path
+
+    def test_exact_prior_native_top_manifest_migrates_and_is_resumable(self):
+        self.install_prior_native_top_manifest()
+        self.assertEqual(materializer.materialize_bundled_baseline(self.root)["created_files"], 1)
+        self.assertEqual(materializer.materialize_bundled_baseline(self.root)["created_files"], 0)
+
+    def test_tampered_prior_native_top_manifest_is_rejected(self):
+        path = self.install_prior_native_top_manifest()
+        altered = path.read_bytes().replace(b'"b' + b'b' * 63, b'"c' + b'c' * 63)
+        self.assertNotEqual(altered, path.read_bytes())
+        path.write_bytes(altered)
+        with self.assertRaises(ValueError):
+            materializer.materialize_bundled_baseline(self.root)
+        self.assertEqual(path.read_bytes(), altered)
 
     def test_unknown_top_manifest_edit_is_rejected(self):
         materializer.materialize_bundled_baseline(self.root)

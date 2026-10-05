@@ -11,7 +11,11 @@ There are **7,385 inventoried numerical declarations in 1,062 tracked files**.
 The exact sources and declaration names are recorded in
 `verification/native-certificates.json`; source hashes prevent native evaluation
 from silently spreading to other proofs. The original certificate values and
-theorem statements are unchanged. The baseline generator applies the same
+theorem statements are unchanged. Eleven finite field-data modules also enable
+code generation for 119 existing `atomN`, `atoms`, and `optsN` definitions;
+only their unnecessary `noncomputable` modifiers are removed. The exact original
+and executable source hashes are recorded in
+`verification/native-data-compatibility.json`. The baseline generator applies the same
 policy when restoring derived coverage bundles.
 
 The verifier now prints `checking MODULE` before starting each module; `cached`
@@ -22,6 +26,15 @@ native axiom dependencies. Full proof replay and whole-build timing remain
 unverified on this branch. Focused infrastructure tests and a Lean 4.34.1
 native-check/ordinary-composition smoke test pass; the smoke test is not a replay
 of the large production certificates.
+
+On the larger verification machine, `bash scripts/run_verification.sh --jobs 1`
+wraps the complete `verify.py --all` replay and final axiom audit, preserving
+the compiler trust report and resumable module receipts. Adjust `--jobs` for the
+available hardware; modules still compile serially. On Linux, `--bootstrap`
+prepares the pinned toolchain and dependency cache. The runner reports bounded
+compiler diagnostics for the failing module and keeps full logs under
+`.verification/`. Completed modules are not blamed for later audit failures.
+This branch does not configure or start a hosted verification workflow.
 
 The size figures and performance measurements below describe the preceding
 kernel-checking checkpoint; its source-hash manifests are historical evidence.

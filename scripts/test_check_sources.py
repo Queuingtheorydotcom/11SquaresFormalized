@@ -350,6 +350,90 @@ class SourcePolicyTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'Uninventoried native evaluation spelling'):
             check_sources.check()
 
+    def write_native_data_fixture(self):
+        self.write_fixture('import Sqpack.S11Opt.F50.Data\n', [])
+        original = b'noncomputable def opts5 : Nat := 123\n'
+        source = original.replace(b'noncomputable def ', b'def ')
+        data_path = self.write_module('Sqpack.S11Opt.F50.Data', source.decode())
+        manifest = {'format_version': 1, 'files': {'Sqpack/S11Opt/F50/Data.lean': {
+            'sha256': hashlib.sha256(source).hexdigest(),
+            'upstream_sha256': hashlib.sha256(original).hexdigest(),
+            'declarations': ['opts5']}}}
+        path = self.root / 'verification/native-data-compatibility.json'
+        path.write_text(json.dumps(manifest))
+        return path, manifest, data_path, original
+
+    def test_exact_native_data_compatibility_is_accepted(self):
+        self.write_native_data_fixture()
+        for cached in (False, True):
+            self.assertEqual(check_sources.check(use_cache=cached)['status'],
+                             'SOURCE_ASSEMBLY_PASS')
+
+    def test_cached_scan_rejects_changed_or_reverted_native_data(self):
+        for replacement in (b'def opts5 : Nat := 124\n',
+                            b'noncomputable def opts5 : Nat := 123\n'):
+            with self.subTest(replacement=replacement):
+                _, _, data_path, _ = self.write_native_data_fixture()
+                check_sources.check(use_cache=True)
+                data_path.write_bytes(replacement)
+                with self.assertRaisesRegex(ValueError, 'Native data source hash mismatch'):
+                    check_sources.check(use_cache=True)
+
+    def test_native_data_must_reconstruct_exact_upstream_bytes(self):
+        path, manifest, _, _ = self.write_native_data_fixture()
+        check_sources.check(use_cache=True)
+        manifest['files']['Sqpack/S11Opt/F50/Data.lean']['upstream_sha256'] = '0' * 64
+        path.write_text(json.dumps(manifest))
+        with self.assertRaisesRegex(ValueError, 'native data reconstruction hash mismatch'):
+            check_sources.check(use_cache=True)
+
+    def test_native_data_inventory_must_name_actual_definitions(self):
+        path, manifest, _, _ = self.write_native_data_fixture()
+        manifest['files']['Sqpack/S11Opt/F50/Data.lean']['declarations'] = ['opts4']
+        path.write_text(json.dumps(manifest))
+        with self.assertRaisesRegex(ValueError, 'native data definition missing or repeated'):
+            check_sources.check()
+
+    def test_native_data_inventory_path_cannot_escape_known_fields(self):
+        path, manifest, _, _ = self.write_native_data_fixture()
+        manifest['files']['../Data.lean'] = manifest['files'].pop('Sqpack/S11Opt/F50/Data.lean')
+        path.write_text(json.dumps(manifest))
+        with self.assertRaisesRegex(ValueError, 'invalid native data path'):
+            check_sources.check()
+
+    def test_missing_native_data_is_rejected_even_after_cached_pass(self):
+        _, _, data_path, _ = self.write_native_data_fixture()
+        check_sources.check(use_cache=True)
+        data_path.unlink()
+        with self.assertRaisesRegex(ValueError, 'Missing or nonregular native data source'):
+            check_sources.check(use_cache=True)
+
+    def test_native_data_file_and_parent_symlinks_are_rejected(self):
+        for parent in (False, True):
+            with self.subTest(parent=parent):
+                _, _, data_path, _ = self.write_native_data_fixture()
+                check_sources.check(use_cache=True)
+                target = data_path.parent if parent else data_path
+                destination = self.root / 'verification' / ('saved-dir' if parent else 'saved-data')
+                target.rename(destination)
+                target.symlink_to(destination, target_is_directory=parent)
+                try:
+                    with self.assertRaisesRegex(ValueError, 'Missing or nonregular native data source'):
+                        check_sources.check(use_cache=True)
+                finally:
+                    target.unlink()
+                    destination.rename(target)
+
+    def test_native_data_policy_is_part_of_scanner_fingerprint(self):
+        path, _, _, _ = self.write_native_data_fixture()
+        check_sources.check(use_cache=True)
+        cache_path = self.root / '.verification/source-scan.json'
+        before = json.loads(cache_path.read_text())['scanner']
+        path.unlink()  # The inventory is optional for historical source fixtures.
+        check_sources.check(use_cache=True)
+        after = json.loads(cache_path.read_text())['scanner']
+        self.assertNotEqual(before, after)
+
 
 if __name__ == '__main__':
     unittest.main()

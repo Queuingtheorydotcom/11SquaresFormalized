@@ -104,6 +104,51 @@ class CoverageBundlesTests(unittest.TestCase):
         for path, sha in self.pinned.items():
             self.assertEqual(bundles.digest((self.root / path).read_bytes()), sha)
 
+    def install_prior_native_outputs(self, plan):
+        rows, inventory = [], {}
+        for name, raw in bundles.lean_outputs(self.root, plan):
+            path = self.root / name
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(raw)
+            rows.append({"path": name, "sha256": bundles.digest(raw), "bytes": len(raw)})
+            entry = bundles.native_inventory(plan, name, raw)
+            if entry:
+                inventory[name] = entry
+        manifest = bundles.source_manifest(plan, rows, inventory)
+        manifest["generator_sha256"] = bundles.PRIOR_NATIVE_GENERATOR_SHA256
+        manifest["data"].pop("computable_sha256", None)
+        path = self.root / "Sqpack/S11Opt/Bundled/F04/source-manifest.json"
+        path.write_text(json.dumps(manifest, indent=2) + "\n")
+        return path
+
+    def test_exact_prior_native_manifest_migrates_for_unchanged_data(self):
+        plan = self.plan()
+        manifest = self.install_prior_native_outputs(plan)
+        previous_hash = bundles.digest(manifest.read_bytes())
+        report = bundles.materialize_field(self.root, plan, write=True)
+        self.assertEqual(report["prior_native_manifest_sha256"], previous_hash)
+        self.assertGreater(report["new_bytes"], 0)
+        self.assertEqual(bundles.materialize_field(self.root, plan, write=True)["new_bytes"], 0)
+
+    def test_exact_prior_native_manifest_migrates_with_computable_data(self):
+        path, _, native = self.computable_data_fixture()
+        plan = self.plan()
+        self.install_prior_native_outputs(plan)
+        bundles.materialize_field(self.root, plan, write=True)
+        self.assertEqual(path.read_bytes(), native)
+        self.assertEqual(bundles.materialize_field(self.root, plan, write=True)["new_bytes"], 0)
+
+    def test_tampered_prior_native_manifest_prevents_data_migration(self):
+        path, raw, _ = self.computable_data_fixture()
+        plan = self.plan()
+        manifest = self.install_prior_native_outputs(plan)
+        original = manifest.read_bytes() + b" "
+        manifest.write_bytes(original)
+        with self.assertRaises(ValueError):
+            bundles.materialize_field(self.root, plan, write=True)
+        self.assertEqual(manifest.read_bytes(), original)
+        self.assertEqual(path.read_bytes(), raw)
+
     def test_unknown_legacy_edit_rejected_before_any_migration(self):
         plan = self.plan()
         self.install_legacy_outputs(plan)
@@ -122,6 +167,38 @@ class CoverageBundlesTests(unittest.TestCase):
         leaf.write_bytes(leaf.read_bytes() + b"-- user edit\n")
         with self.assertRaises(ValueError):
             bundles.materialize_field(self.root, plan, write=True)
+
+    def computable_data_fixture(self):
+        raw = b"noncomputable def atoms : List Nat := [123, 456]\nnoncomputable def opts1 : List Nat := atoms\n"
+        path = self.put("Data", raw)
+        native = raw.replace(b"noncomputable def ", b"def ")
+        entry = {"upstream_sha256": bundles.digest(raw), "sha256": bundles.digest(native),
+                 "declarations": ["atoms", "opts1"]}
+        self.enterContext(mock.patch.object(bundles.native_data, "load_manifest", return_value={
+            "Sqpack/S11Opt/F04/Data.lean": entry}))
+        return path, raw, native
+
+    def test_data_conversion_only_on_write_and_retains_upstream_authentication(self):
+        path, raw, native = self.computable_data_fixture()
+        plan = self.plan()
+        bundles.materialize_field(self.root, plan)
+        self.assertEqual(path.read_bytes(), raw)
+        bundles.materialize_field(self.root, plan, write=True)
+        self.assertEqual(path.read_bytes(), native)
+        self.assertEqual(self.plan()["data_sha256"], bundles.digest(raw))
+        self.assertEqual(bundles.materialize_field(self.root, self.plan(), write=True)["new_bytes"], 0)
+        manifest = json.loads((self.root / "Sqpack/S11Opt/Bundled/F04/source-manifest.json").read_text())
+        self.assertEqual(manifest["data"]["sha256"], bundles.digest(raw))
+        self.assertEqual(manifest["data"]["computable_sha256"], bundles.digest(native))
+
+    def test_data_stays_raw_when_output_collision_rejected(self):
+        path, raw, _ = self.computable_data_fixture()
+        collision = self.root / "Sqpack/S11Opt/Bundled/F04/Coverage.lean"
+        collision.parent.mkdir(parents=True)
+        collision.write_bytes(b"local edit")
+        with self.assertRaises(ValueError):
+            bundles.materialize_field(self.root, self.plan(), write=True)
+        self.assertEqual(path.read_bytes(), raw)
 
     def test_native_inventory_rejects_unscoped_tactic(self):
         with self.assertRaisesRegex(bundles.BundleError, "unscoped"):
