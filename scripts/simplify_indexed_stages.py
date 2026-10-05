@@ -160,6 +160,10 @@ def check_saved_report():
         previous_sources = reconstruct_inputs(ROOT)
     else:
         previous_sources = {}
+    # Large table initializers may subsequently be split into private row
+    # definitions. Check this historical receipt against their exact inverse.
+    from split_indexed_data import reconstruct_inputs as reconstruct_indexed_data
+    previous_sources.update(reconstruct_indexed_data(ROOT))
     def source_at(name):
         return previous_sources[name] if name in previous_sources else (ROOT / name).read_text()
     successor_path = ROOT / 'simplification/stage-root-aliases.json'

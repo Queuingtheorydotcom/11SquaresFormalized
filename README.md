@@ -18,6 +18,13 @@ and executable source hashes are recorded in
 `verification/native-data-compatibility.json`. The baseline generator applies the same
 policy when restoring derived coverage bundles.
 
+Oversized indexed triangle tables compile their existing stage literals in
+separate private definitions before assembling the same array. This avoids
+compiler recursion limits without changing the numerical witnesses, stage order,
+or public lookup functions. `python3 scripts/split_indexed_data.py --check`
+authenticates the exact inverse against the original indexed-stage source receipt;
+the normal source audit also performs this check. Full Lean replay remains required.
+
 The verifier now prints `checking MODULE` before starting each module; `cached`
 and `accepted` report completed work. Existing unchanged receipts can be reused.
 A successful final replay with numerical native evaluation reports

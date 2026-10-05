@@ -8,6 +8,7 @@ import os
 import re
 from native_certificates import load_native_manifest, validate_native_source
 from native_data_compatibility import load_manifest as load_native_data_manifest, upstream_bytes
+from split_indexed_data import reconstruct_inputs as reconstruct_indexed_data
 
 ROOT = Path(__file__).resolve().parents[1]
 _IMPORT_CACHE = {}
@@ -89,6 +90,9 @@ def check(use_cache=False):
     # reuse lexical results only when both the scanner and source bytes match.
     cache_path = ROOT / '.verification/source-scan.json'
     native_manifest = load_native_manifest(ROOT)
+    # Authenticate the exact inverse of compilation-sized indexed data helpers.
+    # This checks literals and row order against the original source receipt.
+    reconstruct_indexed_data(ROOT)
     native_data = load_native_data_manifest(ROOT)
     for rel, entry in native_data.items():
         path = ROOT / rel
