@@ -1,0 +1,36 @@
+import Sqpack.S11Opt.Simplified.ComplementaryTree
+import Sqpack.S11Opt.F58.Data
+
+namespace SquarePacking.S11Opt.Bundled.F58
+section
+open SquarePacking.S11Opt.F58
+open FieldTree
+open SquarePacking.S11Opt.Simplified
+
+theorem cov5p92_1 : CovF G.Q G.M G.R G.hps5 opts5 6244486164 6504673087 4423177699 4553271161 2621440 2883584 :=
+  ComplementaryTree.soundDec G.Q G.M G.R 4096 200 3711043159208769213696203693999923915086689882002283402426006188393719171377851303453567637164780420560245065896657568440937772226381576325272014937589078103239197748644290563 G.Q_pos G.R_pos G.hps5 opts5 (by native_decide)
+
+theorem cov5p93_1 : CovF G.Q G.M G.R G.hps5 opts5 6244486164 6504673087 4553271161 4683364623 2621440 2883584 :=
+  ComplementaryTree.soundDec G.Q G.M G.R 4096 200 3218816844321293833220031395045346921014979802227222625160904339794535447704045084486134916151850120028189936296229817607719863650062704367858803144998821897 G.Q_pos G.R_pos G.hps5 opts5 (by native_decide)
+
+theorem cov5p94_1 : CovF G.Q G.M G.R G.hps5 opts5 6244486164 6374579625 4423177699 4553271161 2883584 3145728 :=
+  ComplementaryTree.soundDec G.Q G.M G.R 4096 200 16818178 G.Q_pos G.R_pos G.hps5 opts5 (by native_decide)
+
+theorem cov5p95_1 : CovF G.Q G.M G.R G.hps5 opts5 6374579625 6439626356 4423177699 4553271161 2883584 3014656 :=
+  ComplementaryTree.soundDec G.Q G.M G.R 4096 200 16818178 G.Q_pos G.R_pos G.hps5 opts5 (by native_decide)
+
+theorem cov5p96_1 : CovF G.Q G.M G.R G.hps5 opts5 6439626356 6472149721 4423177699 4488224430 2883584 2949120 :=
+  ComplementaryTree.soundDec G.Q G.M G.R 4096 200 16818178 G.Q_pos G.R_pos G.hps5 opts5 (by native_decide)
+
+theorem cov5p97_1 : CovF G.Q G.M G.R G.hps5 opts5 6472149721 6504673087 4423177699 4455701064 2883584 2949120 :=
+  ComplementaryTree.soundDec G.Q G.M G.R 4096 200 3218816844321293833220031395045346921014979802227222625160904339794535447704045084486134916151850120028189936296229817607719863650062704367858803144998821897 G.Q_pos G.R_pos G.hps5 opts5 (by native_decide)
+
+end
+end SquarePacking.S11Opt.Bundled.F58
+
+#print axioms SquarePacking.S11Opt.Bundled.F58.cov5p92_1
+#print axioms SquarePacking.S11Opt.Bundled.F58.cov5p93_1
+#print axioms SquarePacking.S11Opt.Bundled.F58.cov5p94_1
+#print axioms SquarePacking.S11Opt.Bundled.F58.cov5p95_1
+#print axioms SquarePacking.S11Opt.Bundled.F58.cov5p96_1
+#print axioms SquarePacking.S11Opt.Bundled.F58.cov5p97_1

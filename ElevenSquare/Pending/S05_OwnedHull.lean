@@ -17,8 +17,8 @@ theorem openSquare_convex (q : UnitSquare) : Convex ℝ {p | OpenSquare q p} := 
       ring
   have strip (v : Point) : Convex ℝ {p : Point | |dot p v| < 1/2} := by
     simpa only [abs_lt, Set.setOf_and] using
-      (convex_halfspace_gt (hlin v) (-(1/2 : ℝ))).inter
-        (convex_halfspace_lt (hlin v) (1/2 : ℝ))
+      (convex_halfSpace_gt (hlin v) (-(1/2 : ℝ))).inter
+        (convex_halfSpace_lt (hlin v) (1/2 : ℝ))
   have h := ((strip q.axis).inter (strip (perp q.axis))).translate_preimage_left
     (-q.center)
   simpa only [Set.preimage_inter, Set.preimage_setOf_eq, ← Set.setOf_and,

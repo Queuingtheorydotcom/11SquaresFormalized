@@ -1,5 +1,6 @@
+import Mathlib.Data.Finset.Max
 import ElevenSquare.BasicGeometry
-import Mathlib.Data.Finset.Lattice
+import Mathlib.Data.Finset.Lattice.Basic
 import Mathlib.Data.Finset.Card
 import Mathlib.Data.Fintype.Fin
 import Mathlib.Tactic.FinCases

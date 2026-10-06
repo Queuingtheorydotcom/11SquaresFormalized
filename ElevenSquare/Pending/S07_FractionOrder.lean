@@ -10,7 +10,7 @@ theorem fractionLE_sound (n d m e : ℤ) (h : fractionLE n d m e = true) :
   have hh := of_decide_eq_true h
   have hd : (0:ℝ)<(d:ℝ) := by exact_mod_cast hh.1
   have he : (0:ℝ)<(e:ℝ) := by exact_mod_cast hh.2.1
-  apply (div_le_div_iff hd he).mpr
+  apply (div_le_div_iff₀ hd he).mpr
   exact_mod_cast hh.2.2
 
 theorem fractionLT_sound (n d m e : ℤ) (h : fractionLT n d m e = true) :
@@ -18,7 +18,7 @@ theorem fractionLT_sound (n d m e : ℤ) (h : fractionLT n d m e = true) :
   have hh := of_decide_eq_true h
   have hd : (0:ℝ)<(d:ℝ) := by exact_mod_cast hh.1
   have he : (0:ℝ)<(e:ℝ) := by exact_mod_cast hh.2.1
-  apply (div_lt_div_iff hd he).mpr
+  apply (div_lt_div_iff₀ hd he).mpr
   exact_mod_cast hh.2.2
 
 theorem fractionEQ_sound (n d m e : ℤ) (h : fractionEQ n d m e = true) :

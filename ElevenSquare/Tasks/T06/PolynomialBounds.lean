@@ -28,10 +28,10 @@ theorem poly_enclosure (c : Fin 8 → ℚ) (a b : ℚ) (x : ℝ)
     by_cases hc : 0 ≤ c k
     · simp only [hc, if_true]
       push_cast
-      exact mul_le_mul_of_nonneg_left (pow_le_pow_left haR hax _) (show (0 : ℝ) ≤ (c k : ℝ) by exact_mod_cast hc)
+      exact mul_le_mul_of_nonneg_left (pow_le_pow_left₀ haR hax _) (show (0 : ℝ) ≤ (c k : ℝ) by exact_mod_cast hc)
     · simp only [hc, if_false]
       push_cast
-      exact mul_le_mul_of_nonpos_left (pow_le_pow_left hx hxb _)
+      exact mul_le_mul_of_nonpos_left (pow_le_pow_left₀ hx hxb _)
         (show (c k : ℝ) ≤ 0 by exact_mod_cast (le_of_not_ge hc))
   · unfold polyUpper polyEval
     push_cast
@@ -40,10 +40,10 @@ theorem poly_enclosure (c : Fin 8 → ℚ) (a b : ℚ) (x : ℝ)
     by_cases hc : 0 ≤ c k
     · simp only [hc, if_true]
       push_cast
-      exact mul_le_mul_of_nonneg_left (pow_le_pow_left hx hxb _) (show (0 : ℝ) ≤ (c k : ℝ) by exact_mod_cast hc)
+      exact mul_le_mul_of_nonneg_left (pow_le_pow_left₀ hx hxb _) (show (0 : ℝ) ≤ (c k : ℝ) by exact_mod_cast hc)
     · simp only [hc, if_false]
       push_cast
-      exact mul_le_mul_of_nonpos_left (pow_le_pow_left haR hax _)
+      exact mul_le_mul_of_nonpos_left (pow_le_pow_left₀ haR hax _)
         (show (c k : ℝ) ≤ 0 by exact_mod_cast (le_of_not_ge hc))
 
 theorem poly_rounding_error (c : Fin 8 → ℚ) (a b v e : ℚ) (x : ℝ)

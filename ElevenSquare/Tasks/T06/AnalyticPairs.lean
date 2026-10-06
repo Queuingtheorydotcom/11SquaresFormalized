@@ -137,7 +137,7 @@ theorem feature_gap_radial_taylor (q₀ : Owner → UnitSquare) (f : SeparationF
     (dot (perp (cornerOffset q₀ f.other v)) (featureNormal q₀ f)) 0
     (h (coordinate f.other 2)-h (coordinate f.owner 2)) τ hτ
   have hsum := add_le_add hf hg
-  have htri := abs_add
+  have htri := abs_add_le
     (featureFirstProfile q₀ f h τ - featureFirstProfile q₀ f h 0 -
       τ*(dot (featureCenterVelocity h f) (featureNormal q₀ f) +
         h (coordinate f.owner 2)*dot (featureCenterDifference q₀ f) (perp (featureNormal q₀ f))))
@@ -179,7 +179,7 @@ theorem feature_gap_radial_hasDerivAt_zero (q₀ : Owner → UnitSquare)
     (dot (cornerOffset q₀ f.other v) (featureNormal q₀ f)) 0
     (dot (perp (cornerOffset q₀ f.other v)) (featureNormal q₀ f)) 0
     (h (coordinate f.other 2)-h (coordinate f.owner 2)) 0
-  convert ((hf.add hg).const_mul (radialFeatureSign f)).sub_const (1/2) using 1
+  convert ((hf.fun_add hg).const_mul (radialFeatureSign f)).sub_const (1/2) using 1
   · funext t
     exact feature_gap_radial q₀ f v h t
   · simp [trigAffineDerivative, trigAffine, featureRadialLinear] <;> ring
@@ -217,8 +217,8 @@ theorem feature_gap_taylor_with_gradient (S : ℝ) (q₀ : Owner → UnitSquare)
 
 theorem abs_dot_add_abs_dot_perp_le (p n : Point) :
     |dot p n| + |dot p (perp n)| ≤ (|p.1| + |p.2|)*(|n.1| + |n.2|) := by
-  have h1 := abs_add (p.1*n.1) (p.2*n.2)
-  have h2 := abs_add (p.1*(-n.2)) (p.2*n.1)
+  have h1 := abs_add_le (p.1*n.1) (p.2*n.2)
+  have h2 := abs_add_le (p.1*(-n.2)) (p.2*n.1)
   simp only [abs_mul, abs_neg] at h1 h2
   dsimp [dot, perp]
   nlinarith

@@ -1,35 +1,22 @@
 # Assembly details
 
-All changes are in a new repository directory. Original files and input
-archives were preserved. No commit with a personal identity or remote URL is
-needed for this source assembly.
+The current proof integrates the verified source snapshot from
+EvolvingPrograms/11SquaresEvolving commit
+`1bf942a7af1ea330e95489d8997deebd4227ca71` into the existing history of
+11SquaresFormalized. See [the verification report](docs/VERIFICATION_20261006.md)
+for the run, exact source hashes, trust model, and audit scope.
 
-Returned sources are overlaid only in their assigned task areas and public
-module files. The earlier current-work archive's T04/T05 contribution was
-already integrated and checked locally; its later bridge fixes are retained.
-The T06 target is replaced with the complete returned packet proof. T01's public
-baseline dispatcher retains the three completed group branches. T02's checked
-two-step continuation and the T07 partial helpers are included.
+The two Lean source trees, root Lean modules, and three pinned build files
+match the successful run byte-for-byte. The T03 tree and public optimality
+statements match the previous Formalized main byte-for-byte. The old six-site
+admission inventory is replaced by the verified zero-admission inventory.
 
-The remaining global capture premise is exposed as a named admitted lemma, and
-the public lower bound uses the returned composition theorem. No public theorem
-statement or packing definition is weakened. The assembly adds no custom axioms
-or trusted native-computation proof shortcuts.
+The old top-level `MANIFEST.json` described the earlier partial assembly and
+is preserved in Git history at `b237948fa44eb8876ed87eeb21329ab5577c833c`.
+The current source-hash inventory is the `source_sha256` map in
+[the compressed final audit](verification/completed-run-20261006/final-audit.json.gz).
+Historical verification and simplification records retain their original scope.
 
-The source tree includes the transitive local import closure of the delivered
-Lean modules plus the public entry points. Unreferenced speculative modules from
-the earlier working directory are omitted. Every included local import resolves
-to an included source file; external dependencies are pinned public packages.
-
-Source and audit metadata are rebuilt from a small allowlist of mathematical
-fields. Raw command lines, host paths, crash and usage records, account names,
-conversation records, archive documents, and private project metadata are not
-copied into the repository. The publication archive contains no dependency
-caches, compiled objects, or Git history.
-
-Validation has two distinct scopes. Static assembly checks verify the import
-closure, exact six admission sites, absence of forbidden local proof constructs,
-source hashes matching the returned inventories, and publication privacy. The
-small composition check verifies the new final glue against existing compiled
-shared interfaces. It does not rerun all the large returned certificate checks.
-Use `python3 scripts/verify.py --setup --all --fresh` for that complete replay.
+Only portable source, documentation, and mathematical verification evidence are
+published. Raw compiler logs, local paths, build caches, and private archives
+remain outside the tracked tree.

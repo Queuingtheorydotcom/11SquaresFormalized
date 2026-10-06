@@ -1,15 +1,16 @@
 import ElevenSquare.Tasks.T02.Exclusion
-import ElevenSquare.Pending.S06_Baseline
+import ElevenSquare.Pending.S06_Exclusion
+import ElevenSquare.Interop.Wand125.Families.Prior
 
-/-! UNFINISHED FORMALIZATION OBLIGATIONS. See handoffs/S06_PriorSupport.md.
-Every `sorry` in this file is an explicit outstanding proof, not verified evidence. -/
+/-! Prior-family source wiring through the published owned-hull proofs.
+The original baseline premise remains in the public interface for compatibility.
+Compiler and axiom acceptance of the complete integration remains to be checked. -/
 
 namespace ElevenSquare.Pending
 noncomputable section
 
--- Dependency deliberately stops at the original 1931 exclusions.
--- Any early D4 support halfplanes used by these 76 certificates must be proved
--- from this premise, never from S07_Bridge or the final 2180-case conclusion.
+-- Preserve the original baseline-exclusion premise. The imported proof is
+-- independent of that premise and of S07_Bridge or the final 2180-case conclusion.
 theorem prior_certificate_exists
     (hbase : ∀ k : Fin 2184, k.val ∈ baselineIndices → Excluded k)
     (k : Fin 2184) (hk : k.val ∈ priorIndices) :
@@ -17,7 +18,7 @@ theorem prior_certificate_exists
       (∀ P : Packing 11 coverCap, IsCharted P → Occupies P (caseMask k) →
         ∃ perm : Equiv.Perm Owner, StateHolds (relabelPacking P perm) a) ∧
       VerifiedTrace a b ∧ Terminal b := by
-  sorry
+  exact ElevenSquare.Interop.Wand125.prior_certificate k hk
 
 theorem prior_excluded
     (hbase : ∀ k : Fin 2184, k.val ∈ baselineIndices → Excluded k)
@@ -29,3 +30,6 @@ theorem prior_excluded
 
 end
 end ElevenSquare.Pending
+
+#print axioms ElevenSquare.Pending.prior_certificate_exists
+#print axioms ElevenSquare.Pending.prior_excluded

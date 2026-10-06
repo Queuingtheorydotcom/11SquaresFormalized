@@ -1,12 +1,20 @@
 # Eleven-square packing in Lean
 
-This repository assembles the completed foundations and the available partial
-formalizations of the optimal eleven-square packing. **Global optimality is
-still unfinished.** Six explicit `sorry` sites record the remaining obligations.
-A build that accepts those sites checks the surrounding code but does not prove
-the final optimality theorem. See [MISSING.md](MISSING.md).
+**The complete optimality proof passed verification with native numerical certificates.**
+The completed [EvolvingPrograms verification run](https://github.com/EvolvingPrograms/11SquaresEvolving/actions/runs/37414883750)
+accepted all **7,920 local Lean modules**, and its final audit reports **zero
+admissions**. This repository imports those exact proof sources and pinned
+build configuration from commit `1bf942a7af1ea330e95489d8997deebd4227ca71`.
+See the [verification report](docs/VERIFICATION_20261006.md) for evidence and scope.
 
-The target side length is the exact real number
+Selected expensive, exact numerical certificate checks use `native_decide`.
+Geometry, checker soundness, and proof assembly retain ordinary Lean proofs.
+Consequently the final theorem trusts **Lean's kernel and native compiler**;
+this is not a kernel-only verification claim. The approved numerical declarations
+and their exact source hashes are recorded in
+[verification/native-certificates.json](verification/native-certificates.json).
+
+The optimal side length is
 
 \[
 T = \frac{6u+4}{1+2u-u^2},
@@ -20,80 +28,63 @@ where `u` is the unique root in `(9/25,37/100)` of
 
 The construction attains approximately `3.8770835900228141773`. The model allows
 arbitrary orientations, legal boundary contact, and disjoint open interiors.
+The public statements in `ElevenSquare/Optimality.lean` and the complete T03
+source tree are unchanged from this repository's previous main branch.
 
 ## Entry points
 
 | File | Purpose |
 | --- | --- |
-| `ElevenSquare/Foundations.lean` | Geometry, the exact endpoint, attaining construction, closed-cell cover, and finite case reduction. |
-| `ElevenSquare/Progress.lean` | Completed baseline groups, case1000 through two steps, and selected global capture helpers. |
-| `ElevenSquare/Pending/` | Public interfaces and the later proof stages, with explicit remaining dependencies. |
-| `ElevenSquare/Tasks/` | Returned certificate data, generic checkers, analytic lemmas, and concrete partial proofs. |
-| `ElevenSquare/Optimality.lean` | Final unconditional theorem statements; their proofs currently inherit the listed admissions. |
-| `ElevenSquare/Verification.lean` | Axiom queries for completed milestones and unfinished public targets. |
+| `ElevenSquare/Foundations.lean` | Geometry, exact endpoint, attaining construction, closed-cell cover, and finite case reduction. |
+| `ElevenSquare/Pending/` | Original public interfaces, now discharged by the integrated proof. The directory name is historical. |
+| `ElevenSquare/Interop/Wand125/` | Connections to the incorporated upstream certificate results. |
+| `ElevenSquare/Tasks/` | Geometric arguments, checkers, certificate data, and local analytic proofs. |
+| `Sqpack/` | Incorporated certificate checkers, generated proofs, and simplifications. |
+| `ElevenSquare/Optimality.lean` | Unconditional optimality and side-length lower-bound theorems. |
+| `ElevenSquare/Verification.lean` | Axiom queries for the public proof targets. |
 
-## Verification
+## Reproduce verification
 
-Install Git and Lean's `elan` launcher. The project pins Lean `v4.10.0-rc2` and
-mathlib revision `3fef63ff3bda38478ba4364ff03999f0246745a2`.
-Keep `lake-manifest.json`; do not update dependencies while reproducing this
-snapshot.
-
-Set up the public dependencies, compile the main dependency chain serially,
-and inspect its target axioms with one command:
+The project pins **Lean 4.34.1** and Mathlib revision
+`d13f23b723b8a846827a245b89c10fc7d3f11612`. Keep `lake-manifest.json` unchanged.
+On Linux with Python 3, Git, curl, and tar:
 
 ```sh
-python3 scripts/verify.py --setup
+bash scripts/run_verification.sh --bootstrap --jobs 2
 ```
 
-For every included source module, including progress outside the main chain:
+On macOS, first install the `elan` launcher, then use the same command. The
+bootstrap can prepare the pinned toolchain and dependency cache when `elan` is
+already installed. Choose a worker count appropriate to the machine; modules
+are compiled serially. Existing valid receipts are reusable. Add `--fresh` to
+force a complete replay; Ctrl-C stops the runner cleanly.
 
-```sh
-python3 scripts/verify.py --setup --all
-```
+The command checks every local module and performs the final source, receipt,
+dependency, and axiom audit. Require `OPTIMALITY_PROVED_WITH_NATIVE_CERTIFICATES`,
+zero admissions, and `trust_model: lean_kernel_and_native_compiler` in the final
+result. Reaching 100% of compiled modules alone is not sufficient.
 
-Once dependencies are installed, omit `--setup`. Accepted unchanged modules
-can be resumed using the script's source/object/dependency fingerprints. Add
-`--fresh` to rebuild every selected local module. These are substantial exact
-certificate checks and can take a long time. They use ordinary Lean checking;
-no packing search or external algebra system is required.
-
-A source-only check, requiring only Python3, is:
+A source-only check, without Lean, is:
 
 ```sh
 python3 scripts/check_sources.py
 ```
 
-`--plan` on the verifier prints the compilation order without running Lean.
-Build logs and objects remain in ignored `.verification/` and `.lake/` folders.
-The normal Lake entry point is also available via `lake build`.
+The [manual workflow and Ubuntu instructions](docs/UBUNTU_RUNNER.md) also support
+resumable verification. Pushes do not start a workflow. The successful source
+run used EvolvingPrograms' larger runner; it does not establish a cold-build
+runtime or a 2–3 hour macOS guarantee.
 
-The verifier distinguishes clean milestones, which may use only `propext`,
-`Classical.choice`, and `Quot.sound`, from the explicit unfinished targets.
-Success with the current six admissions is **partial assembly success**, not a
-proof of optimality. Closing those admissions requires a fresh final audit.
+Do not run historical materialization commands or `verify.py --setup` on this
+snapshot: they restore superseded generated sources. Build objects and logs
+belong in ignored `.lake/` and `.verification/` directories.
 
-## Assembly provenance
+## Credits and provenance
 
-The source incorporates the baseline partial return, the checked prior-support
-continuation, the local-packet return, and the global partial handoff. It also
-preserves the previously integrated fixes to the overlay and D4 bridge from the
-earlier current-work return. Older unreferenced speculative modules are omitted;
-all delivered Lean modules and their local source dependencies are preserved.
-
-`verification/source-inventory.json` records exact source hashes and which files
-match supplied compiler inventories. `verification/imported-audits.json` retains
-only mathematical declaration names and their reported axiom sets. It is
-historical evidence, not a fresh combined compiler replay. In particular, a
-reported inherited admission may have been removed by another merged return.
-
-The assembly was checked for a complete local import closure, exact admission
-inventory, matching returned source hashes, and personal information. The small
-final composition is checked separately against the existing shared interfaces.
-The entire large numerical certificate collection is supplied for reproducible
-replay rather than claimed freshly rebuilt during packaging.
-
-Only portable source, pinned public dependency metadata, mathematical audit
-summaries, and fresh documentation are distributed. Original handoff archives,
-conversation records, machine diagnostics, private project identifiers, and
-historical machine-specific logs are omitted.
+We thank **[EvolvingPrograms](https://github.com/EvolvingPrograms),
+[@ctjlewis](https://github.com/ctjlewis), and every project contributor** for the
+formalization and verification work. See [ACKNOWLEDGEMENTS.md](ACKNOWLEDGEMENTS.md)
+for individual and upstream credits, [PROVENANCE.md](PROVENANCE.md) for source
+history, and [integrations/wand125](integrations/wand125/) for retained notices.
+Historical simplification notes and partial-audit records are preserved; their
+old unfinished-status statements are superseded by the completed-run report.

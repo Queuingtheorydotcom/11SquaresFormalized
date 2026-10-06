@@ -1,161 +1,97 @@
 import ElevenSquare.Pending.S07_EncodedLabelLookupSupport
 namespace ElevenSquare.Pending.EncodedSearch
 theorem label_lookup160 : recordedOverlayLabels[160]! = recordedOverlayLabelsChunk5[0]! := by
-  rw [label_array_eq_prefix]
-  rw [labelPrefix6, lookup_left labelPrefix5 recordedOverlayLabelsChunk6 160 (by rw [label_prefix_size5]; decide)]
-  rw [labelPrefix5, lookup_right labelPrefix4 recordedOverlayLabelsChunk5 160
-    (by rw [label_prefix_size4] <;> decide)
-    (by rw [label_prefix_size4, label_chunk_size5] <;> decide), label_prefix_size4]
+  exact label_lookup_chunk5 160 (by decide) (by decide)
 theorem label_good160 : LabelGood 160 := by
   unfold LabelGood
   rw [label_lookup160]
   decide
 theorem label_lookup161 : recordedOverlayLabels[161]! = recordedOverlayLabelsChunk5[1]! := by
-  rw [label_array_eq_prefix]
-  rw [labelPrefix6, lookup_left labelPrefix5 recordedOverlayLabelsChunk6 161 (by rw [label_prefix_size5]; decide)]
-  rw [labelPrefix5, lookup_right labelPrefix4 recordedOverlayLabelsChunk5 161
-    (by rw [label_prefix_size4] <;> decide)
-    (by rw [label_prefix_size4, label_chunk_size5] <;> decide), label_prefix_size4]
+  exact label_lookup_chunk5 161 (by decide) (by decide)
 theorem label_good161 : LabelGood 161 := by
   unfold LabelGood
   rw [label_lookup161]
   decide
 theorem label_lookup162 : recordedOverlayLabels[162]! = recordedOverlayLabelsChunk5[2]! := by
-  rw [label_array_eq_prefix]
-  rw [labelPrefix6, lookup_left labelPrefix5 recordedOverlayLabelsChunk6 162 (by rw [label_prefix_size5]; decide)]
-  rw [labelPrefix5, lookup_right labelPrefix4 recordedOverlayLabelsChunk5 162
-    (by rw [label_prefix_size4] <;> decide)
-    (by rw [label_prefix_size4, label_chunk_size5] <;> decide), label_prefix_size4]
+  exact label_lookup_chunk5 162 (by decide) (by decide)
 theorem label_good162 : LabelGood 162 := by
   unfold LabelGood
   rw [label_lookup162]
   decide
 theorem label_lookup163 : recordedOverlayLabels[163]! = recordedOverlayLabelsChunk5[3]! := by
-  rw [label_array_eq_prefix]
-  rw [labelPrefix6, lookup_left labelPrefix5 recordedOverlayLabelsChunk6 163 (by rw [label_prefix_size5]; decide)]
-  rw [labelPrefix5, lookup_right labelPrefix4 recordedOverlayLabelsChunk5 163
-    (by rw [label_prefix_size4] <;> decide)
-    (by rw [label_prefix_size4, label_chunk_size5] <;> decide), label_prefix_size4]
+  exact label_lookup_chunk5 163 (by decide) (by decide)
 theorem label_good163 : LabelGood 163 := by
   unfold LabelGood
   rw [label_lookup163]
   decide
 theorem label_lookup164 : recordedOverlayLabels[164]! = recordedOverlayLabelsChunk5[4]! := by
-  rw [label_array_eq_prefix]
-  rw [labelPrefix6, lookup_left labelPrefix5 recordedOverlayLabelsChunk6 164 (by rw [label_prefix_size5]; decide)]
-  rw [labelPrefix5, lookup_right labelPrefix4 recordedOverlayLabelsChunk5 164
-    (by rw [label_prefix_size4] <;> decide)
-    (by rw [label_prefix_size4, label_chunk_size5] <;> decide), label_prefix_size4]
+  exact label_lookup_chunk5 164 (by decide) (by decide)
 theorem label_good164 : LabelGood 164 := by
   unfold LabelGood
   rw [label_lookup164]
   decide
 theorem label_lookup165 : recordedOverlayLabels[165]! = recordedOverlayLabelsChunk5[5]! := by
-  rw [label_array_eq_prefix]
-  rw [labelPrefix6, lookup_left labelPrefix5 recordedOverlayLabelsChunk6 165 (by rw [label_prefix_size5]; decide)]
-  rw [labelPrefix5, lookup_right labelPrefix4 recordedOverlayLabelsChunk5 165
-    (by rw [label_prefix_size4] <;> decide)
-    (by rw [label_prefix_size4, label_chunk_size5] <;> decide), label_prefix_size4]
+  exact label_lookup_chunk5 165 (by decide) (by decide)
 theorem label_good165 : LabelGood 165 := by
   unfold LabelGood
   rw [label_lookup165]
   decide
 theorem label_lookup166 : recordedOverlayLabels[166]! = recordedOverlayLabelsChunk5[6]! := by
-  rw [label_array_eq_prefix]
-  rw [labelPrefix6, lookup_left labelPrefix5 recordedOverlayLabelsChunk6 166 (by rw [label_prefix_size5]; decide)]
-  rw [labelPrefix5, lookup_right labelPrefix4 recordedOverlayLabelsChunk5 166
-    (by rw [label_prefix_size4] <;> decide)
-    (by rw [label_prefix_size4, label_chunk_size5] <;> decide), label_prefix_size4]
+  exact label_lookup_chunk5 166 (by decide) (by decide)
 theorem label_good166 : LabelGood 166 := by
   unfold LabelGood
   rw [label_lookup166]
   decide
 theorem label_lookup167 : recordedOverlayLabels[167]! = recordedOverlayLabelsChunk5[7]! := by
-  rw [label_array_eq_prefix]
-  rw [labelPrefix6, lookup_left labelPrefix5 recordedOverlayLabelsChunk6 167 (by rw [label_prefix_size5]; decide)]
-  rw [labelPrefix5, lookup_right labelPrefix4 recordedOverlayLabelsChunk5 167
-    (by rw [label_prefix_size4] <;> decide)
-    (by rw [label_prefix_size4, label_chunk_size5] <;> decide), label_prefix_size4]
+  exact label_lookup_chunk5 167 (by decide) (by decide)
 theorem label_good167 : LabelGood 167 := by
   unfold LabelGood
   rw [label_lookup167]
   decide
 theorem label_lookup168 : recordedOverlayLabels[168]! = recordedOverlayLabelsChunk5[8]! := by
-  rw [label_array_eq_prefix]
-  rw [labelPrefix6, lookup_left labelPrefix5 recordedOverlayLabelsChunk6 168 (by rw [label_prefix_size5]; decide)]
-  rw [labelPrefix5, lookup_right labelPrefix4 recordedOverlayLabelsChunk5 168
-    (by rw [label_prefix_size4] <;> decide)
-    (by rw [label_prefix_size4, label_chunk_size5] <;> decide), label_prefix_size4]
+  exact label_lookup_chunk5 168 (by decide) (by decide)
 theorem label_good168 : LabelGood 168 := by
   unfold LabelGood
   rw [label_lookup168]
   decide
 theorem label_lookup169 : recordedOverlayLabels[169]! = recordedOverlayLabelsChunk5[9]! := by
-  rw [label_array_eq_prefix]
-  rw [labelPrefix6, lookup_left labelPrefix5 recordedOverlayLabelsChunk6 169 (by rw [label_prefix_size5]; decide)]
-  rw [labelPrefix5, lookup_right labelPrefix4 recordedOverlayLabelsChunk5 169
-    (by rw [label_prefix_size4] <;> decide)
-    (by rw [label_prefix_size4, label_chunk_size5] <;> decide), label_prefix_size4]
+  exact label_lookup_chunk5 169 (by decide) (by decide)
 theorem label_good169 : LabelGood 169 := by
   unfold LabelGood
   rw [label_lookup169]
   decide
 theorem label_lookup170 : recordedOverlayLabels[170]! = recordedOverlayLabelsChunk5[10]! := by
-  rw [label_array_eq_prefix]
-  rw [labelPrefix6, lookup_left labelPrefix5 recordedOverlayLabelsChunk6 170 (by rw [label_prefix_size5]; decide)]
-  rw [labelPrefix5, lookup_right labelPrefix4 recordedOverlayLabelsChunk5 170
-    (by rw [label_prefix_size4] <;> decide)
-    (by rw [label_prefix_size4, label_chunk_size5] <;> decide), label_prefix_size4]
+  exact label_lookup_chunk5 170 (by decide) (by decide)
 theorem label_good170 : LabelGood 170 := by
   unfold LabelGood
   rw [label_lookup170]
   decide
 theorem label_lookup171 : recordedOverlayLabels[171]! = recordedOverlayLabelsChunk5[11]! := by
-  rw [label_array_eq_prefix]
-  rw [labelPrefix6, lookup_left labelPrefix5 recordedOverlayLabelsChunk6 171 (by rw [label_prefix_size5]; decide)]
-  rw [labelPrefix5, lookup_right labelPrefix4 recordedOverlayLabelsChunk5 171
-    (by rw [label_prefix_size4] <;> decide)
-    (by rw [label_prefix_size4, label_chunk_size5] <;> decide), label_prefix_size4]
+  exact label_lookup_chunk5 171 (by decide) (by decide)
 theorem label_good171 : LabelGood 171 := by
   unfold LabelGood
   rw [label_lookup171]
   decide
 theorem label_lookup172 : recordedOverlayLabels[172]! = recordedOverlayLabelsChunk5[12]! := by
-  rw [label_array_eq_prefix]
-  rw [labelPrefix6, lookup_left labelPrefix5 recordedOverlayLabelsChunk6 172 (by rw [label_prefix_size5]; decide)]
-  rw [labelPrefix5, lookup_right labelPrefix4 recordedOverlayLabelsChunk5 172
-    (by rw [label_prefix_size4] <;> decide)
-    (by rw [label_prefix_size4, label_chunk_size5] <;> decide), label_prefix_size4]
+  exact label_lookup_chunk5 172 (by decide) (by decide)
 theorem label_good172 : LabelGood 172 := by
   unfold LabelGood
   rw [label_lookup172]
   decide
 theorem label_lookup173 : recordedOverlayLabels[173]! = recordedOverlayLabelsChunk5[13]! := by
-  rw [label_array_eq_prefix]
-  rw [labelPrefix6, lookup_left labelPrefix5 recordedOverlayLabelsChunk6 173 (by rw [label_prefix_size5]; decide)]
-  rw [labelPrefix5, lookup_right labelPrefix4 recordedOverlayLabelsChunk5 173
-    (by rw [label_prefix_size4] <;> decide)
-    (by rw [label_prefix_size4, label_chunk_size5] <;> decide), label_prefix_size4]
+  exact label_lookup_chunk5 173 (by decide) (by decide)
 theorem label_good173 : LabelGood 173 := by
   unfold LabelGood
   rw [label_lookup173]
   decide
 theorem label_lookup174 : recordedOverlayLabels[174]! = recordedOverlayLabelsChunk5[14]! := by
-  rw [label_array_eq_prefix]
-  rw [labelPrefix6, lookup_left labelPrefix5 recordedOverlayLabelsChunk6 174 (by rw [label_prefix_size5]; decide)]
-  rw [labelPrefix5, lookup_right labelPrefix4 recordedOverlayLabelsChunk5 174
-    (by rw [label_prefix_size4] <;> decide)
-    (by rw [label_prefix_size4, label_chunk_size5] <;> decide), label_prefix_size4]
+  exact label_lookup_chunk5 174 (by decide) (by decide)
 theorem label_good174 : LabelGood 174 := by
   unfold LabelGood
   rw [label_lookup174]
   decide
 theorem label_lookup175 : recordedOverlayLabels[175]! = recordedOverlayLabelsChunk5[15]! := by
-  rw [label_array_eq_prefix]
-  rw [labelPrefix6, lookup_left labelPrefix5 recordedOverlayLabelsChunk6 175 (by rw [label_prefix_size5]; decide)]
-  rw [labelPrefix5, lookup_right labelPrefix4 recordedOverlayLabelsChunk5 175
-    (by rw [label_prefix_size4] <;> decide)
-    (by rw [label_prefix_size4, label_chunk_size5] <;> decide), label_prefix_size4]
+  exact label_lookup_chunk5 175 (by decide) (by decide)
 theorem label_good175 : LabelGood 175 := by
   unfold LabelGood
   rw [label_lookup175]

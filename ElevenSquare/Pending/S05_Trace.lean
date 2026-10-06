@@ -60,8 +60,8 @@ theorem verified_step_sound {S : ℝ} (P : Packing 11 S) {a b : PoseState}
     intro k
     by_cases hki : k = i
     · subst k
-      simpa only [replaceRows, Function.update_same] using (heq (P.squares i)).mp (hs.1 i)
-    · simpa only [replaceRows, Function.update_noteq hki] using hs.1 k
+      simpa only [replaceRows, Function.update_self] using (heq (P.squares i)).mp (hs.1 i)
+    · simpa only [replaceRows, Function.update_of_ne hki] using hs.1 k
   | prune i j hij Q rs hcore hcover =>
     exact prune_rows_sound P a i j hij Q rs hcore hcover hs
   | prunePosewise i rs hcover =>
@@ -75,8 +75,8 @@ theorem verified_step_sound {S : ℝ} (P : Packing 11 S) {a b : PoseState}
     intro k
     by_cases hki : k = i
     · subst k
-      simpa only [replaceRows, Function.update_same] using hkeep
-    · simpa only [replaceRows, Function.update_noteq hki] using hs.1 k
+      simpa only [replaceRows, Function.update_self] using hkeep
+    · simpa only [replaceRows, Function.update_of_ne hki] using hs.1 k
   | universalCollision i j hij F rs hcollision hcover =>
     exact universal_collision_prune P a i j hij F rs hcollision hcover hs
   | promote i vs hvertices =>
@@ -84,18 +84,18 @@ theorem verified_step_sound {S : ℝ} (P : Packing 11 S) {a b : PoseState}
     intro k
     by_cases hki : k = i
     · subst k
-      simpa only [replaceHull, Function.update_same] using
+      simpa only [replaceHull, Function.update_self] using
         hull_owned_of_vertices (P.squares i) vs (hvertices (P.squares i) (hs.1 i))
-    · simpa only [replaceHull, Function.update_noteq hki] using hs.2 k
+    · simpa only [replaceHull, Function.update_of_ne hki] using hs.2 k
   | promoteOwned i vs hvertices =>
     refine ⟨hs.1, ?_⟩
     intro k
     by_cases hki : k = i
     · subst k
-      simpa only [replaceHull, Function.update_same] using
+      simpa only [replaceHull, Function.update_self] using
         hull_owned_of_vertices (P.squares i) vs
           (hvertices (P.squares i) (hs.1 i) (hs.2 i))
-    · simpa only [replaceHull, Function.update_noteq hki] using hs.2 k
+    · simpa only [replaceHull, Function.update_of_ne hki] using hs.2 k
 
 theorem verified_trace_sound {S : ℝ} (P : Packing 11 S) {a b : PoseState}
     (hs : StateHolds P a) (h : VerifiedTrace a b) : StateHolds P b := by

@@ -102,31 +102,31 @@ theorem axis_fst_hasDerivAt (q₀ : Owner → UnitSquare) (i : Owner) (j : Fin 3
       (axisVelocity q₀ i j).1 0 := by
   have ht := (hasDerivAt_id (0 : ℝ)).mul_const (coordinateDelta j (coordinate i 2))
   simpa [perturbedAxis, axisVelocity, mul_comm] using
-    (ht.cos.mul_const (q₀ i).axis.1).sub (ht.sin.mul_const (q₀ i).axis.2)
+    (ht.cos.mul_const (q₀ i).axis.1).fun_sub (ht.sin.mul_const (q₀ i).axis.2)
 
 theorem axis_snd_hasDerivAt (q₀ : Owner → UnitSquare) (i : Owner) (j : Fin 33) :
     HasDerivAt (fun t => (perturbedAxis q₀ (coordinateLine j t) i).2)
       (axisVelocity q₀ i j).2 0 := by
   have ht := (hasDerivAt_id (0 : ℝ)).mul_const (coordinateDelta j (coordinate i 2))
   simpa [perturbedAxis, axisVelocity, mul_comm] using
-    (ht.sin.mul_const (q₀ i).axis.1).add (ht.cos.mul_const (q₀ i).axis.2)
+    (ht.sin.mul_const (q₀ i).axis.1).fun_add (ht.cos.mul_const (q₀ i).axis.2)
 
 theorem corner_fst_hasDerivAt (q₀ : Owner → UnitSquare) (i : Owner) (v : Fin 4)
     (j : Fin 33) :
     HasDerivAt (fun t => (perturbedCorner q₀ (coordinateLine j t) i v).1)
       (cornerVelocity q₀ i v j).1 0 := by
   simpa [perturbedCorner, cornerVelocity, perp] using
-    ((center_fst_hasDerivAt q₀ i j).add
-      ((axis_fst_hasDerivAt q₀ i j).const_mul ((cornerSigns v).1/2))).add
-        ((axis_snd_hasDerivAt q₀ i j).neg.const_mul ((cornerSigns v).2/2))
+    ((center_fst_hasDerivAt q₀ i j).fun_add
+      ((axis_fst_hasDerivAt q₀ i j).const_mul ((cornerSigns v).1/2))).fun_add
+        ((axis_snd_hasDerivAt q₀ i j).fun_neg.const_mul ((cornerSigns v).2/2))
 
 theorem corner_snd_hasDerivAt (q₀ : Owner → UnitSquare) (i : Owner) (v : Fin 4)
     (j : Fin 33) :
     HasDerivAt (fun t => (perturbedCorner q₀ (coordinateLine j t) i v).2)
       (cornerVelocity q₀ i v j).2 0 := by
   simpa [perturbedCorner, cornerVelocity, perp] using
-    ((center_snd_hasDerivAt q₀ i j).add
-      ((axis_snd_hasDerivAt q₀ i j).const_mul ((cornerSigns v).1/2))).add
+    ((center_snd_hasDerivAt q₀ i j).fun_add
+      ((axis_snd_hasDerivAt q₀ i j).const_mul ((cornerSigns v).1/2))).fun_add
         ((axis_fst_hasDerivAt q₀ i j).const_mul ((cornerSigns v).2/2))
 
 theorem normal_fst_hasDerivAt (q₀ : Owner → UnitSquare) (f : SeparationFeature)
@@ -137,7 +137,7 @@ theorem normal_fst_hasDerivAt (q₀ : Owner → UnitSquare) (f : SeparationFeatu
       (normalVelocity q₀ f j).1 0 := by
   cases h : f.perpendicular
   · simpa [h, normalVelocity] using axis_fst_hasDerivAt q₀ f.owner j
-  · simpa [h, normalVelocity, perp] using (axis_snd_hasDerivAt q₀ f.owner j).neg
+  · simpa [h, normalVelocity, perp] using (axis_snd_hasDerivAt q₀ f.owner j).fun_neg
 
 theorem normal_snd_hasDerivAt (q₀ : Owner → UnitSquare) (f : SeparationFeature)
     (j : Fin 33) :
@@ -164,18 +164,19 @@ theorem featureGap_hasDerivAt (q₀ : Owner → UnitSquare) (f : SeparationFeatu
     (v : Fin 4) (j : Fin 33) :
     HasDerivAt (fun t => featureGap q₀ f v (coordinateLine j t))
       (pairGradientFormula q₀ f v j) 0 := by
-  have hx := (corner_fst_hasDerivAt q₀ f.other v j).sub
+  have hx := (corner_fst_hasDerivAt q₀ f.other v j).fun_sub
     (center_fst_hasDerivAt q₀ f.owner j)
-  have hy := (corner_snd_hasDerivAt q₀ f.other v j).sub
+  have hy := (corner_snd_hasDerivAt q₀ f.other v j).fun_sub
     (center_snd_hasDerivAt q₀ f.owner j)
   have hn₁ := normal_fst_hasDerivAt q₀ f j
   have hn₂ := normal_snd_hasDerivAt q₀ f j
-  convert (((hx.mul hn₁).add (hy.mul hn₂)).const_mul (featureSign f)).sub_const
+  convert (((hx.fun_mul hn₁).fun_add (hy.fun_mul hn₂)).const_mul (featureSign f)).sub_const
     ((1 : ℝ)/2) using 1
-  simp only [coordinateLine_zero, perturbedCenter_zero, perturbedAxis_zero,
-    perturbedCorner_zero, pairGradientFormula, baseNormal, dot, Prod.fst_sub,
-    Prod.snd_sub]
-  ring
+  · rfl
+  · simp only [coordinateLine_zero, perturbedCenter_zero, perturbedAxis_zero,
+      perturbedCorner_zero, pairGradientFormula, baseNormal, dot, Prod.fst_sub,
+      Prod.snd_sub]
+    ring
 
 theorem gapGradient_pair (S : ℝ) (q₀ : Owner → UnitSquare) (f : SeparationFeature)
     (v : Fin 4) (j : Fin 33) :

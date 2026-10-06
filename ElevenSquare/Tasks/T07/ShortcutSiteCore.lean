@@ -26,13 +26,13 @@ theorem normalized_physicalSite (i : Fin 16) :
     rw [← seedCap_cast]
     push_cast
     rw [hi]
-    field_simp [show (seedCap : ℝ)-1 ≠ 0 by rwa [seedCap_cast]]
+    field_simp [show (seedCap : ℝ)-1 ≠ 0 by rwa [seedCap_cast]] <;> ring
   · have hi := congrArg Prod.snd hsite
     dsimp [normalizeCenter, realPoint, physicalSite] at *
     rw [← seedCap_cast]
     push_cast
     rw [hi]
-    field_simp [show (seedCap : ℝ)-1 ≠ 0 by rwa [seedCap_cast]]
+    field_simp [show (seedCap : ℝ)-1 ≠ 0 by rwa [seedCap_cast]] <;> ring
 
 theorem physicalSite_owned_of_closedCell (i : Fin 16) (q : UnitSquare)
     (hcell : ClosedCell i (normalizeCenter q.center)) :

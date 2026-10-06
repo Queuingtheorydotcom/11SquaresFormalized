@@ -1,101 +1,23 @@
-# Remaining proof obligations
+# Proof and verification status
 
-Six explicit `sorry` sites remain. The exact files and line numbers are recorded
-in `verification/admissions.json` and checked by `scripts/check_sources.py`.
-They are intentional placeholders, not certified conclusions.
+No inventoried mathematical admissions remain in the integrated snapshot.
+The completed [verification run](https://github.com/EvolvingPrograms/11SquaresEvolving/actions/runs/37414883750)
+and its final audit accepted all 7,920 local modules at source commit
+`1bf942a7af1ea330e95489d8997deebd4227ca71`. The public optimality theorem and
+lower bound passed their transitive axiom audits. These exact proof sources
+and build pins are incorporated here.
 
-## 1. Complete the baseline case family
+The result is `OPTIMALITY_PROVED_WITH_NATIVE_CERTIFICATES` with trust model
+`lean_kernel_and_native_compiler`. Expensive numerical certificates use the
+precisely inventoried `native_decide` declarations; geometry, soundness, and
+assembly retain ordinary proofs. Zero admissions does not mean kernel-only
+trust. See [the evidence report](docs/VERIFICATION_20261006.md).
 
-Three sites under `ElevenSquare/Tasks/T01/Handoff/` remain:
+Future proof or dependency changes require renewed verification. The previously
+stated 300,000-line simplification and 2–3 hour macOS compilation targets are
+not established by this run. The successful run reused validated receipts and
+must not be presented as a fresh full-build timing measurement.
 
-- `PlanData.lean:planData`: provide the full finite ancestry and branch plans.
-- `ProgramCalculations.lean:program_calculations`: check cores, walls, coverage,
-  ownership, interval coverage, and exact predecessor links for those plans.
-- `LeafCalculations.lean:leaf_calculations`: prove every terminal leaf closes.
-
-The reduced inventory covers all 1,931 baseline indices with 71 selected groups.
-Groups G003, G004, and G007 are already integrated into the dispatcher; their
-completed certificates cover 1,132 distinct required cases. The other 799 cases
-remain outside that completed union. The number of cases is not an estimate of
-remaining computational effort.
-
-The return also includes all 188 shared owned-point proofs, uniform wall and core
-lemmas, shared Bernstein sign certificates, finished parts of G005, and partial
-G070 transitions. Conditional transitions do not complete an initialized program.
-In particular, G005's completed cells and G070's terminal certificates cannot be
-used to assert a whole group exclusion before their remaining links are proved.
-
-The public `baseline_certificate_exists` and `baseline_excluded` preserve their
-original statements and inherit the three private admissions. Their definitions
-of the packing, closed cells, masks, and trace semantics are unchanged.
-
-## 2. Complete the prior-support family
-
-`ElevenSquare/Pending/S06_PriorSupport.lean:prior_certificate_exists` remains
-admitted. It requires an initialized `VerifiedTrace` ending in `Terminal` for
-all 76 prior indices. Its original baseline-exclusion premise is deliberate.
-Early D4 cuts must use that premise, without appealing circularly to the final
-symmetry or optimality result.
-
-Case1000 is proved through archived steps0 and1. The checked continuation
-establishes genuine predecessor/self-cut implications, all 64 closed rows in
-step1, normalized integer coverage, strict ownership promotion, preservation of
-the owner permutation, and transport to the exact archived outer state.
-
-For the straightforward full case1000 chain, nonterminal steps2–11, linkage of
-terminal step12, and the final contradiction still remain. The other cases also
-need their full ancestry, refined intervals, branch coverage, and special
-collision/support mechanisms. Existing conditional terminal-row results are
-useful components, not a complete case exclusion.
-
-## 3. Complete the returned-exclusion family
-
-`ElevenSquare/Pending/S06_Returned.lean:returned_certificate_exists` remains
-admitted for the 173 returned indices. No completed T03 case-family return was
-among the supplied files. The generic terminal-trace wrapper is present, but it
-still needs actual initialized certificates for every assigned index.
-
-## 4. Complete case438 capture into the local rectangle
-
-`ElevenSquare/Tasks/T07/UnfinishedCapture.lean:case438_near_certificate` remains
-admitted. Its type is the existing `Case438NearCertificate` interface: every
-centered case438 packing of side at most `T` must admit a representation in the
-focused local rectangle at the same physical side length.
-
-This named obligation replaces the old opaque `sorry` body of the public
-`global_lower_bound`. The public theorem now uses the returned, checked
-`global_lower_bound_of_case438_certificate` composition. The three unfinished
-exclusion families remain upstream dependencies of that composition.
-
-The T07 return supplies occupied-cell seed geometry, role and chart transport,
-physical field conversion, far-row collisions, terminal polygon/triangle checks,
-strict core fits, and conditional near-box/rigidity interfaces. It does not
-supply the complete trace from the genuine occupied seed to the stronger
-archived root and branch states.
-
-Remaining work includes the phase 2/root ancestry, both promoted terminal partner
-hulls' actual ownership, all required far-branch eliminations, and final near-row
-inclusion. The returned counterexamples rule out direct promotion from mere
-closed-cell occupancy and a simple rowwise near inclusion. They are obstructions
-to proposed shortcuts, not counterexamples to the optimality theorem.
-
-## Completed stages to preserve
-
-- Exact construction, geometric foundations, closed-cell cover, and finite case
-  reduction.
-- Generic owned-hull, core, residual-cover, trace, and local analytic arguments.
-- The finite case inventory, overlay, strict distance bans, finite search, and
-  conditional D4 bridge, including the previously checked integration fixes.
-- The T01 groups and the initialized two-step T02 milestone described above.
-- **T06:** `exact_local_packet_exists` and `construction_locally_isolated` have
-  complete returned proofs. They cover the actual nonlinear gap aliases,
-  derivatives, Taylor bounds, excluded features, branch cover, and 128 exact dual
-  branches. The return reports clean audits with only the three standard axioms.
-
-## Closing the proof
-
-Discharge the six sites while preserving their semantics, then run the full
-fresh source build and axiom audit. The final `global_lower_bound`,
-`optimal_side_lower_bound`, and `optimality` must have no `sorryAx` or custom
-computational axiom in their transitive dependency sets. A successful build of
-this admitted snapshot alone does not satisfy that requirement.
+The earlier six-obligation state and original assembly manifest remain in Git
+history at `b237948fa44eb8876ed87eeb21329ab5577c833c`. Historical handoffs describe
+older checkpoints, not outstanding admissions in the current proof.

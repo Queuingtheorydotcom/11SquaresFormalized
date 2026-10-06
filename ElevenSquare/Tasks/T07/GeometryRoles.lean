@@ -16,7 +16,7 @@ theorem occupied_has_role_order {U : ℝ} (P : Packing 11 U)
   intro i
   have h := howner (roleOwner i)
   rw [role_cell_correspondence] at h
-  simpa only [Equiv.trans_apply, rolePermutation] using h
+  simpa only [Equiv.trans_apply, rolePermutation, Equiv.coe_ofBijective] using h
 
 /-- The D4 reduction, increasing-cell owner order, and role permutation all
 preserve the centered whole-square bound. -/

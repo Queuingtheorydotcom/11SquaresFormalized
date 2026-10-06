@@ -23,8 +23,8 @@ theorem near_root_bounds : nearRootLo ≤ u ∧ u ≤ nearRootHi := by
 
 theorem near_power_bounds (k : ℕ) : nearRootLo^k ≤ u^k ∧ u^k ≤ nearRootHi^k := by
   have h := near_root_bounds
-  exact ⟨pow_le_pow_left (by norm_num [nearRootLo]) h.1 k,
-    pow_le_pow_left (by linarith [show 0 ≤ u from le_trans (by norm_num [nearRootLo]) h.1]) h.2 k⟩
+  exact ⟨pow_le_pow_left₀ (by norm_num [nearRootLo]) h.1 k,
+    pow_le_pow_left₀ (by linarith [show 0 ≤ u from le_trans (by norm_num [nearRootLo]) h.1]) h.2 k⟩
 
 private def center00Coeffs : Fin 8 → ℚ :=
   ![-3/4, -37/16, 5/2, -35/16, -4, -15/16, 15/4, -25/16]

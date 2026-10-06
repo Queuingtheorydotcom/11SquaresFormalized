@@ -33,7 +33,7 @@ theorem halfplane_convex (l : Halfplane) : Convex ℝ {p : Point | l.contains p}
     · intro a x
       dsimp
       ring
-  exact convex_halfspace_le hlin (l.c : ℝ)
+  exact convex_halfSpace_le hlin (l.c : ℝ)
 
 theorem polygon_convex (P : Polygon) : Convex ℝ P.carrier := by
   intro x hx y hy a b ha hb hab l hl

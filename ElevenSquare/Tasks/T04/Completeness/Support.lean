@@ -18,7 +18,7 @@ theorem sourcePlane_sound (g : Fin 4) (i : Fin 16) (j : Fin 20)
     (sourcePlane g i j).rational.contains p := by
   have hp := (integerViewPlanes_correct g (integerCellPlanes i) p).mpr
     ((integerCellPlanes_correct i (view g p)).mpr h)
-  exact hp _ (List.get_mem _ _ _)
+  exact hp _ (List.get_mem _ _)
 
 def refutationCheck (l m n : IntegerPlane) (u v w : ℤ) : Bool :=
   decide (0 ≤ u ∧ 0 ≤ v ∧ 0 ≤ w ∧

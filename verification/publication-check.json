@@ -1,0 +1,21 @@
+{
+  "status": "EXACT_SOURCE_COPY_NOT_LEAN_ACCEPTANCE",
+  "source_checkpoint": "34e6b03536469379445bc7f87119cbb06d118f77",
+  "proof_modules_identical": 7906,
+  "pinned_configuration_identical": true,
+  "theorem_closure": {
+    "lines": 394204,
+    "modules": 6326,
+    "bytes": 1087162218
+  },
+  "full_lean_replay_performed": false,
+  "source_audit": {
+    "local_modules": 7906,
+    "explicit_admissions": 0
+  },
+  "verification_infrastructure_tests": {
+    "existing_verifier_and_finalizer": 34,
+    "runner_regressions": 7
+  },
+  "git_history": "fresh root commit; previous history not imported"
+}

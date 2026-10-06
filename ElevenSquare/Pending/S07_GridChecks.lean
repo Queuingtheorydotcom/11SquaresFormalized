@@ -54,7 +54,7 @@ theorem related_mem {α β : Type*} {R : α → β → Prop} {as : List α} {bs 
   | @cons a b as bs hab habs ih =>
     intro x hx
     rcases List.mem_cons.mp hx with rfl | hx
-    · exact ⟨b, List.mem_cons_self b bs, hab⟩
+    · exact ⟨b, List.mem_cons_self, hab⟩
     · obtain ⟨y, hy, hxy⟩ := ih x hx
       exact ⟨y, List.mem_cons_of_mem b hy, hxy⟩
 
@@ -69,13 +69,13 @@ theorem rows_bound (ps qs : List QPoint) (as bs : List GridPoint)
 
 -- Array alignment preserves the original record order, including degenerate regions.
 def ArrayAligned {α β : Type*} (R : α → β → Prop) (xs : Array α) (ys : Array β) : Prop :=
-  List.Forall₂ R xs.data ys.data
+  List.Forall₂ R xs.toList ys.toList
 
 theorem ArrayAligned.append {α β : Type*} {R : α → β → Prop}
     {xs xs' : Array α} {ys ys' : Array β}
     (h : ArrayAligned R xs ys) (h' : ArrayAligned R xs' ys') :
     ArrayAligned R (xs ++ xs') (ys ++ ys') := by
-  simp only [ArrayAligned, Array.append_data]
+  simp only [ArrayAligned, Array.toList_append]
   exact List.rel_append h h'
 
 theorem ArrayAligned.get! {α β : Type*} [Inhabited α] [Inhabited β]

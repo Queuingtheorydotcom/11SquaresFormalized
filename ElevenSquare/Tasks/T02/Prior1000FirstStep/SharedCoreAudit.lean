@@ -1,6 +1,0 @@
-import ElevenSquare.Tasks.T02.Prior1000FirstStep.SharedCoreComplete
-
-#print axioms ElevenSquare.Tasks.T02.Prior1000FirstStep.SharedCore.mixed_plan_checked
-#print axioms ElevenSquare.Tasks.T02.Prior1000FirstStep.SharedCore.integer_pruned_state_holds
-#print axioms ElevenSquare.Tasks.T02.Prior1000FirstStep.SharedCore.integer_first_step_holds
-#print axioms ElevenSquare.Tasks.T02.Prior1000FirstStep.SharedCore.case1000_after_integer_first_step

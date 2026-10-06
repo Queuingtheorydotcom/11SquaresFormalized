@@ -1,5 +1,5 @@
 import ElevenSquare.Tasks.T07.CoordinateBridge
-import ElevenSquare.Pending.S08_ExactPacket
+import ElevenSquare.Simplified.LocalCommonIsolation
 import ElevenSquare.Construction
 
 /-! The local packet identifies an anchored packing with the exact construction.
@@ -43,7 +43,7 @@ theorem focused_centered_requires_T {S : ℝ} (P : Packing 11 T)
       (P.squares i).axis = perturbedAxis constructionSquare h i) : T ≤ S := by
   have hfeasible : LocalFeasible T constructionSquare h := ⟨P, hrepresentation⟩
   exact centered_zero_displacement_requires_T P hsmall h hrepresentation
-    (construction_locally_isolated h hrect hfeasible)
+    (ElevenSquare.Simplified.LocalCommon.construction_locally_isolated h hrect hfeasible)
 
 end
 end ElevenSquare.Tasks.T07

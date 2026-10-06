@@ -1,0 +1,22 @@
+{
+  "note": "Source-only mechanical extraction; moved definition blocks byte-identical. Lean acceptance pending.",
+  "original_data_sha256": "10ace1d75ac3b854918439e877eceb4a23e12b156aef78044e03b021446af217",
+  "preserved_blocks": {
+    "labels": "d2e8b0dc46d4a4393aeb6cca15c560bc1aafaa8162debe52b25a18c0ee76ec6e",
+    "views_masks": "f009a9a111d5b8b26d15e3ef450341e2f17fd6bd2d6672ddd00bc1e35f0b174b",
+    "legacy_vertices_and_pairs": "5c86c24ab01b1b3a8329376a9df41a9d9b1cf48ed4f3fef2c0a74b637c970d68",
+    "legacy_pairBanned_and_end": "5ad13175988af2cbd93c11f65dd6ab02452a34cfd779fa918469bf48e33a6265",
+    "LabelGood": "2b27230eea0fae03ffed8e0c20630955797197b6b1185c5bcfdde67c47136f0a"
+  },
+  "closure_removed": {
+    "ElevenSquare.Pending.S07_BanMembershipSupport": 84,
+    "ElevenSquare.Pending.S07_Data": 2195,
+    "ElevenSquare.Pending.S07_EncodedSemanticSupport": 7
+  },
+  "closure_added": {
+    "ElevenSquare.Pending.S07_EncodedLabelSemanticSupport": 8,
+    "ElevenSquare.Pending.S07_LabelData": 271
+  },
+  "closure_before_lines": 372084,
+  "closure_after_lines": 370077
+}

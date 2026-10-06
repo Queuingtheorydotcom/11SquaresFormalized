@@ -89,8 +89,7 @@ noncomputable def halfAngleAxis (t : ℝ) : Point :=
 theorem halfAngleAxis_unit (t : ℝ) : normSq (halfAngleAxis t) = 1 := by
   have hd : 1 + t^2 ≠ 0 := by positivity
   dsimp [halfAngleAxis, normSq, dot]
-  field_simp [hd]
-  ring
+  field_simp [hd] <;> ring
 
 theorem firstQuadrant_halfAngle (a b : ℝ) (ha : 0 ≤ a) (hb : 0 ≤ b)
     (hu : a*a + b*b = 1) :
@@ -100,7 +99,7 @@ theorem firstQuadrant_halfAngle (a b : ℝ) (ha : 0 ≤ a) (hb : 0 ≤ b)
   have hb1 : b ≤ 1 := by nlinarith [sq_nonneg a]
   have ht0 : 0 ≤ b / (1 + a) := div_nonneg hb (le_of_lt hd)
   have ht1 : b / (1 + a) ≤ 1 := by
-    apply (div_le_iff hd).2
+    apply (div_le_iff₀ hd).2
     linarith
   refine ⟨ht0, ht1, ?_⟩
   have he : 1 + (b / (1 + a))^2 = 2 / (1 + a) := by

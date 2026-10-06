@@ -1,0 +1,40 @@
+{
+  "kind": "single-real-T07-certificate-runtime-comparison",
+  "full_proof_timed": false,
+  "source_sha256": "c14725769d676d9484ad7688ca1b6e7563444bc37c14279c37ebb0e856f15910",
+  "checker_source_sha256": "120e4c80a15db7f1fcc2942efd499c4e845dbfd9a1ba4826e5e9ae7ea9a52f84",
+  "helper_sha256": "a3b8ebfa62a3904170db2a4e7ee60ca2bd7e4cc98b58c1e1e5176e79945f06eb",
+  "arguments": [
+    "-j1",
+    "-M3072",
+    "-s65536",
+    "-DautoImplicit=false",
+    "-DmaxHeartbeats=0"
+  ],
+  "runs": [
+    {
+      "variant": "definitions",
+      "exit_code": 0,
+      "elapsed_seconds": 14.592,
+      "child_peak_rss_bytes_cumulative": 1622999040,
+      "cpu_seconds": 3.117,
+      "source_sha256": "a8a0e8ae438fb2815120cb82c8d159eceab85e54a16efc7924e4681dc260d76b"
+    },
+    {
+      "variant": "original",
+      "exit_code": 0,
+      "elapsed_seconds": 15.957,
+      "child_peak_rss_bytes_cumulative": 1622999040,
+      "cpu_seconds": 4.128,
+      "source_sha256": "283afd6dc877bb64fc18f8974ad343dd1a93b2aab1ccbfb453b1c4156e57e6d4"
+    },
+    {
+      "variant": "reconstructed",
+      "exit_code": 0,
+      "elapsed_seconds": 15.579,
+      "child_peak_rss_bytes_cumulative": 1768882176,
+      "cpu_seconds": 4.424,
+      "source_sha256": "2a1311a72d0cc1b30ba3939d259ab78c08a224e58d615010a70205b9b5d69c45"
+    }
+  ]
+}

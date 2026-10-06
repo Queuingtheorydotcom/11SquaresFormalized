@@ -1,6 +1,6 @@
 import Mathlib.Data.Finset.Powerset
 import Mathlib.Data.Fintype.Fin
-import Mathlib.Algebra.BigOperators.Group.Finset
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Tactic.NormNum
 import Mathlib.Algebra.BigOperators.Fin
 import ElevenSquare.CaseCountSupport
@@ -90,7 +90,7 @@ theorem maskWeight_halfTurn_ne (m : CellMask) (hm : m.card = 11) :
   have hb (i : Fin 16) : (if i ∈ m then (1 : ℕ) else 0) ≤ 1 := by
     split_ifs <;> decide
   simp only [Fin.sum_univ_succ, Fin.sum_univ_zero, add_zero] at hc hw
-  norm_num only [Fin.val_zero, Fin.val_succ] at hw
+  norm_num [Fin.succ] at hc hw
   apply binary_weight_odd_no_tie
     (if (0 : Fin 16) ∈ m then 1 else 0) (if (1 : Fin 16) ∈ m then 1 else 0) (if (2 : Fin 16) ∈ m then 1 else 0) (if (3 : Fin 16) ∈ m then 1 else 0) (if (4 : Fin 16) ∈ m then 1 else 0) (if (5 : Fin 16) ∈ m then 1 else 0) (if (6 : Fin 16) ∈ m then 1 else 0) (if (7 : Fin 16) ∈ m then 1 else 0) (if (8 : Fin 16) ∈ m then 1 else 0) (if (9 : Fin 16) ∈ m then 1 else 0) (if (10 : Fin 16) ∈ m then 1 else 0) (if (11 : Fin 16) ∈ m then 1 else 0) (if (12 : Fin 16) ∈ m then 1 else 0) (if (13 : Fin 16) ∈ m then 1 else 0) (if (14 : Fin 16) ∈ m then 1 else 0) (if (15 : Fin 16) ∈ m then 1 else 0)
     (hb 0) (hb 1) (hb 2) (hb 3) (hb 4) (hb 5) (hb 6) (hb 7) (hb 8) (hb 9) (hb 10) (hb 11) (hb 12) (hb 13) (hb 14) (hb 15)

@@ -1,0 +1,20 @@
+import Sqpack.S11Opt.Simplified.ComplementaryTree
+import Sqpack.S11Opt.F25.Data
+
+namespace SquarePacking.S11Opt.Bundled.F25
+section
+open SquarePacking.S11Opt.F25
+open FieldTree
+open SquarePacking.S11Opt.Simplified
+
+theorem cov10p39_1 : CovF G.Q G.M G.R G.hps10 opts10 10277383478 10342430209 11578318095 11708411557 3014656 3145728 :=
+  ComplementaryTree.soundDec G.Q G.M G.R 4096 200 1600792410428202219191437080059589073299031409781139954046596701253670243997615597554797187321895821805680641441180196805000991079378400648530021312970345731759842235738443376617376072420367531038295609212441917055448050044459244177323848634377 G.Q_pos G.R_pos G.hps10 opts10 (by native_decide)
+
+theorem cov10p4_1 : CovF G.Q G.M G.R G.hps10 opts10 8325981552 9366729246 10407476940 12488972328 2097152 4194304 :=
+  ComplementaryTree.soundDec G.Q G.M G.R 4096 200 587206658 G.Q_pos G.R_pos G.hps10 opts10 (by native_decide)
+
+end
+end SquarePacking.S11Opt.Bundled.F25
+
+#print axioms SquarePacking.S11Opt.Bundled.F25.cov10p39_1
+#print axioms SquarePacking.S11Opt.Bundled.F25.cov10p4_1

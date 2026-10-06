@@ -1,0 +1,25 @@
+{
+  "full_proof_verified": false,
+  "active_proof": false,
+  "modules": [
+    {
+      "module": "ElevenSquare.Tasks.T07.Ext.DirectSupport",
+      "source_sha256": "8794d11e21631dfcea04be958770d5452c2e6ce47eb8059534089653230547e8",
+      "object_sha256": "ef51d1b47b8ef4072539a66dae022de42f12dc12877fd87858c51d982b23c7f8",
+      "status": "accepted",
+      "elapsed_seconds": 11.68
+    },
+    {
+      "module": "ElevenSquare.Tasks.T07.Ext.DirectTree",
+      "source_sha256": "594e8e0993ac50efc1526e313921c02bd4e2e66363e556dfe6e825e502ca3544",
+      "object_sha256": "d8d6f65f3fe7596ad03c4716e2f78e90fde335fcd64c1506b0d6cbfb550590c6",
+      "status": "accepted",
+      "elapsed_seconds": 2.59
+    }
+  ],
+  "allowed_reported_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ]
+}

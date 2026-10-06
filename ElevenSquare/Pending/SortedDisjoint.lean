@@ -60,7 +60,7 @@ theorem blocks_disjoint {xs ys : List ℕ} {n m a b c d : ℕ}
     (hx : Block id xs n a b) (hy : Block id ys m c d)
     (h : disjointScan (n+m) xs ys = true) : xs.Disjoint ys := by
   exact disjointScan_sound (n+m) xs ys
-    (List.chain'_iff_pairwise.mp hx.ordered) (List.chain'_iff_pairwise.mp hy.ordered) h
+    (List.isChain_iff_pairwise.mp hx.ordered) (List.isChain_iff_pairwise.mp hy.ordered) h
 
 end ElevenSquare.Pending.OrderedData
 #print axioms ElevenSquare.Pending.OrderedData.blocks_disjoint

@@ -1,0 +1,191 @@
+{
+  "format_version": 1,
+  "scope": "Enable executable code for finite field-certificate data; definition bodies and types are unchanged.",
+  "files": {
+    "Sqpack/S11Opt/F20/Data.lean": {
+      "upstream_sha256": "32558a6f780ece4b67abf72119dc2a5569ec71d1a170367be4788220ead1aab0",
+      "sha256": "a3469a84aeb7f0b88a59aa40c7c09064ec659a4f776a8c6ef215393db6df1c0f",
+      "declarations": [
+        "atom0",
+        "atom1",
+        "atom2",
+        "atoms",
+        "opts1",
+        "opts4",
+        "opts5",
+        "opts9"
+      ]
+    },
+    "Sqpack/S11Opt/F23/Data.lean": {
+      "upstream_sha256": "8b59d92a755b849340c3d5eac56df658e75f02568660554a54f4cc2850807a62",
+      "sha256": "d1a577d00a8cebd466e687b137902c47856b610babe72bab43743893fd4e717d",
+      "declarations": [
+        "atom0",
+        "atom1",
+        "atom2",
+        "atoms",
+        "opts4",
+        "opts5",
+        "opts6",
+        "opts11"
+      ]
+    },
+    "Sqpack/S11Opt/F25/Data.lean": {
+      "upstream_sha256": "eec883963c667c0d2df29a7e127d67d2df291aaa016dff86402c825d6f3312e4",
+      "sha256": "317a7021052606454996753fb23261ace9775d9732cdbb591f954ea8ad663db4",
+      "declarations": [
+        "atom0",
+        "atom1",
+        "atom2",
+        "atom3",
+        "atom4",
+        "atom5",
+        "atoms",
+        "opts6",
+        "opts7",
+        "opts8",
+        "opts9",
+        "opts10",
+        "opts11"
+      ]
+    },
+    "Sqpack/S11Opt/F26/Data.lean": {
+      "upstream_sha256": "b6ae9d6fe5ab7c3c2858334ba2c54f4efe2059ac8833ace06e5af01296dd3643",
+      "sha256": "10f46c76a8e430e2a3e9dc321c73cca38415f22545a01bf32b40ac72d9af07e7",
+      "declarations": [
+        "atom0",
+        "atom1",
+        "atom2",
+        "atoms",
+        "opts1",
+        "opts5",
+        "opts9",
+        "opts10"
+      ]
+    },
+    "Sqpack/S11Opt/F31/Data.lean": {
+      "upstream_sha256": "1ca3e1ac90f05885bb80611435308c90e938f3f4325f8c5c1402ce06b1571da8",
+      "sha256": "ffc516032344a6e629a627d68b5881fe25be869e20168f80c19cdb528b8fa023",
+      "declarations": [
+        "atom0",
+        "atom1",
+        "atom2",
+        "atom3",
+        "atoms",
+        "opts6",
+        "opts9",
+        "opts10",
+        "opts14"
+      ]
+    },
+    "Sqpack/S11Opt/F35/Data.lean": {
+      "upstream_sha256": "990830ed6c1f55016acf2554457ca4663a7d8c79591132f3e6c6da177abecb44",
+      "sha256": "d97fdce1d4973e58e2591ecf87aea87145a5d670e2652ff8e3b93fed434da9a3",
+      "declarations": [
+        "atom0",
+        "atom1",
+        "atom2",
+        "atom3",
+        "atom4",
+        "atom5",
+        "atom6",
+        "atom7",
+        "atom8",
+        "atoms",
+        "opts5",
+        "opts6",
+        "opts9",
+        "opts10",
+        "opts14"
+      ]
+    },
+    "Sqpack/S11Opt/F36/Data.lean": {
+      "upstream_sha256": "2c2ffef0359c6b28cf5ec1e95e174b15903712cbdb0ed14ac8aa3d1ff6b02a11",
+      "sha256": "7f7f40ee3a64c38b2ced186d7a80b50df69b0c941470164a00e04ea27b993f24",
+      "declarations": [
+        "atom0",
+        "atom1",
+        "atom2",
+        "atom3",
+        "atom4",
+        "atom5",
+        "atoms",
+        "opts0",
+        "opts1",
+        "opts2",
+        "opts7",
+        "opts11",
+        "opts15"
+      ]
+    },
+    "Sqpack/S11Opt/F48/Data.lean": {
+      "upstream_sha256": "da0cfbdf22829f6a510c93bf6f65e8ff22ada945969df964f392e3525ae24f71",
+      "sha256": "396472e0ff1b07e2b21557ad600cc71f506d13098d03e7b7b9e1d20dc62e44e9",
+      "declarations": [
+        "atom0",
+        "atom1",
+        "atom2",
+        "atom3",
+        "atom4",
+        "atom5",
+        "atoms",
+        "opts5",
+        "opts6",
+        "opts7",
+        "opts9",
+        "opts10",
+        "opts11"
+      ]
+    },
+    "Sqpack/S11Opt/F50/Data.lean": {
+      "upstream_sha256": "fdbf139bcbaae273456e6edcb1acb968861c8351a39aa7cc422067789c4fabf9",
+      "sha256": "68a878faccaa3e57d1802be75abdea22898ff34b494c2956ecae993182eb45c5",
+      "declarations": [
+        "atom0",
+        "atom1",
+        "atom2",
+        "atom3",
+        "atoms",
+        "opts2",
+        "opts4",
+        "opts5",
+        "opts9"
+      ]
+    },
+    "Sqpack/S11Opt/F53/Data.lean": {
+      "upstream_sha256": "d80ad4b449dd65658c47b8619f002f40761a24b0a37e0d283552063b01314225",
+      "sha256": "2537f6c139d8564bd2e049ea76bdce8f74fae9dc5ea8fed225ad41618d3ca23d",
+      "declarations": [
+        "atom0",
+        "atom1",
+        "atom2",
+        "atom3",
+        "atom4",
+        "atoms",
+        "opts1",
+        "opts5",
+        "opts9",
+        "opts10",
+        "opts13",
+        "opts14"
+      ]
+    },
+    "Sqpack/S11Opt/F58/Data.lean": {
+      "upstream_sha256": "3418e0de62354a6c1117aa2d8ac6a8f97b89e2c5493744e47dc999016fadb5ef",
+      "sha256": "336cf9e96a431584d094bd16db2a907a0a1ae2922c5f1c10f8fd658191a55eb3",
+      "declarations": [
+        "atom0",
+        "atom1",
+        "atom2",
+        "atom3",
+        "atom4",
+        "atom5",
+        "atoms",
+        "opts2",
+        "opts5",
+        "opts9",
+        "opts10"
+      ]
+    }
+  }
+}

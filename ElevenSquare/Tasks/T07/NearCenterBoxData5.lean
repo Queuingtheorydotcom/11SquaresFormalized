@@ -19,7 +19,7 @@ theorem nearCenterBox5_numeric :
   have hr1 : focusedRadii (coordinate (5 : Owner) (1 : Fin 3)) = (534153/500000000 : ℝ) := by rfl
   rw [hr0, hr1]
   dsimp only [nearBox5]
-  simp only [Rat.cast_mk]
+  simp only [Rat.cast_divInt]
   norm_num [nearCenter50Hi, nearCenter50Lo, nearCenter51Hi,
     nearCenter51Lo, nearBox5, fieldScale, coverCap]
 
@@ -30,7 +30,7 @@ theorem finalNear_center_role5 (p : Point) (hp : InFinalNearCenter (5 : Fin 11) 
       focusedRadii (coordinate (5 : Owner) (1 : Fin 3)) := by
   have hbox : inRect (nearBox5.lx : ℝ) (nearBox5.hx : ℝ)
       (nearBox5.ly : ℝ) (nearBox5.hy : ℝ) p := by
-    simpa only [nearFieldBox] using finalNear_center_field_enclosure (5 : Fin 11) p hp
+    simpa [nearFieldBox] using finalNear_center_field_enclosure (5 : Fin 11) p hp
   rcases nearCenterBox5_numeric with ⟨hxl, hxr, hyl, hyr⟩
   exact ⟨field_rectangle_local_x hbox nearCenter50_bounds hxl hxr,
     field_rectangle_local_y hbox nearCenter51_bounds hyl hyr⟩

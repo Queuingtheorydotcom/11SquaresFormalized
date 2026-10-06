@@ -1,4 +1,4 @@
-import ElevenSquare.Pending.S07_EncodedSemanticSupport
+import ElevenSquare.Pending.S07_EncodedLabelSemanticSupport
 namespace ElevenSquare.Pending.EncodedSearch
 def MaskRep (k : ℕ) (m : Finset (Fin 16)) : Prop := ∀ j : Fin 16, j ∈ m ↔ j.val ∈ mask k
 theorem raw_masks_eq : otherRawMasks = {{0,1,2,4,6,7,9,10,12,14,15}, {0,1,3,5,6,8,9,11,12,13,14}, {0,1,3,5,6,8,9,11,13,14,15}, {0,2,3,4,5,6,7,11,12,13,14}, {1,2,3,4,6,7,9,10,12,14,15}, {1,2,3,4,8,9,10,11,12,13,15}} := by decide

@@ -25,7 +25,7 @@ theorem IntegerPlane.fractionCheck_sound (l : IntegerPlane) (nx dx ny dy : ℤ)
       (l.c:ℝ)*(dx:ℝ)*(dy:ℝ) := by exact_mod_cast hn.2.2
   change ((l.a:ℚ):ℝ)*((nx/dx:ℚ):ℝ)+((l.b:ℚ):ℝ)*((ny/dy:ℚ):ℝ) ≤ ((l.c:ℚ):ℝ)
   push_cast
-  apply (mul_le_mul_right (mul_pos hx hy)).mp
+  apply (mul_le_mul_iff_of_pos_right (mul_pos hx hy)).mp
   calc
     _ = (l.a:ℝ)*(nx:ℝ)*(dy:ℝ)+(l.b:ℝ)*(ny:ℝ)*(dx:ℝ) := by
       field_simp [ne_of_gt hx, ne_of_gt hy]

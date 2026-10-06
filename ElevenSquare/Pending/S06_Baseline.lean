@@ -3,16 +3,15 @@ import ElevenSquare.Tasks.T01.Exclusion
 import ElevenSquare.Orientation
 import ElevenSquare.Cases
 import ElevenSquare.Pending.S06_Data
+import ElevenSquare.Pending.S06_Exclusion
 import ElevenSquare.Pending.S05_Trace
 
-/-! UNFINISHED FORMALIZATION OBLIGATIONS. See handoffs/S06_Baseline.md.
-Every `sorry` in this file is an explicit outstanding proof, not verified evidence. -/
+/-! Baseline source wiring through the complete published field and generic
+families. Native group proofs remain independent. The public contract is unchanged. Full compiler and
+axiom acceptance of the new dependency path remains to be checked. -/
 
 namespace ElevenSquare.Pending
 noncomputable section
-
-def Excluded (k : Fin 2184) : Prop :=
-  ∀ P : Packing 11 coverCap, ¬ Occupies P (caseMask k)
 
 -- Build a root, a trace, and a terminal state for EACH actual index.
 -- Initial ownership must come from geometry, including all ancestors and angle seams.
@@ -31,3 +30,6 @@ theorem baseline_excluded (k : Fin 2184) (hk : k.val ∈ baselineIndices) : Excl
 
 end
 end ElevenSquare.Pending
+
+#print axioms ElevenSquare.Pending.baseline_certificate_exists
+#print axioms ElevenSquare.Pending.baseline_excluded

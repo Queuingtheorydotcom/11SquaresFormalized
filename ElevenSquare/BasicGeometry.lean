@@ -129,7 +129,7 @@ theorem closed_projection_bound {q : UnitSquare} {p : Point}
   calc
     |localX q p * dot q.axis v + localY q p * dot (perp q.axis) v|
         ≤ |localX q p * dot q.axis v| + |localY q p * dot (perp q.axis) v| :=
-      abs_add _ _
+      abs_add_le _ _
     _ = |localX q p| * |dot q.axis v| + |localY q p| * |dot (perp q.axis) v| := by
       rw [abs_mul, abs_mul]
     _ ≤ (1 / 2) * |dot q.axis v| + (1 / 2) * |dot (perp q.axis) v| :=
@@ -166,7 +166,7 @@ theorem open_projection_lt {q : UnitSquare} {p : Point}
       linarith
   rw [dot_reconstruction]
   exact lt_of_le_of_lt (by simpa only [abs_mul] using
-    (abs_add (localX q p * dot q.axis v) (localY q p * dot (perp q.axis) v))) hsum
+    (abs_add_le (localX q p * dot q.axis v) (localY q p * dot (perp q.axis) v))) hsum
 
 theorem separated_interiors (a b : UnitSquare) (v : Point)
     (hv : 0 < normSq v)

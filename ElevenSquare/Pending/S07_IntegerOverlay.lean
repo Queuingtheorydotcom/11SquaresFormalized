@@ -47,7 +47,7 @@ theorem integerViewPlanes_correct (g : Fin 4) (ls : List IntegerPlane) (p : Poin
     exact (viewPlane_correct g m.rational p).mpr (h m hm)
 
 def integerOverlayPlanes (labels : Fin 4 → Fin 16) : List IntegerPlane :=
-  (List.finRange 4).bind (fun g => integerViewPlanes g (integerCellPlanes (labels g)))
+  (List.finRange 4).flatMap (fun g => integerViewPlanes g (integerCellPlanes (labels g)))
 
 theorem integerOverlayPlanes_correct (labels : Fin 4 → Fin 16) (p : Point) :
     p ∈ IntegerCarrier (integerOverlayPlanes labels) ↔
@@ -57,9 +57,9 @@ theorem integerOverlayPlanes_correct (labels : Fin 4 → Fin 16) (p : Point) :
     apply (integerCellPlanes_correct _ _).mp
     apply (integerViewPlanes_correct g _ p).mp
     intro l hl
-    exact h l (List.mem_bind.mpr ⟨g,List.mem_finRange g,hl⟩)
+    exact h l (List.mem_flatMap.mpr ⟨g,List.mem_finRange g,hl⟩)
   · intro h l hl
-    obtain ⟨g, _, hl⟩ := List.mem_bind.mp hl
+    obtain ⟨g, _, hl⟩ := List.mem_flatMap.mp hl
     exact (integerViewPlanes_correct g _ p).mpr ((integerCellPlanes_correct _ _).mpr (h g)) l hl
 
 structure FractionPoint where

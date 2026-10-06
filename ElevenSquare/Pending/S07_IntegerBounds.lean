@@ -37,13 +37,13 @@ theorem IntegerPlane.xBoundCheck_sound (l : IntegerPlane) (n d : ℤ)
   cases lower with
   | false =>
     have ha : (0:ℝ)<(l.a:ℝ) := by exact_mod_cast hn.2.2.2
-    apply (le_div_iff hd).mpr
+    apply (le_div_iff₀ hd).mpr
     by_contra hc
     have : 0 < (l.a:ℝ)*((d:ℝ)*p.1-(n:ℝ)) := mul_pos ha (by nlinarith)
     linarith
   | true =>
     have ha : (l.a:ℝ)<0 := by exact_mod_cast hn.2.2.2
-    apply (div_le_iff hd).mpr
+    apply (div_le_iff₀ hd).mpr
     by_contra hc
     have : 0 < (l.a:ℝ)*((d:ℝ)*p.1-(n:ℝ)) := mul_pos_of_neg_of_neg ha (by nlinarith)
     linarith

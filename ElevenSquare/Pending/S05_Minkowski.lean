@@ -44,8 +44,8 @@ theorem prune_rows_sound {S : ℝ} (P : Packing 11 S) (s : PoseState)
   intro k
   by_cases hki : k = i
   · subst k
-    simpa only [replaceRows, Function.update_same] using hkeep
-  · simpa only [replaceRows, Function.update_noteq hki] using hs.1 k
+    simpa only [replaceRows, Function.update_self] using hkeep
+  · simpa only [replaceRows, Function.update_of_ne hki] using hs.1 k
 
 -- A universal collision kernel uses ALL poses of the partner. This antecedent
 -- cannot be justified from only one representative orientation or center.
@@ -68,8 +68,8 @@ theorem universal_collision_prune {S : ℝ} (P : Packing 11 S) (s : PoseState)
   intro k
   by_cases hki : k = i
   · subst k
-    simpa only [replaceRows, Function.update_same] using hkeep
-  · simpa only [replaceRows, Function.update_noteq hki] using hs.1 k
+    simpa only [replaceRows, Function.update_self] using hkeep
+  · simpa only [replaceRows, Function.update_of_ne hki] using hs.1 k
 
 
 end

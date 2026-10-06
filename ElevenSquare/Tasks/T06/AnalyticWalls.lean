@@ -68,7 +68,7 @@ theorem wall_gap_radial_hasDerivAt (S : ℝ) (q₀ : Owner → UnitSquare)
     (wallConstant S q₀ i w)
   have hb := trigAffine_hasDerivAt (wallCosCoefficient q₀ i v w) 0
     (wallSinCoefficient q₀ i v w) 0 (h (coordinate i 2)) t
-  convert ha.add hb using 1 <;> try simp only [mul_one]
+  convert ha.fun_add hb using 1 <;> try simp only [mul_one]
   funext z
   exact wall_gap_radial S q₀ h i v w z
 

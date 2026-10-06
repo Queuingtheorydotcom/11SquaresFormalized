@@ -1,6 +1,6 @@
 import ElevenSquare.Pending.S06_CasesExact
 import ElevenSquare.Pending.S06_CandidateMasks
-import ElevenSquare.Pending.S07_Data
+import ElevenSquare.Pending.S07_LabelData
 
 /-! Finite classification of eleven-cell masks, using the frozen enumeration.
 No physical quarter-turn is assumed to permute the Voronoi labels. -/

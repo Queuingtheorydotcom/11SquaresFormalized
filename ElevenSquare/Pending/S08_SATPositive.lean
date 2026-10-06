@@ -19,33 +19,33 @@ theorem positive_overlap (c s X Y U V : ℝ)
       _ = Y*(c^2+s^2) := by rw [hU, hV]; ring
       _ = Y := by rw [hunit, mul_one]
   have hyunit : y*(c^2+s^2)=y := by rw [hunit, mul_one]
-  have hylU := (div_lt_iff hs).1 hl.2.1
-  have hyuU := (lt_div_iff hs).1 hu.2.1
-  have hylV := (div_lt_iff hc).1 hl.2.2.1
-  have hyuV := (lt_div_iff hc).1 hu.2.2.1
+  have hylU := (div_lt_iff₀ hs).1 hl.2.1
+  have hyuU := (lt_div_iff₀ hs).1 hu.2.1
+  have hylV := (div_lt_iff₀ hc).1 hl.2.2.1
+  have hyuV := (lt_div_iff₀ hc).1 hu.2.2.1
   have h₀ : (-1:ℝ) < 1 ∧ -1 < (U+1-s*y)/c ∧ -1 < (c*y-V+1)/s := by
     refine ⟨by norm_num, ?_, ?_⟩
-    · apply (lt_div_iff hc).2; linarith only [hyuU]
-    · apply (lt_div_iff hs).2; linarith only [hylV]
+    · apply (lt_div_iff₀ hc).2; linarith only [hyuU]
+    · apply (lt_div_iff₀ hs).2; linarith only [hylV]
   have h₁ : (U-1-s*y)/c < 1 ∧ (U-1-s*y)/c < (U+1-s*y)/c ∧
       (U-1-s*y)/c < (c*y-V+1)/s := by
     refine ⟨?_, ?_, ?_⟩
-    · apply (div_lt_iff hc).2; linarith only [hylU]
-    · apply (div_lt_div_right hc).2; linarith
-    · apply (div_lt_div_iff hc hs).2; nlinarith only [hYi, hyunit, hl.2.2.2]
+    · apply (div_lt_iff₀ hc).2; linarith only [hylU]
+    · apply (div_lt_div_iff_of_pos_right hc).2; linarith
+    · apply (div_lt_div_iff₀ hc hs).2; nlinarith only [hYi, hyunit, hl.2.2.2]
   have h₂ : (c*y-V-1)/s < 1 ∧ (c*y-V-1)/s < (U+1-s*y)/c ∧
       (c*y-V-1)/s < (c*y-V+1)/s := by
     refine ⟨?_, ?_, ?_⟩
-    · apply (div_lt_iff hs).2; linarith only [hyuV]
-    · apply (div_lt_div_iff hs hc).2; nlinarith only [hYi, hyunit, hu.2.2.2]
-    · apply (div_lt_div_right hs).2; linarith
+    · apply (div_lt_iff₀ hs).2; linarith only [hyuV]
+    · apply (div_lt_div_iff₀ hs hc).2; nlinarith only [hYi, hyunit, hu.2.2.2]
+    · apply (div_lt_div_iff_of_pos_right hs).2; linarith
   obtain ⟨x, hxl, hxu⟩ := between_three _ _ _ _ _ _ h₀ h₁ h₂
   refine ⟨x, y, abs_lt.mpr ⟨hxl.1, hxu.1⟩, abs_lt.mpr ⟨hl.1, hu.1⟩, ?_, ?_⟩
-  · have hlo := (div_lt_iff hc).1 hxl.2.1
-    have hhi := (lt_div_iff hc).1 hxu.2.1
+  · have hlo := (div_lt_iff₀ hc).1 hxl.2.1
+    have hhi := (lt_div_iff₀ hc).1 hxu.2.1
     apply abs_lt.mpr; constructor <;> linarith only [hlo, hhi]
-  · have hlo := (div_lt_iff hs).1 hxl.2.2
-    have hhi := (lt_div_iff hs).1 hxu.2.2
+  · have hlo := (div_lt_iff₀ hs).1 hxl.2.2
+    have hhi := (lt_div_iff₀ hs).1 hxu.2.2
     apply abs_lt.mpr; constructor <;> linarith only [hlo, hhi]
 
 theorem nonnegative_overlap (c s X Y U V : ℝ)

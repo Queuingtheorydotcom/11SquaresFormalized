@@ -68,8 +68,7 @@ theorem seedCellHalfplane_sound (i j : Fin 16) (p : Point)
     rw [← seedCap_cast]
     dsimp [seedCap]
     push_cast
-    field_simp [show (coverCap-1) ≠ 0 from ne_of_gt (sub_pos.mpr coverCap_gt_one)]
-    ring
+    field_simp [show (coverCap-1) ≠ 0 from ne_of_gt (sub_pos.mpr coverCap_gt_one)] <;> ring
   have hmul : A*(coordinateDistanceSq (normalizeCenter p) (coverSite i) -
       coordinateDistanceSq (normalizeCenter p) (coverSite j)) ≤ 0 :=
     mul_nonpos_of_nonneg_of_nonpos hA.le (sub_nonpos.mpr h)
@@ -90,7 +89,7 @@ theorem seedCellPolygon_sound (i : Fin 16) (p : Point)
   have hx1 : p.1 ≤ coverCap-1/2 := by
     have h := hp.1.2.1
     dsimp [InUnitBox, normalizeCenter] at h
-    have h' := (div_le_iff hA).mp h
+    have h' := (div_le_iff₀ hA).mp h
     linarith
   have hy0 : 1/2 ≤ p.2 := by
     have h := hp.1.2.2.1
@@ -102,7 +101,7 @@ theorem seedCellPolygon_sound (i : Fin 16) (p : Point)
   have hy1 : p.2 ≤ coverCap-1/2 := by
     have h := hp.1.2.2.2
     dsimp [InUnitBox, normalizeCenter] at h
-    have h' := (div_le_iff hA).mp h
+    have h' := (div_le_iff₀ hA).mp h
     linarith
   intro l hl
   simp only [seedCellPolygon, List.mem_append, List.mem_cons,

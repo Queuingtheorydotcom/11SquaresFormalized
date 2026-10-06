@@ -1,5 +1,5 @@
 import ElevenSquare.Pending.S07_CellPolygon
-import ElevenSquare.Pending.S07_Data
+import ElevenSquare.Pending.S07_LabelData
 
 /-! Pull back closed halfplanes under the exact four affine view maps.
 This does not assume that the view maps permute Voronoi cell indices. -/
@@ -26,7 +26,7 @@ theorem viewPlanes_correct (g : Fin 4) (P : Polygon) (p : Point) :
     exact (viewPlane_correct g m p).mpr (h m hm)
 
 def fourViewPlanes (labels : Fin 4 → Fin 16) : Polygon :=
-  (List.finRange 4).bind (fun g => viewPlanes g (cellPlanes (labels g)))
+  (List.finRange 4).flatMap (fun g => viewPlanes g (cellPlanes (labels g)))
 
 theorem fourViewPlanes_correct (labels : Fin 4 → Fin 16) (p : Point) :
     p ∈ (fourViewPlanes labels).carrier ↔ ∀ g, ClosedCell (labels g) (view g p) := by
@@ -35,9 +35,9 @@ theorem fourViewPlanes_correct (labels : Fin 4 → Fin 16) (p : Point) :
     apply (cellPlanes_correct _ _).mp
     apply (viewPlanes_correct g _ p).mp
     intro l hl
-    exact h l (List.mem_bind.mpr ⟨g, List.mem_finRange g, hl⟩)
+    exact h l (List.mem_flatMap.mpr ⟨g, List.mem_finRange g, hl⟩)
   · intro h l hl
-    obtain ⟨g, _, hl⟩ := List.mem_bind.mp hl
+    obtain ⟨g, _, hl⟩ := List.mem_flatMap.mp hl
     exact (viewPlanes_correct g _ p).mpr ((cellPlanes_correct _ _).mpr (h g)) l hl
 
 end

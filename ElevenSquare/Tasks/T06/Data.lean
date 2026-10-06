@@ -57,7 +57,7 @@ def roundedGradients (r : Fin 56) (j : Fin 33) : ℤ :=
 def proposedMaxRadius : ℝ := (67647473 / 10000000000)
 
 theorem representative_mem_aliases (i : Fin 56) : representatives i ∈ rowAliases i := by
-  fin_cases i <;> exact List.mem_cons_self _ _
+  fin_cases i <;> exact List.mem_cons_self
 
 end
 end ElevenSquare.Tasks.T06

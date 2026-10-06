@@ -1,0 +1,11 @@
+{
+  "status": "SOURCE_ASSEMBLY_PASS_NOT_LEAN_ACCEPTANCE",
+  "local_modules": 7906,
+  "explicit_admissions": 0,
+  "global_optimality_proved": false,
+  "kernel_replay_performed_for_current_changes": false,
+  "closure_modules": 6326,
+  "closure_lines": 394204,
+  "missing_local_imports": 0,
+  "import_cycles": 0
+}

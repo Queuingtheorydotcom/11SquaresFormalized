@@ -13,7 +13,7 @@ theorem RowsGood.append {xs ys : Array (List ℕ)} (hx : RowsGood xs) (hy : Rows
   exact hr.elim (hx row) (hy row)
 
 theorem table_exact (xs : Array (List ℕ))
-    (hs : xs.size = 2184) (ho : List.Chain' (fun a b => rowKey a < rowKey b) xs.data)
+    (hs : xs.size = 2184) (ho : List.IsChain (fun a b => rowKey a < rowKey b) xs.toList)
     (hg : RowsGood xs) :
     Function.Injective (fun i : Fin 2184 => rowMask xs[i.val]!) ∧
     Finset.univ.image (fun i : Fin 2184 => rowMask xs[i.val]!) = canonicalMasks := by
@@ -28,8 +28,8 @@ theorem table_exact (xs : Array (List ℕ))
     obtain ⟨i, _, rfl⟩ := Finset.mem_image.mp hm
     apply hg
     have hidx : i.val < xs.size := by rw [hs]; exact i.isLt
-    rw [Array.toList_eq, getElem!_pos xs i.val hidx, Array.getElem_eq_data_getElem]
-    exact List.getElem_mem xs.data i.val hidx
+    rw [getElem!_pos xs i.val hidx]
+    exact Array.getElem_mem_toList hidx
   · rw [canonicalMasks_card, Finset.card_image_of_injective _ hi]
     rw [Finset.card_univ, Fintype.card_fin]
 
@@ -39,7 +39,7 @@ theorem table_exact_block (xs : Array (List ℕ)) (a b : List ℕ)
     (hg : RowsGood xs) :
     Function.Injective (fun i : Fin 2184 => rowMask xs[i.val]!) ∧
     Finset.univ.image (fun i : Fin 2184 => rowMask xs[i.val]!) = canonicalMasks :=
-  table_exact xs hs (by simpa only [Array.toList_eq] using ho.ordered) hg
+  table_exact xs hs ho.ordered hg
 
 end ElevenSquare.Pending.CaseChecks
 #print axioms ElevenSquare.Pending.CaseChecks.table_exact

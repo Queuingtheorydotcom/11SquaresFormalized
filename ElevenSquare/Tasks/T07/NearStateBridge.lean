@@ -143,67 +143,67 @@ theorem nearBox_center_in_focused_radii (i : Owner) (p : Point)
   fin_cases i
   · have hb : inRect (nearBox0.lx : ℝ) (nearBox0.hx : ℝ)
         (nearBox0.ly : ℝ) (nearBox0.hy : ℝ) p := by
-      simpa only [nearFieldBox] using hp
+      simpa [nearFieldBox] using hp
     rcases nearCenterBox0_numeric with ⟨hxl, hxr, hyl, hyr⟩
     exact ⟨field_rectangle_local_x hb nearCenter00_bounds hxl hxr,
       field_rectangle_local_y hb nearCenter01_bounds hyl hyr⟩
   · have hb : inRect (nearBox1.lx : ℝ) (nearBox1.hx : ℝ)
         (nearBox1.ly : ℝ) (nearBox1.hy : ℝ) p := by
-      simpa only [nearFieldBox] using hp
+      simpa [nearFieldBox] using hp
     rcases nearCenterBox1_numeric with ⟨hxl, hxr, hyl, hyr⟩
     exact ⟨field_rectangle_local_x hb nearCenter10_bounds hxl hxr,
       field_rectangle_local_y hb nearCenter11_bounds hyl hyr⟩
   · have hb : inRect (nearBox2.lx : ℝ) (nearBox2.hx : ℝ)
         (nearBox2.ly : ℝ) (nearBox2.hy : ℝ) p := by
-      simpa only [nearFieldBox] using hp
+      simpa [nearFieldBox] using hp
     rcases nearCenterBox2_numeric with ⟨hxl, hxr, hyl, hyr⟩
     exact ⟨field_rectangle_local_x hb nearCenter20_bounds hxl hxr,
       field_rectangle_local_y hb nearCenter21_bounds hyl hyr⟩
   · have hb : inRect (nearBox3.lx : ℝ) (nearBox3.hx : ℝ)
         (nearBox3.ly : ℝ) (nearBox3.hy : ℝ) p := by
-      simpa only [nearFieldBox] using hp
+      simpa [nearFieldBox] using hp
     rcases nearCenterBox3_numeric with ⟨hxl, hxr, hyl, hyr⟩
     exact ⟨field_rectangle_local_x hb nearCenter30_bounds hxl hxr,
       field_rectangle_local_y hb nearCenter31_bounds hyl hyr⟩
   · have hb : inRect (nearBox4.lx : ℝ) (nearBox4.hx : ℝ)
         (nearBox4.ly : ℝ) (nearBox4.hy : ℝ) p := by
-      simpa only [nearFieldBox] using hp
+      simpa [nearFieldBox] using hp
     rcases nearCenterBox4_numeric with ⟨hxl, hxr, hyl, hyr⟩
     exact ⟨field_rectangle_local_x hb nearCenter40_bounds hxl hxr,
       field_rectangle_local_y hb nearCenter41_bounds hyl hyr⟩
   · have hb : inRect (nearBox5.lx : ℝ) (nearBox5.hx : ℝ)
         (nearBox5.ly : ℝ) (nearBox5.hy : ℝ) p := by
-      simpa only [nearFieldBox] using hp
+      simpa [nearFieldBox] using hp
     rcases nearCenterBox5_numeric with ⟨hxl, hxr, hyl, hyr⟩
     exact ⟨field_rectangle_local_x hb nearCenter50_bounds hxl hxr,
       field_rectangle_local_y hb nearCenter51_bounds hyl hyr⟩
   · have hb : inRect (nearBox6.lx : ℝ) (nearBox6.hx : ℝ)
         (nearBox6.ly : ℝ) (nearBox6.hy : ℝ) p := by
-      simpa only [nearFieldBox] using hp
+      simpa [nearFieldBox] using hp
     rcases nearCenterBox6_numeric with ⟨hxl, hxr, hyl, hyr⟩
     exact ⟨field_rectangle_local_x hb nearCenter60_bounds hxl hxr,
       field_rectangle_local_y hb nearCenter61_bounds hyl hyr⟩
   · have hb : inRect (nearBox7.lx : ℝ) (nearBox7.hx : ℝ)
         (nearBox7.ly : ℝ) (nearBox7.hy : ℝ) p := by
-      simpa only [nearFieldBox] using hp
+      simpa [nearFieldBox] using hp
     rcases nearCenterBox7_numeric with ⟨hxl, hxr, hyl, hyr⟩
     exact ⟨field_rectangle_local_x hb nearCenter70_bounds hxl hxr,
       field_rectangle_local_y hb nearCenter71_bounds hyl hyr⟩
   · have hb : inRect (nearBox8.lx : ℝ) (nearBox8.hx : ℝ)
         (nearBox8.ly : ℝ) (nearBox8.hy : ℝ) p := by
-      simpa only [nearFieldBox] using hp
+      simpa [nearFieldBox] using hp
     rcases nearCenterBox8_numeric with ⟨hxl, hxr, hyl, hyr⟩
     exact ⟨field_rectangle_local_x hb nearCenter80_bounds hxl hxr,
       field_rectangle_local_y hb nearCenter81_bounds hyl hyr⟩
   · have hb : inRect (nearBox9.lx : ℝ) (nearBox9.hx : ℝ)
         (nearBox9.ly : ℝ) (nearBox9.hy : ℝ) p := by
-      simpa only [nearFieldBox] using hp
+      simpa [nearFieldBox] using hp
     rcases nearCenterBox9_numeric with ⟨hxl, hxr, hyl, hyr⟩
     exact ⟨field_rectangle_local_x hb nearCenter90_bounds hxl hxr,
       field_rectangle_local_y hb nearCenter91_bounds hyl hyr⟩
   · have hb : inRect (nearBox10.lx : ℝ) (nearBox10.hx : ℝ)
         (nearBox10.ly : ℝ) (nearBox10.hy : ℝ) p := by
-      simpa only [nearFieldBox] using hp
+      simpa [nearFieldBox] using hp
     rcases nearCenterBox10_numeric with ⟨hxl, hxr, hyl, hyr⟩
     exact ⟨field_rectangle_local_x hb nearCenter100_bounds hxl hxr,
       field_rectangle_local_y hb nearCenter101_bounds hyl hyr⟩

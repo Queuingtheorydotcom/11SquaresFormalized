@@ -16,7 +16,7 @@ theorem nearCenterBox2_numeric :
     coverCap/2-(nearBox2.lx : ℝ)/fieldScale ≤
       nearCenter21Lo + focusedRadii (coordinate (2 : Owner) (1 : Fin 3)) := by
   dsimp only [nearBox2]
-  simp only [Rat.cast_mk]
+  simp only [Rat.cast_divInt]
   norm_num [nearCenter20Hi, nearCenter20Lo, nearCenter21Hi,
     nearCenter21Lo, focusedRadii, coordinate, nearBox2, fieldScale, coverCap]
 
@@ -27,7 +27,7 @@ theorem finalNear_center_role2 (p : Point) (hp : InFinalNearCenter (2 : Fin 11) 
       focusedRadii (coordinate (2 : Owner) (1 : Fin 3)) := by
   have hbox : inRect (nearBox2.lx : ℝ) (nearBox2.hx : ℝ)
       (nearBox2.ly : ℝ) (nearBox2.hy : ℝ) p := by
-    simpa only [nearFieldBox] using finalNear_center_field_enclosure (2 : Fin 11) p hp
+    simpa [nearFieldBox] using finalNear_center_field_enclosure (2 : Fin 11) p hp
   rcases nearCenterBox2_numeric with ⟨hxl, hxr, hyl, hyr⟩
   exact ⟨field_rectangle_local_x hbox nearCenter20_bounds hxl hxr,
     field_rectangle_local_y hbox nearCenter21_bounds hyl hyr⟩

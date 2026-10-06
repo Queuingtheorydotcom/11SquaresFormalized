@@ -51,7 +51,9 @@ theorem axis_radius_checks (i : Owner) (hi : i.val < 6) :
     2*(axisLowMax i : ℝ) ≤ localAngleRadius i ∧
     2*(1-(axisHighMin i : ℝ))/(1+(axisHighMin i : ℝ)^2) ≤
       localAngleRadius i ∧ 1/2 < (axisHighMin i : ℝ) := by
-  fin_cases i <;> norm_num [axisLowMax, axisHighMin, localAngleRadius, Rat.divInt] at hi ⊢
+  fin_cases i <;> first
+    | (exfalso; revert hi; decide)
+    | norm_num [axisLowMax, axisHighMin, localAngleRadius, Rat.divInt] at hi ⊢
 
 theorem tilted_radius_checks (i : Owner) (hi : 6 ≤ i.val) :
     0 ≤ (tiltedLo i : ℝ) ∧
@@ -59,7 +61,9 @@ theorem tilted_radius_checks (i : Owner) (hi : 6 ≤ i.val) :
       localAngleRadius i ∧
     2*((tiltedHi i : ℝ)-rootLo)/(1+rootLo^2) ≤
       localAngleRadius i := by
-  fin_cases i <;> norm_num [tiltedLo, tiltedHi, localAngleRadius, rootLo, rootHi, Rat.divInt] at hi ⊢
+  fin_cases i <;> first
+    | (exfalso; revert hi; decide)
+    | norm_num [tiltedLo, tiltedHi, localAngleRadius, rootLo, rootHi, Rat.divInt] at hi ⊢
 
 theorem nearRows_angle_extrema (i : Owner) :
     List.Forall (fun r : NearPoseRow =>

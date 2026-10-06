@@ -17,13 +17,13 @@ theorem fractionCheck_sound (nx dx ny dy gx gy : ℕ)
   rw [pointCheck, decide_eq_true_eq]
   simp only [Prod.fst, Prod.snd, Int.cast_natCast]
   refine ⟨?_, ?_, ?_, ?_⟩
-  · rw [← mul_div_assoc, le_div_iff hdx]
+  · rw [← mul_div_assoc, le_div_iff₀ hdx]
     exact_mod_cast hn.2.2.1
-  · rw [← mul_div_assoc, div_le_iff hdx]
+  · rw [← mul_div_assoc, div_le_iff₀ hdx]
     exact_mod_cast hn.2.2.2.1
-  · rw [← mul_div_assoc, le_div_iff hdy]
+  · rw [← mul_div_assoc, le_div_iff₀ hdy]
     exact_mod_cast hn.2.2.2.2.1
-  · rw [← mul_div_assoc, div_le_iff hdy]
+  · rw [← mul_div_assoc, div_le_iff₀ hdy]
     exact_mod_cast hn.2.2.2.2.2
 
 end ElevenSquare.Pending.GridDistance

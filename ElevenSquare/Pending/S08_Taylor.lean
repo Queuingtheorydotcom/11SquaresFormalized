@@ -1,5 +1,6 @@
 import ElevenSquare.Pending.S08_GapFunctions
 import Mathlib.Analysis.Calculus.MeanValue
+import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Analysis.Calculus.Deriv.Pow
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
@@ -31,8 +32,8 @@ theorem radial_taylor_bound (f f' f'' : ℝ → ℝ) (τ K : ℝ)
     let F : ℝ → ℝ := fun t => g t-g 0-t*g' 0-t^2*K/2
     have hF (t : ℝ) (ht : t ∈ Set.Icc 0 τ) :
         HasDerivAt F (g' t-g' 0-K*t) t := by
-      convert ((hg t ht).sub_const (g 0) |>.sub
-        ((hasDerivAt_id t).mul_const (g' 0))).sub
+      convert ((hg t ht).sub_const (g 0) |>.fun_sub
+        ((hasDerivAt_id t).mul_const (g' 0))).fun_sub
         ((((hasDerivAt_id t).pow 2).mul_const K).div_const 2) using 1 <;> dsimp [F] <;> ring
     have hanti : AntitoneOn F (Set.Icc 0 τ) :=
       antitoneOn_of_deriv_nonpos (convex_Icc _ _)
@@ -46,9 +47,9 @@ theorem radial_taylor_bound (f f' f'' : ℝ → ℝ) (τ K : ℝ)
     nlinarith
   have hi := upper f f' f'' hd hdd hbound
   have hlo := upper (fun t => -f t) (fun t => -f' t) (fun t => -f'' t)
-    (fun t ht => (hd t ht).neg) (fun t ht => (hdd t ht).neg)
+    (fun t ht => (hd t ht).fun_neg) (fun t ht => (hdd t ht).fun_neg)
     (fun t ht => by simpa only [abs_neg] using hbound t ht)
-  exact abs_le.mpr ⟨by dsimp at hlo; linarith, hi⟩
+  exact abs_le.mpr ⟨by linarith, hi⟩
 
 -- Elementary negative-feature test used for the 88 unavailable separation features.
 theorem negative_gap_on_rectangle (f : Displacement → ℝ) (a r : Fin 33 → ℝ) (K : ℝ)

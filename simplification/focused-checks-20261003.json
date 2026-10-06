@@ -1,0 +1,203 @@
+{
+  "status": "FOCUSED_CHECKS_ONLY",
+  "full_proof_replayed": false,
+  "note": "These are per-module accepted compiler receipts, not a complete replay of the assembled final theorem. Timings include elaboration and import overhead. Re-run the pinned verifier to establish complete correctness.",
+  "modules": [
+    {
+      "module": "ElevenSquare.Simplified.LocalCommonBranchCone",
+      "status": "accepted",
+      "source_sha256": "48fdaa740f133479fd1be7a7d8b88ebfef381d7f755b700c2828bccefca96635",
+      "object_sha256": "188d8c4d1ddfdcdc33db0ad3c7230cc8f10c6f97fc1920ef11045ad4b874f1bf",
+      "compiler": "Lean (version 4.34.1, arm64-apple-darwin24.6.0, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+      "arguments": [
+        "-j1",
+        "-M0",
+        "-s65536",
+        "-DautoImplicit=false",
+        "-DmaxHeartbeats=0"
+      ],
+      "elapsed_seconds": 27.3
+    },
+    {
+      "module": "ElevenSquare.Simplified.FourCollisionGeometry",
+      "status": "accepted",
+      "source_sha256": "ea97adfd9a20e6534f2d7484b910997ce97f30522866be7c2bbd31229eb9ee4e",
+      "object_sha256": "7f4369427228fcff24b79e755cbee08056826a38ca5a55a92a06a7a9a98b4598",
+      "compiler": "Lean (version 4.34.1, arm64-apple-darwin24.6.0, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+      "arguments": [
+        "-j1",
+        "-M0",
+        "-s65536",
+        "-DautoImplicit=false",
+        "-DmaxHeartbeats=0"
+      ],
+      "elapsed_seconds": 39.19
+    },
+    {
+      "module": "ElevenSquare.Simplified.FourCollisionBridge",
+      "status": "accepted",
+      "source_sha256": "57dd4710c4930cdd7b0efb2e53d5ffe40a9cbcba59a2422901968034dde6793b",
+      "object_sha256": "b9fd7435f038ebfea4d2af74c85d7dd18110f454908f11ab11a241bdb029d27e",
+      "compiler": "Lean (version 4.34.1, arm64-apple-darwin24.6.0, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+      "arguments": [
+        "-j1",
+        "-M0",
+        "-s65536",
+        "-DautoImplicit=false",
+        "-DmaxHeartbeats=0"
+      ],
+      "elapsed_seconds": 3.96
+    },
+    {
+      "module": "Sqpack.S11Opt.Simplified.IndexedStagesAudit",
+      "status": "accepted",
+      "source_sha256": "0693c9134989ed47497ffa55ae9d49c4f9b8817c3e29c3532da71e8264d1f41d",
+      "object_sha256": "2499d1e95f5c50edccab10ee4b91986698d0b543685bc97dca3fb6b43b2ef555",
+      "compiler": "Lean (version 4.34.1, arm64-apple-darwin24.6.0, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+      "arguments": [
+        "-j1",
+        "-M0",
+        "-s65536",
+        "-DautoImplicit=true",
+        "-DmaxHeartbeats=0"
+      ],
+      "elapsed_seconds": 7.5
+    },
+    {
+      "module": "Sqpack.S11Opt.Simplified.BundledAdaptersAudit",
+      "status": "accepted",
+      "source_sha256": "e910ea41fdd0043f03c17e960351272f24f85d76ec7c664392f6b32d683db0b0",
+      "object_sha256": "dd136d4544f172276945c220fca174312416d12096dcfd69214d07245679cdec",
+      "compiler": "Lean (version 4.34.1, arm64-apple-darwin24.6.0, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+      "arguments": [
+        "-j1",
+        "-M0",
+        "-s65536",
+        "-DautoImplicit=true",
+        "-DmaxHeartbeats=0"
+      ],
+      "elapsed_seconds": 23.17
+    },
+    {
+      "module": "ElevenSquare.Tasks.T07.Ext.CompactWitnessAudit",
+      "status": "accepted",
+      "source_sha256": "898a66594a75432163059cb3ff24b19a39abd980faa03f29ec00349115950eba",
+      "object_sha256": "736296deddb31c9f1e1ea8e874d0aae65c5d38a0761c6d1e4296b0688fe16082",
+      "compiler": "Lean (version 4.34.1, arm64-apple-darwin24.6.0, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+      "arguments": [
+        "-j1",
+        "-M0",
+        "-s65536",
+        "-DautoImplicit=false",
+        "-DmaxHeartbeats=0"
+      ],
+      "elapsed_seconds": 36.52
+    },
+    {
+      "module": "ElevenSquare.Tasks.T07.Ext.CompactWitnessRealPilot",
+      "status": "accepted",
+      "source_sha256": "c14725769d676d9484ad7688ca1b6e7563444bc37c14279c37ebb0e856f15910",
+      "object_sha256": "a22e4305861fb7d56b5e008d229e4ef167e7d9770e75885bfb8d95f6c6e1d0fc",
+      "compiler": "Lean (version 4.34.1, arm64-apple-darwin24.6.0, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+      "arguments": [
+        "-j1",
+        "-M0",
+        "-s65536",
+        "-DautoImplicit=false",
+        "-DmaxHeartbeats=0"
+      ],
+      "elapsed_seconds": 21.0
+    },
+    {
+      "module": "ElevenSquare.Tasks.T07.Ext.Gen.P2.S137C0",
+      "status": "historical_experiment_accepted",
+      "source_sha256": "cc60952775337f13f9736fb74df5db8cca17e13069a9aeb1a60333b830f29f96",
+      "object_sha256": "7f7a567c2c5689b32b5aa3b85b4a6666393cc67cd39d6c717f0c24f5baa65bc5",
+      "compiler": "Lean (version 4.34.1, arm64-apple-darwin24.6.0, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+      "arguments": [
+        "-j1",
+        "-M0",
+        "-s65536",
+        "-DautoImplicit=false",
+        "-DmaxHeartbeats=0"
+      ],
+      "elapsed_seconds": 8.75,
+      "active_proof": false,
+      "note": "Accepted parametric certificate definitions from the compact experiment. The active merged S137 now contains original literal certificates after a measured runtime regression; this receipt does not certify the current merged stage or compatibility reexport."
+    },
+    {
+      "module": "ElevenSquare.Tasks.T07.Ext.IntegerConvex",
+      "status": "accepted",
+      "source_sha256": "f9dfc0141559e1bb183e2e8061627ef1d3414929ffbfc32de4f5cc0f3997fe93",
+      "object_sha256": "b8b7ff0ceccea96f9e7caab2e20bda68ed6a61c7c0a70b394b0239c2637a8b25",
+      "compiler": "Lean (version 4.34.1, arm64-apple-darwin24.6.0, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+      "arguments": [
+        "-j1",
+        "-M0",
+        "-s65536",
+        "-DautoImplicit=false",
+        "-DmaxHeartbeats=0"
+      ],
+      "elapsed_seconds": 35.55
+    },
+    {
+      "module": "ElevenSquare.Tasks.T07.Ext.FastComb",
+      "status": "accepted",
+      "source_sha256": "8f3ec24f65f1d4bdf46091b007a309c4b2216d458bec5e57049a49494a265570",
+      "object_sha256": "a81bd73db51ff33b0ee34e43031f22113b545f34ee14392633682c886b6766de",
+      "compiler": "Lean (version 4.34.1, arm64-apple-darwin24.6.0, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+      "arguments": [
+        "-j1",
+        "-M0",
+        "-s65536",
+        "-DautoImplicit=false",
+        "-DmaxHeartbeats=0"
+      ],
+      "elapsed_seconds": 24.36
+    },
+    {
+      "module": "ElevenSquare.Tasks.T07.Ext.RuntimeCheck",
+      "status": "accepted",
+      "source_sha256": "ac8fa62714ab0cf8b1af55c98b5bb4a805d7fce8e566fc80ceb6c3dfa44d5f44",
+      "object_sha256": "06faa792289065de397573b64f37c1327324df8fffe1d0fdc4e3d92e0d8c0a87",
+      "compiler": "Lean (version 4.34.1, arm64-apple-darwin24.6.0, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+      "arguments": [
+        "-j1",
+        "-M0",
+        "-s65536",
+        "-DautoImplicit=false",
+        "-DmaxHeartbeats=0"
+      ],
+      "elapsed_seconds": 24.42
+    },
+    {
+      "module": "ElevenSquare.Tasks.T07.Ext.IntegerConvexLcm",
+      "status": "accepted",
+      "source_sha256": "ea8bf51e2d311937dc1f28b2812c82cfa16e5df06948695dd1c67eb469c52bdc",
+      "object_sha256": "d8ec3b9dd9e8e336c0eb05687141d96f5ec34975d1a0383b152dff1244dc5f31",
+      "compiler": "Lean (version 4.34.1, arm64-apple-darwin24.6.0, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+      "arguments": [
+        "-j1",
+        "-M0",
+        "-s65536",
+        "-DautoImplicit=false",
+        "-DmaxHeartbeats=0"
+      ],
+      "elapsed_seconds": 18.41,
+      "active_in_final_proof": false,
+      "runtime_comparison_performed": false
+    }
+  ],
+  "merged_stage_replay": {
+    "targets": [
+      "ElevenSquare.Tasks.T07.Ext.Gen.P2.S0",
+      "ElevenSquare.Tasks.T07.Ext.Gen.P2.S1"
+    ],
+    "status": "STOPPED_FOR_RESOURCE_LIMIT",
+    "S0": "interrupted before acceptance",
+    "S1": "not attempted",
+    "accepted_dependency_prefix_modules": 32,
+    "no_new_proof_error_reported": true,
+    "reason": "Free disk fell to about123MiB during heavy memory compression and swapping; verifier and child were cleanly terminated."
+  }
+}

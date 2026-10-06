@@ -15,111 +15,75 @@ set_option maxRecDepth 10000
 
 theorem concreteRow28Alias0_A0 :
     dot (featureCenterDifference constructionSquare ({ owner := 4, other := 5, distinct := by decide, perpendicular := true, reverse := true })) (featureNormal constructionSquare ({ owner := 4, other := 5, distinct := by decide, perpendicular := true, reverse := true })) = polyEval ![-1, 0, 0, 0, 0, 0, 0, 0] u := by
-  apply sub_eq_zero.mp
-  calc
-    dot (featureCenterDifference constructionSquare ({ owner := 4, other := 5, distinct := by decide, perpendicular := true, reverse := true })) (featureNormal constructionSquare ({ owner := 4, other := 5, distinct := by decide, perpendicular := true, reverse := true })) - polyEval ![-1, 0, 0, 0, 0, 0, 0, 0] u =
-      0 * endpointPolynomial u := by
-        norm_num [featureCenterDifference, featureNormal, cornerOffset, polyEval_vec, cornerSigns, constructionAxis, constructionCos, constructionSin, perp, dot, endpointPolynomial] <;> ring
-    _ = 0 := by rw [u_polynomial, mul_zero]
+  apply construction_eq_of_polynomial_multiple (0)
+  norm_num [featureCenterDifference, featureNormal, cornerOffset, polyEval_vec, cornerSigns, constructionAxis, constructionCos, constructionSin, perp, dot, endpointPolynomial] <;> ring
+
 
 theorem concreteRow28Alias0_A1 :
     dot (featureCenterDifference constructionSquare ({ owner := 4, other := 5, distinct := by decide, perpendicular := true, reverse := true })) (perp (featureNormal constructionSquare ({ owner := 4, other := 5, distinct := by decide, perpendicular := true, reverse := true }))) = polyEval ![1, 0, 0, 0, 0, 0, 0, 0] u := by
-  apply sub_eq_zero.mp
-  calc
-    dot (featureCenterDifference constructionSquare ({ owner := 4, other := 5, distinct := by decide, perpendicular := true, reverse := true })) (perp (featureNormal constructionSquare ({ owner := 4, other := 5, distinct := by decide, perpendicular := true, reverse := true }))) - polyEval ![1, 0, 0, 0, 0, 0, 0, 0] u =
-      0 * endpointPolynomial u := by
-        norm_num [featureCenterDifference, featureNormal, cornerOffset, polyEval_vec, cornerSigns, constructionAxis, constructionCos, constructionSin, perp, dot, endpointPolynomial] <;> ring
-    _ = 0 := by rw [u_polynomial, mul_zero]
+  apply construction_eq_of_polynomial_multiple (0)
+  norm_num [featureCenterDifference, featureNormal, cornerOffset, polyEval_vec, cornerSigns, constructionAxis, constructionCos, constructionSin, perp, dot, endpointPolynomial] <;> ring
+
 
 theorem concreteRow28Alias0_L0 :
     (featureNormal constructionSquare ({ owner := 4, other := 5, distinct := by decide, perpendicular := true, reverse := true })).1 = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := by
-  apply sub_eq_zero.mp
-  calc
-    (featureNormal constructionSquare ({ owner := 4, other := 5, distinct := by decide, perpendicular := true, reverse := true })).1 - polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u =
-      0 * endpointPolynomial u := by
-        norm_num [featureCenterDifference, featureNormal, cornerOffset, polyEval_vec, cornerSigns, constructionAxis, constructionCos, constructionSin, perp, dot, endpointPolynomial] <;> ring
-    _ = 0 := by rw [u_polynomial, mul_zero]
+  apply construction_eq_of_polynomial_multiple (0)
+  norm_num [featureCenterDifference, featureNormal, cornerOffset, polyEval_vec, cornerSigns, constructionAxis, constructionCos, constructionSin, perp, dot, endpointPolynomial] <;> ring
+
 
 theorem concreteRow28Alias0_L1 :
     (featureNormal constructionSquare ({ owner := 4, other := 5, distinct := by decide, perpendicular := true, reverse := true })).2 = polyEval ![1, 0, 0, 0, 0, 0, 0, 0] u := by
-  apply sub_eq_zero.mp
-  calc
-    (featureNormal constructionSquare ({ owner := 4, other := 5, distinct := by decide, perpendicular := true, reverse := true })).2 - polyEval ![1, 0, 0, 0, 0, 0, 0, 0] u =
-      0 * endpointPolynomial u := by
-        norm_num [featureCenterDifference, featureNormal, cornerOffset, polyEval_vec, cornerSigns, constructionAxis, constructionCos, constructionSin, perp, dot, endpointPolynomial] <;> ring
-    _ = 0 := by rw [u_polynomial, mul_zero]
+  apply construction_eq_of_polynomial_multiple (0)
+  norm_num [featureCenterDifference, featureNormal, cornerOffset, polyEval_vec, cornerSigns, constructionAxis, constructionCos, constructionSin, perp, dot, endpointPolynomial] <;> ring
+
 
 theorem concreteRow28Alias0_C0 :
     dot (cornerOffset constructionSquare 5 2) (featureNormal constructionSquare ({ owner := 4, other := 5, distinct := by decide, perpendicular := true, reverse := true })) = polyEval ![(1 / 2), 0, 0, 0, 0, 0, 0, 0] u := by
-  apply sub_eq_zero.mp
-  calc
-    dot (cornerOffset constructionSquare 5 2) (featureNormal constructionSquare ({ owner := 4, other := 5, distinct := by decide, perpendicular := true, reverse := true })) - polyEval ![(1 / 2), 0, 0, 0, 0, 0, 0, 0] u =
-      0 * endpointPolynomial u := by
-        norm_num [featureCenterDifference, featureNormal, cornerOffset, polyEval_vec, cornerSigns, constructionAxis, constructionCos, constructionSin, perp, dot, endpointPolynomial] <;> ring
-    _ = 0 := by rw [u_polynomial, mul_zero]
+  apply construction_eq_of_polynomial_multiple (0)
+  norm_num [featureCenterDifference, featureNormal, cornerOffset, polyEval_vec, cornerSigns, constructionAxis, constructionCos, constructionSin, perp, dot, endpointPolynomial] <;> ring
+
 
 theorem concreteRow28Alias0_C1 :
     dot (perp (cornerOffset constructionSquare 5 2)) (featureNormal constructionSquare ({ owner := 4, other := 5, distinct := by decide, perpendicular := true, reverse := true })) = polyEval ![(1 / 2), 0, 0, 0, 0, 0, 0, 0] u := by
-  apply sub_eq_zero.mp
-  calc
-    dot (perp (cornerOffset constructionSquare 5 2)) (featureNormal constructionSquare ({ owner := 4, other := 5, distinct := by decide, perpendicular := true, reverse := true })) - polyEval ![(1 / 2), 0, 0, 0, 0, 0, 0, 0] u =
-      0 * endpointPolynomial u := by
-        norm_num [featureCenterDifference, featureNormal, cornerOffset, polyEval_vec, cornerSigns, constructionAxis, constructionCos, constructionSin, perp, dot, endpointPolynomial] <;> ring
-    _ = 0 := by rw [u_polynomial, mul_zero]
+  apply construction_eq_of_polynomial_multiple (0)
+  norm_num [featureCenterDifference, featureNormal, cornerOffset, polyEval_vec, cornerSigns, constructionAxis, constructionCos, constructionSin, perp, dot, endpointPolynomial] <;> ring
+
 
 theorem concreteRow28Alias1_A0 :
     dot (featureCenterDifference constructionSquare ({ owner := 5, other := 4, distinct := by decide, perpendicular := true, reverse := false })) (featureNormal constructionSquare ({ owner := 5, other := 4, distinct := by decide, perpendicular := true, reverse := false })) = polyEval ![1, 0, 0, 0, 0, 0, 0, 0] u := by
-  apply sub_eq_zero.mp
-  calc
-    dot (featureCenterDifference constructionSquare ({ owner := 5, other := 4, distinct := by decide, perpendicular := true, reverse := false })) (featureNormal constructionSquare ({ owner := 5, other := 4, distinct := by decide, perpendicular := true, reverse := false })) - polyEval ![1, 0, 0, 0, 0, 0, 0, 0] u =
-      0 * endpointPolynomial u := by
-        norm_num [featureCenterDifference, featureNormal, cornerOffset, polyEval_vec, cornerSigns, constructionAxis, constructionCos, constructionSin, perp, dot, endpointPolynomial] <;> ring
-    _ = 0 := by rw [u_polynomial, mul_zero]
+  apply construction_eq_of_polynomial_multiple (0)
+  norm_num [featureCenterDifference, featureNormal, cornerOffset, polyEval_vec, cornerSigns, constructionAxis, constructionCos, constructionSin, perp, dot, endpointPolynomial] <;> ring
+
 
 theorem concreteRow28Alias1_A1 :
     dot (featureCenterDifference constructionSquare ({ owner := 5, other := 4, distinct := by decide, perpendicular := true, reverse := false })) (perp (featureNormal constructionSquare ({ owner := 5, other := 4, distinct := by decide, perpendicular := true, reverse := false }))) = polyEval ![-1, 0, 0, 0, 0, 0, 0, 0] u := by
-  apply sub_eq_zero.mp
-  calc
-    dot (featureCenterDifference constructionSquare ({ owner := 5, other := 4, distinct := by decide, perpendicular := true, reverse := false })) (perp (featureNormal constructionSquare ({ owner := 5, other := 4, distinct := by decide, perpendicular := true, reverse := false }))) - polyEval ![-1, 0, 0, 0, 0, 0, 0, 0] u =
-      0 * endpointPolynomial u := by
-        norm_num [featureCenterDifference, featureNormal, cornerOffset, polyEval_vec, cornerSigns, constructionAxis, constructionCos, constructionSin, perp, dot, endpointPolynomial] <;> ring
-    _ = 0 := by rw [u_polynomial, mul_zero]
+  apply construction_eq_of_polynomial_multiple (0)
+  norm_num [featureCenterDifference, featureNormal, cornerOffset, polyEval_vec, cornerSigns, constructionAxis, constructionCos, constructionSin, perp, dot, endpointPolynomial] <;> ring
+
 
 theorem concreteRow28Alias1_L0 :
     (featureNormal constructionSquare ({ owner := 5, other := 4, distinct := by decide, perpendicular := true, reverse := false })).1 = polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u := by
-  apply sub_eq_zero.mp
-  calc
-    (featureNormal constructionSquare ({ owner := 5, other := 4, distinct := by decide, perpendicular := true, reverse := false })).1 - polyEval ![0, 0, 0, 0, 0, 0, 0, 0] u =
-      0 * endpointPolynomial u := by
-        norm_num [featureCenterDifference, featureNormal, cornerOffset, polyEval_vec, cornerSigns, constructionAxis, constructionCos, constructionSin, perp, dot, endpointPolynomial] <;> ring
-    _ = 0 := by rw [u_polynomial, mul_zero]
+  apply construction_eq_of_polynomial_multiple (0)
+  norm_num [featureCenterDifference, featureNormal, cornerOffset, polyEval_vec, cornerSigns, constructionAxis, constructionCos, constructionSin, perp, dot, endpointPolynomial] <;> ring
+
 
 theorem concreteRow28Alias1_L1 :
     (featureNormal constructionSquare ({ owner := 5, other := 4, distinct := by decide, perpendicular := true, reverse := false })).2 = polyEval ![1, 0, 0, 0, 0, 0, 0, 0] u := by
-  apply sub_eq_zero.mp
-  calc
-    (featureNormal constructionSquare ({ owner := 5, other := 4, distinct := by decide, perpendicular := true, reverse := false })).2 - polyEval ![1, 0, 0, 0, 0, 0, 0, 0] u =
-      0 * endpointPolynomial u := by
-        norm_num [featureCenterDifference, featureNormal, cornerOffset, polyEval_vec, cornerSigns, constructionAxis, constructionCos, constructionSin, perp, dot, endpointPolynomial] <;> ring
-    _ = 0 := by rw [u_polynomial, mul_zero]
+  apply construction_eq_of_polynomial_multiple (0)
+  norm_num [featureCenterDifference, featureNormal, cornerOffset, polyEval_vec, cornerSigns, constructionAxis, constructionCos, constructionSin, perp, dot, endpointPolynomial] <;> ring
+
 
 theorem concreteRow28Alias1_C0 :
     dot (cornerOffset constructionSquare 4 0) (featureNormal constructionSquare ({ owner := 5, other := 4, distinct := by decide, perpendicular := true, reverse := false })) = polyEval ![(-1 / 2), 0, 0, 0, 0, 0, 0, 0] u := by
-  apply sub_eq_zero.mp
-  calc
-    dot (cornerOffset constructionSquare 4 0) (featureNormal constructionSquare ({ owner := 5, other := 4, distinct := by decide, perpendicular := true, reverse := false })) - polyEval ![(-1 / 2), 0, 0, 0, 0, 0, 0, 0] u =
-      0 * endpointPolynomial u := by
-        norm_num [featureCenterDifference, featureNormal, cornerOffset, polyEval_vec, cornerSigns, constructionAxis, constructionCos, constructionSin, perp, dot, endpointPolynomial] <;> ring
-    _ = 0 := by rw [u_polynomial, mul_zero]
+  apply construction_eq_of_polynomial_multiple (0)
+  norm_num [featureCenterDifference, featureNormal, cornerOffset, polyEval_vec, cornerSigns, constructionAxis, constructionCos, constructionSin, perp, dot, endpointPolynomial] <;> ring
+
 
 theorem concreteRow28Alias1_C1 :
     dot (perp (cornerOffset constructionSquare 4 0)) (featureNormal constructionSquare ({ owner := 5, other := 4, distinct := by decide, perpendicular := true, reverse := false })) = polyEval ![(-1 / 2), 0, 0, 0, 0, 0, 0, 0] u := by
-  apply sub_eq_zero.mp
-  calc
-    dot (perp (cornerOffset constructionSquare 4 0)) (featureNormal constructionSquare ({ owner := 5, other := 4, distinct := by decide, perpendicular := true, reverse := false })) - polyEval ![(-1 / 2), 0, 0, 0, 0, 0, 0, 0] u =
-      0 * endpointPolynomial u := by
-        norm_num [featureCenterDifference, featureNormal, cornerOffset, polyEval_vec, cornerSigns, constructionAxis, constructionCos, constructionSin, perp, dot, endpointPolynomial] <;> ring
-    _ = 0 := by rw [u_polynomial, mul_zero]
+  apply construction_eq_of_polynomial_multiple (0)
+  norm_num [featureCenterDifference, featureNormal, cornerOffset, polyEval_vec, cornerSigns, constructionAxis, constructionCos, constructionSin, perp, dot, endpointPolynomial] <;> ring
+
 
 end
 end ElevenSquare.Tasks.T06

@@ -1,5 +1,5 @@
 import Mathlib.Analysis.Calculus.Deriv.Pow
-import Mathlib.Analysis.Calculus.MeanValue
+import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Topology.Order.IntermediateValue
 import Mathlib.Tactic.FunProp
 import Mathlib.Tactic.Linarith
@@ -23,21 +23,33 @@ theorem endpointPolynomial_continuous : Continuous endpointPolynomial := by
 
 theorem endpoint_hasDerivAt (x : ℝ) :
     HasDerivAt endpointPolynomial (endpointDerivative x) x := by
-  convert ((((((((((hasDerivAt_id x).pow 8).const_mul 5).sub (((hasDerivAt_id x).pow 7).const_mul 10)).sub (((hasDerivAt_id x).pow 6).const_mul 2)).add (((hasDerivAt_id x).pow 5).const_mul 14)).add (((hasDerivAt_id x).pow 4).const_mul 12)).sub (((hasDerivAt_id x).pow 3).const_mul 6)).add (((hasDerivAt_id x).pow 2).const_mul 2)).add ((hasDerivAt_id x).const_mul 2)).sub_const 1 using 1 <;> simp [endpointPolynomial, endpointDerivative] <;> ring
+  convert ((((((((((hasDerivAt_id x).pow 8).const_mul 5).sub (((hasDerivAt_id x).pow 7).const_mul 10)).sub (((hasDerivAt_id x).pow 6).const_mul 2)).add (((hasDerivAt_id x).pow 5).const_mul 14)).add (((hasDerivAt_id x).pow 4).const_mul 12)).sub (((hasDerivAt_id x).pow 3).const_mul 6)).add (((hasDerivAt_id x).pow 2).const_mul 2)).add ((hasDerivAt_id x).const_mul 2)).sub_const 1 using 1 <;> (try funext y) <;> simp [endpointPolynomial, endpointDerivative] <;> ring
+
+/-- A small-coefficient decomposition of the endpoint derivative. -/
+theorem endpointDerivative_decomposition (x : ℝ) :
+    endpointDerivative x = (2 - 9 * x^2) + x * (4 - 9 * x) +
+      12 * x^3 * (4 - x^2) + 70 * x^4 * (1 - x^2) + 40 * x^7 := by
+  unfold endpointDerivative
+  ring
+
+/-- Positivity holds on an interval wider than the root-isolation interval. -/
+theorem endpointDerivative_pos_broad {x : ℝ}
+    (hx : x ∈ Set.Icc (0 : ℝ) (2/5)) : 0 < endpointDerivative x := by
+  have hx0 : 0 ≤ x := hx.1
+  have hx_upper : x ≤ (2/5 : ℝ) := hx.2
+  have hx_sq : x^2 ≤ (4/25 : ℝ) := by
+    nlinarith [mul_nonneg hx0 (sub_nonneg.mpr hx_upper)]
+  have hconstant : 0 < 2 - 9 * x^2 := by linarith
+  have hlinear : 0 ≤ 4 - 9 * x := by linarith
+  have hcubic : 0 ≤ 4 - x^2 := by linarith
+  have hquartic : 0 ≤ 1 - x^2 := by linarith
+  rw [endpointDerivative_decomposition]
+  positivity
 
 theorem endpointDerivative_pos {x : ℝ} (hx : x ∈ Set.Icc (9/25 : ℝ) (37/100)) :
     0 < endpointDerivative x := by
-  have ha : 0 ≤ x - 9/25 := sub_nonneg.mpr hx.1
-  have hb : 0 ≤ 37/100 - x := sub_nonneg.mpr hx.2
-  have hid : endpointDerivative x = 432883069091840 * (x - 9/25)^0 * (37/100 - x)^7 + 3050009713704960 * (x - 9/25)^1 * (37/100 - x)^6 + 9210214996008960 * (x - 9/25)^2 * (37/100 - x)^5 + 15451845837107200 * (x - 9/25)^3 * (37/100 - x)^4 + 15554520221862400 * (x - 9/25)^4 * (37/100 - x)^3 + 9395034347844480 * (x - 9/25)^5 * (37/100 - x)^2 + 3152693197075720 * (x - 9/25)^6 * (37/100 - x)^1 + 453421585382320 * (x - 9/25)^7 * (37/100 - x)^0 := by
-    unfold endpointDerivative
-    ring
-  rw [hid]
-  rcases eq_or_lt_of_le ha with h | h
-  · have he : x = 9/25 := by linarith
-    subst x
-    norm_num
-  · positivity
+  apply endpointDerivative_pos_broad
+  constructor <;> linarith [hx.1, hx.2]
 
 theorem endpointPolynomial_strictMono :
     StrictMonoOn endpointPolynomial (Set.Icc (9/25 : ℝ) (37/100)) := by

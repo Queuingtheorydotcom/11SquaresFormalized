@@ -26,22 +26,26 @@ theorem trigAffine_hasDerivAt (a b c d w t : ℝ) :
   have hx := (hasDerivAt_id t).const_mul w
   have hab := ((hasDerivAt_id t).const_mul b).const_add a
   have hcd := ((hasDerivAt_id t).const_mul d).const_add c
-  convert (hab.mul hx.cos).add (hcd.mul hx.sin) using 1 <;>
-    dsimp [trigAffine, trigAffineDerivative] <;> ring
+  convert (hab.fun_mul hx.cos).fun_add (hcd.fun_mul hx.sin) using 1
+  · rfl
+  · try dsimp [trigAffine, trigAffineDerivative]
+    ring
 
 theorem trigAffineDerivative_hasDerivAt (a b c d w t : ℝ) :
     HasDerivAt (trigAffineDerivative a b c d w)
       (trigAffineSecond a b c d w t) t := by
-  convert trigAffine_hasDerivAt (b + w*c) (w*d) (d - w*a) (-w*b) w t using 1 <;>
-    dsimp [trigAffineDerivative, trigAffineSecond, trigAffine] <;> ring
+  convert trigAffine_hasDerivAt (b + w*c) (w*d) (d - w*a) (-w*b) w t using 1
+  · rfl
+  · try dsimp [trigAffineDerivative, trigAffineSecond, trigAffine]
+    ring
 
 theorem abs_affine_le (a b t : ℝ) (ht : |t| ≤ 1) :
     |a + b*t| ≤ |a| + |b| := by
   calc
-    |a + b*t| ≤ |a| + |b*t| := abs_add _ _
+    |a + b*t| ≤ |a| + |b*t| := abs_add_le _ _
     _ = |a| + |b| * |t| := by rw [abs_mul]
-    _ ≤ |a| + |b| * 1 := add_le_add_left
-      (mul_le_mul_of_nonneg_left ht (abs_nonneg _)) _
+    _ ≤ |a| + |b| * 1 := add_le_add le_rfl
+      (mul_le_mul_of_nonneg_left ht (abs_nonneg _))
     _ = |a| + |b| := by ring
 
 theorem trigAffine_abs_le (a b c d w t : ℝ) (ht : |t| ≤ 1) :
@@ -57,7 +61,7 @@ theorem trigAffine_abs_le (a b c d w t : ℝ) (ht : |t| ≤ 1) :
   unfold trigAffine
   calc
     |(a+b*t)*Real.cos (w*t) + (c+d*t)*Real.sin (w*t)| ≤
-        |(a+b*t)*Real.cos (w*t)| + |(c+d*t)*Real.sin (w*t)| := abs_add _ _
+        |(a+b*t)*Real.cos (w*t)| + |(c+d*t)*Real.sin (w*t)| := abs_add_le _ _
     _ ≤ |a+b*t| + |c+d*t| := add_le_add hc hs
     _ ≤ (|a| + |b|) + (|c| + |d|) :=
       add_le_add (abs_affine_le a b t ht) (abs_affine_le c d t ht)
@@ -94,7 +98,7 @@ theorem taylor_bound_add (f g : ℝ → ℝ) (a b K L τ : ℝ)
   calc
     |(f τ+g τ)-(f 0+g 0)-τ*(a+b)| =
         |(f τ-f 0-τ*a)+(g τ-g 0-τ*b)| := by congr 1 <;> ring
-    _ ≤ |f τ-f 0-τ*a| + |g τ-g 0-τ*b| := abs_add _ _
+    _ ≤ |f τ-f 0-τ*a| + |g τ-g 0-τ*b| := abs_add_le _ _
     _ ≤ τ^2*K/2 + τ^2*L/2 := add_le_add hf hg
     _ = τ^2*(K+L)/2 := by ring
 

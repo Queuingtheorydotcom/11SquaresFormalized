@@ -45,13 +45,13 @@ def centeredFieldY (y : ℝ) : ℝ := y/fieldScale-coverCap/2
 theorem field_y15_le_cut (y : ℝ) :
     centeredFieldY y ≤ 5/4 ↔ y ≤ fieldScale*(coverCap/2+5/4) := by
   unfold centeredFieldY
-  rw [sub_le_iff_le_add, div_le_iff fieldScale_pos]
+  rw [sub_le_iff_le_add, div_le_iff₀ fieldScale_pos]
   constructor <;> intro h <;> nlinarith
 
 theorem field_y15_ge_cut (y : ℝ) :
     5/4 ≤ centeredFieldY y ↔ fieldScale*(coverCap/2+5/4) ≤ y := by
   unfold centeredFieldY
-  rw [le_sub_iff_add_le, le_div_iff fieldScale_pos]
+  rw [le_sub_iff_add_le, le_div_iff₀ fieldScale_pos]
   constructor <;> intro h <;> nlinarith
 
 /-- A rational check of the exact first-cut coefficient in the packaged trace. -/
@@ -71,7 +71,7 @@ theorem normalized_y15_cut_correct (y : ℝ) :
     y-coverCap/2 ≤ 5/4 ↔ (y-1/2)/(coverCap-1) ≤ normalizedY15Cut := by
   have hpos : 0 < coverCap-1 := by norm_num [coverCap]
   unfold normalizedY15Cut
-  rw [div_le_div_iff hpos hpos]
+  rw [div_le_div_iff₀ hpos hpos]
   constructor <;> intro h <;> nlinarith
 
 end

@@ -1,0 +1,83 @@
+{
+  "T03_modified": false,
+  "archive_sha256": "2dfe63b70549049e30542a6c2d2b58da5db7e318b6b87dc8e27f5e80fde84d3d",
+  "audited_source_hashes_matching_integrated_checkout": 834,
+  "conflict_resolution": {
+    "path": "ElevenSquare/Tasks/T06/CertificateInteger087.lean",
+    "resolution": "Replace older unverified draft with exact audited dot source. Older draft preserved in dbf2eef."
+  },
+  "dot_base_commit": "525f4a68bd06a431ed81c19218b2666fe1cdff2e",
+  "dot_overlay_files_imported_unchanged": 134,
+  "full_upgrade_verified": false,
+  "global_optimality_proved": false,
+  "imported_evidence": "verification/t06-local-isolation.json",
+  "imported_evidence_sha256": "0df6ef395efdf5eba6a2bce87a9f542f614f50f8f75e7d1692e0b85efaa54951",
+  "imported_lean_evidence": {
+    "packet_replay": {
+      "checked_modules": 833,
+      "fingerprint_validated_cached_modules": 798,
+      "newly_compiled_in_final_pass": 35,
+      "status": "SELECTED_MODULES_COMPILE",
+      "targets": [
+        "ElevenSquare.Pending.S08_ExactPacket"
+      ]
+    },
+    "provenance": "Reported by tiny dot; source compatibility independently checked during integration.",
+    "public_audit_replay": {
+      "checked_modules": 834,
+      "fingerprint_validated_cached_modules": 833,
+      "newly_compiled_in_final_pass": 1,
+      "status": "SELECTED_MODULES_COMPILE",
+      "targets": [
+        "ElevenSquare.Tasks.T06.LocalIsolationAudit"
+      ]
+    },
+    "public_target_axioms": {
+      "ElevenSquare.Pending.construction_locally_isolated": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ElevenSquare.Pending.exact_local_packet_exists": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "replay_mode": "Resumed official serial verification using matching source, compiler, dependency, and object fingerprints. Independent disjoint certificate prechecks also used the unchanged official verifier. This was not one uninterrupted fresh build.",
+    "status": "T06_LOCAL_ISOLATION_VERIFIED"
+  },
+  "integrated_at_date": "2026-10-02",
+  "integration_parent_commit": "21c24cb67de42f849acece786ececfe7e6963239",
+  "local_validation": {
+    "diff_whitespace_check": "PASS",
+    "integer_checks_preserved": 8448,
+    "lean_replayed_for_this_import": false,
+    "preservation_regression_tests_passed": 18,
+    "source_assembly": {
+      "explicit_admissions": 2,
+      "global_optimality_proved": false,
+      "local_modules": 14181,
+      "status": "SOURCE_ASSEMBLY_PASS"
+    },
+    "source_preservation": "T06_SOURCE_PRESERVATION_PASS"
+  },
+  "original_dot_commit": "68818f523c83925f164be32ea3932bc60a7120d7",
+  "status": "T06_RETURN_INTEGRATED_SOURCE_CHECKS_PASS",
+  "verifier_compatibility": {
+    "files_differing_from_imported_evidence": [
+      "scripts/verify.py"
+    ],
+    "integrated_configuration_and_verifier_sha256": {
+      "lake-manifest.json": "120e40965dd632c94746b59767715975b8c172383f784da8707373f58d320a82",
+      "lakefile.lean": "4d454e7edfaf096378a8f68a3bd5f5b074c3d25399c3bc13e1b88ee84df3da45",
+      "lean-toolchain": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+      "scripts/check_sources.py": "14c4e6e584e68da1d56a17669d76e42296c8644d985e57b225b11f6d9d8b4bd9",
+      "scripts/check_t06_preservation.py": "f057912303d594f498c33c51ce062c7f46c9b15a5effe84b82a6157b16927a4e",
+      "scripts/test_check_t06_preservation.py": "cdff0c2f6322a3238198f28395d1f76b1475939f75229f9b09a10527a9f016be",
+      "scripts/verify.py": "f4a1de776090605900c25cf6e4caa60fc49c10cc850a300bacf27d53f4d53667",
+      "scripts/verify_support.py": "af4fe0a6bd7c288424a43342e8765235589f390bf847ffad12647f85c39c31bd"
+    },
+    "reviewed_difference": "scripts/verify.py additionally calls materialize_bundled_baseline() during --setup. Selected-module compile and axiom-check logic is unchanged."
+  }
+}

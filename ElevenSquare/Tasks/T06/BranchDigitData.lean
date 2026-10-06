@@ -18,7 +18,7 @@ def digitChoices (a b : Fin 2) (c : Fin 4) (d e f g h : Fin 2) : Fin 14 → Fin 
     (![107, 111] : Fin 2 → Fin 112) h]
 
 def digitIndex (a b : Fin 2) (c : Fin 4) (d e f g h : Fin 2) : Fin 512 :=
-  Fin.ofNat (256*a.val + 128*b.val + 32*c.val + 16*d.val + 8*e.val +
+  Fin.ofNat 512 (256*a.val + 128*b.val + 32*c.val + 16*d.val + 8*e.val +
     4*f.val + 2*g.val + h.val)
 
 

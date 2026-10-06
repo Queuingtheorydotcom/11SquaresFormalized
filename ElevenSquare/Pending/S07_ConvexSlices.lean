@@ -37,8 +37,7 @@ theorem convex_trapezoid {C : Set Point} (hc : Convex ℝ C)
   have ht1 : t ≤ 1 := (div_le_one hd).mpr (by linarith)
   have hx : (1-t)*left+t*right = x := by
     dsimp [t]
-    field_simp [ne_of_gt hd]
-    ring
+    field_simp [ne_of_gt hd] <;> ring
   have lower : (x,(1-t)*loLeft+t*loRight) ∈ C := by
     convert hc hll hlr (sub_nonneg.mpr ht1) ht (by ring : 1-t+t=1) using 1
     ext <;> dsimp
@@ -48,14 +47,14 @@ theorem convex_trapezoid {C : Set Point} (hc : Convex ℝ C)
     ext <;> dsimp
     · exact hx.symm
   apply convex_vertical_between hc x _ _ y lower upper
-  · apply (mul_le_mul_left hd).mp
+  · apply (mul_le_mul_iff_of_pos_left hd).mp
     have he : (right-left)*((1-t)*loLeft+t*loRight) =
         (right-x)*loLeft+(x-left)*loRight := by
       dsimp [t]
       field_simp [ne_of_gt hd] <;> ring
     rw [he]
     exact hlo
-  · apply (mul_le_mul_left hd).mp
+  · apply (mul_le_mul_iff_of_pos_left hd).mp
     have he : (right-left)*((1-t)*hiLeft+t*hiRight) =
         (right-x)*hiLeft+(x-left)*hiRight := by
       dsimp [t]

@@ -44,7 +44,7 @@ theorem close_bounds_points (a b : GridPoint) (p q : Point)
   have hs := mul_le_mul_of_nonneg_left (add_le_add hx hy) (by norm_num : (0 : ℝ) ≤ 2500)
   rw [← hid] at hs
   have hb := hs.trans hc
-  apply (mul_le_mul_left (by norm_num [scale] : (0 : ℝ) < 2500*(scale : ℝ)^2)).mp
+  apply (mul_le_mul_iff_of_pos_left (by norm_num [scale] : (0 : ℝ) < 2500*(scale : ℝ)^2)).mp
   calc
     (2500*(scale : ℝ)^2)*normSq (p-q) ≤ 301*(scale : ℝ)^2 := by
       simpa only [mul_assoc] using hb

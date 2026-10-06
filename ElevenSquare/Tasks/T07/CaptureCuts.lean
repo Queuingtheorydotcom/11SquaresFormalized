@@ -106,8 +106,8 @@ private theorem rows_map_contains {S : ℝ} {s : PoseState} {i : Owner}
     obtain ⟨r, hr, hqr⟩ := hs.1 i
     have hrow : RowsContain ((s.rows i).map f) (P.squares i) :=
       ⟨f r, List.mem_map.mpr ⟨r, hr, rfl⟩, hf r hqr⟩
-    simpa only [replaceRows, Function.update_same] using hrow
-  · simpa only [replaceRows, Function.update_noteq hki] using hs.1 k
+    simpa only [replaceRows, Function.update_self] using hrow
+  · simpa only [replaceRows, Function.update_of_ne hki] using hs.1 k
 
 theorem cutAngleUpper_sound {S : ℝ} (P : Packing 11 S) (s : PoseState)
     (i : Owner) (a : ℚ) (hs : StateHolds P s)

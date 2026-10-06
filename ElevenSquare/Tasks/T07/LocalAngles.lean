@@ -21,11 +21,13 @@ theorem chartAxis_trig (t : ℝ) :
   apply Prod.ext
   · dsimp [chartAxis]
     rw [Real.cos_two_mul, Real.cos_sq_arctan]
-    field_simp [hd]
-    ring
+    field_simp [hd] <;> ring
   · dsimp [chartAxis]
     rw [Real.sin_two_mul, Real.sin_arctan, Real.cos_arctan]
     field_simp [hd, hs]
+    ring_nf
+    rw [Real.sq_sqrt (by positivity : 0 ≤ 1 + t^2)]
+    ring
 
 theorem construction_axis_chart (i : Owner) :
     (constructionSquare i).axis = chartAxis (if i.val < 6 then 0 else u) := by
@@ -46,7 +48,7 @@ theorem arctan_lipschitz (x y : ℝ) :
     have hd (z : ℝ) : |(1 : ℝ) / (1 + z^2)| ≤ 1 := by
       have hp : 0 < 1 + z^2 := by positivity
       rw [abs_of_pos (div_pos (by norm_num) hp)]
-      exact (div_le_iff hp).mpr (by nlinarith [sq_nonneg z])
+      exact (div_le_iff₀ hp).mpr (by nlinarith [sq_nonneg z])
     have h := norm_image_sub_le_of_norm_deriv_le_segment'
       (a := a) (b := b) (f := Real.arctan)
       (f' := fun z => 1 / (1 + z^2)) (C := 1)
@@ -77,7 +79,7 @@ theorem arctan_lipschitz_above (m x y : ℝ)
         nlinarith [mul_nonneg (sub_nonneg.mpr hmz)
           (add_nonneg hm (hm.trans (ha.trans hz)))]
       rw [abs_of_pos (div_pos (by norm_num) hpZ)]
-      exact (div_le_div_iff hpZ hpM).mpr (by nlinarith)
+      exact (div_le_div_iff₀ hpZ hpM).mpr (by nlinarith)
     have h := norm_image_sub_le_of_norm_deriv_le_segment'
       (a := a) (b := b) (f := Real.arctan)
       (f' := fun z => 1 / (1+z^2)) (C := 1/(1+m^2))
@@ -110,7 +112,7 @@ theorem angle_near_quarter {lo t R : ℝ}
   have h := arctan_lipschitz_above lo t 1 hlo hlt (by linarith)
   have hd : 0 < 1+lo^2 := by positivity
   have hdifference : (1-t)/(1+lo^2) ≤ (1-lo)/(1+lo^2) :=
-    (div_le_div_iff hd hd).mpr (by nlinarith)
+    (div_le_div_iff₀ hd hd).mpr (by nlinarith)
   rw [abs_of_nonpos (sub_nonpos.mpr ht)] at h
   have h' : |Real.arctan t-Real.arctan 1| ≤ (1-t)/(1+lo^2) := by
     convert h using 1; ring
@@ -139,7 +141,7 @@ theorem angle_near_tilted {lo hi αlo αhi t α R : ℝ}
     have hderiv' : |Real.arctan t-Real.arctan α| ≤ (α-t)/(1+lo^2) := by
       convert hderiv using 1; ring
     have hfraction : (α-t)/(1+lo^2) ≤ (αhi-lo)/(1+lo^2) :=
-      (div_le_div_iff hd hd).mpr (by nlinarith)
+      (div_le_div_iff₀ hd hd).mpr (by nlinarith)
     have hleft' : 2*((αhi-lo)/(1+lo^2)) ≤ R := by
       convert hleft using 1; ring
     linarith
@@ -148,7 +150,7 @@ theorem angle_near_tilted {lo hi αlo αhi t α R : ℝ}
       (hαlo.trans h) hαlo
     rw [abs_of_nonneg (sub_nonneg.mpr h)] at hderiv
     have hfraction : (t-α)/(1+αlo^2) ≤ (hi-αlo)/(1+αlo^2) :=
-      (div_le_div_iff hd hd).mpr (by nlinarith)
+      (div_le_div_iff₀ hd hd).mpr (by nlinarith)
     have hright' : 2*((hi-αlo)/(1+αlo^2)) ≤ R := by
       convert hright using 1; ring
     linarith

@@ -7,13 +7,13 @@ set_option maxRecDepth 2048
 private theorem lookup_left {α : Type} [Inhabited α] (as bs : Array α)
     (i : ℕ) (h : i < as.size) : (as ++ bs)[i]! = as[i]! := by
   rw [getElem!_pos (as ++ bs) i (by rw [Array.size_append]; omega), getElem!_pos as i h]
-  exact Array.get_append_left h
+  exact Array.getElem_append_left h
 
 private theorem lookup_right {α : Type} [Inhabited α] (as bs : Array α)
     (i : ℕ) (ha : as.size ≤ i) (hb : i-as.size < bs.size) :
     (as ++ bs)[i]! = bs[i-as.size]! := by
   rw [getElem!_pos (as ++ bs) i (by rw [Array.size_append]; omega), getElem!_pos bs (i-as.size) hb]
-  exact Array.get_append_right ha
+  exact Array.getElem_append_right ha
 
 theorem chunk_size0 : recordedOverlayLabelsChunk0.size = 32 := rfl
 theorem chunk_size1 : recordedOverlayLabelsChunk1.size = 32 := rfl

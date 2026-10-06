@@ -1,0 +1,171 @@
+import Sqpack.S11Opt.Simplified.SelectedFieldDataChecks
+
+namespace SquarePacking.S11Opt.Simplified.SelectedFields
+open SquarePacking.S11Opt.Split
+set_option maxRecDepth 100000
+set_option maxHeartbeats 0
+
+open CheckedBlocks
+
+private theorem joinFieldBlocks {P : ℕ → Prop} {lo n m : ℕ}
+    (left : ∀ j : Fin n, P (j.val + lo))
+    (right : ∀ j : Fin m, P (j.val + (lo + n))) :
+    ∀ j : Fin (n + m), P (j.val + lo) := by
+  intro j
+  by_cases hj : j.val < n
+  · exact left ⟨j.val, hj⟩
+  · have hm : j.val - n < m := by omega
+    have he : j.val - n + (lo + n) = j.val + lo := by omega
+    simpa only [he] using right ⟨j.val - n, hm⟩
+
+/-- Every original field case is still covered by a selected certificate. -/
+theorem fieldIdx_app : ∀ i ∈ fieldIdx,
+    (app (maskAt i) || app (hmask (maskAt i))) = true := by
+  intro i hi
+  have hbound : i < 2184 := List.mem_range.mp (List.mem_filter.mp hi).1
+  let P : ℕ → Prop := fun k =>
+    (outsideField k || app (maskAt k) || app (hmask (maskAt k))) = true
+  have hall : ∀ j : Fin 2184, P (j.val + 0) := by
+    exact joinFieldBlocks (P := P) (lo := 0) (n := 1088) (m := 1096)
+      (joinFieldBlocks (P := P) (lo := 0) (n := 544) (m := 544)
+        (joinFieldBlocks (P := P) (lo := 0) (n := 256) (m := 288)
+          (joinFieldBlocks (P := P) (lo := 0) (n := 128) (m := 128)
+            (joinFieldBlocks (P := P) (lo := 0) (n := 64) (m := 64)
+              (joinFieldBlocks (P := P) (lo := 0) (n := 32) (m := 32)
+                (fieldBlock00)
+                (fieldBlock01))
+              (joinFieldBlocks (P := P) (lo := 64) (n := 32) (m := 32)
+                (fieldBlock02)
+                (fieldBlock03)))
+            (joinFieldBlocks (P := P) (lo := 128) (n := 64) (m := 64)
+              (joinFieldBlocks (P := P) (lo := 128) (n := 32) (m := 32)
+                (fieldBlock04)
+                (fieldBlock05))
+              (joinFieldBlocks (P := P) (lo := 192) (n := 32) (m := 32)
+                (fieldBlock06)
+                (fieldBlock07))))
+          (joinFieldBlocks (P := P) (lo := 256) (n := 128) (m := 160)
+            (joinFieldBlocks (P := P) (lo := 256) (n := 64) (m := 64)
+              (joinFieldBlocks (P := P) (lo := 256) (n := 32) (m := 32)
+                (fieldBlock08)
+                (fieldBlock09))
+              (joinFieldBlocks (P := P) (lo := 320) (n := 32) (m := 32)
+                (fieldBlock10)
+                (fieldBlock11)))
+            (joinFieldBlocks (P := P) (lo := 384) (n := 64) (m := 96)
+              (joinFieldBlocks (P := P) (lo := 384) (n := 32) (m := 32)
+                (fieldBlock12)
+                (fieldBlock13))
+              (joinFieldBlocks (P := P) (lo := 448) (n := 32) (m := 64)
+                (fieldBlock14)
+                (joinFieldBlocks (P := P) (lo := 480) (n := 32) (m := 32)
+                  (fieldBlock15)
+                  (fieldBlock16))))))
+        (joinFieldBlocks (P := P) (lo := 544) (n := 256) (m := 288)
+          (joinFieldBlocks (P := P) (lo := 544) (n := 128) (m := 128)
+            (joinFieldBlocks (P := P) (lo := 544) (n := 64) (m := 64)
+              (joinFieldBlocks (P := P) (lo := 544) (n := 32) (m := 32)
+                (fieldBlock17)
+                (fieldBlock18))
+              (joinFieldBlocks (P := P) (lo := 608) (n := 32) (m := 32)
+                (fieldBlock19)
+                (fieldBlock20)))
+            (joinFieldBlocks (P := P) (lo := 672) (n := 64) (m := 64)
+              (joinFieldBlocks (P := P) (lo := 672) (n := 32) (m := 32)
+                (fieldBlock21)
+                (fieldBlock22))
+              (joinFieldBlocks (P := P) (lo := 736) (n := 32) (m := 32)
+                (fieldBlock23)
+                (fieldBlock24))))
+          (joinFieldBlocks (P := P) (lo := 800) (n := 128) (m := 160)
+            (joinFieldBlocks (P := P) (lo := 800) (n := 64) (m := 64)
+              (joinFieldBlocks (P := P) (lo := 800) (n := 32) (m := 32)
+                (fieldBlock25)
+                (fieldBlock26))
+              (joinFieldBlocks (P := P) (lo := 864) (n := 32) (m := 32)
+                (fieldBlock27)
+                (fieldBlock28)))
+            (joinFieldBlocks (P := P) (lo := 928) (n := 64) (m := 96)
+              (joinFieldBlocks (P := P) (lo := 928) (n := 32) (m := 32)
+                (fieldBlock29)
+                (fieldBlock30))
+              (joinFieldBlocks (P := P) (lo := 992) (n := 32) (m := 64)
+                (fieldBlock31)
+                (joinFieldBlocks (P := P) (lo := 1024) (n := 32) (m := 32)
+                  (fieldBlock32)
+                  (fieldBlock33)))))))
+      (joinFieldBlocks (P := P) (lo := 1088) (n := 544) (m := 552)
+        (joinFieldBlocks (P := P) (lo := 1088) (n := 256) (m := 288)
+          (joinFieldBlocks (P := P) (lo := 1088) (n := 128) (m := 128)
+            (joinFieldBlocks (P := P) (lo := 1088) (n := 64) (m := 64)
+              (joinFieldBlocks (P := P) (lo := 1088) (n := 32) (m := 32)
+                (fieldBlock34)
+                (fieldBlock35))
+              (joinFieldBlocks (P := P) (lo := 1152) (n := 32) (m := 32)
+                (fieldBlock36)
+                (fieldBlock37)))
+            (joinFieldBlocks (P := P) (lo := 1216) (n := 64) (m := 64)
+              (joinFieldBlocks (P := P) (lo := 1216) (n := 32) (m := 32)
+                (fieldBlock38)
+                (fieldBlock39))
+              (joinFieldBlocks (P := P) (lo := 1280) (n := 32) (m := 32)
+                (fieldBlock40)
+                (fieldBlock41))))
+          (joinFieldBlocks (P := P) (lo := 1344) (n := 128) (m := 160)
+            (joinFieldBlocks (P := P) (lo := 1344) (n := 64) (m := 64)
+              (joinFieldBlocks (P := P) (lo := 1344) (n := 32) (m := 32)
+                (fieldBlock42)
+                (fieldBlock43))
+              (joinFieldBlocks (P := P) (lo := 1408) (n := 32) (m := 32)
+                (fieldBlock44)
+                (fieldBlock45)))
+            (joinFieldBlocks (P := P) (lo := 1472) (n := 64) (m := 96)
+              (joinFieldBlocks (P := P) (lo := 1472) (n := 32) (m := 32)
+                (fieldBlock46)
+                (fieldBlock47))
+              (joinFieldBlocks (P := P) (lo := 1536) (n := 32) (m := 64)
+                (fieldBlock48)
+                (joinFieldBlocks (P := P) (lo := 1568) (n := 32) (m := 32)
+                  (fieldBlock49)
+                  (fieldBlock50))))))
+        (joinFieldBlocks (P := P) (lo := 1632) (n := 288) (m := 264)
+          (joinFieldBlocks (P := P) (lo := 1632) (n := 128) (m := 160)
+            (joinFieldBlocks (P := P) (lo := 1632) (n := 64) (m := 64)
+              (joinFieldBlocks (P := P) (lo := 1632) (n := 32) (m := 32)
+                (fieldBlock51)
+                (fieldBlock52))
+              (joinFieldBlocks (P := P) (lo := 1696) (n := 32) (m := 32)
+                (fieldBlock53)
+                (fieldBlock54)))
+            (joinFieldBlocks (P := P) (lo := 1760) (n := 64) (m := 96)
+              (joinFieldBlocks (P := P) (lo := 1760) (n := 32) (m := 32)
+                (fieldBlock55)
+                (fieldBlock56))
+              (joinFieldBlocks (P := P) (lo := 1824) (n := 32) (m := 64)
+                (fieldBlock57)
+                (joinFieldBlocks (P := P) (lo := 1856) (n := 32) (m := 32)
+                  (fieldBlock58)
+                  (fieldBlock59)))))
+          (joinFieldBlocks (P := P) (lo := 1920) (n := 128) (m := 136)
+            (joinFieldBlocks (P := P) (lo := 1920) (n := 64) (m := 64)
+              (joinFieldBlocks (P := P) (lo := 1920) (n := 32) (m := 32)
+                (fieldBlock60)
+                (fieldBlock61))
+              (joinFieldBlocks (P := P) (lo := 1984) (n := 32) (m := 32)
+                (fieldBlock62)
+                (fieldBlock63)))
+            (joinFieldBlocks (P := P) (lo := 2048) (n := 64) (m := 72)
+              (joinFieldBlocks (P := P) (lo := 2048) (n := 32) (m := 32)
+                (fieldBlock64)
+                (fieldBlock65))
+              (joinFieldBlocks (P := P) (lo := 2112) (n := 32) (m := 40)
+                (fieldBlock66)
+                (joinFieldBlocks (P := P) (lo := 2144) (n := 32) (m := 8)
+                  (fieldBlock67)
+                  (fieldBlock68)))))))
+  have hs : outsideField i = false := by
+    simpa [outsideField] using (List.mem_filter.mp hi).2
+  simpa only [P, Nat.add_zero, hs, Bool.false_or] using hall ⟨i, hbound⟩
+
+#print axioms fieldIdx_app
+end SquarePacking.S11Opt.Simplified.SelectedFields

@@ -1,0 +1,647 @@
+{
+  "status": "SELECTED_MODULES_COMPILE",
+  "checked_modules": 62,
+  "targets": [
+    "ElevenSquare.Interop.Wand125.Families.BaselineCore",
+    "ElevenSquare.Pending.S06_Exclusion"
+  ],
+  "axioms": {
+    "ElevenSquare.Pending.OrderedData.adjacent_sound": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.OrderedData.Block.append": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.OrderedData.ordered_nodup": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.OrderedData.Block.card": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.rowsCheck_sound": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.Block.append": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.returned_block2": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.finite_partition_of_cards": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.OrderedData.blocks_disjoint": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_block30": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.prior_block0": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.prior_block1": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.returned_block0": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.returned_block1": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_block0": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_block1": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_block2": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_block3": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_block4": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_block5": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_block6": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_block7": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_block8": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_block9": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_block10": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_block11": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_block12": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_block13": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_block14": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_block15": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_block16": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_block17": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_block18": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_block19": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_block20": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_block21": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_block22": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_block23": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_block24": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_block25": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_block26": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_block27": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_block28": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_block29": [
+      "propext"
+    ],
+    "ElevenSquare.Pending.verified_step_sound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.verified_trace_sound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.terminal_contradiction": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block30": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block31": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block32": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block33": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block34": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block0": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block1": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block2": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block3": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block4": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block5": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block6": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block7": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block8": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block9": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block25": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block26": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block27": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block28": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block29": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block10": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block11": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block12": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block13": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block14": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block15": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block16": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block17": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block18": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block19": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block20": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block21": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block22": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block23": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.TupleBounds.tuple_block24": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_card": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.prior_card": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.returned_card": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.BaselineGood.append": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_good28": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_good29": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_good30": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.prior_returned_disjoint": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.returned_candidate_disjoint": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.prior_bound": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.returned_bound": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.candidate_bound": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.candidate_card": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_good0": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_good1": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_good2": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_good3": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_good4": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_good5": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_good6": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_good7": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_good8": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_good9": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_good10": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_good11": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_good12": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_good13": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_good14": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_good15": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_good16": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_good17": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_good18": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_good19": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_good20": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_good21": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_good22": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_good23": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_good24": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_good25": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_good26": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.ExclusionCounts.baseline_good27": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.exclusion_inventory": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Pending.recorded_case_tuple_bounds": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Interop.Wand125.packable_eleven_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Interop.Wand125.excludes_occupancy": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Interop.Wand125.CaseOrder.tuples_eq_authorMasks": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Interop.Wand125.tuple_eq_maskAt": [
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Interop.Wand125.certificate_of_maskAt": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Interop.Wand125.genericIdx_baseline": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Interop.Wand125.prior_certificate_of": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Interop.Wand125.returned_certificate_of": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Interop.Wand125.generic_certificate_of": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Interop.Wand125.noncandidate_certificate_of": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Interop.Wand125.baseline_maskAt_excluded_of": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ElevenSquare.Interop.Wand125.baseline_certificate_of": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "scope": "Conditional family adapters and unchanged Excluded definition; full field/generic/prior replay remains pending.",
+  "lean_toolchain": "leanprover/lean4:v4.34.1",
+  "mathlib_revision": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+  "full_upgrade_verified": false,
+  "global_optimality_proved": false,
+  "explicit_native_admissions": 2,
+  "source_sha256": {
+    "ElevenSquare.BasicGeometry": "1b4757436e5718908e0047c360847a8c13bdc54a288833761be9abcf8d5b598e",
+    "ElevenSquare.Cover": "4ff01683f57f0bde3f2d91d5bacefc63710abe7c3c4cb0a3786d69b557d1e73a",
+    "ElevenSquare.CoverChecks": "cfb1ac4a0bbd79e078519e7d9df2e04892458a87cc309a6aa520a0cff2e4e68d",
+    "ElevenSquare.CoverData": "d3ed474b9f3b8c88ffffcfa1c1005b98be709dd5443198088e94e659a299906d",
+    "ElevenSquare.GeneratedCover0": "4936cc6f454137d9509976002e3c719de0dd28441e99ae8fbd0343ab7c2fba99",
+    "ElevenSquare.GeneratedCover1": "e72e09742bd6a4d17a8152f6b69c9cdb94933d15829193e88ec52ba85c6c6d27",
+    "ElevenSquare.GeneratedCover2": "f9d6ccc5aa2ae6c16140dcf8d474f869448c83d965a7644f16fb59b3d2c020b5",
+    "ElevenSquare.GeneratedCover3": "973ed8e31b101004f93e72347411e153c6283022219cfcc5d5846ee1f65a9f0f",
+    "ElevenSquare.Geometry": "fa8ff2c666453b56f04b22c164ef063cbd46dc85fb4afd7ed6fbb01b7c4f641a",
+    "ElevenSquare.Interop.Wand125.Cells": "28a6a185ce4df46f4aa46119ce1d413255f1377efece83c4e9046dd536789a40",
+    "ElevenSquare.Interop.Wand125.Families": "66db51dead2c8a76b650a2f201a4434a61938c29228169da2af86011a6308465",
+    "ElevenSquare.Interop.Wand125.Families.BaselineCore": "2adb31dfd5284b129b67873ce45024b5695d90c298b16270b43d6bdef7e90cde",
+    "ElevenSquare.Interop.Wand125.Families.CaseOrder": "45b67162b0ac8c5c42f239916896e2fbab439f0e3c8a96abb8459b83698ddd4b",
+    "ElevenSquare.Interop.Wand125.Geometry": "cf7806b4600cf9943a6eac7179451c5689a7bf471224f11b75861f00974e533b",
+    "ElevenSquare.Pending.FinitePartition": "5b267699f983114e686de97685fbd559225ba13775feba1e02b78f21ab223402",
+    "ElevenSquare.Pending.GeometryTypes": "a7bf5e2a537e0b81a7d874c35c769f605b61da9e3fef28feb07390736690502a",
+    "ElevenSquare.Pending.OrderedData": "8694661905a891e132b37e56c90b9d09555bc490646ec0bd1f64b85e49877497",
+    "ElevenSquare.Pending.S05_Minkowski": "849dce205c5a5fef7627236e276636280f9af34f43ca45787f320f61aed1dfa2",
+    "ElevenSquare.Pending.S05_OwnedHull": "14825725fe2e16d2bcd3f0ff4493a90b2d515e956db572ecfa27dafc81fbcbc8",
+    "ElevenSquare.Pending.S05_Trace": "cb4a012b65a3e0cfdcb351d4c38f8f3aaeea0b946b40b63a3be89ee00bb2fd1e",
+    "ElevenSquare.Pending.S06_Data": "95384cd8f89c4f412ab37f470768f63f49de6c2cf1fa97b97c3465058ed373bd",
+    "ElevenSquare.Pending.S06_Exclusion": "341f7b15a5b8c1d2875ef1dd25a30d732f482fee97dfe0c91b479500de955636",
+    "ElevenSquare.Pending.S06_ExclusionCountChunks0": "86337db3283594f2351b1857607ad25e603afa0f9b5e105cd2cbb6d193beb532",
+    "ElevenSquare.Pending.S06_ExclusionCountChunks1": "05ae7fdfdc66523e23970b03ea931847e9899963cc984e0266833e056fb696f9",
+    "ElevenSquare.Pending.S06_ExclusionCountChunks2": "c55f3f12760bea3c11cb8f490a8dc2b2a0524d2f671155f1618c8420721c1b4e",
+    "ElevenSquare.Pending.S06_ExclusionCountChunks3": "21a47b16bbcb67135b98ca87b8e074f69b0199fd50fa41719400799732d24d55",
+    "ElevenSquare.Pending.S06_ExclusionCountChunks4": "617941e4a3d366e5d2abc1a0ec624d460bde3d26c75d950610a8f62d48369862",
+    "ElevenSquare.Pending.S06_ExclusionCountChunks5": "47549e57b33079a99abfcc023a09937a44e498c36b4c54579a00ec0c0de3e667",
+    "ElevenSquare.Pending.S06_ExclusionCountChunks6": "265219293c2564b0bf0141ea974ba19d362a86be0ed269f2028df4384546370c",
+    "ElevenSquare.Pending.S06_ExclusionCountChunks7": "e9c11e074c380e61c551fc46eada20ecd295793733eef017f2992ec4252cfb58",
+    "ElevenSquare.Pending.S06_ExclusionCounts": "ab0d1740eb4372e266ed4cbd4a3ece2ff32ec38d7c0a017c38daa9e1af0ff6a3",
+    "ElevenSquare.Pending.S06_ExclusionPartition": "db002ecf8c74e226b0b7910f8c0719c3d70beb4bab56b1c17aed5d1254812bdb",
+    "ElevenSquare.Pending.S06_ExclusionPartitionChunks0": "2fe8ac54ddb6471f302742cb5d55ed8fd062a9bc2832d51a417c50ac04cc6ab2",
+    "ElevenSquare.Pending.S06_ExclusionPartitionChunks1": "b0592614b3befa970d89e6206554e32914aed0b0c23daac724505e8d27bcfcdf",
+    "ElevenSquare.Pending.S06_ExclusionPartitionChunks2": "bd0b93b1133ddb7f343d281b9dc18ff1dce58fad8561e967c4f09a85da9443d1",
+    "ElevenSquare.Pending.S06_ExclusionPartitionChunks3": "bf19c948ce2ab474098c7b7759a898e622df802a82989658de89a4a1354eab35",
+    "ElevenSquare.Pending.S06_ExclusionPartitionChunks4": "55d4f88620485db22b3383ac71d812a7c02f73f877c08964c20ee991f7c6df2b",
+    "ElevenSquare.Pending.S06_ExclusionPartitionChunks5": "22e6a4ce852a8d6c90a8cb1101d77d42826863a2225baed5908eb1be8ad1d3e2",
+    "ElevenSquare.Pending.S06_ExclusionPartitionChunks6": "d3951cc6004260869149d89eb12e4d820ed80d063ac9eda98109ef1357e466d4",
+    "ElevenSquare.Pending.S06_ExclusionPartitionChunks7": "272361755e2a4dc54ec78ee8ed3876642f3f7be8d069e2f15e26313acf71c01c",
+    "ElevenSquare.Pending.S06_ExclusionPartitionSupport": "fe728a549a7393a63b9986eb93beae5b93efedd64d2739c6b4e4a46592221a44",
+    "ElevenSquare.Pending.S06_ExclusionSmallLists": "0e36fed98973aa1ae5af1ef1b60f639d8c997afaffe28085bca633a6bd68ab11",
+    "ElevenSquare.Pending.S06_TupleBounds": "ae9437174948777ef4b4461377a68031d39f21006c83934ba32baae0aefca265",
+    "ElevenSquare.Pending.S06_TupleBoundsChunks0": "4d9c87bc046bfc3d8b72c3009b27df1234c73236e0dc157f709f7010cc1e0070",
+    "ElevenSquare.Pending.S06_TupleBoundsChunks1": "e220407e54ddadd54609d32fef8e1649ed595f4fd9da8ca4b3f24514121b8323",
+    "ElevenSquare.Pending.S06_TupleBoundsChunks2": "3e2dfffba0a60f2849096f9c0195c51498952fe5fedc99929fa9445e766debd2",
+    "ElevenSquare.Pending.S06_TupleBoundsChunks3": "af1669818a6e6d78ba83c438726765c5a8b3b0196bd5b8bb21dae753f1829a40",
+    "ElevenSquare.Pending.S06_TupleBoundsChunks4": "cc4376482ab89aca1fbec38f380253d430b674330f172400b4d9ab53d128a8df",
+    "ElevenSquare.Pending.S06_TupleBoundsChunks5": "d928e5f54a9b580e929a02fd0858bf5816683cce5571df0e64bb00eb458c0cc3",
+    "ElevenSquare.Pending.S06_TupleBoundsChunks6": "9ebeb0fddab1c49331fb8351684ab96b59906da8fe70428a7f151d93556f0eaa",
+    "ElevenSquare.Pending.S06_TupleBoundsSupport": "0eddab56daa13229ca842f83a2d6eb0e8aefdbddfc4e22d2de0328f7393bcb13",
+    "ElevenSquare.Pending.SortedDisjoint": "53b4d5570aea099b11ced8f26bf066b32d3006e3a9598b581bcb27c648888029",
+    "ElevenSquare.Pending.Types": "7eb85ed7ccaa38282e6f074873c26af7c36a7f650d4d25cf7b55df535c5d420f",
+    "Sqpack.Basic": "a2fd590131fd3b2f15cab26ce58275fc26e5f3b611a1cc151d16abab18693b7a",
+    "Sqpack.Chord": "9142fe465db4bb3e91b48fa2f0904b1eefbe39c23d58c68253ce0aaf7bf85fa9",
+    "Sqpack.Packing": "a6c5b6098fa3e8dade6dccc0cb4b2a83608fcd02a6c0b3d6957420dcd4ec5ade",
+    "Sqpack.S11Opt.Basic": "b2daac4c961a3dd9ac92ceafd021caeaf1ad0b7bbd69c08b32387c33f95be5d1",
+    "Sqpack.S11Opt.Cells": "64f6dad94cc442ad71fb087c0ff70584689a36b6a0ef693ee0f9887c835daf77",
+    "Sqpack.S11Opt.Data": "c61f1531d716333432b90673ccb7f8c97c123d8fb06d0176ec06ea555bdd3ee9",
+    "Sqpack.S11Opt.Split.Interface": "92553ff609bd944eb72da36ed25d9e53fb97a65d6917953f9e4c92778d7d66ab",
+    "Sqpack.S11Opt.Upper": "458354b398c1313f2a7c08c671c6c5fb027d7d46368579cd99d8d0cf19ecc110",
+    "Sqpack.ZeroMargin": "98cb186e7df00ad5eef191d0dfc2591d665b9443e1ba5750fb76619629da04a5"
+  }
+}

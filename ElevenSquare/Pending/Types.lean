@@ -1,3 +1,4 @@
+import Mathlib.Data.Rat.Cast.Lemmas
 import ElevenSquare.Pending.GeometryTypes
 import Mathlib.Analysis.Convex.Hull
 import Mathlib.Data.Fintype.BigOperators

@@ -52,7 +52,7 @@ theorem localY_change (a b : UnitSquare) (p : Point) :
 
 theorem half_abs_lt {t : ℝ} (h : |t| < 1) : |t/2| < (1:ℝ)/2 := by
   rw [abs_div, abs_of_pos (by norm_num : (0:ℝ)<2)]
-  exact (div_lt_div_right (by norm_num : (0:ℝ)<2)).2 h
+  exact (div_lt_div_iff_of_pos_right (by norm_num : (0:ℝ)<2)).2 h
 
 #print axioms cross_perp
 #print axioms both_perp

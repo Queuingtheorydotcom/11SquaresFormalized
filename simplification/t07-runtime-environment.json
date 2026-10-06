@@ -1,0 +1,26 @@
+{
+  "scope": "Current limited-memory Mac observations; not a full-proof benchmark",
+  "installed_memory_gib": 8,
+  "proof_worker_processes": 1,
+  "lean_check_sample": {
+    "module": "ElevenSquare.Tasks.T07.Ext.Gen.P2.S0",
+    "elapsed_seconds": 448,
+    "cpu_seconds": 104.85,
+    "resident_kib": 588432,
+    "accepted_at_sample": false
+  },
+  "virtual_memory_sample": {
+    "page_size_bytes": 16384,
+    "free_pages": 5988,
+    "compressor_occupied_pages": 229178
+  },
+  "interpretation": "Substantial memory pressure and elapsed-time/CPU divergence limit timing conclusions. No two-to-three-hour full-proof result is established.",
+  "local_replay_stop": {
+    "reason": "memory pressure and very low free disk",
+    "free_disk_mib_before_stop": 123,
+    "free_disk_gib_after_stop": 1.6,
+    "verifier_exit_code": 130,
+    "verifier_and_lean_child_confirmed_exited": true,
+    "full_replay_attempted": false
+  }
+}

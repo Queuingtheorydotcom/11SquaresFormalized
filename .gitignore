@@ -1,6 +1,6 @@
 /.lake/
-/build/
 /.verification/
 __pycache__/
 *.pyc
-.DS_Store
+*.checkpoint.tmp
+/SOURCE_MANIFEST.json

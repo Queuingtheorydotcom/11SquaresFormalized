@@ -31,7 +31,7 @@ theorem card_weight_representatives {α : Type*} [DecidableEq α]
       refine ⟨hs b hb, ?_⟩
       rw [hf]
       omega
-  have hsum := Finset.filter_card_add_filter_neg_card_eq_card
+  have hsum := Finset.card_filter_add_card_filter_not
     (s := s) (fun a => w (f a) ≤ w a)
   omega
 
